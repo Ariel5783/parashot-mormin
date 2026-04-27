@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Paracha Tétsavé - La lumière qui ne s'éteint jamais. La Ménorah, les vêtements du Cohen Gadol, la consécration des Cohanim. Étude biblique selon la tradition séfarade par Ariel Mormin">
+    <meta name="keywords" content="Paracha Tétsavé, Torah, Bible, Exode, tradition séfarade, Ménorah, Cohen Gadol, Ketoret, ner tamid, lumière perpétuelle, étude biblique">
+    <title>Paracha Tétsavé - תְּצַוֶּה - La lumière qui ne s'éteint jamais</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            background: linear-gradient(135deg, #1a3a2a 0%, #1e4d35 15%, #1a5c3a 30%, #0f6b45 50%, #0d7a50 70%, #10855a 85%, #12936a 100%);
+            min-height: 100vh;
+            color: #333;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 70% 30%, rgba(18, 147, 106, 0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 30% 70%, rgba(13, 122, 80, 0.25) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #1a5c3a, #0d7a50);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(13, 122, 80, 0.4);
+            margin-bottom: 20px;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(18, 147, 106, 0.5);
+            background: linear-gradient(135deg, #0d7a50, #1a5c3a);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #1a3a2a, #1e4d35, #1a5c3a, #0f6b45, #0d7a50, #10855a, #12936a);
+            margin: -40px -20px 50px -20px;
+            border-radius: 20px 20px 0 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="35" fill="white" opacity="0.1">🕯️</text></svg>') repeat;
+            background-size: 70px 70px;
+            opacity: 0.15;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, transparent 30%, rgba(26, 58, 42, 0.4));
+        }
+
+        .title {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hebrew-title {
+            font-size: 3.2em;
+            color: #a7f3d0;
+            margin-bottom: 15px;
+            font-family: 'Times New Roman', serif;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-size: 1.4em;
+            font-style: italic;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        .reference {
+            font-size: 1.1em;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #1a5c3a, #0d7a50, #12936a);
+            transform-origin: left;
+            transform: scaleX(0);
+            z-index: 1000;
+            transition: transform 0.1s ease;
+        }
+
+        .intro-box {
+            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+            padding: 35px;
+            border-radius: 15px;
+            border-left: 6px solid #059669;
+            margin-bottom: 45px;
+            box-shadow: 0 8px 20px rgba(5, 150, 105, 0.2);
+            position: relative;
+        }
+
+        .intro-box::before {
+            content: "🕯️";
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 2em;
+            opacity: 0.3;
+        }
+
+        .section {
+            margin-bottom: 45px;
+            padding: 20px 0;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #1a5c3a;
+            margin-bottom: 25px;
+            font-weight: bold;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+            border-radius: 10px;
+            border-left: 5px solid #059669;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-icon {
+            font-size: 1.8em;
+            flex-shrink: 0;
+        }
+
+        .content-text {
+            font-size: 1.15em;
+            line-height: 1.8;
+            color: #1f2937;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: #1a5c3a;
+        }
+
+        .verse-container {
+            background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
+            border: 2px solid #34d399;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+            box-shadow: 0 6px 20px rgba(52, 211, 153, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .verse-container:hover {
+            box-shadow: 0 8px 25px rgba(52, 211, 153, 0.25);
+            transform: translateY(-2px);
+        }
+
+        .verse-french {
+            font-size: 1.25em;
+            font-weight: bold;
+            color: #1a5c3a;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .verse-hebrew {
+            font-size: 1.8em;
+            font-family: 'Times New Roman', serif;
+            direction: rtl;
+            text-align: right;
+            color: #065f46;
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(209, 250, 229, 0.5);
+            border-radius: 8px;
+            line-height: 1.8;
+        }
+
+        .verse-transliteration {
+            font-size: 1.1em;
+            font-style: italic;
+            color: #1a5c3a;
+            margin: 12px 0;
+        }
+
+        .verse-reference {
+            font-size: 0.95em;
+            color: #065f46;
+            font-weight: bold;
+            margin-top: 12px;
+        }
+
+        .light-verse {
+            border-color: #34d399;
+            background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
+        }
+
+        .garment-verse {
+            border-color: #10b981;
+            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+        }
+
+        .consecration-verse {
+            border-color: #059669;
+            background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+        }
+
+        .ketoret-verse {
+            border-color: #047857;
+            background: linear-gradient(135deg, #f0fdf4, #d1fae5);
+        }
+
+        .moshe-verse {
+            border-color: #065f46;
+            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+        }
+
+        .conclusion-box {
+            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+            padding: 40px;
+            border-radius: 15px;
+            border: 3px solid #10b981;
+            margin-top: 50px;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+        }
+
+        .video-section {
+            margin: 50px 0;
+            padding: 30px;
+            background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
+            border-radius: 15px;
+            border: 2px solid #34d399;
+        }
+
+        .video-title {
+            font-size: 1.8em;
+            color: #1a5c3a;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-description {
+            margin-top: 20px;
+            font-size: 1.05em;
+            line-height: 1.7;
+            color: #1f2937;
+            text-align: justify;
+        }
+
+        .footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 3px solid #10b981;
+            text-align: center;
+        }
+
+        .footer-author {
+            font-size: 1.2em;
+            color: #1a5c3a;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .footer-hebrew {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.3em;
+            color: #059669;
+        }
+
+        .footer-subtitle {
+            font-size: 1em;
+            color: #065f46;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+                margin-top: 15px;
+                margin-bottom: 15px;
+            }
+
+            .header {
+                margin: -20px -15px 30px -15px;
+                padding: 25px 15px;
+            }
+
+            .title {
+                font-size: 2em;
+            }
+
+            .hebrew-title {
+                font-size: 2.3em;
+            }
+
+            .subtitle {
+                font-size: 1.1em;
+            }
+
+            .section-title {
+                font-size: 1.3em;
+                padding: 12px 15px;
+            }
+
+            .content-text {
+                font-size: 1.05em;
+            }
+
+            .verse-french {
+                font-size: 1.1em;
+            }
+
+            .verse-hebrew {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-indicator"></div>
+    
+    <div class="container">
+        <a href="https://parashot-mormin.netlify.app/" class="back-button">
+            ← Retour au site principal
+        </a>
+
+        <div class="header">
+            <div class="hebrew-title">תְּצַוֶּה</div>
+            <h1 class="title">Paracha Tétsavé</h1>
+            <p class="subtitle">La lumière qui ne s'éteint jamais</p>
+            <p class="reference">📜 Shemot (Exode) 27:20 – 30:10</p>
+        </div>
+
+        <!-- INTRODUCTION -->
+        <div class="intro-box">
+            <h2 style="font-size: 1.4em; color: #1a5c3a; margin-bottom: 20px; font-weight: bold;">
+                🔷 Introduction – Le contexte
+            </h2>
+
+            <p class="content-text">
+                La Paracha <strong>Tétsavé</strong> s'inscrit dans la continuité directe de la Paracha Teroumah.
+                Si Teroumah décrivait la <em>structure</em> du Michkan, Tétsavé se concentre sur ceux qui 
+                vont y <em>servir</em> — et sur la flamme qui ne doit jamais s'éteindre.
+            </p>
+
+            <p class="content-text">
+                Cette paracha traite de quatre grandes thématiques : l'huile pure pour la Ménorah, 
+                les vêtements sacrés du Cohen Gadol, la consécration des Cohanim, et l'autel des encens.
+            </p>
+
+            <p class="content-text">
+                Elle est aussi remarquable par un silence éloquent : 
+                <span class="highlight">le nom de Moché n'y apparaît pas</span> — fait unique depuis sa naissance 
+                dans la Torah. Les maîtres séfarades en ont tiré des enseignements d'une profondeur exceptionnelle.
+            </p>
+        </div>
+
+        <!-- SECTION 1 : LA LUMIÈRE PERPÉTUELLE -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🕯️</span>
+                1. La lumière perpétuelle – נֵר תָּמִיד
+            </h2>
+
+            <p class="content-text">
+                Le verset d'ouverture pose le commandement fondamental :
+            </p>
+
+            <div class="verse-container light-verse">
+                <p class="verse-hebrew">
+                    וְאַתָּה תְּצַוֶּה אֶת־בְּנֵי יִשְׂרָאֵל
+                    וְיִקְחוּ אֵלֶיךָ שֶׁמֶן זַיִת זָךְ כָּתִית לַמָּאוֹר
+                    לְהַעֲלֹת נֵר תָּמִיד
+                </p>
+
+                <p class="verse-transliteration">
+                    <em>VeAta tetzavé et Bné Israël — veyik'hou elékha shemen zayit za'h katit laMaor — leha'alot ner tamid.</em>
+                </p>
+
+                <p class="verse-french">
+                    "Tu ordonneras aux enfants d'Israël qu'ils prennent pour toi une huile d'olive pure, 
+                    concassée pour le luminaire, afin d'élever une flamme perpétuelle."
+                </p>
+
+                <p class="verse-reference">(Shemot 27:20 / Exode 27:20)</p>
+            </div>
+
+            <p class="content-text">
+                Dans la tradition séfarade, notamment selon le <strong>Ben Ish Haï</strong> et le <strong>Or HaHaïm</strong>, 
+                l'huile pure symbolise l'âme d'Israël. L'olive est pressée — comme Israël est éprouvé. 
+                L'huile en sort pure — et la lumière jaillit de l'épreuve.
+            </p>
+
+            <p class="content-text">
+                Le verset dit <span class="highlight">ner tamid</span> — une flamme constante, perpétuelle.
+                Ce n'est pas seulement la lumière du Michkan. C'est la lumière de la Torah, 
+                la lumière de la fidélité, la lumière intérieure de chaque âme d'Israël.
+            </p>
+
+            <p class="content-text">
+                L'expression <em>leha'alot ner</em> — "élever la flamme" — est significative. 
+                Le rôle du guide spirituel n'est pas d'allumer une flamme étrangère chez l'autre, 
+                mais d'aider chacun à révéler la lumière qui est déjà en lui.
+            </p>
+        </div>
+
+        <!-- SECTION 2 : LES VÊTEMENTS DU COHEN GADOL -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">👑</span>
+                2. Les vêtements du Cohen Gadol – לְכָבוֹד וּלְתִפְאָרֶת
+            </h2>
+
+            <p class="content-text">
+                Ashem ordonne la confection des vêtements sacrés :
+            </p>
+
+            <div class="verse-container garment-verse">
+                <p class="verse-hebrew">
+                    וְעָשִׂיתָ בִגְדֵי־קֹדֶשׁ
+                    לְאַהֲרֹן אָחִיךָ
+                    לְכָבוֹד וּלְתִפְאָרֶת
+                </p>
+
+                <p class="verse-transliteration">
+                    <em>Ve'asita bigdé kodesh — leAharon a'hikha — le'khavod ouletifaret.</em>
+                </p>
+
+                <p class="verse-french">
+                    "Tu feras des vêtements sacrés pour Aharon ton frère, pour la gloire et pour la splendeur."
+                </p>
+
+                <p class="verse-reference">(Shemot 28:2 / Exode 28:2)</p>
+            </div>
+
+            <p class="content-text">
+                Les huit vêtements du Cohen Gadol ne sont pas ornementaux. Chaque vêtement correspond 
+                à une dimension spirituelle précise. Dans la tradition séfarade :
+            </p>
+
+            <p class="content-text">
+                • Le <strong>'Hoshen</strong> (pectoral aux douze pierres) représente la responsabilité collective.
+                Les pierres portent les noms des douze tribus — le Cohen Gadol porte littéralement 
+                tout Israël sur son cœur.<br><br>
+                • Le <strong>Mé'il</strong> (manteau) avec ses clochettes et ses grenades symbolise la parole pure 
+                et l'équilibre entre le son et le silence.<br><br>
+                • La <strong>Tsits</strong> (lame d'or sur le front) porte l'inscription 
+                <em>Kodesh lAdonaï</em> — "Sanctifié pour l'Éternel".
+            </p>
+
+            <p class="content-text">
+                Le Talmud enseigne que chaque vêtement expiait une faute spécifique du peuple. 
+                La fonction sacerdotale est ainsi à la fois <span class="highlight">élévation, réparation et médiation</span> 
+                entre Israël et Adonaï.
+            </p>
+        </div>
+
+        <!-- SECTION 3 : CONSÉCRATION DES COHANIM -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🔥</span>
+                3. L'intronisation des Cohanim – שִׁבְעַת יָמִים
+            </h2>
+
+            <p class="content-text">
+                Le chapitre 29 décrit en détail la consécration des prêtres :
+            </p>
+
+            <div class="verse-container consecration-verse">
+                <p class="verse-hebrew">
+                    וְקִדַּשְׁתָּ אֹתָם
+                    וְכִהֲנוּ לִי
+                </p>
+
+                <p class="verse-transliteration">
+                    <em>Vekidashta otam — vekihanou li.</em>
+                </p>
+
+                <p class="verse-french">
+                    "Tu les sanctifieras et ils exerceront la prêtrise pour Moi."
+                </p>
+
+                <p class="verse-reference">(Shemot 28:41 / Exode 28:41)</p>
+            </div>
+
+            <p class="content-text">
+                La consécration dure sept jours. Pourquoi sept ? Selon la tradition séfarade, 
+                sept est le chiffre de la création du monde. 
+                Consacrer les Cohanim en sept jours, c'est recréer un monde harmonieux autour du service divin.
+            </p>
+
+            <p class="content-text">
+                Le service du Michkan n'est pas magique ni spontané. Il est 
+                <span class="highlight">structuré, ordonné, précis</span>. 
+                La spiritualité juive authentique est discipline — et la discipline est un acte d'amour.
+            </p>
+
+            <p class="content-text">
+                Aharon et ses fils n'accèdent pas à la prêtrise par héritage seul. 
+                Ils y entrent par un processus de transformation intérieure, marqué par 
+                l'onction, les offrandes, et l'immersion dans la sainteté progressive.
+            </p>
+        </div>
+
+        <!-- SECTION 4 : LA KETORET -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🌿</span>
+                4. Le Mizbéa'h des encens – מִזְבַּח הַקְּטֹרֶת
+            </h2>
+
+            <div class="verse-container ketoret-verse">
+                <p class="verse-hebrew">
+                    וְעָשִׂיתָ מִזְבֵּחַ מִקְטַר קְטֹרֶת
+                </p>
+
+                <p class="verse-transliteration">
+                    <em>Ve'asita mizbéa'h miktar ketoret.</em>
+                </p>
+
+                <p class="verse-french">
+                    "Tu feras un autel pour brûler l'encens."
+                </p>
+
+                <p class="verse-reference">(Shemot 30:1 / Exode 30:1)</p>
+            </div>
+
+            <p class="content-text">
+                La Ketoret (l'encens) est composée de onze aromates. Le Zohar révèle que même les 
+                aromates aux effluves moins agréables sont intégrés à la composition — 
+                car l'encens symbolise l'<span class="highlight">unité dans la diversité</span>.
+            </p>
+
+            <p class="content-text">
+                La transformation est au cœur du mystère de la Ketoret : 
+                le feu consume les aromates, et leur substance monte vers le Ciel. 
+                Ce qui semblait voué à disparaître devient offrande de lumière.
+            </p>
+
+            <p class="content-text">
+                Dans la tradition séfarade, la lecture quotidienne du passage de la Ketoret 
+                est considérée comme une protection spirituelle et une source de bénédiction. 
+                Nos maîtres y voient un rappel quotidien de la puissance de l'unité et de la transformation.
+            </p>
+        </div>
+
+        <!-- SECTION 5 : L'ABSENCE DU NOM DE MOCHÉ -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">✨</span>
+                5. L'absence du nom de Moché – הֲעֶלֶם הַשֵּׁם
+            </h2>
+
+            <p class="content-text">
+                Tétsavé est la seule paracha depuis la naissance de Moché où son nom n'apparaît pas.
+                Comment comprendre ce silence ?
+            </p>
+
+            <p class="content-text">
+                Lors du veau d'or, Moché intercédera auprès d'Ashem et prononcera ces paroles bouleversantes :
+            </p>
+
+            <div class="verse-container moshe-verse">
+                <p class="verse-hebrew">
+                    וְאִם־אַיִן
+                    מְחֵנִי נָא מִסִּפְרְךָ אֲשֶׁר כָּתָבְתָּ
+                </p>
+
+                <p class="verse-transliteration">
+                    <em>Ve'im ayin — me'héni na misifrekha asher katavta.</em>
+                </p>
+
+                <p class="verse-french">
+                    "Sinon, efface-moi de Ton livre que Tu as écrit."
+                </p>
+
+                <p class="verse-reference">(Shemot 32:32 / Exode 32:32)</p>
+            </div>
+
+            <p class="content-text">
+                Les sages séfarades enseignent : la parole d'un Tsadik porte un poids réel. 
+                Moché a demandé d'être effacé — sa parole se réalise partiellement dans cette paracha 
+                où son nom disparaît.
+            </p>
+
+            <p class="content-text">
+                Paradoxalement, c'est ici qu'il est <span class="highlight">le plus présent</span>. 
+                La paracha s'ouvre sur :
+            </p>
+
+            <div class="verse-container light-verse">
+                <p class="verse-hebrew">
+                    וְאַתָּה תְּצַוֶּה
+                </p>
+
+                <p class="verse-transliteration">
+                    <em>VeAta tetzavé...</em>
+                </p>
+
+                <p class="verse-french">
+                    "Et <strong>toi</strong> tu ordonneras..."
+                </p>
+            </div>
+
+            <p class="content-text">
+                Le <em>Ata</em> — le "toi" — désigne Moché. Son essence est là, entière, 
+                sans avoir besoin d'être nommée. Le vrai grand n'a pas besoin de son nom pour exister.
+            </p>
+
+            <p class="content-text">
+                C'est une leçon d'humilité absolue : 
+                <span class="highlight">la grandeur véritable réside parfois dans l'effacement</span>.
+                Moché disparaît en lettres, mais sa présence emplit toute la paracha.
+            </p>
+        </div>
+
+        <!-- CONCLUSION -->
+        <div class="conclusion-box">
+            <h2 class="section-title" style="background: transparent; border: none; padding: 0; margin-bottom: 20px;">
+                <span class="section-icon">🌅</span>
+                Conclusion
+            </h2>
+
+            <p class="content-text">
+                La Paracha Tétsavé nous transmet quatre grandes leçons pour notre vie spirituelle :
+            </p>
+
+            <p class="content-text">
+                La <strong>flamme perpétuelle</strong> ne dépend pas d'un bâtiment. 
+                Elle dépend de la pureté intérieure — comme l'huile d'olive pure, concassée, qui donne sa lumière.
+            </p>
+
+            <p class="content-text">
+                La <strong>splendeur du service</strong> ne réside pas dans l'or des vêtements, 
+                mais dans le cœur de celui qui les porte — un cœur habité par la responsabilité collective.
+            </p>
+
+            <p class="content-text">
+                La <strong>consécration</strong> est un processus. La sainteté ne tombe pas du ciel : 
+                elle se construit, jour après jour, dans la fidélité et la discipline.
+            </p>
+
+            <p class="content-text">
+                Et l'<strong>humilité du leadership</strong> : Moché, le plus grand des prophètes, 
+                apprend à s'effacer. Sa grandeur n'a pas besoin de son nom pour rayonner.
+            </p>
+
+            <p class="content-text" style="margin-top: 25px;">
+                Comme il est écrit au cœur de cette paracha :
+            </p>
+
+            <p class="verse-hebrew" style="font-size: 1.5em; text-align: center; background: rgba(209, 250, 229, 0.5); padding: 20px; border-radius: 10px; margin: 20px 0;">
+                לְהַעֲלֹת נֵר תָּמִיד
+            </p>
+
+            <p class="content-text" style="text-align: center; font-style: italic; margin-bottom: 25px;">
+                <em>Leha'alot ner tamid</em><br>
+                "Pour élever une flamme perpétuelle."
+            </p>
+
+            <p class="content-text">
+                Que nous sachions, chacun à notre mesure, entretenir la flamme intérieure 
+                qui ne s'éteint jamais — et en élever la lumière vers ceux qui nous entourent.
+            </p>
+
+            <p class="content-text" style="text-align: center; font-size: 1.3em; font-weight: bold; color: #1a5c3a; margin-top: 30px;">
+                Shabbat Shalom.
+            </p>
+        </div>
+
+        <!-- VIDÉO -->
+        <div class="video-section">
+            <h2 class="video-title">
+                🎥 Étude vidéo de la Paracha Tétsavé
+            </h2>
+            <div class="video-container">
+                <iframe
+                    src="https://www.youtube.com/embed/D-XrWsYNTxY"
+                    title="Paracha Tétsavé – תצוה | La lumière perpétuelle et la grandeur du service | Étude complète – Tradition séfarade"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="video-description">
+                Découvrez cette étude en format vidéo pour approfondir votre compréhension de la Paracha Tétsavé 
+                et du mystère de la lumière perpétuelle. Une exploration de la flamme éternelle — <em>ner tamid</em> —, 
+                des vêtements sacrés du Cohen Gadol et de leur symbolique spirituelle, de la consécration des Cohanim, 
+                de la Ketoret et de l'unité qu'elle symbolise, et du silence éloquent autour du nom de Moché. 
+                Une réflexion sur l'humilité du leadership et la grandeur de l'effacement, dans la tradition séfarade.
+            </p>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <div class="footer-author">
+                Étude de la Paracha Tétsavé par <span class="footer-hebrew">אריאל מרמן</span> (Ariel Mormin)
+            </div>
+            <div class="footer-subtitle">
+                • La lumière qui ne s'éteint jamais — נֵר תָּמִיד •
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Indicateur de progression de scroll
+        window.addEventListener('scroll', () => {
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            scrollIndicator.style.transform = `scaleX(${scrolled / 100})`;
+        });
+
+        // Animation d'apparition au scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        // Application de l'animation à tous les éléments
+        document.querySelectorAll('.section, .verse-container, .conclusion-box, .video-section, .intro-box').forEach((element) => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(element);
+        });
+
+        // Effet hover sur les conteneurs de versets
+        document.querySelectorAll('.verse-container').forEach(container => {
+            container.addEventListener('mouseenter', () => {
+                container.style.transform = 'translateY(-2px)';
+                container.style.transition = 'transform 0.3s ease';
+            });
+
+            container.addEventListener('mouseleave', () => {
+                container.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>

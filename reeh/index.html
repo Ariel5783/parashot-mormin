@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paracha Re'eh - ראה - Vois : la bénédiction et la malédiction</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            min-height: 100vh;
+            color: #333;
+            position: relative;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.96);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            margin: -40px -20px 50px -20px;
+            border-radius: 20px 20px 0 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="40" fill="white" opacity="0.1">👁️</text></svg>') repeat;
+            background-size: 80px 80px;
+            opacity: 0.15;
+        }
+
+        .title {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hebrew-title {
+            font-size: 3.2em;
+            color: #f093fb;
+            margin-bottom: 15px;
+            font-family: 'Times New Roman', serif;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-size: 1.4em;
+            font-style: italic;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        .context-box {
+            background: linear-gradient(135deg, #fff5f5, #fed7d7);
+            padding: 35px;
+            border-radius: 15px;
+            border-left: 6px solid #667eea;
+            margin-bottom: 45px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .context-box::before {
+            content: "📖";
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 2em;
+            opacity: 0.3;
+        }
+
+        .section {
+            margin-bottom: 45px;
+            padding: 20px 0;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #667eea;
+            margin-bottom: 25px;
+            font-weight: bold;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #f7fafc, #edf2f7);
+            border-radius: 10px;
+            border-left: 5px solid #764ba2;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-icon {
+            font-size: 1.3em;
+        }
+
+        .verse-container {
+            background: linear-gradient(135deg, #f8faff, #e6f3ff);
+            padding: 30px;
+            margin: 25px 0;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.1);
+            position: relative;
+        }
+
+        .choice-verse {
+            background: linear-gradient(135deg, #fff5f5, #fed7d7);
+            border: 3px solid #f093fb;
+            box-shadow: 0 8px 25px rgba(240, 147, 251, 0.2);
+        }
+
+        .blessing-verse {
+            background: linear-gradient(135deg, #f0fff4, #dcfce7);
+            border: 2px solid #22c55e;
+            box-shadow: 0 5px 15px rgba(34, 197, 94, 0.1);
+        }
+
+        .curse-verse {
+            background: linear-gradient(135deg, #fef2f2, #fee2e2);
+            border: 2px solid #ef4444;
+            box-shadow: 0 5px 15px rgba(239, 68, 68, 0.1);
+        }
+
+        .verse-french {
+            font-size: 1.15em;
+            margin-bottom: 18px;
+            font-weight: 600;
+            color: #2d3748;
+            line-height: 1.7;
+        }
+
+        .verse-hebrew {
+            font-size: 1.4em;
+            font-family: 'Times New Roman', serif;
+            direction: rtl;
+            text-align: right;
+            margin-bottom: 18px;
+            color: #667eea;
+            font-weight: bold;
+            line-height: 2;
+            background: rgba(102, 126, 234, 0.05);
+            padding: 12px;
+            border-radius: 8px;
+        }
+
+        .verse-transliteration {
+            font-size: 1.05em;
+            font-style: italic;
+            color: #764ba2;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .verse-reference {
+            font-size: 0.95em;
+            color: #718096;
+            text-align: right;
+            font-weight: bold;
+        }
+
+        .content-text {
+            font-size: 1.1em;
+            line-height: 1.8;
+            text-align: justify;
+            color: #2d3748;
+            margin-bottom: 20px;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #f093fb 0%, transparent 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .dual-choice-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .blessing-box {
+            background: linear-gradient(135deg, #f0fff4, #dcfce7);
+            padding: 25px;
+            border-radius: 12px;
+            border: 3px solid #22c55e;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(34, 197, 94, 0.15);
+        }
+
+        .curse-box {
+            background: linear-gradient(135deg, #fef2f2, #fee2e2);
+            padding: 25px;
+            border-radius: 12px;
+            border: 3px solid #ef4444;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(239, 68, 68, 0.15);
+        }
+
+        .choice-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .blessing-title {
+            color: #16a34a;
+        }
+
+        .curse-title {
+            color: #dc2626;
+        }
+
+        .conclusion-box {
+            background: linear-gradient(135deg, #fef9e7, #fef3c7);
+            padding: 35px;
+            border-radius: 15px;
+            border: 3px solid #f093fb;
+            margin-top: 45px;
+            box-shadow: 0 10px 25px rgba(240, 147, 251, 0.2);
+            position: relative;
+        }
+
+        .conclusion-box::before {
+            content: "✨";
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2em;
+            opacity: 0.4;
+        }
+
+        .list-item {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+            font-size: 1.05em;
+            line-height: 1.6;
+        }
+
+        .list-item:before {
+            content: "•";
+            color: #667eea;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1.3em;
+        }
+
+        .video-section {
+            background: linear-gradient(135deg, #f8faff, #e6f3ff);
+            padding: 35px;
+            border-radius: 20px;
+            border: 3px solid #667eea;
+            margin: 45px 0;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.15);
+        }
+
+        .video-title {
+            font-size: 1.7em;
+            color: #667eea;
+            margin-bottom: 25px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 850px;
+            margin: 0 auto;
+            padding-bottom: 56.25%;
+            height: 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            border: 4px solid #764ba2;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-description {
+            margin-top: 25px;
+            font-size: 1.1em;
+            color: #4a5568;
+            font-style: italic;
+            line-height: 1.7;
+        }
+
+        .footer {
+            margin-top: 50px;
+            padding: 35px;
+            border-top: 3px solid #f093fb;
+            text-align: center;
+            background: linear-gradient(135deg, #f8faff, #e6f3ff);
+            border-radius: 15px;
+        }
+
+        .footer-author {
+            font-size: 1.2em;
+            color: #667eea;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .footer-hebrew {
+            font-size: 1.4em;
+            color: #f093fb;
+            font-family: 'Times New Roman', serif;
+            margin: 0 8px;
+            font-weight: bold;
+        }
+
+        .footer-subtitle {
+            font-size: 1.05em;
+            color: #718096;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 20px;
+            }
+            
+            .header {
+                margin: -20px -20px 30px -20px;
+            }
+            
+            .title {
+                font-size: 2.2em;
+            }
+            
+            .hebrew-title {
+                font-size: 2.8em;
+            }
+            
+            .verse-hebrew {
+                font-size: 1.2em;
+            }
+
+            .dual-choice-box {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+            transform-origin: left;
+            transform: scaleX(0);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-indicator"></div>
+    
+    <div class="container">
+        <div class="header">
+            <div class="hebrew-title">ראה</div>
+            <h1 class="title">Paracha Re'eh</h1>
+            <p class="subtitle">« Vois : la bénédiction et la malédiction »</p>
+        </div>
+
+        <div class="context-box">
+            <p class="content-text">
+                La <span class="emphasis">Paracha Re'eh</span> (ראה – « Vois ») se trouve dans le livre de <span class="emphasis">Devarim (Deutéronome 11:26 – 16:17)</span>. Moïse continue son grand discours avant l'entrée en Terre promise. Il place devant Israël un <span class="highlight">choix décisif</span> : la bénédiction s'ils suivent les commandements, et la malédiction s'ils s'en détournent.
+            </p>
+            <br>
+            <p class="content-text">
+                Cette paracha aborde plusieurs thèmes centraux : le <span class="emphasis">libre arbitre</span> et la responsabilité individuelle, l'<span class="emphasis">unité du culte</span> autour du lieu que D.ieu choisira, l'avertissement contre l'<span class="emphasis">idolâtrie</span>, les lois de la <span class="emphasis">cashrout</span>, et l'importance des <span class="emphasis">fêtes de pèlerinage</span> et de la générosité.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">👁️</span>
+                1. Le choix fondamental : bénédiction ou malédiction
+            </h2>
+            
+            <div class="verse-container choice-verse">
+                <p class="verse-french">"Vois, je mets aujourd'hui devant vous la bénédiction et la malédiction."</p>
+                
+                <p class="verse-hebrew">רְאֵה אָנֹכִי נֹתֵן לִפְנֵיכֶם הַיּוֹם בְּרָכָה וּקְלָלָה</p>
+                
+                <p class="verse-transliteration"><em>Re'eh anokhi noten lifnékhem hayom berakha u-qelala</em></p>
+                
+                <p class="verse-reference">(Deutéronome 11:26)</p>
+            </div>
+            
+            <p class="content-text">
+                Moïse souligne que le choix est <span class="emphasis">personnel et collectif</span>. La bénédiction n'est pas automatique : elle découle de l'attachement à la Torah. Dans la pensée juive, cela exprime le principe du <span class="highlight">libre arbitre (bé'hira 'hofshit)</span> : chaque être humain détient le pouvoir de choisir sa destinée spirituelle.
+            </p>
+
+            <div class="dual-choice-box">
+                <div class="blessing-box">
+                    <h3 class="choice-title blessing-title">
+                        🌟 La Bénédiction
+                    </h3>
+                    <p>Par l'obéissance aux commandements et la fidélité à l'alliance</p>
+                </div>
+                <div class="curse-box">
+                    <h3 class="choice-title curse-title">
+                        ⚡ La Malédiction
+                    </h3>
+                    <p>Par l'éloignement de la voie divine et l'infidélité</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🏛️</span>
+                2. Un lieu unique pour le service divin
+            </h2>
+            
+            <div class="verse-container">
+                <p class="verse-french">"Vous n'agirez donc plus comme nous agissons ici aujourd'hui, chacun faisant ce qui lui semble bon."</p>
+                
+                <p class="verse-hebrew">לֹא־תַעֲשׂוּן כָּל־אִישׁ כָּל־הַיָּשָׁר בְּעֵינָיו</p>
+                
+                <p class="verse-transliteration"><em>Lo ta'assoun kol-ish kol-hayashar bé'enav</em></p>
+                
+                <p class="verse-reference">(Deutéronome 12:8)</p>
+            </div>
+            
+            <p class="content-text">
+                Cette <span class="emphasis">centralisation du culte</span> vise à préserver l'unité du peuple et à l'éloigner des pratiques idolâtres environnantes. Dans la tradition rabbinique, ce passage est vu comme une préparation à la sanctification de <span class="highlight">Jérusalem</span>.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">⚠️</span>
+                3. Mise en garde contre l'idolâtrie
+            </h2>
+            
+            <div class="verse-container">
+                <p class="verse-french">"Tu suivras l'Éternel ton D.ieu, tu le craindras, tu observeras Ses commandements…"</p>
+                
+                <p class="verse-hebrew">אַחֲרֵי יְיָ אֱלֹהֵיכֶם תֵּלֵכוּ וְאֹתוֹ תִירָאוּ וְאֶת־מִצְו‍ֹתָיו תִּשְׁמֹרוּ</p>
+                
+                <p class="verse-transliteration"><em>A'harei Adonaï Elohekhem télékhou, vé-oto tiraou, vé-et mitsvotav tishmorou</em></p>
+                
+                <p class="verse-reference">(Deutéronome 13:5)</p>
+            </div>
+            
+            <p class="content-text">
+                La Torah met en garde contre les <span class="emphasis">faux prophètes</span> et contre la tentation d'imiter les nations idolâtres. La fidélité à D.ieu est présentée comme <span class="highlight">la condition de la vie d'Israël en Terre promise</span>.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🍽️</span>
+                4. Les lois alimentaires (Cashrout)
+            </h2>
+            
+            <p class="content-text">
+                La Paracha rappelle les distinctions entre animaux purs et impurs :
+            </p>
+            
+            <div class="list-item">Mammifères <span class="emphasis">ruminants et à sabots fendus</span></div>
+            <div class="list-item">Poissons avec <span class="emphasis">nageoires et écailles</span></div>
+            <div class="list-item">Interdiction des <span class="emphasis">oiseaux de proie</span></div>
+            
+            <p class="content-text">
+                Ces lois enseignent la <span class="highlight">discipline spirituelle</span> et l'élévation par l'alimentation.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🤝</span>
+                5. Justice sociale et générosité
+            </h2>
+            
+            <div class="verse-container blessing-verse">
+                <p class="verse-french">"Tu ouvriras ta main à ton frère, à ton pauvre et à ton indigent dans ton pays."</p>
+                
+                <p class="verse-hebrew">כִּי־פָתֹחַ תִּפְתַּח אֶת־יָדְךָ לּוֹ</p>
+                
+                <p class="verse-transliteration"><em>Ki fatoaḥ tiftah et-yadékha lo</em></p>
+                
+                <p class="verse-reference">(Deutéronome 15:11)</p>
+            </div>
+            
+            <p class="content-text">
+                Un autre axe majeur de Re'eh est la solidarité : la <span class="emphasis">dîme</span> pour les Lévites, les pauvres et les orphelins, l'<span class="emphasis">année de remise des dettes</span> (Shmita), la libération des esclaves hébreux après six ans. La véritable fidélité à D.ieu s'exprime dans <span class="highlight">la justice et la générosité</span>.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🎉</span>
+                6. Les fêtes de pèlerinage
+            </h2>
+            
+            <p class="content-text">
+                La Paracha conclut en évoquant les <span class="emphasis">trois fêtes de pèlerinage</span> (Shalosh Regalim) : <span class="highlight">Pessa'h, Chavouot, Souccot</span>. Elles unissent culte, mémoire historique et joie communautaire à Jérusalem.
+            </p>
+        </div>
+
+        <div class="conclusion-box">
+            <h2 class="section-title">
+                <span class="section-icon">✨</span>
+                Conclusion - Un appel à la responsabilité spirituelle
+            </h2>
+            
+            <p class="content-text">
+                La Paracha <span class="emphasis">Re'eh</span> est une invitation à la <span class="highlight">responsabilité spirituelle</span>.
+            </p>
+            <br>
+            
+            <div class="list-item">Elle rappelle que chaque individu possède la capacité de <span class="emphasis">choisir entre vie et destruction</span></div>
+            <div class="list-item">Elle souligne l'importance de l'<span class="emphasis">unité du culte</span> et de la fidélité au D.ieu d'Israël</div>
+            <div class="list-item">Elle lie <span class="emphasis">piété et justice sociale</span>, insistant sur l'attention aux pauvres</div>
+            <div class="list-item">Elle projette Israël vers son avenir en Terre promise, centré sur <span class="emphasis">Jérusalem</span></div>
+            
+            <br>
+            <p class="content-text">
+                En définitive, <span class="highlight">Re'eh</span> nous enseigne que la liberté humaine prend tout son sens dans le cadre de l'alliance avec D.ieu : <em>« Vois, je mets devant toi aujourd'hui la vie et le bien, la mort et le mal »</em> (Deut. 30:15).
+            </p>
+        </div>
+
+        <div class="video-section">
+            <h2 class="video-title">
+                🎥 Étude vidéo de la Paracha Re'eh
+            </h2>
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/X64LPd9kknU" 
+                    title="Paracha Re'eh - Vois : la bénédiction et la malédiction"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="video-description">
+                Découvrez cette étude en format vidéo pour approfondir votre compréhension 
+                de la Paracha Re'eh et de ses enseignements sur le libre arbitre et la responsabilité spirituelle.
+            </p>
+        </div>
+
+        <div class="footer">
+            <div class="footer-author">
+                Étude de la Paracha Re'eh par <span class="footer-hebrew">אריאל מרמן</span> (Ariel Mormin)
+            </div>
+            <div class="footer-subtitle">
+                • L'écho éternel de l'Alliance dans le choix et la responsabilité •
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Animation de la barre de progression
+        window.addEventListener('scroll', () => {
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            scrollIndicator.style.transform = `scaleX(${scrolled / 100})`;
+        });
+        
+        // Animation d'apparition des sections
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        // Animation pour toutes les sections
+        document.querySelectorAll('.section, .verse-container, .conclusion-box, .video-section').forEach((element) => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(element);
+        });
+
+        // Animation spéciale pour les boîtes de choix
+        const choiceBoxes = document.querySelectorAll('.blessing-box, .curse-box');
+        choiceBoxes.forEach((box, index) => {
+            box.style.opacity = '0';
+            box.style.transform = index === 0 ? 'translateX(-50px)' : 'translateX(50px)';
+            box.style.transition = 'opacity 1s ease, transform 1s ease';
+            
+            setTimeout(() => {
+                observer.observe(box);
+            }, index * 200);
+        });
+    </script>
+</body>
+</html>

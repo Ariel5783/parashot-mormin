@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paracha Toledot - תּוֹלְדוֹת - Les lignées et les tensions qui façonnent une destinée</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 50%, #059669 100%);
+            min-height: 100vh;
+            color: #333;
+            position: relative;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #1e3a8a, #7c3aed);
+            margin: -40px -20px 50px -20px;
+            border-radius: 20px 20px 0 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="40" fill="white" opacity="0.1">📖</text></svg>') repeat;
+            background-size: 80px 80px;
+            opacity: 0.15;
+        }
+
+        .title {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hebrew-title {
+            font-size: 3.2em;
+            color: #059669;
+            margin-bottom: 15px;
+            font-family: 'Times New Roman', serif;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-size: 1.4em;
+            font-style: italic;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        .reference {
+            font-size: 1.1em;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .intro-box {
+            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+            padding: 35px;
+            border-radius: 15px;
+            border-left: 6px solid #059669;
+            margin-bottom: 45px;
+            box-shadow: 0 8px 20px rgba(5, 150, 105, 0.2);
+            position: relative;
+        }
+
+        .intro-box::before {
+            content: "✨";
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 2em;
+            opacity: 0.3;
+        }
+
+        .section {
+            margin-bottom: 45px;
+            padding: 20px 0;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #1e3a8a;
+            margin-bottom: 25px;
+            font-weight: bold;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #f7fafc, #edf2f7);
+            border-radius: 10px;
+            border-left: 5px solid #7c3aed;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-icon {
+            font-size: 1.3em;
+        }
+
+        .verse-container {
+            background: linear-gradient(135deg, #f8f6ff, #f0e6ff);
+            padding: 30px;
+            margin: 25px 0;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+            box-shadow: 0 5px 15px rgba(124, 58, 237, 0.1);
+            position: relative;
+        }
+
+        .key-verse {
+            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+            border: 3px solid #059669;
+            box-shadow: 0 8px 25px rgba(5, 150, 105, 0.2);
+        }
+
+        .promise-verse {
+            background: linear-gradient(135deg, #fef7f7, #fed7d7);
+            border: 2px solid #dc2626;
+            box-shadow: 0 5px 15px rgba(220, 38, 38, 0.1);
+        }
+
+        .covenant-verse {
+            background: linear-gradient(135deg, #f0f9ff, #dbeafe);
+            border: 2px solid #2563eb;
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.1);
+        }
+
+        .fire-verse {
+            background: linear-gradient(135deg, #fff8f5, #fef3c7);
+            border: 2px solid #f59e0b;
+            box-shadow: 0 5px 15px rgba(245, 158, 11, 0.1);
+        }
+
+        .verse-french {
+            font-size: 1.15em;
+            margin-bottom: 18px;
+            font-weight: 600;
+            color: #2d3748;
+            line-height: 1.7;
+        }
+
+        .verse-hebrew {
+            font-size: 1.4em;
+            font-family: 'Times New Roman', serif;
+            direction: rtl;
+            text-align: right;
+            margin-bottom: 18px;
+            color: #1e3a8a;
+            font-weight: bold;
+            line-height: 2;
+            background: rgba(30, 58, 138, 0.05);
+            padding: 12px;
+            border-radius: 8px;
+        }
+
+        .verse-transliteration {
+            font-size: 1.05em;
+            font-style: italic;
+            color: #7c3aed;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .verse-reference {
+            font-size: 0.95em;
+            color: #718096;
+            text-align: right;
+            font-weight: bold;
+        }
+
+        .content-text {
+            font-size: 1.1em;
+            line-height: 1.8;
+            text-align: justify;
+            color: #2d3748;
+            margin-bottom: 20px;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            color: #1e3a8a;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #7c3aed 0%, transparent 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: white;
+        }
+
+        .themes-list {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 25px 0;
+        }
+
+        .themes-list ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .themes-list li {
+            padding: 15px;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #f8f6ff, #f0e6ff);
+            border-radius: 8px;
+            border-left: 4px solid #7c3aed;
+        }
+
+        .themes-list li:hover {
+            transform: translateX(5px);
+            transition: transform 0.3s ease;
+        }
+
+        .conclusion-box {
+            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+            padding: 35px;
+            border-radius: 15px;
+            border: 3px solid #059669;
+            margin-top: 45px;
+            box-shadow: 0 10px 25px rgba(5, 150, 105, 0.2);
+            position: relative;
+        }
+
+        .conclusion-box::before {
+            content: "🌟";
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2em;
+            opacity: 0.4;
+        }
+
+        .video-section {
+            background: linear-gradient(135deg, #f8f6ff, #f0e6ff);
+            padding: 35px;
+            border-radius: 20px;
+            border: 3px solid #1e3a8a;
+            margin: 45px 0;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(30, 58, 138, 0.15);
+        }
+
+        .video-title {
+            font-size: 1.7em;
+            color: #1e3a8a;
+            margin-bottom: 25px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 850px;
+            margin: 0 auto;
+            padding-bottom: 56.25%;
+            height: 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            border: 4px solid #7c3aed;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-description {
+            margin-top: 25px;
+            font-size: 1.1em;
+            color: #4a5568;
+            font-style: italic;
+            line-height: 1.7;
+        }
+
+        .footer {
+            margin-top: 50px;
+            padding: 35px;
+            border-top: 3px solid #059669;
+            text-align: center;
+            background: linear-gradient(135deg, #f8f6ff, #f0e6ff);
+            border-radius: 15px;
+        }
+
+        .footer-author {
+            font-size: 1.2em;
+            color: #1e3a8a;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .footer-hebrew {
+            font-size: 1.4em;
+            color: #059669;
+            font-family: 'Times New Roman', serif;
+            margin: 0 8px;
+            font-weight: bold;
+        }
+
+        .footer-subtitle {
+            font-size: 1.05em;
+            color: #718096;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 20px;
+            }
+            
+            .header {
+                margin: -20px -20px 30px -20px;
+            }
+            
+            .title {
+                font-size: 2.2em;
+            }
+            
+            .hebrew-title {
+                font-size: 2.8em;
+            }
+            
+            .verse-hebrew {
+                font-size: 1.2em;
+            }
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #1e3a8a, #7c3aed, #059669);
+            transform-origin: left;
+            transform: scaleX(0);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-indicator"></div>
+    
+    <div class="container">
+        <div class="header">
+            <div class="hebrew-title">תּוֹלְדוֹת</div>
+            <h1 class="title">Paracha Toledot</h1>
+            <p class="subtitle">"Les lignées et les tensions qui façonnent une destinée"</p>
+            <p class="reference">Genèse / Beréchit 25:19 – 28:9</p>
+        </div>
+
+        <div class="intro-box">
+            <h2 class="section-title">
+                <span class="section-icon">💫</span>
+                Introduction : Le contexte de Toledot
+            </h2>
+            
+            <div class="verse-container key-verse">
+                <p class="verse-french">"Voici les générations d'Isaac, fils d'Abraham."</p>
+                
+                <p class="verse-hebrew">וְאֵלֶּה תּוֹלְדוֹת יִצְחָק בֶּן־אַבְרָהָם</p>
+                
+                <p class="verse-transliteration"><em>Vé-eleh toledot Yits'hak ben Avraham</em></p>
+                
+                <p class="verse-reference">(Beréchit 25:19)</p>
+            </div>
+
+            <p class="content-text">
+                La Paracha <span class="emphasis">Toledot</span> ("générations", "lignées") s'ouvre sur l'histoire d'Isaac et de Rebecca, mais surtout sur <span class="highlight">la naissance de deux nations</span> incarnées par deux frères : <span class="emphasis">Jacob et Ésaü</span>.
+            </p>
+            <br>
+            <p class="content-text">
+                Dans la Torah, Toledot n'est pas seulement un récit familial : c'est <span class="highlight">l'annonce des dynamiques spirituelles, morales et politiques</span> qui marqueront toute l'histoire d'Israël.
+            </p>
+
+            <div class="themes-list">
+                <ul>
+                    <li>• La prière d'Isaac et Rebecca pour avoir des enfants</li>
+                    <li>• Les conflits prénataux entre Ésaü et Jacob</li>
+                    <li>• Le droit d'aînesse vendu</li>
+                    <li>• La bénédiction obtenue par Jacob</li>
+                    <li>• L'exil du futur patriarche</li>
+                </ul>
+            </div>
+
+            <p class="content-text">
+                <span class="emphasis">Toledot est le récit fondateur d'un choix</span> : qui portera l'Alliance, et comment ?
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🙏</span>
+                La prière comme moteur du destin
+            </h2>
+
+            <p class="content-text">
+                Isaac et Rebecca traversent une longue période de stérilité. Isaac prie <span class="emphasis">face à</span> sa femme — c'est-à-dire, disent les Sages, en harmonie avec elle :
+            </p>
+
+            <div class="verse-container covenant-verse">
+                <p class="verse-french">"Isaac implora l'Éternel en présence de sa femme."</p>
+                
+                <p class="verse-hebrew">וַיְעַתֵּר יִצְחָק לַיהוָה לְנֹכַח אִשְׁתּוֹ</p>
+                
+                <p class="verse-transliteration"><em>Vayéater Yits'hak l'Adonaï lenokhaḥ ishto</em></p>
+                
+                <p class="verse-reference">(Beréchit 25:21)</p>
+            </div>
+
+            <p class="content-text">
+                Dans la tradition séfarade, cette prière est comprise comme un acte d'<span class="highlight">union spirituelle</span>, préfigurant l'harmonie qu'exigera l'Alliance. Dieu répond, mais la grossesse se révèle douloureuse.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">👶</span>
+                Les jumeaux se heurtent : le conflit originel
+            </h2>
+
+            <p class="content-text">
+                Rebecca ressent une agitation violente :
+            </p>
+
+            <div class="verse-container promise-verse">
+                <p class="verse-french">"Les enfants se heurtaient en elle."</p>
+                
+                <p class="verse-hebrew">וַיִּתְרֹצְצוּ הַבָּנִים בְּקִרְבָּהּ</p>
+                
+                <p class="verse-transliteration"><em>Vayitrotsetsu habanim beqirbah</em></p>
+                
+                <p class="verse-reference">(Beréchit 25:22)</p>
+            </div>
+
+            <p class="content-text">
+                Selon le Midrash, Jacob "court" vers les maisons d'étude, Ésaü vers l'idolâtrie. Ce mouvement intérieur représente <span class="highlight">deux visions du monde</span> :
+            </p>
+
+            <div class="themes-list">
+                <ul>
+                    <li><strong>Jacob</strong> : l'intériorité, la voix, l'étude, l'écoute</li>
+                    <li><strong>Ésaü</strong> : l'immédiateté, la force, la terre, la chasse</li>
+                </ul>
+            </div>
+
+            <p class="content-text">
+                Dieu annonce alors :
+            </p>
+
+            <div class="verse-container key-verse">
+                <p class="verse-french">"Le grand servira le petit."</p>
+                
+                <p class="verse-hebrew">וְרַב יַעֲבֹד צָעִיר</p>
+                
+                <p class="verse-transliteration"><em>Vérav yaavod tsaïr</em></p>
+                
+                <p class="verse-reference">(Beréchit 25:23)</p>
+            </div>
+
+            <p class="content-text">
+                Cette prophétie ne parle pas de domination, mais de <span class="highlight">hiérarchie spirituelle</span>. L'aîné biologique n'est pas automatiquement l'héritier spirituel.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🍲</span>
+                Le droit d'aînesse : une transaction révélatrice
+            </h2>
+
+            <p class="content-text">
+                Ésaü revient du champ "épuisé" — <span class="emphasis">fatigué spirituellement</span>, disent les Sages. Il vend son droit d'aînesse pour un plat de lentilles.
+            </p>
+
+            <div class="verse-container fire-verse">
+                <p class="verse-french">"Ésaü méprisa le droit d'aînesse."</p>
+                
+                <p class="verse-hebrew">וַיִּבֶז עֵשָׂו אֶת־הַבְּכֹרָה</p>
+                
+                <p class="verse-transliteration"><em>Vayivez Essav et-habekhóra</em></p>
+                
+                <p class="verse-reference">(Beréchit 25:34)</p>
+            </div>
+
+            <p class="content-text">
+                Jacob n'achète pas un bien matériel : il récupère <span class="highlight">un rôle, un lien avec Dieu</span>. Ésaü lui-même reconnaît qu'il n'en voulait pas.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">✋</span>
+                La bénédiction d'Isaac : une transmission en tension
+            </h2>
+
+            <p class="content-text">
+                Le texte ne cache pas la douleur d'Isaac, aveugle, trompé. Mais la tradition séfarade souligne que Rebecca agit selon <span class="emphasis">la prophétie reçue</span> (25:23). Elle voit ce qu'Isaac ne peut plus voir.
+            </p>
+
+            <div class="verse-container covenant-verse">
+                <p class="verse-french">"Que Dieu te donne..."</p>
+                
+                <p class="verse-hebrew">וְיִתֶּן לְךָ הָאֱלֹהִים</p>
+                
+                <p class="verse-transliteration"><em>Veyiten lekha HaElohim...</em></p>
+                
+                <p class="verse-reference">(Beréchit 27:28)</p>
+            </div>
+
+            <p class="content-text">
+                Ici, la bénédiction d'Isaac est spirituelle et matérielle. Quand Ésaü supplie son père pour une bénédiction "à lui aussi", Isaac en donne une autre : <span class="highlight">une destinée différente, mais pas maudite</span>.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🚶</span>
+                L'exil de Jacob : première étape de sa construction
+            </h2>
+
+            <p class="content-text">
+                Pour fuir la colère d'Ésaü, Jacob part. Ce départ n'est pas seulement une fuite : c'est <span class="highlight">un rite de passage</span>, la première marche vers son rôle de patriarche.
+            </p>
+
+            <div class="verse-container key-verse">
+                <p class="verse-french">"Que Dieu Tout-Puissant te bénisse."</p>
+                
+                <p class="verse-hebrew">וְאֵל שַׁדַּי יְבָרֵךְ אֹתְךָ</p>
+                
+                <p class="verse-transliteration"><em>Ve-El Shaddaï yevarekh otkha</em></p>
+                
+                <p class="verse-reference">(Beréchit 28:3)</p>
+            </div>
+
+            <p class="content-text">
+                Cette bénédiction lie Jacob à la terre, à l'alliance, et à la continuité du peuple.
+            </p>
+        </div>
+
+        <div class="conclusion-box">
+            <h2 class="section-title">
+                <span class="section-icon">✨</span>
+                Conclusion : Les lignées visibles et invisibles
+            </h2>
+            
+            <p class="content-text">
+                Toledot révèle une vérité biblique essentielle : <span class="highlight">ce ne sont pas les conditions de naissance qui déterminent la destinée, mais la capacité à écouter, choisir et s'engager.</span>
+            </p>
+            <br>
+            <p class="content-text">
+                Jacob et Ésaü incarnent deux voies : l'une tournée vers la profondeur, l'autre vers l'immédiat, l'une qui construit, l'autre qui consomme.
+            </p>
+            <br>
+            <p class="content-text">
+                La paracha nous enseigne que la bénédiction ne se reçoit pas : <span class="emphasis">elle se prépare, se mérite, se protège.</span>
+            </p>
+            <br>
+            <p class="content-text">
+                "Voici les générations d'Isaac" : elles ne sont pas seulement biologiques. Elles sont spirituelles.
+            </p>
+            <br>
+            <p class="content-text">
+                Toledot nous invite à interroger nos propres lignées : <span class="emphasis">Qu'héritons-nous ? Que transmettons-nous ?</span> Et surtout : <span class="highlight">Avons-nous la patience, la voix intérieure et la vision pour devenir, comme Jacob, porteurs de l'Alliance ?</span>
+            </p>
+        </div>
+
+        <div class="video-section">
+            <h2 class="video-title">
+                🎥 Étude vidéo de la Paracha Toledot
+            </h2>
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/mA-MyR81pQQ" 
+                    title="Paracha Toledot - Les lignées et les tensions qui façonnent une destinée"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="video-description">
+                Découvrez cette étude en format vidéo pour approfondir votre compréhension 
+                de la Paracha Toledot et de ses enseignements sur les choix spirituels, 
+                la transmission de l'Alliance et la construction de notre destinée.
+            </p>
+        </div>
+
+        <div class="footer">
+            <div class="footer-author">
+                Étude de la Paracha Toledot par <span class="footer-hebrew">אריאל מרמן</span> (Ariel Mormin)
+            </div>
+            <div class="footer-subtitle">
+                • Les lignées qui façonnent l'éternité •
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Animation de la barre de progression
+        window.addEventListener('scroll', () => {
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            scrollIndicator.style.transform = `scaleX(${scrolled / 100})`;
+        });
+        
+        // Animation d'apparition des sections
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        // Animation pour toutes les sections
+        document.querySelectorAll('.section, .verse-container, .conclusion-box, .video-section, .intro-box').forEach((element) => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(element);
+        });
+
+        // Animation au survol pour les versets
+        document.querySelectorAll('.verse-container').forEach(container => {
+            container.addEventListener('mouseenter', () => {
+                container.style.transform = 'translateY(-2px)';
+                container.style.transition = 'transform 0.3s ease';
+            });
+            
+            container.addEventListener('mouseleave', () => {
+                container.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Animation au survol pour les listes
+        document.querySelectorAll('.themes-list li').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.style.transform = 'translateX(5px)';
+                item.style.transition = 'transform 0.3s ease';
+            });
+            
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = 'translateX(0)';
+            });
+        });
+    </script>
+</body>
+</html>

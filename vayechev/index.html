@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paracha Vayéchev - וישב - Quand un juste descend, c'est pour s'élever encore davantage</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            background: linear-gradient(135deg, #1e1b4b 0%, #4c1d95 50%, #064e3b 100%);
+            min-height: 100vh;
+            color: #333;
+            position: relative;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #1e1b4b, #4c1d95);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(30, 27, 75, 0.3);
+            margin-bottom: 20px;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(30, 27, 75, 0.4);
+            background: linear-gradient(135deg, #4c1d95, #1e1b4b);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #1e1b4b, #4c1d95);
+            margin: -40px -20px 50px -20px;
+            border-radius: 20px 20px 0 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="40" fill="white" opacity="0.1">✨</text></svg>') repeat;
+            background-size: 80px 80px;
+            opacity: 0.15;
+        }
+
+        .title {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hebrew-title {
+            font-size: 3.2em;
+            color: #10b981;
+            margin-bottom: 15px;
+            font-family: 'Times New Roman', serif;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-size: 1.4em;
+            font-style: italic;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        .reference {
+            font-size: 1.1em;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .intro-box {
+            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+            padding: 35px;
+            border-radius: 15px;
+            border-left: 6px solid #10b981;
+            margin-bottom: 45px;
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.2);
+            position: relative;
+        }
+
+        .intro-box::before {
+            content: "🕯️";
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 2em;
+            opacity: 0.3;
+        }
+
+        .section {
+            margin-bottom: 45px;
+            padding: 20px 0;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #1e1b4b;
+            margin-bottom: 25px;
+            font-weight: bold;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #f7fafc, #edf2f7);
+            border-radius: 10px;
+            border-left: 5px solid #4c1d95;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-icon {
+            font-size: 1.3em;
+        }
+
+        .verse-container {
+            background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+            padding: 30px;
+            margin: 25px 0;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+            box-shadow: 0 5px 15px rgba(76, 29, 149, 0.1);
+            position: relative;
+        }
+
+        .key-verse {
+            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+            border: 3px solid #10b981;
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.2);
+        }
+
+        .dream-verse {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border: 2px solid #f59e0b;
+            box-shadow: 0 5px 15px rgba(245, 158, 11, 0.1);
+        }
+
+        .yossef-verse {
+            background: linear-gradient(135deg, #eff6ff, #dbeafe);
+            border: 2px solid #3b82f6;
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.1);
+        }
+
+        .sold-verse {
+            background: linear-gradient(135deg, #1e1b4b, #4c1d95);
+            border: 2px solid #6366f1;
+            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.2);
+            color: white;
+        }
+
+        .sold-verse .verse-french,
+        .sold-verse .verse-hebrew,
+        .sold-verse .verse-transliteration {
+            color: white;
+        }
+
+        .sold-verse .verse-hebrew {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .tamar-verse {
+            background: linear-gradient(135deg, #fce7f3, #fbcfe8);
+            border: 2px solid #ec4899;
+            box-shadow: 0 5px 15px rgba(236, 72, 153, 0.1);
+        }
+
+        .verse-french {
+            font-size: 1.15em;
+            margin-bottom: 18px;
+            font-weight: 600;
+            color: #2d3748;
+            line-height: 1.7;
+        }
+
+        .verse-hebrew {
+            font-size: 1.4em;
+            font-family: 'Times New Roman', serif;
+            direction: rtl;
+            text-align: right;
+            margin-bottom: 18px;
+            color: #1e1b4b;
+            font-weight: bold;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .verse-transliteration {
+            font-size: 1.05em;
+            font-style: italic;
+            color: #4a5568;
+            margin-bottom: 12px;
+        }
+
+        .verse-reference {
+            font-size: 0.95em;
+            color: #718096;
+            margin-top: 15px;
+            font-weight: 600;
+        }
+
+        .content-text {
+            font-size: 1.1em;
+            line-height: 1.9;
+            color: #2d3748;
+            margin-bottom: 15px;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #fde68a 0%, #fcd34d 100%);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #78350f;
+        }
+
+        .conclusion-box {
+            background: linear-gradient(135deg, #1e1b4b, #4c1d95);
+            padding: 40px;
+            border-radius: 15px;
+            color: white;
+            box-shadow: 0 15px 35px rgba(30, 27, 75, 0.4);
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .conclusion-box::before {
+            content: '✨';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 3em;
+            opacity: 0.2;
+        }
+
+        .conclusion-box .section-title {
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+            border-left-color: #10b981;
+        }
+
+        .conclusion-box .content-text {
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .themes-list {
+            margin: 25px 0;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .themes-list ul {
+            list-style: none;
+        }
+
+        .themes-list li {
+            font-size: 1.1em;
+            padding: 12px 0;
+            color: white;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .themes-list li:last-child {
+            border-bottom: none;
+        }
+
+        .video-section {
+            background: linear-gradient(135deg, #f7fafc, #edf2f7);
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-title {
+            font-size: 1.8em;
+            color: #1e1b4b;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 12px;
+        }
+
+        .video-description {
+            font-size: 1.05em;
+            color: #4a5568;
+            text-align: center;
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, #f7fafc, #edf2f7);
+            border-radius: 15px;
+            margin-top: 40px;
+        }
+
+        .footer-author {
+            font-size: 1.2em;
+            color: #1e1b4b;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .footer-hebrew {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.3em;
+            color: #4c1d95;
+        }
+
+        .footer-subtitle {
+            font-size: 1em;
+            color: #718096;
+            font-style: italic;
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #10b981, #4c1d95);
+            transform-origin: left;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2em;
+            }
+
+            .hebrew-title {
+                font-size: 2.5em;
+            }
+
+            .subtitle {
+                font-size: 1.1em;
+            }
+
+            .section-title {
+                font-size: 1.3em;
+            }
+
+            .content-text {
+                font-size: 1em;
+            }
+
+            .container {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-indicator"></div>
+
+    <div class="container">
+        <a href="https://parashot-mormin.netlify.app/" class="back-button">
+            ← Retour aux Parashot
+        </a>
+
+        <div class="header">
+            <h1 class="title">Paracha Vayéchev</h1>
+            <div class="hebrew-title">וישב</div>
+            <p class="subtitle">"Quand un juste descend, c'est pour s'élever encore davantage"</p>
+            <p class="reference">Midrash Rabbah Berechit 84:1</p>
+        </div>
+
+        <div class="intro-box">
+            <h2 class="section-title">
+                <span class="section-icon">🟦</span>
+                Introduction – Contexte général
+            </h2>
+            
+            <p class="content-text">
+                La Paracha <strong>Vayéchev</strong> (Berechit 37:1–40:23) ouvre l'un des cycles narratifs les plus puissants de la Torah : <strong>l'histoire de Yossef haTsaddik</strong>, la descente en Égypte, et le début du décret divin qui prépare la future délivrance.
+            </p>
+            <br>
+            <p class="content-text">
+                Le texte s'ouvre sur une phrase emblématique :
+            </p>
+
+            <div class="verse-container key-verse">
+                <p class="verse-french">"Et Ya'aqov s'installa…"</p>
+                
+                <p class="verse-hebrew">וַיֵּשֶׁב יַעֲקֹב</p>
+                
+                <p class="verse-transliteration"><em>Vayéchev Ya'aqov</em></p>
+            </div>
+
+            <p class="content-text">
+                Cette "installation" marque une volonté de repos, mais la tradition enseigne que <span class="highlight">les tsaddiqim ne sont pas destinés au confort ; leur mission les dépasse.</span>
+            </p>
+            <br>
+            <p class="content-text">
+                Dans la tradition séfarade, cette Paracha est étudiée comme <strong>un traité sur la providence divine</strong>, la gestion des épreuves, la jalousie, et la réparation des relations humaines.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">💭</span>
+                1️⃣ Yossef : le rêveur qui dérange
+            </h2>
+
+            <h3 style="font-size: 1.3em; color: #4c1d95; margin: 20px 0 15px 0; font-weight: bold;">📌 Le favoritisme et la jalousie</h3>
+
+            <p class="content-text">
+                Ya'aqov témoigne une affection particulière à Yossef, symbolisée par la fameuse "ketonèt passim".
+            </p>
+
+            <div class="verse-container yossef-verse">
+                <p class="verse-french">"Israel a aimé Yossef plus que tous ses fils"</p>
+                
+                <p class="verse-hebrew">וְיִשְׂרָאֵל אָהַב אֶת־יוֹסֵף מִכָּל־בָּנָיו</p>
+                
+                <p class="verse-transliteration"><em>VeYisraël ahav et-Yossef mikol banav</em></p>
+                
+                <p class="verse-reference">(Genèse 37:3)</p>
+            </div>
+
+            <p class="content-text">
+                La Torah ne cache rien : <span class="highlight">la préférence crée des tensions familiales.</span>
+            </p>
+
+            <h3 style="font-size: 1.3em; color: #4c1d95; margin: 30px 0 15px 0; font-weight: bold;">📌 Les rêves comme dévoilements divins</h3>
+
+            <p class="content-text">
+                Yossef raconte ses rêves ; le Midrash dit qu'il n'était ni orgueilleux ni naïf, mais <strong>messager d'Achem malgré lui</strong>.
+            </p>
+            <br>
+            <p class="content-text">
+                Deux rêves majeurs :
+            </p>
+            <br>
+            <p class="content-text">
+                1. <strong>Les gerbes</strong> s'inclinant devant la sienne — symbole matériel.<br>
+                2. <strong>Le soleil, la lune et onze étoiles</strong> — symbole spirituel.
+            </p>
+
+            <div class="verse-container dream-verse">
+                <p class="verse-french">"Viendrons-nous, nous, nous prosterner devant toi ?"</p>
+                
+                <p class="verse-hebrew">הֲבֹא נָבוֹא אֲנַחְנוּ… לְהִשְׁתַּחֲוֺת לְךָ אַרְצָה</p>
+                
+                <p class="verse-transliteration"><em>Havo navo anah'nou… lehishtahavot lekha artsa ?</em></p>
+                
+                <p class="verse-reference">(Genèse 37:10)</p>
+            </div>
+
+            <p class="content-text">
+                Le père réprimande, mais <strong>garde la chose en mémoire</strong> (37:11) : un signe que Ya'aqov pressent un message venu d'En-Haut.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">⛓️</span>
+                2️⃣ La vente de Yossef : chute ou mission divine ?
+            </h2>
+
+            <h3 style="font-size: 1.3em; color: #4c1d95; margin: 20px 0 15px 0; font-weight: bold;">📌 La haine devient action</h3>
+
+            <p class="content-text">
+                Les frères projettent de tuer Yossef, mais Réouven puis Yehouda modèrent la violence.
+            </p>
+
+            <div class="verse-container sold-verse">
+                <p class="verse-french">"Quel profit y a-t-il à tuer notre frère ?"</p>
+                
+                <p class="verse-hebrew">מַה־בֶּצַע כִּי נַהֲרֹג אֶת־אָחִינוּ</p>
+                
+                <p class="verse-transliteration"><em>Mah betsa ki naharog et-ah'inu ?</em></p>
+                
+                <p class="verse-reference">(Genèse 37:26)</p>
+            </div>
+
+            <p class="content-text">
+                Yehouda privilégie la vente. Selon la tradition séfarade, ce moment introduit un thème clef : <span class="highlight">même les décisions humaines les plus discutables s'inscrivent dans le dessein d'Achem.</span>
+            </p>
+
+            <h3 style="font-size: 1.3em; color: #4c1d95; margin: 30px 0 15px 0; font-weight: bold;">📌 L'intervention discrète d'Adonaï</h3>
+
+            <p class="content-text">
+                Le texte ne mentionne pas explicitement Achem dans cet épisode — <strong>mais Sa présence est partout</strong> :
+            </p>
+            <br>
+            <p class="content-text">
+                • Yossef envoyé seul vers ses frères<br>
+                • L'homme qui le guide (un messager divin déguisé, selon Rachi)<br>
+                • La caravane d'Ismaélites, précisément en route vers l'Égypte<br>
+                • L'animal trouvé par les frères pour tromper Ya'aqov
+            </p>
+            <br>
+            <p class="content-text">
+                La tradition séfarade voit ici un principe fondamental : <span class="highlight">"Achem prépare la guérison avant la plaie."</span>
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">👑</span>
+                3️⃣ Yehouda et Tamar : réparer la lignée
+            </h2>
+
+            <p class="content-text">
+                Dans la tradition séfarade, le chapitre 38 n'est pas une "parenthèse", mais une <strong>clé théologique</strong> : la royauté d'Israël naît d'un acte de reconnaissance et de justice.
+            </p>
+
+            <h3 style="font-size: 1.3em; color: #4c1d95; margin: 30px 0 15px 0; font-weight: bold;">📌 Tamar agit pour préserver la lignée</h3>
+
+            <p class="content-text">
+                Yehouda reconnaît publiquement sa faute :
+            </p>
+
+            <div class="verse-container tamar-verse">
+                <p class="verse-french">"Elle est plus juste que moi"</p>
+                
+                <p class="verse-hebrew">צָדְקָה מִמֶּנִּי</p>
+                
+                <p class="verse-transliteration"><em>Tzadka mimeni</em></p>
+                
+                <p class="verse-reference">(Genèse 38:26)</p>
+            </div>
+
+            <p class="content-text">
+                De cette rectification naît <strong>Perets</strong>, ancêtre du Roi David et du futur Machiaḥ.
+            </p>
+            <br>
+            <p class="content-text">
+                Le message : <span class="highlight">la royauté d'Israël repose sur la capacité de reconnaître ses égarements et de réparer.</span>
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">⭐</span>
+                4️⃣ Yossef en Égypte : l'homme qui trouve grâce
+            </h2>
+
+            <h3 style="font-size: 1.3em; color: #4c1d95; margin: 20px 0 15px 0; font-weight: bold;">📌 Achem est avec Yossef</h3>
+
+            <p class="content-text">
+                Le texte répète quatre fois une expression rare :
+            </p>
+
+            <div class="verse-container key-verse">
+                <p class="verse-french">"Achem était avec Yossef"</p>
+                
+                <p class="verse-hebrew">וַיהוָה הָיָה אֶת־יוֹסֵף</p>
+                
+                <p class="verse-transliteration"><em>Adonaï haya et-Yossef</em></p>
+                
+                <p class="verse-reference">(Genèse 39:2)</p>
+            </div>
+
+            <p class="content-text">
+                Même dans l'exil, même dans l'injustice, <span class="highlight">la présence divine demeure.</span>
+            </p>
+
+            <h3 style="font-size: 1.3em; color: #4c1d95; margin: 30px 0 15px 0; font-weight: bold;">📌 La tentation chez Potifar</h3>
+
+            <p class="content-text">
+                Yossef refuse l'avance de la femme de Potifar, invoquant <strong>le lien avec Achem</strong> :
+            </p>
+
+            <div class="verse-container yossef-verse">
+                <p class="verse-french">"Et pécherais-je contre Achem ?"</p>
+                
+                <p class="verse-hebrew">וְחָטָאתִי לֵאלֹהִים</p>
+                
+                <p class="verse-transliteration"><em>VeH'ata-ti leElohim ?</em></p>
+                
+                <p class="verse-reference">(Genèse 39:9)</p>
+            </div>
+
+            <p class="content-text">
+                La tradition séfarade souligne : ce n'est pas seulement un acte moral, mais une <strong>fidélité à l'alliance reçue de Ya'aqov</strong>.
+            </p>
+
+            <h3 style="font-size: 1.3em; color: #4c1d95; margin: 30px 0 15px 0; font-weight: bold;">📌 La prison : un lieu de préparation</h3>
+
+            <p class="content-text">
+                Dans la prison, Yossef interprète les rêves du maître-échanson et du panetier. Il devient <strong>gestionnaire</strong>, <strong>consolateur</strong>, <strong>sage</strong>, doté d'un charisme limpide.
+            </p>
+            <br>
+            <p class="content-text">
+                Le Midrash dit : <span class="highlight">"La prison fut son université."</span>
+            </p>
+        </div>
+
+        <div class="conclusion-box">
+            <h2 class="section-title">
+                <span class="section-icon">✨</span>
+                Conclusion – Le sens profond de Vayéchev
+            </h2>
+            
+            <p class="content-text">
+                La Paracha Vayéchev nous enseigne que :
+            </p>
+
+            <div class="themes-list">
+                <ul>
+                    <li>• Achem dirige les étapes les plus obscures de nos vies.</li>
+                    <li>• Les épreuves des justes ne sont pas des punitions, mais des mouvements d'élévation.</li>
+                    <li>• Les relations humaines — jalousie, favoritisme, réparation — sont au cœur de la construction d'Israël.</li>
+                    <li>• Yossef incarne le juif en exil : connecté à Achem, fidèle, digne, et porteur d'une lumière intérieure.</li>
+                    <li>• La royauté d'Israël naît d'un acte d'humilité (Yehouda), et la délivrance d'un acte de persévérance (Yossef).</li>
+                </ul>
+            </div>
+
+            <p class="content-text">
+                Ainsi se construit le destin d'Israël : <span class="highlight">par la tension entre la faute humaine et la providence d'Achem, par la chute et la résilience, par la douleur et la lumière.</span>
+            </p>
+        </div>
+
+        <div class="video-section">
+            <h2 class="video-title">
+                🎥 Étude vidéo de la Paracha Vayéchev
+            </h2>
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/htRD-ZjJAcY" 
+                    title="Paracha Vayéchev - Quand un juste descend, c'est pour s'élever encore davantage"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="video-description">
+                Découvrez cette étude en format vidéo pour approfondir votre compréhension 
+                de la Paracha Vayéchev et de ses enseignements sur Yossef haTsaddik, 
+                la descente en Égypte, et la providence divine qui transforme les épreuves en élévation.
+            </p>
+        </div>
+
+        <div class="footer">
+            <div class="footer-author">
+                Étude de la Paracha Vayéchev par <span class="footer-hebrew">אריאל מרמן</span> (Ariel Mormin)
+            </div>
+            <div class="footer-subtitle">
+                • Quand un juste descend, c'est pour s'élever encore davantage •
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            scrollIndicator.style.transform = `scaleX(${scrolled / 100})`;
+        });
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        document.querySelectorAll('.section, .verse-container, .conclusion-box, .video-section, .intro-box').forEach((element) => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(element);
+        });
+
+        document.querySelectorAll('.verse-container').forEach(container => {
+            container.addEventListener('mouseenter', () => {
+                container.style.transform = 'translateY(-2px)';
+                container.style.transition = 'transform 0.3s ease';
+            });
+            
+            container.addEventListener('mouseleave', () => {
+                container.style.transform = 'translateY(0)';
+            });
+        });
+
+        document.querySelectorAll('.themes-list li').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.style.transform = 'translateX(5px)';
+                item.style.transition = 'transform 0.3s ease';
+            });
+            
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = 'translateX(0)';
+            });
+        });
+    </script>
+</body>
+</html>

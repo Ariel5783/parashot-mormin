@@ -1,0 +1,1527 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Études des Parashot - אריאל מרמן</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 3rem;
+            background-image: url('./images/torah-header.jpg');
+            background-size: auto 100%;
+            background-position: right center;
+            background-repeat: no-repeat;
+            position: relative;
+            overflow: hidden;
+            padding: 4rem 2rem;
+            min-height: 300px;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.7) 0%, rgba(118, 75, 162, 0.5) 60%, transparent 100%);
+            z-index: 1;
+        }
+        
+        .main-title, .subtitle {
+            position: relative;
+            z-index: 2;
+            text-align: left;
+            max-width: 60%;
+        }
+        
+        .main-title {
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-style: italic;
+        }
+        
+        .studies-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        @media (max-width: 1024px) {
+            .studies-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .studies-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .study-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid #667eea;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .study-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .study-card.available {
+            border-left: 5px solid #27ae60;
+        }
+        
+        .study-card.available .study-link {
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+        }
+        
+        .study-card.available .study-link:hover {
+            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.4);
+        }
+        
+        .study-card.berechit {
+            border-left: 5px solid #059669;
+        }
+        
+        .study-card.berechit .study-link {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+        }
+        
+        .study-card.berechit .study-link:hover {
+            box-shadow: 0 5px 15px rgba(5, 150, 105, 0.4);
+        }
+        
+        .study-card.noah {
+            border-left: 5px solid #0891b2;
+        }
+        
+        .study-card.noah .study-link {
+            background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
+        }
+        
+        .study-card.noah .study-link:hover {
+            box-shadow: 0 5px 15px rgba(8, 145, 178, 0.4);
+        }
+        
+        .study-card.lekh-lekha {
+            border-left: 5px solid #dc2626;
+        }
+        
+        .study-card.lekh-lekha .study-link {
+            background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+        }
+        
+        .study-card.lekh-lekha .study-link:hover {
+            box-shadow: 0 5px 15px rgba(220, 38, 38, 0.4);
+        }
+        
+        .study-card.lekh-lekha .study-title::before {
+            content: "🌅";
+        }
+        
+        .study-card.vaera {
+            border-left: 5px solid #991b1b;
+        }
+        
+        .study-card.vaera .study-link {
+            background: linear-gradient(135deg, #7f1d1d 0%, #991b1b 100%);
+        }
+        
+        .study-card.vaera .study-link:hover {
+            box-shadow: 0 5px 15px rgba(127, 29, 29, 0.4);
+        }
+        
+        .study-card.vaera .study-title::before {
+            content: "💧";
+        }
+        
+        .study-card.bo {
+            border-left: 5px solid #4c1d95;
+        }
+        
+        .study-card.bo .study-link {
+            background: linear-gradient(135deg, #4c1d95 0%, #6d28d9 100%);
+        }
+        
+        .study-card.bo .study-link:hover {
+            box-shadow: 0 5px 15px rgba(76, 29, 149, 0.4);
+        }
+        
+        .study-card.bo .study-title::before {
+            content: "🕯️";
+        }
+        
+        .study-card.bechalah {
+            border-left: 5px solid #0891b2;
+        }
+        
+        .study-card.bechalah .study-link {
+            background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
+        }
+        
+        .study-card.bechalah .study-link:hover {
+            box-shadow: 0 5px 15px rgba(8, 145, 178, 0.4);
+        }
+        
+        .study-card.bechalah .study-title::before {
+            content: "🌊";
+        }
+        
+        .study-card.yitro {
+            border-left: 5px solid #a78bfa;
+        }
+        
+        .study-card.yitro .study-link {
+            background: linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%);
+        }
+        
+        .study-card.yitro .study-link:hover {
+            box-shadow: 0 5px 15px rgba(167, 139, 250, 0.4);
+        }
+        
+        .study-card.yitro .study-title::before {
+            content: "⚡";
+        }
+        
+        .study-card.michpatim {
+            border-left: 5px solid #d97706;
+        }
+        
+        .study-card.michpatim .study-link {
+            background: linear-gradient(135deg, #78350f 0%, #d97706 100%);
+        }
+        
+        .study-card.michpatim .study-link:hover {
+            box-shadow: 0 5px 15px rgba(217, 119, 6, 0.4);
+        }
+        
+        .study-card.michpatim .study-title::before {
+            content: "⚖️";
+        }
+        
+        .study-card.teroumah {
+            border-left: 5px solid #eab308;
+        }
+        
+        .study-card.teroumah .study-link {
+            background: linear-gradient(135deg, #a16207 0%, #eab308 100%);
+        }
+        
+        .study-card.teroumah .study-link:hover {
+            box-shadow: 0 5px 15px rgba(234, 179, 8, 0.4);
+        }
+        
+        .study-card.teroumah .study-title::before {
+            content: "🕯️";
+        }
+
+        .study-card.tetsave {
+            border-left: 5px solid #059669;
+        }
+
+        .study-card.tetsave .study-link {
+            background: linear-gradient(135deg, #1a5c3a 0%, #059669 100%);
+        }
+
+        .study-card.tetsave .study-link:hover {
+            box-shadow: 0 5px 15px rgba(5, 150, 105, 0.4);
+        }
+
+        .study-card.tetsave .study-title::before {
+            content: "🕯️";
+        }
+
+        .study-card.ki-tissa {
+            border-left: 5px solid #be123c;
+        }
+
+        .study-card.ki-tissa .study-link {
+            background: linear-gradient(135deg, #7a1e2e 0%, #be123c 100%);
+        }
+
+        .study-card.ki-tissa .study-link:hover {
+            box-shadow: 0 5px 15px rgba(190, 18, 60, 0.4);
+        }
+
+        .study-card.ki-tissa .study-title::before {
+            content: "🔥";
+        }
+
+        .study-card.vayakhel-pekoudei {
+            border-left: 5px solid #1d4ed8;
+        }
+
+        .study-card.vayakhel-pekoudei .study-link {
+            background: linear-gradient(135deg, #1a2d6b 0%, #1d4ed8 100%);
+        }
+
+        .study-card.vayakhel-pekoudei .study-link:hover {
+            box-shadow: 0 5px 15px rgba(29, 78, 216, 0.4);
+        }
+
+        .study-card.vayakhel-pekoudei .study-title::before {
+            content: "🕍";
+        }
+
+        .study-card.vayikra {
+            border-left: 5px solid #dc2626;
+        }
+
+        .study-card.vayikra .study-link {
+            background: linear-gradient(135deg, #7c2020 0%, #dc2626 100%);
+        }
+
+        .study-card.vayikra .study-link:hover {
+            box-shadow: 0 5px 15px rgba(220, 38, 38, 0.4);
+        }
+
+        .study-card.vayikra .study-title::before {
+            content: "🔥";
+        }
+
+        .study-card.tsav {
+            border-left: 5px solid #d97706;
+        }
+
+        .study-card.tsav .study-link {
+            background: linear-gradient(135deg, #92400e 0%, #d97706 100%);
+        }
+
+        .study-card.tsav .study-link:hover {
+            box-shadow: 0 5px 15px rgba(217, 119, 6, 0.4);
+        }
+
+        .study-card.tsav .study-title::before {
+            content: "🔥";
+        }
+
+        .study-card.chemini {
+            border-left: 5px solid #b91c1c;
+        }
+
+        .study-card.chemini .study-link {
+            background: linear-gradient(135deg, #7f1d1d 0%, #b91c1c 100%);
+        }
+
+        .study-card.chemini .study-link:hover {
+            box-shadow: 0 5px 15px rgba(127, 29, 29, 0.4);
+        }
+
+        .study-card.chemini .study-title::before {
+            content: "🔥";
+        }
+
+        .study-card.tazria-metsora {
+            border-left: 5px solid #0e7490;
+        }
+
+        .study-card.tazria-metsora .study-link {
+            background: linear-gradient(135deg, #0e4655 0%, #0e7490 100%);
+        }
+
+        .study-card.tazria-metsora .study-link:hover {
+            box-shadow: 0 5px 15px rgba(14, 116, 144, 0.4);
+        }
+
+        .study-card.tazria-metsora .study-title::before {
+            content: "🕊️";
+        }
+
+        .study-card.aharei-mot-kedoshim {
+            border-left: 5px solid #7c3aed;
+        }
+
+        .study-card.aharei-mot-kedoshim .study-link {
+            background: linear-gradient(135deg, #4c1d95 0%, #7c3aed 100%);
+        }
+
+        .study-card.aharei-mot-kedoshim .study-link:hover {
+            box-shadow: 0 5px 15px rgba(124, 58, 237, 0.4);
+        }
+
+        .study-card.aharei-mot-kedoshim .study-title::before {
+            content: "✨";
+        }
+
+        .study-card.emor {
+            border-left: 5px solid #b91c1c;
+        }
+
+        .study-card.emor .study-link {
+            background: linear-gradient(135deg, #7f1d1d 0%, #b91c1c 100%);
+        }
+
+        .study-card.emor .study-link:hover {
+            box-shadow: 0 5px 15px rgba(185, 28, 28, 0.4);
+        }
+
+        .study-card.emor .study-title::before {
+            content: "🕯️";
+        }
+        
+        .study-card.vayera {
+            border-left: 5px solid #7c3aed;
+        }
+        
+        .study-card.vayera .study-link {
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+        }
+        
+        .study-card.vayera .study-link:hover {
+            box-shadow: 0 5px 15px rgba(124, 58, 237, 0.4);
+        }
+        
+        .study-card.vayera .study-title::before {
+            content: "🕊️";
+        }
+        
+        .study-card.haye-sara {
+            border-left: 5px solid #d946ef;
+        }
+        
+        .study-card.haye-sara .study-link {
+            background: linear-gradient(135deg, #d946ef 0%, #f0abfc 100%);
+        }
+        
+        .study-card.haye-sara .study-link:hover {
+            box-shadow: 0 5px 15px rgba(217, 70, 239, 0.4);
+        }
+        
+        .study-card.haye-sara .study-title::before {
+            content: "💫";
+        }
+        
+        .study-card.toledot {
+            border-left: 5px solid #1e3a8a;
+        }
+        
+        .study-card.toledot .study-link {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        }
+        
+        .study-card.toledot .study-link:hover {
+            box-shadow: 0 5px 15px rgba(30, 58, 138, 0.4);
+        }
+        
+        .study-card.toledot .study-title::before {
+            content: "👥";
+        }
+        
+        .study-card.vayetse {
+            border-left: 5px solid #4c1d95;
+        }
+        
+        .study-card.vayetse .study-link {
+            background: linear-gradient(135deg, #4c1d95 0%, #6d28d9 100%);
+        }
+        
+        .study-card.vayetse .study-link:hover {
+            box-shadow: 0 5px 15px rgba(76, 29, 149, 0.4);
+        }
+        
+        .study-card.vayetse .study-title::before {
+            content: "🪜";
+        }
+        
+        .study-card.vayichlach {
+            border-left: 5px solid #be123c;
+        }
+        
+        .study-card.vayichlach .study-link {
+            background: linear-gradient(135deg, #be123c 0%, #e11d48 100%);
+        }
+        
+        .study-card.vayichlach .study-link:hover {
+            box-shadow: 0 5px 15px rgba(190, 18, 60, 0.4);
+        }
+        
+        .study-card.vayichlach .study-title::before {
+            content: "⚔️";
+        }
+        
+        .study-card.vayechev {
+            border-left: 5px solid #ea580c;
+        }
+        
+        .study-card.vayechev .study-link {
+            background: linear-gradient(135deg, #ea580c 0%, #fb923c 100%);
+        }
+        
+        .study-card.vayechev .study-link:hover {
+            box-shadow: 0 5px 15px rgba(234, 88, 12, 0.4);
+        }
+        
+        .study-card.vayechev .study-title::before {
+            content: "✨";
+        }
+        
+        .study-card.mikets {
+            border-left: 5px solid #f59e0b;
+        }
+        
+        .study-card.mikets .study-link {
+            background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+        }
+        
+        .study-card.mikets .study-link:hover {
+            box-shadow: 0 5px 15px rgba(245, 158, 11, 0.4);
+        }
+        
+        .study-card.mikets .study-title::before {
+            content: "👑";
+        }
+        
+        .study-card.vayigach {
+            border-left: 5px solid #059669;
+        }
+        
+        .study-card.vayigach .study-link {
+            background: linear-gradient(135deg, #065f46 0%, #10b981 100%);
+        }
+        
+        .study-card.vayigach .study-link:hover {
+            box-shadow: 0 5px 15px rgba(6, 95, 70, 0.4);
+        }
+        
+        .study-card.vayigach .study-title::before {
+            content: "🤝";
+        }
+        
+        .study-card.vayehi {
+            border-left: 5px solid #78350f;
+        }
+        
+        .study-card.vayehi .study-link {
+            background: linear-gradient(135deg, #78350f 0%, #b45309 100%);
+        }
+        
+        .study-card.vayehi .study-link:hover {
+            box-shadow: 0 5px 15px rgba(120, 53, 15, 0.4);
+        }
+        
+        .study-card.vayehi .study-title::before {
+            content: "📜";
+        }
+        
+        .study-card.shemot {
+            border-left: 5px solid #991b1b;
+        }
+        
+        .study-card.shemot .study-link {
+            background: linear-gradient(135deg, #991b1b 0%, #dc2626 100%);
+        }
+        
+        .study-card.shemot .study-link:hover {
+            box-shadow: 0 5px 15px rgba(153, 27, 27, 0.4);
+        }
+        
+        .study-card.shemot .study-title::before {
+            content: "🔥";
+        }
+        
+        .study-card.reeh {
+            border-left: 5px solid #f093fb;
+        }
+        
+        .study-card.reeh .study-link {
+            background: linear-gradient(135deg, #667eea 0%, #f093fb 100%);
+        }
+        
+        .study-card.reeh .study-link:hover {
+            box-shadow: 0 5px 15px rgba(240, 147, 251, 0.4);
+        }
+        
+        .study-card.shoftim {
+            border-left: 5px solid #e67e22;
+        }
+        
+        .study-card.shoftim .study-link {
+            background: linear-gradient(135deg, #e67e22 0%, #f39c12 100%);
+        }
+        
+        .study-card.shoftim .study-link:hover {
+            box-shadow: 0 5px 15px rgba(230, 126, 34, 0.4);
+        }
+        
+        .study-card.ki-tetse {
+            border-left: 5px solid #e74c3c;
+        }
+        
+        .study-card.ki-tetse .study-link {
+            background: linear-gradient(135deg, #e74c3c 0%, #f39c12 100%);
+        }
+        
+        .study-card.ki-tetse .study-link:hover {
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+        }
+        
+        .study-card.ki-tavo {
+            border-left: 5px solid #9b59b6;
+        }
+        
+        .study-card.ki-tavo .study-link {
+            background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+        }
+        
+        .study-card.ki-tavo .study-link:hover {
+            box-shadow: 0 5px 15px rgba(155, 89, 182, 0.4);
+        }
+        
+        .study-card.nitsavim {
+            border-left: 5px solid #1e3a8a;
+        }
+        
+        .study-card.nitsavim .study-link {
+            background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%);
+        }
+        
+        .study-card.nitsavim .study-link:hover {
+            box-shadow: 0 5px 15px rgba(30, 58, 138, 0.4);
+        }
+        
+        .study-card.vayelekh {
+            border-left: 5px solid #059669;
+        }
+        
+        .study-card.vayelekh .study-link {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+        }
+        
+        .study-card.vayelekh .study-link:hover {
+            box-shadow: 0 5px 15px rgba(5, 150, 105, 0.4);
+        }
+        
+        .study-card.haazinou {
+            border-left: 5px solid #7c3aed;
+        }
+        
+        .study-card.haazinou .study-link {
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+        }
+        
+        .study-card.haazinou .study-link:hover {
+            box-shadow: 0 5px 15px rgba(124, 58, 237, 0.4);
+        }
+        
+        .study-card.vezot {
+            border-left: 5px solid #f59e0b;
+        }
+        
+        .study-card.vezot .study-link {
+            background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+        }
+        
+        .study-card.vezot .study-link:hover {
+            box-shadow: 0 5px 15px rgba(245, 158, 11, 0.4);
+        }
+        
+        .study-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .study-title::before {
+            content: "📖";
+            margin-right: 0.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .study-card.available .study-title::before {
+            content: "✨";
+        }
+        
+        .study-card.berechit .study-title::before {
+            content: "🌍";
+        }
+        
+        .study-card.noah .study-title::before {
+            content: "🌊";
+        }
+        
+        .study-card.reeh .study-title::before {
+            content: "👁️";
+        }
+        
+        .study-card.shoftim .study-title::before {
+            content: "⚖️";
+        }
+        
+        .study-card.ki-tetse .study-title::before {
+            content: "📜";
+        }
+        
+        .study-card.ki-tavo .study-title::before {
+            content: "🌾";
+        }
+        
+        .study-card.nitsavim .study-title::before {
+            content: "👥";
+        }
+        
+        .study-card.vayelekh .study-title::before {
+            content: "🚶‍♂️";
+        }
+        
+        .study-card.haazinou .study-title::before {
+            content: "🎵";
+        }
+        
+        .study-card.vezot .study-title::before {
+            content: "🕎";
+        }
+        
+        .study-description {
+            color: #7f8c8d;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            flex: 1 1 auto;
+        }
+        
+        .study-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            color: #95a5a6;
+            margin-top: auto;
+        }
+        
+        .study-link {
+            display: block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .study-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .new-badge {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            font-size: 0.7rem;
+            padding: 0.3rem 0.6rem;
+            border-radius: 15px;
+            font-weight: 600;
+            margin-left: 0.5rem;
+            animation: pulse 2s infinite;
+        }
+        
+        .simchat-badge {
+            background: linear-gradient(135deg, #f59e0b, #fbbf24);
+            color: white;
+            font-size: 0.7rem;
+            padding: 0.3rem 0.6rem;
+            border-radius: 15px;
+            font-weight: 600;
+            margin-left: 0.5rem;
+            animation: simchat-glow 2.5s infinite alternate;
+        }
+        
+        .nouveau-cycle-badge {
+            background: linear-gradient(135deg, #059669, #10b981);
+            color: white;
+            font-size: 0.7rem;
+            padding: 0.3rem 0.6rem;
+            border-radius: 15px;
+            font-weight: 600;
+            margin-left: 0.5rem;
+            animation: cycle-glow 2.5s infinite alternate;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+        
+        @keyframes simchat-glow {
+            0% { box-shadow: 0 0 5px rgba(245, 158, 11, 0.5); }
+            100% { box-shadow: 0 0 20px rgba(251, 191, 36, 0.8); }
+        }
+        
+        @keyframes cycle-glow {
+            0% { box-shadow: 0 0 5px rgba(5, 150, 105, 0.5); }
+            100% { box-shadow: 0 0 20px rgba(16, 185, 129, 0.8); }
+        }
+        
+        .footer {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .main-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* ── DEREKH ARIEL BANNER ── */
+        .derekh-banner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            background: linear-gradient(135deg, #0d0902 0%, #1c1408 50%, #0a0602 100%);
+            border: 1px solid rgba(201,168,76,0.3);
+            border-left: 4px solid #c9a84c;
+            border-radius: 12px;
+            padding: 1.6rem 2rem;
+            margin-bottom: 2.5rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .derekh-banner::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(201,168,76,0.6), transparent);
+        }
+
+        .derekh-banner:hover {
+            border-color: rgba(201,168,76,0.55);
+            box-shadow: 0 8px 30px rgba(201,168,76,0.12), 0 0 0 1px rgba(201,168,76,0.08) inset;
+            transform: translateY(-2px);
+        }
+
+        .db-left {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .db-eyebrow {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.62rem;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: rgba(201,168,76,0.55);
+            font-weight: 600;
+        }
+
+        .db-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #f0d080;
+            line-height: 1.2;
+        }
+
+        .db-title span {
+            font-size: 0.9rem;
+            opacity: 0.55;
+            margin-left: 8px;
+            font-weight: 400;
+            direction: rtl;
+            display: inline-block;
+        }
+
+        .db-desc {
+            font-size: 0.88rem;
+            color: rgba(240,208,128,0.5);
+            margin-top: 2px;
+            font-style: italic;
+        }
+
+        .db-cta {
+            background: linear-gradient(135deg, #8a6a1a 0%, #c9a84c 100%);
+            color: #0d0902;
+            padding: 0.65rem 1.4rem;
+            border-radius: 8px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            white-space: nowrap;
+            flex-shrink: 0;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 600px) {
+            .derekh-banner {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            .db-cta { align-self: flex-start; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="main-title">📚 Études des Parashot</h1>
+            <p class="subtitle">Collection d'études bibliques par אריאל מרמן (Ariel Mormin)</p>
+        </header>
+
+        <!-- DEREKH ARIEL BANNER -->
+        <a href="./derekh-ariel/" class="derekh-banner">
+            <div class="db-left">
+                <div class="db-eyebrow">Charte officielle · Voie d'étude</div>
+                <div class="db-title">Derekh Ariel <span>דרך אריאל</span></div>
+                <div class="db-desc">Fidélité au texte · Clarté · Structure · Transmission — Tradition séfarade</div>
+            </div>
+            <div class="db-cta">Découvrir →</div>
+        </a>
+        
+        <main class="studies-grid">
+            <article class="study-card available berechit">
+                <h2 class="study-title">
+                    Paracha Béréchit
+                    <span class="nouveau-cycle-badge">NOUVEAU CYCLE</span>
+                </h2>
+                <p class="study-description">
+                    Au commencement - La création du monde, la formation de l'homme à l'image divine, 
+                    la chute d'Adam et Ève, et les débuts de l'humanité. Le texte fondateur de toute la Torah.
+                </p>
+                <div class="study-meta">
+                    <span>📅 Octobre 2025</span>
+                    <span>📖 Genèse 1:1-6:8</span>
+                </div>
+                <a href="./berechit/" class="study-link">Lire l'étude</a>
+            </article>
+            
+            <article class="study-card available noah">
+                <h2 class="study-title">Paracha Noaḥ</h2>
+                <p class="study-description">
+                    Le Juste dans sa Génération - Le Déluge, l'arche comme refuge spirituel, 
+                    l'alliance de l'arc-en-ciel et la Tour de Babel. Une étude sur la reconstruction après la destruction.
+                </p>
+                <div class="study-meta">
+                    <span>📅 Octobre 2025</span>
+                    <span>📖 Genèse 6:9-11:32</span>
+                </div>
+                <a href="./noah/" class="study-link">Lire l'étude</a>
+            </article>
+            
+            <article class="study-card available lekh-lekha">
+                <h2 class="study-title">Paracha Lekh Lekha</h2>
+                <p class="study-description">
+                    Va vers toi-même - L'appel d'Abraham, le voyage vers l'inconnu, la promesse de bénédiction 
+                    et l'alliance éternelle. Une étude sur la foi comme chemin de transformation intérieure.
+                </p>
+                <div class="study-meta">
+                    <span>📅 Octobre 2025</span>
+                    <span>📖 Genèse 12:1-17:27</span>
+                </div>
+                <a href="./lekh-lekha/" class="study-link">Lire l'étude</a>
+            </article>
+            
+            <article class="study-card available vayera">
+                <h2 class="study-title">Paracha Vayéra</h2>
+                <p class="study-description">
+                    Le Regard de Dieu et la Promesse de Vie - L'hospitalité d'Abraham, le rire de Sarah, 
+                    la destruction de Sodome et le sacrifice d'Isaac. Une étude sur la foi vivante et la compassion divine.
+                </p>
+                <div class="study-meta">
+                    <span>📅 Novembre 2025</span>
+                    <span>📖 Genèse 18:1-22:24</span>
+                </div>
+                <a href="./vayera/" class="study-link">Lire l'étude</a>
+            </article>
+            
+            <article class="study-card available haye-sara">
+                <h2 class="study-title">Paracha Hayé Sara</h2>
+                <p class="study-description">
+                    La Vie de Sara : Héritage, Transmission et Fidélité - L'achat de Makhpéla, la mission d'Éliézer, 
+                    le choix de Rébecca et la continuité spirituelle. Une étude sur la vie qui se transmet en valeurs éternelles.
+                </p>
+                <div class="study-meta">
+                    <span>📅 Novembre 2025</span>
+                    <span>📖 Genèse 23:1-25:18</span>
+                </div>
+                <a href="./haye-sara/" class="study-link">Lire l'étude</a>
+            </article>
+            
+            <article class="study-card available toledot">
+                <h2 class="study-title">Paracha Toledot</h2>
+                <p class="study-description">
+                    Les lignées et les tensions qui façonnent une destinée - Jacob et Ésaü, le droit d'aînesse, 
+                    la bénédiction d'Isaac et l'exil de Jacob. Une étude sur les choix spirituels qui définissent notre héritage.
+                </p>
+                <div class="study-meta">
+                    <span>📅 Novembre 2025</span>
+                    <span>📖 Genèse 25:19-28:9</span>
+                </div>
+                <a href="./toledot/" class="study-link">Lire l'étude</a>
+            </article>
+            
+            <article class="study-card available vayetse">
+                <h2 class="study-title">Paracha Vayetsé</h2>
+                <p class="study-description">
+                    L'échelle du monde : lorsqu'Achem ouvre une porte dans la nuit - La vision de l'échelle, 
+                    l'épreuve chez Lavan, la naissance des douze tribus et la marche vers la destinée. 
+                    Une étude sur la construction intérieure dans l'exil.
+                </p>
+                <div class="study-meta">
+                    <span>📅 Novembre 2025</span>
+                    <span>📖 Genèse 28:10-32:3</span>
+                </div>
+                <a href="./vayetse/" class="study-link">Lire l'étude</a>
+            </article>
+            
+            <article class="study-card available vayichlach">
+                <h2 class="study-title">
+                    Paracha Vayichla'h
+                </h2>
+                <p class="study-description">
+                    La rencontre qui transforme - Le retour de Ya'aqov, la lutte nocturne avec l'ange, 
+                    le nouveau nom "Israël" et la réconciliation avec Essav. Une étude sur la transformation 
+                    intérieure, la réparation et le courage de faire face à son passé.
+                </p>
+                <div class="study-meta">
+                    <span>📅 Novembre 2025</span>
+                    <span>📖 Genèse 32:4-36:43</span>
+                </div>
+                <a href="./vayichlach/" class="study-link">Lire l'étude</a>
+            </article>
+            
+            <article class="study-card available vayechev">
+                <h2 class="study-title">
+                    Paracha Vayéchev
+                </h2>
+                <p class="study-description">
+                    Quand un juste descend, c'est pour s'élever encore davantage - L'histoire de Yossef haTsaddik, 
+                    ses rêves, la jalousie des frères, la vente en Égypte, et le début du décret divin. 
+                    Une étude sur la providence divine, la gestion des épreuves et la fidélité dans l'exil.
+                </p>
+                <div class="study-meta">
+                    <span>📅 Décembre 2025</span>
+                    <span>📖 Genèse 37:1-40:23</span>
+                </div>
+                <a href="./vayechev/" class="study-link">Lire l'étude</a>
+            </article>
+            
+            <article class="study-card available mikets">
+                <h2 class="study-title">
+                    Paracha Mikets
+                </h2>
+                <p class="study-description">
+                    Le temps accompli - Après deux années d'attente, les rêves de Pharaon révèlent le plan divin. 
+                    Yossef passe de la prison au pouvoir, incarnant l'humilité et la sagesse. Une étude sur la providence divine, 
+                    la patience, et la transformation qui s'opère au terme de l'épreuve.
+                </p>
+                <div class="study-meta">
+                    <span>📅 Décembre 2025</span>
+                    <span>📖 Genèse 41:1-44:17</span>
+                </div>
+                <a href="./mikets/" class="study-link">Lire l'étude</a>
+            </article>
+            
+            <article class="study-card available vayigach">
+                <h2 class="study-title">
+                    Paracha Vayigach
+                </h2>
+                <p class="study-description">
+                    Quand la responsabilité ouvre la voie à la rédemption - Yehouda s'approche et propose de se substituer à Binyamin. 
+                    Yossef se révèle à ses frères, incarnant le pardon et la lecture providentielle de l'histoire. 
+                    Une étude sur la teshouva, la réconciliation et la transformation par la responsabilité assumée.
+                </p>
+                <div class="study-meta">
+                    <span>📅 Décembre 2025</span>
+                    <span>📖 Genèse 44:18-47:27</span>
+                </div>
+                <a href="./vayigach/" class="study-link">Lire l'étude</a>
+            </article>
+            
+            <article class="study-card available vayehi">
+                <h2 class="study-title">
+                    Paracha Vayé'hi
+                </h2>
+                <p class="study-description">
+                    Et il vécut : la transmission au seuil de la fin - Jacob refuse l'enterrement en Égypte et bénit ses fils. 
+                    Joseph pardonne à ses frères révélant la vision providentielle de l'histoire. 
+                    Une étude sur la transmission, la fidélité à l'Alliance et la vie qui transcende la mort par la parole transmise.
+                </p>
+                <div class="study-meta">
+                    <span>📅 Décembre 2025</span>
+                    <span>📖 Genèse 47:28-50:26</span>
+                </div>
+                <a href="./vayehi/" class="study-link">Lire l'étude</a>
+            </article>
+            
+            <article class="study-card available shemot">
+                <h2 class="study-title">
+                    Paracha Chémot
+                </h2>
+                <p class="study-description">
+                    De l'effacement à l'appel : naissance d'une vocation et révélation du Nom - 
+                    L'oppression en Égypte, la résistance silencieuse des femmes, la naissance de Moché et 
+                    la révélation divine au buisson ardent. Une étude sur l'exil, la dignité préservée et 
+                    la promesse de la Présence qui accompagne la souffrance.
+                </p>
+                <div class="study-meta">
+                    <span>📅 Janvier 2026</span>
+                    <span>📖 Exode 1:1-6:1</span>
+                </div>
+                <a href="./shemot/" class="study-link">Lire l'étude</a>
+            </article>
+            
+            <article class="study-card available vaera">
+                <h2 class="study-title">
+                    Paracha Vaéra
+                </h2>
+                <p class="study-description">
+                    La fidélité d'Adonaï face à l'épreuve de la délivrance - 
+                    La révélation du Nom divin, les quatre expressions de délivrance, et le début des plaies d'Égypte. 
+                    Moché et Aharon face à Pharaon. Une étude sur la confiance, la pédagogie divine et 
+                    la promesse qui précède l'accomplissement dans l'obscurité de l'épreuve.
+                </p>
+                <div class="study-meta">
+                    <span>📅 Janvier 2026</span>
+                    <span>📖 Exode 6:2-9:35</span>
+                </div>
+                <a href="./vaera/" class="study-link">Lire l'étude</a>
+            </article>
+            
+            <article class="study-card available bo">
+                <h2 class="study-title">
+                    Paracha Bo
+                </h2>
+                <p class="study-description">
+                    De l'obscurité à la liberté : naissance d'un peuple - 
+                    Les dernières plaies d'Égypte, les ténèbres, la première mitsva (sanctifier le temps), 
+                    le sang sur les linteaux et l'institution de Pessa'h. Une étude sur la transformation intérieure, 
+                    la lumière dans les foyers, la transmission et l'acte de foi assumé qui fonde la liberté.
+                </p>
+                <div class="study-meta">
+                    <span>📅 Janvier 2026</span>
+                    <span>📖 Exode 10:1-13:16</span>
+                </div>
+                <a href="./bo/" class="study-link">Lire l'étude</a>
+            </article>
+            
+            <article class="study-card available bechalah">
+                <h2 class="study-title">
+                    Paracha Béchala'h
+                </h2>
+                <p class="study-description">
+                    Le passage, le chant et l'épreuve - Shabbat Shirah - 
+                    La traversée de la mer Rouge, le Chant de la mer (Shirat Hayam), la manne dans le désert 
+                    et la confrontation avec Amalek. Une étude sur la foi active qui engage l'action, 
+                    la prophétie chantée, la confiance quotidienne (bitahon) et la vigilance contre le doute spirituel.
+                </p>
+                <div class="study-meta">
+                    <span>📅 Janvier 2026</span>
+                    <span>📖 Exode 13:17-17:16</span>
+                </div>
+                <a href="./bechalah/" class="study-link">Lire l'étude</a>
+            </article>
+            
+            <article class="study-card available yitro">
+                <h2 class="study-title">
+                    Paracha Yitro
+                </h2>
+                <p class="study-description">
+                    La révélation et la responsabilité - Le Don de la Torah au Sinaï - 
+                    L'arrivée de Yitro, la reconnaissance d'Ashem venue de l'extérieur, l'organisation du peuple 
+                    par la délégation, et la révélation collective au mont Sinaï. Les Dix Paroles (Aseret HaDibrot) 
+                    comme fondement de l'Alliance. Une étude sur la sagesse qui vient d'ailleurs, l'unité nécessaire 
+                    à la révélation, et la Torah comme parole vivante adressée à chaque génération.
+                </p>
+                <div class="study-meta">
+                    <span>📅 Janvier 2026</span>
+                    <span>📖 Exode 18:1-20:23</span>
+                </div>
+                <a href="./yitro/" class="study-link">Lire l'étude</a>
+            </article>
+            
+            <article class="study-card available michpatim">
+                <h2 class="study-title">
+                    Paracha Michpatim
+                </h2>
+                <p class="study-description">
+                    La justice comme prolongement de la Révélation - Les lois après le Sinaï - 
+                    Immédiatement après le don des Dix Paroles, la Torah descend dans le concret de la vie quotidienne. 
+                    Les Michpatim (lois et jugements) encadrent la dignité humaine, la responsabilité, la réparation, 
+                    et la protection du faible. Une étude sur la sainteté vécue dans la rue, le tribunal et le marché, 
+                    où servir Hachem se manifeste dans la justice envers autrui. "Na'assé vé-nishma" : nous ferons et nous écouterons.
+                </p>
+                <div class="study-meta">
+                    <span>📅 Février 2026</span>
+                    <span>📖 Exode 21:1-24:18</span>
+                </div>
+                <a href="./michpatim/" class="study-link">Lire l'étude</a>
+            </article>
+            
+            <article class="study-card available teroumah">
+                <h2 class="study-title">
+                    Paracha Teroumah
+                </h2>
+                <p class="study-description">
+                    Faire résider la Présence d'Ashem au milieu d'Israël - Le sanctuaire et l'offrande du cœur - 
+                    Après la révélation du Sinaï, la Torah détaille la construction du Michkan (Tabernacle). 
+                    L'offrande volontaire (Teroumah), l'Arche contenant les Tables de la Loi, la Ménorah d'or pur, 
+                    et tous les éléments du sanctuaire. Une étude sur le sanctuaire extérieur comme miroir du sanctuaire intérieur, 
+                    la générosité du cœur (nedivout lev), et la Présence divine qui réside "au milieu d'eux" (betokham).
+                </p>
+                <div class="study-meta">
+                    <span>📅 Février 2026</span>
+                    <span>📖 Exode 25:1-27:19</span>
+                </div>
+                <a href="./teroumah/" class="study-link">Lire l'étude</a>
+            </article>
+            
+            <article class="study-card available tetsave">
+                <h2 class="study-title">
+                    Paracha Tétsavé
+                </h2>
+                <p class="study-description">
+                    La lumière qui ne s'éteint jamais - Le service du Mishkan et la grandeur de l'effacement - 
+                    Après la construction du sanctuaire, la Torah se concentre sur ceux qui y servent. 
+                    L'huile pure pour la Ménorah (ner tamid), les huit vêtements sacrés du Cohen Gadol, 
+                    la consécration des Cohanim en sept jours, et le Mizbéa'h de la Ketoret. 
+                    Une paracha unique : le nom de Moché n'y apparaît pas — leçon d'humilité absolue 
+                    et de grandeur dans l'effacement. Tradition séfarade.
+                </p>
+                <div class="study-meta">
+                    <span>📅 Février 2026</span>
+                    <span>📖 Exode 27:20-30:10</span>
+                </div>
+                <a href="./tetsave/" class="study-link">Lire l'étude</a>
+            </article>
+            
+            <article class="study-card available ki-tissa">
+                <h2 class="study-title">
+                    Paracha Ki Tissa
+                </h2>
+                <p class="study-description">
+                    La brisure et la reconstruction de l'Alliance - Le Veau d'or, les Treize Attributs de Miséricorde -
+                    Après la révélation du Sinaï, le peuple commet la faute du Veau d'or. Moché brise les Tables, 
+                    intercède pour Israël et obtient la révélation des Treize Attributs : « Adonaï, Adonaï, El Rahoum Ve'hanoun ». 
+                    Les secondes Tables naissent d'une collaboration entre l'homme et le Ciel. 
+                    Ki Tissa est la paracha de la téchouva et de l'espérance. Tradition séfarade.
+                </p>
+                <div class="study-meta">
+                    <span>📅 Mars 2026</span>
+                    <span>📖 Exode 30:11-34:35</span>
+                </div>
+                <a href="./ki-tissa/" class="study-link">Lire l'étude</a>
+            </article>
+            
+            <article class="study-card available vayakhel-pekoudei">
+                <h2 class="study-title">
+                    Paracha Vayakhel – Pékoudei
+                </h2>
+                <p class="study-description">
+                    L'unité d'Israël et la Présence d'Adonaï - Le Mishkan achevé et la gloire divine -
+                    Après la faute du veau d'or, Moché rassemble le peuple et dirige la construction du Mishkan.
+                    La primauté du Shabbat sur toute œuvre sacrée, la générosité extraordinaire du peuple (nediv lev),
+                    la sagesse divine de Betsalel, la transparence de Moché dans les comptes (Pékoudei),
+                    et le moment sublime où la nuée de la gloire d'Adonaï remplit le Tabernacle.
+                    Conclusion glorieuse du livre de l'Exode. Tradition séfarade.
+                </p>
+                <div class="study-meta">
+                    <span>📅 Mars 2026</span>
+                    <span>📖 Exode 35:1-40:38</span>
+                </div>
+                <a href="./vayakhel-pekoudei/" class="study-link">Lire l'étude</a>
+            </article>
+            
+            <article class="study-card available vayikra">
+                <h2 class="study-title">
+                    Paracha Vayikra
+                </h2>
+                <p class="study-description">
+                    L'appel d'Adonaï et le sens spirituel des sacrifices - Vayikra ouvre le livre du Lévitique.
+                    La Torah révèle le sens profond du mot korban (de la racine karav — se rapprocher) :
+                    les offrandes ne nourrissent pas Ashem, elles élèvent l'homme vers son Créateur.
+                    L'holocauste (olah), l'offrande végétale (minḥa), le sel de l'alliance,
+                    et l'enseignement des sages : aujourd'hui, la prière remplace les sacrifices.
+                    Tradition séfarade.
+                </p>
+                <div class="study-meta">
+                    <span>📅 Mars 2026</span>
+                    <span>📖 Lévitique 1:1-5:26</span>
+                </div>
+                <a href="./vayikra/" class="study-link">Lire l'étude</a>
+            </article>
+            
+            <article class="study-card available tsav">
+                <h2 class="study-title">
+                    Paracha Tsav
+                </h2>
+                <p class="study-description">
+                    Le feu perpétuel et le service sacré - Tsav approfondit la mise en œuvre concrète
+                    des offrandes, s'adressant à Aharon et ses fils. Le feu de l'autel qui ne s'éteint pas
+                    — esh tamid — image de la ferveur intérieure. La sainteté des cendres, l'humilité du pain
+                    sans levain, la consécration d'Aharon : la Torah enseigne que la grandeur spirituelle
+                    réside dans la constance, non dans l'éclat des commencements. Tradition séfarade.
+                </p>
+                <div class="study-meta">
+                    <span>📅 Mars 2026</span>
+                    <span>📖 Lévitique 6:1-8:36</span>
+                </div>
+                <a href="./tsav/" class="study-link">Lire l'étude</a>
+            </article>
+            
+            <article class="study-card available chemini">
+                <h2 class="study-title">
+                    Paracha Chemini
+                </h2>
+                <p class="study-description">
+                    Entre la Présence et la Responsabilité - Le huitième jour marque l'entrée en fonction
+                    d'Aharon et la révélation de la Présence divine dans le Mishkan. Le feu d'Adonaï qui
+                    éclaire… ou consume. La tragédie de Nadav et Avihou, le silence d'Aharon comme acte
+                    de foi absolue, et les lois de cacherout qui prolongent le sacré dans la vie quotidienne.
+                    Tradition séfarade.
+                </p>
+                <div class="study-meta">
+                    <span>📅 Avril 2026</span>
+                    <span>📖 Lévitique 9:1-11:47</span>
+                </div>
+                <a href="./chemini/" class="study-link">Lire l'étude</a>
+            </article>
+            
+            <article class="study-card available tazria-metsora">
+                <h2 class="study-title">
+                    Paracha Tazria–Métsora
+                </h2>
+                <p class="study-description">
+                    La pureté, la parole et la reconstruction intérieure - La tsara'at comme langage spirituel
+                    et non maladie ordinaire. Le lien entre le lachon hara' (médisance) et l'isolement
+                    du métsora. Le rôle du Cohen comme guide spirituel, et le rituel des deux oiseaux
+                    comme symbole de renaissance de la parole. Tradition séfarade.
+                </p>
+                <div class="study-meta">
+                    <span>📅 Avril 2026</span>
+                    <span>📖 Lévitique 12:1-15:33</span>
+                </div>
+                <a href="./tazria-metsora/" class="study-link">Lire l'étude</a>
+            </article>
+            
+            <article class="study-card available aharei-mot-kedoshim">
+                <h2 class="study-title">
+                    Paracha Aḥarei Mot – Kedoshim
+                </h2>
+                <p class="study-description">
+                    Du sanctuaire à la vie : le chemin de la sainteté - Le service de Yom Kippour
+                    et l'accès au sacré. L'appel universel de Kedoshim tihyou. L'éthique comme
+                    expression spirituelle : Ve'ahavta lere'akha kamokha. Tradition séfarade.
+                </p>
+                <div class="study-meta">
+                    <span>📅 Avril 2026</span>
+                    <span>📖 Lévitique 16:1-20:27</span>
+                </div>
+                <a href="./aharei-mot-kedoshim/" class="study-link">Lire l'étude</a>
+            </article>
+            
+            <article class="study-card available emor">
+                <h2 class="study-title">
+                    Paracha Emor
+                    <span class="new-badge">NOUVEAU</span>
+                </h2>
+                <p class="study-description">
+                    La sainteté qui se rend visible - La sainteté des Kohanim, les Mo'adim
+                    et le Kiddouch Hachem. Comment la Torah exige une cohérence totale
+                    entre l'intérieur et l'extérieur. La sainteté ne se prouve pas dans
+                    l'exceptionnel — elle se révèle dans la cohérence visible du quotidien. Tradition séfarade.
+                </p>
+                <div class="study-meta">
+                    <span>📅 Avril 2026</span>
+                    <span>📖 Lévitique 21:1-24:23</span>
+                </div>
+                <a href="./emor/" class="study-link">Lire l'étude</a>
+            </article>
+            
+            <article class="study-card available">
+                <h2 class="study-title">Paracha Vaet'hanan</h2>
+                <p class="study-description">
+                    L'écho éternel de l'Alliance - Une étude complète sur la prière de Moïse, 
+                    le Shema Israël et la transmission des Dix Commandements.
+                </p>
+                <div class="study-meta">
+                    <span>📅 Août 2025</span>
+                    <span>📖 Deutéronome 3:23-7:11</span>
+                </div>
+                <a href="./vaethanan/" class="study-link">Lire l'étude</a>
+            </article>
+            
+            <article class="study-card available">
+                <h2 class="study-title">Paracha Ekev</h2>
+                <p class="study-description">
+                    La bénédiction dans l'obéissance et la fidélité à l'alliance. 
+                    Une réflexion profonde sur les conséquences de l'obéissance aux commandements divins.
+                </p>
+                <div class="study-meta">
+                    <span>📅 Août 2025</span>
+                    <span>📖 Deutéronome 7:12-11:25</span>
+                </div>
+                <a href="./ekev/" class="study-link">Lire l'étude</a>
+            </article>
+            
+            <article class="study-card available reeh">
+                <h2 class="study-title">Paracha Re'eh</h2>
+                <p class="study-description">
+                    « Vois : la bénédiction et la malédiction » - Une étude profonde sur le libre arbitre, 
+                    le choix spirituel et la responsabilité individuelle face à l'alliance divine.
+                </p>
+                <div class="study-meta">
+                    <span>📅 Août 2025</span>
+                    <span>📖 Deutéronome 11:26-16:17</span>
+                </div>
+                <a href="./reeh/" class="study-link">Lire l'étude</a>
+            </article>
+            
+            <article class="study-card available shoftim">
+                <h2 class="study-title">Paracha Shoftim</h2>
+                <p class="study-description">
+                    Justice et Responsabilité Collective - Une réflexion sur la justice divine et humaine, 
+                    l'établissement d'un système judiciaire équitable et les qualités du vrai leadership.
+                </p>
+                <div class="study-meta">
+                    <span>📅 Septembre 2025</span>
+                    <span>📖 Deutéronome 16:18-21:9</span>
+                </div>
+                <a href="./shoftim/" class="study-link">Lire l'étude</a>
+            </article>
+            
+            <article class="study-card available ki-tetse">
+                <h2 class="study-title">Paracha Ki Tetsé</h2>
+                <p class="study-description">
+                    La Torah dans le quotidien - Une exploration des 70+ mitsvot qui encadrent 
+                    la vie quotidienne, les relations sociales et la moralité individuelle.
+                </p>
+                <div class="study-meta">
+                    <span>📅 Septembre 2025</span>
+                    <span>📖 Deutéronome 21:10-25:19</span>
+                </div>
+                <a href="./ki-tetse/" class="study-link">Lire l'étude</a>
+            </article>
+            
+            <article class="study-card available ki-tavo">
+                <h2 class="study-title">Paracha Ki Tavo</h2>
+                <p class="study-description">
+                    Quand tu entreras dans la Terre - L'alliance renouvelée, les prémices, 
+                    les bénédictions et malédictions qui scellent l'identité d'Israël.
+                </p>
+                <div class="study-meta">
+                    <span>📅 Septembre 2025</span>
+                    <span>📖 Deutéronome 26:1-29:8</span>
+                </div>
+                <a href="./ki-tavo/" class="study-link">Lire l'étude</a>
+            </article>
+            
+            <article class="study-card available nitsavim">
+                <h2 class="study-title">Paracha Nitsavim</h2>
+                <p class="study-description">
+                    Vous vous tenez debout - Le renouvellement de l'alliance, 
+                    la téchouva et le choix de la vie face aux Jours redoutables.
+                </p>
+                <div class="study-meta">
+                    <span>📅 Septembre 2025</span>
+                    <span>📖 Deutéronome 29:9-30:20</span>
+                </div>
+                <a href="./nitsavim/" class="study-link">Lire l'étude</a>
+            </article>
+            
+            <article class="study-card available vayelekh">
+                <h2 class="study-title">Paracha Vayelekh</h2>
+                <p class="study-description">
+                    Et il alla - Le testament spirituel de Moïse, la transmission du leadership à Josué, 
+                    et l'institution du Haqhél. Une paracha sur la transmission et la fidélité à l'alliance.
+                </p>
+                <div class="study-meta">
+                    <span>📅 Septembre 2025</span>
+                    <span>📖 Deutéronome 31:1-30</span>
+                </div>
+                <a href="./vayelekh/" class="study-link">Lire l'étude</a>
+            </article>
+            
+            <article class="study-card available haazinou">
+                <h2 class="study-title">Paracha Haazinou</h2>
+                <p class="study-description">
+                    Prêtez l'oreille - Le Cantique de Moïse, un poème prophétique qui résume l'histoire d'Israël. 
+                    Les cieux et la terre témoignent de l'alliance éternelle et de la fidélité divine.
+                </p>
+                <div class="study-meta">
+                    <span>📅 Octobre 2025</span>
+                    <span>📖 Deutéronome 32:1-52</span>
+                </div>
+                <a href="./haazinou/" class="study-link">Lire l'étude</a>
+            </article>
+            
+            <article class="study-card available vezot">
+                <h2 class="study-title">
+                    Paracha Vézot Habérakha
+                    <span class="simchat-badge">SIM'HAT TORAH</span>
+                </h2>
+                <p class="study-description">
+                    Et voici la bénédiction - La dernière paracha de la Torah, lue à Sim'hat Torah. 
+                    Les bénédictions finales de Moïse aux tribus, sa mort et la joie du recommencement du cycle.
+                </p>
+                <div class="study-meta">
+                    <span>📅 Octobre 2025</span>
+                    <span>📖 Deutéronome 33:1-34:12</span>
+                </div>
+                <a href="./vezot-haberakha/" class="study-link">Lire l'étude</a>
+            </article>
+        </main>
+        
+        <footer class="footer">
+            <p>© 2025 אריאל מרמן (Ariel Mormin) - Études bibliques et spirituelles</p>
+            <p>Hébergé sur Netlify • Mis à jour régulièrement</p>
+        </footer>
+    </div>
+</body>
+</html>

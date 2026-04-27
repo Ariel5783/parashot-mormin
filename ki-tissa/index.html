@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Paracha Ki Tissa – La brisure et la reconstruction de l'Alliance. Veau d'or, Treize Attributs de Miséricorde, intercession de Moché. Étude complète selon la tradition séfarade par Ariel Mormin.">
+    <meta name="keywords" content="Paracha Ki Tissa, Torah, Bible, Exode, tradition séfarade, Veau d'or, Treize Attributs, téchouva, demi-shekel, Tables de la Loi, étude biblique">
+    <title>Paracha Ki Tissa - כִּי תִשָּׂא - La brisure et la reconstruction de l'Alliance</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            background: linear-gradient(135deg, #3d0c11 0%, #5c1520 15%, #7a1e2e 30%, #8b2635 50%, #6b1f45 70%, #4a1238 85%, #2d0c2a 100%);
+            min-height: 100vh;
+            color: #333;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 70% 30%, rgba(180, 80, 50, 0.25) 0%, transparent 55%),
+                        radial-gradient(circle at 30% 70%, rgba(100, 20, 60, 0.3) 0%, transparent 55%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #7a1e2e, #8b2635);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 38, 53, 0.4);
+            margin-bottom: 20px;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 38, 53, 0.6);
+            background: linear-gradient(135deg, #8b2635, #7a1e2e);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 45px 20px;
+            background: linear-gradient(135deg, #3d0c11, #5c1520, #7a1e2e, #8b2635, #6b1f45, #4a1238, #2d0c2a);
+            margin: -40px -20px 50px -20px;
+            border-radius: 20px 20px 0 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="55" font-size="35" fill="white" opacity="0.08">💔</text></svg>') repeat;
+            background-size: 70px 70px;
+            opacity: 0.2;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, transparent 30%, rgba(61, 12, 17, 0.5));
+        }
+
+        .header-icon {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+            display: block;
+        }
+
+        .title {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hebrew-title {
+            font-size: 3.2em;
+            color: #fcd5bb;
+            margin-bottom: 15px;
+            font-family: 'Times New Roman', serif;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-size: 1.4em;
+            font-style: italic;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+            color: #f9c5c5;
+        }
+
+        .reference {
+            font-size: 1.1em;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #7a1e2e, #c0392b, #e8a020);
+            transform-origin: left;
+            transform: scaleX(0);
+            z-index: 1000;
+            transition: transform 0.1s ease;
+        }
+
+        .intro-box {
+            background: linear-gradient(135deg, #fff5f5, #ffe4e6);
+            padding: 35px;
+            border-radius: 15px;
+            border-left: 6px solid #be123c;
+            margin-bottom: 45px;
+            box-shadow: 0 8px 20px rgba(190, 18, 60, 0.15);
+            position: relative;
+        }
+
+        .intro-box::before {
+            content: "📜";
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 2em;
+            opacity: 0.3;
+        }
+
+        .section {
+            margin-bottom: 45px;
+            padding: 20px 0;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #7a1e2e;
+            margin-bottom: 25px;
+            font-weight: bold;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #fff5f5, #ffe4e6);
+            border-radius: 10px;
+            border-left: 5px solid #be123c;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-icon {
+            font-size: 1.8em;
+            flex-shrink: 0;
+        }
+
+        .content-text {
+            font-size: 1.15em;
+            line-height: 1.8;
+            color: #1f2937;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #fce7f3, #fcd5bb);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: #7a1e2e;
+        }
+
+        /* Verse containers */
+        .verse-container {
+            background: linear-gradient(135deg, #fff5f5, #ffe4e6);
+            border: 2px solid #f87171;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+            box-shadow: 0 6px 20px rgba(248, 113, 113, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .verse-container:hover {
+            box-shadow: 0 8px 25px rgba(248, 113, 113, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .verse-french {
+            font-size: 1.25em;
+            font-weight: bold;
+            color: #7a1e2e;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .verse-hebrew {
+            font-size: 1.8em;
+            font-family: 'Times New Roman', serif;
+            direction: rtl;
+            text-align: right;
+            color: #5c1520;
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(254, 202, 202, 0.35);
+            border-radius: 8px;
+            line-height: 1.8;
+        }
+
+        .verse-transliteration {
+            font-size: 1.1em;
+            font-style: italic;
+            color: #7a1e2e;
+            margin: 12px 0;
+        }
+
+        .verse-reference {
+            font-size: 0.95em;
+            color: #5c1520;
+            font-weight: bold;
+            margin-top: 12px;
+        }
+
+        /* Distinct verse styles per section */
+        .shekel-verse {
+            border-color: #fb923c;
+            background: linear-gradient(135deg, #fff7ed, #ffedd5);
+        }
+
+        .shekel-verse .verse-hebrew {
+            background: rgba(254, 215, 170, 0.4);
+            color: #7c2d12;
+        }
+
+        .veau-verse {
+            border-color: #dc2626;
+            background: linear-gradient(135deg, #fff5f5, #fee2e2);
+        }
+
+        .veau-verse .verse-hebrew {
+            background: rgba(254, 202, 202, 0.4);
+            color: #7f1d1d;
+        }
+
+        .intercession-verse {
+            border-color: #9333ea;
+            background: linear-gradient(135deg, #fdf4ff, #f3e8ff);
+        }
+
+        .intercession-verse .verse-hebrew {
+            background: rgba(233, 213, 255, 0.4);
+            color: #581c87;
+        }
+
+        .intercession-verse .verse-french {
+            color: #6b21a8;
+        }
+
+        .intercession-verse .verse-transliteration {
+            color: #7e22ce;
+        }
+
+        .intercession-verse .verse-reference {
+            color: #581c87;
+        }
+
+        .attributs-verse {
+            border-color: #d97706;
+            background: linear-gradient(135deg, #fffbeb, #fef3c7);
+        }
+
+        .attributs-verse .verse-hebrew {
+            background: rgba(253, 230, 138, 0.4);
+            color: #78350f;
+            font-size: 2em;
+        }
+
+        .attributs-verse .verse-french {
+            color: #78350f;
+        }
+
+        .attributs-verse .verse-transliteration {
+            color: #92400e;
+        }
+
+        .attributs-verse .verse-reference {
+            color: #78350f;
+        }
+
+        .tables-verse {
+            border-color: #0369a1;
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+        }
+
+        .tables-verse .verse-hebrew {
+            background: rgba(186, 230, 253, 0.4);
+            color: #0c4a6e;
+        }
+
+        .tables-verse .verse-french {
+            color: #075985;
+        }
+
+        .tables-verse .verse-transliteration {
+            color: #0369a1;
+        }
+
+        .tables-verse .verse-reference {
+            color: #0c4a6e;
+        }
+
+        /* Special golden box for 13 attributes */
+        .attributs-special {
+            background: linear-gradient(135deg, #fffbeb, #fef3c7);
+            border: 3px solid #d97706;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(217, 119, 6, 0.25);
+            text-align: center;
+        }
+
+        .attributs-special .verse-hebrew {
+            font-size: 2.2em;
+            background: rgba(253, 230, 138, 0.5);
+            color: #78350f;
+            text-align: center;
+            direction: rtl;
+        }
+
+        .conclusion-box {
+            background: linear-gradient(135deg, #fff5f5, #ffe4e6);
+            padding: 40px;
+            border-radius: 15px;
+            border: 3px solid #be123c;
+            margin-top: 50px;
+            box-shadow: 0 10px 30px rgba(190, 18, 60, 0.25);
+        }
+
+        .hope-banner {
+            background: linear-gradient(135deg, #fffbeb, #fef3c7);
+            border: 2px solid #f59e0b;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.2em;
+            color: #78350f;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.2);
+        }
+
+        .three-principles {
+            background: linear-gradient(135deg, #fdf4ff, #fce7f3);
+            border: 2px solid #a21caf;
+            border-radius: 12px;
+            padding: 25px 35px;
+            margin: 25px 0;
+        }
+
+        .three-principles p {
+            font-size: 1.1em;
+            color: #1f2937;
+            margin-bottom: 12px;
+            padding-left: 10px;
+            border-left: 3px solid #a21caf;
+            padding: 8px 0 8px 15px;
+        }
+
+        .three-principles p:last-child {
+            margin-bottom: 0;
+        }
+
+        .video-section {
+            margin: 50px 0;
+            padding: 30px;
+            background: linear-gradient(135deg, #fff5f5, #ffe4e6);
+            border-radius: 15px;
+            border: 2px solid #f87171;
+        }
+
+        .video-title {
+            font-size: 1.8em;
+            color: #7a1e2e;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-description {
+            margin-top: 20px;
+            font-size: 1.05em;
+            line-height: 1.7;
+            color: #1f2937;
+            text-align: justify;
+        }
+
+        .footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 3px solid #be123c;
+            text-align: center;
+        }
+
+        .footer-author {
+            font-size: 1.2em;
+            color: #7a1e2e;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .footer-hebrew {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.3em;
+            color: #be123c;
+        }
+
+        .footer-subtitle {
+            font-size: 1em;
+            color: #5c1520;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+                margin-top: 15px;
+                margin-bottom: 15px;
+            }
+
+            .header {
+                margin: -20px -15px 30px -15px;
+                padding: 30px 15px;
+            }
+
+            .title {
+                font-size: 2em;
+            }
+
+            .hebrew-title {
+                font-size: 2.5em;
+            }
+
+            .subtitle {
+                font-size: 1.1em;
+            }
+
+            .section-title {
+                font-size: 1.3em;
+                padding: 12px 15px;
+            }
+
+            .content-text {
+                font-size: 1.05em;
+            }
+
+            .verse-french {
+                font-size: 1.1em;
+            }
+
+            .verse-hebrew {
+                font-size: 1.5em;
+            }
+
+            .attributs-special .verse-hebrew {
+                font-size: 1.6em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-indicator"></div>
+
+    <div class="container">
+        <a href="https://parashot-mormin.netlify.app/" class="back-button">
+            ← Retour au site principal
+        </a>
+
+        <div class="header">
+            <span class="header-icon">🔥</span>
+            <div class="hebrew-title">כִּי תִשָּׂא</div>
+            <h1 class="title">Paracha Ki Tissa</h1>
+            <p class="subtitle">La brisure et la reconstruction de l'Alliance</p>
+            <p class="reference">📜 Shemot (Exode) 30:11 – 34:35</p>
+        </div>
+
+        <!-- INTRODUCTION -->
+        <div class="intro-box">
+            <h2 style="font-size: 1.4em; color: #7a1e2e; margin-bottom: 20px; font-weight: bold;">
+                🔷 Introduction – Le contexte
+            </h2>
+
+            <p class="content-text">
+                La Paracha <strong>Ki Tissa</strong> (כִּי תִשָּׂא) se situe au cœur du récit du désert.
+                Après la révélation extraordinaire du Sinaï, alors que Moché Rabbénou reçoit les Tables de la Loi
+                sur la montagne pendant quarante jours, le peuple d'Israël commet l'une des fautes les plus graves
+                de son histoire : la fabrication du <strong>Veau d'or</strong>.
+            </p>
+
+            <p class="content-text">
+                Cette paracha traite de cinq grandes thématiques : le <em>machatsit haShekel</em> (le demi-shekel),
+                la faute du Veau d'or, l'intercession de Moché Rabbénou, la révélation des <em>Treize Attributs
+                de Miséricorde</em>, et la remise des secondes Tables de la Loi.
+            </p>
+
+            <p class="content-text">
+                C'est une paracha de crise… mais surtout de <span class="highlight">réparation et d'espérance</span>.
+                Dans la tradition séfarade, Ki Tissa est la paracha qui enseigne que la téchouva — le retour sincère —
+                peut élever l'homme plus haut que l'innocence initiale.
+            </p>
+        </div>
+
+        <!-- SECTION 1 : LE DEMI-SHEKEL -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🪙</span>
+                1. Le demi-shekel – מַחֲצִית הַשֶּׁקֶל
+            </h2>
+
+            <p class="content-text">
+                La paracha s'ouvre sur une injonction singulière : chaque Israélite doit donner,
+                non pas un shekel entier, mais exactement un <strong>demi-shekel</strong>.
+                Pourquoi une moitié, et non un entier ?
+            </p>
+
+            <div class="verse-container shekel-verse">
+                <p class="verse-hebrew">
+                    זֶה יִתְּנוּ כָּל-הָעֹבֵר עַל-הַפְּקֻדִים מַחֲצִית הַשֶּׁקֶל
+                </p>
+                <p class="verse-transliteration">
+                    <em>Zeh yitnou kol ha'over al hapekoudim, machatsit hashekel.</em>
+                </p>
+                <p class="verse-french">
+                    « Voici ce que donnera quiconque est recensé : un demi-shekel. »
+                </p>
+                <p class="verse-reference">(Shemot 30:13 / Exode 30:13)</p>
+            </div>
+
+            <p class="content-text">
+                La tradition séfarade insiste sur la profondeur de ce symbole :
+                <span class="highlight">nul n'est complet seul</span>.
+                Chaque âme juive n'est qu'une moitié ; la plénitude naît dans l'union avec l'autre.
+                La complétude n'est pas individuelle — elle est communautaire.
+            </p>
+
+            <p class="content-text">
+                De même, le recensement lui-même ne compte pas les individus directement — on ne dénombre
+                pas des êtres humains, car chaque vie est infinie et ne se réduit pas à un chiffre.
+                C'est l'offrande, le geste de participation collective, qui fait le compte.
+            </p>
+
+            <p class="content-text">
+                Dans les communautés séfarades, à l'approche de Pourim, on perpétue le souvenir du
+                <strong>Zecher LeMachatsit Hashekel</strong> en donnant trois pièces en mémoire de cette mitsva.
+                Le message est fondamental : <em>la responsabilité spirituelle est irréductiblement collective</em>.
+            </p>
+        </div>
+
+        <!-- SECTION 2 : LA FAUTE DU VEAU D'OR -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🐂</span>
+                2. La faute du Veau d'or – עֵגֶל הַזָּהָב
+            </h2>
+
+            <p class="content-text">
+                Quarante jours après la révélation du Sinaï — événement sans précédent dans l'histoire humaine —
+                le peuple panique face à l'absence prolongée de Moché.
+                La scène qui s'ensuit est l'une des plus bouleversantes de la Torah.
+            </p>
+
+            <div class="verse-container veau-verse">
+                <p class="verse-hebrew">
+                    קוּם עֲשֵׂה-לָנוּ אֱלֹהִים אֲשֶׁר יֵלְכוּ לְפָנֵינוּ
+                </p>
+                <p class="verse-transliteration">
+                    <em>Koum assé lanou elohim asher yelekhou lefanénou.</em>
+                </p>
+                <p class="verse-french">
+                    « Lève-toi, fais-nous une représentation qui marche devant nous. »
+                </p>
+                <p class="verse-reference">(Shemot 32:1 / Exode 32:1)</p>
+            </div>
+
+            <p class="content-text">
+                Selon la tradition séfarade — Ramban, Rabbénou Be'hayé — il ne s'agissait pas d'un rejet d'Hachem.
+                Le peuple ne voulait pas abandonner D.ieu ; il commettait une <strong>erreur de médiation</strong> :
+                il voulait un intermédiaire visible pour remplacer Moché qu'il croyait disparu.
+            </p>
+
+            <p class="content-text">
+                La faute est subtile et c'est précisément ce qui la rend si profonde :
+                <span class="highlight">substituer un support matériel à une Présence transcendante</span>.
+                C'est l'erreur de confondre le canal avec la Source.
+            </p>
+
+            <p class="content-text">
+                La réaction de Moché est radicale : il brise les Tables. Pourquoi ?
+                Les maîtres séfarades expliquent : une Alliance violée ne peut être remise intacte.
+                La brisure des Tables n'est pas un acte de colère — c'est un <em>acte pédagogique</em>.
+                Si le peuple a rompu l'Alliance, les Tables qui la symbolisent doivent elles aussi être brisées,
+                afin que la reconstruction soit consciente et volontaire.
+            </p>
+        </div>
+
+        <!-- SECTION 3 : L'INTERCESSION DE MOCHÉ -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🙏</span>
+                3. L'intercession de Moché – מוֹדֵל הַמַּנְהִיגוּת
+            </h2>
+
+            <p class="content-text">
+                Ce qui suit est l'un des moments les plus émouvants de l'ensemble de la Torah :
+                Moché plaide pour Israël devant Hachem avec une intensité qui révèle toute la grandeur
+                de son âme.
+            </p>
+
+            <div class="verse-container intercession-verse">
+                <p class="verse-hebrew">
+                    לָמָה יֶחֱרֶה אַפְּךָ בְּעַמֶּךָ
+                </p>
+                <p class="verse-transliteration">
+                    <em>Lama yechereh apekha be'amekha.</em>
+                </p>
+                <p class="verse-french">
+                    « Pourquoi Ta colère s'embraserait-elle contre <em>Ton</em> peuple ? »
+                </p>
+                <p class="verse-reference">(Shemot 32:11 / Exode 32:11)</p>
+            </div>
+
+            <p class="content-text">
+                La tradition séfarade souligne un détail capital dans la formulation de Moché :
+                il dit <em>Ton peuple</em>, et non <em>ce peuple</em>.
+                <span class="highlight">Moché ne se dissocie jamais d'Israël</span>, même dans la faute.
+                Un vrai dirigeant ne condamne pas son peuple du haut de sa propre justice — il s'inclut,
+                il intercède, il élève.
+            </p>
+
+            <p class="content-text">
+                Plus loin, Moché va encore plus loin dans son intercession en prononçant les paroles
+                les plus bouleversantes de sa vie : il demande à être lui-même effacé du Livre d'Hachem
+                si son peuple ne peut être pardonné. C'est l'amour absolu du berger pour son troupeau.
+            </p>
+
+            <p class="content-text">
+                La tradition séfarade voit dans cet épisode le modèle idéal du leadership juif :
+                non la domination ni la condamnation, mais <em>l'amour indéfectible et l'intercession constante</em>.
+            </p>
+        </div>
+
+        <!-- SECTION 4 : LES TREIZE ATTRIBUTS DE MISÉRICORDE -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">✨</span>
+                4. Les Treize Attributs de Miséricorde – י"ג מִדּוֹת הָרַחֲמִים
+            </h2>
+
+            <p class="content-text">
+                Voici le moment le plus lumineux de la paracha, et l'un des sommets spirituels de toute la Torah.
+                En réponse à la demande de Moché — <em>montre-moi Ta gloire</em> — Hachem révèle les
+                <strong>Treize Attributs de Miséricorde</strong>.
+            </p>
+
+            <div class="attributs-special">
+                <p class="verse-hebrew" style="direction: rtl; text-align: center;">
+                    יְיָ יְיָ אֵל רַחוּם וְחַנּוּן אֶרֶךְ אַפַּיִם
+                    וְרַב-חֶסֶד וֶאֱמֶת
+                </p>
+                <p style="font-style: italic; font-size: 1.15em; color: #78350f; margin: 15px 0;">
+                    <em>Adonaï, Adonaï, El Rahoum Ve'hanoun, Erekh Apayim,<br>Ve'rav hesed ve'emet…</em>
+                </p>
+                <p style="font-size: 1.2em; font-weight: bold; color: #78350f;">
+                    « Adonaï, Adonaï, Maître compatissant et miséricordieux,<br>
+                    lent à la colère, riche en bonté et en vérité… »
+                </p>
+                <p style="font-size: 0.9em; color: #92400e; margin-top: 10px; font-weight: bold;">
+                    (Shemot 34:6–7 / Exode 34:6–7)
+                </p>
+            </div>
+
+            <p class="content-text">
+                Selon la tradition séfarade, ces Treize Attributs constituent la clé de la téchouva.
+                Ils ne décrivent pas seulement la nature d'Hachem — ils sont un <em>chemin que l'homme peut imiter</em>.
+                Être miséricordieux, lent à la colère, riche en bonté : ce sont les qualités que l'homme aspire
+                à développer en lui-même.
+            </p>
+
+            <p class="content-text">
+                Dans les communautés séfarades, les Treize Attributs sont récités avec une mélodie solennelle
+                et profondément émouvante lors des <strong>Séli'hot</strong> — les prières pénitentielles —,
+                particulièrement durant le mois d'Eloul et les Jours Redoutables. Leur récitation, même sans
+                intention parfaite, porte en elle une puissance de pardon.
+            </p>
+
+            <p class="content-text">
+                Le message théologique est fondamental :
+                <span class="highlight">la faute ne ferme pas la relation avec le Ciel — elle ouvre la possibilité du retour</span>.
+                Ki Tissa révèle qu'il existe toujours un chemin vers la réparation,
+                aussi grave que soit la chute.
+            </p>
+        </div>
+
+        <!-- SECTION 5 : LES SECONDES TABLES -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🏛️</span>
+                5. Les secondes Tables – לוּחוֹת שְׁנִיּוֹת
+            </h2>
+
+            <p class="content-text">
+                L'Alliance est renouvelée. Mais quelque chose a changé : les premières Tables étaient entièrement
+                l'œuvre céleste. Hachem les avait taillées et gravées. Pour les secondes Tables, une collaboration
+                est exigée :
+            </p>
+
+            <div class="verse-container tables-verse">
+                <p class="verse-hebrew">
+                    פְּסָל-לְךָ שְׁנֵי לֻחֹת אֲבָנִים כָּרִאשֹׁנִים
+                </p>
+                <p class="verse-transliteration">
+                    <em>Pessal lekha shné lou'hot avanim karishonim.</em>
+                </p>
+                <p class="verse-french">
+                    « Taille pour toi deux tables de pierre comme les premières. »
+                </p>
+                <p class="verse-reference">(Shemot 34:1 / Exode 34:1)</p>
+            </div>
+
+            <p class="content-text">
+                <em>Taille pour toi</em> — c'est Moché, l'homme, qui doit préparer la matière.
+                La tradition séfarade voit ici un principe spirituel d'une profondeur extraordinaire :
+            </p>
+
+            <p class="content-text">
+                La première révélation vient d'en haut, dans la pureté originelle.
+                La seconde Alliance naît de la <strong>collaboration entre le Ciel et l'homme</strong>.
+                Elle est le fruit d'un effort humain, d'un désir de réparation, d'une ascension délibérée.
+            </p>
+
+            <p class="content-text">
+                Et c'est pourquoi, enseignent nos maîtres,
+                <span class="highlight">la Torah restaurée après la chute est plus profonde que la Torah reçue sans effort</span>.
+                Les secondes Tables contenaient tout ce que les premières contenaient — et davantage encore,
+                car elles portaient en elles la dimension de la téchouva.
+            </p>
+
+            <p class="content-text">
+                La paracha se conclut sur l'image lumineuse du visage de Moché qui rayonne —
+                littéralement — après sa rencontre avec le Divin. La faute a été traversée,
+                l'Alliance renouvelée, et Moché en descend transfiguré.
+            </p>
+        </div>
+
+        <!-- CONCLUSION -->
+        <div class="conclusion-box">
+            <h2 class="section-title" style="background: transparent; border: none; padding: 0; margin-bottom: 25px;">
+                <span class="section-icon">🌅</span>
+                Conclusion – La paracha de l'espérance
+            </h2>
+
+            <p class="content-text">
+                Ki Tissa est l'une des parachot les plus profondes du cycle annuel de la Torah.
+                Elle ose regarder en face la chute la plus grave — et révèle que de cette chute
+                peut naître une relation plus authentique, plus mûre, plus vraie.
+            </p>
+
+            <div class="three-principles">
+                <p><strong>1. L'unité est fondamentale</strong> — Le demi-shekel enseigne que nul n'est complet seul. La complétude se trouve dans le lien avec l'autre et avec la communauté.</p>
+                <p><strong>2. La chute peut surgir même après la révélation</strong> — Le Veau d'or intervient au sommet de l'expérience spirituelle d'Israël. La vigilance ne se relâche jamais.</p>
+                <p><strong>3. La réparation élève plus haut que l'innocence initiale</strong> — Les secondes Tables, fruit de la téchouva, portent une profondeur que les premières ne pouvaient pas contenir.</p>
+            </div>
+
+            <p class="content-text">
+                La brisure des Tables n'est pas la fin de l'Alliance.
+                Elle en est le <em>début mature</em>.
+            </p>
+
+            <div class="hope-banner">
+                « Selon la tradition séfarade, la grandeur d'Israël ne réside pas dans l'absence de faute,<br>
+                mais dans la capacité de téchouva. »
+            </div>
+
+            <p class="content-text">
+                Ki Tissa est la paracha de l'espérance.
+                Même après la brisure — et surtout après la brisure —
+                la lumière des Treize Attributs de Miséricorde revient illuminer le chemin.
+            </p>
+
+            <p class="verse-hebrew" style="font-size: 1.5em; text-align: center; background: rgba(254, 202, 202, 0.35); padding: 20px; border-radius: 10px; margin: 25px 0;">
+                יְיָ יְיָ אֵל רַחוּם וְחַנּוּן
+            </p>
+
+            <p style="text-align: center; font-style: italic; color: #7a1e2e; margin-bottom: 25px; font-size: 1.1em;">
+                <em>Adonaï, Adonaï, El Rahoum Ve'hanoun.</em><br>
+                « Maître compatissant et miséricordieux. »
+            </p>
+
+            <p class="content-text" style="text-align: center; font-size: 1.3em; font-weight: bold; color: #7a1e2e; margin-top: 30px;">
+                Shabbat Shalom. ✨
+            </p>
+        </div>
+
+        <!-- VIDÉO -->
+        <div class="video-section">
+            <h2 class="video-title">
+                🎥 Étude vidéo de la Paracha Ki Tissa
+            </h2>
+            <div class="video-container">
+                <iframe
+                    src="https://www.youtube.com/embed/wl1iUfIDqDo"
+                    title="Paracha Ki Tissa – כי תשא | Brisure des Tables & 13 Attributs de Miséricorde | Étude complète – Tradition séfarade"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="video-description">
+                Découvrez cette étude en format vidéo pour approfondir votre compréhension de la Paracha Ki Tissa.
+                Une exploration du sens spirituel du demi-shekel et de la responsabilité collective ; de la crise du Sinaï
+                et de l'erreur de médiation du Veau d'or ; de l'intercession bouleversante de Moché Rabbénou ;
+                de la révélation des Treize Attributs de Miséricorde — <em>Adonaï, Adonaï, El Rahoum Ve'hanoun</em> — ;
+                et de la profondeur des secondes Tables de la Loi. Une réflexion sur la téchouva, le leadership
+                et l'Alliance renouvelée, dans la tradition séfarade.
+            </p>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <div class="footer-author">
+                Étude de la Paracha Ki Tissa par <span class="footer-hebrew">אריאל מרמן</span> (Ariel Mormin)
+            </div>
+            <div class="footer-subtitle">
+                • La brisure et la reconstruction de l'Alliance — כִּי תִשָּׂא •
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Indicateur de progression de scroll
+        window.addEventListener('scroll', () => {
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            scrollIndicator.style.transform = `scaleX(${scrolled / 100})`;
+        });
+
+        // Animation d'apparition au scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.section, .verse-container, .conclusion-box, .video-section, .intro-box, .attributs-special, .hope-banner, .three-principles').forEach((element) => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(element);
+        });
+
+        // Effet hover sur les conteneurs de versets
+        document.querySelectorAll('.verse-container').forEach(container => {
+            container.addEventListener('mouseenter', () => {
+                container.style.transform = 'translateY(-2px)';
+                container.style.transition = 'transform 0.3s ease';
+            });
+            container.addEventListener('mouseleave', () => {
+                container.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>

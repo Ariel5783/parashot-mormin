@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paracha Ki Tetsé - כי־תצא - La Torah dans le quotidien</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            background: linear-gradient(135deg, #2c3e50 0%, #e74c3c 50%, #f39c12 100%);
+            min-height: 100vh;
+            color: #333;
+            position: relative;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #2c3e50, #e74c3c);
+            margin: -40px -20px 50px -20px;
+            border-radius: 20px 20px 0 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="40" fill="white" opacity="0.1">📖</text></svg>') repeat;
+            background-size: 80px 80px;
+            opacity: 0.15;
+        }
+
+        .title {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hebrew-title {
+            font-size: 3.2em;
+            color: #f39c12;
+            margin-bottom: 15px;
+            font-family: 'Times New Roman', serif;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-size: 1.4em;
+            font-style: italic;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        .context-box {
+            background: linear-gradient(135deg, #fff8f5, #fef5e7);
+            padding: 35px;
+            border-radius: 15px;
+            border-left: 6px solid #e74c3c;
+            margin-bottom: 45px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .context-box::before {
+            content: "📜";
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 2em;
+            opacity: 0.3;
+        }
+
+        .section {
+            margin-bottom: 45px;
+            padding: 20px 0;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            font-weight: bold;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #f7fafc, #edf2f7);
+            border-radius: 10px;
+            border-left: 5px solid #e74c3c;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-icon {
+            font-size: 1.3em;
+        }
+
+        .verse-container {
+            background: linear-gradient(135deg, #fef7f7, #ffe6e6);
+            padding: 30px;
+            margin: 25px 0;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.1);
+            position: relative;
+        }
+
+        .key-verse {
+            background: linear-gradient(135deg, #fff5f5, #fed7d7);
+            border: 3px solid #f39c12;
+            box-shadow: 0 8px 25px rgba(243, 156, 18, 0.2);
+        }
+
+        .war-verse {
+            background: linear-gradient(135deg, #f8f9fa, #dee2e6);
+            border: 2px solid #495057;
+            box-shadow: 0 5px 15px rgba(73, 80, 87, 0.1);
+        }
+
+        .compassion-verse {
+            background: linear-gradient(135deg, #f0f9ff, #dbeafe);
+            border: 2px solid #3b82f6;
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.1);
+        }
+
+        .memory-verse {
+            background: linear-gradient(135deg, #fef3f2, #fee2e2);
+            border: 2px solid #dc2626;
+            box-shadow: 0 5px 15px rgba(220, 38, 38, 0.1);
+        }
+
+        .verse-french {
+            font-size: 1.15em;
+            margin-bottom: 18px;
+            font-weight: 600;
+            color: #2d3748;
+            line-height: 1.7;
+        }
+
+        .verse-hebrew {
+            font-size: 1.4em;
+            font-family: 'Times New Roman', serif;
+            direction: rtl;
+            text-align: right;
+            margin-bottom: 18px;
+            color: #2c3e50;
+            font-weight: bold;
+            line-height: 2;
+            background: rgba(44, 62, 80, 0.05);
+            padding: 12px;
+            border-radius: 8px;
+        }
+
+        .verse-transliteration {
+            font-size: 1.05em;
+            font-style: italic;
+            color: #e74c3c;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .verse-reference {
+            font-size: 0.95em;
+            color: #718096;
+            text-align: right;
+            font-weight: bold;
+        }
+
+        .content-text {
+            font-size: 1.1em;
+            line-height: 1.8;
+            text-align: justify;
+            color: #2d3748;
+            margin-bottom: 20px;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #e74c3c 0%, transparent 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: white;
+        }
+
+        .mitsvot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .mitsva-box {
+            background: linear-gradient(135deg, #fef7f7, #ffe6e6);
+            padding: 25px;
+            border-radius: 12px;
+            border: 2px solid #e74c3c;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(231, 76, 60, 0.15);
+        }
+
+        .mitsva-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #2c3e50;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .conclusion-box {
+            background: linear-gradient(135deg, #fef9e7, #fef3c7);
+            padding: 35px;
+            border-radius: 15px;
+            border: 3px solid #f39c12;
+            margin-top: 45px;
+            box-shadow: 0 10px 25px rgba(243, 156, 18, 0.2);
+            position: relative;
+        }
+
+        .conclusion-box::before {
+            content: "✨";
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2em;
+            opacity: 0.4;
+        }
+
+        .list-item {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+            font-size: 1.05em;
+            line-height: 1.6;
+        }
+
+        .list-item:before {
+            content: "•";
+            color: #2c3e50;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1.3em;
+        }
+
+        .video-section {
+            background: linear-gradient(135deg, #fef7f7, #ffe6e6);
+            padding: 35px;
+            border-radius: 20px;
+            border: 3px solid #2c3e50;
+            margin: 45px 0;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(44, 62, 80, 0.15);
+        }
+
+        .video-title {
+            font-size: 1.7em;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 850px;
+            margin: 0 auto;
+            padding-bottom: 56.25%;
+            height: 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            border: 4px solid #e74c3c;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-description {
+            margin-top: 25px;
+            font-size: 1.1em;
+            color: #4a5568;
+            font-style: italic;
+            line-height: 1.7;
+        }
+
+        .footer {
+            margin-top: 50px;
+            padding: 35px;
+            border-top: 3px solid #f39c12;
+            text-align: center;
+            background: linear-gradient(135deg, #fef7f7, #ffe6e6);
+            border-radius: 15px;
+        }
+
+        .footer-author {
+            font-size: 1.2em;
+            color: #2c3e50;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .footer-hebrew {
+            font-size: 1.4em;
+            color: #f39c12;
+            font-family: 'Times New Roman', serif;
+            margin: 0 8px;
+            font-weight: bold;
+        }
+
+        .footer-subtitle {
+            font-size: 1.05em;
+            color: #718096;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 20px;
+            }
+            
+            .header {
+                margin: -20px -20px 30px -20px;
+            }
+            
+            .title {
+                font-size: 2.2em;
+            }
+            
+            .hebrew-title {
+                font-size: 2.8em;
+            }
+            
+            .verse-hebrew {
+                font-size: 1.2em;
+            }
+
+            .mitsvot-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #2c3e50, #e74c3c, #f39c12);
+            transform-origin: left;
+            transform: scaleX(0);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-indicator"></div>
+    
+    <div class="container">
+        <div class="header">
+            <div class="hebrew-title">כי־תצא</div>
+            <h1 class="title">Paracha Ki Tetsé</h1>
+            <p class="subtitle">"La Torah dans le quotidien"</p>
+        </div>
+
+        <div class="context-box">
+            <p class="content-text">
+                La <span class="emphasis">Paracha Ki Tetsé</span> (כי־תצא — "Quand tu sortiras") occupe une place particulière dans le livre de <span class="emphasis">Devarim (Deutéronome 21:10 — 25:19)</span>. Elle contient l'un des plus grands nombres de mitsvot dans toute la Torah (plus de 70 commandements), couvrant des domaines très variés.
+            </p>
+            <br>
+            <p class="content-text">
+                Cette paracha montre comment <span class="highlight">la Torah ne se limite pas aux rituels religieux</span>, mais encadre aussi la vie quotidienne, les interactions sociales et la moralité individuelle dans tous leurs aspects.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">📖</span>
+                Le verset d'ouverture : Sortir avec la Torah
+            </h2>
+            
+            <div class="verse-container key-verse">
+                <p class="verse-french">"Quand tu sortiras en guerre contre tes ennemis"</p>
+                
+                <p class="verse-hebrew">כִּי־תֵצֵא לַמִּלְחָמָה עַל־אֹיְבֶיךָ</p>
+                
+                <p class="verse-transliteration"><em>Ki tetsé la-milḥamah 'al oyevekha</em></p>
+                
+                <p class="verse-reference">(Deutéronome 21:10)</p>
+            </div>
+            
+            <p class="content-text">
+                Ce verset inaugure une série de lois qui démontrent que <span class="highlight">même dans les situations les plus extrêmes</span>, la Torah guide nos actions et préserve notre humanité. La guerre devient un test de notre fidélité aux valeurs divines.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">⚔️</span>
+                1. La guerre et la dignité humaine
+            </h2>
+            
+            <p class="content-text">
+                Même dans un contexte de guerre, la Torah exige de maintenir une certaine dignité humaine. Le Ramban (Nahmanide) explique que ces lois visent à <span class="emphasis">tempérer les instincts de l'homme</span> même là où la violence pourrait paraître légitime.
+            </p>
+
+            <div class="verse-container war-verse">
+                <p class="verse-french">"Et tu verras parmi les captifs une belle femme et tu la désireras"</p>
+                
+                <p class="verse-hebrew">וְרָאִיתָ בַּשְּׁבְיָה אֵשֶׁת יְפַת־תֹּאַר וְחָשַׁקְתָּ בָהּ</p>
+                
+                <p class="verse-transliteration"><em>VeRa'ita ba-shivyah eshet yefat-to'ar vekhashakta bah</em></p>
+                
+                <p class="verse-reference">(Deutéronome 21:11)</p>
+            </div>
+
+            <p class="content-text">
+                Cette loi encadre les pulsions humaines en temps de guerre, imposant une période de réflexion et de respect pour la captive. Elle protège la dignité de la femme tout en reconnaissant la réalité des désirs humains.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">👥</span>
+                2. La responsabilité familiale et sociale
+            </h2>
+            
+            <p class="content-text">
+                Ki Tetsé développe des commandements touchant la famille : le fils rebelle, les lois du mariage, du divorce, du lévirat (yiboum) et du refus (ḥalitsa).
+            </p>
+
+            <div class="verse-container">
+                <p class="verse-french">"Une femme ne portera pas un objet d'homme, et un homme ne revêtira pas un habit de femme"</p>
+                
+                <p class="verse-hebrew">לֹא־יִהְיֶה כְלִי־גֶבֶר עַל־אִשָּׁה וְלֹא־יִלְבַּשׁ גֶּבֶר שִׂמְלַת אִשָּׁה</p>
+                
+                <p class="verse-transliteration"><em>Lo yiheye keli-gever 'al isha velo yilbash gever simlat isha</em></p>
+                
+                <p class="verse-reference">(Deutéronome 22:5)</p>
+            </div>
+
+            <p class="content-text">
+                Cette mitsva, selon la tradition séfarade, est comprise comme une <span class="highlight">protection de la distinction des rôles</span> et une prévention contre la confusion morale dans la société.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🕊️</span>
+                3. La compassion et la justice quotidienne
+            </h2>
+            
+            <p class="content-text">
+                Ki Tetsé insiste sur le souci des faibles : la veuve, l'orphelin, l'étranger, mais aussi les animaux. La Torah enseigne la compassion même dans les plus petits gestes.
+            </p>
+
+            <div class="verse-container compassion-verse">
+                <p class="verse-french">"Si tu rencontres un nid d'oiseau devant toi en chemin"</p>
+                
+                <p class="verse-hebrew">כִּי יִקָּרֵא קַן־צִפּוֹר לְפָנֶיךָ בַּדֶּרֶךְ</p>
+                
+                <p class="verse-transliteration"><em>Ki yikare kan tzippor lefanekha ba-derekh</em></p>
+                
+                <p class="verse-reference">(Deutéronome 22:6)</p>
+            </div>
+
+            <p class="content-text">
+                La mitsva de <span class="emphasis">shiluach ha-ken</span> (renvoyer la mère avant de prendre les oisillons) est comprise par Maïmonide comme une leçon de compassion. Même envers les animaux, l'homme doit apprendre la retenue et la miséricorde.
+            </p>
+
+            <div class="mitsvot-grid">
+                <div class="mitsva-box">
+                    <div class="mitsva-title">💰 Justice économique</div>
+                    <p>Ne pas priver le pauvre de son salaire</p>
+                </div>
+                <div class="mitsva-box">
+                    <div class="mitsva-title">🛡️ Protection sociale</div>
+                    <p>Protéger la veuve et l'orphelin</p>
+                </div>
+                <div class="mitsva-box">
+                    <div class="mitsva-title">🕊️ Compassion animale</div>
+                    <p>Respecter la dignité de toute créature</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">📚</span>
+                4. La mémoire comme devoir
+            </h2>
+            
+            <p class="content-text">
+                La paracha se termine par un commandement fondamental : se souvenir d'Amalek, qui attaqua Israël par traîtrise.
+            </p>
+
+            <div class="verse-container memory-verse">
+                <p class="verse-french">"Souviens-toi de ce que t'a fait Amalek"</p>
+                
+                <p class="verse-hebrew">זָכוֹר אֵת אֲשֶׁר־עָשָׂה לְךָ עֲמָלֵק</p>
+                
+                <p class="verse-transliteration"><em>Zakhor et asher asah lekha Amalek</em></p>
+                
+                <p class="verse-reference">(Deutéronome 25:17)</p>
+            </div>
+
+            <p class="content-text">
+                Dans la tradition séfarade, ce passage est lu avec une intensité particulière. Il ne s'agit pas seulement d'un rappel historique, mais d'un <span class="highlight">impératif moral</span> : ne jamais tolérer la cruauté gratuite et la haine injustifiée.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">💎</span>
+                5. L'intégrité dans les affaires
+            </h2>
+            
+            <p class="content-text">
+                La paracha contient également des lois sur l'honnêteté commerciale, rappelant que la spiritualité s'exprime aussi dans nos transactions quotidiennes.
+            </p>
+
+            <div class="verse-container">
+                <p class="verse-french">"Tu n'auras pas dans ton sac deux poids différents"</p>
+                
+                <p class="verse-hebrew">לֹא־יִהְיֶה לְךָ בְכִיסְךָ אֶבֶן וָאָבֶן</p>
+                
+                <p class="verse-transliteration"><em>Lo yiheye lekha vekhisekha even va'aven</em></p>
+                
+                <p class="verse-reference">(Deutéronome 25:13)</p>
+            </div>
+
+            <p class="content-text">
+                Cette loi enseigne que <span class="emphasis">l'intégrité dans les affaires</span> est une extension de notre service divin. La malhonnêteté commerciale est une forme de profanation du Nom divin.
+            </p>
+        </div>
+
+        <div class="conclusion-box">
+            <h2 class="section-title">
+                <span class="section-icon">✨</span>
+                Conclusion - La Torah dans tous les aspects de la vie
+            </h2>
+            
+            <p class="content-text">
+                La Paracha <span class="emphasis">Ki Tetsé</span> nous enseigne que la sainteté n'est pas séparée du quotidien :
+            </p>
+            <br>
+            
+            <div class="list-item">Tempérer nos <span class="emphasis">instincts</span> même dans les situations extrêmes</div>
+            <div class="list-item">Protéger les <span class="emphasis">plus vulnérables</span> de la société</div>
+            <div class="list-item">Vivre la <span class="emphasis">justice et la compassion</span> au quotidien</div>
+            <div class="list-item">Maintenir l'<span class="emphasis">intégrité</span> dans nos affaires</div>
+            <div class="list-item">Rester <span class="emphasis">vigilants</span> face au mal et ne pas oublier notre histoire</div>
+            
+            <br>
+            <p class="content-text">
+                Comme le dit le Roi David dans les Téhilim (Ps. 119:105) : <span class="highlight">נֵר לְרַגְלִי דְבָרֶךָ וְאוֹר לִנְתִיבָתִי</span> — <em>"Ta parole est une lampe à mes pieds et une lumière sur mon sentier."</em> La Torah éclaire chaque pas de notre existence.
+            </p>
+        </div>
+
+        <div class="video-section">
+            <h2 class="video-title">
+                🎥 Étude vidéo de la Paracha Ki Tetsé
+            </h2>
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/1H-uRgULIU8" 
+                    title="Paracha Ki Tetsé - La Torah dans le quotidien"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="video-description">
+                Découvrez cette étude en format vidéo pour approfondir votre compréhension 
+                de la Paracha Ki Tetsé et de ses enseignements sur l'intégration de la Torah dans tous les aspects de notre vie quotidienne.
+            </p>
+        </div>
+
+        <div class="footer">
+            <div class="footer-author">
+                Étude de la Paracha Ki Tetsé par <span class="footer-hebrew">אריאל מרמן</span> (Ariel Mormin)
+            </div>
+            <div class="footer-subtitle">
+                • Quand la Torah guide chaque pas de notre existence •
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Animation de la barre de progression
+        window.addEventListener('scroll', () => {
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            scrollIndicator.style.transform = `scaleX(${scrolled / 100})`;
+        });
+        
+        // Animation d'apparition des sections
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        // Animation pour toutes les sections
+        document.querySelectorAll('.section, .verse-container, .conclusion-box, .video-section').forEach((element) => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(element);
+        });
+
+        // Animation spéciale pour les boîtes de mitsvot
+        const mitsvotBoxes = document.querySelectorAll('.mitsva-box');
+        mitsvotBoxes.forEach((box, index) => {
+            box.style.opacity = '0';
+            box.style.transform = 'translateY(30px)';
+            box.style.transition = 'opacity 1s ease, transform 1s ease';
+            
+            setTimeout(() => {
+                observer.observe(box);
+            }, index * 100);
+        });
+    </script>
+</body>
+</html>

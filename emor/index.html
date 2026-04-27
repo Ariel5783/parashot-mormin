@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Paracha Emor : la sainteté visible dans le quotidien — Kohanim, Mo'adim et Kiddouch Hachem. Comment la sainteté se rend-elle visible dans le monde ? Étude Torah selon la tradition séfarade par Ariel Mormin.">
+    <meta name="keywords" content="Paracha Emor, אמור, Torah, Lévitique, Kohanim, Kiddouch Hachem, Mo'adim, fêtes Israël, sainteté, tradition séfarade, étude biblique, paracha semaine, Ariel Mormin, Parashot Mormin">
+    <title>Paracha Emor – אֱמוֹר – La sainteté qui se rend visible</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            background: linear-gradient(135deg,
+                #3b0000 0%, #6b1a1a 15%, #7f1d1d 30%,
+                #6b1a1a 50%, #450a0a 70%, #6b1a1a 85%, #3b0000 100%);
+            min-height: 100vh;
+            color: #333;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background:
+                radial-gradient(circle at 70% 15%, rgba(201, 162, 39, 0.22) 0%, transparent 50%),
+                radial-gradient(circle at 15% 75%, rgba(180, 60, 60, 0.20) 0%, transparent 50%),
+                radial-gradient(circle at 85% 80%, rgba(212, 175, 55, 0.15) 0%, transparent 45%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 30px auto;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.60);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ── Bouton retour ── */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #7f1d1d, #b91c1c);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(127, 29, 29, 0.40);
+            margin-bottom: 20px;
+        }
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(127, 29, 29, 0.60);
+            background: linear-gradient(135deg, #b91c1c, #7f1d1d);
+        }
+
+        /* ── En-tête ── */
+        .header {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(135deg,
+                #3b0000, #7f1d1d, #991b1b, #b45309, #991b1b, #7f1d1d, #3b0000);
+            margin: -40px -20px 50px -20px;
+            border-radius: 20px 20px 0 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background:
+                radial-gradient(circle at 30% 50%, rgba(212, 175, 55, 0.20) 0%, transparent 55%),
+                radial-gradient(circle at 70% 50%, rgba(180, 60, 60, 0.18) 0%, transparent 55%),
+                radial-gradient(circle at center, rgba(100, 10, 10, 0.45) 0%, rgba(59, 0, 0, 0.65) 70%);
+        }
+
+        .header-icon {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+            display: block;
+        }
+
+        .title {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            color: #fff5ee;
+        }
+
+        .hebrew-title {
+            font-size: 3.2em;
+            color: #fde68a;
+            margin-bottom: 15px;
+            font-family: 'Times New Roman', serif;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-size: 1.4em;
+            font-style: italic;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+            color: #fef3c7;
+        }
+
+        .reference {
+            font-size: 1.1em;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+            color: #fde68a;
+        }
+
+        /* ── Barre de progression ── */
+        .scroll-indicator {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #7f1d1d, #d97706, #fbbf24);
+            transform-origin: left;
+            transform: scaleX(0);
+            z-index: 1000;
+            transition: transform 0.1s ease;
+        }
+
+        /* ── Boîte intro ── */
+        .intro-box {
+            background: linear-gradient(135deg, #fff7ed, #fef3c7);
+            padding: 35px;
+            border-radius: 15px;
+            border-left: 6px solid #b91c1c;
+            margin-bottom: 45px;
+            box-shadow: 0 8px 20px rgba(185, 28, 28, 0.12);
+            position: relative;
+        }
+
+        .intro-box::before {
+            content: "✡";
+            position: absolute;
+            top: 15px; right: 20px;
+            font-size: 2.2em;
+            opacity: 0.20;
+            color: #b91c1c;
+        }
+
+        /* ── Sections ── */
+        .section {
+            margin-bottom: 45px;
+            padding: 20px 0;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #7f1d1d;
+            margin-bottom: 25px;
+            font-weight: bold;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #fff7ed, #fef3c7);
+            border-radius: 10px;
+            border-left: 5px solid #b91c1c;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-icon { font-size: 1.8em; flex-shrink: 0; }
+
+        .content-text {
+            font-size: 1.15em;
+            line-height: 1.8;
+            color: #1f2937;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #fde68a, #fbbf24);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: #451a03;
+        }
+
+        /* ════════════════════════════════
+           VERSE CONTAINERS
+        ════════════════════════════════ */
+        .verse-container {
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        .verse-container:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .verse-french {
+            font-size: 1.25em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        .verse-hebrew {
+            font-size: 1.8em;
+            font-family: 'Times New Roman', serif;
+            direction: rtl;
+            text-align: right;
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 8px;
+            line-height: 1.8;
+        }
+        .verse-transliteration {
+            font-size: 1.1em;
+            font-style: italic;
+            margin: 12px 0;
+        }
+        .verse-reference {
+            font-size: 0.95em;
+            font-weight: bold;
+            margin-top: 12px;
+        }
+
+        /* Section 1 : Kohanim — cramoisie profonde */
+        .kohen-verse {
+            border: 2px solid #991b1b;
+            background: linear-gradient(135deg, #fff5f5, #fee2e2);
+        }
+        .kohen-verse .verse-hebrew {
+            background: rgba(252, 165, 165, 0.30);
+            color: #450a0a;
+        }
+        .kohen-verse .verse-french          { color: #7f1d1d; }
+        .kohen-verse .verse-transliteration { color: #b91c1c; }
+        .kohen-verse .verse-reference       { color: #991b1b; }
+
+        /* Section 2 : Mo'adim — or profond */
+        .moadim-verse {
+            border: 2px solid #b45309;
+            background: linear-gradient(135deg, #fffbeb, #fef3c7);
+        }
+        .moadim-verse .verse-hebrew {
+            background: rgba(253, 230, 138, 0.40);
+            color: #451a03;
+        }
+        .moadim-verse .verse-french         { color: #92400e; }
+        .moadim-verse .verse-transliteration { color: #b45309; }
+        .moadim-verse .verse-reference      { color: #78350f; }
+
+        /* Section 3 : Kiddouch Hachem — blanc sacré / ivoire */
+        .kidouch-verse {
+            border: 2px solid #7f1d1d;
+            background: linear-gradient(135deg, #fdf8f0, #fef3e2);
+        }
+        .kidouch-verse .verse-hebrew {
+            background: rgba(253, 230, 138, 0.25);
+            color: #3b0000;
+        }
+        .kidouch-verse .verse-french        { color: #7f1d1d; }
+        .kidouch-verse .verse-transliteration { color: #b91c1c; }
+        .kidouch-verse .verse-reference     { color: #991b1b; }
+
+        /* Section 4 : Rachi / précision — ambre */
+        .rachi-verse {
+            border: 2px solid #d97706;
+            background: linear-gradient(135deg, #fffbeb, #fef9ec);
+        }
+        .rachi-verse .verse-hebrew {
+            background: rgba(253, 230, 138, 0.35);
+            color: #451a03;
+        }
+        .rachi-verse .verse-french          { color: #92400e; }
+        .rachi-verse .verse-transliteration { color: #d97706; }
+        .rachi-verse .verse-reference       { color: #b45309; }
+
+        /* Section 5 / Conclusion — cramoisie & or fusionné */
+        .conclusion-verse {
+            border: 2px solid #991b1b;
+            background: linear-gradient(135deg, #fff7ed, #fee2e2);
+        }
+        .conclusion-verse .verse-hebrew {
+            background: rgba(252, 165, 165, 0.20);
+            color: #3b0000;
+            font-size: 2em;
+        }
+        .conclusion-verse .verse-french     { color: #7f1d1d; }
+        .conclusion-verse .verse-transliteration { color: #b91c1c; }
+        .conclusion-verse .verse-reference  { color: #991b1b; }
+
+        /* ════════════════════════════════
+           BOÎTES SPÉCIALES
+        ════════════════════════════════ */
+        .teaching-box {
+            background: linear-gradient(135deg, #fff7ed, #fef3c7);
+            border: 2px solid #b91c1c;
+            border-radius: 12px;
+            padding: 25px 35px;
+            margin: 25px 0;
+        }
+        .teaching-box p {
+            font-size: 1.1em;
+            color: #1f2937;
+            margin-bottom: 12px;
+            border-left: 3px solid #b91c1c;
+            padding: 8px 0 8px 15px;
+        }
+        .teaching-box p:last-child { margin-bottom: 0; }
+
+        .kohen-special {
+            background: linear-gradient(135deg, #7f1d1d, #991b1b);
+            border: 2px solid #fca5a5;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(127, 29, 29, 0.35);
+            text-align: center;
+            color: white;
+        }
+        .kohen-special .kohen-icon {
+            font-size: 2.5em;
+            display: block;
+            margin-bottom: 15px;
+        }
+        .kohen-special p {
+            font-size: 1.15em;
+            font-weight: bold;
+            color: #fee2e2;
+        }
+        .kohen-special .kohen-sub {
+            font-size: 1em;
+            font-style: italic;
+            color: #fca5a5;
+            font-weight: normal;
+            margin-top: 8px;
+        }
+
+        .moadim-banner {
+            background: linear-gradient(135deg, #451a03, #78350f);
+            border: 2px solid #fbbf24;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.22em;
+            color: #fde68a;
+            box-shadow: 0 8px 25px rgba(180, 83, 9, 0.30);
+            line-height: 1.9;
+        }
+        .moadim-banner strong { color: #fbbf24; }
+
+        .kidouch-banner {
+            background: linear-gradient(135deg, #3b0000, #7f1d1d);
+            border: 2px solid #fca5a5;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.22em;
+            color: #fee2e2;
+            box-shadow: 0 8px 25px rgba(127, 29, 29, 0.30);
+            line-height: 1.9;
+        }
+        .kidouch-banner strong { color: #fca5a5; }
+        .kidouch-banner em    { color: #fde68a; font-style: italic; }
+
+        .rachi-banner {
+            background: linear-gradient(135deg, #451a03, #92400e);
+            border: 2px solid #fcd34d;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.15em;
+            color: #fef3c7;
+            box-shadow: 0 8px 25px rgba(180, 83, 9, 0.25);
+            line-height: 1.8;
+        }
+        .rachi-banner strong { color: #fcd34d; }
+
+        /* ── Boîte conclusion ── */
+        .conclusion-box {
+            background: linear-gradient(135deg, #fff7ed, #fef3c7);
+            padding: 40px;
+            border-radius: 18px;
+            border: 2px solid #991b1b;
+            margin-bottom: 45px;
+            box-shadow: 0 10px 30px rgba(185, 28, 28, 0.15);
+        }
+
+        .conclusion-banner {
+            background: linear-gradient(135deg, #3b0000, #7f1d1d, #b45309);
+            border: 2px solid #fbbf24;
+            border-radius: 15px;
+            padding: 35px;
+            margin: 30px 0;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.2em;
+            color: #fde68a;
+            line-height: 2;
+            box-shadow: 0 10px 30px rgba(59, 0, 0, 0.40);
+        }
+        .conclusion-banner strong { color: #fbbf24; }
+        .conclusion-banner em    { color: #fca5a5; font-style: italic; }
+
+        /* ── Citations clés ── */
+        .key-quotes {
+            background: linear-gradient(135deg, #fff7ed, #fef3c7);
+            border: 2px solid #991b1b;
+            border-radius: 18px;
+            padding: 40px;
+            margin-bottom: 45px;
+            box-shadow: 0 10px 30px rgba(185, 28, 28, 0.12);
+        }
+
+        .key-quotes h2 {
+            font-size: 1.6em;
+            color: #7f1d1d;
+            margin-bottom: 30px;
+            text-align: center;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #991b1b;
+        }
+
+        .quote-item {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 5px solid #d97706;
+            box-shadow: 0 4px 15px rgba(185, 28, 28, 0.08);
+        }
+        .quote-item:last-child { margin-bottom: 0; }
+
+        .quote-hebrew {
+            font-size: 1.8em;
+            font-family: 'Times New Roman', serif;
+            direction: rtl;
+            display: block;
+            text-align: right;
+            color: #3b0000;
+            margin-bottom: 10px;
+            padding: 10px 15px;
+            background: linear-gradient(135deg, #fff7ed, #fef3c7);
+            border-radius: 8px;
+        }
+        .quote-transliteration {
+            font-style: italic;
+            color: #b91c1c;
+            margin-bottom: 8px;
+            font-size: 1.05em;
+        }
+        .quote-french {
+            color: #7f1d1d;
+            font-weight: bold;
+            font-size: 1.05em;
+        }
+
+        /* ── Vidéo ── */
+        .video-section {
+            background: linear-gradient(135deg, #3b0000, #7f1d1d);
+            border-radius: 18px;
+            padding: 40px;
+            margin-bottom: 45px;
+            box-shadow: 0 15px 35px rgba(59, 0, 0, 0.45);
+        }
+
+        .video-title {
+            font-size: 1.6em;
+            color: #fde68a;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.55);
+            border: 2px solid rgba(212, 175, 55, 0.45);
+            margin-bottom: 20px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            border: none;
+        }
+
+        .video-description {
+            color: #fee2e2;
+            font-style: italic;
+            font-size: 1.05em;
+            text-align: center;
+            line-height: 1.7;
+        }
+
+        /* ── Footer ── */
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 2px solid #b91c1c;
+            margin-top: 20px;
+        }
+
+        .footer-author {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #7f1d1d;
+            margin-bottom: 8px;
+        }
+
+        .footer-hebrew {
+            font-size: 1.3em;
+            font-family: 'Times New Roman', serif;
+            color: #b91c1c;
+        }
+
+        .footer-subtitle {
+            font-size: 1.0em;
+            color: #991b1b;
+            font-style: italic;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            .title { font-size: 2em; }
+            .hebrew-title { font-size: 2.4em; }
+            .subtitle { font-size: 1.15em; }
+            .container { margin: 10px; padding: 25px 15px; border-radius: 15px; }
+            .header { padding: 35px 15px; }
+            .key-quotes, .conclusion-box, .video-section { padding: 25px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<div id="scrollIndicator" class="scroll-indicator"></div>
+
+<div class="container">
+
+    <!-- BOUTON RETOUR -->
+    <a href="https://parashot-mormin.netlify.app/" class="back-button">
+        ← Retour aux Parachiot
+    </a>
+
+    <!-- EN-TÊTE -->
+    <div class="header">
+        <span class="header-icon">🕯️</span>
+        <h1 class="title">Paracha Emor</h1>
+        <div class="hebrew-title">אֱמוֹר</div>
+        <p class="subtitle">La sainteté qui se rend visible</p>
+        <p class="reference">Lévitique 21:1 – 24:23 • Vayikra</p>
+    </div>
+
+    <!-- INTRODUCTION -->
+    <div class="intro-box">
+        <p class="content-text" style="margin-bottom:15px;">
+            La paracha <strong>Emor</strong> s'inscrit dans la continuité directe de <em>Kedoshim</em>. Mais un déplacement subtil s'opère
+            dès les premiers versets : la Torah ne parle plus de la sainteté comme d'un idéal à atteindre.
+            Elle parle de la sainteté <span class="highlight">incarnée</span> — dans des fonctions précises, dans des temps consacrés, dans des actes visibles.
+        </p>
+        <p class="content-text" style="margin-bottom:15px;">
+            Trois axes structurent cette paracha : la sainteté des <em>Kohanim</em>, la sainteté du temps à travers les <em>Mo'adim</em>,
+            et la sainteté du Nom — le <em>Kiddouch Hachem</em>.
+        </p>
+        <p class="content-text" style="margin-bottom:0; font-weight:bold; color:#7f1d1d;">
+            👉 Ces trois axes convergent vers une seule et même question, posée avec insistance par le texte lui-même :
+            <em>Comment la sainteté se rend-elle visible dans le monde ?</em>
+        </p>
+    </div>
+
+    <!-- SECTION 1 : LES KOHANIM -->
+    <div class="section">
+        <h2 class="section-title">
+            <span class="section-icon">⚖️</span>
+            1. La sainteté des Kohanim — une fonction visible
+        </h2>
+
+        <p class="content-text">
+            La paracha s'ouvre sur des règles précises adressées aux prêtres.
+            Le <em>Cohen</em> est soumis à des restrictions qui peuvent surprendre : des interdits en matière de deuil,
+            des exigences concernant l'état physique, une attention portée jusqu'aux détails du quotidien.
+            La Torah insiste — et cette insistance est déjà un enseignement.
+        </p>
+
+        <div class="verse-container kohen-verse">
+            <p class="verse-french">« Ils seront saints pour leur Dieu, et ils ne profaneront pas le Nom de leur Dieu »</p>
+            <p class="verse-hebrew">הֵם קְדֹשִׁים לֵאלֹהֵיהֶם וְלֹא יְחַלְּלוּ שֵׁם אֱלֹהֵיהֶם</p>
+            <p class="verse-transliteration"><em>Hem qedoshim leElohehem velo yeḥalelou shem Elohehem</em></p>
+            <p class="verse-reference">(Vayikra / Lévitique 21:6)</p>
+        </div>
+
+        <p class="content-text">
+            Ce verset pose la structure de toute la paracha. La sainteté du Cohen n'est pas seulement intérieure —
+            elle s'exprime dans la manière dont il se tient, dont il se présente, dont il exerce sa fonction.
+            <span class="highlight">Ce que l'on est doit devenir visible dans ce que l'on fait.</span>
+        </p>
+
+        <div class="kohen-special">
+            <span class="kohen-icon">🕯️</span>
+            <p>Le Cohen est un porteur visible du Nom d'Adonaï</p>
+            <p class="kohen-sub">Sa sainteté ne se prouve pas dans l'exceptionnel — elle se lit dans la cohérence de chaque acte</p>
+        </div>
+
+        <p class="content-text">
+            Dans la tradition séfarade, ce passage enseigne quelque chose de profond sur la nature de la sainteté :
+            elle n'est pas une expérience privée et intérieure que personne ne voit. Elle a une dimension publique,
+            une lisibilité sociale. Le prêtre porte la sainteté au nom de tout le peuple —
+            ce qu'il est et ce qu'il fait engage une responsabilité qui dépasse sa seule personne.
+        </p>
+
+        <div class="teaching-box">
+            <p>⚖️ La sainteté du Cohen exige une <strong>cohérence totale</strong> entre l'intérieur et l'extérieur</p>
+            <p>🌿 La fonction sacerdotale n'est pas un titre — c'est un <strong>engagement visible</strong></p>
+            <p>🔥 Les règles de la paracha traduisent une exigence de <strong>lisibilité spirituelle</strong></p>
+        </div>
+    </div>
+
+    <!-- SECTION 2 : LES MO'ADIM -->
+    <div class="section">
+        <h2 class="section-title">
+            <span class="section-icon">🌙</span>
+            2. Les Mo'adim — sanctifier le temps
+        </h2>
+
+        <p class="content-text">
+            La paracha présente ensuite le calendrier des fêtes d'Israël — les <em>Mo'adim</em>,
+            littéralement les « temps fixés ». Chabbat, Pessa'h, Chavou'ot, Roch Hachana, Yom Kippour, Soukot :
+            chaque fête est nommée, datée, définie dans ses obligations.
+        </p>
+
+        <div class="verse-container moadim-verse">
+            <p class="verse-french">« Voici les temps fixés d'Adonaï, les saintes convocations que vous proclamerez en leurs temps »</p>
+            <p class="verse-hebrew">אֵלֶּה מוֹעֲדֵי ה' מִקְרָאֵי קֹדֶשׁ אֲשֶׁר תִּקְרְאוּ אֹתָם בְּמוֹעֲדָם</p>
+            <p class="verse-transliteration"><em>Eleh mo'adei Adonaï miqraé qodesh asher tiqre'ou otam bemo'adam</em></p>
+            <p class="verse-reference">(Vayikra / Lévitique 23:4)</p>
+        </div>
+
+        <p class="content-text">
+            Le mot <em>Mo'adim</em> porte en lui l'idée d'une rencontre — une <em>rendez-vous</em> entre Adonaï et Israël.
+            Le temps n'est pas un flux neutre que l'homme traverse passivement.
+            <span class="highlight">Il est un espace que la Torah structure, consacre et transforme en lieu de présence.</span>
+        </p>
+
+        <div class="moadim-banner">
+            Les <em>Mo'adim</em> enseignent que la sainteté ne se vit pas seulement dans l'espace —<br>
+            dans le Temple, dans la synagogue, dans la maison.<br><br>
+            Elle se vit aussi dans le <strong>temps</strong>.<br><br>
+            Chaque fête est une invitation à sanctifier un moment de l'année<br>
+            et, à travers lui, <strong>toute une manière d'être.</strong>
+        </div>
+
+        <p class="content-text">
+            Cette structure du temps sacré est un enseignement fondamental de la Torah.
+            Elle dit que la vie spirituelle n'est pas une disposition permanente et abstraite —
+            elle a besoin de <em>jalons</em>, de moments nommés, de rendez-vous répétés.
+            Les fêtes sont ces rendez-vous. Elles rythment l'année et rappellent, à intervalles réguliers,
+            que le temps appartient à Adonaï.
+        </p>
+    </div>
+
+    <!-- SECTION 3 : KIDDOUCH HACHEM -->
+    <div class="section">
+        <h2 class="section-title">
+            <span class="section-icon">🌟</span>
+            3. Le Kiddouch Hachem — porter le Nom dans le monde
+        </h2>
+
+        <p class="content-text">
+            La paracha atteint son point central avec le verset du <em>Kiddouch Hachem</em>.
+            Ce commandement — sanctifier le Nom d'Adonaï — est ici formulé avec une précision remarquable,
+            et son opposé, le <em>Hilloul Hachem</em> (profanation du Nom), est énoncé avec une solennité particulière.
+        </p>
+
+        <div class="verse-container kidouch-verse">
+            <p class="verse-french">« Vous ne profanerez pas Mon saint Nom, et Je serai sanctifié au milieu des enfants d'Israël »</p>
+            <p class="verse-hebrew">וְלֹא תְחַלְּלוּ אֶת־שֵׁם קָדְשִׁי וְנִקְדַּשְׁתִּי בְּתוֹךְ בְּנֵי יִשְׂרָאֵל</p>
+            <p class="verse-transliteration"><em>Velo teḥalelou et shem kodshi venikdashti betokh bene Yisrael</em></p>
+            <p class="verse-reference">(Vayikra / Lévitique 22:32)</p>
+        </div>
+
+        <p class="content-text">
+            Ce qui frappe dans ce verset, c'est l'expression <em>betokh bene Yisrael</em> — « au milieu des enfants d'Israël ».
+            La sanctification du Nom ne se passe pas dans la solitude d'une cellule monastique.
+            Elle se réalise <em>au milieu</em> — dans l'espace collectif, dans la relation aux autres, dans la vie visible.
+        </p>
+
+        <div class="kidouch-banner">
+            Sanctifier le Nom d'<em>Adonaï</em>, ce n'est pas seulement un acte exceptionnel.<br><br>
+            C'est une <strong>disposition permanente</strong> —<br>
+            la manière dont un homme ou une femme se tient dans le monde,<br>
+            fidèle à ce qu'il professe,<br>
+            <strong>cohérent entre ce qu'il croit et ce qu'il fait.</strong>
+        </div>
+
+        <p class="content-text">
+            Le <em>Lévitique Rabba</em> souligne que cette section est enseignée <em>bérov kahal</em> — en grande assemblée.
+            Non pas parce qu'elle est complexe, mais parce qu'elle concerne la vie collective d'Israël.
+            Ce qui est en jeu ici ne relève pas de la spiritualité privée.
+            Il s'agit de la manière dont la sainteté se rend visible devant les autres —
+            et dont elle engage chaque membre du peuple comme porteur du Nom.
+        </p>
+    </div>
+
+    <!-- SECTION 4 : RACHI — LE DÉTAIL QUI RÉVÈLE TOUT -->
+    <div class="section">
+        <h2 class="section-title">
+            <span class="section-icon">🔎</span>
+            4. Le détail qui révèle tout
+        </h2>
+
+        <p class="content-text">
+            La paracha insiste sur un point qui peut sembler secondaire : les restrictions imposées
+            à un <em>Cohen</em> présentant certains défauts physiques pour l'exercice du service du Temple.
+            À première lecture, on pourrait être tenté de passer rapidement sur ces versets.
+            C'est précisément là qu'il faut s'arrêter.
+        </p>
+
+        <p class="content-text">
+            Car la Torah y revient, précise, insiste. Et c'est cette insistance qui constitue l'enseignement réel.
+            <span class="highlight">Ce n'est pas une règle d'exclusion — c'est une règle de lisibilité.</span>
+            La sainteté, pour la Torah, doit se voir. Ce que l'on est doit être visible dans ce que l'on fait.
+            La fonction sacerdotale engage jusqu'à la présence physique, jusqu'à la forme de l'acte accompli.
+        </p>
+
+        <div class="verse-container rachi-verse">
+            <p class="verse-french">« Je serai sanctifié — et venikdashti » : la formulation passive dit quelque chose d'essentiel</p>
+            <p class="verse-hebrew">וְנִקְדַּשְׁתִּי בְּתוֹךְ בְּנֵי יִשְׂרָאֵל</p>
+            <p class="verse-transliteration"><em>Venikdashti betokh bene Yisrael</em></p>
+            <p class="verse-reference">(Vayikra / Lévitique 22:32)</p>
+        </div>
+
+        <p class="content-text">
+            Sur ce verset, Rachi apporte une précision décisive.
+            Il explique que la sanctification du Nom d'Adonaï peut aller jusqu'au don de soi —
+            jusqu'à ce que l'on place la fidélité au Nom au-dessus de son propre intérêt.
+            Autrement dit : <em>se sanctifier</em> n'est pas d'abord un acte exceptionnel réservé à des situations extrêmes.
+            C'est une disposition constante, une manière de vivre qui place la fidélité au Nom
+            au centre de chaque décision, chaque engagement, chaque comportement.
+        </p>
+
+        <div class="rachi-banner">
+            « Rachi met ici en lumière le cœur de la paracha :<br>
+            la sanctification du Nom n'est pas un acte ponctuel.<br><br>
+            C'est une <strong>posture de vie</strong> — fidèle dans le visible et dans l'invisible,<br>
+            dans ce que les autres voient et dans ce que personne ne voit. »
+        </div>
+
+        <p class="content-text">
+            Et inversement : <em>profaner</em> le Nom d'Adonaï n'est pas seulement un acte grave et délibéré.
+            C'est aussi — et peut-être surtout — une incohérence.
+            Une contradiction entre ce que l'on affirme et ce que l'on fait.
+            Un comportement ordinaire qui entre en contradiction avec la fidélité professée.
+            La Torah demande une exigence radicale : la cohérence, partout, toujours.
+        </p>
+    </div>
+
+    <!-- SECTION 5 : DU TEMPLE À CHAQUE FOYER -->
+    <div class="section">
+        <h2 class="section-title">
+            <span class="section-icon">🏡</span>
+            5. Du Temple à chaque foyer — la sainteté de chacun
+        </h2>
+
+        <p class="content-text">
+            La paracha opère progressivement un élargissement remarquable.
+            Elle part des <em>Kohanim</em> et du service du Temple.
+            Elle passe par les fêtes du calendrier, qui concernent tout le peuple.
+            Elle arrive au <em>Kiddouch Hachem</em>, qui engage chaque individu dans chaque espace de sa vie.
+        </p>
+
+        <p class="content-text">
+            Ce mouvement n'est pas anecdotique.
+            Il dit quelque chose d'essentiel : <span class="highlight">tout Israël devient porteur du Nom.</span>
+            La responsabilité du Cohen — incarner la sainteté de manière visible —
+            n'est pas réservée à une caste. Elle est, à des degrés différents, la responsabilité de chacun.
+            Le Temple est le cœur. Mais la sainteté qu'il génère est appelée à rayonner bien au-delà de ses murs.
+        </p>
+
+        <p class="content-text">
+            Aujourd'hui, le <em>Kiddouch Hachem</em> prend des formes que la Torah elle-même ne nomme pas —
+            parce qu'elles appartiennent à la vie de chaque époque.
+            L'honnêteté dans les affaires. La justesse de la parole.
+            La bienveillance dans les relations. La cohérence entre ce que l'on professe
+            et la manière dont on se conduit — là où personne ne regarde, autant que là où tout le monde regarde.
+        </p>
+
+        <div class="teaching-box">
+            <p>🏡 Le <em>Kiddouch Hachem</em> se vit dans le <strong>quotidien ordinaire</strong>, pas seulement dans l'exceptionnel</p>
+            <p>⚖️ Honnêteté, justesse, bienveillance : chaque acte juste <strong>sanctifie le Nom</strong></p>
+            <p>🌿 Ce qui distingue le Cohen et tout Israël, c'est la même exigence : <strong>la cohérence visible</strong></p>
+        </div>
+    </div>
+
+    <!-- CONCLUSION -->
+    <div class="conclusion-box">
+        <h2 class="section-title" style="background:transparent; border:none; padding:0; margin-bottom:25px; color:#7f1d1d;">
+            <span class="section-icon">✨</span>
+            Conclusion — La cohérence visible du quotidien
+        </h2>
+
+        <p class="content-text">
+            La paracha <strong>Emor</strong> nous conduit, pas à pas, d'une vision verticale et institutionnelle de la sainteté
+            vers une vision incarnée, sociale et exigeante. Elle part du prêtre et arrive à chaque homme.
+            Elle part du Temple et arrive à chaque foyer. Elle part du grand jour sacré et arrive à chaque instant ordinaire.
+        </p>
+
+        <p class="content-text">
+            Elle enseigne que porter le Nom d'Adonaï, vivre selon la Torah, agir dans le monde —
+            ces trois réalités ne sont pas séparables. Elles forment une seule et même chose.
+            <span class="highlight">La sainteté ne se prouve pas dans l'exceptionnel.</span>
+            Elle se révèle dans la cohérence visible du quotidien — dans la précision de l'acte juste,
+            dans la fidélité à un engagement, dans la manière dont un homme ou une femme se tient face aux autres.
+        </p>
+
+        <div class="verse-container conclusion-verse">
+            <p class="verse-hebrew">וְלֹא תְחַלְּלוּ אֶת־שֵׁם קָדְשִׁי וְנִקְדַּשְׁתִּי בְּתוֹךְ בְּנֵי יִשְׂרָאֵל</p>
+            <p class="verse-transliteration"><em>Velo teḥalelou et shem kodshi venikdashti betokh bene Yisrael</em></p>
+            <p class="verse-french">« Vous ne profanerez pas Mon saint Nom, et Je serai sanctifié au milieu des enfants d'Israël. »</p>
+            <p class="verse-reference">(Vayikra / Lévitique 22:32)</p>
+        </div>
+
+        <div class="conclusion-banner">
+            La sainteté commence dans le Sanctuaire…<br>
+            Mais elle se réalise dans la vie visible de chaque jour.<br><br>
+            Chaque parole… Chaque acte… Chaque engagement…<br>
+            devient un espace où le Nom d'<em>Adonaï</em> est sanctifié ou profané.<br><br>
+            <strong>C'est cela, pour la Torah, porter le Nom dans le monde.</strong>
+        </div>
+
+        <p class="content-text" style="text-align:center; font-size:1.3em; font-weight:bold; color:#7f1d1d; margin-top:30px;">
+            Shabbat Shalom. ✨🕯️
+        </p>
+    </div>
+
+    <!-- CITATIONS CLÉS -->
+    <div class="key-quotes">
+        <h2>🕯️ Quelques citations clés de la Paracha Emor</h2>
+
+        <div class="quote-item">
+            <span class="quote-hebrew">הֵם קְדֹשִׁים לֵאלֹהֵיהֶם וְלֹא יְחַלְּלוּ שֵׁם אֱלֹהֵיהֶם</span>
+            <p class="quote-transliteration">Hem qedoshim leElohehem velo yeḥalelou shem Elohehem.</p>
+            <p class="quote-french">« Ils seront saints pour leur Dieu, et ils ne profaneront pas le Nom de leur Dieu. » (Lévitique 21:6)</p>
+        </div>
+
+        <div class="quote-item">
+            <span class="quote-hebrew">אֵלֶּה מוֹעֲדֵי ה' מִקְרָאֵי קֹדֶשׁ</span>
+            <p class="quote-transliteration">Eleh mo'adei Adonaï miqraé qodesh.</p>
+            <p class="quote-french">« Voici les temps fixés d'Adonaï, les saintes convocations. » (Lévitique 23:4)</p>
+        </div>
+
+        <div class="quote-item">
+            <span class="quote-hebrew">וְלֹא תְחַלְּלוּ אֶת־שֵׁם קָדְשִׁי</span>
+            <p class="quote-transliteration">Velo teḥalelou et shem kodshi.</p>
+            <p class="quote-french">« Vous ne profanerez pas Mon saint Nom. » (Lévitique 22:32)</p>
+        </div>
+
+        <div class="quote-item">
+            <span class="quote-hebrew">וְנִקְדַּשְׁתִּי בְּתוֹךְ בְּנֵי יִשְׂרָאֵל</span>
+            <p class="quote-transliteration">Venikdashti betokh bene Yisrael.</p>
+            <p class="quote-french">« Et Je serai sanctifié au milieu des enfants d'Israël. » (Lévitique 22:32)</p>
+        </div>
+
+        <div class="quote-item">
+            <span class="quote-hebrew">שֵׁשֶׁת יָמִים תֵּעָשֶׂה מְלָאכָה וּבַיּוֹם הַשְּׁבִיעִי שַׁבַּת שַׁבָּתוֹן</span>
+            <p class="quote-transliteration">Sheshet yamim te'asé melakha ouvayom hashevi'i shabbat shabbaton.</p>
+            <p class="quote-french">« Six jours on travaillera, et le septième jour est un Chabbat de repos complet. » (Lévitique 23:3)</p>
+        </div>
+    </div>
+
+    <!-- VIDÉO -->
+    <div class="video-section">
+        <h2 class="video-title">
+            🎥 Étude vidéo de la Paracha Emor
+        </h2>
+        <div class="video-container">
+            <iframe
+                src="https://www.youtube.com/embed/eGqdQ942BaY"
+                title="Paracha Emor : La sainteté visible dans le quotidien | Kiddouch Hachem — Étude Torah – Tradition séfarade"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+            </iframe>
+        </div>
+        <p class="video-description">
+            Une étude structurée et profonde de la Paracha Emor selon la tradition séfarade.
+            La sainteté des <em>Kohanim</em> et la lisibilité du sacré ; le calendrier des <em>Mo'adim</em>
+            et la sanctification du temps ; le <em>Kiddouch Hachem</em> comme engagement de chaque instant —
+            et la manière dont tout Israël devient porteur du Nom dans le monde.
+        </p>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <div class="footer-author">
+            Étude de la Paracha Emor par <span class="footer-hebrew">אריאל מרמן</span> (Ariel Mormin)
+        </div>
+        <div class="footer-subtitle">
+            • La sainteté qui se rend visible — אֱמוֹר • Lévitique 21–24 • Tradition séfarade •
+        </div>
+    </div>
+
+</div><!-- /.container -->
+
+<script>
+    // Indicateur de progression du scroll
+    window.addEventListener('scroll', () => {
+        const scrollIndicator = document.getElementById('scrollIndicator');
+        const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+        scrollIndicator.style.transform = `scaleX(${scrolled / 100})`;
+    });
+
+    // Animation d'apparition au scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll(
+        '.section, .verse-container, .conclusion-box, .video-section, ' +
+        '.intro-box, .kohen-special, .moadim-banner, .kidouch-banner, ' +
+        '.rachi-banner, .conclusion-banner, .teaching-box, ' +
+        '.key-quotes, .quote-item'
+    ).forEach((el) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        observer.observe(el);
+    });
+
+    // Effet hover sur les conteneurs de versets
+    document.querySelectorAll('.verse-container').forEach(container => {
+        container.addEventListener('mouseenter', () => {
+            container.style.transform = 'translateY(-2px)';
+            container.style.transition = 'transform 0.3s ease';
+        });
+        container.addEventListener('mouseleave', () => {
+            container.style.transform = 'translateY(0)';
+        });
+    });
+</script>
+</body>
+</html>

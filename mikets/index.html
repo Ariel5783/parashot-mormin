@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paracha Mikets - מקץ - Le temps accompli</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            background: linear-gradient(135deg, #78350f 0%, #b45309 50%, #92400e 100%);
+            min-height: 100vh;
+            color: #333;
+            position: relative;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #78350f, #b45309);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(120, 53, 15, 0.3);
+            margin-bottom: 20px;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(120, 53, 15, 0.4);
+            background: linear-gradient(135deg, #b45309, #78350f);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #78350f, #b45309);
+            margin: -40px -20px 50px -20px;
+            border-radius: 20px 20px 0 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="40" fill="white" opacity="0.1">👑</text></svg>') repeat;
+            background-size: 80px 80px;
+            opacity: 0.15;
+        }
+
+        .title {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hebrew-title {
+            font-size: 3.2em;
+            color: #fbbf24;
+            margin-bottom: 15px;
+            font-family: 'Times New Roman', serif;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-size: 1.4em;
+            font-style: italic;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        .reference {
+            font-size: 1.1em;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #fbbf24, #f59e0b);
+            transform-origin: left;
+            transform: scaleX(0);
+            z-index: 1000;
+            transition: transform 0.1s ease;
+        }
+
+        .intro-box {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            padding: 35px;
+            border-radius: 15px;
+            border-left: 6px solid #f59e0b;
+            margin-bottom: 45px;
+            box-shadow: 0 8px 20px rgba(245, 158, 11, 0.2);
+            position: relative;
+        }
+
+        .intro-box::before {
+            content: "⏳";
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 2em;
+            opacity: 0.3;
+        }
+
+        .section {
+            margin-bottom: 45px;
+            padding: 20px 0;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #78350f;
+            margin-bottom: 25px;
+            font-weight: bold;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border-radius: 10px;
+            border-left: 5px solid #b45309;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-icon {
+            font-size: 1.3em;
+        }
+
+        .content-text {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            text-align: justify;
+            color: #2d3748;
+            line-height: 1.8;
+        }
+
+        .verse-container {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            padding: 30px;
+            margin: 25px 0;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+            box-shadow: 0 5px 15px rgba(245, 158, 11, 0.1);
+            position: relative;
+        }
+
+        .key-verse {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border: 3px solid #f59e0b;
+            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.3);
+        }
+
+        .pharaoh-verse {
+            background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+            border: 2px solid #3b82f6;
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.1);
+        }
+
+        .yossef-verse {
+            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+            border: 2px solid #10b981;
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.1);
+        }
+
+        .power-verse {
+            background: linear-gradient(135deg, #78350f, #b45309);
+            border: 2px solid #fbbf24;
+            box-shadow: 0 5px 15px rgba(251, 191, 36, 0.2);
+            color: white;
+        }
+
+        .power-verse .verse-french,
+        .power-verse .verse-hebrew,
+        .power-verse .verse-transliteration {
+            color: white;
+        }
+
+        .power-verse .verse-hebrew {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .famine-verse {
+            background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+            border: 2px solid #6b7280;
+            box-shadow: 0 5px 15px rgba(107, 114, 128, 0.1);
+        }
+
+        .verse-french {
+            font-size: 1.15em;
+            margin-bottom: 18px;
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        .verse-hebrew {
+            font-size: 1.8em;
+            direction: rtl;
+            font-family: 'Times New Roman', serif;
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 8px;
+            font-weight: bold;
+            color: #1a202c;
+            text-align: center;
+        }
+
+        .verse-transliteration {
+            font-size: 1.05em;
+            font-style: italic;
+            color: #4a5568;
+            margin-bottom: 12px;
+        }
+
+        .verse-reference {
+            font-size: 0.95em;
+            color: #718096;
+            font-style: italic;
+            margin-top: 15px;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #fde68a 0%, #fbbf24 100%);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: #78350f;
+        }
+
+        .themes-list {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            padding: 25px 30px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #f59e0b;
+        }
+
+        .themes-list ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .themes-list li {
+            font-size: 1.1em;
+            margin: 15px 0;
+            padding-left: 5px;
+            color: #2d3748;
+            line-height: 1.7;
+            transition: all 0.3s ease;
+        }
+
+        .conclusion-box {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            border: 3px solid #f59e0b;
+            box-shadow: 0 10px 30px rgba(245, 158, 11, 0.2);
+        }
+
+        .video-section {
+            margin: 50px 0;
+            padding: 35px;
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border-radius: 15px;
+            border: 2px solid #f59e0b;
+            box-shadow: 0 10px 25px rgba(245, 158, 11, 0.15);
+        }
+
+        .video-title {
+            font-size: 1.8em;
+            color: #78350f;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-description {
+            text-align: center;
+            font-size: 1.05em;
+            color: #4a5568;
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        .footer {
+            margin-top: 60px;
+            padding: 30px;
+            text-align: center;
+            background: linear-gradient(135deg, #78350f, #b45309);
+            color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(120, 53, 15, 0.2);
+        }
+
+        .footer-author {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .footer-hebrew {
+            font-size: 1.3em;
+            font-family: 'Times New Roman', serif;
+            color: #fbbf24;
+        }
+
+        .footer-subtitle {
+            font-size: 1.1em;
+            font-style: italic;
+            opacity: 0.9;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2em;
+            }
+
+            .hebrew-title {
+                font-size: 2.5em;
+            }
+
+            .subtitle {
+                font-size: 1.2em;
+            }
+
+            .section-title {
+                font-size: 1.3em;
+            }
+
+            .content-text {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-indicator"></div>
+    
+    <div class="container">
+        <a href="../index.html" class="back-button">
+            ← Retour à l'accueil
+        </a>
+
+        <div class="header">
+            <h1 class="title">Paracha Mikets</h1>
+            <div class="hebrew-title">מקץ</div>
+            <p class="subtitle">Le temps accompli</p>
+            <p class="reference">Bereshit / Genèse 41,1 – 44,17</p>
+        </div>
+
+        <div class="intro-box">
+            <h2 class="section-title">
+                <span class="section-icon">⏳</span>
+                Introduction – Le temps accompli
+            </h2>
+            
+            <p class="content-text">
+                La paracha <strong>Mikets</strong>, dont le nom signifie <em>« au terme »</em> ou <em>« à la fin »</em>, s'ouvre après deux années de silence, de stagnation et d'attente. Yossef est toujours emprisonné en Égypte, oublié par les hommes, mais <strong>pas oublié par Ashem</strong>. Mikets marque le moment précis où le temps humain et le temps divin se rejoignent.
+            </p>
+            <br>
+            <p class="content-text">
+                Dans la tradition séfarade, Mikets est l'une des parachiot les plus fortes sur la <strong>hashgaḥa pratit</strong> (la providence particulière) : rien n'est laissé au hasard. Les rêves, les décisions politiques, les famines et même les déplacements des frères s'inscrivent dans un plan plus vaste, invisible mais cohérent.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">💭</span>
+                1️⃣ Le rêve de Pharaon : quand Ashem parle aux nations
+            </h2>
+
+            <div class="verse-container pharaoh-verse">
+                <p class="verse-french">« Au bout de deux années, Pharaon fit un rêve »</p>
+                
+                <p class="verse-hebrew">וַיְהִי מִקֵּץ שְׁנָתַיִם יָמִים וּפַרְעֹה חֹלֵם</p>
+                
+                <p class="verse-transliteration"><em>Vayéhi mikets shnatayim yamim, ouPar'o ḥolem</em></p>
+                
+                <p class="verse-reference">(Bereshit 41,1)</p>
+            </div>
+
+            <p class="content-text">
+                Le rêve de Pharaon n'est pas anodin : Ashem choisit de parler à un souverain païen pour sauver non seulement l'Égypte, mais aussi la famille d'Israël.
+            </p>
+            <br>
+            <p class="content-text">
+                Dans la tradition séfarade, on souligne que <span class="highlight">la sagesse n'est pas le monopole d'Israël</span>, mais que <strong>l'interprétation authentique</strong> relève de ceux qui reconnaissent la source divine.
+            </p>
+            <br>
+            <p class="content-text">
+                Les sept vaches grasses et les sept vaches maigres symbolisent un principe fondamental : <span class="highlight">l'abondance n'est jamais éternelle</span>, et la prévoyance est une responsabilité morale.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🌟</span>
+                2️⃣ Yossef : de la prison au pouvoir
+            </h2>
+
+            <p class="content-text">
+                Yossef refuse toute glorification personnelle. Il se présente comme un simple <strong>canal</strong> de la parole divine.
+            </p>
+
+            <div class="verse-container yossef-verse">
+                <p class="verse-french">« Ce n'est pas moi, c'est Ashem qui donnera une réponse favorable à Pharaon »</p>
+                
+                <p class="verse-hebrew">בִּלְעָדָי אֱלֹהִים יַעֲנֶה אֶת־שְׁלוֹם פַּרְעֹה</p>
+                
+                <p class="verse-transliteration"><em>Bil'adaï, Elohim ya'ané et shelom Par'o</em></p>
+                
+                <p class="verse-reference">(Bereshit 41,16)</p>
+            </div>
+
+            <p class="content-text">
+                La tradition séfarade insiste ici sur la notion d'<strong>anava</strong> (humilité) : c'est précisément cette attitude qui ouvre à Yossef les portes du pouvoir.
+            </p>
+
+            <h3 style="font-size: 1.3em; color: #78350f; margin: 30px 0 15px 0; font-weight: bold;">📌 Pharaon reconnaît l'esprit divin</h3>
+
+            <p class="content-text">
+                Pharaon reconnaît en lui un homme habité par l'esprit divin :
+            </p>
+
+            <div class="verse-container key-verse">
+                <p class="verse-french">« Trouverait-on un homme comme celui-ci, en qui réside l'esprit d'Ashem ? »</p>
+                
+                <p class="verse-hebrew">הֲנִמְצָא כָזֶה אִישׁ אֲשֶׁר רוּחַ אֱלֹהִים בּוֹ</p>
+                
+                <p class="verse-transliteration"><em>Hanimtsa kazé ish asher rouaḥ Elohim bo</em></p>
+                
+                <p class="verse-reference">(Bereshit 41,38)</p>
+            </div>
+
+            <p class="content-text">
+                Yossef devient vice-roi d'Égypte. La descente est devenue élévation.
+            </p>
+
+            <div class="verse-container power-verse">
+                <p class="verse-french">« Il l'établit sur tout le pays d'Égypte »</p>
+                
+                <p class="verse-hebrew">וַיָּשֶׂם אֹתוֹ עַל־כָּל־אֶרֶץ מִצְרָיִם</p>
+                
+                <p class="verse-transliteration"><em>Vayassem oto 'al kol erets Mitsrayim</em></p>
+                
+                <p class="verse-reference">(Bereshit 41,41)</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🌾</span>
+                3️⃣ La famine et la descente des frères : la confrontation nécessaire
+            </h2>
+
+            <div class="verse-container famine-verse">
+                <p class="verse-french">« La famine s'étendit à tous les pays »</p>
+                
+                <p class="verse-hebrew">וַתְּהִי הָרָעָב בְּכָל־הָאָרָצוֹת</p>
+                
+                <p class="verse-transliteration"><em>Vatehi hara'av bekhol ha'aratsot</em></p>
+                
+                <p class="verse-reference">(Bereshit 41,54)</p>
+            </div>
+
+            <p class="content-text">
+                La famine pousse les frères de Yossef à descendre en Égypte. Ce déplacement n'est pas seulement géographique : il est <strong>spirituel</strong>.
+            </p>
+            <br>
+            <p class="content-text">
+                Dans la lecture séfarade, Mikets n'est pas encore la réconciliation, mais <span class="highlight">la mise en place du processus de réparation (tikkoun)</span>.
+            </p>
+            <br>
+            <p class="content-text">
+                Yossef reconnaît ses frères, mais eux ne le reconnaissent pas. Cette asymétrie est essentielle :
+            </p>
+            <br>
+            <p class="content-text">
+                • Yossef a intégré son passé<br>
+                • Les frères ne l'ont pas encore affronté
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">👶</span>
+                4️⃣ Binyamin : le point de bascule
+            </h2>
+
+            <p class="content-text">
+                L'épreuve de Binyamin est centrale. Yossef teste ses frères non par vengeance, mais pour vérifier leur capacité à <strong>assumer la responsabilité collective</strong>, notamment envers Rachel, la mère absente.
+            </p>
+            <br>
+            <p class="content-text">
+                Dans la tradition séfarade, <span class="highlight">Binyamin représente l'innocence menacée</span>, celle qui ne doit plus être sacrifiée. C'est autour de lui que se joue la transformation morale des frères.
+            </p>
+        </div>
+
+        <div class="conclusion-box">
+            <h2 class="section-title">
+                <span class="section-icon">✨</span>
+                Conclusion – Mikets : apprendre à attendre et à voir
+            </h2>
+            
+            <p class="content-text">
+                Mikets enseigne que <span class="highlight">le silence d'Ashem n'est jamais une absence</span>.
+            </p>
+            <br>
+            <p class="content-text">
+                Yossef attend, souffre, se tait, mais reste fidèle à sa mission intérieure. Lorsque le moment arrive, tout s'accélère.
+            </p>
+
+            <div class="themes-list">
+                <p class="content-text" style="margin-bottom: 20px; font-weight: bold;">
+                    La paracha nous rappelle trois enseignements majeurs :
+                </p>
+                <ul>
+                    <li>1. <strong>Le temps d'Ashem n'est pas le nôtre</strong>, mais il est toujours juste.</li>
+                    <li>2. <strong>L'humilité ouvre les portes</strong> que la force ne peut forcer.</li>
+                    <li>3. <strong>La réparation précède toujours la réconciliation.</strong></li>
+                </ul>
+            </div>
+
+            <p class="content-text">
+                Mikets est une paracha de transition, mais aussi d'espérance : même au cœur de l'exil, <span class="highlight">la lumière est déjà en marche</span>.
+            </p>
+            <br>
+            <p class="content-text" style="text-align: center; font-size: 1.2em; font-weight: bold; color: #78350f;">
+                Quand Ashem élève, nul ne peut abaisser.
+            </p>
+        </div>
+
+        <div class="video-section">
+            <h2 class="video-title">
+                🎥 Étude vidéo de la Paracha Mikets
+            </h2>
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/ArmojZ4C3ok" 
+                    title="Paracha Mikets - Le temps accompli"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="video-description">
+                Découvrez cette étude en format vidéo pour approfondir votre compréhension 
+                de la Paracha Mikets et de ses enseignements sur la providence divine, 
+                l'humilité de Yossef, et la transformation qui s'opère au terme de l'attente.
+            </p>
+        </div>
+
+        <div class="footer">
+            <div class="footer-author">
+                Étude de la Paracha Mikets par <span class="footer-hebrew">אריאל מרמן</span> (Ariel Mormin)
+            </div>
+            <div class="footer-subtitle">
+                • Le temps accompli – Quand Ashem élève, nul ne peut abaisser •
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            scrollIndicator.style.transform = `scaleX(${scrolled / 100})`;
+        });
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        document.querySelectorAll('.section, .verse-container, .conclusion-box, .video-section, .intro-box').forEach((element) => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(element);
+        });
+
+        document.querySelectorAll('.verse-container').forEach(container => {
+            container.addEventListener('mouseenter', () => {
+                container.style.transform = 'translateY(-2px)';
+                container.style.transition = 'transform 0.3s ease';
+            });
+            
+            container.addEventListener('mouseleave', () => {
+                container.style.transform = 'translateY(0)';
+            });
+        });
+
+        document.querySelectorAll('.themes-list li').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.style.transform = 'translateX(5px)';
+                item.style.transition = 'transform 0.3s ease';
+            });
+            
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = 'translateX(0)';
+            });
+        });
+    </script>
+</body>
+</html>

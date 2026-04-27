@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Paracha Béchala'h - Le passage, le chant et l'épreuve. Shabbat Shirah. Étude biblique selon la tradition séfarade par Ariel Mormin">
+    <meta name="keywords" content="Paracha Béchala'h, Torah, Bible, Exode, tradition séfarade, mer Rouge, Shirat Hayam, manne, Amalek, étude biblique, Shabbat Shirah">
+    <title>Paracha Béchala'h - בְּשַׁלַּח - Le passage, le chant et l'épreuve</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            background: linear-gradient(135deg, #0c4a6e 0%, #0e7490 25%, #0891b2 50%, #06b6d4 75%, #d97706 100%);
+            min-height: 100vh;
+            color: #333;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 70% 30%, rgba(6, 182, 212, 0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 30% 70%, rgba(217, 119, 6, 0.25) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #0c4a6e, #0891b2);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(8, 145, 178, 0.4);
+            margin-bottom: 20px;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(6, 182, 212, 0.5);
+            background: linear-gradient(135deg, #0891b2, #0c4a6e);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #0c4a6e, #0e7490, #0891b2, #d97706);
+            margin: -40px -20px 50px -20px;
+            border-radius: 20px 20px 0 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="35" fill="white" opacity="0.1">🌊</text></svg>') repeat;
+            background-size: 70px 70px;
+            opacity: 0.15;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, transparent 30%, rgba(12, 74, 110, 0.4));
+        }
+
+        .title {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hebrew-title {
+            font-size: 3.2em;
+            color: #fbbf24;
+            margin-bottom: 15px;
+            font-family: 'Times New Roman', serif;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-size: 1.4em;
+            font-style: italic;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        .reference {
+            font-size: 1.1em;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #0c4a6e, #0891b2, #fbbf24);
+            transform-origin: left;
+            transform: scaleX(0);
+            z-index: 1000;
+            transition: transform 0.1s ease;
+        }
+
+        .intro-box {
+            background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+            padding: 35px;
+            border-radius: 15px;
+            border-left: 6px solid #0891b2;
+            margin-bottom: 45px;
+            box-shadow: 0 8px 20px rgba(8, 145, 178, 0.2);
+            position: relative;
+        }
+
+        .intro-box::before {
+            content: "🌊";
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 2em;
+            opacity: 0.3;
+        }
+
+        .section {
+            margin-bottom: 45px;
+            padding: 20px 0;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #0c4a6e;
+            margin-bottom: 25px;
+            font-weight: bold;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+            border-radius: 10px;
+            border-left: 5px solid #0891b2;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-icon {
+            font-size: 1.3em;
+        }
+
+        .content-text {
+            font-size: 1.1em;
+            color: #374151;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #fef3c7 0%, #fde68a 100%);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #92400e;
+        }
+
+        .verse-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #0891b2;
+            transition: all 0.3s ease;
+        }
+
+        .verse-container:hover {
+            box-shadow: 0 6px 25px rgba(8, 145, 178, 0.2);
+        }
+
+        .passage-verse {
+            border-left-color: #0891b2;
+            background: linear-gradient(135deg, rgba(224, 242, 254, 0.6), rgba(186, 230, 253, 0.4));
+        }
+
+        .song-verse {
+            border-left-color: #d97706;
+            background: linear-gradient(135deg, rgba(254, 243, 199, 0.6), rgba(253, 230, 138, 0.4));
+        }
+
+        .manna-verse {
+            border-left-color: #f59e0b;
+            background: linear-gradient(135deg, rgba(254, 243, 199, 0.5), rgba(252, 211, 77, 0.3));
+        }
+
+        .amalek-verse {
+            border-left-color: #b91c1c;
+            background: linear-gradient(135deg, rgba(254, 226, 226, 0.5), rgba(252, 165, 165, 0.3));
+        }
+
+        .verse-hebrew {
+            font-size: 1.8em;
+            text-align: right;
+            direction: rtl;
+            color: #0c4a6e;
+            font-weight: bold;
+            margin-bottom: 15px;
+            line-height: 1.6;
+            font-family: 'Times New Roman', serif;
+        }
+
+        .verse-transliteration {
+            font-size: 1.15em;
+            color: #0891b2;
+            margin-bottom: 15px;
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        .verse-french {
+            font-size: 1.2em;
+            color: #1f2937;
+            margin-bottom: 15px;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+
+        .verse-reference {
+            font-size: 0.95em;
+            color: #6b7280;
+            font-style: italic;
+            text-align: right;
+            margin-top: 10px;
+        }
+
+        .conclusion-box {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            padding: 40px;
+            border-radius: 15px;
+            border: 3px solid #0891b2;
+            margin: 50px 0;
+            box-shadow: 0 10px 30px rgba(8, 145, 178, 0.2);
+        }
+
+        .themes-list {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 30px;
+            border-radius: 10px;
+            margin: 25px 0;
+        }
+
+        .themes-list ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .themes-list li {
+            padding: 15px;
+            margin-bottom: 15px;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #0891b2;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .themes-list li:hover {
+            box-shadow: 0 4px 15px rgba(8, 145, 178, 0.15);
+            transform: translateX(5px);
+        }
+
+        .video-section {
+            background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 50px 0;
+            border: 2px solid #0891b2;
+            box-shadow: 0 10px 30px rgba(8, 145, 178, 0.2);
+        }
+
+        .video-title {
+            font-size: 1.8em;
+            color: #0c4a6e;
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            margin-bottom: 25px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-description {
+            font-size: 1.05em;
+            color: #374151;
+            text-align: center;
+            line-height: 1.7;
+            margin-top: 20px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 35px 20px;
+            margin-top: 60px;
+            background: linear-gradient(135deg, #0c4a6e, #0891b2);
+            margin-left: -20px;
+            margin-right: -20px;
+            margin-bottom: -40px;
+            border-radius: 0 0 20px 20px;
+            color: white;
+        }
+
+        .footer-author {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .footer-hebrew {
+            font-size: 1.4em;
+            color: #fbbf24;
+            font-weight: bold;
+        }
+
+        .footer-subtitle {
+            font-size: 1em;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 25px 15px;
+                margin-top: 15px;
+                margin-bottom: 15px;
+            }
+
+            .title {
+                font-size: 2em;
+            }
+
+            .hebrew-title {
+                font-size: 2.5em;
+            }
+
+            .subtitle {
+                font-size: 1.2em;
+            }
+
+            .section-title {
+                font-size: 1.3em;
+            }
+
+            .verse-hebrew {
+                font-size: 1.5em;
+            }
+
+            .intro-box, .conclusion-box, .video-section {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-indicator"></div>
+    
+    <div class="container">
+        <a href="https://parashot-mormin.netlify.app" class="back-button">
+            ← Retour aux Parachot
+        </a>
+
+        <div class="header">
+            <div class="hebrew-title">בְּשַׁלַּח</div>
+            <div class="title">Paracha Béchala'h</div>
+            <div class="subtitle">La foi éprouvée dans le passage, le chant et l'épreuve</div>
+            <div class="reference">Exode/Shemot 13,17 – 17,16 • Shabbat Shirah</div>
+        </div>
+
+        <div class="intro-box">
+            <h2 style="font-size: 1.4em; margin-bottom: 20px; color: #0c4a6e;">
+                <strong>Introduction – Contexte et portée</strong>
+            </h2>
+            
+            <p class="content-text">
+                La Paracha <strong>Béchala'h</strong> (Exode/Shemot 13,17 – 17,16) s'ouvre au moment décisif de la sortie d'Égypte. Le peuple d'Israël, tout juste libéré de l'asservissement, n'est pas conduit par la route la plus courte, mais par un chemin de désert. Ce détour n'est pas une faiblesse stratégique : il est un <span class="highlight">temps pédagogique</span> voulu par <strong>Ashem</strong>, afin que la liberté acquise devienne une <span class="highlight">liberté intérieure</span>.
+            </p>
+            
+            <p class="content-text">
+                Dans la tradition séfarade, Béchala'h est appelée <strong>Shabbat Shirah</strong> – le Shabbat du Chant – car elle contient le cantique de la mer, sommet de louange collective et fondement de la prière chantée.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🛤️</span>
+                1. Le détour du désert : une pédagogie divine
+            </h2>
+
+            <div class="verse-container passage-verse">
+                <p class="verse-french">« Lorsque Pharaon renvoya le peuple, Ashem ne les conduisit pas par le chemin du pays des Philistins, bien qu'il fût proche. »</p>
+                
+                <p class="verse-hebrew">וַיְהִי בְּשַׁלַּח פַּרְעֹה אֶת־הָעָם וְלֹא־נָחָם אֱלֹהִים דֶּרֶךְ אֶרֶץ פְּלִשְׁתִּים כִּי קָרוֹב הוּא</p>
+                
+                <p class="verse-transliteration"><em>Vayehi be-shalaḥ Par'oh et ha'am, velo naḥam Elohim derekh erets Pelishtim ki karov hou</em></p>
+                
+                <p class="verse-reference">(Exode 13,17)</p>
+            </div>
+
+            <p class="content-text">
+                La Torah souligne que la proximité géographique ne correspond pas à la <span class="highlight">maturité spirituelle</span>. Selon les commentateurs séfarades (notamment Rabbénou Beḥayé), l'épreuve graduée évite un retour immédiat vers l'esclavage par peur du combat. La liberté exige un <strong>apprentissage progressif</strong>.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🌊</span>
+                2. La traversée de la mer : foi active et courage
+            </h2>
+
+            <div class="verse-container passage-verse">
+                <p class="verse-french">« Les enfants d'Israël entrèrent au milieu de la mer à sec. »</p>
+                
+                <p class="verse-hebrew">וַיָּבֹאוּ בְנֵי־יִשְׂרָאֵל בְּתוֹךְ הַיָּם בַּיַּבָּשָׁה</p>
+                
+                <p class="verse-transliteration"><em>Vayavo'ou bene Yisra'el betokh hayam bayabasha</em></p>
+                
+                <p class="verse-reference">(Exode 14,22)</p>
+            </div>
+
+            <p class="content-text">
+                La tradition rapporte que la mer ne se fendit pleinement qu'au moment où Naḥshon ben Aminadav entra dans l'eau avec confiance. La foi n'est pas passive : elle <span class="highlight">engage l'action</span>. Ici, l'intervention d'<strong>Adonaï</strong> répond à un pas humain décisif.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🎵</span>
+                3. Le Chant de la mer : la foi devenue parole
+            </h2>
+
+            <div class="verse-container song-verse">
+                <p class="verse-french">« Alors Moïse et les enfants d'Israël chantèrent ce cantique à Adonaï. »</p>
+                
+                <p class="verse-hebrew">אָז יָשִׁיר מֹשֶׁה וּבְנֵי יִשְׂרָאֵל אֶת־הַשִּׁירָה הַזֹּאת לַיהוָה</p>
+                
+                <p class="verse-transliteration"><em>Az yashir Moshe uvenei Yisra'el et hashira hazot la-Adonaï</em></p>
+                
+                <p class="verse-reference">(Exode 15,1)</p>
+            </div>
+
+            <p class="content-text">
+                La <strong>Shirat Hayam</strong> n'est pas un simple chant de victoire ; elle est une <span class="highlight">prophétie chantée</span>. Dans la liturgie séfarade, elle est récitée quotidiennement avec solennité, car elle exprime une foi totale, sans demande, uniquement une reconnaissance.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🍞</span>
+                4. La manne : apprendre la confiance quotidienne
+            </h2>
+
+            <div class="verse-container manna-verse">
+                <p class="verse-french">« Voici, Je ferai pleuvoir pour vous du pain du ciel. »</p>
+                
+                <p class="verse-hebrew">הִנְנִי מַמְטִיר לָכֶם לֶחֶם מִן־הַשָּׁמָיִם</p>
+                
+                <p class="verse-transliteration"><em>Hineni mamtir lakhem leḥem min hashamayim</em></p>
+                
+                <p class="verse-reference">(Exode 16,4)</p>
+            </div>
+
+            <p class="content-text">
+                La manne enseigne la <span class="highlight">dépendance confiante</span> envers Ashem : nul ne peut accumuler pour le lendemain, sauf pour le Shabbat. La subsistance devient une école de <strong>bitahon</strong> (confiance), au cœur de la vie quotidienne.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">⚔️</span>
+                5. Amalek : la foi attaquée
+            </h2>
+
+            <div class="verse-container amalek-verse">
+                <p class="verse-french">« Lui qui t'a attaqué en chemin. »</p>
+                
+                <p class="verse-hebrew">אֲשֶׁר קָרְךָ בַּדֶּרֶךְ</p>
+                
+                <p class="verse-transliteration"><em>Asher karekha baderekh</em></p>
+                
+                <p class="verse-reference">(Exode 17,8)</p>
+            </div>
+
+            <p class="content-text">
+                Amalek incarne le doute, le refroidissement spirituel après l'élévation. La tradition séfarade insiste : Amalek surgit lorsque la gratitude s'affaiblit. La victoire ne vient pas seulement de l'épée, mais de l'élévation des mains de Moché, symbole de la prière tournée vers <strong>Adonaï</strong>.
+            </p>
+        </div>
+
+        <div class="conclusion-box">
+            <h2 class="section-title" style="background: transparent; border: none; padding: 0; margin-bottom: 20px;">
+                <span class="section-icon">🌟</span>
+                Conclusion
+            </h2>
+            
+            <p class="content-text">
+                La Paracha Béchala'h trace un chemin fondamental : <span class="highlight">sortir d'Égypte ne suffit pas, il faut sortir l'Égypte de soi</span>. Le passage de la mer, le chant, la manne et la lutte contre Amalek composent une même leçon : la foi est un <strong>mouvement vivant</strong>, alternant élévation et épreuve.
+            </p>
+            
+            <p class="content-text">
+                Dans la tradition séfarade, Béchala'h rappelle que la liberté véritable se nourrit de <span class="highlight">chant, de confiance et de mémoire</span>, afin que chaque génération apprenne à marcher avec Ashem, même lorsque le chemin semble plus long.
+            </p>
+
+            <div class="themes-list">
+                <p class="content-text" style="margin-bottom: 20px; font-weight: bold; text-align: center;">
+                    <strong>Béchala'h — "Il renvoya" / "Quand il laissa partir"</strong>
+                </p>
+                <ul>
+                    <li><strong>Le détour pédagogique.</strong> La proximité géographique ne suffit pas — la liberté exige une maturation spirituelle progressive, un apprentissage du courage et de la confiance.</li>
+                    <li><strong>La foi active dans le passage.</strong> La mer ne s'ouvre qu'au moment où Naḥshon entre dans l'eau — la foi n'est pas passive, elle engage l'action et précède le miracle.</li>
+                    <li><strong>Le chant de reconnaissance.</strong> La Shirat Hayam est une prophétie chantée, expression d'une foi totale, sans demande, uniquement gratitude — fondement de la prière liturgique séfarade.</li>
+                    <li><strong>La manne, école de confiance quotidienne.</strong> Ne pas accumuler pour le lendemain enseigne le bitahon — vivre dans la dépendance confiante envers Ashem au cœur de la vie quotidienne.</li>
+                    <li><strong>Amalek, le doute qui attaque.</strong> Le refroidissement spirituel surgit après l'élévation — la victoire vient de la prière autant que de l'épée, maintenir la gratitude est un combat constant.</li>
+                </ul>
+            </div>
+
+            <p class="content-text" style="text-align: center; font-size: 1.3em; font-weight: bold; color: #0c4a6e; margin-top: 30px;">
+                Shabbat Shalom.
+            </p>
+        </div>
+
+        <div class="video-section">
+            <h2 class="video-title">
+                🎥 Étude vidéo de la Paracha Béchala'h
+            </h2>
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/wFicL9hFM7M" 
+                    title="Paracha Béchala'h – Le passage, le chant et l'épreuve | Étude biblique – Tradition séfarade"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="video-description">
+                Découvrez cette étude en format vidéo pour approfondir votre compréhension 
+                de la Paracha Béchala'h et de ses enseignements sur le passage de la mer Rouge, 
+                le Chant de la mer (Shirat Hayam), la manne comme école de confiance, 
+                et la confrontation avec Amalek. Une réflexion sur la foi comme mouvement vivant 
+                dans la tradition séfarade.
+            </p>
+        </div>
+
+        <div class="footer">
+            <div class="footer-author">
+                Étude de la Paracha Béchala'h par <span class="footer-hebrew">אריאל מרמן</span> (Ariel Mormin)
+            </div>
+            <div class="footer-subtitle">
+                • La foi éprouvée dans le passage, le chant et l'épreuve •
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Indicateur de progression de scroll
+        window.addEventListener('scroll', () => {
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            scrollIndicator.style.transform = `scaleX(${scrolled / 100})`;
+        });
+        
+        // Animation d'apparition au scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        // Application de l'animation à tous les éléments
+        document.querySelectorAll('.section, .verse-container, .conclusion-box, .video-section, .intro-box').forEach((element) => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(element);
+        });
+
+        // Effet hover sur les conteneurs de versets
+        document.querySelectorAll('.verse-container').forEach(container => {
+            container.addEventListener('mouseenter', () => {
+                container.style.transform = 'translateY(-2px)';
+                container.style.transition = 'transform 0.3s ease';
+            });
+            
+            container.addEventListener('mouseleave', () => {
+                container.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Effet hover sur les éléments de la liste thématique
+        document.querySelectorAll('.themes-list li').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.style.transform = 'translateX(5px)';
+                item.style.transition = 'transform 0.3s ease';
+            });
+            
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = 'translateX(0)';
+            });
+        });
+    </script>
+</body>
+</html>

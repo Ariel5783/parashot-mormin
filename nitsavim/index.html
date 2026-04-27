@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paracha Nitsavim - נִצָּבִים - Vous vous tenez debout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 50%, #059669 100%);
+            min-height: 100vh;
+            color: #333;
+            position: relative;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #1e3a8a, #7c3aed);
+            margin: -40px -20px 50px -20px;
+            border-radius: 20px 20px 0 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="40" fill="white" opacity="0.1">⚖️</text></svg>') repeat;
+            background-size: 80px 80px;
+            opacity: 0.15;
+        }
+
+        .title {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hebrew-title {
+            font-size: 3.2em;
+            color: #059669;
+            margin-bottom: 15px;
+            font-family: 'Times New Roman', serif;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-size: 1.4em;
+            font-style: italic;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        .context-box {
+            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+            padding: 35px;
+            border-radius: 15px;
+            border-left: 6px solid #7c3aed;
+            margin-bottom: 45px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .context-box::before {
+            content: "⚖️";
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 2em;
+            opacity: 0.3;
+        }
+
+        .section {
+            margin-bottom: 45px;
+            padding: 20px 0;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #1e3a8a;
+            margin-bottom: 25px;
+            font-weight: bold;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #f7fafc, #edf2f7);
+            border-radius: 10px;
+            border-left: 5px solid #7c3aed;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-icon {
+            font-size: 1.3em;
+        }
+
+        .verse-container {
+            background: linear-gradient(135deg, #f8f6ff, #f0e6ff);
+            padding: 30px;
+            margin: 25px 0;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+            box-shadow: 0 5px 15px rgba(124, 58, 237, 0.1);
+            position: relative;
+        }
+
+        .key-verse {
+            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+            border: 3px solid #059669;
+            box-shadow: 0 8px 25px rgba(5, 150, 105, 0.2);
+        }
+
+        .unity-verse {
+            background: linear-gradient(135deg, #fef7f7, #fed7d7);
+            border: 2px solid #dc2626;
+            box-shadow: 0 5px 15px rgba(220, 38, 38, 0.1);
+        }
+
+        .teshuva-verse {
+            background: linear-gradient(135deg, #f0f9ff, #dbeafe);
+            border: 2px solid #2563eb;
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.1);
+        }
+
+        .torah-verse {
+            background: linear-gradient(135deg, #fff8f5, #fef3c7);
+            border: 2px solid #f59e0b;
+            box-shadow: 0 5px 15px rgba(245, 158, 11, 0.1);
+        }
+
+        .choice-verse {
+            background: linear-gradient(135deg, #f8f6ff, #ede9fe);
+            border: 2px solid #8b5cf6;
+            box-shadow: 0 5px 15px rgba(139, 92, 246, 0.1);
+        }
+
+        .verse-french {
+            font-size: 1.15em;
+            margin-bottom: 18px;
+            font-weight: 600;
+            color: #2d3748;
+            line-height: 1.7;
+        }
+
+        .verse-hebrew {
+            font-size: 1.4em;
+            font-family: 'Times New Roman', serif;
+            direction: rtl;
+            text-align: right;
+            margin-bottom: 18px;
+            color: #1e3a8a;
+            font-weight: bold;
+            line-height: 2;
+            background: rgba(30, 58, 138, 0.05);
+            padding: 12px;
+            border-radius: 8px;
+        }
+
+        .verse-transliteration {
+            font-size: 1.05em;
+            font-style: italic;
+            color: #7c3aed;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .verse-reference {
+            font-size: 0.95em;
+            color: #718096;
+            text-align: right;
+            font-weight: bold;
+        }
+
+        .content-text {
+            font-size: 1.1em;
+            line-height: 1.8;
+            text-align: justify;
+            color: #2d3748;
+            margin-bottom: 20px;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            color: #1e3a8a;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #7c3aed 0%, transparent 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: white;
+        }
+
+        .teachings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .teaching-box {
+            background: linear-gradient(135deg, #f8f6ff, #f0e6ff);
+            padding: 25px;
+            border-radius: 12px;
+            border: 2px solid #7c3aed;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(124, 58, 237, 0.15);
+        }
+
+        .teaching-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #1e3a8a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .conclusion-box {
+            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+            padding: 35px;
+            border-radius: 15px;
+            border: 3px solid #059669;
+            margin-top: 45px;
+            box-shadow: 0 10px 25px rgba(5, 150, 105, 0.2);
+            position: relative;
+        }
+
+        .conclusion-box::before {
+            content: "🌿";
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2em;
+            opacity: 0.4;
+        }
+
+        .list-item {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+            font-size: 1.05em;
+            line-height: 1.6;
+        }
+
+        .list-item:before {
+            content: "•";
+            color: #1e3a8a;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1.3em;
+        }
+
+        .video-section {
+            background: linear-gradient(135deg, #f8f6ff, #f0e6ff);
+            padding: 35px;
+            border-radius: 20px;
+            border: 3px solid #1e3a8a;
+            margin: 45px 0;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(30, 58, 138, 0.15);
+        }
+
+        .video-title {
+            font-size: 1.7em;
+            color: #1e3a8a;
+            margin-bottom: 25px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 850px;
+            margin: 0 auto;
+            padding-bottom: 56.25%;
+            height: 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            border: 4px solid #7c3aed;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-description {
+            margin-top: 25px;
+            font-size: 1.1em;
+            color: #4a5568;
+            font-style: italic;
+            line-height: 1.7;
+        }
+
+        .footer {
+            margin-top: 50px;
+            padding: 35px;
+            border-top: 3px solid #059669;
+            text-align: center;
+            background: linear-gradient(135deg, #f8f6ff, #f0e6ff);
+            border-radius: 15px;
+        }
+
+        .footer-author {
+            font-size: 1.2em;
+            color: #1e3a8a;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .footer-hebrew {
+            font-size: 1.4em;
+            color: #059669;
+            font-family: 'Times New Roman', serif;
+            margin: 0 8px;
+            font-weight: bold;
+        }
+
+        .footer-subtitle {
+            font-size: 1.05em;
+            color: #718096;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 20px;
+            }
+            
+            .header {
+                margin: -20px -20px 30px -20px;
+            }
+            
+            .title {
+                font-size: 2.2em;
+            }
+            
+            .hebrew-title {
+                font-size: 2.8em;
+            }
+            
+            .verse-hebrew {
+                font-size: 1.2em;
+            }
+
+            .teachings-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #1e3a8a, #7c3aed, #059669);
+            transform-origin: left;
+            transform: scaleX(0);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-indicator"></div>
+    
+    <div class="container">
+        <div class="header">
+            <div class="hebrew-title">נִצָּבִים</div>
+            <h1 class="title">Paracha Nitsavim</h1>
+            <p class="subtitle">"Vous vous tenez debout"</p>
+        </div>
+
+        <div class="context-box">
+            <p class="content-text">
+                La <span class="emphasis">Paracha Nitsavim</span> (נִצָּבִים – "Vous vous tenez debout") est lue chaque année juste avant Roch Hachana. Elle résonne comme une <span class="highlight">préparation spirituelle aux Jours redoutables</span> : un appel à la responsabilité, au retour (téchouva) et au choix de la vie.
+            </p>
+            <br>
+            <p class="content-text">
+                <span class="emphasis">Moïse, au seuil de sa mort</span>, convoque tout Israël pour conclure l'alliance avec D.ieu. Le texte insiste sur l'unité du peuple : « Vous vous tenez aujourd'hui, vous tous » — ce « tous » inclut les chefs, les enfants, les étrangers, les générations futures. <span class="highlight">La Torah devient ici un contrat collectif et éternel</span>.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">👥</span>
+                Le verset d'ouverture : Une assemblée universelle
+            </h2>
+            
+            <div class="verse-container key-verse">
+                <p class="verse-french">"Vous vous tenez aujourd'hui, vous tous, devant l'Éternel, votre D.ieu"</p>
+                
+                <p class="verse-hebrew">אַתֶּם נִצָּבִים הַיּוֹם כֻּלְּכֶם לִפְנֵי יְיָ אֱלֹהֵיכֶם</p>
+                
+                <p class="verse-transliteration"><em>Atem nitsavim hayom kull'khem lifné Adonaï Elohékhem</em></p>
+                
+                <p class="verse-reference">(Deutéronome 29:9)</p>
+            </div>
+            
+            <p class="content-text">
+                Le Midrash explique : Israël a fauté dans le passé, mais Moïse les rassure : <span class="emphasis">même si vous avez chuté, vous êtes toujours debout devant D.ieu</span>. Cette paracha inaugure l'idée de la <span class="highlight">résilience spirituelle</span> : tomber n'est pas la fin, se relever fait partie de l'alliance.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🔗</span>
+                1. La responsabilité intergénérationnelle
+            </h2>
+            
+            <p class="content-text">
+                Moïse déclare une vérité fondamentale sur la transmission de l'alliance à travers les générations :
+            </p>
+
+            <div class="verse-container unity-verse">
+                <p class="verse-french">"Ce n'est pas avec vous seuls que je conclus cette alliance... mais avec ceux qui sont ici aujourd'hui et avec ceux qui ne sont pas ici."</p>
+                
+                <p class="verse-hebrew">וְלֹא אִתְּכֶם לְבַדְּכֶם אָנֹכִי כֹּרֵת אֶת־הַבְּרִית הַזֹּאת... כִּי אֶת־אֲשֶׁר יֶשְׁנוֹ פֹּה וְאֵת אֲשֶׁר אֵינֶנּוּ פֹּה</p>
+                
+                <p class="verse-transliteration"><em>Velo itkhem levadkhem anokhi koret et-habrit hazot... ki et-asher yeshno poh ve'et asher einennu poh</em></p>
+                
+                <p class="verse-reference">(Deutéronome 29:13-14)</p>
+            </div>
+
+            <p class="content-text">
+                Les commentateurs (Ramban, Sforno) y voient la base de la <span class="emphasis">solidarité transgénérationnelle</span>. Chaque Juif hérite d'une part de l'alliance. Ainsi, les ancêtres transmettent, et les descendants reçoivent – <span class="highlight">un fil ininterrompu</span>.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🔄</span>
+                2. Le libre arbitre et la Téchouva
+            </h2>
+            
+            <p class="content-text">
+                Moïse annonce l'exil, mais promet le retour. La Téchouva est présentée comme un processus à la fois personnel et collectif :
+            </p>
+
+            <div class="verse-container teshuva-verse">
+                <p class="verse-french">"Tu reviendras vers l'Éternel ton D.ieu, et Il rassemblera tes dispersés."</p>
+                
+                <p class="verse-hebrew">וְשַׁבְתָּ עַד־יְיָ אֱלֹהֶיךָ... וְקִבֶּצְךָ מִכָּל־הָעַמִּים</p>
+                
+                <p class="verse-transliteration"><em>Veshavta ad-Adonai Elohekha... vekibetzekha mikol-ha'amim</em></p>
+                
+                <p class="verse-reference">(Deutéronome 30:2-3)</p>
+            </div>
+
+            <p class="content-text">
+                Rambam (Hilkh. Téchouva 7:5) écrit : <em>"La Torah a promis qu'Israël finira par faire Téchouva à la fin de son exil, et alors immédiatement viendra la rédemption."</em> La Téchouva est ici présentée comme <span class="highlight">inévitable</span> : malgré les fautes, le peuple reviendra.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">📚</span>
+                3. Une Torah proche et vivante
+            </h2>
+
+            <div class="verse-container torah-verse">
+                <p class="verse-french">"Car ce commandement... n'est pas dans le ciel... mais proche de toi, dans ta bouche et dans ton cœur, pour l'accomplir."</p>
+                
+                <p class="verse-hebrew">כִּי קָרוֹב אֵלֶיךָ הַדָּבָר מְאֹד בְּפִיךָ וּבִלְבָבְךָ לַעֲשֹׂתוֹ</p>
+                
+                <p class="verse-transliteration"><em>Ki karov élekha hadavar meod befikha ouvilvavkha la'assoto</em></p>
+                
+                <p class="verse-reference">(Deutéronome 30:14)</p>
+            </div>
+
+            <p class="content-text">
+                Selon le Talmud (Erouvin 55a), cette phrase signifie que nul n'a d'excuse : la Torah est <span class="emphasis">accessible à tous</span>, pas réservée aux érudits. Dans la tradition séfarade, cette proximité s'exprime par l'importance de la prière chantée, de la lecture mélodieuse de la Torah, et de l'étude familiale.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">⚖️</span>
+                4. Le choix de la vie
+            </h2>
+
+            <div class="verse-container choice-verse">
+                <p class="verse-french">"J'ai placé devant toi la vie et la mort... Choisis la vie."</p>
+                
+                <p class="verse-hebrew">וּבָחַרְתָּ בַּחַיִּים לְמַעַן תִּחְיֶה</p>
+                
+                <p class="verse-transliteration"><em>Ouvakharta bakhayim lema'an tihyeh</em></p>
+                
+                <p class="verse-reference">(Deutéronome 30:19)</p>
+            </div>
+
+            <p class="content-text">
+                Ici, le libre arbitre est affirmé. Maïmonide (Hilkh. Téchouva 5:1) déclare : <em>"Le fondement de la Torah et du commandement, c'est que l'homme a le choix."</em> Choisir la vie, ce n'est pas seulement éviter la mort physique, mais opter pour une <span class="highlight">vie spirituelle</span>, une existence imprégnée de Torah, de mitsvot et de valeurs.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🌍</span>
+                5. Actualité du message
+            </h2>
+            
+            <div class="teachings-grid">
+                <div class="teaching-box">
+                    <div class="teaching-title">⚖️ Éthique</div>
+                    <p>Dans un monde de choix technologiques et moraux, Nitsavim rappelle notre responsabilité</p>
+                </div>
+                <div class="teaching-box">
+                    <div class="teaching-title">🌱 Écologie</div>
+                    <p>Le texte appelle les cieux et la terre à témoins - la nature est partenaire du pacte</p>
+                </div>
+                <div class="teaching-box">
+                    <div class="teaching-title">👨‍👩‍👧‍👦 Transmission</div>
+                    <p>Chaque génération est dépositaire de l'alliance, interrogeant éducation et héritage</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="conclusion-box">
+            <h2 class="section-title">
+                <span class="section-icon">🌿</span>
+                Conclusion - Se tenir debout, conscients et responsables
+            </h2>
+            
+            <p class="content-text">
+                La Paracha <span class="emphasis">Nitsavim</span>, brève mais profonde, concentre les thèmes essentiels du judaïsme :
+            </p>
+            <br>
+            
+            <div class="list-item"><span class="emphasis">L'unité du peuple</span> – chacun est inclus dans l'alliance</div>
+            <div class="list-item"><span class="emphasis">La solidarité des générations</span> – l'alliance se prolonge au-delà du temps</div>
+            <div class="list-item"><span class="emphasis">La Téchouva</span> – un retour toujours possible, individuel et collectif</div>
+            <div class="list-item"><span class="emphasis">La proximité de la Torah</span> – elle est simple, concrète, vivante</div>
+            <div class="list-item"><span class="emphasis">Le libre arbitre</span> – choisir la vie, c'est choisir D.ieu et Ses voies</div>
+            
+            <br>
+            <p class="content-text">
+                Ainsi, à l'aube de Roch Hachana, Nitsavim nous invite à une décision existentielle : <span class="highlight">se tenir debout, conscients et responsables, et renouveler notre choix de la vie et de la Torah.</span>
+            </p>
+        </div>
+
+        <div class="video-section">
+            <h2 class="video-title">
+                🎥 Étude vidéo de la Paracha Nitsavim
+            </h2>
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/6cL3QkIp3R0" 
+                    title="Paracha Nitsavim - Vous vous tenez debout"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="video-description">
+                Découvrez cette étude en format vidéo pour approfondir votre compréhension 
+                de la Paracha Nitsavim et de ses enseignements sur l'alliance, le libre arbitre et la téchouva.
+            </p>
+        </div>
+
+        <div class="footer">
+            <div class="footer-author">
+                Étude de la Paracha Nitsavim par <span class="footer-hebrew">אריאל מרמן</span> (Ariel Mormin)
+            </div>
+            <div class="footer-subtitle">
+                • Se tenir debout, conscients et responsables, face aux choix de la vie •
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Animation de la barre de progression
+        window.addEventListener('scroll', () => {
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            scrollIndicator.style.transform = `scaleX(${scrolled / 100})`;
+        });
+        
+        // Animation d'apparition des sections
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        // Animation pour toutes les sections
+        document.querySelectorAll('.section, .verse-container, .conclusion-box, .video-section').forEach((element) => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(element);
+        });
+
+        // Animation spéciale pour les boîtes d'enseignements
+        const teachingBoxes = document.querySelectorAll('.teaching-box');
+        teachingBoxes.forEach((box, index) => {
+            box.style.opacity = '0';
+            box.style.transform = 'translateY(30px)';
+            box.style.transition = `opacity 0.8s ease ${index * 0.2}s, transform 0.8s ease ${index * 0.2}s`;
+            observer.observe(box);
+        });
+
+        // Animation au survol pour les versets
+        document.querySelectorAll('.verse-container').forEach(container => {
+            container.addEventListener('mouseenter', () => {
+                container.style.transform = 'translateY(-2px)';
+                container.style.transition = 'transform 0.3s ease';
+            });
+            
+            container.addEventListener('mouseleave', () => {
+                container.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>

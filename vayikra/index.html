@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Paracha Vayikra : l'appel d'Adonaï et le sens spirituel des sacrifices. Korbanot, olah, mincha, sel de l'alliance. Étude complète selon la tradition séfarade par Ariel Mormin.">
+    <meta name="keywords" content="Paracha Vayikra, ויקרא, Torah, Lévitique, korbanot, olah, mincha, tradition séfarade, sacrifices, offrandes, Moché, étude biblique, paracha semaine">
+    <title>Paracha Vayikra – ויקרא – L'appel d'Adonaï et le sens des sacrifices</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            background: linear-gradient(135deg, #3b0a0a 0%, #5c1a1a 15%, #7c2020 30%, #8b2e2e 50%, #6b1c1c 70%, #4a1010 85%, #2d0808 100%);
+            min-height: 100vh;
+            color: #333;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 60% 20%, rgba(212, 140, 40, 0.28) 0%, transparent 55%),
+                        radial-gradient(circle at 25% 80%, rgba(180, 40, 40, 0.30) 0%, transparent 55%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.55);
+            border-radius: 20px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #7c2020, #8b2e2e);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 46, 46, 0.4);
+            margin-bottom: 20px;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 46, 46, 0.6);
+            background: linear-gradient(135deg, #8b2e2e, #7c2020);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 45px 20px;
+            background: linear-gradient(135deg, #3b0a0a, #5c1a1a, #7c2020, #8b2e2e, #6b1c1c, #4a1010, #2d0808);
+            margin: -40px -20px 50px -20px;
+            border-radius: 20px 20px 0 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="55" font-size="35" fill="white" opacity="0.08">🕍</text></svg>') repeat;
+            background-size: 70px 70px;
+            opacity: 0.2;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(212, 140, 40, 0.20) 0%, rgba(59, 10, 10, 0.55) 70%);
+        }
+
+        .header-icon {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+            display: block;
+        }
+
+        .title {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hebrew-title {
+            font-size: 3.2em;
+            color: #fde68a;
+            margin-bottom: 15px;
+            font-family: 'Times New Roman', serif;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-size: 1.4em;
+            font-style: italic;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+            color: #fecaca;
+        }
+
+        .reference {
+            font-size: 1.1em;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #7c2020, #dc2626, #d4a728);
+            transform-origin: left;
+            transform: scaleX(0);
+            z-index: 1000;
+            transition: transform 0.1s ease;
+        }
+
+        .intro-box {
+            background: linear-gradient(135deg, #fff5f5, #fee2e2);
+            padding: 35px;
+            border-radius: 15px;
+            border-left: 6px solid #dc2626;
+            margin-bottom: 45px;
+            box-shadow: 0 8px 20px rgba(220, 38, 38, 0.15);
+            position: relative;
+        }
+
+        .intro-box::before {
+            content: "📜";
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 2em;
+            opacity: 0.3;
+        }
+
+        .section {
+            margin-bottom: 45px;
+            padding: 20px 0;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #7c2020;
+            margin-bottom: 25px;
+            font-weight: bold;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #fff5f5, #fee2e2);
+            border-radius: 10px;
+            border-left: 5px solid #dc2626;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-icon {
+            font-size: 1.8em;
+            flex-shrink: 0;
+        }
+
+        .content-text {
+            font-size: 1.15em;
+            line-height: 1.8;
+            color: #1f2937;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #fee2e2, #fef3c7);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: #7c2020;
+        }
+
+        /* ── Verse containers ── */
+        .verse-container {
+            background: linear-gradient(135deg, #fff5f5, #fee2e2);
+            border: 2px solid #f87171;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+            box-shadow: 0 6px 20px rgba(248, 113, 113, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .verse-container:hover {
+            box-shadow: 0 8px 25px rgba(248, 113, 113, 0.30);
+            transform: translateY(-2px);
+        }
+
+        .verse-french {
+            font-size: 1.25em;
+            font-weight: bold;
+            color: #7c2020;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .verse-hebrew {
+            font-size: 1.8em;
+            font-family: 'Times New Roman', serif;
+            direction: rtl;
+            text-align: right;
+            color: #450a0a;
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(254, 202, 202, 0.35);
+            border-radius: 8px;
+            line-height: 1.8;
+        }
+
+        .verse-transliteration {
+            font-size: 1.1em;
+            font-style: italic;
+            color: #991b1b;
+            margin: 12px 0;
+        }
+
+        .verse-reference {
+            font-size: 0.95em;
+            color: #7c2020;
+            font-weight: bold;
+            margin-top: 12px;
+        }
+
+        /* ── Named verse styles per section ── */
+
+        /* Section 1 : Vayikra – l'appel (cramoisi principal) */
+        .vayikra-verse {
+            border-color: #dc2626;
+            background: linear-gradient(135deg, #fff5f5, #fee2e2);
+        }
+        .vayikra-verse .verse-hebrew {
+            background: rgba(254, 202, 202, 0.4);
+            color: #450a0a;
+        }
+        .vayikra-verse .verse-french  { color: #7c2020; }
+        .vayikra-verse .verse-transliteration { color: #991b1b; }
+        .vayikra-verse .verse-reference { color: #450a0a; }
+
+        /* Section 2 : Korban – se rapprocher (bordeaux/prune) */
+        .korban-verse {
+            border-color: #9f1239;
+            background: linear-gradient(135deg, #fff1f2, #ffe4e6);
+        }
+        .korban-verse .verse-hebrew {
+            background: rgba(253, 164, 175, 0.35);
+            color: #500724;
+        }
+        .korban-verse .verse-french  { color: #9f1239; }
+        .korban-verse .verse-transliteration { color: #be123c; }
+        .korban-verse .verse-reference { color: #500724; }
+
+        /* Section 2b : Olah – holocauste (orange feu) */
+        .olah-verse {
+            border-color: #ea580c;
+            background: linear-gradient(135deg, #fff7ed, #ffedd5);
+        }
+        .olah-verse .verse-hebrew {
+            background: rgba(253, 186, 116, 0.35);
+            color: #431407;
+        }
+        .olah-verse .verse-french  { color: #9a3412; }
+        .olah-verse .verse-transliteration { color: #c2410c; }
+        .olah-verse .verse-reference { color: #431407; }
+
+        /* Section 2c : Mincha – offrande végétale (ambre/miel) */
+        .mincha-verse {
+            border-color: #d97706;
+            background: linear-gradient(135deg, #fffbeb, #fef3c7);
+        }
+        .mincha-verse .verse-hebrew {
+            background: rgba(253, 230, 138, 0.40);
+            color: #78350f;
+        }
+        .mincha-verse .verse-french  { color: #92400e; }
+        .mincha-verse .verse-transliteration { color: #b45309; }
+        .mincha-verse .verse-reference { color: #78350f; }
+
+        /* Section 3 : Prière – transformation spirituelle (violet/indigo) */
+        .prayer-verse {
+            border-color: #7c3aed;
+            background: linear-gradient(135deg, #fdf4ff, #ede9fe);
+        }
+        .prayer-verse .verse-hebrew {
+            background: rgba(221, 214, 254, 0.40);
+            color: #4c1d95;
+        }
+        .prayer-verse .verse-french  { color: #5b21b6; }
+        .prayer-verse .verse-transliteration { color: #6d28d9; }
+        .prayer-verse .verse-reference { color: #4c1d95; }
+
+        /* Conclusion verse (or/doré) */
+        .conclusion-verse {
+            border-color: #d4a728;
+            background: linear-gradient(135deg, #fffbeb, #fef9c3);
+        }
+        .conclusion-verse .verse-hebrew {
+            background: rgba(253, 224, 71, 0.35);
+            color: #713f12;
+            font-size: 2em;
+        }
+        .conclusion-verse .verse-french  { color: #854d0e; }
+        .conclusion-verse .verse-transliteration { color: #a16207; }
+        .conclusion-verse .verse-reference { color: #713f12; }
+
+        /* ── Boîtes spéciales ── */
+        .fire-special {
+            background: linear-gradient(135deg, #fff7ed, #ffedd5);
+            border: 3px solid #ea580c;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(234, 88, 12, 0.25);
+            text-align: center;
+        }
+
+        .salt-banner {
+            background: linear-gradient(135deg, #fffbeb, #fef9c3);
+            border: 2px solid #d4a728;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.2em;
+            color: #713f12;
+            box-shadow: 0 4px 15px rgba(212, 167, 40, 0.25);
+        }
+
+        .spiritual-principles {
+            background: linear-gradient(135deg, #fff5f5, #fee2e2);
+            border: 2px solid #dc2626;
+            border-radius: 12px;
+            padding: 25px 35px;
+            margin: 25px 0;
+        }
+
+        .spiritual-principles p {
+            font-size: 1.1em;
+            color: #1f2937;
+            margin-bottom: 12px;
+            border-left: 3px solid #dc2626;
+            padding: 8px 0 8px 15px;
+        }
+
+        .spiritual-principles p:last-child { margin-bottom: 0; }
+
+        .conclusion-box {
+            background: linear-gradient(135deg, #fff5f5, #fee2e2);
+            padding: 40px;
+            border-radius: 15px;
+            border: 3px solid #dc2626;
+            margin-top: 50px;
+            box-shadow: 0 10px 30px rgba(220, 38, 38, 0.18);
+        }
+
+        .conclusion-banner {
+            background: linear-gradient(135deg, #fff7ed, #ffedd5);
+            border: 2px solid #ea580c;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.2em;
+            color: #431407;
+            box-shadow: 0 4px 15px rgba(234, 88, 12, 0.20);
+        }
+
+        /* ── Vidéo ── */
+        .video-section {
+            margin-top: 50px;
+            padding: 35px;
+            background: linear-gradient(135deg, #1a0505, #2d0808);
+            border-radius: 15px;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .video-title {
+            font-size: 1.5em;
+            color: #fde68a;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 10px;
+        }
+
+        .video-description {
+            font-size: 1em;
+            line-height: 1.7;
+            color: #fecaca;
+            text-align: justify;
+        }
+
+        /* ── Footer ── */
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, #fff5f5, #fee2e2);
+            border-radius: 12px;
+            border-top: 3px solid #dc2626;
+        }
+
+        .footer-author {
+            font-size: 1.2em;
+            color: #7c2020;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .footer-hebrew {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.3em;
+            direction: rtl;
+        }
+
+        .footer-subtitle {
+            font-size: 0.95em;
+            color: #991b1b;
+            font-style: italic;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 600px) {
+            .title          { font-size: 1.9em; }
+            .hebrew-title   { font-size: 2.3em; }
+            .subtitle       { font-size: 1.1em; }
+            .section-title  { font-size: 1.25em; }
+            .verse-hebrew   { font-size: 1.4em; }
+            .conclusion-box { padding: 25px; }
+            .video-section  { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="scroll-indicator"></div>
+
+    <div class="container">
+
+        <!-- Bouton retour -->
+        <a href="https://parashot-mormin.netlify.app" class="back-button">
+            ← Retour aux Parashot
+        </a>
+
+        <!-- EN-TÊTE -->
+        <div class="header">
+            <span class="header-icon">🔥</span>
+            <h1 class="title">Paracha Vayikra</h1>
+            <div class="hebrew-title">וַיִּקְרָא</div>
+            <p class="subtitle">L'appel d'Adonaï et le sens spirituel des sacrifices</p>
+            <p class="reference">Lévitique / Vayikra 1:1 – 5:26 · Tradition séfarade · Ariel Mormin</p>
+        </div>
+
+        <!-- INTRODUCTION -->
+        <div class="intro-box">
+            <h2 style="color:#7c2020; margin-bottom:18px; font-size:1.35em;">
+                📖 Introduction : le début du Lévitique
+            </h2>
+            <p class="content-text">
+                La Paracha <strong>Vayikra</strong> ouvre le troisième livre de la Torah,
+                appelé <span class="highlight">Sefer Vayikra</span> — le Lévitique.
+                Après la construction du <strong>Michkan</strong> (le Sanctuaire) décrite
+                à la fin du livre de Chemot, la Torah commence maintenant à enseigner
+                les lois des <strong>korbanot</strong> — les offrandes apportées devant Ashem.
+            </p>
+            <p class="content-text">
+                La paracha débute par un appel intime qu'Ashem adresse à Moché Rabbénou
+                depuis la Tente d'Assignation. Les sages remarquent que cet appel précède
+                toujours la parole divine : la Torah n'est pas seulement une loi,
+                elle est <em>une rencontre</em>.
+            </p>
+
+            <div class="verse-container vayikra-verse">
+                <p class="verse-hebrew">
+                    וַיִּקְרָא אֶל־מֹשֶׁה וַיְדַבֵּר יְהוָה אֵלָיו מֵאֹהֶל מוֹעֵד
+                </p>
+                <p class="verse-transliteration">
+                    <em>Vayikra el Moché vayédaber Adonaï élav méOhel Moed.</em>
+                </p>
+                <p class="verse-french">
+                    « Il appela Moché, et Adonaï lui parla depuis la Tente d'Assignation. »
+                </p>
+                <p class="verse-reference">(Vayikra 1:1 / Lévitique 1:1)</p>
+            </div>
+
+            <p class="content-text">
+                Le terme <span class="highlight">Vayikra</span> — « Il appela » —
+                exprime une relation de proximité et d'amour entre Ashem et Moché.
+                Selon la tradition rabbinique, l'appel précède toujours la parole divine.
+            </p>
+        </div>
+
+        <!-- SECTION 1 : LE SENS DES KORBANOT -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🕊️</span>
+                1. Le sens des korbanot : se rapprocher d'Ashem
+            </h2>
+
+            <p class="content-text">
+                Le mot <strong>korban</strong> est souvent traduit par "sacrifice".
+                Mais en hébreu, il vient de la racine :
+            </p>
+
+            <div class="fire-special">
+                <p class="verse-hebrew" style="font-size:2.2em; text-align:center; direction:rtl; background:rgba(253,186,116,0.3); padding:20px; border-radius:8px; margin-bottom:15px; color:#431407;">
+                    קָרַב
+                </p>
+                <p style="font-style:italic; font-size:1.2em; color:#9a3412; margin-bottom:10px;">
+                    <em>karav</em>
+                </p>
+                <p style="font-size:1.3em; font-weight:bold; color:#431407;">
+                    « se rapprocher »
+                </p>
+                <p style="font-size:1em; color:#9a3412; margin-top:10px;">
+                    Un korban n'est pas une offrande destinée à nourrir Ashem —
+                    mais un acte par lequel l'homme <strong>se rapproche de son Créateur</strong>.
+                </p>
+            </div>
+
+            <div class="verse-container korban-verse">
+                <p class="verse-hebrew">
+                    אָדָם כִּי־יַקְרִיב מִכֶּם קָרְבָּן לַיהוָה
+                </p>
+                <p class="verse-transliteration">
+                    <em>Adam ki yakriv mikem korban laAdonaï.</em>
+                </p>
+                <p class="verse-french">
+                    « Lorsqu'un homme parmi vous offrira une offrande à Adonaï… »
+                </p>
+                <p class="verse-reference">(Vayikra 1:2 / Lévitique 1:2)</p>
+            </div>
+
+            <p class="content-text">
+                Les sages expliquent une subtilité remarquable. La Torah ne dit pas simplement
+                <em>"Adam ki yakriv korban"</em> mais <span class="highlight">« mikem »</span> — 
+                <em>de vous-mêmes</em>.
+            </p>
+            <p class="content-text">
+                Le sens est profond : la véritable offrande n'est pas l'animal…
+                mais <strong>le cœur de l'homme</strong>.
+            </p>
+        </div>
+
+        <!-- SECTION 2 : LES TYPES D'OFFRANDES -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🔥</span>
+                2. Les différents types d'offrandes
+            </h2>
+
+            <p class="content-text">
+                La paracha décrit plusieurs catégories de korbanot, chacune portant
+                une signification spirituelle distincte.
+            </p>
+
+            <!-- L'Olah -->
+            <h3 style="color:#9a3412; font-size:1.2em; margin:25px 0 15px; padding-left:10px; border-left:4px solid #ea580c;">
+                🔥 L'holocauste — Korban Olah (עֹלָה)
+            </h3>
+
+            <p class="content-text">
+                Le <strong>korban Olah</strong> est entièrement brûlé sur l'autel.
+                Rien n'en est gardé. Il symbolise une <em>élévation totale vers Ashem</em>,
+                une dévotion complète et sans réserve.
+            </p>
+
+            <div class="verse-container olah-verse">
+                <p class="verse-hebrew">
+                    וְהִקְטִיר הַכֹּהֵן אֶת־הַכֹּל הַמִּזְבֵּחָה
+                </p>
+                <p class="verse-transliteration">
+                    <em>Vehiktir hakohen et hakol hamizbéḥa.</em>
+                </p>
+                <p class="verse-french">
+                    « Le prêtre fera brûler le tout sur l'autel. »
+                </p>
+                <p class="verse-reference">(Vayikra 1:9 / Lévitique 1:9)</p>
+            </div>
+
+            <p class="content-text">
+                Cette offrande exprime la <span class="highlight">dévotion complète</span> :
+                tout est donné, rien n'est retenu. C'est l'image de l'homme qui s'élève
+                entièrement vers son Créateur.
+            </p>
+
+            <!-- La Mincha -->
+            <h3 style="color:#92400e; font-size:1.2em; margin:25px 0 15px; padding-left:10px; border-left:4px solid #d97706;">
+                🌾 L'offrande végétale — Korban Minḥa (מִנְחָה)
+            </h3>
+
+            <p class="content-text">
+                Contrairement aux sacrifices animaux, certaines offrandes sont composées
+                de farine et d'huile. La Torah montre ainsi que
+                <strong>même les plus modestes peuvent apporter une offrande</strong>.
+                La valeur réside dans l'intention du cœur, non dans la richesse du don.
+            </p>
+
+            <p class="content-text">
+                La Torah insiste sur un élément symbolique essentiel :
+            </p>
+
+            <div class="verse-container mincha-verse">
+                <p class="verse-hebrew">
+                    כָּל־קָרְבָּן מִנְחָתְךָ בַּמֶּלַח תִּמְלָח
+                </p>
+                <p class="verse-transliteration">
+                    <em>Kol korban minḥatekha bamelah timlaḥ.</em>
+                </p>
+                <p class="verse-french">
+                    « Toute offrande que tu présenteras sera salée avec du sel. »
+                </p>
+                <p class="verse-reference">(Vayikra 2:13 / Lévitique 2:13)</p>
+            </div>
+
+            <div class="salt-banner">
+                Le <strong>sel de l'alliance</strong> — <em>melah habrit</em> — symbolise
+                la permanence et la fidélité éternelle entre Israël et Ashem.<br><br>
+                Le sel ne se corrompt pas. Il conserve. Ainsi, l'alliance entre le peuple
+                et son Créateur est <em>impérissable</em>.
+            </div>
+        </div>
+
+        <!-- SECTION 3 : LA TRANSFORMATION SPIRITUELLE -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">✨</span>
+                3. Une dimension spirituelle : la transformation intérieure
+            </h2>
+
+            <p class="content-text">
+                Les sages d'Israël enseignent que les sacrifices avaient aussi
+                une <strong>fonction pédagogique profonde</strong>.
+                Lorsque l'homme apportait une offrande, il prenait conscience que :
+            </p>
+
+            <div class="spiritual-principles">
+                <p><strong>1. La vie appartient à Ashem</strong> — L'animal offert rappelle que toute vie est un don divin, remis entre les mains du Créateur.</p>
+                <p><strong>2. L'homme doit reconnaître ses fautes</strong> — Le korban accompagnait la confession sincère, le <em>vidouï</em>, acte intérieur indispensable.</p>
+                <p><strong>3. La repentance permet un nouveau départ</strong> — Le feu de l'autel ne détruit pas seulement l'offrande ; il purifie l'âme qui se tourne vers Ashem.</p>
+            </div>
+
+            <p class="content-text">
+                Dans la tradition séfarade, les maîtres expliquent que les korbanot
+                représentent un processus spirituel en trois temps :
+                la <em>reconnaissance</em> de la faute, le <em>regret sincère</em>,
+                et la <em>transformation intérieure</em>.
+            </p>
+
+            <p class="content-text">
+                C'est pourquoi, après la destruction du Temple, les sages ont enseigné
+                que <span class="highlight">la prière remplace les sacrifices</span>.
+                Le prophète Hoshea l'exprime en ces termes :
+            </p>
+
+            <div class="verse-container prayer-verse">
+                <p class="verse-hebrew">
+                    וּנְשַׁלְּמָה פָרִים שְׂפָתֵינוּ
+                </p>
+                <p class="verse-transliteration">
+                    <em>Uneshalema parim sefateinu.</em>
+                </p>
+                <p class="verse-french">
+                    « Nous offrirons les taureaux de nos lèvres. »
+                </p>
+                <p class="verse-reference">(Hoshea 14:3)</p>
+            </div>
+
+            <p class="content-text">
+                Autrement dit : nos <strong>prières</strong> deviennent nos
+                <strong>offrandes spirituelles</strong>. Chaque mot adressé à Ashem
+                avec sincérité est un korban du cœur.
+            </p>
+        </div>
+
+        <!-- CONCLUSION -->
+        <div class="conclusion-box">
+            <h2 class="section-title" style="background:transparent; border:none; padding:0; margin-bottom:25px; color:#7c2020;">
+                <span class="section-icon">🌟</span>
+                Conclusion – Le cœur de l'homme, véritable offrande
+            </h2>
+
+            <p class="content-text">
+                La Paracha Vayikra peut sembler difficile au premier abord,
+                car elle parle de rituels anciens et de sacrifices.
+                Mais son message est profondément spirituel.
+            </p>
+            <p class="content-text">
+                Elle nous enseigne que la relation avec Ashem ne se limite pas
+                à des rites extérieurs.
+                Le véritable korban est <strong>le cœur de l'homme</strong>.
+                Chaque prière, chaque acte de bonté, chaque effort pour s'améliorer
+                est une manière de se rapprocher d'Ashem.
+            </p>
+
+            <div class="verse-container conclusion-verse">
+                <p class="verse-hebrew">
+                    וַיִּקְרָא אֶל־מֹשֶׁה
+                </p>
+                <p class="verse-transliteration">
+                    <em>Vayikra el Moché…</em>
+                </p>
+                <p class="verse-french">
+                    « Il appela Moché… »
+                </p>
+                <p class="verse-reference">(Vayikra 1:1 / Lévitique 1:1)</p>
+            </div>
+
+            <div class="conclusion-banner">
+                « Selon les sages, cet appel s'adresse aussi à chaque génération.<br><br>
+                Ashem continue d'appeler l'homme —<br>
+                à vivre avec justice,<br>
+                à chercher la sainteté,<br>
+                et à se rapprocher de Lui. »
+            </div>
+
+            <p class="content-text" style="text-align:center; font-size:1.3em; font-weight:bold; color:#7c2020; margin-top:30px;">
+                Shabbat Shalom. ✨
+            </p>
+        </div>
+
+        <!-- VIDÉO -->
+        <div class="video-section">
+            <h2 class="video-title">
+                🎥 Étude vidéo de la Paracha Vayikra
+            </h2>
+            <div class="video-container">
+                <iframe
+                    src="https://www.youtube.com/embed/TlK-e6U1GD8"
+                    title="Paracha Vayikra – ויקרא | L'appel d'Adonaï et le sens des sacrifices | Étude de la Torah – Tradition séfarade"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="video-description">
+                Découvrez cette étude en format vidéo pour approfondir votre compréhension
+                de la Paracha Vayikra. Une exploration du sens profond du mot <em>Vayikra</em> —
+                l'appel intime d'Ashem à Moché ; de la racine hébraïque <em>karav</em> et de la
+                spiritualité des korbanot ; des différentes catégories d'offrandes — l'olah,
+                symbole d'élévation totale, et la minḥa, accessible aux plus modestes ;
+                du sel de l'alliance et de sa signification éternelle ; et de l'enseignement
+                des sages selon lequel la prière remplace aujourd'hui les sacrifices.
+                Une réflexion sur la rencontre de l'homme et de son Créateur, dans la tradition séfarade.
+            </p>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <div class="footer-author">
+                Étude de la Paracha Vayikra par <span class="footer-hebrew">אריאל מרמן</span> (Ariel Mormin)
+            </div>
+            <div class="footer-subtitle">
+                • L'appel d'Adonaï et le sens spirituel des sacrifices — וַיִּקְרָא •
+            </div>
+        </div>
+
+    </div><!-- /.container -->
+
+    <script>
+        // Indicateur de progression du scroll
+        window.addEventListener('scroll', () => {
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            scrollIndicator.style.transform = `scaleX(${scrolled / 100})`;
+        });
+
+        // Animation d'apparition au scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll(
+            '.section, .verse-container, .conclusion-box, .video-section, ' +
+            '.intro-box, .fire-special, .salt-banner, .conclusion-banner, ' +
+            '.spiritual-principles'
+        ).forEach((el) => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(el);
+        });
+
+        // Effet hover sur les conteneurs de versets
+        document.querySelectorAll('.verse-container').forEach(container => {
+            container.addEventListener('mouseenter', () => {
+                container.style.transform = 'translateY(-2px)';
+                container.style.transition = 'transform 0.3s ease';
+            });
+            container.addEventListener('mouseleave', () => {
+                container.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>

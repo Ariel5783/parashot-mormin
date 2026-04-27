@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Paracha Tazria–Métsora : pureté, parole et reconstruction intérieure. La tsara'at, le lachon hara', l'isolement et la purification selon la tradition séfarade par Ariel Mormin.">
+    <meta name="keywords" content="Paracha Tazria, Paracha Métsora, תזריע מצרע, Torah, Lévitique, tsara'at, lachon hara, pureté, impureté, Cohen, purification, tradition séfarade, étude biblique, paracha semaine">
+    <title>Paracha Tazria–Métsora – תַּזְרִיעַ מְּצֹרָע – La pureté, la parole et la reconstruction intérieure</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            background: linear-gradient(135deg,
+                #0a1628 0%, #0f2044 15%, #12305a 30%,
+                #0e4655 50%, #12305a 70%, #0f2044 85%, #0a1628 100%);
+            min-height: 100vh;
+            color: #333;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background:
+                radial-gradient(circle at 70% 15%, rgba(20, 184, 166, 0.22) 0%, transparent 50%),
+                radial-gradient(circle at 15% 75%, rgba(56, 189, 248, 0.18) 0%, transparent 50%),
+                radial-gradient(circle at 85% 80%, rgba(99, 102, 241, 0.15) 0%, transparent 45%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 30px auto;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.55);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ── Bouton retour ── */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #0e4655, #0f7080);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(14, 70, 85, 0.4);
+            margin-bottom: 20px;
+        }
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(14, 70, 85, 0.6);
+            background: linear-gradient(135deg, #0f7080, #0e4655);
+        }
+
+        /* ── En-tête ── */
+        .header {
+            text-align: center;
+            padding: 45px 20px;
+            background: linear-gradient(135deg,
+                #0a1628, #0f2044, #12305a, #0e4655, #12305a, #0f2044, #0a1628);
+            margin: -40px -20px 50px -20px;
+            border-radius: 20px 20px 0 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="55" font-size="30" fill="white" opacity="0.07">🕊️</text></svg>') repeat;
+            background-size: 65px 65px;
+            opacity: 0.3;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at center, rgba(20, 184, 166, 0.15) 0%, rgba(10, 22, 40, 0.6) 70%);
+        }
+
+        .header-icon {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+            display: block;
+        }
+
+        .title {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hebrew-title {
+            font-size: 3.0em;
+            color: #99f6e4;
+            margin-bottom: 15px;
+            font-family: 'Times New Roman', serif;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-size: 1.4em;
+            font-style: italic;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+            color: #bae6fd;
+        }
+
+        .reference {
+            font-size: 1.1em;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+            color: #e0f2fe;
+        }
+
+        /* ── Barre de progression ── */
+        .scroll-indicator {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #0e4655, #14b8a6, #7dd3fc);
+            transform-origin: left;
+            transform: scaleX(0);
+            z-index: 1000;
+            transition: transform 0.1s ease;
+        }
+
+        /* ── Boîte intro ── */
+        .intro-box {
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            padding: 35px;
+            border-radius: 15px;
+            border-left: 6px solid #0e4655;
+            margin-bottom: 45px;
+            box-shadow: 0 8px 20px rgba(14, 70, 85, 0.12);
+            position: relative;
+        }
+
+        .intro-box::before {
+            content: "🕊️";
+            position: absolute;
+            top: 15px; right: 15px;
+            font-size: 2em;
+            opacity: 0.3;
+        }
+
+        /* ── Sections ── */
+        .section {
+            margin-bottom: 45px;
+            padding: 20px 0;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #0e4655;
+            margin-bottom: 25px;
+            font-weight: bold;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            border-radius: 10px;
+            border-left: 5px solid #0f7080;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-icon { font-size: 1.8em; flex-shrink: 0; }
+
+        .content-text {
+            font-size: 1.15em;
+            line-height: 1.8;
+            color: #1f2937;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #ccfbf1, #99f6e4);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: #0e4655;
+        }
+
+        /* ════════════════════════════════
+           VERSE CONTAINERS
+        ════════════════════════════════ */
+        .verse-container {
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            border: 2px solid #0e4655;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+            box-shadow: 0 6px 20px rgba(14, 70, 85, 0.12);
+            transition: all 0.3s ease;
+        }
+        .verse-container:hover {
+            box-shadow: 0 8px 25px rgba(14, 70, 85, 0.25);
+            transform: translateY(-2px);
+        }
+
+        .verse-french {
+            font-size: 1.25em;
+            font-weight: bold;
+            color: #0e4655;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        .verse-hebrew {
+            font-size: 1.8em;
+            font-family: 'Times New Roman', serif;
+            direction: rtl;
+            text-align: right;
+            color: #0a2535;
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(153, 246, 228, 0.3);
+            border-radius: 8px;
+            line-height: 1.8;
+        }
+        .verse-transliteration {
+            font-size: 1.1em;
+            font-style: italic;
+            color: #0f7080;
+            margin: 12px 0;
+        }
+        .verse-reference {
+            font-size: 0.95em;
+            color: #0e4655;
+            font-weight: bold;
+            margin-top: 12px;
+        }
+
+        /* Naissance — lavande douce */
+        .naissance-verse {
+            border-color: #7c3aed;
+            background: linear-gradient(135deg, #f5f3ff, #ede9fe);
+        }
+        .naissance-verse .verse-hebrew {
+            background: rgba(196, 181, 253, 0.35);
+            color: #2e1065;
+        }
+        .naissance-verse .verse-french      { color: #5b21b6; }
+        .naissance-verse .verse-transliteration { color: #6d28d9; }
+        .naissance-verse .verse-reference   { color: #4c1d95; }
+
+        /* Tsara'at — ardoise profonde */
+        .tsaraat-verse {
+            border-color: #334155;
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+        }
+        .tsaraat-verse .verse-hebrew {
+            background: rgba(148, 163, 184, 0.30);
+            color: #0f172a;
+        }
+        .tsaraat-verse .verse-french        { color: #334155; }
+        .tsaraat-verse .verse-transliteration { color: #475569; }
+        .tsaraat-verse .verse-reference     { color: #1e293b; }
+
+        /* Isolement — gris-bleu nuit */
+        .isolement-verse {
+            border-color: #1e3a5f;
+            background: linear-gradient(135deg, #eff6ff, #dbeafe);
+        }
+        .isolement-verse .verse-hebrew {
+            background: rgba(147, 197, 253, 0.30);
+            color: #1e3a5f;
+        }
+        .isolement-verse .verse-french      { color: #1e3a5f; }
+        .isolement-verse .verse-transliteration { color: #2563eb; }
+        .isolement-verse .verse-reference   { color: #1e40af; }
+
+        /* Cohen / or sacerdotal */
+        .cohen-verse {
+            border-color: #b45309;
+            background: linear-gradient(135deg, #fffbeb, #fef3c7);
+        }
+        .cohen-verse .verse-hebrew {
+            background: rgba(253, 230, 138, 0.38);
+            color: #451a03;
+        }
+        .cohen-verse .verse-french          { color: #92400e; }
+        .cohen-verse .verse-transliteration { color: #b45309; }
+        .cohen-verse .verse-reference       { color: #78350f; }
+
+        /* Purification / oiseaux — teal/eau vive */
+        .purification-verse {
+            border-color: #0f766e;
+            background: linear-gradient(135deg, #f0fdfa, #ccfbf1);
+        }
+        .purification-verse .verse-hebrew {
+            background: rgba(94, 234, 212, 0.30);
+            color: #042f2e;
+        }
+        .purification-verse .verse-french   { color: #065f46; }
+        .purification-verse .verse-transliteration { color: #0f766e; }
+        .purification-verse .verse-reference { color: #064e3b; }
+
+        /* Conclusion — perle & teal royal */
+        .conclusion-verse {
+            border-color: #0e4655;
+            background: linear-gradient(135deg, #ecfeff, #cffafe);
+        }
+        .conclusion-verse .verse-hebrew {
+            background: rgba(103, 232, 249, 0.28);
+            color: #083344;
+            font-size: 2em;
+        }
+        .conclusion-verse .verse-french     { color: #0e4655; }
+        .conclusion-verse .verse-transliteration { color: #0891b2; }
+        .conclusion-verse .verse-reference  { color: #083344; }
+
+        /* ════════════════════════════════
+           BOÎTES SPÉCIALES
+        ════════════════════════════════ */
+        .tsaraat-special {
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+            border: 3px solid #475569;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(71, 85, 105, 0.20);
+            text-align: center;
+        }
+        .tsaraat-special .tsaraat-icon {
+            font-size: 2.5em;
+            display: block;
+            margin-bottom: 15px;
+        }
+        .tsaraat-special p {
+            font-size: 1.15em;
+            color: #1e293b;
+            font-weight: bold;
+        }
+        .tsaraat-special .tsaraat-sub {
+            font-size: 1em;
+            font-style: italic;
+            color: #475569;
+            font-weight: normal;
+            margin-top: 8px;
+        }
+
+        .teaching-box {
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            border: 2px solid #0f7080;
+            border-radius: 12px;
+            padding: 25px 35px;
+            margin: 25px 0;
+        }
+        .teaching-box p {
+            font-size: 1.1em;
+            color: #1f2937;
+            margin-bottom: 12px;
+            border-left: 3px solid #0f7080;
+            padding: 8px 0 8px 15px;
+        }
+        .teaching-box p:last-child { margin-bottom: 0; }
+
+        .isolement-banner {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            border: 2px solid #334155;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.2em;
+            color: #bae6fd;
+            box-shadow: 0 4px 15px rgba(15, 23, 42, 0.35);
+            line-height: 1.9;
+        }
+
+        .purification-banner {
+            background: linear-gradient(135deg, #042f2e, #065f46);
+            border: 2px solid #14b8a6;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.2em;
+            color: #99f6e4;
+            box-shadow: 0 4px 15px rgba(20, 184, 166, 0.20);
+            line-height: 1.9;
+        }
+
+        .parole-banner {
+            background: linear-gradient(135deg, #eff6ff, #dbeafe);
+            border: 2px solid #1d4ed8;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.2em;
+            color: #1e3a5f;
+            box-shadow: 0 4px 15px rgba(29, 78, 216, 0.12);
+        }
+
+        /* ── Conclusion box ── */
+        .conclusion-box {
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            padding: 40px;
+            border-radius: 15px;
+            border: 3px solid #0e4655;
+            margin-top: 50px;
+            box-shadow: 0 10px 30px rgba(14, 70, 85, 0.15);
+        }
+        .conclusion-banner {
+            background: linear-gradient(135deg, #0a1628, #0f2044);
+            border: 2px solid #14b8a6;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.2em;
+            color: #bae6fd;
+            box-shadow: 0 4px 15px rgba(20, 184, 166, 0.25);
+            line-height: 1.9;
+        }
+
+        /* ── Citations clés ── */
+        .key-quotes {
+            margin-top: 45px;
+            padding: 35px;
+            background: linear-gradient(135deg, #0a1628, #0f2044);
+            border-radius: 15px;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+        .key-quotes h2 {
+            font-size: 1.5em;
+            color: #99f6e4;
+            margin-bottom: 25px;
+            text-align: center;
+            border-bottom: 2px solid rgba(153, 246, 228, 0.3);
+            padding-bottom: 15px;
+        }
+        .quote-item {
+            background: rgba(255, 255, 255, 0.07);
+            border-left: 4px solid #14b8a6;
+            border-radius: 8px;
+            padding: 20px 25px;
+            margin-bottom: 20px;
+        }
+        .quote-item:last-child { margin-bottom: 0; }
+        .quote-hebrew {
+            font-size: 1.6em;
+            font-family: 'Times New Roman', serif;
+            direction: rtl;
+            text-align: right;
+            color: #99f6e4;
+            display: block;
+            margin-bottom: 8px;
+            line-height: 1.8;
+        }
+        .quote-transliteration { font-style: italic; color: #bae6fd; margin-bottom: 6px; }
+        .quote-french { color: #e0f2fe; font-weight: bold; }
+
+        /* ── Vidéo ── */
+        .video-section {
+            margin-top: 45px;
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            border-radius: 15px;
+            padding: 35px;
+            border: 2px solid #0f7080;
+            box-shadow: 0 8px 20px rgba(14, 70, 85, 0.10);
+        }
+        .video-title {
+            font-size: 1.5em;
+            color: #0e4655;
+            margin-bottom: 25px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            border: none;
+            border-radius: 12px;
+        }
+        .video-description {
+            margin-top: 20px;
+            font-size: 1.05em;
+            color: #374151;
+            text-align: center;
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        /* ── Footer ── */
+        .footer {
+            margin-top: 40px;
+            padding: 25px;
+            text-align: center;
+            border-top: 2px solid #0e4655;
+            color: #0e4655;
+        }
+        .footer-author { font-size: 1.1em; font-weight: bold; margin-bottom: 8px; }
+        .footer-hebrew { font-family: 'Times New Roman', serif; }
+        .footer-subtitle { font-style: italic; opacity: 0.8; }
+
+        /* ── Contrast box ── */
+        .contrast-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 25px 0;
+        }
+        .contrast-left, .contrast-right {
+            padding: 20px;
+            border-radius: 12px;
+        }
+        .contrast-left {
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+            border: 2px solid #475569;
+        }
+        .contrast-right {
+            background: linear-gradient(135deg, #f0fdfa, #ccfbf1);
+            border: 2px solid #0f766e;
+        }
+        .contrast-left h4 { color: #334155; margin-bottom: 12px; font-size: 1em; }
+        .contrast-right h4 { color: #065f46; margin-bottom: 12px; font-size: 1em; }
+        .contrast-left p, .contrast-right p { font-size: 1em; color: #1f2937; }
+
+        @media (max-width: 600px) {
+            .contrast-box { grid-template-columns: 1fr; }
+            .title { font-size: 1.9em; }
+            .hebrew-title { font-size: 2.2em; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="scroll-indicator" id="scrollIndicator"></div>
+
+<div class="container">
+
+    <!-- BOUTON RETOUR -->
+    <a href="../index.html" class="back-button">← Retour aux Parashot</a>
+
+    <!-- EN-TÊTE -->
+    <div class="header">
+        <span class="header-icon">🕊️</span>
+        <h1 class="title">Paracha Tazria–Métsora</h1>
+        <div class="hebrew-title">תַּזְרִיעַ – מְּצֹרָע</div>
+        <div class="subtitle">La pureté, la parole et la reconstruction intérieure</div>
+        <div class="reference">Vayiqra / Lévitique 12:1 – 15:33 · Tradition séfarade</div>
+    </div>
+
+    <!-- INTRODUCTION -->
+    <div class="intro-box">
+        <h2 style="color:#0e4655; font-size:1.4em; margin-bottom:18px;">
+            🟦 Un texte déroutant mais fondamental
+        </h2>
+        <p class="content-text">
+            Les parachiot <strong>Tazria</strong> (Vayikra 12–13) et <strong>Métsora</strong> (Vayikra 14–15)
+            abordent des lois qui peuvent sembler difficiles d'accès : pureté et impureté rituelle
+            (<em>ṭoumah</em> et <em>ṭaharah</em>), affections de la peau (<em>tsara'at</em>), isolement, purification.
+        </p>
+        <p class="content-text">
+            À première lecture, ces textes paraissent médicaux ou rituels. Pourtant, la tradition séfarade —
+            à la suite des grands maîtres comme le Rambam ou le Ramban — enseigne qu'il ne s'agit pas
+            d'une maladie ordinaire, mais d'un <span class="highlight">langage spirituel</span>.
+        </p>
+        <p class="content-text" style="margin-bottom:0; font-weight:bold; color:#0e4655;">
+            👉 La <em>tsara'at</em> est liée à la parole — en particulier au <em>lachon hara'</em> (médisance).
+            Ces parachiot nous parlent de la responsabilité des mots, de la dignité humaine et du processus de réparation intérieure.
+        </p>
+    </div>
+
+    <!-- SECTION 1 : NAISSANCE -->
+    <div class="section">
+        <h2 class="section-title">
+            <span class="section-icon">🌱</span>
+            1. La naissance : entre vie et fragilité
+        </h2>
+
+        <p class="content-text">
+            La paracha Tazria commence par la naissance, événement à la fois le plus universel
+            et le plus chargé de sens dans la Torah. Le texte introduit immédiatement
+            une période de retrait et de purification pour la mère.
+        </p>
+
+        <div class="verse-container naissance-verse">
+            <p class="verse-french">« Lorsqu'une femme conçoit et enfante un garçon… »</p>
+            <p class="verse-hebrew">וְאִשָּׁה כִּי תַזְרִיעַ וְיָלְדָה זָכָר</p>
+            <p class="verse-transliteration"><em>Ve-isha ki tazria ve-yalda zakhar</em></p>
+            <p class="verse-reference">(Vayiqra / Lévitique 12:2)</p>
+        </div>
+
+        <p class="content-text">
+            Dans la tradition séfarade, cette étape révèle une vérité profonde :
+            <span class="highlight">la vie humaine naît dans une tension entre pureté originelle et fragilité</span>.
+            Venir au monde ne va pas de soi. Chaque naissance réclame une reconnaissance,
+            une élévation — un acte conscient de sanctification.
+        </p>
+
+        <div class="teaching-box">
+            <p>🌿 La vie n'est pas automatique : elle demande une <strong>reconnaissance et une élévation</strong></p>
+            <p>🌿 Le retrait de la mère n'est pas une exclusion — c'est un temps de <strong>transition sacrée</strong></p>
+            <p>🌿 Chaque naissance est une occasion de réaffirmer la sainteté de la vie</p>
+        </div>
+    </div>
+
+    <!-- SECTION 2 : TSARA'AT -->
+    <div class="section">
+        <h2 class="section-title">
+            <span class="section-icon">⚠️</span>
+            2. La tsara'at : une maladie spirituelle
+        </h2>
+
+        <p class="content-text">
+            La Torah décrit ensuite les signes de la <em>tsara'at</em> avec une précision remarquable.
+            Mais contrairement à une lecture moderne qui y verrait une maladie dermatologique,
+            nos Sages enseignent qu'il s'agit d'une <span class="highlight">manifestation visible d'un déséquilibre intérieur</span>.
+        </p>
+
+        <div class="verse-container tsaraat-verse">
+            <p class="verse-french">« Lorsqu'un homme aura sur la peau une plaie de tsara'at… »</p>
+            <p class="verse-hebrew">אָדָם כִּי יִהְיֶה בְעוֹר בְּשָׂרוֹ נֶגַע צָרָעַת</p>
+            <p class="verse-transliteration"><em>Adam ki yihyeh be'or besarô nega tsara'at</em></p>
+            <p class="verse-reference">(Vayiqra / Lévitique 13:2)</p>
+        </div>
+
+        <div class="tsaraat-special">
+            <span class="tsaraat-icon">💬</span>
+            <p>Le Talmud (Arachin 15b) relie directement la <em>tsara'at</em> au <strong>lachon hara'</strong></p>
+            <p class="tsaraat-sub">La parole blessante laisse une trace visible — non sur autrui, mais sur celui qui la prononce</p>
+        </div>
+
+        <p class="content-text">
+            Dans l'approche séfarade, la parole est créatrice ou destructrice. Elle construit le monde
+            ou le fragilise. Le nom même de la maladie — <em>métsora</em> — est lu par nos maîtres
+            comme une contraction de <em>motsi shem ra'</em> : « celui qui fait circuler une mauvaise réputation ».
+        </p>
+
+        <div class="parole-banner">
+            La parole crée ou détruit.<br>
+            Elle construit le monde — ou le fragilise.<br>
+            <strong>La tsara'at rend visible ce qui était intérieur.</strong>
+        </div>
+    </div>
+
+    <!-- SECTION 3 : ISOLEMENT -->
+    <div class="section">
+        <h2 class="section-title">
+            <span class="section-icon">🏕️</span>
+            3. L'isolement : une mesure éducative
+        </h2>
+
+        <p class="content-text">
+            Le métsora est isolé du camp. Cette mesure, qui peut sembler sévère,
+            est en réalité profondément pédagogique dans la lecture de nos Sages.
+        </p>
+
+        <div class="verse-container isolement-verse">
+            <p class="verse-french">« Il habitera seul, en dehors du camp. »</p>
+            <p class="verse-hebrew">בָּדָד יֵשֵׁב מִחוּץ לַמַּחֲנֶה</p>
+            <p class="verse-transliteration"><em>Badad yeshev miḥoutz la-maḥaneh</em></p>
+            <p class="verse-reference">(Vayiqra / Lévitique 13:46)</p>
+        </div>
+
+        <p class="content-text">
+            Pourquoi cet isolement ? La tradition séfarade l'explique selon le principe
+            de <em>midda keneged midda</em> — mesure pour mesure.
+            <span class="highlight">Celui qui a séparé les autres par sa parole est lui-même séparé.</span>
+        </p>
+
+        <div class="isolement-banner">
+            Ce n'est pas une punition aveugle.<br>
+            C'est un temps de <strong>réflexion</strong>.<br>
+            Un espace de <strong>reconstruction intérieure</strong>.<br>
+            Le silence imposé pour réparer la parole brisée.
+        </div>
+
+        <p class="content-text">
+            Loin d'être une exclusion définitive, l'isolement est un espace de transformation.
+            Le métsora n'est pas abandonné — il est accompagné vers la guérison.
+            La Torah prévoit, dès ce moment, les étapes précises de son retour.
+        </p>
+    </div>
+
+    <!-- SECTION 4 : COHEN -->
+    <div class="section">
+        <h2 class="section-title">
+            <span class="section-icon">✋</span>
+            4. Le rôle du Cohen : diagnostiquer et accompagner
+        </h2>
+
+        <p class="content-text">
+            Fait remarquable : ce n'est pas un médecin qui décide du statut du métsora,
+            mais un <strong>Cohen</strong>. Cette disposition confirme que la dimension de la <em>tsara'at</em>
+            est avant tout <span class="highlight">spirituelle, et non médicale</span>.
+        </p>
+
+        <div class="verse-container cohen-verse">
+            <p class="verse-french">« Le Cohen le verra, et le Cohen le déclarera impur. »</p>
+            <p class="verse-hebrew">וְרָאָה הַכֹּהֵן וְטִמֵּא אֹתוֹ</p>
+            <p class="verse-transliteration"><em>Ve-ra'a ha-kohen ve-ṭime otô</em></p>
+            <p class="verse-reference">(Vayiqra / Lévitique 13:3)</p>
+        </div>
+
+        <div class="contrast-box">
+            <div class="contrast-left">
+                <h4>🔍 Le regard du Cohen</h4>
+                <p>Il observe, prononce l'état (<em>ṭame</em> ou <em>ṭahor</em>) et accompagne tout le processus de retour. Son regard est juste, non condamnant.</p>
+            </div>
+            <div class="contrast-right">
+                <h4>🌿 Le guide spirituel</h4>
+                <p>La tradition séfarade enseigne la nécessité d'un guide avisé. Nul ne se purifie seul — il faut un regard extérieur bienveillant et qualifié.</p>
+            </div>
+        </div>
+
+        <p class="content-text">
+            Le Cohen ne crée pas l'impureté — il la reconnaît et ouvre le chemin de la guérison.
+            Dans notre tradition, cela enseigne l'importance du <em>rav</em>, du guide spirituel :
+            quelqu'un qui voit ce que nous ne voyons pas en nous-mêmes, et qui nous accompagne
+            avec discernement vers la rectification.
+        </p>
+    </div>
+
+    <!-- SECTION 5 : PURIFICATION -->
+    <div class="section">
+        <h2 class="section-title">
+            <span class="section-icon">🌊</span>
+            5. La purification : un chemin de renaissance
+        </h2>
+
+        <p class="content-text">
+            Dans la paracha Métsora, la purification est décrite avec une précision symbolique extraordinaire.
+            Le rituel des deux oiseaux est l'un des plus riches en significations de toute la Torah.
+        </p>
+
+        <div class="verse-container purification-verse">
+            <p class="verse-french">« Il prendra pour celui qui se purifie deux oiseaux vivants et purs… »</p>
+            <p class="verse-hebrew">וְלָקַח לַמִּטַּהֵר שְׁתֵּי צִפֳּרִים חַיּוֹת טְהֹרוֹת</p>
+            <p class="verse-transliteration"><em>Ve-laqaḥ la-mitaher shtei tsiporim ḥayot tehorot</em></p>
+            <p class="verse-reference">(Vayiqra / Lévitique 14:4)</p>
+        </div>
+
+        <p class="content-text">
+            Les oiseaux — dont le gazouillement évoque le jacassement (<em>tsiptsoup</em>) — symbolisent
+            la <span class="highlight">parole</span>. L'un est sacrifié dans l'eau vive ; l'autre est libéré
+            vers le ciel, portant le sang de son compagnon. Message puissant :
+        </p>
+
+        <div class="teaching-box">
+            <p>🕊️ L'oiseau sacrifié : la <strong>parole destructrice</strong> qui doit mourir</p>
+            <p>🕊️ L'oiseau libéré : la <strong>parole renouvelée</strong> qui s'élève vers Adonaï</p>
+            <p>🌊 L'eau vive (<em>mayim ḥayim</em>) : le renouveau, la renaissance, la purification totale</p>
+        </div>
+
+        <div class="purification-banner">
+            La réparation passe par la rééducation de la parole.<br>
+            La purification n'est pas seulement rituelle :<br>
+            <strong>c'est une transformation intérieure, une renaissance spirituelle.</strong>
+        </div>
+
+        <p class="content-text">
+            Le métsora ne revient pas dans le camp comme il en est parti.
+            Il revient transformé, après un processus graduel de réintégration
+            qui s'étale sur plusieurs jours — comme pour souligner que
+            la guérison authentique prend du temps.
+        </p>
+    </div>
+
+    <!-- CONCLUSION -->
+    <div class="conclusion-box">
+        <h2 class="section-title" style="background:transparent; border:none; padding:0; margin-bottom:25px; color:#0e4655;">
+            <span class="section-icon">🌟</span>
+            Conclusion – La parole comme responsabilité sacrée
+        </h2>
+
+        <p class="content-text">
+            Tazria–Métsora nous enseigne une vérité fondamentale sur la nature de la parole.
+            Loin d'être un simple outil de communication, la parole est, dans la Torah,
+            une force créatrice ou destructrice — à l'image de la parole divine qui créa le monde.
+        </p>
+
+        <p class="content-text">
+            La <em>tsara'at</em> n'existe plus aujourd'hui sous cette forme visible.
+            Mais son message demeure intact : <span class="highlight">chaque parole est une responsabilité devant Adonaï</span>.
+            Chaque relation est un espace de vérité ou de trahison.
+        </p>
+
+        <div class="verse-container conclusion-verse">
+            <p class="verse-hebrew">בָּדָד יֵשֵׁב מִחוּץ לַמַּחֲנֶה</p>
+            <p class="verse-transliteration"><em>Badad yeshev miḥoutz la-maḥaneh</em></p>
+            <p class="verse-french">« Il habitera seul, en dehors du camp. »</p>
+            <p class="verse-reference">(Vayiqra / Lévitique 13:46)</p>
+        </div>
+
+        <div class="conclusion-banner">
+            « Qui maîtrise sa parole maîtrise sa vie.<br><br>
+            Tazria–Métsora nous invite à prendre conscience de l'impact de nos mots,<br>
+            à réparer lorsque nécessaire,<br>
+            et à retrouver une parole <em>juste, pure et constructive</em>. »
+        </div>
+
+        <p class="content-text" style="text-align:center; font-size:1.3em; font-weight:bold; color:#0e4655; margin-top:30px;">
+            Shabbat Shalom. 🕊️💧
+        </p>
+    </div>
+
+    <!-- CITATIONS CLÉS -->
+    <div class="key-quotes">
+        <h2>✨ Quelques citations clés de la Paracha Tazria–Métsora</h2>
+
+        <div class="quote-item">
+            <span class="quote-hebrew">וְאִשָּׁה כִּי תַזְרִיעַ וְיָלְדָה זָכָר</span>
+            <p class="quote-transliteration">Ve-isha ki tazria ve-yalda zakhar.</p>
+            <p class="quote-french">« Lorsqu'une femme conçoit et enfante un garçon… » (Lévitique 12:2)</p>
+        </div>
+
+        <div class="quote-item">
+            <span class="quote-hebrew">אָדָם כִּי יִהְיֶה בְעוֹר בְּשָׂרוֹ נֶגַע צָרָעַת</span>
+            <p class="quote-transliteration">Adam ki yihyeh be'or besarô nega tsara'at.</p>
+            <p class="quote-french">« Lorsqu'un homme aura sur la peau une plaie de tsara'at… » (Lévitique 13:2)</p>
+        </div>
+
+        <div class="quote-item">
+            <span class="quote-hebrew">בָּדָד יֵשֵׁב מִחוּץ לַמַּחֲנֶה</span>
+            <p class="quote-transliteration">Badad yeshev miḥoutz la-maḥaneh.</p>
+            <p class="quote-french">« Il habitera seul, en dehors du camp. » (Lévitique 13:46)</p>
+        </div>
+
+        <div class="quote-item">
+            <span class="quote-hebrew">וְלָקַח לַמִּטַּהֵר שְׁתֵּי צִפֳּרִים חַיּוֹת טְהֹרוֹת</span>
+            <p class="quote-transliteration">Ve-laqaḥ la-mitaher shtei tsiporim ḥayot tehorot.</p>
+            <p class="quote-french">« Il prendra deux oiseaux vivants et purs pour la purification. » (Lévitique 14:4)</p>
+        </div>
+    </div>
+
+    <!-- VIDÉO -->
+    <div class="video-section">
+        <h2 class="video-title">
+            🎥 Étude vidéo de la Paracha Tazria–Métsora
+        </h2>
+        <div class="video-container">
+            <iframe
+                src="https://www.youtube.com/embed/FRIBaHxVKUQ"
+                title="Paracha Tazria-Métsora – תזריע מצרע | La puissance de la parole | Étude Torah – Tradition séfarade"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+            </iframe>
+        </div>
+        <p class="video-description">
+            Une étude profonde sur la parole, la séparation et la réparation intérieure selon la tradition séfarade.
+            La tsara'at comme langage spirituel ; le lachon hara' et ses conséquences ;
+            l'isolement comme espace de reconstruction ; le rôle du Cohen comme guide ;
+            et le rituel des deux oiseaux comme symbole de renaissance de la parole.
+        </p>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <div class="footer-author">
+            Étude de la Paracha Tazria–Métsora par <span class="footer-hebrew">אריאל מרמן</span> (Ariel Mormin)
+        </div>
+        <div class="footer-subtitle">
+            • La pureté, la parole et la reconstruction intérieure — תַּזְרִיעַ מְּצֹרָע •
+        </div>
+    </div>
+
+</div><!-- /.container -->
+
+<script>
+    // Indicateur de progression du scroll
+    window.addEventListener('scroll', () => {
+        const scrollIndicator = document.getElementById('scrollIndicator');
+        const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+        scrollIndicator.style.transform = `scaleX(${scrolled / 100})`;
+    });
+
+    // Animation d'apparition au scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll(
+        '.section, .verse-container, .conclusion-box, .video-section, ' +
+        '.intro-box, .tsaraat-special, .isolement-banner, .purification-banner, ' +
+        '.parole-banner, .conclusion-banner, .teaching-box, .contrast-box, ' +
+        '.key-quotes, .quote-item'
+    ).forEach((el) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        observer.observe(el);
+    });
+
+    // Effet hover sur les conteneurs de versets
+    document.querySelectorAll('.verse-container').forEach(container => {
+        container.addEventListener('mouseenter', () => {
+            container.style.transform = 'translateY(-2px)';
+            container.style.transition = 'transform 0.3s ease';
+        });
+        container.addEventListener('mouseleave', () => {
+            container.style.transform = 'translateY(0)';
+        });
+    });
+</script>
+</body>
+</html>

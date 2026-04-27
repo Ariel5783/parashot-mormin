@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Paracha Aḥarei Mot – Kedoshim : du service de Yom Kippour à la sainteté du quotidien. L'accès au sacré, la téchouva et l'éthique comme expression spirituelle selon la tradition séfarade par Ariel Mormin.">
+    <meta name="keywords" content="Paracha Aharei Mot, Paracha Kedoshim, אחרי מות קדושים, Torah, Lévitique, Yom Kippour, sainteté, téchouva, Cohen Gadol, Ve'ahavta lere'akha, tradition séfarade, étude biblique, paracha semaine">
+    <title>Paracha Aḥarei Mot – Kedoshim – אַחֲרֵי מוֹת קְדֹשִׁים – Du sanctuaire à la vie : le chemin de la sainteté</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            background: linear-gradient(135deg,
+                #1a0a3e 0%, #2d1060 15%, #3b0764 30%,
+                #2d1060 50%, #1f0a48 70%, #2d1060 85%, #1a0a3e 100%);
+            min-height: 100vh;
+            color: #333;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background:
+                radial-gradient(circle at 70% 15%, rgba(201, 162, 39, 0.20) 0%, transparent 50%),
+                radial-gradient(circle at 15% 75%, rgba(139, 92, 246, 0.22) 0%, transparent 50%),
+                radial-gradient(circle at 85% 80%, rgba(212, 175, 55, 0.15) 0%, transparent 45%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 30px auto;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.60);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ── Bouton retour ── */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #4c1d95, #6d28d9);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(76, 29, 149, 0.40);
+            margin-bottom: 20px;
+        }
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(76, 29, 149, 0.60);
+            background: linear-gradient(135deg, #6d28d9, #4c1d95);
+        }
+
+        /* ── En-tête ── */
+        .header {
+            text-align: center;
+            padding: 45px 20px;
+            background: linear-gradient(135deg,
+                #1a0a3e, #2d1060, #3b0764, #4c1d95, #3b0764, #2d1060, #1a0a3e);
+            margin: -40px -20px 50px -20px;
+            border-radius: 20px 20px 0 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="55" font-size="28" fill="white" opacity="0.07">✡️</text></svg>') repeat;
+            background-size: 65px 65px;
+            opacity: 0.3;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background:
+                radial-gradient(circle at 30% 50%, rgba(212, 175, 55, 0.18) 0%, transparent 55%),
+                radial-gradient(circle at 70% 50%, rgba(139, 92, 246, 0.20) 0%, transparent 55%),
+                radial-gradient(circle at center, rgba(45, 16, 96, 0.40) 0%, rgba(26, 10, 62, 0.65) 70%);
+        }
+
+        .header-icon {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+            display: block;
+        }
+
+        .title {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hebrew-title {
+            font-size: 3.0em;
+            color: #fde68a;
+            margin-bottom: 15px;
+            font-family: 'Times New Roman', serif;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-size: 1.4em;
+            font-style: italic;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+            color: #e9d5ff;
+        }
+
+        .reference {
+            font-size: 1.1em;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+            color: #f3e8ff;
+        }
+
+        /* ── Barre de progression ── */
+        .scroll-indicator {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #4c1d95, #c9a227, #d4af37);
+            transform-origin: left;
+            transform: scaleX(0);
+            z-index: 1000;
+            transition: transform 0.1s ease;
+        }
+
+        /* ── Boîte intro ── */
+        .intro-box {
+            background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+            padding: 35px;
+            border-radius: 15px;
+            border-left: 6px solid #6d28d9;
+            margin-bottom: 45px;
+            box-shadow: 0 8px 20px rgba(109, 40, 217, 0.12);
+            position: relative;
+        }
+
+        .intro-box::before {
+            content: "✡️";
+            position: absolute;
+            top: 15px; right: 15px;
+            font-size: 2em;
+            opacity: 0.25;
+        }
+
+        /* ── Sections ── */
+        .section {
+            margin-bottom: 45px;
+            padding: 20px 0;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #4c1d95;
+            margin-bottom: 25px;
+            font-weight: bold;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+            border-radius: 10px;
+            border-left: 5px solid #7c3aed;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-icon { font-size: 1.8em; flex-shrink: 0; }
+
+        .content-text {
+            font-size: 1.15em;
+            line-height: 1.8;
+            color: #1f2937;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #fde68a, #fbbf24);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: #451a03;
+        }
+
+        /* ════════════════════════════════
+           VERSE CONTAINERS
+        ════════════════════════════════ */
+        .verse-container {
+            background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+            border: 2px solid #6d28d9;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+            box-shadow: 0 6px 20px rgba(109, 40, 217, 0.12);
+            transition: all 0.3s ease;
+        }
+        .verse-container:hover {
+            box-shadow: 0 8px 25px rgba(109, 40, 217, 0.25);
+            transform: translateY(-2px);
+        }
+
+        .verse-french {
+            font-size: 1.25em;
+            font-weight: bold;
+            color: #4c1d95;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        .verse-hebrew {
+            font-size: 1.8em;
+            font-family: 'Times New Roman', serif;
+            direction: rtl;
+            text-align: right;
+            color: #2e1065;
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(196, 181, 253, 0.30);
+            border-radius: 8px;
+            line-height: 1.8;
+        }
+        .verse-transliteration {
+            font-size: 1.1em;
+            font-style: italic;
+            color: #7c3aed;
+            margin: 12px 0;
+        }
+        .verse-reference {
+            font-size: 0.95em;
+            color: #4c1d95;
+            font-weight: bold;
+            margin-top: 12px;
+        }
+
+        /* Section 1 : Accès au sacré — ardoise profonde / nuit */
+        .sacre-verse {
+            border-color: #1e1b4b;
+            background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+        }
+        .sacre-verse .verse-hebrew {
+            background: rgba(165, 180, 252, 0.30);
+            color: #1e1b4b;
+        }
+        .sacre-verse .verse-french          { color: #1e1b4b; }
+        .sacre-verse .verse-transliteration { color: #4338ca; }
+        .sacre-verse .verse-reference       { color: #312e81; }
+
+        /* Section 2 : Yom Kippour — argent / blanc pur */
+        .kippour-verse {
+            border-color: #0369a1;
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+        }
+        .kippour-verse .verse-hebrew {
+            background: rgba(147, 197, 253, 0.30);
+            color: #0c4a6e;
+        }
+        .kippour-verse .verse-french        { color: #0369a1; }
+        .kippour-verse .verse-transliteration { color: #0284c7; }
+        .kippour-verse .verse-reference     { color: #0c4a6e; }
+
+        /* Section 3 : Kedoshim / sainteté — or royal */
+        .kedoshim-verse {
+            border-color: #b45309;
+            background: linear-gradient(135deg, #fffbeb, #fef3c7);
+        }
+        .kedoshim-verse .verse-hebrew {
+            background: rgba(253, 230, 138, 0.40);
+            color: #451a03;
+        }
+        .kedoshim-verse .verse-french       { color: #92400e; }
+        .kedoshim-verse .verse-transliteration { color: #b45309; }
+        .kedoshim-verse .verse-reference    { color: #78350f; }
+
+        /* Section 4 : Amour du prochain — rose profond */
+        .amour-verse {
+            border-color: #be123c;
+            background: linear-gradient(135deg, #fff1f2, #ffe4e6);
+        }
+        .amour-verse .verse-hebrew {
+            background: rgba(254, 205, 211, 0.40);
+            color: #4c0519;
+        }
+        .amour-verse .verse-french          { color: #9f1239; }
+        .amour-verse .verse-transliteration { color: #be123c; }
+        .amour-verse .verse-reference       { color: #881337; }
+
+        /* Section 5 : Séparation / élévation — violet royal */
+        .elevation-verse {
+            border-color: #7c3aed;
+            background: linear-gradient(135deg, #faf5ff, #ede9fe);
+        }
+        .elevation-verse .verse-hebrew {
+            background: rgba(196, 181, 253, 0.35);
+            color: #2e1065;
+        }
+        .elevation-verse .verse-french      { color: #5b21b6; }
+        .elevation-verse .verse-transliteration { color: #7c3aed; }
+        .elevation-verse .verse-reference   { color: #4c1d95; }
+
+        /* Conclusion — or & violet fusionné */
+        .conclusion-verse {
+            border-color: #6d28d9;
+            background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+        }
+        .conclusion-verse .verse-hebrew {
+            background: rgba(196, 181, 253, 0.28);
+            color: #2e1065;
+            font-size: 2em;
+        }
+        .conclusion-verse .verse-french     { color: #4c1d95; }
+        .conclusion-verse .verse-transliteration { color: #7c3aed; }
+        .conclusion-verse .verse-reference  { color: #3b0764; }
+
+        /* ════════════════════════════════
+           BOÎTES SPÉCIALES
+        ════════════════════════════════ */
+        .teaching-box {
+            background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+            border: 2px solid #7c3aed;
+            border-radius: 12px;
+            padding: 25px 35px;
+            margin: 25px 0;
+        }
+        .teaching-box p {
+            font-size: 1.1em;
+            color: #1f2937;
+            margin-bottom: 12px;
+            border-left: 3px solid #7c3aed;
+            padding: 8px 0 8px 15px;
+        }
+        .teaching-box p:last-child { margin-bottom: 0; }
+
+        .kippour-special {
+            background: linear-gradient(135deg, #0c4a6e, #0369a1);
+            border: 2px solid #7dd3fc;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(3, 105, 161, 0.30);
+            text-align: center;
+            color: white;
+        }
+        .kippour-special .kippour-icon {
+            font-size: 2.5em;
+            display: block;
+            margin-bottom: 15px;
+        }
+        .kippour-special p {
+            font-size: 1.15em;
+            font-weight: bold;
+            color: #e0f2fe;
+        }
+        .kippour-special .kippour-sub {
+            font-size: 1em;
+            font-style: italic;
+            color: #bae6fd;
+            font-weight: normal;
+            margin-top: 8px;
+        }
+
+        .kedoshim-banner {
+            background: linear-gradient(135deg, #1a0a3e, #3b0764);
+            border: 2px solid #c9a227;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.25em;
+            color: #fde68a;
+            box-shadow: 0 8px 25px rgba(201, 162, 39, 0.25);
+        }
+        .kedoshim-banner strong { color: #fbbf24; }
+
+        .amour-banner {
+            background: linear-gradient(135deg, #4c0519, #881337);
+            border: 2px solid #f43f5e;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.2em;
+            color: #ffe4e6;
+            box-shadow: 0 8px 25px rgba(190, 18, 60, 0.25);
+        }
+        .amour-banner strong { color: #fca5a5; }
+
+        .elevation-banner {
+            background: linear-gradient(135deg, #2e1065, #4c1d95);
+            border: 2px solid #a78bfa;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.2em;
+            color: #e9d5ff;
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.25);
+        }
+        .elevation-banner strong { color: #c4b5fd; }
+
+        /* ── Boîte conclusion ── */
+        .conclusion-box {
+            background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+            padding: 40px;
+            border-radius: 18px;
+            border: 2px solid #7c3aed;
+            margin-bottom: 45px;
+            box-shadow: 0 10px 30px rgba(109, 40, 217, 0.15);
+        }
+
+        .conclusion-banner {
+            background: linear-gradient(135deg, #1a0a3e, #2d1060, #4c1d95);
+            border: 2px solid #c9a227;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.2em;
+            color: #fde68a;
+            line-height: 2;
+            box-shadow: 0 10px 30px rgba(26, 10, 62, 0.35);
+        }
+        .conclusion-banner strong { color: #fbbf24; }
+        .conclusion-banner em { color: #e9d5ff; font-style: italic; }
+
+        /* ── Citations clés ── */
+        .key-quotes {
+            background: linear-gradient(135deg, #f5f3ff, #ede9fe);
+            border: 2px solid #7c3aed;
+            border-radius: 18px;
+            padding: 40px;
+            margin-bottom: 45px;
+            box-shadow: 0 10px 30px rgba(109, 40, 217, 0.12);
+        }
+
+        .key-quotes h2 {
+            font-size: 1.6em;
+            color: #4c1d95;
+            margin-bottom: 30px;
+            text-align: center;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #7c3aed;
+        }
+
+        .quote-item {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 5px solid #c9a227;
+            box-shadow: 0 4px 15px rgba(109, 40, 217, 0.10);
+        }
+        .quote-item:last-child { margin-bottom: 0; }
+
+        .quote-hebrew {
+            font-size: 1.8em;
+            font-family: 'Times New Roman', serif;
+            direction: rtl;
+            display: block;
+            text-align: right;
+            color: #2e1065;
+            margin-bottom: 10px;
+            padding: 10px 15px;
+            background: linear-gradient(135deg, #fdf4ff, #fae8ff);
+            border-radius: 8px;
+        }
+        .quote-transliteration {
+            font-style: italic;
+            color: #7c3aed;
+            margin-bottom: 8px;
+            font-size: 1.05em;
+        }
+        .quote-french {
+            color: #4c1d95;
+            font-weight: bold;
+            font-size: 1.05em;
+        }
+
+        /* ── Vidéo ── */
+        .video-section {
+            background: linear-gradient(135deg, #1a0a3e, #2d1060);
+            border-radius: 18px;
+            padding: 40px;
+            margin-bottom: 45px;
+            box-shadow: 0 15px 35px rgba(26, 10, 62, 0.40);
+        }
+
+        .video-title {
+            font-size: 1.6em;
+            color: #fde68a;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.50);
+            border: 2px solid rgba(201, 162, 39, 0.40);
+            margin-bottom: 20px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            border: none;
+        }
+
+        .video-description {
+            color: #e9d5ff;
+            font-style: italic;
+            font-size: 1.05em;
+            text-align: center;
+            line-height: 1.7;
+        }
+
+        /* ── Footer ── */
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 2px solid #7c3aed;
+            margin-top: 20px;
+        }
+
+        .footer-author {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #4c1d95;
+            margin-bottom: 8px;
+        }
+
+        .footer-hebrew {
+            font-size: 1.3em;
+            font-family: 'Times New Roman', serif;
+            color: #7c3aed;
+        }
+
+        .footer-subtitle {
+            font-size: 1.0em;
+            color: #7c3aed;
+            font-style: italic;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            .title { font-size: 2em; }
+            .hebrew-title { font-size: 2.2em; }
+            .subtitle { font-size: 1.15em; }
+            .container { margin: 10px; padding: 25px 15px; border-radius: 15px; }
+            .header { padding: 35px 15px; }
+            .key-quotes, .conclusion-box, .video-section { padding: 25px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<div id="scrollIndicator" class="scroll-indicator"></div>
+
+<div class="container">
+
+    <!-- BOUTON RETOUR -->
+    <a href="https://parashot-mormin.netlify.app/" class="back-button">
+        ← Retour aux Parachiot
+    </a>
+
+    <!-- EN-TÊTE -->
+    <div class="header">
+        <span class="header-icon">✨</span>
+        <h1 class="title">Aḥarei Mot – Kedoshim</h1>
+        <div class="hebrew-title">אַחֲרֵי מוֹת – קְדֹשִׁים</div>
+        <p class="subtitle">Du sanctuaire à la vie : le chemin de la sainteté</p>
+        <p class="reference">Lévitique 16:1 – 20:27 • Vayikra</p>
+    </div>
+
+    <!-- INTRODUCTION -->
+    <div class="intro-box">
+        <p class="content-text" style="margin-bottom:15px;">
+            La paracha <strong>Aḥarei Mot – Kedoshim</strong> se situe au cœur du livre du Lévitique (<em>Vayikra</em>),
+            dans ce que les commentateurs appellent le <span class="highlight">cœur de la Torah</span>.
+        </p>
+        <p class="content-text" style="margin-bottom:15px;">
+            Elle s'ouvre sur un souvenir douloureux : la mort des fils d'Aharon, Nadav et Avihou,
+            qui ont apporté un feu étranger devant <strong>Adonaï</strong>. Ce drame devient le point de départ
+            d'un enseignement fondamental : on ne s'approche pas du sacré n'importe comment.
+        </p>
+        <p class="content-text" style="margin-bottom:15px;">
+            La paracha se poursuit avec le service de <strong>Yom Kippour</strong>, moment unique
+            où le Cohen Gadol entre dans le Saint des Saints.
+        </p>
+        <p class="content-text" style="margin-bottom:0; font-weight:bold; color:#4c1d95;">
+            👉 Puis, avec <em>Kedoshim</em>, la Torah opère un déplacement radical :
+            la sainteté ne se limite plus au Temple — elle devient une exigence pour toute vie humaine.
+        </p>
+    </div>
+
+    <!-- SECTION 1 : ACCÈS AU SACRÉ -->
+    <div class="section">
+        <h2 class="section-title">
+            <span class="section-icon">⚖️</span>
+            1. L'accès au sacré : une discipline intérieure
+        </h2>
+
+        <p class="content-text">
+            La paracha s'ouvre sur une mise en garde solennelle.
+            Après la mort des deux fils d'Aharon, <strong>Adonaï</strong> pose un cadre précis pour l'accès au Saint des Saints.
+            Ce n'est pas l'émotion qui détermine la proximité avec le divin — c'est la rigueur,
+            la préparation, la juste disposition intérieure.
+        </p>
+
+        <div class="verse-container sacre-verse">
+            <p class="verse-french">« Adonaï parla à Moïse après la mort des deux fils d'Aharon »</p>
+            <p class="verse-hebrew">ה׳ אֶל־מֹשֶׁה אַחֲרֵי מוֹת שְׁנֵי בְּנֵי אַהֲרֹן</p>
+            <p class="verse-transliteration"><em>Adonaï el-Moshé aḥarei mot shené bné Aharon</em></p>
+            <p class="verse-reference">(Vayikra / Lévitique 16:1)</p>
+        </div>
+
+        <p class="content-text">
+            Le texte rappelle d'emblée la faute de Nadav et Avihou.
+            Leur élan était sincère — mais leur geste était non prescrit.
+            Dans la tradition séfarade, cela enseigne une vérité fondamentale :
+            <span class="highlight">l'intention ne suffit pas ; la forme est une partie du fond</span>.
+        </p>
+
+        <p class="content-text">
+            Le Cohen Gadol ne peut entrer dans le Saint des Saints qu'à un moment précis,
+            avec un rituel précis, dans un état intérieur précis. Ce n'est pas une bureaucratie spirituelle —
+            c'est l'apprentissage de l'humilité face à ce qui nous dépasse.
+        </p>
+
+        <div class="teaching-box">
+            <p>⚖️ L'accès au sacré exige une <strong>préparation intérieure</strong>, pas seulement une intention</p>
+            <p>🕯️ La forme rituelle est une <strong>discipline de l'âme</strong></p>
+            <p>🌿 Nadav et Avihou : la leçon de ceux qui s'approchent trop vite, trop près</p>
+        </div>
+    </div>
+
+    <!-- SECTION 2 : YOM KIPPOUR -->
+    <div class="section">
+        <h2 class="section-title">
+            <span class="section-icon">🕊️</span>
+            2. Yom Kippour : purification et responsabilité
+        </h2>
+
+        <p class="content-text">
+            Au cœur de la paracha, la Torah décrit le rituel de <strong>Yom Kippour</strong> dans son intégralité.
+            Un seul jour dans l'année, un seul homme — le Cohen Gadol — peut franchir le voile
+            et entrer dans la présence directe d'<strong>Adonaï</strong>. Ce moment est chargé
+            d'une gravité et d'une beauté incomparables.
+        </p>
+
+        <div class="verse-container kippour-verse">
+            <p class="verse-french">« Car en ce jour, il sera fait expiation pour vous »</p>
+            <p class="verse-hebrew">כִּי בַּיּוֹם הַזֶּה יְכַפֵּר עֲלֵיכֶם</p>
+            <p class="verse-transliteration"><em>Ki bayom hazé yekhaper alekhem</em></p>
+            <p class="verse-reference">(Vayikra / Lévitique 16:30)</p>
+        </div>
+
+        <div class="kippour-special">
+            <span class="kippour-icon">🕎</span>
+            <p>La <em>kappara</em> (expiation) n'est pas automatique</p>
+            <p class="kippour-sub">Elle suppose : reconnaissance de la faute, retour sincère (<em>téchouva</em>) et engagement réel</p>
+        </div>
+
+        <p class="content-text">
+            Dans la tradition séfarade, Yom Kippour n'est pas une absolution magique.
+            C'est l'aboutissement d'un <span class="highlight">processus personnel de transformation</span>.
+            Le jeûne, la prière, la confession (<em>vidouï</em>) ne sont pas des techniques —
+            ils sont les expressions concrètes d'un retour intérieur authentique.
+        </p>
+
+        <p class="content-text">
+            La purification est à la fois <strong>individuelle et collective</strong>.
+            Le Cohen Gadol porte toute la communauté d'Israël dans son service.
+            Il intercède non pour lui seul, mais pour tout le peuple.
+            Leçon intemporelle : nous ne nous réparons pas seuls.
+        </p>
+    </div>
+
+    <!-- SECTION 3 : KEDOSHIM -->
+    <div class="section">
+        <h2 class="section-title">
+            <span class="section-icon">🌟</span>
+            3. Kedoshim : la sainteté dans la vie quotidienne
+        </h2>
+
+        <p class="content-text">
+            La paracha atteint son sommet avec l'appel universel de <strong>Kedoshim</strong>.
+            La Torah sort du cadre du Temple et s'adresse à tout le peuple.
+            C'est l'un des rares passages où l'assemblée entière est convoquée pour entendre une parole —
+            signe de son caractère exceptionnel.
+        </p>
+
+        <div class="verse-container kedoshim-verse">
+            <p class="verse-french">« Vous serez saints, car Moi, Adonaï votre Elohim, Je suis saint »</p>
+            <p class="verse-hebrew">קְדֹשִׁים תִּהְיוּ כִּי קָדוֹשׁ אֲנִי ה׳ אֱלֹהֵיכֶם</p>
+            <p class="verse-transliteration"><em>Kedoshim tihyou ki kadosh Ani Adonaï Elohekhem</em></p>
+            <p class="verse-reference">(Vayikra / Lévitique 19:2)</p>
+        </div>
+
+        <p class="content-text">
+            Ce verset opère un déplacement fondamental.
+            <span class="highlight">La sainteté n'est plus réservée au Temple ou au Cohen</span>.
+            Elle devient une exigence universelle — pour chaque homme, chaque femme, chaque famille, chaque communauté.
+        </p>
+
+        <div class="kedoshim-banner">
+            <em>Kedoshim tihyou</em> — « Vous serez saints »<br><br>
+            Non pas « vous serez parfaits ».<br>
+            Non pas « vous serez séparés du monde ».<br><br>
+            Mais : <strong>vous vivrez chaque instant avec une conscience élevée.</strong>
+        </div>
+
+        <p class="content-text">
+            Le Ramban (Naḥmanide) explique que ce commandement va au-delà des interdits formels.
+            On peut respecter toutes les lois et rester un <em>naval bireshout ha-Torah</em> —
+            « un vil personnage dans les limites autorisées par la Torah ».
+            La sainteté exige donc quelque chose de plus : un raffinement intérieur, une élévation du regard.
+        </p>
+    </div>
+
+    <!-- SECTION 4 : ÉTHIQUE / AMOUR DU PROCHAIN -->
+    <div class="section">
+        <h2 class="section-title">
+            <span class="section-icon">❤️</span>
+            4. L'éthique comme expression du sacré
+        </h2>
+
+        <p class="content-text">
+            La sainteté abstraite se traduit immédiatement en éthique concrète.
+            Le chapitre 19 de Lévitique est une liste de commandements pratiques :
+            honorer ses parents, respecter le chabbat, soutenir le pauvre, ne pas médire, ne pas se venger…
+            Et au centre de tout, le commandement qui résume tous les autres.
+        </p>
+
+        <div class="verse-container amour-verse">
+            <p class="verse-french">« Tu aimeras ton prochain comme toi-même »</p>
+            <p class="verse-hebrew">וְאָהַבְתָּ לְרֵעֲךָ כָּמוֹךָ</p>
+            <p class="verse-transliteration"><em>Ve'ahavta lere'akha kamokha</em></p>
+            <p class="verse-reference">(Vayikra / Lévitique 19:18)</p>
+        </div>
+
+        <p class="content-text">
+            Rabbi Akiva l'appelle <em>klal gadol ba-Torah</em> : « le grand principe de la Torah ».
+            Hillel le reformule en négatif : « Ce qui t'est odieux, ne le fais pas à autrui. »
+            Ces deux formulations convergent vers une même conviction :
+            <span class="highlight">la relation à l'autre est le lieu central de la vie spirituelle</span>.
+        </p>
+
+        <div class="amour-banner">
+            Aimer l'autre, c'est reconnaître en lui <strong>l'image divine</strong>.<br><br>
+            La relation humaine devient un lieu de présence d'<em>Adonaï</em>.<br><br>
+            Chaque interaction est une opportunité de sanctification — ou de profanation.
+        </div>
+
+        <p class="content-text">
+            Dans la tradition séfarade, ce verset n'est pas une métaphore sentimentale.
+            C'est un <strong>programme de vie</strong>. Aimer son prochain signifie :
+            protéger sa réputation, respecter ses biens, honorer sa dignité,
+            l'aider dans le besoin — sans attendre de réciprocité.
+        </p>
+    </div>
+
+    <!-- SECTION 5 : SE SÉPARER POUR S'ÉLEVER -->
+    <div class="section">
+        <h2 class="section-title">
+            <span class="section-icon">⚠️</span>
+            5. Se séparer pour s'élever
+        </h2>
+
+        <p class="content-text">
+            La paracha se clôt sur une mise en garde fondamentale.
+            Après avoir posé l'idéal de sainteté, la Torah indique la condition de sa réalisation :
+            une <strong>distinction active</strong> — non pas un repli sur soi, mais une prise de conscience identitaire.
+        </p>
+
+        <div class="verse-container elevation-verse">
+            <p class="verse-french">« Vous serez pour Moi saints »</p>
+            <p class="verse-hebrew">וִהְיִיתֶם לִי קְדֹשִׁים</p>
+            <p class="verse-transliteration"><em>Vihyitem li kedoshim</em></p>
+            <p class="verse-reference">(Vayikra / Lévitique 20:26)</p>
+        </div>
+
+        <p class="content-text">
+            « Pour Moi » — <em>li</em>. La sainteté n'est pas une performance sociale.
+            Elle n'est pas pour le regard des autres.
+            <span class="highlight">Elle est une relation verticale, intime, entre l'homme et son Créateur</span>.
+        </p>
+
+        <div class="elevation-banner">
+            Se distinguer des pratiques destructrices.<br>
+            Construire une identité fidèle à l'Alliance.<br><br>
+            La sainteté implique : <strong>des choix, des limites, une conscience permanente.</strong>
+        </div>
+
+        <p class="content-text">
+            La distinction n'est pas une supériorité.
+            C'est une responsabilité. Le peuple qui a reçu la Torah est appelé à incarner
+            une manière d'être au monde qui témoigne de la présence d'<strong>Adonaï</strong>.
+            Chaque acte juste, chaque parole bienveillante, chaque geste de générosité
+            est une sanctification du Nom — <em>kiddoush Hachem</em>.
+        </p>
+    </div>
+
+    <!-- CONCLUSION -->
+    <div class="conclusion-box">
+        <h2 class="section-title" style="background:transparent; border:none; padding:0; margin-bottom:25px; color:#4c1d95;">
+            <span class="section-icon">✨</span>
+            Conclusion – De l'accès au sacré à la sainteté du quotidien
+        </h2>
+
+        <p class="content-text">
+            La paracha <strong>Aḥarei Mot – Kedoshim</strong> propose une progression d'une cohérence remarquable.
+            Elle nous conduit du sanctuaire vers la rue, du Grand Prêtre vers l'homme ordinaire,
+            du rituel de Yom Kippour vers le commandement d'aimer son prochain.
+        </p>
+
+        <p class="content-text">
+            La leçon est d'une actualité brûlante :
+            <span class="highlight">la sainteté n'est pas un état exceptionnel réservé à quelques-uns</span>.
+            Elle est une construction quotidienne, accessible à chacun, dans chaque moment de vie.
+        </p>
+
+        <div class="verse-container conclusion-verse">
+            <p class="verse-hebrew">קְדֹשִׁים תִּהְיוּ כִּי קָדוֹשׁ אֲנִי ה׳ אֱלֹהֵיכֶם</p>
+            <p class="verse-transliteration"><em>Kedoshim tihyou ki kadosh Ani Adonaï Elohekhem</em></p>
+            <p class="verse-french">« Vous serez saints, car Moi, Adonaï votre Elohim, Je suis saint. »</p>
+            <p class="verse-reference">(Vayikra / Lévitique 19:2)</p>
+        </div>
+
+        <div class="conclusion-banner">
+            « La sainteté commence dans le Sanctuaire…<br>
+            Mais elle se réalise dans la vie quotidienne.<br><br>
+            Chaque parole… Chaque action… Chaque relation…<br>
+            devient un espace de présence d'<em>Adonaï</em>.<br><br>
+            <strong>Servir Adonaï, c'est vivre chaque acte avec conscience, justice et respect.</strong> »
+        </div>
+
+        <p class="content-text" style="text-align:center; font-size:1.3em; font-weight:bold; color:#4c1d95; margin-top:30px;">
+            Shabbat Shalom. ✨🕊️
+        </p>
+    </div>
+
+    <!-- CITATIONS CLÉS -->
+    <div class="key-quotes">
+        <h2>✨ Quelques citations clés de la Paracha Aḥarei Mot – Kedoshim</h2>
+
+        <div class="quote-item">
+            <span class="quote-hebrew">ה׳ אֶל־מֹשֶׁה אַחֲרֵי מוֹת שְׁנֵי בְּנֵי אַהֲרֹן</span>
+            <p class="quote-transliteration">Adonaï el-Moshé aḥarei mot shené bné Aharon.</p>
+            <p class="quote-french">« Adonaï parla à Moïse après la mort des deux fils d'Aharon. » (Lévitique 16:1)</p>
+        </div>
+
+        <div class="quote-item">
+            <span class="quote-hebrew">כִּי בַּיּוֹם הַזֶּה יְכַפֵּר עֲלֵיכֶם</span>
+            <p class="quote-transliteration">Ki bayom hazé yekhaper alekhem.</p>
+            <p class="quote-french">« Car en ce jour, il sera fait expiation pour vous. » (Lévitique 16:30)</p>
+        </div>
+
+        <div class="quote-item">
+            <span class="quote-hebrew">קְדֹשִׁים תִּהְיוּ כִּי קָדוֹשׁ אֲנִי ה׳ אֱלֹהֵיכֶם</span>
+            <p class="quote-transliteration">Kedoshim tihyou ki kadosh Ani Adonaï Elohekhem.</p>
+            <p class="quote-french">« Vous serez saints, car Moi, Adonaï votre Elohim, Je suis saint. » (Lévitique 19:2)</p>
+        </div>
+
+        <div class="quote-item">
+            <span class="quote-hebrew">וְאָהַבְתָּ לְרֵעֲךָ כָּמוֹךָ</span>
+            <p class="quote-transliteration">Ve'ahavta lere'akha kamokha.</p>
+            <p class="quote-french">« Tu aimeras ton prochain comme toi-même. » (Lévitique 19:18)</p>
+        </div>
+
+        <div class="quote-item">
+            <span class="quote-hebrew">וִהְיִיתֶם לִי קְדֹשִׁים</span>
+            <p class="quote-transliteration">Vihyitem li kedoshim.</p>
+            <p class="quote-french">« Vous serez pour Moi saints. » (Lévitique 20:26)</p>
+        </div>
+    </div>
+
+    <!-- VIDÉO -->
+    <div class="video-section">
+        <h2 class="video-title">
+            🎥 Étude vidéo de la Paracha Aḥarei Mot – Kedoshim
+        </h2>
+        <div class="video-container">
+            <iframe
+                src="https://www.youtube.com/embed/cQ4mVuLOHKw"
+                title="Aḥarei Mot – Kedoshim : Du Sanctuaire à la Vie – Le chemin de la sainteté | Étude Torah – Tradition séfarade"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+            </iframe>
+        </div>
+        <p class="video-description">
+            Une étude profonde sur le passage du sacré au quotidien selon la tradition séfarade.
+            Le service de Yom Kippour et l'exigence de préparation intérieure ;
+            le sens de la kappara et de la téchouva ; l'appel universel de <em>Kedoshim tihyou</em> ;
+            et l'amour du prochain comme expression centrale de la vie spirituelle.
+        </p>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <div class="footer-author">
+            Étude de la Paracha Aḥarei Mot – Kedoshim par <span class="footer-hebrew">אריאל מרמן</span> (Ariel Mormin)
+        </div>
+        <div class="footer-subtitle">
+            • Du sanctuaire à la vie : le chemin de la sainteté — אַחֲרֵי מוֹת קְדֹשִׁים •
+        </div>
+    </div>
+
+</div><!-- /.container -->
+
+<script>
+    // Indicateur de progression du scroll
+    window.addEventListener('scroll', () => {
+        const scrollIndicator = document.getElementById('scrollIndicator');
+        const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+        scrollIndicator.style.transform = `scaleX(${scrolled / 100})`;
+    });
+
+    // Animation d'apparition au scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll(
+        '.section, .verse-container, .conclusion-box, .video-section, ' +
+        '.intro-box, .kippour-special, .kedoshim-banner, .amour-banner, ' +
+        '.elevation-banner, .conclusion-banner, .teaching-box, ' +
+        '.key-quotes, .quote-item'
+    ).forEach((el) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        observer.observe(el);
+    });
+
+    // Effet hover sur les conteneurs de versets
+    document.querySelectorAll('.verse-container').forEach(container => {
+        container.addEventListener('mouseenter', () => {
+            container.style.transform = 'translateY(-2px)';
+            container.style.transition = 'transform 0.3s ease';
+        });
+        container.addEventListener('mouseleave', () => {
+            container.style.transform = 'translateY(0)';
+        });
+    });
+</script>
+</body>
+</html>

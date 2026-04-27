@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paracha Chémot - שְׁמוֹת - De l'effacement à l'appel : naissance d'une vocation et révélation du Nom</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            background: linear-gradient(135deg, #7c2d12 0%, #dc2626 50%, #ea580c 100%);
+            min-height: 100vh;
+            color: #333;
+            position: relative;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #991b1b, #dc2626);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(153, 27, 27, 0.3);
+            margin-bottom: 20px;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(153, 27, 27, 0.4);
+            background: linear-gradient(135deg, #dc2626, #991b1b);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #991b1b, #dc2626, #ea580c);
+            margin: -40px -20px 50px -20px;
+            border-radius: 20px 20px 0 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="40" fill="white" opacity="0.1">🔥</text></svg>') repeat;
+            background-size: 80px 80px;
+            opacity: 0.15;
+        }
+
+        .title {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hebrew-title {
+            font-size: 3.2em;
+            color: #fbbf24;
+            margin-bottom: 15px;
+            font-family: 'Times New Roman', serif;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-size: 1.4em;
+            font-style: italic;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        .reference {
+            font-size: 1.1em;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #f59e0b, #ea580c);
+            transform-origin: left;
+            transform: scaleX(0);
+            z-index: 1000;
+            transition: transform 0.1s ease;
+        }
+
+        .intro-box {
+            background: linear-gradient(135deg, #fef3c7, #fed7aa);
+            padding: 35px;
+            border-radius: 15px;
+            border-left: 6px solid #ea580c;
+            margin-bottom: 45px;
+            box-shadow: 0 8px 20px rgba(234, 88, 12, 0.2);
+            position: relative;
+        }
+
+        .intro-box::before {
+            content: "📜";
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 2em;
+            opacity: 0.3;
+        }
+
+        .note-box {
+            background: linear-gradient(135deg, #fee2e2, #fecaca);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid #dc2626;
+            margin-bottom: 35px;
+            box-shadow: 0 5px 15px rgba(220, 38, 38, 0.15);
+        }
+
+        .note-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #991b1b;
+            margin-bottom: 10px;
+        }
+
+        .section {
+            margin-bottom: 45px;
+            padding: 20px 0;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #7c2d12;
+            margin-bottom: 25px;
+            font-weight: bold;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #fef3c7, #fed7aa);
+            border-radius: 10px;
+            border-left: 5px solid #dc2626;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-icon {
+            font-size: 1.3em;
+        }
+
+        .content-text {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            text-align: justify;
+            color: #2d3748;
+            line-height: 1.8;
+        }
+
+        .verse-container {
+            background: linear-gradient(135deg, #fef3c7, #fed7aa);
+            padding: 30px;
+            margin: 25px 0;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+            box-shadow: 0 5px 15px rgba(234, 88, 12, 0.1);
+            position: relative;
+        }
+
+        .key-verse {
+            background: linear-gradient(135deg, #fee2e2, #fed7aa);
+            border: 3px solid #ea580c;
+            box-shadow: 0 8px 25px rgba(234, 88, 12, 0.3);
+        }
+
+        .burning-bush-verse {
+            background: linear-gradient(135deg, #fff7ed, #fed7aa);
+            border: 3px solid #f97316;
+            box-shadow: 0 8px 25px rgba(249, 115, 22, 0.3);
+        }
+
+        .divine-name-verse {
+            background: linear-gradient(135deg, #fef3c7, #fbbf24);
+            border: 3px solid #f59e0b;
+            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
+        }
+
+        .verse-french {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #7c2d12;
+            margin-bottom: 15px;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .verse-hebrew {
+            font-size: 1.8em;
+            color: #991b1b;
+            margin-bottom: 12px;
+            text-align: center;
+            font-family: 'Times New Roman', serif;
+            direction: rtl;
+            line-height: 1.8;
+        }
+
+        .verse-transliteration {
+            font-size: 1.15em;
+            color: #78350f;
+            margin-bottom: 10px;
+            text-align: center;
+            font-style: italic;
+        }
+
+        .verse-reference {
+            font-size: 1em;
+            color: #6b7280;
+            text-align: center;
+            font-style: italic;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #fed7aa, #fbbf24);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: #7c2d12;
+        }
+
+        .conclusion-box {
+            background: linear-gradient(135deg, #fee2e2, #fed7aa, #fef3c7);
+            padding: 40px;
+            border-radius: 15px;
+            border: 3px solid #ea580c;
+            margin-top: 50px;
+            box-shadow: 0 10px 30px rgba(234, 88, 12, 0.2);
+        }
+
+        .themes-list {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 25px;
+        }
+
+        .themes-list ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .themes-list li {
+            padding: 15px;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #fff7ed, #ffedd5);
+            border-left: 4px solid #f97316;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .themes-list li:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.2);
+        }
+
+        .video-section {
+            margin-top: 50px;
+            padding: 40px;
+            background: linear-gradient(135deg, #fff7ed, #fed7aa);
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(234, 88, 12, 0.15);
+        }
+
+        .video-title {
+            font-size: 1.8em;
+            color: #7c2d12;
+            text-align: center;
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-description {
+            margin-top: 20px;
+            font-size: 1.1em;
+            color: #4b5563;
+            text-align: center;
+            font-style: italic;
+        }
+
+        .footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 3px solid #fed7aa;
+            text-align: center;
+        }
+
+        .footer-author {
+            font-size: 1.2em;
+            color: #7c2d12;
+            margin-bottom: 10px;
+        }
+
+        .footer-hebrew {
+            font-size: 1.4em;
+            color: #dc2626;
+            font-weight: bold;
+        }
+
+        .footer-subtitle {
+            font-size: 1em;
+            color: #6b7280;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+                margin-top: 15px;
+                margin-bottom: 15px;
+            }
+
+            .title {
+                font-size: 2em;
+            }
+
+            .hebrew-title {
+                font-size: 2.5em;
+            }
+
+            .subtitle {
+                font-size: 1.1em;
+            }
+
+            .section-title {
+                font-size: 1.3em;
+            }
+
+            .verse-french {
+                font-size: 1.1em;
+            }
+
+            .verse-hebrew {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-indicator"></div>
+    
+    <div class="container">
+        <a href="https://parashot-mormin.netlify.app/" class="back-button">
+            ← Retour à l'accueil
+        </a>
+
+        <div class="header">
+            <h1 class="title">Paracha Chémot</h1>
+            <div class="hebrew-title">שְׁמוֹת</div>
+            <p class="subtitle">De l'effacement à l'appel : naissance d'une vocation et révélation du Nom</p>
+            <p class="reference">Livre de l'Exode (Chémot 1,1 – 6,1)</p>
+        </div>
+
+        <div class="intro-box">
+            <h2 class="section-title" style="background: transparent; border: none; padding: 0; margin-bottom: 20px;">
+                <span class="section-icon">🕯️</span>
+                Introduction – Le contexte de Chémot
+            </h2>
+            
+            <p class="content-text">
+                La Paracha <strong>Chémot</strong> ouvre le second livre de la Torah. Après la période de stabilité relative vécue par les fils d'Israël en Égypte à l'époque de Yossef, un changement brutal s'opère : une nouvelle dynastie monte sur le trône et ne reconnaît plus l'histoire passée. Le peuple hébreu devient une menace démographique, puis une main-d'œuvre asservie.
+            </p>
+            <br>
+            <p class="content-text">
+                Chémot est la paracha du basculement : on y quitte la mémoire familiale pour entrer dans l'Histoire collective, marquée par l'oppression, le cri, puis l'appel d'Ashem. C'est aussi la paracha de la naissance de Moché, figure centrale de la délivrance, et de la première révélation du Nom divin dans le feu du buisson ardent.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">📖</span>
+                1️⃣ L'anonymat et l'oppression
+            </h2>
+
+            <p class="content-text">
+                La Torah ouvre sur une liste de noms :
+            </p>
+
+            <div class="verse-container key-verse">
+                <p class="verse-french">« Voici les noms des fils d'Israël venus en Égypte. »</p>
+                
+                <p class="verse-hebrew">וְאֵלֶּה שְׁמוֹת בְּנֵי יִשְׂרָאֵל הַבָּאִים מִצְרָיְמָה</p>
+                
+                <p class="verse-transliteration"><em>Ve-élé shemot bené Yisraël habaïm Mitsraïma</em></p>
+                
+                <p class="verse-reference">(Chémot 1,1)</p>
+            </div>
+
+            <p class="content-text">
+                Paradoxalement, alors que les noms sont rappelés, les individus disparaissent progressivement derrière la masse. Le Pharaon ne nomme pas Israël ; il le réduit à une force productive. Dans la tradition séfarade, les commentateurs soulignent que <span class="highlight">l'exil commence réellement lorsque le nom — donc la dignité — est nié</span>.
+            </p>
+            <br>
+            <p class="content-text">
+                Malgré l'oppression, la Torah insiste :
+            </p>
+
+            <div class="verse-container">
+                <p class="verse-french">« Plus on l'opprimait, plus il se multipliait. »</p>
+                
+                <p class="verse-hebrew">וְכַאֲשֶׁר יְעַנּוּ אֹתוֹ כֵּן יִרְבֶּה</p>
+                
+                <p class="verse-transliteration"><em>Ve-kha'acher ye'anou oto, ken yirbé</em></p>
+                
+                <p class="verse-reference">(Chémot 1,12)</p>
+            </div>
+
+            <p class="content-text">
+                L'affliction ne détruit pas Israël ; elle révèle une vitalité intérieure qui échappe au pouvoir politique.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">👩</span>
+                2️⃣ Les femmes, premières résistantes
+            </h2>
+
+            <p class="content-text">
+                La délivrance commence sans miracle spectaculaire, mais par des actes de conscience. Les sages-femmes refusent l'ordre de mort :
+            </p>
+
+            <div class="verse-container key-verse">
+                <p class="verse-french">« Les sages-femmes craignirent Ashem. »</p>
+                
+                <p class="verse-hebrew">וַתִּירֶאןָ הַמְיַלְּדֹת אֶת־הָאֱלֹהִים</p>
+                
+                <p class="verse-transliteration"><em>Vatiréna hameyaldot et-HaElohim</em></p>
+                
+                <p class="verse-reference">(Chémot 1,17)</p>
+            </div>
+
+            <p class="content-text">
+                Dans la tradition séfarade, la <em>yirat Shamayim</em> (crainte d'Ashem) n'est pas une peur, mais une <span class="highlight">fidélité intérieure à une loi plus haute que celle du tyran</span>.
+            </p>
+            <br>
+            <p class="content-text">
+                Yokhéved, Myriam et la fille de Pharaon poursuivent cette chaîne silencieuse de résistance. La fille de Pharaon sauve l'enfant en transgressant l'ordre paternel : <strong>la compassion précède la Torah révélée</strong>.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🌄</span>
+                3️⃣ Moché : un homme qui fuit avant d'être appelé
+            </h2>
+
+            <p class="content-text">
+                Moché grandit entre deux mondes. Il voit l'injustice, agit, puis fuit. L'exil personnel précède la mission collective. La Torah montre un Moché hésitant, maladroit, éloigné de toute ambition de pouvoir.
+            </p>
+            <br>
+            <p class="content-text">
+                C'est dans le désert, lieu du dépouillement, qu'Ashem l'appelle :
+            </p>
+
+            <div class="verse-container burning-bush-verse">
+                <p class="verse-french">« Un messager d'Adonaï lui apparut dans une flamme de feu, du milieu du buisson. »</p>
+                
+                <p class="verse-hebrew">וַיֵּרָא מַלְאַךְ יְהוָה אֵלָיו בְּלַבַּת־אֵשׁ מִתּוֹךְ הַסְּנֶה</p>
+                
+                <p class="verse-transliteration"><em>Vayéra malakh Adonaï élav belabat-esh mitokh hasné</em></p>
+                
+                <p class="verse-reference">(Chémot 3,2)</p>
+            </div>
+
+            <p class="content-text">
+                Le buisson brûle sans se consumer : image classique, dans la tradition séfarade, d'<span class="highlight">Israël dans l'exil — éprouvé, mais non détruit</span>.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">✨</span>
+                4️⃣ Le Nom et la mission
+            </h2>
+
+            <p class="content-text">
+                Moché demande : « Quel est Ton Nom ? »
+            </p>
+
+            <div class="verse-container divine-name-verse">
+                <p class="verse-french">« Je serai ce que Je serai. »</p>
+                
+                <p class="verse-hebrew">אֶהְיֶה אֲשֶׁר אֶהְיֶה</p>
+                
+                <p class="verse-transliteration"><em>Ehyeh acher ehyeh</em></p>
+                
+                <p class="verse-reference">(Chémot 3,14)</p>
+            </div>
+
+            <p class="content-text">
+                Ashem ne donne pas une définition figée, mais une <strong>promesse de présence</strong>. Il sera avec Israël dans chaque étape de l'histoire. La délivrance n'est pas seulement un événement futur : elle commence par la certitude que <span class="highlight">la Présence accompagne la souffrance</span>.
+            </p>
+        </div>
+
+        <div class="conclusion-box">
+            <h2 class="section-title" style="background: transparent; border: none; padding: 0; margin-bottom: 20px;">
+                <span class="section-icon">🌟</span>
+                Conclusion
+            </h2>
+            
+            <p class="content-text">
+                La Paracha Chémot enseigne que <span class="highlight">la délivrance naît dans l'ombre</span> : dans les gestes anonymes, dans la fidélité silencieuse, dans l'écoute d'un appel qui dérange. Avant les plaies, avant la mer fendue, il y a un peuple qui crie, des femmes qui désobéissent, un homme qui doute et un Nom qui se révèle comme promesse de présence.
+            </p>
+            <br>
+            <p class="content-text">
+                Chémot n'est pas seulement le récit d'un commencement historique ; c'est une invitation permanente. Chaque génération, selon la tradition séfarade, est appelée à entendre à nouveau cette voix :
+            </p>
+
+            <div class="themes-list">
+                <p class="content-text" style="margin-bottom: 20px; font-weight: bold; text-align: center;">
+                    <strong>Chémot — "Les Noms"</strong>
+                </p>
+                <ul>
+                    <li><strong>La dignité préservée.</strong> Même dans l'oppression la plus brutale, les noms restent : chaque individu garde sa dignité devant Ashem, même quand le pouvoir politique cherche à l'effacer.</li>
+                    <li><strong>La résistance silencieuse.</strong> La délivrance commence par des actes de conscience, des gestes de compassion, des choix moraux qui préfigurent la Loi révélée.</li>
+                    <li><strong>L'appel dans le désert.</strong> C'est dans le lieu du dépouillement, loin du bruit et des ambitions, qu'Ashem se révèle et appelle à la mission.</li>
+                    <li><strong>La présence qui accompagne.</strong> Le Nom divin n'est pas une définition abstraite, mais une promesse : « Je serai avec toi » — même au cœur de l'exil.</li>
+                </ul>
+            </div>
+
+            <p class="content-text" style="text-align: center; font-size: 1.3em; font-weight: bold; color: #7c2d12; margin-top: 30px;">
+                Shabbat Chalom.
+            </p>
+        </div>
+
+        <div class="video-section">
+            <h2 class="video-title">
+                🎥 Étude vidéo de la Paracha Chémot
+            </h2>
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/toGaAVbp_aA" 
+                    title="Paracha Chémot - De l'effacement à l'appel : naissance d'une vocation et révélation du Nom"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="video-description">
+                Découvrez cette étude en format vidéo pour approfondir votre compréhension 
+                de la Paracha Chémot et de ses enseignements sur l'oppression, la résistance, 
+                la révélation du Nom divin et la promesse de la Présence d'Ashem dans l'exil.
+            </p>
+        </div>
+
+        <div class="footer">
+            <div class="footer-author">
+                Étude de la Paracha Chémot par <span class="footer-hebrew">אריאל מרמן</span> (Ariel Mormin)
+            </div>
+            <div class="footer-subtitle">
+                • De l'effacement à l'appel : naissance d'une vocation et révélation du Nom •
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            scrollIndicator.style.transform = `scaleX(${scrolled / 100})`;
+        });
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        document.querySelectorAll('.section, .verse-container, .conclusion-box, .video-section, .intro-box, .note-box').forEach((element) => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(element);
+        });
+
+        document.querySelectorAll('.verse-container').forEach(container => {
+            container.addEventListener('mouseenter', () => {
+                container.style.transform = 'translateY(-2px)';
+                container.style.transition = 'transform 0.3s ease';
+            });
+            
+            container.addEventListener('mouseleave', () => {
+                container.style.transform = 'translateY(0)';
+            });
+        });
+
+        document.querySelectorAll('.themes-list li').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.style.transform = 'translateX(5px)';
+                item.style.transition = 'transform 0.3s ease';
+            });
+            
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = 'translateX(0)';
+            });
+        });
+    </script>
+</body>
+</html>

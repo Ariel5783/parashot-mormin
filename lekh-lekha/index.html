@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paracha Lekh Lekha - לֶךְ־לְךָ - Va vers toi-même</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 50%, #059669 100%);
+            min-height: 100vh;
+            color: #333;
+            position: relative;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #1e3a8a, #7c3aed);
+            margin: -40px -20px 50px -20px;
+            border-radius: 20px 20px 0 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="40" fill="white" opacity="0.1">🌅</text></svg>') repeat;
+            background-size: 80px 80px;
+            opacity: 0.15;
+        }
+
+        .title {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hebrew-title {
+            font-size: 3.2em;
+            color: #059669;
+            margin-bottom: 15px;
+            font-family: 'Times New Roman', serif;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-size: 1.4em;
+            font-style: italic;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        .reference {
+            font-size: 1.1em;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .intro-box {
+            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+            padding: 35px;
+            border-radius: 15px;
+            border-left: 6px solid #059669;
+            margin-bottom: 45px;
+            box-shadow: 0 8px 20px rgba(5, 150, 105, 0.2);
+            position: relative;
+        }
+
+        .intro-box::before {
+            content: "🌅";
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 2em;
+            opacity: 0.3;
+        }
+
+        .section {
+            margin-bottom: 45px;
+            padding: 20px 0;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #1e3a8a;
+            margin-bottom: 25px;
+            font-weight: bold;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #f7fafc, #edf2f7);
+            border-radius: 10px;
+            border-left: 5px solid #7c3aed;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-icon {
+            font-size: 1.3em;
+        }
+
+        .verse-container {
+            background: linear-gradient(135deg, #f8f6ff, #f0e6ff);
+            padding: 30px;
+            margin: 25px 0;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+            box-shadow: 0 5px 15px rgba(124, 58, 237, 0.1);
+            position: relative;
+        }
+
+        .key-verse {
+            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+            border: 3px solid #059669;
+            box-shadow: 0 8px 25px rgba(5, 150, 105, 0.2);
+        }
+
+        .promise-verse {
+            background: linear-gradient(135deg, #fef7f7, #fed7d7);
+            border: 2px solid #dc2626;
+            box-shadow: 0 5px 15px rgba(220, 38, 38, 0.1);
+        }
+
+        .covenant-verse {
+            background: linear-gradient(135deg, #f0f9ff, #dbeafe);
+            border: 2px solid #2563eb;
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.1);
+        }
+
+        .egypt-verse {
+            background: linear-gradient(135deg, #fff8f5, #fef3c7);
+            border: 2px solid #f59e0b;
+            box-shadow: 0 5px 15px rgba(245, 158, 11, 0.1);
+        }
+
+        .verse-french {
+            font-size: 1.15em;
+            margin-bottom: 18px;
+            font-weight: 600;
+            color: #2d3748;
+            line-height: 1.7;
+        }
+
+        .verse-hebrew {
+            font-size: 1.4em;
+            font-family: 'Times New Roman', serif;
+            direction: rtl;
+            text-align: right;
+            margin-bottom: 18px;
+            color: #1e3a8a;
+            font-weight: bold;
+            line-height: 2;
+            background: rgba(30, 58, 138, 0.05);
+            padding: 12px;
+            border-radius: 8px;
+        }
+
+        .verse-transliteration {
+            font-size: 1.05em;
+            font-style: italic;
+            color: #7c3aed;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .verse-reference {
+            font-size: 0.95em;
+            color: #718096;
+            text-align: right;
+            font-weight: bold;
+        }
+
+        .content-text {
+            font-size: 1.1em;
+            line-height: 1.8;
+            text-align: justify;
+            color: #2d3748;
+            margin-bottom: 20px;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            color: #1e3a8a;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #7c3aed 0%, transparent 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: white;
+        }
+
+        .themes-table {
+            width: 100%;
+            margin: 30px 0;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .themes-table th {
+            background: linear-gradient(135deg, #1e3a8a, #7c3aed);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-size: 1.1em;
+        }
+
+        .themes-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 1.05em;
+        }
+
+        .themes-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .themes-table tr:hover {
+            background: #f8f6ff;
+        }
+
+        .conclusion-box {
+            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+            padding: 35px;
+            border-radius: 15px;
+            border: 3px solid #059669;
+            margin-top: 45px;
+            box-shadow: 0 10px 25px rgba(5, 150, 105, 0.2);
+            position: relative;
+        }
+
+        .conclusion-box::before {
+            content: "✨";
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2em;
+            opacity: 0.4;
+        }
+
+        .video-section {
+            background: linear-gradient(135deg, #f8f6ff, #f0e6ff);
+            padding: 35px;
+            border-radius: 20px;
+            border: 3px solid #1e3a8a;
+            margin: 45px 0;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(30, 58, 138, 0.15);
+        }
+
+        .video-title {
+            font-size: 1.7em;
+            color: #1e3a8a;
+            margin-bottom: 25px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 850px;
+            margin: 0 auto;
+            padding-bottom: 56.25%;
+            height: 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            border: 4px solid #7c3aed;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-description {
+            margin-top: 25px;
+            font-size: 1.1em;
+            color: #4a5568;
+            font-style: italic;
+            line-height: 1.7;
+        }
+
+        .footer {
+            margin-top: 50px;
+            padding: 35px;
+            border-top: 3px solid #059669;
+            text-align: center;
+            background: linear-gradient(135deg, #f8f6ff, #f0e6ff);
+            border-radius: 15px;
+        }
+
+        .footer-author {
+            font-size: 1.2em;
+            color: #1e3a8a;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .footer-hebrew {
+            font-size: 1.4em;
+            color: #059669;
+            font-family: 'Times New Roman', serif;
+            margin: 0 8px;
+            font-weight: bold;
+        }
+
+        .footer-subtitle {
+            font-size: 1.05em;
+            color: #718096;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 20px;
+            }
+            
+            .header {
+                margin: -20px -20px 30px -20px;
+            }
+            
+            .title {
+                font-size: 2.2em;
+            }
+            
+            .hebrew-title {
+                font-size: 2.8em;
+            }
+            
+            .verse-hebrew {
+                font-size: 1.2em;
+            }
+
+            .themes-table {
+                font-size: 0.9em;
+            }
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #1e3a8a, #7c3aed, #059669);
+            transform-origin: left;
+            transform: scaleX(0);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-indicator"></div>
+    
+    <div class="container">
+        <div class="header">
+            <div class="hebrew-title">לֶךְ־לְךָ</div>
+            <h1 class="title">Paracha Lekh Lekha</h1>
+            <p class="subtitle">"Va vers toi-même"</p>
+            <p class="reference">Genèse / Bereshit 12:1 – 17:27</p>
+        </div>
+
+        <div class="intro-box">
+            <h2 class="section-title">
+                <span class="section-icon">🌅</span>
+                Introduction : L'appel d'Abram
+            </h2>
+            
+            <div class="verse-container key-verse">
+                <p class="verse-french">"Va-t'en de ton pays, de ta patrie et de la maison de ton père, vers le pays que Je te montrerai."</p>
+                
+                <p class="verse-hebrew">לֶךְ־לְךָ מֵאַרְצְךָ וּמִמּוֹלַדְתְּךָ וּמִבֵּית אָבִיךָ אֶל־הָאָרֶץ אֲשֶׁר אַרְאֶךָּ</p>
+                
+                <p class="verse-transliteration"><em>Lekh lekha me'artsekha, umimoladtekha, umibeit avikha el ha'arets asher areka</em></p>
+                
+                <p class="verse-reference">(Genèse 12:1)</p>
+            </div>
+
+            <p class="content-text">
+                Cette injonction divine marque le début d'une nouvelle ère. Abram quitte le monde ancien des idoles et de la sédentarité pour répondre à un <span class="highlight">appel intérieur</span>. Ce départ n'est pas seulement géographique : c'est une <span class="emphasis">naissance spirituelle</span>.
+            </p>
+            <br>
+            <p class="content-text">
+                Dans la tradition séfarade, cet appel symbolise la capacité de l'homme à <span class="emphasis">quitter le connu</span> pour suivre la voie de la Providence.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🕊️</span>
+                Un départ vers l'inconnu
+            </h2>
+
+            <p class="content-text">
+                Abram part sans savoir où il va. Le Midrash enseigne qu'il obéit <span class="highlight">sans poser de question</span> — expression d'une foi pure.
+            </p>
+
+            <div class="verse-container covenant-verse">
+                <p class="verse-french">"Et Abram partit comme l'Éternel le lui avait dit."</p>
+                
+                <p class="verse-hebrew">וַיֵּלֶךְ אַבְרָם כַּאֲשֶׁר דִּבֶּר אֵלָיו ה׳</p>
+                
+                <p class="verse-transliteration"><em>Vayelekh Avram ka'asher diber elav Adonaï</em></p>
+                
+                <p class="verse-reference">(Genèse 12:4)</p>
+            </div>
+
+            <p class="content-text">
+                Cette obéissance, fruit d'une confiance absolue, est le modèle de la <em>émouna</em> (foi active) : <span class="emphasis">croire, c'est marcher</span>.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">⭐</span>
+                La promesse de la bénédiction
+            </h2>
+
+            <p class="content-text">
+                Dieu promet à Abram une bénédiction qui transformera l'histoire de l'humanité :
+            </p>
+
+            <div class="verse-container promise-verse">
+                <p class="verse-french">"Je ferai de toi une grande nation, Je te bénirai, Je rendrai ton nom grand, et tu seras une bénédiction."</p>
+                
+                <p class="verse-hebrew">וְאֶעֶשְׂךָ לְגוֹי גָּדוֹל וַאֲבָרֶכְךָ וַאֲגַדְּלָה שְׁמֶךָ וֶהְיֵה בְּרָכָה</p>
+                
+                <p class="verse-transliteration"><em>Ve'éskha legoy gadol va'avarekhkha va'agadla shemekha vehyé berakha</em></p>
+                
+                <p class="verse-reference">(Genèse 12:2)</p>
+            </div>
+
+            <p class="content-text">
+                Le nom d'Abram devient un <span class="highlight">canal de bénédiction</span> : sa foi transforme la malédiction des générations précédentes en lumière pour l'humanité. Selon Rabbi Ḥaïm Pinto, la bénédiction n'est pas un privilège, mais une <span class="emphasis">responsabilité universelle</span>.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🏜️</span>
+                La descente en Égypte : épreuve de foi
+            </h2>
+
+            <div class="verse-container egypt-verse">
+                <p class="verse-french">"Et Abram descendit en Égypte, pour y séjourner, car la famine pesait sur le pays."</p>
+                
+                <p class="verse-hebrew">וַיֵּרֶד אַבְרָם מִצְרַיְמָה לָגוּר שָׁם כִּי כָבֵד הָרָעָב בָּאָרֶץ</p>
+                
+                <p class="verse-transliteration"><em>Vayered Avram Mitsrayma lagour sham ki kavéd hara'av ba'arets</em></p>
+                
+                <p class="verse-reference">(Genèse 12:10)</p>
+            </div>
+
+            <p class="content-text">
+                Abram connaît ensuite la famine et descend en Égypte. Le Zohar y voit une <span class="highlight">descente nécessaire pour une remontée spirituelle</span>. C'est l'archétype de la diaspora : parfois, l'exil est le terrain où se forge la fidélité.
+            </p>
+            <br>
+            <p class="content-text">
+                Abram y apprend que la foi n'exclut pas la prudence ; il agit avec sagesse vis-à-vis de Sarah, préservant la promesse divine.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">📜</span>
+                L'alliance et le changement de nom
+            </h2>
+
+            <p class="content-text">
+                Au chapitre 17, Dieu conclut une <span class="highlight">Alliance éternelle</span> : Abram devient <span class="emphasis">Avraham</span>, « père d'une multitude de nations ». Le changement de nom exprime une <span class="emphasis">transformation intérieure</span>.
+            </p>
+
+            <div class="verse-container covenant-verse">
+                <p class="verse-french">"Ton nom ne sera plus Abram, mais ton nom sera Abraham, car Je te rends père d'une multitude de nations."</p>
+                
+                <p class="verse-hebrew">וְלֹא־יִקָּרֵא עוֹד אֶת־שִׁמְךָ אַבְרָם וְהָיָה שִׁמְךָ אַבְרָהָם כִּי אַב־הֲמוֹן גּוֹיִם נְתַתִּיךָ</p>
+                
+                <p class="verse-transliteration"><em>Ve-lo yikare od et-shimkha Avram, vehaya shimkha Avraham, ki av hamon goyim netatikha</em></p>
+                
+                <p class="verse-reference">(Genèse 17:5)</p>
+            </div>
+
+            <p class="content-text">
+                La lettre <span class="emphasis">ה (hé)</span>, issue du Nom divin, vient sceller son identité. L'alliance de la circoncision (<em>brit milah</em>) marque la sanctification du corps et de la descendance — union entre foi et action.
+            </p>
+        </div>
+
+        <div class="conclusion-box">
+            <h2 class="section-title">
+                <span class="section-icon">✨</span>
+                Conclusion : La foi comme chemin
+            </h2>
+            
+            <p class="content-text">
+                La Paracha <span class="emphasis">Lekh Lekha</span> est l'histoire d'un <span class="highlight">départ intérieur</span>. Dieu ne demande pas à Abram de fuir, mais de <span class="emphasis">se révéler</span> à travers un mouvement : « Va vers toi-même » — <em>Lekh lekha</em> peut aussi se lire : <span class="highlight">"va vers ce que tu es appelé à être."</span>
+            </p>
+            <br>
+            <p class="content-text">
+                Chaque génération hébraïque réentend cet appel : quitter les zones de confort, les habitudes, les peurs, pour suivre la voix du divin dans l'histoire.
+            </p>
+
+            <div class="verse-container key-verse" style="margin-top: 25px;">
+                <p class="verse-french">"Celui qui met sa foi en l'Éternel sera comme le mont Sion : il ne chancelle point, il demeure à jamais."</p>
+                
+                <p class="verse-reference">(Psaume 125:1)</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">📚</span>
+                Synthèse séfarade
+            </h2>
+
+            <table class="themes-table">
+                <thead>
+                    <tr>
+                        <th>Thème</th>
+                        <th>Enseignement spirituel</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Lekh lekha</strong></td>
+                        <td>L'appel à se dépasser</td>
+                    </tr>
+                    <tr>
+                        <td><strong>La bénédiction d'Abram</strong></td>
+                        <td>La foi comme canal de lumière</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Descente en Égypte</strong></td>
+                        <td>L'exil comme école de confiance</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Alliance et circoncision</strong></td>
+                        <td>Engagement concret avec le divin</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Nom Abraham</strong></td>
+                        <td>Transformation et universalité</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="video-section">
+            <h2 class="video-title">
+                🎥 Étude vidéo de la Paracha Lekh Lekha
+            </h2>
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/Q2fGlGBGClI" 
+                    title="Paracha Lekh Lekha - Va vers toi-même"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="video-description">
+                Découvrez cette étude en format vidéo pour approfondir votre compréhension 
+                de la Paracha Lekh Lekha et de ses enseignements sur la foi, le voyage intérieur 
+                et l'alliance divine avec Abraham.
+            </p>
+        </div>
+
+        <div class="footer">
+            <div class="footer-author">
+                Étude de la Paracha Lekh Lekha par <span class="footer-hebrew">אריאל מרמן</span> (Ariel Mormin)
+            </div>
+            <div class="footer-subtitle">
+                • Va vers toi-même et découvre ta destinée •
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Animation de la barre de progression
+        window.addEventListener('scroll', () => {
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            scrollIndicator.style.transform = `scaleX(${scrolled / 100})`;
+        });
+        
+        // Animation d'apparition des sections
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        // Animation pour toutes les sections
+        document.querySelectorAll('.section, .verse-container, .conclusion-box, .video-section, .intro-box').forEach((element) => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(element);
+        });
+
+        // Animation au survol pour les versets
+        document.querySelectorAll('.verse-container').forEach(container => {
+            container.addEventListener('mouseenter', () => {
+                container.style.transform = 'translateY(-2px)';
+                container.style.transition = 'transform 0.3s ease';
+            });
+            
+            container.addEventListener('mouseleave', () => {
+                container.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Animation au survol pour le tableau
+        document.querySelectorAll('.themes-table tr').forEach(row => {
+            row.addEventListener('mouseenter', () => {
+                row.style.transform = 'scale(1.01)';
+                row.style.transition = 'transform 0.3s ease';
+            });
+            
+            row.addEventListener('mouseleave', () => {
+                row.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>

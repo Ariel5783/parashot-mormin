@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paracha Noaḥ - נֹחַ - Le Juste dans sa Génération</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            background: linear-gradient(135deg, #0c4a6e 0%, #7c3aed 50%, #059669 100%);
+            min-height: 100vh;
+            color: #333;
+            position: relative;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #0c4a6e, #7c3aed);
+            margin: -40px -20px 50px -20px;
+            border-radius: 20px 20px 0 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="40" fill="white" opacity="0.1">🌧️</text></svg>') repeat;
+            background-size: 80px 80px;
+            opacity: 0.15;
+        }
+
+        .title {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hebrew-title {
+            font-size: 3.2em;
+            color: #059669;
+            margin-bottom: 15px;
+            font-family: 'Times New Roman', serif;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-size: 1.4em;
+            font-style: italic;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        .intro-box {
+            background: linear-gradient(135deg, #ecfeff, #cffafe);
+            padding: 35px;
+            border-radius: 15px;
+            border-left: 6px solid #0891b2;
+            margin-bottom: 45px;
+            box-shadow: 0 8px 20px rgba(8, 145, 178, 0.2);
+            position: relative;
+        }
+
+        .intro-box::before {
+            content: "📖";
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 2em;
+            opacity: 0.3;
+        }
+
+        .section {
+            margin-bottom: 45px;
+            padding: 20px 0;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #0c4a6e;
+            margin-bottom: 25px;
+            font-weight: bold;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #f7fafc, #edf2f7);
+            border-radius: 10px;
+            border-left: 5px solid #7c3aed;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-icon {
+            font-size: 1.3em;
+        }
+
+        .verse-container {
+            background: linear-gradient(135deg, #f8f6ff, #f0e6ff);
+            padding: 30px;
+            margin: 25px 0;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+            box-shadow: 0 5px 15px rgba(124, 58, 237, 0.1);
+            position: relative;
+        }
+
+        .key-verse {
+            background: linear-gradient(135deg, #ecfeff, #cffafe);
+            border: 3px solid #0891b2;
+            box-shadow: 0 8px 25px rgba(8, 145, 178, 0.2);
+        }
+
+        .covenant-verse {
+            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+            border: 2px solid #059669;
+            box-shadow: 0 5px 15px rgba(5, 150, 105, 0.1);
+        }
+
+        .rainbow-verse {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border: 2px solid #f59e0b;
+            box-shadow: 0 5px 15px rgba(245, 158, 11, 0.1);
+        }
+
+        .babel-verse {
+            background: linear-gradient(135deg, #fef7f7, #fed7d7);
+            border: 2px solid #dc2626;
+            box-shadow: 0 5px 15px rgba(220, 38, 38, 0.1);
+        }
+
+        .verse-french {
+            font-size: 1.15em;
+            margin-bottom: 18px;
+            font-weight: 600;
+            color: #2d3748;
+            line-height: 1.7;
+        }
+
+        .verse-hebrew {
+            font-size: 1.4em;
+            font-family: 'Times New Roman', serif;
+            direction: rtl;
+            text-align: right;
+            margin-bottom: 18px;
+            color: #0c4a6e;
+            font-weight: bold;
+            line-height: 2;
+            background: rgba(12, 74, 110, 0.05);
+            padding: 12px;
+            border-radius: 8px;
+        }
+
+        .verse-transliteration {
+            font-size: 1.05em;
+            font-style: italic;
+            color: #7c3aed;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .verse-reference {
+            font-size: 0.95em;
+            color: #718096;
+            text-align: right;
+            font-weight: bold;
+        }
+
+        .content-text {
+            font-size: 1.1em;
+            line-height: 1.8;
+            text-align: justify;
+            color: #2d3748;
+            margin-bottom: 20px;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            color: #0c4a6e;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #0891b2 0%, transparent 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: white;
+        }
+
+        .stages-box {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            padding: 30px;
+            border-radius: 12px;
+            border: 2px solid #f59e0b;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(245, 158, 11, 0.15);
+        }
+
+        .stage-item {
+            margin-bottom: 15px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 8px;
+            border-left: 4px solid #f59e0b;
+        }
+
+        .stage-title {
+            font-weight: bold;
+            color: #0c4a6e;
+            margin-bottom: 5px;
+            font-size: 1.1em;
+        }
+
+        .stage-text {
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+        .conclusion-box {
+            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+            padding: 35px;
+            border-radius: 15px;
+            border: 3px solid #059669;
+            margin-top: 45px;
+            box-shadow: 0 10px 25px rgba(5, 150, 105, 0.2);
+            position: relative;
+        }
+
+        .conclusion-box::before {
+            content: "🌈";
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2em;
+            opacity: 0.4;
+        }
+
+        .list-item {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+            font-size: 1.05em;
+            line-height: 1.6;
+        }
+
+        .list-item:before {
+            content: "•";
+            color: #0c4a6e;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1.3em;
+        }
+
+        .video-section {
+            background: linear-gradient(135deg, #f8f6ff, #f0e6ff);
+            padding: 35px;
+            border-radius: 20px;
+            border: 3px solid #0c4a6e;
+            margin: 45px 0;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(12, 74, 110, 0.15);
+        }
+
+        .video-title {
+            font-size: 1.7em;
+            color: #0c4a6e;
+            margin-bottom: 25px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 850px;
+            margin: 0 auto;
+            padding-bottom: 56.25%;
+            height: 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            border: 4px solid #7c3aed;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-description {
+            margin-top: 25px;
+            font-size: 1.1em;
+            color: #4a5568;
+            font-style: italic;
+            line-height: 1.7;
+        }
+
+        .footer {
+            margin-top: 50px;
+            padding: 35px;
+            border-top: 3px solid #059669;
+            text-align: center;
+            background: linear-gradient(135deg, #f8f6ff, #f0e6ff);
+            border-radius: 15px;
+        }
+
+        .footer-author {
+            font-size: 1.2em;
+            color: #0c4a6e;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .footer-hebrew {
+            font-size: 1.4em;
+            color: #059669;
+            font-family: 'Times New Roman', serif;
+            margin: 0 8px;
+            font-weight: bold;
+        }
+
+        .footer-subtitle {
+            font-size: 1.05em;
+            color: #718096;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 20px;
+            }
+            
+            .header {
+                margin: -20px -20px 30px -20px;
+            }
+            
+            .title {
+                font-size: 2.2em;
+            }
+            
+            .hebrew-title {
+                font-size: 2.8em;
+            }
+            
+            .verse-hebrew {
+                font-size: 1.2em;
+            }
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #0c4a6e, #7c3aed, #059669);
+            transform-origin: left;
+            transform: scaleX(0);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-indicator"></div>
+    
+    <div class="container">
+        <div class="header">
+            <div class="hebrew-title">נֹחַ</div>
+            <h1 class="title">Paracha Noaḥ</h1>
+            <p class="subtitle">"Le Juste dans sa Génération"</p>
+        </div>
+
+        <div class="intro-box">
+            <h2 class="section-title">
+                <span class="section-icon">🌧️</span>
+                Introduction : Un monde à reconstruire
+            </h2>
+            <p class="content-text">
+                La Paracha <span class="emphasis">Noaḥ (נֹחַ)</span>, qui s'étend de <span class="highlight">Genèse 6:9 à 11:32</span>, fait suite au chaos moral de la génération précédente. L'humanité, créée à l'image d'Adonaï, s'est corrompue au point que la terre est remplie de <em>ḥamas</em> — violence et injustice.
+            </p>
+            <br>
+            <p class="content-text">
+                Dans ce monde dévoyé, <span class="emphasis">Noaḥ</span>, homme juste et intègre, marche avec Adonaï. Le texte nous place face à une tension : <span class="highlight">la destruction du monde et la promesse d'un nouveau commencement</span>.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">✨</span>
+                Noaḥ, l'homme juste
+            </h2>
+            
+            <div class="verse-container key-verse">
+                <p class="verse-french">"Voici la descendance de Noaḥ : Noaḥ était un homme juste et intègre parmi sa génération ; Noaḥ marchait avec Adonaï."</p>
+                
+                <p class="verse-hebrew">אֵלֶּה תּוֹלְדֹת נֹחַ נֹחַ אִישׁ צַדִּיק תָּמִים הָיָה בְּדֹרֹתָיו אֶת־הָאֱלֹהִים הִתְהַלֶּךְ־נֹחַ</p>
+                
+                <p class="verse-transliteration"><em>Elleh toldot Noaḥ, Noaḥ ish tsaddik tamim haya bedorotav, et haElohim hithalekh Noaḥ</em></p>
+                
+                <p class="verse-reference">(Genèse 6:9)</p>
+            </div>
+            
+            <p class="content-text">
+                La tradition séfarade lit cette Paracha comme un message de <span class="highlight">reconstruction spirituelle</span> — individuelle et collective. Noaḥ ne fuit pas le monde, il le traverse en restant fidèle à sa conscience et à son Créateur.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🌊</span>
+                L'Arche : refuge et épreuve
+            </h2>
+            
+            <p class="content-text">
+                Lorsque le monde s'effondre sous les eaux du Déluge, Noaḥ est appelé à construire une <em>téva</em> — une arche. Ce mot <em>téva</em> signifie aussi <span class="highlight">"mot" ou "parole"</span> en hébreu : les sages enseignent que <span class="emphasis">la parole divine est elle-même l'arche du juste</span>.
+            </p>
+
+            <div class="verse-container babel-verse">
+                <p class="verse-french">"Et Adonaï dit à Noaḥ : la fin de toute chair est venue devant Moi."</p>
+                
+                <p class="verse-hebrew">וַיֹּאמֶר אֱלֹהִים לְנֹחַ קֵץ כָּל־בָּשָׂר בָּא לְפָנַי</p>
+                
+                <p class="verse-transliteration"><em>Vayomer Elohim lenoḥ, kéts kol basar ba lefanay</em></p>
+                
+                <p class="verse-reference">(Genèse 6:13)</p>
+            </div>
+
+            <p class="content-text">
+                L'arche n'est pas un vaisseau de fuite, mais un <span class="highlight">laboratoire de survie spirituelle</span>. Elle abrite la vie, la patience, le soin des créatures, la prière silencieuse dans la tempête.
+            </p>
+            <br>
+            <p class="content-text">
+                Selon le <em>Zohar</em>, la <em>téva</em> représente le <span class="emphasis">nom divin</span> qui protège l'homme de la confusion du monde. Celui qui vit dans la <em>téva</em> de la Torah, même entouré de chaos, garde la paix intérieure.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🌈</span>
+                L'Alliance du Renouveau
+            </h2>
+
+            <p class="content-text">
+                Après quarante jours et quarante nuits de pluie, la terre se vide de sa violence. Noaḥ sort de l'arche, offre un sacrifice, et Adonaï établit une <span class="highlight">alliance éternelle</span> avec lui et toute la création.
+            </p>
+
+            <div class="verse-container covenant-verse">
+                <p class="verse-french">"Et Moi, voici que J'établis Mon alliance avec vous et avec votre descendance après vous."</p>
+                
+                <p class="verse-hebrew">וַאֲנִי הִנְנִי מֵקִים אֶת־בְּרִיתִי אִתְּכֶם וְאֶת־זַרְעֲכֶם אַחֲרֵיכֶם</p>
+                
+                <p class="verse-transliteration"><em>Va'ani hineni mekim et beriti it'khem ve'et zar'akhem aḥareikhem</em></p>
+                
+                <p class="verse-reference">(Genèse 9:9)</p>
+            </div>
+
+            <p class="content-text">
+                Le signe de cette alliance est l'<span class="emphasis">arc-en-ciel</span>, symbole de paix entre le ciel et la terre.
+            </p>
+
+            <div class="verse-container rainbow-verse">
+                <p class="verse-french">"J'ai placé Mon arc dans la nuée, et il sera un signe d'alliance entre Moi et la terre."</p>
+                
+                <p class="verse-hebrew">אֶת־קַשְׁתִּי נָתַתִּי בֶּעָנָן וְהָיְתָה לְאוֹת בְּרִית בֵּינִי וּבֵין הָאָרֶץ</p>
+                
+                <p class="verse-transliteration"><em>Et qashti natati be'anan, vehayta le'ot berit beini ouven haarets</em></p>
+                
+                <p class="verse-reference">(Genèse 9:13)</p>
+            </div>
+
+            <p class="content-text">
+                La tradition séfarade voit dans cet arc multicolore la <span class="highlight">coexistence harmonieuse des différences</span>. Comme les couleurs qui se rejoignent sans se confondre, les peuples peuvent vivre dans la paix sous le regard d'Adonaï.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🏗️</span>
+                Babel : la confusion de l'uniformité
+            </h2>
+
+            <p class="content-text">
+                La Paracha se termine par un autre récit : la Tour de Babel. Les hommes, unis par une même langue, veulent atteindre le ciel et "faire un nom pour eux-mêmes".
+            </p>
+
+            <div class="verse-container babel-verse">
+                <p class="verse-french">"Allons, bâtissons-nous une ville et une tour dont le sommet touche le ciel."</p>
+                
+                <p class="verse-hebrew">הָבָה נִבְנֶה־לָּנוּ עִיר וּמִגְדָּל וְרֹאשׁוֹ בַשָּׁמַיִם</p>
+                
+                <p class="verse-transliteration"><em>Hava nivneh-lanu ir oumigdal, verosho bashamayim</em></p>
+                
+                <p class="verse-reference">(Genèse 11:4)</p>
+            </div>
+
+            <p class="content-text">
+                Adonaï disperse alors leur langage. Les sages du <em>Ben Ish 'Haï</em> enseignent que Babel n'est pas seulement une tour, mais une <span class="highlight">métaphore de l'orgueil spirituel</span> : vouloir monter vers le ciel sans élever le cœur.
+            </p>
+            <br>
+            <p class="content-text">
+                Ce n'est pas la diversité des langues qui est punie, mais <span class="emphasis">l'oubli du divin dans l'uniformité humaine</span>.
+            </p>
+        </div>
+
+        <div class="conclusion-box">
+            <h2 class="section-title">
+                <span class="section-icon">🌿</span>
+                Conclusion : De l'arche à l'alliance
+            </h2>
+            
+            <p class="content-text">
+                La Paracha <em>Noaḥ</em> nous enseigne trois étapes essentielles de la vie spirituelle :
+            </p>
+            <br>
+
+            <div class="stages-box">
+                <div class="stage-item">
+                    <div class="stage-title">Entrer dans la téva</div>
+                    <div class="stage-text">Savoir se retirer du tumulte, cultiver la parole intérieure</div>
+                </div>
+                <div class="stage-item">
+                    <div class="stage-title">Sortir vers la lumière</div>
+                    <div class="stage-text">Reconstruire, créer du lien, vivre la gratitude</div>
+                </div>
+                <div class="stage-item">
+                    <div class="stage-title">Éviter la tour</div>
+                    <div class="stage-text">Refuser l'orgueil du pouvoir et préférer l'unité du cœur</div>
+                </div>
+            </div>
+            
+            <p class="content-text">
+                Le juste n'est pas celui qui échappe à la tempête, mais celui qui <span class="highlight">traverse les eaux sans perdre la foi</span>. Et chaque fois que nous voyons l'arc-en-ciel, la Torah nous rappelle : le monde peut recommencer, si l'homme se souvient de l'Alliance.
+            </p>
+
+            <div class="verse-container covenant-verse" style="margin-top: 25px;">
+                <p class="verse-french">"Je me souviendrai de Mon alliance."</p>
+                
+                <p class="verse-hebrew">זָכַרְתִּי אֶת־בְּרִיתִי</p>
+                
+                <p class="verse-transliteration"><em>Zakarti et beriti</em></p>
+                
+                <p class="verse-reference">(Genèse 9:15)</p>
+            </div>
+        </div>
+
+        <div class="video-section">
+            <h2 class="video-title">
+                🎥 Étude vidéo de la Paracha Noaḥ
+            </h2>
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/K0dcmujKmsk" 
+                    title="Paracha Noaḥ - Le Juste dans sa Génération"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="video-description">
+                Découvrez cette étude en format vidéo pour approfondir votre compréhension 
+                de la Paracha Noaḥ et de ses enseignements sur la justice, la reconstruction spirituelle 
+                et l'alliance entre l'homme et le Divin.
+            </p>
+        </div>
+
+        <div class="footer">
+            <div class="footer-author">
+                Étude de la Paracha Noaḥ par <span class="footer-hebrew">אריאל מרמן</span> (Ariel Mormin)
+            </div>
+            <div class="footer-subtitle">
+                • L'arc-en-ciel, signe d'alliance éternelle •
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            scrollIndicator.style.transform = `scaleX(${scrolled / 100})`;
+        });
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        document.querySelectorAll('.section, .verse-container, .conclusion-box, .video-section, .intro-box').forEach((element) => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(element);
+        });
+
+        document.querySelectorAll('.verse-container').forEach(container => {
+            container.addEventListener('mouseenter', () => {
+                container.style.transform = 'translateY(-2px)';
+                container.style.transition = 'transform 0.3s ease';
+            });
+            
+            container.addEventListener('mouseleave', () => {
+                container.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>

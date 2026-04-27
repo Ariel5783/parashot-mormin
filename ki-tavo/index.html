@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paracha Ki Tavo - כי תבא - Quand tu entreras dans la Terre</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            background: linear-gradient(135deg, #2c3e50 0%, #9b59b6 50%, #f39c12 100%);
+            min-height: 100vh;
+            color: #333;
+            position: relative;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #2c3e50, #9b59b6);
+            margin: -40px -20px 50px -20px;
+            border-radius: 20px 20px 0 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="40" fill="white" opacity="0.1">🌾</text></svg>') repeat;
+            background-size: 80px 80px;
+            opacity: 0.15;
+        }
+
+        .title {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hebrew-title {
+            font-size: 3.2em;
+            color: #f39c12;
+            margin-bottom: 15px;
+            font-family: 'Times New Roman', serif;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-size: 1.4em;
+            font-style: italic;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        .context-box {
+            background: linear-gradient(135deg, #fef9e7, #fef3c7);
+            padding: 35px;
+            border-radius: 15px;
+            border-left: 6px solid #9b59b6;
+            margin-bottom: 45px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .context-box::before {
+            content: "🌾";
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 2em;
+            opacity: 0.3;
+        }
+
+        .section {
+            margin-bottom: 45px;
+            padding: 20px 0;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            font-weight: bold;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #f7fafc, #edf2f7);
+            border-radius: 10px;
+            border-left: 5px solid #9b59b6;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-icon {
+            font-size: 1.3em;
+        }
+
+        .verse-container {
+            background: linear-gradient(135deg, #f8f6ff, #f0e6ff);
+            padding: 30px;
+            margin: 25px 0;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+            box-shadow: 0 5px 15px rgba(155, 89, 182, 0.1);
+            position: relative;
+        }
+
+        .key-verse {
+            background: linear-gradient(135deg, #fff8f5, #fef3c7);
+            border: 3px solid #f39c12;
+            box-shadow: 0 8px 25px rgba(243, 156, 18, 0.2);
+        }
+
+        .bikourim-verse {
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            border: 2px solid #0ea5e9;
+            box-shadow: 0 5px 15px rgba(14, 165, 233, 0.1);
+        }
+
+        .alliance-verse {
+            background: linear-gradient(135deg, #fef7f7, #fed7d7);
+            border: 2px solid #dc2626;
+            box-shadow: 0 5px 15px rgba(220, 38, 38, 0.1);
+        }
+
+        .blessing-verse {
+            background: linear-gradient(135deg, #f0f9ff, #dbeafe);
+            border: 2px solid #10b981;
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.1);
+        }
+
+        .curse-verse {
+            background: linear-gradient(135deg, #fef2f2, #fee2e2);
+            border: 2px solid #ef4444;
+            box-shadow: 0 5px 15px rgba(239, 68, 68, 0.1);
+        }
+
+        .verse-french {
+            font-size: 1.15em;
+            margin-bottom: 18px;
+            font-weight: 600;
+            color: #2d3748;
+            line-height: 1.7;
+        }
+
+        .verse-hebrew {
+            font-size: 1.4em;
+            font-family: 'Times New Roman', serif;
+            direction: rtl;
+            text-align: right;
+            margin-bottom: 18px;
+            color: #2c3e50;
+            font-weight: bold;
+            line-height: 2;
+            background: rgba(44, 62, 80, 0.05);
+            padding: 12px;
+            border-radius: 8px;
+        }
+
+        .verse-transliteration {
+            font-size: 1.05em;
+            font-style: italic;
+            color: #9b59b6;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .verse-reference {
+            font-size: 0.95em;
+            color: #718096;
+            text-align: right;
+            font-weight: bold;
+        }
+
+        .content-text {
+            font-size: 1.1em;
+            line-height: 1.8;
+            text-align: justify;
+            color: #2d3748;
+            margin-bottom: 20px;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #9b59b6 0%, transparent 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: white;
+        }
+
+        .teachings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .teaching-box {
+            background: linear-gradient(135deg, #f8f6ff, #f0e6ff);
+            padding: 25px;
+            border-radius: 12px;
+            border: 2px solid #9b59b6;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(155, 89, 182, 0.15);
+        }
+
+        .teaching-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #2c3e50;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .conclusion-box {
+            background: linear-gradient(135deg, #fef9e7, #fef3c7);
+            padding: 35px;
+            border-radius: 15px;
+            border: 3px solid #f39c12;
+            margin-top: 45px;
+            box-shadow: 0 10px 25px rgba(243, 156, 18, 0.2);
+            position: relative;
+        }
+
+        .conclusion-box::before {
+            content: "🌿";
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2em;
+            opacity: 0.4;
+        }
+
+        .list-item {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+            font-size: 1.05em;
+            line-height: 1.6;
+        }
+
+        .list-item:before {
+            content: "•";
+            color: #2c3e50;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1.3em;
+        }
+
+        .video-section {
+            background: linear-gradient(135deg, #f8f6ff, #f0e6ff);
+            padding: 35px;
+            border-radius: 20px;
+            border: 3px solid #2c3e50;
+            margin: 45px 0;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(44, 62, 80, 0.15);
+        }
+
+        .video-title {
+            font-size: 1.7em;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 850px;
+            margin: 0 auto;
+            padding-bottom: 56.25%;
+            height: 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            border: 4px solid #9b59b6;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-description {
+            margin-top: 25px;
+            font-size: 1.1em;
+            color: #4a5568;
+            font-style: italic;
+            line-height: 1.7;
+        }
+
+        .footer {
+            margin-top: 50px;
+            padding: 35px;
+            border-top: 3px solid #f39c12;
+            text-align: center;
+            background: linear-gradient(135deg, #f8f6ff, #f0e6ff);
+            border-radius: 15px;
+        }
+
+        .footer-author {
+            font-size: 1.2em;
+            color: #2c3e50;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .footer-hebrew {
+            font-size: 1.4em;
+            color: #f39c12;
+            font-family: 'Times New Roman', serif;
+            margin: 0 8px;
+            font-weight: bold;
+        }
+
+        .footer-subtitle {
+            font-size: 1.05em;
+            color: #718096;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 20px;
+            }
+            
+            .header {
+                margin: -20px -20px 30px -20px;
+            }
+            
+            .title {
+                font-size: 2.2em;
+            }
+            
+            .hebrew-title {
+                font-size: 2.8em;
+            }
+            
+            .verse-hebrew {
+                font-size: 1.2em;
+            }
+
+            .teachings-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #2c3e50, #9b59b6, #f39c12);
+            transform-origin: left;
+            transform: scaleX(0);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-indicator"></div>
+    
+    <div class="container">
+        <div class="header">
+            <div class="hebrew-title">כי תבא</div>
+            <h1 class="title">Paracha Ki Tavo</h1>
+            <p class="subtitle">"Quand tu entreras dans la Terre"</p>
+        </div>
+
+        <div class="context-box">
+            <p class="content-text">
+                La <span class="emphasis">Paracha Ki Tavo</span> (כי תבא – "Quand tu entreras") occupe une place particulière dans le livre de <span class="emphasis">Devarim (Deutéronome 26:1 – 29:8)</span>. Elle est l'une des dernières sections du Deutéronome où Moïse s'adresse au peuple d'Israël sur le point d'entrer en Terre promise.
+            </p>
+            <br>
+            <p class="content-text">
+                Cette paracha montre comment <span class="highlight">l'entrée en Terre promise n'est pas seulement géographique</span>, mais constitue une entrée spirituelle dans la responsabilité. Elle enseigne les devoirs d'alliance, les prémices, et présente les bénédictions et malédictions qui scellent l'identité d'Israël.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🌾</span>
+                Le verset d'ouverture : L'offrande des prémices
+            </h2>
+            
+            <div class="verse-container key-verse">
+                <p class="verse-french">"Quand tu entreras dans la terre que l'Éternel ton Dieu te donne"</p>
+                
+                <p class="verse-hebrew">וְהָיָה כִּי־תָבוֹא אֶל־הָאָרֶץ אֲשֶׁר יְהוָה אֱלֹהֶיךָ נֹתֵן לָךְ</p>
+                
+                <p class="verse-transliteration"><em>Vehayah ki-tavo el-ha'aretz asher Adonai Elohekha noten lakh</em></p>
+                
+                <p class="verse-reference">(Deutéronome 26:1)</p>
+            </div>
+            
+            <p class="content-text">
+                Ce verset inaugural établit le contexte : <span class="highlight">l'entrée en Terre promise</span> marque le début d'une nouvelle responsabilité. La terre n'est pas seulement un territoire à conquérir, mais un don divin qui appelle à la reconnaissance et à l'engagement.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🍇</span>
+                1. Les prémices (בִּכּוּרִים / Bikourim)
+            </h2>
+            
+            <p class="content-text">
+                Le texte commence avec l'institution des <span class="emphasis">bikourim</span>, les premiers fruits de la récolte. Cette offrande symbolise la reconnaissance que tout vient de l'Éternel.
+            </p>
+
+            <div class="verse-container bikourim-verse">
+                <p class="verse-french">"Tu prendras des prémices de tous les fruits du sol... et tu diras devant l'Éternel ton Dieu : Mon père était un Araméen errant"</p>
+                
+                <p class="verse-hebrew">וְלָקַחְתָּ מֵרֵאשִׁית כָּל־פְּרִי הָאֲדָמָה... וְעָנִיתָ וְאָמַרְתָּ לִפְנֵי יְיָ אֱלֹהֶיךָ, אֲרַמִּי אֹבֵד אָבִי</p>
+                
+                <p class="verse-transliteration"><em>Velakachta meréshit kol péri ha-adamah... ve'anita ve'amarta lifné Adonai Elohekha, Aramí 'oved avi</em></p>
+                
+                <p class="verse-reference">(Deutéronome 26:2, 5)</p>
+            </div>
+
+            <p class="content-text">
+                Cette déclaration, selon le Ramban (Nahmanide), rappelle l'humilité nécessaire : <span class="emphasis">nous ne possédons rien par nous-mêmes</span>. Tout don de la terre provient de la générosité divine, et reconnaître nos origines modestes nous garde de l'orgueil.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🤝</span>
+                2. La proclamation de l'alliance
+            </h2>
+            
+            <p class="content-text">
+                Moïse insiste sur la réciprocité de l'alliance : Israël est choisi pour être un peuple particulier, mais cette élection implique une responsabilité mutuelle entre le peuple et son Créateur.
+            </p>
+
+            <div class="verse-container alliance-verse">
+                <p class="verse-french">"Aujourd'hui, tu as fait déclarer à l'Éternel qu'Il sera ton Dieu... et l'Éternel t'a fait déclarer aujourd'hui que tu seras pour Lui un peuple particulier"</p>
+                
+                <p class="verse-hebrew">אֶת־יְהוָה הֶאֱמַרְתָּ הַיּוֹם לִהְיוֹת לְךָ לֵאלֹהִים... וַיהוָה הֶאֱמִירְךָ הַיּוֹם לִהְיוֹת לוֹ לְעַם סְגֻלָּה</p>
+                
+                <p class="verse-transliteration"><em>Et Adonai he'emarta hayom liheyot lekha lElohim... vaAdonai he'emirkha hayom liheyot lo le'am segulah</em></p>
+                
+                <p class="verse-reference">(Deutéronome 26:17-18)</p>
+            </div>
+
+            <p class="content-text">
+                Cette double déclaration manifeste <span class="highlight">un engagement bilatéral</span>. L'alliance n'est pas unilatérale : elle implique la fidélité mutuelle entre Israël et l'Éternel.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">⚖️</span>
+                3. Les bénédictions et les malédictions
+            </h2>
+            
+            <p class="content-text">
+                Le cœur de Ki Tavo présente la longue liste des bénédictions (<em>berakhot</em>) promises à l'obéissance et des malédictions (<em>kelalot</em>) qui suivent la désobéissance.
+            </p>
+
+            <div class="verse-container blessing-verse">
+                <p class="verse-french">"Béni seras-tu dans la ville et béni seras-tu dans les champs. Béni sera le fruit de ton sein et le fruit de ta terre"</p>
+                
+                <p class="verse-hebrew">בָּרוּךְ אַתָּה בָּעִיר, וּבָרוּךְ אַתָּה בַּשָּׂדֶה. בָּרוּךְ פְּרִי־בִטְנְךָ וּפְרִי אַדְמָתְךָ</p>
+                
+                <p class="verse-transliteration"><em>Barukh atá ba'ir, uvarukh atá basadé. Barukh péri bitnékha uferi admatekha</em></p>
+                
+                <p class="verse-reference">(Deutéronome 28:3-4)</p>
+            </div>
+
+            <div class="verse-container curse-verse">
+                <p class="verse-french">"Toutes ces malédictions viendront sur toi... Tu seras maudit dans la ville, et maudit dans les champs"</p>
+                
+                <p class="verse-hebrew">וּבָאוּ עָלֶיךָ כָּל־הַקְּלָלוֹת הָאֵלֶּה... אָרוּר אַתָּה בָעִיר וְאָרוּר אַתָּה בַּשָּׂדֶה</p>
+                
+                <p class="verse-transliteration"><em>Uva'u alekha kol-hakelalot ha'eleh... arur atá ba'ir ve'arur atá basadé</em></p>
+                
+                <p class="verse-reference">(Deutéronome 28:15-16)</p>
+            </div>
+
+            <p class="content-text">
+                Ces contrastes saisissants soulignent <span class="emphasis">la gravité du choix moral</span> devant lequel se trouve Israël. La Torah présente clairement les conséquences des décisions spirituelles.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">📚</span>
+                4. La pédagogie de l'histoire et de la mémoire
+            </h2>
+            
+            <p class="content-text">
+                Moïse rappelle les délivrances passées et l'expérience du désert pour démontrer que la fidélité de Dieu appelle la fidélité du peuple. La mémoire devient un outil spirituel essentiel.
+            </p>
+
+            <div class="teachings-grid">
+                <div class="teaching-box">
+                    <div class="teaching-title">🍇 Reconnaissance</div>
+                    <p>Offrir les prémices comme signe de gratitude</p>
+                </div>
+                <div class="teaching-box">
+                    <div class="teaching-title">🤝 Alliance</div>
+                    <p>Engagement mutuel entre Israël et l'Éternel</p>
+                </div>
+                <div class="teaching-box">
+                    <div class="teaching-title">⚖️ Responsabilité</div>
+                    <p>Les choix moraux ont des conséquences réelles</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="conclusion-box">
+            <h2 class="section-title">
+                <span class="section-icon">🌿</span>
+                Conclusion - Le choix de la vie
+            </h2>
+            
+            <p class="content-text">
+                La Paracha <span class="emphasis">Ki Tavo</span> nous enseigne des vérités fondamentales sur l'entrée spirituelle dans la responsabilité :
+            </p>
+            <br>
+            
+            <div class="list-item">Reconnaître que tous nos <span class="emphasis">biens</span> viennent de l'Éternel</div>
+            <div class="list-item">Vivre l'<span class="emphasis">alliance</span> comme un engagement bilatéral</div>
+            <div class="list-item">Comprendre la <span class="emphasis">gravité</span> de nos choix moraux</div>
+            <div class="list-item">Faire de la <span class="emphasis">mémoire</span> un outil spirituel</div>
+            <div class="list-item">Choisir la <span class="emphasis">bénédiction</span> par l'obéissance aux commandements</div>
+            
+            <br>
+            <p class="content-text">
+                Chaque génération est appelée à refaire ce choix : vivre la Torah comme une source de bénédiction, de justice et de lumière pour les nations.
+            </p>
+
+            <div class="verse-container">
+                <p class="verse-french">"Vous avez vu toutes les grandes œuvres que l'Éternel a faites... Mais jusqu'à ce jour, l'Éternel ne vous a pas donné un cœur pour comprendre, des yeux pour voir et des oreilles pour entendre"</p>
+                
+                <p class="verse-hebrew">וַתִּרְאוּ אֵת כָּל־אֲשֶׁר עָשָׂה יְיָ... וְלֹא נָתַן יְיָ לָכֶם לֵב לָדַעַת וְעֵינַיִם לִרְאוֹת וְאָזְנַיִם לִשְׁמֹעַ עַד הַיּוֹם הַזֶּה</p>
+                
+                <p class="verse-transliteration"><em>Vatitré-ou et kol asher 'assa Adonai... velo natan Adonai lakhem lev lada'at, ve'enaïm lir'ot, ve'oznaïm lishmoa 'ad hayom hazé</em></p>
+                
+                <p class="verse-reference">(Deutéronome 29:2-3)</p>
+            </div>
+        </div>
+
+        <div class="video-section">
+            <h2 class="video-title">
+                🎥 Étude vidéo de la Paracha Ki Tavo
+            </h2>
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/a9EA9AvdPRo" 
+                    title="Paracha Ki Tavo - Quand tu entreras dans la Terre"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="video-description">
+                Découvrez cette étude en format vidéo pour approfondir votre compréhension 
+                de la Paracha Ki Tavo et de ses enseignements sur l'alliance, les bénédictions et la responsabilité spirituelle.
+            </p>
+        </div>
+
+        <div class="footer">
+            <div class="footer-author">
+                Étude de la Paracha Ki Tavo par <span class="footer-hebrew">אריאל מרמן</span> (Ariel Mormin)
+            </div>
+            <div class="footer-subtitle">
+                • Quand l'entrée en Terre devient entrée spirituelle dans la responsabilité •
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Animation de la barre de progression
+        window.addEventListener('scroll', () => {
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            scrollIndicator.style.transform = `scaleX(${scrolled / 100})`;
+        });
+        
+        // Animation d'apparition des sections
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        // Animation pour toutes les sections
+        document.querySelectorAll('.section, .verse-container, .conclusion-box, .video-section').forEach((element) => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(element);
+        });
+
+        // Animation spéciale pour les boîtes d'enseignements
+        const teachingBoxes = document.querySelectorAll('.teaching-box');
+        teachingBoxes.forEach((box, index) => {
+            box.style.opacity = '0';
+            box.style.transform = 'translateY(30px)';
+            box.style

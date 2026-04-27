@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Paracha Vayakhel – Pékoudei : l'unité d'Israël et la Présence d'Adonaï. Construction du Mishkan, Shabbat, générosité du peuple, sagesse de Betsalel. Étude complète selon la tradition séfarade par Ariel Mormin.">
+    <meta name="keywords" content="Paracha Vayakhel, Paracha Pékoudei, Torah, Bible, Exode, Chemot, tradition séfarade, Mishkan, Tabernacle, Shabbat, Betsalel, Présence divine, étude biblique, paracha semaine">
+    <title>Paracha Vayakhel – Pékoudei – וַיַּקְהֵל פְקוּדֵי – L'unité d'Israël et la Présence d'Adonaï</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            background: linear-gradient(135deg, #0c1a3d 0%, #152252 15%, #1a2d6b 30%, #1e3578 50%, #163060 70%, #0f2247 85%, #08132e 100%);
+            min-height: 100vh;
+            color: #333;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 65% 25%, rgba(212, 167, 40, 0.22) 0%, transparent 55%),
+                        radial-gradient(circle at 30% 75%, rgba(20, 60, 140, 0.35) 0%, transparent 55%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #1a2d6b, #1e3578);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(30, 53, 120, 0.4);
+            margin-bottom: 20px;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(30, 53, 120, 0.6);
+            background: linear-gradient(135deg, #1e3578, #1a2d6b);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 45px 20px;
+            background: linear-gradient(135deg, #0c1a3d, #152252, #1a2d6b, #1e3578, #163060, #0f2247, #08132e);
+            margin: -40px -20px 50px -20px;
+            border-radius: 20px 20px 0 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="55" font-size="35" fill="white" opacity="0.08">🕍</text></svg>') repeat;
+            background-size: 70px 70px;
+            opacity: 0.2;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(212, 167, 40, 0.18) 0%, rgba(12, 26, 61, 0.55) 70%);
+        }
+
+        .header-icon {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+            display: block;
+        }
+
+        .title {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hebrew-title {
+            font-size: 3.2em;
+            color: #fde68a;
+            margin-bottom: 15px;
+            font-family: 'Times New Roman', serif;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-size: 1.4em;
+            font-style: italic;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+            color: #bfdbfe;
+        }
+
+        .reference {
+            font-size: 1.1em;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #1a2d6b, #3b82f6, #d4a728);
+            transform-origin: left;
+            transform: scaleX(0);
+            z-index: 1000;
+            transition: transform 0.1s ease;
+        }
+
+        .intro-box {
+            background: linear-gradient(135deg, #eff6ff, #dbeafe);
+            padding: 35px;
+            border-radius: 15px;
+            border-left: 6px solid #1d4ed8;
+            margin-bottom: 45px;
+            box-shadow: 0 8px 20px rgba(29, 78, 216, 0.15);
+            position: relative;
+        }
+
+        .intro-box::before {
+            content: "📜";
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 2em;
+            opacity: 0.3;
+        }
+
+        .section {
+            margin-bottom: 45px;
+            padding: 20px 0;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #1a2d6b;
+            margin-bottom: 25px;
+            font-weight: bold;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #eff6ff, #dbeafe);
+            border-radius: 10px;
+            border-left: 5px solid #1d4ed8;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-icon {
+            font-size: 1.8em;
+            flex-shrink: 0;
+        }
+
+        .content-text {
+            font-size: 1.15em;
+            line-height: 1.8;
+            color: #1f2937;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #dbeafe, #fef9c3);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: #1a2d6b;
+        }
+
+        /* Verse containers */
+        .verse-container {
+            background: linear-gradient(135deg, #eff6ff, #dbeafe);
+            border: 2px solid #60a5fa;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+            box-shadow: 0 6px 20px rgba(96, 165, 250, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .verse-container:hover {
+            box-shadow: 0 8px 25px rgba(96, 165, 250, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .verse-french {
+            font-size: 1.25em;
+            font-weight: bold;
+            color: #1a2d6b;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .verse-hebrew {
+            font-size: 1.8em;
+            font-family: 'Times New Roman', serif;
+            direction: rtl;
+            text-align: right;
+            color: #0f2247;
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(191, 219, 254, 0.35);
+            border-radius: 8px;
+            line-height: 1.8;
+        }
+
+        .verse-transliteration {
+            font-size: 1.1em;
+            font-style: italic;
+            color: #1e3578;
+            margin: 12px 0;
+        }
+
+        .verse-reference {
+            font-size: 0.95em;
+            color: #152252;
+            font-weight: bold;
+            margin-top: 12px;
+        }
+
+        /* Distinct verse styles per section */
+        .shabbat-verse {
+            border-color: #7c3aed;
+            background: linear-gradient(135deg, #fdf4ff, #ede9fe);
+        }
+
+        .shabbat-verse .verse-hebrew {
+            background: rgba(221, 214, 254, 0.4);
+            color: #4c1d95;
+        }
+
+        .shabbat-verse .verse-french {
+            color: #5b21b6;
+        }
+
+        .shabbat-verse .verse-transliteration {
+            color: #6d28d9;
+        }
+
+        .shabbat-verse .verse-reference {
+            color: #4c1d95;
+        }
+
+        .generosity-verse {
+            border-color: #d97706;
+            background: linear-gradient(135deg, #fffbeb, #fef3c7);
+        }
+
+        .generosity-verse .verse-hebrew {
+            background: rgba(253, 230, 138, 0.4);
+            color: #78350f;
+        }
+
+        .generosity-verse .verse-french {
+            color: #92400e;
+        }
+
+        .generosity-verse .verse-transliteration {
+            color: #b45309;
+        }
+
+        .generosity-verse .verse-reference {
+            color: #78350f;
+        }
+
+        .betsalel-verse {
+            border-color: #0891b2;
+            background: linear-gradient(135deg, #ecfeff, #cffafe);
+        }
+
+        .betsalel-verse .verse-hebrew {
+            background: rgba(165, 243, 252, 0.4);
+            color: #164e63;
+        }
+
+        .betsalel-verse .verse-french {
+            color: #0e7490;
+        }
+
+        .betsalel-verse .verse-transliteration {
+            color: #0891b2;
+        }
+
+        .betsalel-verse .verse-reference {
+            color: #164e63;
+        }
+
+        .pekoudei-verse {
+            border-color: #059669;
+            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+        }
+
+        .pekoudei-verse .verse-hebrew {
+            background: rgba(167, 243, 208, 0.4);
+            color: #064e3b;
+        }
+
+        .pekoudei-verse .verse-french {
+            color: #065f46;
+        }
+
+        .pekoudei-verse .verse-transliteration {
+            color: #059669;
+        }
+
+        .pekoudei-verse .verse-reference {
+            color: #064e3b;
+        }
+
+        .presence-verse {
+            border-color: #d4a728;
+            background: linear-gradient(135deg, #fffbeb, #fef9c3);
+        }
+
+        .presence-verse .verse-hebrew {
+            background: rgba(253, 224, 71, 0.3);
+            color: #713f12;
+            font-size: 2em;
+        }
+
+        .presence-verse .verse-french {
+            color: #854d0e;
+        }
+
+        .presence-verse .verse-transliteration {
+            color: #a16207;
+        }
+
+        .presence-verse .verse-reference {
+            color: #713f12;
+        }
+
+        /* Special golden box for divine presence */
+        .presence-special {
+            background: linear-gradient(135deg, #fefce8, #fef9c3);
+            border: 3px solid #d4a728;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(212, 167, 40, 0.3);
+            text-align: center;
+        }
+
+        .presence-special .verse-hebrew {
+            font-size: 2.2em;
+            background: rgba(253, 224, 71, 0.35);
+            color: #713f12;
+            text-align: center;
+            direction: rtl;
+        }
+
+        .conclusion-box {
+            background: linear-gradient(135deg, #eff6ff, #dbeafe);
+            padding: 40px;
+            border-radius: 15px;
+            border: 3px solid #1d4ed8;
+            margin-top: 50px;
+            box-shadow: 0 10px 30px rgba(29, 78, 216, 0.2);
+        }
+
+        .sanctuary-banner {
+            background: linear-gradient(135deg, #fefce8, #fef9c3);
+            border: 2px solid #d4a728;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.2em;
+            color: #713f12;
+            box-shadow: 0 4px 15px rgba(212, 167, 40, 0.25);
+        }
+
+        .five-principles {
+            background: linear-gradient(135deg, #eff6ff, #dbeafe);
+            border: 2px solid #1d4ed8;
+            border-radius: 12px;
+            padding: 25px 35px;
+            margin: 25px 0;
+        }
+
+        .five-principles p {
+            font-size: 1.1em;
+            color: #1f2937;
+            margin-bottom: 12px;
+            padding-left: 10px;
+            border-left: 3px solid #1d4ed8;
+            padding: 8px 0 8px 15px;
+        }
+
+        .five-principles p:last-child {
+            margin-bottom: 0;
+        }
+
+        .video-section {
+            margin: 50px 0;
+            padding: 30px;
+            background: linear-gradient(135deg, #eff6ff, #dbeafe);
+            border-radius: 15px;
+            border: 2px solid #60a5fa;
+        }
+
+        .video-title {
+            font-size: 1.8em;
+            color: #1a2d6b;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-description {
+            margin-top: 20px;
+            font-size: 1.05em;
+            line-height: 1.7;
+            color: #1f2937;
+            text-align: justify;
+        }
+
+        .footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 3px solid #1d4ed8;
+            text-align: center;
+        }
+
+        .footer-author {
+            font-size: 1.2em;
+            color: #1a2d6b;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .footer-hebrew {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.3em;
+            color: #1d4ed8;
+        }
+
+        .footer-subtitle {
+            font-size: 1em;
+            color: #152252;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+                margin-top: 15px;
+                margin-bottom: 15px;
+            }
+
+            .title {
+                font-size: 1.8em;
+            }
+
+            .hebrew-title {
+                font-size: 2em;
+            }
+
+            .subtitle {
+                font-size: 1.1em;
+            }
+
+            .section-title {
+                font-size: 1.25em;
+            }
+
+            .verse-hebrew {
+                font-size: 1.4em;
+            }
+
+            .presence-special .verse-hebrew {
+                font-size: 1.6em;
+            }
+
+            .content-text {
+                font-size: 1.05em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-indicator"></div>
+
+    <div class="container">
+        <!-- Bouton retour -->
+        <a href="https://parashot-mormin.netlify.app/" class="back-button">
+            ← Retour aux parashot
+        </a>
+
+        <!-- EN-TÊTE -->
+        <div class="header">
+            <span class="header-icon">🕍</span>
+            <h1 class="title">Paracha Vayakhel – Pékoudei</h1>
+            <div class="hebrew-title">וַיַּקְהֵל – פְקוּדֵי</div>
+            <div class="subtitle">L'unité d'Israël et la Présence d'Adonaï</div>
+            <div class="reference">Chemot / Exode 35:1 – 40:38</div>
+        </div>
+
+        <!-- INTRODUCTION -->
+        <div class="intro-box">
+            <p class="content-text">
+                La Paracha <strong>Vayakhel – Pékoudei</strong> conclut le livre de <strong>Chemot (Exode)</strong>.
+                Elle intervient après l'épisode dramatique du <strong>veau d'or</strong>, moment de rupture entre Israël et Ashem.
+            </p>
+            <p class="content-text">
+                Après la faute, Moché Rabbénou redescend du mont Sinaï et entreprend une tâche essentielle :
+                <strong>reconstruire le lien entre le peuple et la Présence divine</strong>.
+            </p>
+            <p class="content-text">
+                Le mot qui ouvre la paracha est très significatif :
+            </p>
+
+            <div class="verse-container">
+                <p class="verse-hebrew">וַיַּקְהֵל מֹשֶׁה אֶת־כָּל־עֲדַת בְּנֵי יִשְׂרָאֵל</p>
+                <p class="verse-transliteration"><em>Vayakhel Moché et kol adat Bnei Israël</em></p>
+                <p class="verse-french">« Moché rassembla toute la communauté des enfants d'Israël. »</p>
+                <p class="verse-reference">(Shemot 35:1 / Exode 35:1)</p>
+            </div>
+
+            <p class="content-text">
+                La réparation de la faute commence par <strong>l'unité</strong>.
+            </p>
+            <p class="content-text">
+                Dans la tradition séfarade, cette paracha est souvent étudiée comme une grande leçon sur
+                la responsabilité collective, la sainteté du travail et la construction d'un lieu pour
+                la Présence d'Adonaï dans ce monde.
+            </p>
+        </div>
+
+        <!-- SECTION 1 : LE SHABBAT -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">✨</span>
+                1. Le Shabbat – fondement de la sainteté
+            </h2>
+
+            <p class="content-text">
+                Avant même de parler du Mishkan (Tabernacle), Moché rappelle la mitsva du Shabbat.
+            </p>
+
+            <div class="verse-container shabbat-verse">
+                <p class="verse-hebrew">
+                    שֵׁשֶׁת יָמִים תֵּעָשֶׂה מְלָאכָה
+                    וּבַיּוֹם הַשְּׁבִיעִי יִהְיֶה לָכֶם קֹדֶשׁ
+                </p>
+                <p class="verse-transliteration">
+                    <em>Sheshet yamim te'asseh melakha
+                    ouvayom hashevi'i yihyeh lakhem kodesh</em>
+                </p>
+                <p class="verse-french">
+                    « Pendant six jours on fera le travail,
+                    mais le septième jour sera pour vous saint. »
+                </p>
+                <p class="verse-reference">(Shemot 35:2 / Exode 35:2)</p>
+            </div>
+
+            <p class="content-text">
+                Pourquoi ce rappel ici ? Les sages expliquent :
+            </p>
+            <p class="content-text">
+                Même la construction du Mishkan — qui est une œuvre sacrée —
+                <span class="highlight">ne peut pas repousser le Shabbat</span>.
+                La sainteté du temps est supérieure à la sainteté de l'espace.
+            </p>
+            <p class="content-text">
+                Dans la tradition séfarade, les maîtres enseignent souvent :
+                le Mishkan est construit par les mains,
+                mais <strong>le Shabbat construit l'âme d'Israël</strong>.
+            </p>
+        </div>
+
+        <!-- SECTION 2 : LA GÉNÉROSITÉ DU PEUPLE -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">💛</span>
+                2. La générosité du peuple – נְדִיב לֵב
+            </h2>
+
+            <p class="content-text">
+                Après la faute du veau d'or, le peuple veut réparer.
+                Moché demande une offrande volontaire.
+            </p>
+
+            <div class="verse-container generosity-verse">
+                <p class="verse-hebrew">
+                    קְחוּ מֵאִתְּכֶם תְּרוּמָה לַיהוָה
+                    כֹּל נְדִיב לִבּוֹ יְבִיאֶהָ
+                </p>
+                <p class="verse-transliteration">
+                    <em>Khou méitkhem terouma laAdonaï
+                    kol nediv libo yevieha</em>
+                </p>
+                <p class="verse-french">
+                    « Prenez parmi vous une offrande pour Adonaï,
+                    que tout homme au cœur généreux l'apporte. »
+                </p>
+                <p class="verse-reference">(Shemot 35:5 / Exode 35:5)</p>
+            </div>
+
+            <p class="content-text">
+                L'expression <strong>נְדִיב לֵב – nediv lev</strong> signifie :
+                un cœur généreux, un cœur volontaire.
+                Le Mishkan ne pouvait être construit <strong>que par des cœurs libres</strong>.
+            </p>
+            <p class="content-text">
+                Selon les maîtres séfarades :
+                <span class="highlight">la réparation de la faute passe par la générosité</span>.
+                Le peuple donne or, argent, cuivre, tissus précieux, bois, pierres.
+            </p>
+            <p class="content-text">
+                Et la Torah souligne quelque chose de remarquable : le peuple donne <strong>trop</strong>.
+            </p>
+
+            <div class="verse-container generosity-verse">
+                <p class="verse-hebrew">וַיִּכָּלֵא הָעָם מֵהָבִיא</p>
+                <p class="verse-transliteration"><em>Vayikalé ha'am me'havi</em></p>
+                <p class="verse-french">« Le peuple fut empêché d'apporter encore. »</p>
+                <p class="verse-reference">(Shemot 36:6 / Exode 36:6)</p>
+            </div>
+
+            <p class="content-text">
+                Moché doit demander d'arrêter les dons.
+                C'est l'un des rares moments dans l'histoire d'Israël où l'on doit dire au peuple :
+                <strong>« C'est suffisant. »</strong>
+            </p>
+        </div>
+
+        <!-- SECTION 3 : LA SAGESSE DE BETSALEL -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🔨</span>
+                3. La sagesse de Betsalel – בְּצַלְאֵל
+            </h2>
+
+            <p class="content-text">
+                La construction du Mishkan est confiée à <strong>Betsalel</strong>.
+            </p>
+
+            <div class="verse-container betsalel-verse">
+                <p class="verse-hebrew">
+                    וַיְמַלֵּא אֹתוֹ רוּחַ אֱלֹהִים
+                    בְּחָכְמָה בִּתְבוּנָה וּבְדַעַת
+                </p>
+                <p class="verse-transliteration">
+                    <em>Vayemalé oto rouaḥ Elohim
+                    beḥokhmah bitvouna ouveda'at</em>
+                </p>
+                <p class="verse-french">
+                    « Il l'a rempli de l'esprit divin,
+                    de sagesse, d'intelligence et de connaissance. »
+                </p>
+                <p class="verse-reference">(Shemot 35:31 / Exode 35:31)</p>
+            </div>
+
+            <p class="content-text">
+                Les sages expliquent : la construction du Mishkan n'est pas seulement un travail technique.
+                C'est une <strong>œuvre spirituelle</strong>.
+                Chaque objet a une signification :
+            </p>
+
+            <div class="five-principles">
+                <p>🗄️ <strong>L'Arche</strong> → la Torah au cœur du sanctuaire</p>
+                <p>🕎 <strong>La Ménorah</strong> → la lumière de la sagesse</p>
+                <p>🍞 <strong>La Table</strong> → la bénédiction matérielle</p>
+                <p>🔥 <strong>L'autel d'or</strong> → la prière et l'élévation de l'âme</p>
+                <p>☁️ <strong>Le voile</strong> → la frontière entre le visible et le caché</p>
+            </div>
+
+            <p class="content-text">
+                Le Mishkan est ainsi une image de l'univers en miniature — et de l'homme lui-même.
+                <span class="highlight">Construire un sanctuaire pour Ashem, c'est apprendre à construire l'espace sacré en soi-même.</span>
+            </p>
+        </div>
+
+        <!-- SECTION 4 : PÉKOUDEI -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">📊</span>
+                4. Pékoudei – les comptes du Mishkan – פְקוּדֵי הַמִּשְׁכָּן
+            </h2>
+
+            <p class="content-text">
+                La seconde paracha, <strong>Pékoudei</strong>, signifie : <em>les comptes</em>.
+                Moché présente un rapport précis des matériaux utilisés.
+            </p>
+
+            <div class="verse-container pekoudei-verse">
+                <p class="verse-hebrew">אֵלֶּה פְקוּדֵי הַמִּשְׁכָּן</p>
+                <p class="verse-transliteration"><em>Eleh pekoudei hamishkan</em></p>
+                <p class="verse-french">« Voici les comptes du Mishkan. »</p>
+                <p class="verse-reference">(Shemot 38:21 / Exode 38:21)</p>
+            </div>
+
+            <p class="content-text">
+                La Torah enseigne ici une valeur essentielle : <strong>la transparence</strong>.
+                Même Moché Rabbénou — le plus grand prophète —
+                rend des comptes au peuple.
+            </p>
+            <p class="content-text">
+                Les sages disent : <span class="highlight">celui qui gère les biens du public doit être
+                au-dessus de tout soupçon</span>.
+                Pékoudei est ainsi une leçon d'intégrité pour toutes les générations.
+            </p>
+            <p class="content-text">
+                Plus profondément, les maîtres voient dans ce bilan non seulement
+                une reddition de comptes matérielle, mais l'image de l'homme qui revient à lui-même,
+                qui fait le point sur sa vie — une forme de <em>heshbon hanefesh</em>,
+                l'examen de conscience.
+            </p>
+        </div>
+
+        <!-- SECTION 5 : LA PRÉSENCE DIVINE DESCEND -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">☁️</span>
+                5. La Présence divine descend – כְּבוֹד יְהוָה
+            </h2>
+
+            <p class="content-text">
+                Lorsque tout est terminé, la Torah décrit un moment extraordinaire.
+                Le Mishkan est achevé. Chaque objet est à sa place.
+                Et alors se produit ce pour quoi tout a été préparé :
+            </p>
+
+            <div class="presence-special">
+                <p class="verse-hebrew" style="font-size: 2em; text-align: right; direction: rtl; background: rgba(253, 224, 71, 0.3); padding: 20px; border-radius: 8px; margin-bottom: 15px;">
+                    וַיְכַס הֶעָנָן אֶת־אֹהֶל מוֹעֵד
+                    וּכְבוֹד יְהוָה מָלֵא אֶת־הַמִּשְׁכָּן
+                </p>
+                <p style="font-style: italic; font-size: 1.15em; color: #92400e; margin-bottom: 10px;">
+                    <em>Vayekhas he'anan et ohel mo'ed
+                    oukhvod Adonaï malé et hamishkan</em>
+                </p>
+                <p style="font-size: 1.3em; font-weight: bold; color: #713f12;">
+                    « La nuée couvrit la tente d'assignation
+                    et la gloire d'Adonaï remplit le Mishkan. »
+                </p>
+                <p style="font-size: 0.95em; color: #92400e; margin-top: 10px;">
+                    (Shemot 40:34 / Exode 40:34)
+                </p>
+            </div>
+
+            <p class="content-text">
+                La Présence divine descend enfin.
+                Le livre de l'Exode se termine sur cette image :
+                <strong>Ashem réside au milieu d'Israël</strong>.
+            </p>
+            <p class="content-text">
+                Ce moment est l'accomplissement de toute l'errance et de tout l'effort du peuple.
+                La faute du veau d'or a été traversée. La réconciliation a eu lieu.
+                Et voilà que la Présence divine vient habiter parmi eux.
+            </p>
+        </div>
+
+        <!-- CONCLUSION -->
+        <div class="conclusion-box">
+            <h2 class="section-title" style="background: transparent; border: none; padding: 0; margin-bottom: 25px;">
+                <span class="section-icon">🌟</span>
+                Conclusion – Construire un sanctuaire dans nos vies
+            </h2>
+
+            <p class="content-text">
+                La Paracha Vayakhel-Pékoudei enseigne une leçon profonde.
+                Le Mishkan n'est pas seulement un bâtiment.
+                C'est une image de l'homme lui-même.
+            </p>
+
+            <div class="five-principles">
+                <p><strong>1. L'unité est le fondement</strong> — La réparation commence par le rassemblement du peuple. Vayakhel — « il rassembla » — est le premier acte de la reconstruction.</p>
+                <p><strong>2. Le Shabbat prime sur toute œuvre</strong> — Même la construction d'un sanctuaire ne peut pas s'accomplir aux dépens de la sainteté du temps.</p>
+                <p><strong>3. La générosité répare</strong> — Le peuple qui avait donné son or au veau d'or donne maintenant cet or pour la gloire d'Adonaï. La faute est inversée par le don.</p>
+                <p><strong>4. La transparence est une valeur sacrée</strong> — Moché lui-même rend compte de chaque matériau. L'intégrité dans la gestion est une exigence divine.</p>
+            </div>
+
+            <p class="content-text">
+                Lorsque ces qualités sont présentes, alors se réalise la promesse de la Torah :
+            </p>
+
+            <div class="verse-container presence-verse">
+                <p class="verse-hebrew">
+                    וְעָשׂוּ לִי מִקְדָּשׁ
+                    וְשָׁכַנְתִּי בְּתוֹכָם
+                </p>
+                <p class="verse-transliteration">
+                    <em>Ve'assou li mikdash
+                    veshakhanti betokham</em>
+                </p>
+                <p class="verse-french">
+                    « Ils Me feront un sanctuaire
+                    et Je résiderai au milieu d'eux. »
+                </p>
+                <p class="verse-reference">(Shemot 25:8 / Exode 25:8)</p>
+            </div>
+
+            <div class="sanctuary-banner">
+                « Les sages remarquent : la Torah ne dit pas <em>"au milieu de lui"</em>
+                mais <em>"au milieu d'eux"</em>.<br><br>
+                Car la Présence d'Adonaï ne réside pas seulement dans un lieu.
+                Elle réside dans le cœur des hommes et des femmes qui cherchent la sainteté. »
+            </div>
+
+            <p class="content-text">
+                Chaque être humain peut devenir un <strong>sanctuaire vivant</strong>.
+                Par le Shabbat, la générosité, la sagesse et l'intégrité.
+            </p>
+
+            <p class="verse-hebrew" style="font-size: 1.5em; text-align: center; background: rgba(191, 219, 254, 0.35); padding: 20px; border-radius: 10px; margin: 25px 0;">
+                וּכְבוֹד יְהוָה מָלֵא אֶת־הַמִּשְׁכָּן
+            </p>
+
+            <p style="text-align: center; font-style: italic; color: #1a2d6b; margin-bottom: 25px; font-size: 1.1em;">
+                <em>Oukhvod Adonaï malé et hamishkan.</em><br>
+                « Et la gloire d'Adonaï remplit le Mishkan. »
+            </p>
+
+            <p class="content-text" style="text-align: center; font-size: 1.3em; font-weight: bold; color: #1a2d6b; margin-top: 30px;">
+                Shabbat Shalom. ✨
+            </p>
+        </div>
+
+        <!-- VIDÉO -->
+        <div class="video-section">
+            <h2 class="video-title">
+                🎥 Étude vidéo de la Paracha Vayakhel – Pékoudei
+            </h2>
+            <div class="video-container">
+                <iframe
+                    src="https://www.youtube.com/embed/vlalq_2r4z4"
+                    title="Paracha Vayakhel – Pékoudei | L'unité d'Israël et la Présence d'Adonaï | Étude complète – Tradition séfarade"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="video-description">
+                Découvrez cette étude en format vidéo pour approfondir votre compréhension de la Paracha Vayakhel – Pékoudei.
+                Une exploration du sens spirituel du rassemblement du peuple d'Israël après la faute du veau d'or ;
+                de la primauté du Shabbat même sur l'œuvre sacrée du Mishkan ; de la générosité extraordinaire du peuple
+                qui donne <em>trop</em> pour la construction du sanctuaire ; de la sagesse divine de Betsalel, artisan
+                inspiré par l'esprit d'Élohim ; de la transparence de Moché Rabbénou dans la gestion des dons du peuple ;
+                et du moment sublime où la Présence divine descend remplir le Mishkan — clôture glorieuse du livre de l'Exode.
+                Une réflexion sur l'unité, la sainteté et la construction d'un sanctuaire intérieur, dans la tradition séfarade.
+            </p>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <div class="footer-author">
+                Étude de la Paracha Vayakhel – Pékoudei par <span class="footer-hebrew">אריאל מרמן</span> (Ariel Mormin)
+            </div>
+            <div class="footer-subtitle">
+                • L'unité d'Israël et la Présence d'Adonaï — וַיַּקְהֵל פְקוּדֵי •
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Indicateur de progression de scroll
+        window.addEventListener('scroll', () => {
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            scrollIndicator.style.transform = `scaleX(${scrolled / 100})`;
+        });
+
+        // Animation d'apparition au scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.section, .verse-container, .conclusion-box, .video-section, .intro-box, .presence-special, .sanctuary-banner, .five-principles').forEach((element) => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(element);
+        });
+
+        // Effet hover sur les conteneurs de versets
+        document.querySelectorAll('.verse-container').forEach(container => {
+            container.addEventListener('mouseenter', () => {
+                container.style.transform = 'translateY(-2px)';
+                container.style.transition = 'transform 0.3s ease';
+            });
+            container.addEventListener('mouseleave', () => {
+                container.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>

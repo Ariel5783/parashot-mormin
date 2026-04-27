@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paracha Vayelekh - וַיֵּלֶךְ - Et il alla</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 50%, #059669 100%);
+            min-height: 100vh;
+            color: #333;
+            position: relative;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #1e3a8a, #7c3aed);
+            margin: -40px -20px 50px -20px;
+            border-radius: 20px 20px 0 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="40" fill="white" opacity="0.1">📜</text></svg>') repeat;
+            background-size: 80px 80px;
+            opacity: 0.15;
+        }
+
+        .title {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hebrew-title {
+            font-size: 3.2em;
+            color: #059669;
+            margin-bottom: 15px;
+            font-family: 'Times New Roman', serif;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-size: 1.4em;
+            font-style: italic;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        .context-box {
+            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+            padding: 35px;
+            border-radius: 15px;
+            border-left: 6px solid #7c3aed;
+            margin-bottom: 45px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .context-box::before {
+            content: "📜";
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 2em;
+            opacity: 0.3;
+        }
+
+        .section {
+            margin-bottom: 45px;
+            padding: 20px 0;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #1e3a8a;
+            margin-bottom: 25px;
+            font-weight: bold;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #f7fafc, #edf2f7);
+            border-radius: 10px;
+            border-left: 5px solid #7c3aed;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-icon {
+            font-size: 1.3em;
+        }
+
+        .verse-container {
+            background: linear-gradient(135deg, #f8f6ff, #f0e6ff);
+            padding: 30px;
+            margin: 25px 0;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+            box-shadow: 0 5px 15px rgba(124, 58, 237, 0.1);
+            position: relative;
+        }
+
+        .key-verse {
+            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+            border: 3px solid #059669;
+            box-shadow: 0 8px 25px rgba(5, 150, 105, 0.2);
+        }
+
+        .leadership-verse {
+            background: linear-gradient(135deg, #fef7f7, #fed7d7);
+            border: 2px solid #dc2626;
+            box-shadow: 0 5px 15px rgba(220, 38, 38, 0.1);
+        }
+
+        .transmission-verse {
+            background: linear-gradient(135deg, #f0f9ff, #dbeafe);
+            border: 2px solid #2563eb;
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.1);
+        }
+
+        .hakhel-verse {
+            background: linear-gradient(135deg, #fff8f5, #fef3c7);
+            border: 2px solid #f59e0b;
+            box-shadow: 0 5px 15px rgba(245, 158, 11, 0.1);
+        }
+
+        .prophecy-verse {
+            background: linear-gradient(135deg, #f8f6ff, #ede9fe);
+            border: 2px solid #8b5cf6;
+            box-shadow: 0 5px 15px rgba(139, 92, 246, 0.1);
+        }
+
+        .verse-french {
+            font-size: 1.15em;
+            margin-bottom: 18px;
+            font-weight: 600;
+            color: #2d3748;
+            line-height: 1.7;
+        }
+
+        .verse-hebrew {
+            font-size: 1.4em;
+            font-family: 'Times New Roman', serif;
+            direction: rtl;
+            text-align: right;
+            margin-bottom: 18px;
+            color: #1e3a8a;
+            font-weight: bold;
+            line-height: 2;
+            background: rgba(30, 58, 138, 0.05);
+            padding: 12px;
+            border-radius: 8px;
+        }
+
+        .verse-transliteration {
+            font-size: 1.05em;
+            font-style: italic;
+            color: #7c3aed;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .verse-reference {
+            font-size: 0.95em;
+            color: #718096;
+            text-align: right;
+            font-weight: bold;
+        }
+
+        .content-text {
+            font-size: 1.1em;
+            line-height: 1.8;
+            text-align: justify;
+            color: #2d3748;
+            margin-bottom: 20px;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            color: #1e3a8a;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #7c3aed 0%, transparent 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: white;
+        }
+
+        .teachings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .teaching-box {
+            background: linear-gradient(135deg, #f8f6ff, #f0e6ff);
+            padding: 25px;
+            border-radius: 12px;
+            border: 2px solid #7c3aed;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(124, 58, 237, 0.15);
+        }
+
+        .teaching-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #1e3a8a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .conclusion-box {
+            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+            padding: 35px;
+            border-radius: 15px;
+            border: 3px solid #059669;
+            margin-top: 45px;
+            box-shadow: 0 10px 25px rgba(5, 150, 105, 0.2);
+            position: relative;
+        }
+
+        .conclusion-box::before {
+            content: "🌿";
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2em;
+            opacity: 0.4;
+        }
+
+        .list-item {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+            font-size: 1.05em;
+            line-height: 1.6;
+        }
+
+        .list-item:before {
+            content: "•";
+            color: #1e3a8a;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1.3em;
+        }
+
+        .video-section {
+            background: linear-gradient(135deg, #f8f6ff, #f0e6ff);
+            padding: 35px;
+            border-radius: 20px;
+            border: 3px solid #1e3a8a;
+            margin: 45px 0;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(30, 58, 138, 0.15);
+        }
+
+        .video-title {
+            font-size: 1.7em;
+            color: #1e3a8a;
+            margin-bottom: 25px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 850px;
+            margin: 0 auto;
+            padding-bottom: 56.25%;
+            height: 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            border: 4px solid #7c3aed;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-description {
+            margin-top: 25px;
+            font-size: 1.1em;
+            color: #4a5568;
+            font-style: italic;
+            line-height: 1.7;
+        }
+
+        .footer {
+            margin-top: 50px;
+            padding: 35px;
+            border-top: 3px solid #059669;
+            text-align: center;
+            background: linear-gradient(135deg, #f8f6ff, #f0e6ff);
+            border-radius: 15px;
+        }
+
+        .footer-author {
+            font-size: 1.2em;
+            color: #1e3a8a;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .footer-hebrew {
+            font-size: 1.4em;
+            color: #059669;
+            font-family: 'Times New Roman', serif;
+            margin: 0 8px;
+            font-weight: bold;
+        }
+
+        .footer-subtitle {
+            font-size: 1.05em;
+            color: #718096;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 20px;
+            }
+            
+            .header {
+                margin: -20px -20px 30px -20px;
+            }
+            
+            .title {
+                font-size: 2.2em;
+            }
+            
+            .hebrew-title {
+                font-size: 2.8em;
+            }
+            
+            .verse-hebrew {
+                font-size: 1.2em;
+            }
+
+            .teachings-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #1e3a8a, #7c3aed, #059669);
+            transform-origin: left;
+            transform: scaleX(0);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-indicator"></div>
+    
+    <div class="container">
+        <div class="header">
+            <div class="hebrew-title">וַיֵּלֶךְ</div>
+            <h1 class="title">Paracha Vayelekh</h1>
+            <p class="subtitle">"Et il alla"</p>
+        </div>
+
+        <div class="context-box">
+            <p class="content-text">
+                La <span class="emphasis">Paracha Vayelekh</span> (וַיֵּלֶךְ – "Et il alla") se situe dans les derniers chapitres du <em>Séfer Dévarim</em>. Moïse, conscient de la proximité de sa mort, s'adresse au peuple d'Israël avec des paroles d'adieu. Il transmet l'autorité à <span class="highlight">Yéhoshoua' (Josué)</span>, écrit la Torah, et la confie aux prêtres et aux anciens afin qu'elle soit lue à chaque cycle de sept ans lors de la fête de <span class="emphasis">Soukkot</span> (<em>Haqhél</em>).
+            </p>
+            <br>
+            <p class="content-text">
+                C'est une paracha brève mais d'une grande intensité spirituelle : elle concentre les thèmes de la <span class="highlight">transmission</span>, de la <span class="highlight">responsabilité collective</span>, et de la <span class="highlight">fidélité à l'alliance</span>.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">👨‍🦳</span>
+                1. Moïse, le leader qui s'efface
+            </h2>
+            
+            <div class="verse-container key-verse">
+                <p class="verse-french">"Moïse alla et adressa ces paroles à tout Israël."</p>
+                
+                <p class="verse-hebrew">וַיֵּלֶךְ מֹשֶׁה וַיְדַבֵּר אֶת־הַדְּבָרִים הָאֵלֶּה אֶל־כָּל־יִשְׂרָאֵל׃</p>
+                
+                <p class="verse-transliteration"><em>Vayelekh Moché vayedabber et-haddevarim haélleh el-kol Yisraël</em></p>
+                
+                <p class="verse-reference">(Deutéronome 31:1)</p>
+            </div>
+            
+            <p class="content-text">
+                Moïse, à 120 ans, déclare qu'il ne peut plus « sortir et entrer ». Ce geste d'humilité exprime que la mission d'un dirigeant est d'ouvrir la voie, puis de <span class="emphasis">savoir s'effacer pour laisser place à la génération suivante</span>. Le verbe "vayelekh" (et il alla) suggère un mouvement vers l'achèvement de sa mission terrestre.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🤝</span>
+                2. La transmission à Josué
+            </h2>
+            
+            <p class="content-text">
+                La passation de pouvoir est accompagnée d'une promesse divine fondamentale :
+            </p>
+
+            <div class="verse-container transmission-verse">
+                <p class="verse-french">"C'est l'Éternel qui marche devant toi, Lui-même sera avec toi, Il ne te délaissera pas et ne t'abandonnera pas."</p>
+                
+                <p class="verse-hebrew">וַה׳ הוּא הַהֹלֵךְ לְפָנֶיךָ הוּא יִהְיֶה עִמָּךְ לֹא יַרְפְּךָ וְלֹא יַעַזְבֶךָּ לֹא־תִירָא וְלֹא תֵחָת׃</p>
+                
+                <p class="verse-transliteration"><em>Va-Hachem hou ha-holekh lefanékha, hou yihyéh 'immakh, lo yarpékha velo ya'azvéka; lo tira velo teḥat</em></p>
+                
+                <p class="verse-reference">(Deutéronome 31:8)</p>
+            </div>
+
+            <p class="content-text">
+                Moïse transmet le leadership à Josué en rappelant que la vraie force du dirigeant ne vient pas de lui, mais de la <span class="emphasis">présence divine</span>. Cette leçon de leadership authentique résonne encore aujourd'hui : <span class="highlight">diriger, c'est servir de canal à la volonté divine</span>.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">📚</span>
+                3. La Mitsva du Hakhel – l'Assemblée
+            </h2>
+            
+            <p class="content-text">
+                Tous les sept ans, lors de la fête de Soukkot qui suit l'année de Shemitah, le peuple entier devait se rassembler à Jérusalem pour écouter la lecture publique de la Torah :
+            </p>
+
+            <div class="verse-container hakhel-verse">
+                <p class="verse-french">"Tu liras cette Torah devant tout Israël, à leurs oreilles. Assemble le peuple, les hommes, les femmes, les enfants... afin qu'ils entendent et qu'ils apprennent à craindre l'Éternel."</p>
+                
+                <p class="verse-hebrew">וְקָרָאתָ אֶת־הַתּוֹרָה הַזֹּאת נֶגֶד כָּל־יִשְׂרָאֵל בְּאָזְנֵיהֶם׃ הַקְהֵל אֶת־הָעָם הָאֲנָשִׁים וְהַנָּשִׁים וְהַטַּף... לְמַעַן יִשְׁמְעוּ וּלְמַעַן יִלְמְדוּ...</p>
+                
+                <p class="verse-transliteration"><em>Veqarata et-hattorah hazzot negued kol-Yisraël be-oznêhem; haqhél et-ha'am, ha'anashim vehannashim ve-hattaf... lema'an yishme'ou u-lema'an yilmedou...</em></p>
+                
+                <p class="verse-reference">(Deutéronome 31:11-12)</p>
+            </div>
+
+            <p class="content-text">
+                La Torah n'est pas réservée aux érudits : elle appartient à <span class="highlight">tout Israël</span>. Le <em>Haqhél</em> démocratise l'accès à la Torah et rappelle que l'apprentissage est un processus collectif et intergénérationnel. Même les enfants sont inclus, car ils représentent l'avenir de la transmission.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">⚖️</span>
+                4. La responsabilité collective
+            </h2>
+
+            <div class="verse-container prophecy-verse">
+                <p class="verse-french">"Car je sais qu'après ma mort, vous vous corromprez..."</p>
+                
+                <p class="verse-hebrew">כִּי יָדַעְתִּי אַחֲרֵי מוֹתִי כִּי־הַשְׁחֵת תַּשְׁחִתוּן...</p>
+                
+                <p class="verse-transliteration"><em>Ki yada'ti aḥarei moti, ki-hashḥet tashḥitoun...</em></p>
+                
+                <p class="verse-reference">(Deutéronome 31:29)</p>
+            </div>
+
+            <p class="content-text">
+                Moïse annonce aussi la fragilité d'Israël : après son départ, le peuple sera tenté par l'idolâtrie. Pourtant, l'alliance est indestructible : <span class="emphasis">Hachem promet d'être présent même dans les épreuves</span>. Cette prophétie n'est pas un fatalisme, mais un appel à la vigilance et à la responsabilité de chaque génération.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🌍</span>
+                5. Actualité du message
+            </h2>
+            
+            <div class="teachings-grid">
+                <div class="teaching-box">
+                    <div class="teaching-title">👥 Leadership</div>
+                    <p>L'art de transmettre l'autorité avec humilité et confiance en la Providence divine</p>
+                </div>
+                <div class="teaching-box">
+                    <div class="teaching-title">📖 Transmission</div>
+                    <p>L'importance de l'éducation collective et de l'accès démocratique à la sagesse</p>
+                </div>
+                <div class="teaching-box">
+                    <div class="teaching-title">🤝 Solidarité</div>
+                    <p>La responsabilité intergénérationnelle et l'engagement communautaire</p>
+                </div>
+                <div class="teaching-box">
+                    <div class="teaching-title">⏰ Cycles</div>
+                    <p>Les rituels de renouvellement et les moments de rassemblement collectif</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="conclusion-box">
+            <h2 class="section-title">
+                <span class="section-icon">🌿</span>
+                Conclusion - Un testament spirituel
+            </h2>
+            
+            <p class="content-text">
+                La Paracha <span class="emphasis">Vayelekh</span> est un testament spirituel. Elle nous rappelle :
+            </p>
+            <br>
+            
+            <div class="list-item">L'importance de la <span class="emphasis">transmission intergénérationnelle</span></div>
+            <div class="list-item">La <span class="emphasis">force de la communauté</span> rassemblée autour de la Torah</div>
+            <div class="list-item">La conscience que, malgré les faiblesses humaines, <span class="emphasis">la Présence divine demeure fidèle</span></div>
+            <div class="list-item">L'art du <span class="emphasis">leadership authentique</span> qui sait s'effacer au bon moment</div>
+            <div class="list-item">La <span class="emphasis">démocratisation de l'accès</span> à la sagesse et à l'apprentissage</div>
+            
+            <br>
+            <p class="content-text">
+                C'est pourquoi dans la liturgie séfarade, cette paracha est souvent lue à proximité de <span class="emphasis">Roch Hachana</span> et de <span class="emphasis">Yom Kippour</span>, comme un appel à se rappeler que <span class="highlight">la Torah est notre héritage commun et éternel</span>.
+            </p>
+        </div>
+
+        <div class="video-section">
+            <h2 class="video-title">
+                🎥 Étude vidéo de la Paracha Vayelekh
+            </h2>
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/rYlk2l0elt4" 
+                    title="Paracha Vayelekh - Et il alla"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="video-description">
+                Découvrez cette étude en format vidéo pour approfondir votre compréhension 
+                de la Paracha Vayelekh et de ses enseignements sur la transmission, le leadership et la fidélité à l'alliance.
+            </p>
+        </div>
+
+        <div class="footer">
+            <div class="footer-author">
+                Étude de la Paracha Vayelekh par <span class="footer-hebrew">אריאל מרמן</span> (Ariel Mormin)
+            </div>
+            <div class="footer-subtitle">
+                • La Torah, notre héritage commun et éternel •
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Animation de la barre de progression
+        window.addEventListener('scroll', () => {
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            scrollIndicator.style.transform = `scaleX(${scrolled / 100})`;
+        });
+        
+        // Animation d'apparition des sections
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        // Animation pour toutes les sections
+        document.querySelectorAll('.section, .verse-container, .conclusion-box, .video-section').forEach((element) => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(element);
+        });
+
+        // Animation spéciale pour les boîtes d'enseignements
+        const teachingBoxes = document.querySelectorAll('.teaching-box');
+        teachingBoxes.forEach((box, index) => {
+            box.style.opacity = '0';
+            box.style.transform = 'translateY(30px)';
+            box.style.transition = `opacity 0.8s ease ${index * 0.2}s, transform 0.8s ease ${index * 0.2}s`;
+            observer.observe(box);
+        });
+
+        // Animation au survol pour les versets
+        document.querySelectorAll('.verse-container').forEach(container => {
+            container.addEventListener('mouseenter', () => {
+                container.style.transform = 'translateY(-2px)';
+                container.style.transition = 'transform 0.3s ease';
+            });
+            
+            container.addEventListener('mouseleave', () => {
+                container.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>

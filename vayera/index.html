@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paracha Vayéra - וַיֵּרָא - Le Regard de Dieu et la Promesse de Vie</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 50%, #059669 100%);
+            min-height: 100vh;
+            color: #333;
+            position: relative;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #1e3a8a, #7c3aed);
+            margin: -40px -20px 50px -20px;
+            border-radius: 20px 20px 0 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="40" fill="white" opacity="0.1">🕊️</text></svg>') repeat;
+            background-size: 80px 80px;
+            opacity: 0.15;
+        }
+
+        .title {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hebrew-title {
+            font-size: 3.2em;
+            color: #059669;
+            margin-bottom: 15px;
+            font-family: 'Times New Roman', serif;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-size: 1.4em;
+            font-style: italic;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        .reference {
+            font-size: 1.1em;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .intro-box {
+            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+            padding: 35px;
+            border-radius: 15px;
+            border-left: 6px solid #059669;
+            margin-bottom: 45px;
+            box-shadow: 0 8px 20px rgba(5, 150, 105, 0.2);
+            position: relative;
+        }
+
+        .intro-box::before {
+            content: "🕊️";
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 2em;
+            opacity: 0.3;
+        }
+
+        .section {
+            margin-bottom: 45px;
+            padding: 20px 0;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #1e3a8a;
+            margin-bottom: 25px;
+            font-weight: bold;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #f7fafc, #edf2f7);
+            border-radius: 10px;
+            border-left: 5px solid #7c3aed;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-icon {
+            font-size: 1.3em;
+        }
+
+        .verse-container {
+            background: linear-gradient(135deg, #f8f6ff, #f0e6ff);
+            padding: 30px;
+            margin: 25px 0;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+            box-shadow: 0 5px 15px rgba(124, 58, 237, 0.1);
+            position: relative;
+        }
+
+        .key-verse {
+            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+            border: 3px solid #059669;
+            box-shadow: 0 8px 25px rgba(5, 150, 105, 0.2);
+        }
+
+        .promise-verse {
+            background: linear-gradient(135deg, #fef7f7, #fed7d7);
+            border: 2px solid #dc2626;
+            box-shadow: 0 5px 15px rgba(220, 38, 38, 0.1);
+        }
+
+        .covenant-verse {
+            background: linear-gradient(135deg, #f0f9ff, #dbeafe);
+            border: 2px solid #2563eb;
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.1);
+        }
+
+        .fire-verse {
+            background: linear-gradient(135deg, #fff8f5, #fef3c7);
+            border: 2px solid #f59e0b;
+            box-shadow: 0 5px 15px rgba(245, 158, 11, 0.1);
+        }
+
+        .verse-french {
+            font-size: 1.15em;
+            margin-bottom: 18px;
+            font-weight: 600;
+            color: #2d3748;
+            line-height: 1.7;
+        }
+
+        .verse-hebrew {
+            font-size: 1.4em;
+            font-family: 'Times New Roman', serif;
+            direction: rtl;
+            text-align: right;
+            margin-bottom: 18px;
+            color: #1e3a8a;
+            font-weight: bold;
+            line-height: 2;
+            background: rgba(30, 58, 138, 0.05);
+            padding: 12px;
+            border-radius: 8px;
+        }
+
+        .verse-transliteration {
+            font-size: 1.05em;
+            font-style: italic;
+            color: #7c3aed;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .verse-reference {
+            font-size: 0.95em;
+            color: #718096;
+            text-align: right;
+            font-weight: bold;
+        }
+
+        .content-text {
+            font-size: 1.1em;
+            line-height: 1.8;
+            text-align: justify;
+            color: #2d3748;
+            margin-bottom: 20px;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            color: #1e3a8a;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #7c3aed 0%, transparent 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: white;
+        }
+
+        .themes-table {
+            width: 100%;
+            margin: 30px 0;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .themes-table th {
+            background: linear-gradient(135deg, #1e3a8a, #7c3aed);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-size: 1.1em;
+        }
+
+        .themes-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 1.05em;
+        }
+
+        .themes-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .themes-table tr:hover {
+            background: #f8f6ff;
+        }
+
+        .conclusion-box {
+            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+            padding: 35px;
+            border-radius: 15px;
+            border: 3px solid #059669;
+            margin-top: 45px;
+            box-shadow: 0 10px 25px rgba(5, 150, 105, 0.2);
+            position: relative;
+        }
+
+        .conclusion-box::before {
+            content: "✨";
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2em;
+            opacity: 0.4;
+        }
+
+        .video-section {
+            background: linear-gradient(135deg, #f8f6ff, #f0e6ff);
+            padding: 35px;
+            border-radius: 20px;
+            border: 3px solid #1e3a8a;
+            margin: 45px 0;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(30, 58, 138, 0.15);
+        }
+
+        .video-title {
+            font-size: 1.7em;
+            color: #1e3a8a;
+            margin-bottom: 25px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 850px;
+            margin: 0 auto;
+            padding-bottom: 56.25%;
+            height: 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            border: 4px solid #7c3aed;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-description {
+            margin-top: 25px;
+            font-size: 1.1em;
+            color: #4a5568;
+            font-style: italic;
+            line-height: 1.7;
+        }
+
+        .footer {
+            margin-top: 50px;
+            padding: 35px;
+            border-top: 3px solid #059669;
+            text-align: center;
+            background: linear-gradient(135deg, #f8f6ff, #f0e6ff);
+            border-radius: 15px;
+        }
+
+        .footer-author {
+            font-size: 1.2em;
+            color: #1e3a8a;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .footer-hebrew {
+            font-size: 1.4em;
+            color: #059669;
+            font-family: 'Times New Roman', serif;
+            margin: 0 8px;
+            font-weight: bold;
+        }
+
+        .footer-subtitle {
+            font-size: 1.05em;
+            color: #718096;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 20px;
+            }
+            
+            .header {
+                margin: -20px -20px 30px -20px;
+            }
+            
+            .title {
+                font-size: 2.2em;
+            }
+            
+            .hebrew-title {
+                font-size: 2.8em;
+            }
+            
+            .verse-hebrew {
+                font-size: 1.2em;
+            }
+
+            .themes-table {
+                font-size: 0.9em;
+            }
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #1e3a8a, #7c3aed, #059669);
+            transform-origin: left;
+            transform: scaleX(0);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-indicator"></div>
+    
+    <div class="container">
+        <div class="header">
+            <div class="hebrew-title">וַיֵּרָא</div>
+            <h1 class="title">Paracha Vayéra</h1>
+            <p class="subtitle">"Le Regard de Dieu et la Promesse de Vie"</p>
+            <p class="reference">Genèse / Bereshit 18:1 – 22:24</p>
+        </div>
+
+        <div class="intro-box">
+            <h2 class="section-title">
+                <span class="section-icon">🕊️</span>
+                Introduction : La rencontre du Divin et de l'humain
+            </h2>
+            
+            <div class="verse-container key-verse">
+                <p class="verse-french">"L'Éternel lui apparut dans les plaines de Mamré."</p>
+                
+                <p class="verse-hebrew">וַיֵּרָא אֵלָיו יְיָ בְּאֵלֹנֵי מַמְרֵא</p>
+                
+                <p class="verse-transliteration"><em>Vayéra élav Adonaï bé-éloné Mamré</em></p>
+                
+                <p class="verse-reference">(Genèse 18:1)</p>
+            </div>
+
+            <p class="content-text">
+                La Paracha <span class="emphasis">Vayéra</span> s'ouvre sur une scène d'une intensité spirituelle rare : Abraham, convalescent après sa circoncision, reçoit la visite de trois mystérieux voyageurs. Dans la <span class="highlight">tradition séfarade</span>, cette apparition marque la révélation d'une proximité divine : D.ieu se manifeste à Abraham non dans la majesté, mais dans la chaleur de l'hospitalité.
+            </p>
+            <br>
+            <p class="content-text">
+                Le patriarche, symbole de <em>ḥessed</em> (bonté), interrompt son dialogue avec D.ieu pour accueillir des étrangers — enseignant ainsi que la <span class="emphasis">présence divine se révèle dans l'acte d'accueil et de bienveillance</span>.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🔥</span>
+                L'hospitalité d'Abraham – La foi incarnée dans l'action
+            </h2>
+
+            <p class="content-text">
+                Abraham court à la rencontre des visiteurs, malgré sa douleur physique :
+            </p>
+
+            <div class="verse-container covenant-verse">
+                <p class="verse-french">"Il courut à leur rencontre depuis l'entrée de sa tente."</p>
+                
+                <p class="verse-hebrew">וַיָּרָץ לִקְרָאתָם מִפֶּתַח הָאֹהֶל</p>
+                
+                <p class="verse-transliteration"><em>Vayarats likratam mipétaḥ ha'ohel</em></p>
+                
+                <p class="verse-reference">(Genèse 18:2)</p>
+            </div>
+
+            <p class="content-text">
+                Le <em>Midrash</em> enseigne que ces trois hommes représentent Michaël, Gabriel et Raphaël — trois anges porteurs de mission : annoncer la naissance d'Isaac, détruire Sodome, et guérir Abraham.
+            </p>
+            <br>
+            <p class="content-text">
+                Dans la vision séfarade, cette scène révèle la <span class="highlight">dynamique de la foi vivante</span> : la prière et l'action ne s'opposent pas, elles s'accomplissent ensemble. Celui qui sert D.ieu le fait aussi en servant l'homme.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">😊</span>
+                L'annonce de la naissance – Le rire de Sarah et le mystère de la promesse
+            </h2>
+
+            <p class="content-text">
+                Sarah entend la promesse d'un fils et rit, d'abord d'incrédulité :
+            </p>
+
+            <div class="verse-container promise-verse">
+                <p class="verse-french">"Sarah rit en elle-même, en disant..."</p>
+                
+                <p class="verse-hebrew">וַתִּצְחַק שָׂרָה בְּקִרְבָּהּ לֵאמֹר</p>
+                
+                <p class="verse-transliteration"><em>Vatitsḥak Sarah beqirbah lemor...</em></p>
+                
+                <p class="verse-reference">(Genèse 18:12)</p>
+            </div>
+
+            <p class="content-text">
+                Ce rire devient le nom même du futur fils : <span class="emphasis">יצחק – Yitsḥak</span>, « Il rira ».
+                La promesse divine dépasse les limites biologiques.
+            </p>
+            <br>
+            <p class="content-text">
+                Dans la tradition séfarade, ce passage enseigne la <span class="highlight">joie paradoxale de la foi</span>, qui naît précisément de ce que l'homme croyait impossible.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">⚖️</span>
+                La destruction de Sodome – Justice et compassion
+            </h2>
+
+            <p class="content-text">
+                Lorsque D.ieu révèle à Abraham la décision de détruire Sodome, le patriarche ose plaider avec audace :
+            </p>
+
+            <div class="verse-container fire-verse">
+                <p class="verse-french">"Le juge de toute la terre ne fera-t-il pas justice ?"</p>
+                
+                <p class="verse-hebrew">הֲשֹׁפֵט כָּל הָאָרֶץ לֹא יַעֲשֶׂה מִשְׁפָּט</p>
+                
+                <p class="verse-transliteration"><em>Ha-shofet kol ha'aretz lo ya'aseh mishpat?</em></p>
+                
+                <p class="verse-reference">(Genèse 18:25)</p>
+            </div>
+
+            <p class="content-text">
+                Cette intercession est un sommet spirituel : Abraham, modèle de miséricorde, plaide pour les justes au cœur du mal.
+            </p>
+            <br>
+            <p class="content-text">
+                Dans la lecture séfarade, la foi d'Abraham n'est pas soumission aveugle, mais <span class="highlight">dialogue avec D.ieu</span>, recherche de sens et de justice.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🙏</span>
+                Le sacrifice d'Isaac – La foi éprouvée, la bénédiction révélée
+            </h2>
+
+            <p class="content-text">
+                L'épisode du <em>Akédat Yitsḥak</em> (ligature d'Isaac) conclut la Paracha avec une tension extrême :
+            </p>
+
+            <div class="verse-container covenant-verse">
+                <p class="verse-french">"Ne porte pas la main sur l'enfant..."</p>
+                
+                <p class="verse-hebrew">וַיֹּאמֶר אַל־תִּשְׁלַח יָדְךָ אֶל־הַנַּעַר</p>
+                
+                <p class="verse-transliteration"><em>Vayomer al tishlaḥ yadkha el hana'ar...</em></p>
+                
+                <p class="verse-reference">(Genèse 22:12)</p>
+            </div>
+
+            <p class="content-text">
+                Cette scène devient le symbole de la foi absolue. Mais dans la tradition séfarade, cette foi n'est pas tragédie — elle est <span class="highlight">élévation</span> (<em>aliyah</em>).
+            </p>
+            <br>
+            <p class="content-text">
+                L'épreuve révèle à Abraham que la véritable offrande n'est pas le sang, mais la <span class="emphasis">confiance totale en la Providence</span>.
+            </p>
+
+            <div class="verse-container key-verse" style="margin-top: 25px;">
+                <p class="verse-french">"En ta descendance seront bénies toutes les nations de la terre."</p>
+                
+                <p class="verse-hebrew">וְהִתְבָּרְכוּ בְּזַרְעֲךָ כֹּל גּוֹיֵי הָאָרֶץ</p>
+                
+                <p class="verse-transliteration"><em>Ve-hitbarékhou be-zar'ékha kol goyéi ha-arets</em></p>
+                
+                <p class="verse-reference">(Genèse 22:18)</p>
+            </div>
+        </div>
+
+        <div class="conclusion-box">
+            <h2 class="section-title">
+                <span class="section-icon">✨</span>
+                Conclusion : Voir et être vu
+            </h2>
+            
+            <p class="content-text">
+                « Vayéra » signifie « Il apparut », mais le mot peut aussi se lire <em>« Il vit »</em>.
+                Cette double signification souligne une vérité essentielle : <span class="highlight">voir D.ieu, c'est aussi se laisser voir par Lui</span>.
+            </p>
+            <br>
+            <p class="content-text">
+                Abraham vit la Présence dans la visite, la promesse, la prière, et l'épreuve.
+                Dans chacune de ces étapes, la lumière divine se reflète à travers son regard humain.
+            </p>
+
+            <div class="verse-container key-verse" style="margin-top: 25px;">
+                <p class="verse-french">"D.ieu pourvoira à l'agneau."</p>
+                
+                <p class="verse-hebrew">יִרְאֶה־לוֹ הָאֱלֹהִים הַשֶּׂה</p>
+                
+                <p class="verse-transliteration"><em>Yir'é lo HaElohim ha-seh</em></p>
+                
+                <p class="verse-reference">(Genèse 22:8)</p>
+            </div>
+
+            <p class="content-text" style="margin-top: 20px;">
+                Ainsi se conclut cette Paracha : La vision de D.ieu n'est pas une apparition lointaine, mais une <span class="emphasis">rencontre dans l'action, la compassion et la confiance</span>.
+                Abraham devient, selon la tradition séfarade, <span class="highlight">le miroir de la Présence</span> — celui par qui D.ieu se révèle dans le monde.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">📚</span>
+                Synthèse séfarade
+            </h2>
+
+            <table class="themes-table">
+                <thead>
+                    <tr>
+                        <th>Thème</th>
+                        <th>Enseignement spirituel</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>L'apparition divine</strong></td>
+                        <td>La proximité de D.ieu dans l'hospitalité</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Les trois visiteurs</strong></td>
+                        <td>La foi vivante : unir prière et action</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Le rire de Sarah</strong></td>
+                        <td>La joie paradoxale de l'impossible devenu réel</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sodome et Gomorrhe</strong></td>
+                        <td>Justice divine et plaidoirie humaine</td>
+                    </tr>
+                    <tr>
+                        <td><strong>La ligature d'Isaac</strong></td>
+                        <td>La confiance absolue en la Providence</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="video-section">
+            <h2 class="video-title">
+                🎥 Étude vidéo de la Paracha Vayéra
+            </h2>
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/LwiMlX0fyoo" 
+                    title="Paracha Vayéra - Le Regard de Dieu et la Promesse de Vie"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="video-description">
+                Découvrez cette étude en format vidéo pour approfondir votre compréhension 
+                de la Paracha Vayéra et de ses enseignements sur l'hospitalité, la foi, 
+                la justice divine et le sacrifice d'Isaac.
+            </p>
+        </div>
+
+        <div class="footer">
+            <div class="footer-author">
+                Étude de la Paracha Vayéra par <span class="footer-hebrew">אריאל מרמן</span> (Ariel Mormin)
+            </div>
+            <div class="footer-subtitle">
+                • Voir D.ieu et se laisser voir par Lui •
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Animation de la barre de progression
+        window.addEventListener('scroll', () => {
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            scrollIndicator.style.transform = `scaleX(${scrolled / 100})`;
+        });
+        
+        // Animation d'apparition des sections
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        // Animation pour toutes les sections
+        document.querySelectorAll('.section, .verse-container, .conclusion-box, .video-section, .intro-box').forEach((element) => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(element);
+        });
+
+        // Animation au survol pour les versets
+        document.querySelectorAll('.verse-container').forEach(container => {
+            container.addEventListener('mouseenter', () => {
+                container.style.transform = 'translateY(-2px)';
+                container.style.transition = 'transform 0.3s ease';
+            });
+            
+            container.addEventListener('mouseleave', () => {
+                container.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Animation au survol pour le tableau
+        document.querySelectorAll('.themes-table tr').forEach(row => {
+            row.addEventListener('mouseenter', () => {
+                row.style.transform = 'scale(1.01)';
+                row.style.transition = 'transform 0.3s ease';
+            });
+            
+            row.addEventListener('mouseleave', () => {
+                row.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>

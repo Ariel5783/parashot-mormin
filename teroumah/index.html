@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Paracha Teroumah - Construire un sanctuaire pour la Présence d'Ashem. Le Michkan et la résidence divine. Étude biblique selon la tradition séfarade par Ariel Mormin">
+    <meta name="keywords" content="Paracha Teroumah, Torah, Bible, Exode, tradition séfarade, Michkan, sanctuaire, tabernacle, offrande, Présence divine, étude biblique">
+    <title>Paracha Teroumah - תרומה - Faire résider la Présence d'Ashem</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            background: linear-gradient(135deg, #78350f 0%, #92400e 15%, #a16207 30%, #ca8a04 50%, #eab308 70%, #fbbf24 85%, #fde047 100%);
+            min-height: 100vh;
+            color: #333;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 70% 30%, rgba(250, 204, 21, 0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 30% 70%, rgba(234, 179, 8, 0.25) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #a16207, #eab308);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(234, 179, 8, 0.4);
+            margin-bottom: 20px;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(251, 191, 36, 0.5);
+            background: linear-gradient(135deg, #eab308, #a16207);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #78350f, #92400e, #a16207, #ca8a04, #eab308, #fbbf24, #fde047);
+            margin: -40px -20px 50px -20px;
+            border-radius: 20px 20px 0 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="35" fill="white" opacity="0.1">🕯️</text></svg>') repeat;
+            background-size: 70px 70px;
+            opacity: 0.15;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, transparent 30%, rgba(120, 53, 15, 0.4));
+        }
+
+        .title {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hebrew-title {
+            font-size: 3.2em;
+            color: #fde047;
+            margin-bottom: 15px;
+            font-family: 'Times New Roman', serif;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-size: 1.4em;
+            font-style: italic;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        .reference {
+            font-size: 1.1em;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #a16207, #eab308, #fbbf24);
+            transform-origin: left;
+            transform: scaleX(0);
+            z-index: 1000;
+            transition: transform 0.1s ease;
+        }
+
+        .intro-box {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            padding: 35px;
+            border-radius: 15px;
+            border-left: 6px solid #ca8a04;
+            margin-bottom: 45px;
+            box-shadow: 0 8px 20px rgba(202, 138, 4, 0.2);
+            position: relative;
+        }
+
+        .intro-box::before {
+            content: "🕯️";
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 2em;
+            opacity: 0.3;
+        }
+
+        .section {
+            margin-bottom: 45px;
+            padding: 20px 0;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #78350f;
+            margin-bottom: 25px;
+            font-weight: bold;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border-radius: 10px;
+            border-left: 5px solid #ca8a04;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-icon {
+            font-size: 1.8em;
+            flex-shrink: 0;
+        }
+
+        .content-text {
+            font-size: 1.15em;
+            line-height: 1.8;
+            color: #1f2937;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: #78350f;
+        }
+
+        .verse-container {
+            background: linear-gradient(135deg, #fffbeb, #fef3c7);
+            border: 2px solid #fbbf24;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+            box-shadow: 0 6px 20px rgba(251, 191, 36, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .verse-container:hover {
+            box-shadow: 0 8px 25px rgba(251, 191, 36, 0.25);
+        }
+
+        .verse-french {
+            font-size: 1.25em;
+            font-weight: bold;
+            color: #78350f;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .verse-hebrew {
+            font-size: 1.8em;
+            font-family: 'Times New Roman', serif;
+            direction: rtl;
+            text-align: right;
+            color: #92400e;
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(254, 243, 199, 0.5);
+            border-radius: 8px;
+            line-height: 1.8;
+        }
+
+        .verse-transliteration {
+            font-size: 1.1em;
+            font-style: italic;
+            color: #78350f;
+            margin: 12px 0;
+        }
+
+        .verse-reference {
+            font-size: 0.95em;
+            color: #92400e;
+            font-weight: bold;
+            margin-top: 12px;
+        }
+
+        .sanctuary-verse {
+            border-color: #eab308;
+            background: linear-gradient(135deg, #fef9c3, #fef3c7);
+        }
+
+        .generosity-verse {
+            border-color: #fbbf24;
+            background: linear-gradient(135deg, #fefce8, #fef3c7);
+        }
+
+        .ark-verse {
+            border-color: #f59e0b;
+            background: linear-gradient(135deg, #fffbeb, #fde68a);
+        }
+
+        .menorah-verse {
+            border-color: #d97706;
+            background: linear-gradient(135deg, #fef3c7, #fed7aa);
+        }
+
+        .presence-verse {
+            border-color: #ca8a04;
+            background: linear-gradient(135deg, #fefce8, #fde68a);
+        }
+
+        .conclusion-box {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            padding: 40px;
+            border-radius: 15px;
+            border: 3px solid #eab308;
+            margin-top: 50px;
+            box-shadow: 0 10px 30px rgba(234, 179, 8, 0.3);
+        }
+
+        .video-section {
+            margin: 50px 0;
+            padding: 30px;
+            background: linear-gradient(135deg, #fffbeb, #fef3c7);
+            border-radius: 15px;
+            border: 2px solid #fbbf24;
+        }
+
+        .video-title {
+            font-size: 1.8em;
+            color: #78350f;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-description {
+            margin-top: 20px;
+            font-size: 1.05em;
+            line-height: 1.7;
+            color: #1f2937;
+            text-align: justify;
+        }
+
+        .footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 3px solid #eab308;
+            text-align: center;
+        }
+
+        .footer-author {
+            font-size: 1.2em;
+            color: #78350f;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .footer-hebrew {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.3em;
+            color: #a16207;
+        }
+
+        .footer-subtitle {
+            font-size: 1em;
+            color: #92400e;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+                margin-top: 15px;
+                margin-bottom: 15px;
+            }
+
+            .header {
+                margin: -20px -15px 30px -15px;
+                padding: 25px 15px;
+            }
+
+            .title {
+                font-size: 2em;
+            }
+
+            .hebrew-title {
+                font-size: 2.3em;
+            }
+
+            .subtitle {
+                font-size: 1.1em;
+            }
+
+            .section-title {
+                font-size: 1.3em;
+                padding: 12px 15px;
+            }
+
+            .content-text {
+                font-size: 1.05em;
+            }
+
+            .verse-french {
+                font-size: 1.1em;
+            }
+
+            .verse-hebrew {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-indicator"></div>
+    
+    <div class="container">
+        <a href="https://parashot-mormin.netlify.app/" class="back-button">
+            ← Retour au site principal
+        </a>
+
+        <div class="header">
+            <div class="hebrew-title">תרומה</div>
+            <h1 class="title">Paracha Teroumah</h1>
+            <p class="subtitle">Faire résider la Présence d'Ashem au milieu d'Israël</p>
+            <p class="reference">📜 Chemot (Exode) 25:1 – 27:19</p>
+        </div>
+
+        <div class="intro-box">
+            <h2 style="font-size: 1.4em; color: #78350f; margin-bottom: 20px; font-weight: bold;">
+                🔷 Introduction – Le contexte
+            </h2>
+            
+            <p class="content-text">
+                La Paracha <strong>Teroumah</strong> intervient immédiatement après le don des Dix Paroles 
+                au mont Sinaï et la révélation spectaculaire d'Ashem à tout Israël.
+            </p>
+
+            <p class="content-text">
+                Dans les parachiot précédentes, le peuple a entendu la voix divine. Désormais, 
+                une nouvelle étape commence : <span class="highlight">faire descendre la Présence d'Ashem 
+                dans le monde matériel</span>.
+            </p>
+
+            <p class="content-text">
+                Teroumah signifie littéralement <em>"élévation"</em> ou <em>"offrande prélevée"</em>.<br>
+                Il ne s'agit pas d'un impôt. Il s'agit d'un don volontaire, un acte du cœur.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">📖</span>
+                L'offrande du cœur
+            </h2>
+
+            <p class="content-text">
+                Ashem demande à Moché :
+            </p>
+
+            <div class="verse-container generosity-verse">
+                <p class="verse-french">
+                    "Parle aux enfants d'Israël : qu'ils prélèvent pour Moi une offrande ; 
+                    de tout homme que son cœur rend généreux, vous prendrez Mon offrande."
+                </p>
+                
+                <p class="verse-hebrew">
+                    דַּבֵּר אֶל־בְּנֵי יִשְׂרָאֵל וְיִקְחוּ־לִי תְּרוּמָה מֵאֵת כָּל־אִישׁ אֲשֶׁר יִדְּבֶנּוּ לִבּוֹ תִּקְחוּ אֶת־תְּרוּמָתִי׃
+                </p>
+                
+                <p class="verse-transliteration">
+                    <em>Daber el bné Israël véyik'hou li teroumah, méet kol ish asher yidvenou libo tik'hou et teroumati.</em>
+                </p>
+                
+                <p class="verse-reference">(Chemot 25:2 / Exode 25:2)</p>
+            </div>
+
+            <p class="content-text">
+                Nous entrons ici dans la construction du <strong>Michkan</strong> (Tabernacle), 
+                sanctuaire portatif dans le désert.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">✨</span>
+                1. Le principe fondamental : Ashem réside parmi nous
+            </h2>
+
+            <p class="content-text">
+                Le verset central de la Paracha est :
+            </p>
+
+            <div class="verse-container sanctuary-verse">
+                <p class="verse-french">
+                    "Ils Me feront un sanctuaire, et Je résiderai au milieu d'eux."
+                </p>
+                
+                <p class="verse-hebrew">
+                    וְעָשׂוּ לִי מִקְדָּשׁ וְשָׁכַנְתִּי בְּתוֹכָם׃
+                </p>
+                
+                <p class="verse-transliteration">
+                    <em>Véassou li mikdash véshakhanti betokham.</em>
+                </p>
+                
+                <p class="verse-reference">(Chemot 25:8 / Exode 25:8)</p>
+            </div>
+
+            <p class="content-text">
+                La Torah ne dit pas "en lui" (dans le sanctuaire), mais 
+                <span class="highlight">"au milieu d'eux"</span>.
+            </p>
+
+            <p class="content-text">
+                Selon la tradition séfarade, notamment les commentaires du <strong>Rav Ovadia Yossef</strong> 
+                et des maîtres andalous, le Michkan n'est pas seulement un bâtiment :<br>
+                Il représente <span class="highlight">le cœur de chaque Juif</span>.
+            </p>
+
+            <p class="content-text">
+                Le sanctuaire extérieur n'est qu'un miroir du sanctuaire intérieur.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">💝</span>
+                2. La générosité du cœur – יסוד הנדיבות
+            </h2>
+
+            <p class="content-text">
+                Teroumah enseigne que la relation avec Ashem ne repose pas uniquement sur l'obligation 
+                légale, mais aussi sur la <em>nedivout lev</em> — la générosité du cœur.
+            </p>
+
+            <p class="content-text">
+                Le don est volontaire.
+            </p>
+
+            <p class="content-text">
+                Le Zohar explique que lorsque l'homme donne avec pureté, il élève la matière vers le spirituel.<br>
+                L'or, l'argent, le cuivre deviennent des instruments de sainteté.
+            </p>
+
+            <p class="content-text">
+                Dans la tradition séfarade, on insiste particulièrement sur la 
+                <span class="highlight">tsedaka discrète</span>, faite avec kavana (intention pure), sans orgueil.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🏛️</span>
+                3. Les éléments du Michkan – Symbolisme profond
+            </h2>
+
+            <p class="content-text">
+                La Paracha détaille plusieurs éléments essentiels :
+            </p>
+
+            <p class="content-text" style="font-weight: bold; margin-top: 20px;">
+                📜 L'Arche (Aron Hakodesh)
+            </p>
+
+            <div class="verse-container ark-verse">
+                <p class="verse-french">
+                    "Ils feront une arche en bois d'acacia."
+                </p>
+                
+                <p class="verse-hebrew">
+                    וְעָשׂוּ אֲרוֹן עֲצֵי שִׁטִּים
+                </p>
+                
+                <p class="verse-transliteration">
+                    <em>Véassou aron atsei shitim.</em>
+                </p>
+                
+                <p class="verse-reference">(Chemot 25:10 / Exode 25:10)</p>
+            </div>
+
+            <p class="content-text">
+                L'Arche contient les Tables de la Loi.
+            </p>
+
+            <p class="content-text">
+                Les maîtres séfarades expliquent que l'Arche est en bois recouvert d'or à l'intérieur 
+                et à l'extérieur :<br>
+                ➡️ <span class="highlight">L'homme doit être cohérent intérieurement et extérieurement</span>.
+            </p>
+
+            <p class="content-text" style="font-weight: bold; margin-top: 30px;">
+                🕯️ La Ménorah
+            </p>
+
+            <div class="verse-container menorah-verse">
+                <p class="verse-french">
+                    "Tu feras une Ménorah d'or pur."
+                </p>
+                
+                <p class="verse-hebrew">
+                    וְעָשִׂיתָ מְנֹרַת זָהָב טָהוֹר
+                </p>
+                
+                <p class="verse-transliteration">
+                    <em>Véassita menorat zahav tahor.</em>
+                </p>
+                
+                <p class="verse-reference">(Chemot 25:31 / Exode 25:31)</p>
+            </div>
+
+            <p class="content-text">
+                La Ménorah est façonnée d'un seul bloc d'or.
+            </p>
+
+            <p class="content-text">
+                Elle symbolise <span class="highlight">l'unité du peuple d'Israël</span>.<br>
+                Chaque branche représente une dimension de la sagesse, mais toutes proviennent 
+                d'une seule source.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">📐</span>
+                4. Le rôle de Moché – Le modèle céleste
+            </h2>
+
+            <p class="content-text">
+                Ashem dit à Moché :
+            </p>
+
+            <div class="verse-container presence-verse">
+                <p class="verse-french">
+                    "Selon tout ce que Je te montre, le modèle du Tabernacle..."
+                </p>
+                
+                <p class="verse-transliteration">
+                    <em>Ke'khol asher ani maré otkha et tavnit hamichkan...</em>
+                </p>
+                
+                <p class="verse-reference">(Chemot 25:9 / Exode 25:9)</p>
+            </div>
+
+            <p class="content-text">
+                Le Michkan est construit selon un modèle céleste.
+            </p>
+
+            <p class="content-text">
+                La tradition enseigne qu'il existe un <span class="highlight">sanctuaire céleste 
+                correspondant au sanctuaire terrestre</span>.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🌟</span>
+                5. Lecture séfarade – Dimension spirituelle
+            </h2>
+
+            <p class="content-text">
+                Dans la tradition séfarade :
+            </p>
+
+            <p class="content-text">
+                • Le Michkan représente la <strong>Shekhina</strong> (Présence divine).<br>
+                • La maison juive doit devenir un petit sanctuaire (<em>mikdash me'at</em>).<br>
+                • Le Shabbat est considéré comme le sanctuaire dans le temps.
+            </p>
+
+            <p class="content-text">
+                Le Rav Haïm Ben Attar (<strong>Or HaHaïm</strong>) explique que la générosité 
+                attire la bénédiction.
+            </p>
+
+            <p class="content-text">
+                Plus l'homme élève ce qu'il possède vers Ashem, plus il reçoit de lumière spirituelle.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🌍</span>
+                6. Une lecture contemporaine
+            </h2>
+
+            <p class="content-text">
+                Teroumah nous enseigne :
+            </p>
+
+            <p class="content-text">
+                • La sainteté n'est pas réservée aux miracles.<br>
+                • Elle se construit.<br>
+                • Elle demande engagement, précision, et générosité.
+            </p>
+
+            <p class="content-text">
+                Ashem ne demande pas un palais.<br>
+                Il demande un <span class="highlight">cœur disponible</span>.
+            </p>
+        </div>
+
+        <div class="conclusion-box">
+            <h2 class="section-title" style="background: transparent; border: none; padding: 0; margin-bottom: 20px;">
+                <span class="section-icon">🕊️</span>
+                Conclusion
+            </h2>
+            
+            <p class="content-text">
+                La Paracha Teroumah marque un tournant :
+            </p>
+
+            <p class="content-text">
+                Après la révélation spectaculaire du Sinaï, vient le travail patient de construction.
+            </p>
+
+            <p class="content-text">
+                Ashem ne réside pas dans les cieux lointains.<br>
+                Il réside là où on Lui prépare une place.
+            </p>
+
+            <p class="content-text">
+                Chaque acte de générosité, chaque parole de Torah, chaque Shabbat honoré 
+                transforme notre vie en sanctuaire.
+            </p>
+
+            <p class="content-text" style="margin-top: 25px;">
+                Comme il est écrit :
+            </p>
+
+            <p class="verse-hebrew" style="font-size: 1.5em; text-align: center; background: rgba(254, 243, 199, 0.5); padding: 20px; border-radius: 10px; margin: 20px 0;">
+                וְשָׁכַנְתִּי בְּתוֹכָם
+            </p>
+
+            <p class="content-text" style="text-align: center; font-style: italic; margin-bottom: 25px;">
+                <em>Véshakhanti betokham</em><br>
+                "Je résiderai au milieu d'eux."
+            </p>
+
+            <p class="content-text">
+                Que nous sachions construire, chacun à notre mesure, un Michkan intérieur.
+            </p>
+
+            <p class="content-text" style="text-align: center; font-size: 1.3em; font-weight: bold; color: #78350f; margin-top: 30px;">
+                Shabbat Shalom.
+            </p>
+        </div>
+
+        <div class="video-section">
+            <h2 class="video-title">
+                🎥 Étude vidéo de la Paracha Teroumah
+            </h2>
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/YnmKeHyQTA4" 
+                    title="Paracha Teroumah – Construire un sanctuaire pour la Présence d'Ashem | Étude complète – Tradition séfarade"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="video-description">
+                Découvrez cette étude en format vidéo pour approfondir votre compréhension 
+                de la Paracha Teroumah et de la construction du Michkan. Une exploration du sanctuaire 
+                comme lieu de résidence de la Présence divine, de l'offrande volontaire du cœur, 
+                de la symbolique de l'Arche et de la Ménorah. Une réflexion sur le Michkan comme 
+                sanctuaire intérieur dans la tradition séfarade.
+            </p>
+        </div>
+
+        <div class="footer">
+            <div class="footer-author">
+                Étude de la Paracha Teroumah par <span class="footer-hebrew">אריאל מרמן</span> (Ariel Mormin)
+            </div>
+            <div class="footer-subtitle">
+                • Faire résider la Présence d'Ashem au milieu d'Israël •
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Indicateur de progression de scroll
+        window.addEventListener('scroll', () => {
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            scrollIndicator.style.transform = `scaleX(${scrolled / 100})`;
+        });
+        
+        // Animation d'apparition au scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        // Application de l'animation à tous les éléments
+        document.querySelectorAll('.section, .verse-container, .conclusion-box, .video-section, .intro-box').forEach((element) => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(element);
+        });
+
+        // Effet hover sur les conteneurs de versets
+        document.querySelectorAll('.verse-container').forEach(container => {
+            container.addEventListener('mouseenter', () => {
+                container.style.transform = 'translateY(-2px)';
+                container.style.transition = 'transform 0.3s ease';
+            });
+            
+            container.addEventListener('mouseleave', () => {
+                container.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>

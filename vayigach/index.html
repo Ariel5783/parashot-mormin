@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paracha Vayigach - ויגש - Quand la responsabilité ouvre la voie à la rédemption</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            background: linear-gradient(135deg, #065f46 0%, #059669 50%, #047857 100%);
+            min-height: 100vh;
+            color: #333;
+            position: relative;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #065f46, #059669);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(6, 95, 70, 0.3);
+            margin-bottom: 20px;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(6, 95, 70, 0.4);
+            background: linear-gradient(135deg, #059669, #065f46);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #065f46, #059669);
+            margin: -40px -20px 50px -20px;
+            border-radius: 20px 20px 0 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="40" fill="white" opacity="0.1">🤝</text></svg>') repeat;
+            background-size: 80px 80px;
+            opacity: 0.15;
+        }
+
+        .title {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hebrew-title {
+            font-size: 3.2em;
+            color: #6ee7b7;
+            margin-bottom: 15px;
+            font-family: 'Times New Roman', serif;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-size: 1.4em;
+            font-style: italic;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        .reference {
+            font-size: 1.1em;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #6ee7b7, #10b981);
+            transform-origin: left;
+            transform: scaleX(0);
+            z-index: 1000;
+            transition: transform 0.1s ease;
+        }
+
+        .intro-box {
+            background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+            padding: 35px;
+            border-radius: 15px;
+            border-left: 6px solid #10b981;
+            margin-bottom: 45px;
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.2);
+            position: relative;
+        }
+
+        .intro-box::before {
+            content: "🤝";
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 2em;
+            opacity: 0.3;
+        }
+
+        .section {
+            margin-bottom: 45px;
+            padding: 20px 0;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #065f46;
+            margin-bottom: 25px;
+            font-weight: bold;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+            border-radius: 10px;
+            border-left: 5px solid #059669;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-icon {
+            font-size: 1.3em;
+        }
+
+        .content-text {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            text-align: justify;
+            color: #2d3748;
+            line-height: 1.8;
+        }
+
+        .verse-container {
+            background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+            padding: 30px;
+            margin: 25px 0;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.1);
+            position: relative;
+        }
+
+        .key-verse {
+            background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+            border: 3px solid #10b981;
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+        }
+
+        .yehouda-verse {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border: 2px solid #f59e0b;
+            box-shadow: 0 5px 15px rgba(245, 158, 11, 0.1);
+        }
+
+        .yossef-verse {
+            background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+            border: 2px solid #3b82f6;
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.1);
+        }
+
+        .providence-verse {
+            background: linear-gradient(135deg, #065f46, #059669);
+            border: 2px solid #6ee7b7;
+            box-shadow: 0 5px 15px rgba(110, 231, 183, 0.2);
+            color: white;
+        }
+
+        .providence-verse .verse-french,
+        .providence-verse .verse-hebrew,
+        .providence-verse .verse-transliteration,
+        .providence-verse .verse-reference {
+            color: white;
+        }
+
+        .verse-hebrew {
+            font-size: 1.8em;
+            text-align: right;
+            margin: 20px 0;
+            font-family: 'Times New Roman', serif;
+            color: #065f46;
+            font-weight: bold;
+            direction: rtl;
+            line-height: 1.6;
+        }
+
+        .verse-transliteration {
+            font-size: 1.2em;
+            text-align: left;
+            margin: 15px 0;
+            color: #047857;
+            font-style: italic;
+        }
+
+        .verse-french {
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        .verse-reference {
+            font-size: 1em;
+            color: #6b7280;
+            text-align: center;
+            margin-top: 15px;
+            font-style: italic;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #6ee7b7 0%, #10b981 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 40%;
+            background-position: 0 85%;
+            padding: 2px 0;
+            font-weight: bold;
+        }
+
+        .conclusion-box {
+            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+            padding: 40px;
+            border-radius: 15px;
+            border: 3px solid #10b981;
+            margin-top: 50px;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.2);
+        }
+
+        .themes-list {
+            margin: 25px 0;
+        }
+
+        .themes-list ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .themes-list li {
+            padding: 15px 20px;
+            margin: 12px 0;
+            background: white;
+            border-left: 4px solid #10b981;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(16, 185, 129, 0.1);
+        }
+
+        .themes-list li:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2);
+        }
+
+        .video-section {
+            margin-top: 50px;
+            padding: 40px;
+            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.15);
+        }
+
+        .video-title {
+            font-size: 1.8em;
+            color: #065f46;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-description {
+            font-size: 1.1em;
+            color: #047857;
+            text-align: center;
+            line-height: 1.6;
+            margin-top: 20px;
+        }
+
+        .footer {
+            margin-top: 60px;
+            padding: 30px 0;
+            text-align: center;
+            border-top: 3px solid #10b981;
+            color: #065f46;
+        }
+
+        .footer-author {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .footer-hebrew {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.3em;
+            color: #059669;
+        }
+
+        .footer-subtitle {
+            font-size: 1em;
+            font-style: italic;
+            color: #047857;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            .back-button,
+            .scroll-indicator,
+            .video-section {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2em;
+            }
+            .hebrew-title {
+                font-size: 2.5em;
+            }
+            .subtitle {
+                font-size: 1.1em;
+            }
+            .section-title {
+                font-size: 1.3em;
+            }
+            .verse-hebrew {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-indicator"></div>
+    
+    <div class="container">
+        <a href="../index.html" class="back-button">
+            ← Retour à l'accueil
+        </a>
+
+        <header class="header">
+            <h1 class="hebrew-title">ויגש</h1>
+            <h2 class="title">Paracha Vayigach</h2>
+            <p class="subtitle">Quand la responsabilité ouvre la voie à la rédemption</p>
+            <p class="reference">Beréchit / Genèse 44,18 – 47,27</p>
+        </header>
+
+        <div class="intro-box">
+            <h2 class="section-title" style="background: transparent; border: none; padding: 0; margin-bottom: 20px;">
+                <span class="section-icon">📖</span>
+                Introduction — Le contexte de Vayigach
+            </h2>
+            
+            <p class="content-text">
+                La Paracha Vayigach (בראשית מ״ד, י״ח – מ״ז, כ״ז) s'inscrit au cœur du récit de Yossef et de ses frères. Après des années de séparation, de jalousie et de fautes non réparées, la Torah place Yehouda face à une épreuve décisive : défendre Binyamin, le plus jeune, menacé d'esclavage en Égypte.
+            </p>
+            <br>
+            <p class="content-text">
+                Dans la tradition séfarade, Vayigach n'est pas seulement une scène d'émotion ; elle est un <span class="highlight">tournant spirituel où la teshouva (retour, réparation) devient possible</span>. Le rapprochement de Yehouda — <em>vayigach elav</em> — marque l'instant où la parole responsable précède la réconciliation et permet à la Providence d'agir.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🚶</span>
+                1️⃣ « Vayigach » : s'approcher avec responsabilité
+            </h2>
+
+            <div class="verse-container key-verse">
+                <p class="verse-french">« Alors Yehouda s'approcha de lui et dit : "De grâce, Adonaï…" »</p>
+                
+                <p class="verse-hebrew">וַיִּגַּשׁ אֵלָיו יְהוּדָה וַיֹּאמֶר בִּי אֲדֹנִי</p>
+                
+                <p class="verse-transliteration"><em>Vayigach elav Yehouda vayomer bi Adonaï</em></p>
+                
+                <p class="verse-reference">(Beréchit / Genèse 44,18)</p>
+            </div>
+
+            <p class="content-text">
+                Le verbe וַיִּגַּשׁ (<em>vayigach</em>) signifie « s'approcher », mais les Sages y lisent un triple mouvement : approche pour parler, pour prier et, si nécessaire, pour affronter.
+            </p>
+            <br>
+            <p class="content-text">
+                <strong>Yehouda ne fuit plus.</strong> Il assume sa parole et sa responsabilité envers son père Ya'aqov et envers son frère Binyamin. Selon la tradition séfarade, cette attitude incarne la grandeur de l'homme : <span class="highlight">reconnaître ses fautes passées et agir autrement au moment critique</span>.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">💬</span>
+                2️⃣ Yehouda, la parole réparatrice
+            </h2>
+
+            <p class="content-text">
+                Yehouda propose de se substituer à Binyamin :
+            </p>
+
+            <div class="verse-container yehouda-verse">
+                <p class="verse-french">« Que ton serviteur demeure à la place du jeune garçon… »</p>
+                
+                <p class="verse-hebrew">וְעַתָּה יֵשֶׁב־נָא עַבְדְּךָ תַּחַת הַנַּעַר</p>
+                
+                <p class="verse-transliteration"><em>Ve'ata yeshev-na 'avdekha tahat hana'ar</em></p>
+                
+                <p class="verse-reference">(Beréchit 44,33)</p>
+            </div>
+
+            <p class="content-text">
+                Cette parole répare la faute ancienne de la vente de Yossef, où Yehouda avait déjà joué un rôle clé. La différence est essentielle :
+            </p>
+            <br>
+            <p class="content-text">
+                • <strong>Autrefois</strong>, il avait laissé un frère être vendu<br>
+                • <strong>Aujourd'hui</strong>, il offre sa liberté pour sauver un frère
+            </p>
+            <br>
+            <p class="content-text">
+                Les maîtres séfarades soulignent que <span class="highlight">la teshouva véritable se reconnaît lorsque l'homme se retrouve dans une situation similaire et agit différemment</span>.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">✨</span>
+                3️⃣ La révélation de Yossef et la Providence
+            </h2>
+
+            <p class="content-text">
+                Face à cette transformation, Yossef ne peut plus se contenir :
+            </p>
+
+            <div class="verse-container yossef-verse">
+                <p class="verse-french">« Je suis Yossef. Mon père vit-il encore ? »</p>
+                
+                <p class="verse-hebrew">אֲנִי יוֹסֵף הַעוֹד אָבִי חָי</p>
+                
+                <p class="verse-transliteration"><em>Ani Yossef, ha'od avi 'haï ?</em></p>
+                
+                <p class="verse-reference">(Beréchit 45,3)</p>
+            </div>
+
+            <p class="content-text">
+                La révélation n'est pas une vengeance, mais une lecture spirituelle de l'histoire :
+            </p>
+
+            <div class="verse-container providence-verse">
+                <p class="verse-french">« C'est pour préserver la vie qu'Ashem m'a envoyé devant vous. »</p>
+                
+                <p class="verse-hebrew">כִּי לְמִחְיָה שְׁלָחַנִי אֱלֹהִים לִפְנֵיכֶם</p>
+                
+                <p class="verse-transliteration"><em>Ki lemi'hya shelachani Ashem lifneikhem</em></p>
+                
+                <p class="verse-reference">(Beréchit 45,5)</p>
+            </div>
+
+            <p class="content-text">
+                Dans la tradition séfarade, Yossef incarne la capacité de <span class="highlight">lire les épreuves à la lumière de la Providence</span>. L'homme agit, Ashem dirige l'histoire.
+            </p>
+        </div>
+
+        <div class="conclusion-box">
+            <h2 class="section-title">
+                <span class="section-icon">🌟</span>
+                Conclusion — La réconciliation comme chemin de vie
+            </h2>
+            
+            <p class="content-text">
+                Vayigach enseigne que <span class="highlight">la rédemption commence lorsque l'homme ose s'approcher, parler avec vérité et assumer ses responsabilités</span>.
+            </p>
+            <br>
+            <p class="content-text">
+                Yehouda ouvre la voie par la parole juste, Yossef répond par le pardon éclairé, et Ya'aqov retrouve ses fils dans l'unité.
+            </p>
+
+            <div class="themes-list">
+                <p class="content-text" style="margin-bottom: 20px; font-weight: bold;">
+                    Pour la tradition séfarade, cette Paracha rappelle que :
+                </p>
+                <ul>
+                    <li><strong>Les conflits familiaux et humains ne se résolvent ni par la fuite ni par la domination</strong>, mais par la responsabilité morale, la teshouva et la confiance en Ashem.</li>
+                    <li><strong>Vayigach nous invite à nous approcher</strong> — <em>vayigach</em> — de l'autre avec courage, afin de transformer les fractures du passé en sources de vie et de bénédiction.</li>
+                    <li><strong>La parole vraie et la responsabilité assumée</strong> ouvrent toujours la voie à la réconciliation sous le regard d'Adonaï.</li>
+                </ul>
+            </div>
+
+            <p class="content-text" style="text-align: center; font-size: 1.2em; font-weight: bold; color: #065f46; margin-top: 30px;">
+                L'homme s'approche, Ashem réconcilie.
+            </p>
+        </div>
+
+        <div class="video-section">
+            <h2 class="video-title">
+                🎥 Étude vidéo de la Paracha Vayigach
+            </h2>
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/4yM72F3Esbg" 
+                    title="Paracha Vayigach - Quand la responsabilité ouvre la voie à la rédemption"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="video-description">
+                Découvrez cette étude en format vidéo pour approfondir votre compréhension 
+                de la Paracha Vayigach et de ses enseignements sur la responsabilité, 
+                la teshouva, et la Providence divine qui guide l'histoire vers la réconciliation.
+            </p>
+        </div>
+
+        <div class="footer">
+            <div class="footer-author">
+                Étude de la Paracha Vayigach par <span class="footer-hebrew">אריאל מרמן</span> (Ariel Mormin)
+            </div>
+            <div class="footer-subtitle">
+                • Quand la responsabilité ouvre la voie à la rédemption •
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            scrollIndicator.style.transform = `scaleX(${scrolled / 100})`;
+        });
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        document.querySelectorAll('.section, .verse-container, .conclusion-box, .video-section, .intro-box').forEach((element) => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(element);
+        });
+
+        document.querySelectorAll('.verse-container').forEach(container => {
+            container.addEventListener('mouseenter', () => {
+                container.style.transform = 'translateY(-2px)';
+                container.style.transition = 'transform 0.3s ease';
+            });
+            
+            container.addEventListener('mouseleave', () => {
+                container.style.transform = 'translateY(0)';
+            });
+        });
+
+        document.querySelectorAll('.themes-list li').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.style.transform = 'translateX(5px)';
+                item.style.transition = 'transform 0.3s ease';
+            });
+            
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = 'translateX(0)';
+            });
+        });
+    </script>
+</body>
+</html>

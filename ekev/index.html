@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paracha Ekev - עֵקֶב</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 3px solid #d4af37;
+        }
+
+        .title {
+            font-size: 2.5em;
+            color: #1e3c72;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .hebrew-title {
+            font-size: 3em;
+            color: #d4af37;
+            margin-bottom: 10px;
+            font-family: 'Times New Roman', serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            color: #555;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .context-box {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 5px solid #d4af37;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.4em;
+            color: #1e3c72;
+            margin-bottom: 20px;
+            font-weight: bold;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 10px;
+        }
+
+        .verse-container {
+            background: #fafafa;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border-left: 4px solid #d4af37;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .verse-french {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            font-weight: 500;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        .verse-hebrew {
+            font-size: 1.3em;
+            font-family: 'Times New Roman', serif;
+            direction: rtl;
+            text-align: right;
+            margin-bottom: 15px;
+            color: #1e3c72;
+            font-weight: bold;
+            line-height: 1.8;
+        }
+
+        .verse-transliteration {
+            font-size: 1em;
+            font-style: italic;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .verse-reference {
+            font-size: 0.9em;
+            color: #888;
+            text-align: right;
+            font-weight: bold;
+        }
+
+        .content-text {
+            font-size: 1.1em;
+            line-height: 1.7;
+            text-align: justify;
+            color: #444;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            color: #1e3c72;
+        }
+
+        .conclusion-box {
+            background: linear-gradient(135deg, #fff8dc, #f0e68c);
+            padding: 30px;
+            border-radius: 10px;
+            border: 2px solid #d4af37;
+            margin-top: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .list-item {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .list-item:before {
+            content: "•";
+            color: #d4af37;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1.2em;
+        }
+
+        .footer {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid #d4af37;
+            text-align: center;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 10px;
+            padding: 25px;
+        }
+
+        .footer-author {
+            font-size: 1.1em;
+            color: #1e3c72;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .footer-hebrew {
+            font-size: 1.3em;
+            color: #d4af37;
+            font-family: 'Times New Roman', serif;
+            margin: 0 5px;
+            font-weight: bold;
+        }
+
+        .footer-subtitle {
+            font-size: 1em;
+            color: #666;
+            font-style: italic;
+            margin-top: 8px;
+        }
+
+        .video-section {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid #d4af37;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-title {
+            font-size: 1.6em;
+            color: #1e3c72;
+            margin-bottom: 20px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding-bottom: 56.25%; /* Ratio 16:9 */
+            height: 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            border: 3px solid #d4af37;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-description {
+            margin-top: 20px;
+            font-size: 1.1em;
+            color: #555;
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 20px;
+            }
+            
+            .title {
+                font-size: 2em;
+            }
+            
+            .hebrew-title {
+                font-size: 2.5em;
+            }
+            
+            .verse-hebrew {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="hebrew-title">עֵקֶב</div>
+            <h1 class="title">Paracha Ekev</h1>
+            <p class="subtitle">La bénédiction dans l'obéissance et la fidélité à l'alliance</p>
+        </div>
+
+        <div class="context-box">
+            <p class="content-text">
+                La <span class="emphasis">Paracha Ekev</span> (עֵקֶב) est la troisième section du livre de <span class="emphasis">Devarim (Deutéronome)</span>, couvrant <span class="emphasis">Deutéronome 7:12 à 11:25</span>. Le mot <em>Ekev</em> signifie littéralement « talon », mais il est compris ici comme « en conséquence » ou « si jamais ». Moïse poursuit son grand discours d'adieu, s'adressant à la génération qui s'apprête à entrer en <span class="emphasis">Terre d'Israël</span>.
+            </p>
+            <br>
+            <p class="content-text">
+                Il leur rappelle que <span class="emphasis">la bénédiction et la prospérité dépendent de l'obéissance aux commandements</span> de l'Éternel. Cette paracha relie <span class="emphasis">mémoire du passé</span>, <span class="emphasis">engagement présent</span> et <span class="emphasis">espérance future</span>.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">1. La condition des bénédictions</h2>
+            <p class="content-text">Moïse commence :</p>
+            
+            <div class="verse-container">
+                <p class="verse-french">"Et ce sera, en conséquence (<em>Ekev</em>) que vous écouterez ces ordonnances, les garderez et les mettrez en pratique, l'Éternel ton Dieu gardera pour toi l'alliance et la bienveillance qu'Il a jurée à tes pères."</p>
+                
+                <p class="verse-hebrew">וְהָיָה עֵקֶב תִּשְׁמְעוּן אֵת הַמִּשְׁפָּטִים הָאֵלֶּה וּשְׁמַרְתֶּם וַעֲשִׂיתֶם אֹתָם וְשָׁמַר יְהוָה אֱלֹהֶיךָ לְךָ אֶת הַבְּרִית וְאֶת הַחֶסֶד אֲשֶׁר נִשְׁבַּע לַאֲבֹתֶיךָ</p>
+                
+                <p class="verse-transliteration"><em>Véhaya 'ekev tishméoun et ha-mishpatim ha-éllé, oushmartem va'assitem otam; véshamar Adonaï Elohécha lekha et ha-brit véet ha'hessed acher nishba la-avotekha.</em></p>
+            </div>
+            
+            <p class="content-text">Ici, <span class="emphasis">l'obéissance n'est pas présentée comme une option</span>, mais comme le lien vital entre Israël et D.ieu.</p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">2. Se souvenir du désert</h2>
+            <p class="content-text">Moïse rappelle les quarante années d'errance :</p>
+            
+            <div class="verse-container">
+                <p class="verse-french">"Souviens-toi de tout le chemin que l'Éternel, ton Dieu, t'a fait parcourir pendant ces quarante années dans le désert, afin de t'humilier, de t'éprouver, pour connaître ce qu'il y avait dans ton cœur…"</p>
+                
+                <p class="verse-hebrew">וְזָכַרְתָּ אֶת כָּל הַדֶּרֶךְ אֲשֶׁר הֹולִיכְךָ יְהוָה אֱלֹהֶיךָ זֶה אַרְבָּעִים שָׁנָה בַּמִּדְבָּר לְמַעַן עַנֹּתְךָ לְנַסֹּתְךָ לָדַעַת אֶת אֲשֶׁר בִּלְבָבְךָ</p>
+                
+                <p class="verse-transliteration"><em>Vézakharta et kol ha-dérekh acher holikha Adonaï Elohécha zé arba'im shana ba-midbar, lema'an 'anotekha, lenassotekha, lada'at et asher bilvavekha.</em></p>
+            </div>
+            
+            <p class="content-text">Ces épreuves visaient à enseigner que <span class="emphasis">"l'homme ne vit pas seulement de pain, mais de tout ce qui sort de la bouche de l'Éternel"</span> (Dt 8:3).</p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">3. Mise en garde contre l'orgueil</h2>
+            <p class="content-text">La prospérité en Terre promise pourrait faire oublier D.ieu. Moïse avertit :</p>
+            
+            <div class="verse-container">
+                <p class="verse-french">"Garde-toi de dire en ton cœur : Ma force et la puissance de ma main m'ont acquis ces richesses."</p>
+                
+                <p class="verse-hebrew">הִשָּׁמֶר לְךָ פֶּן תֹּאמַר בִּלְבָבְךָ כֹּחִי וְעֹצֶם יָדִי עָשָׂה לִי אֶת הַחַיִל הַזֶּה</p>
+                
+                <p class="verse-transliteration"><em>Hishamer lekha pen tomar bilvavekha : kokhi véotsem yadi 'assa li et ha'hayil hazé.</em></p>
+            </div>
+            
+            <p class="content-text">La Torah souligne que <span class="emphasis">toute réussite vient de l'alliance divine</span>, et non de la seule habileté humaine.</p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">4. Un pays béni et la victoire promise</h2>
+            <p class="content-text">Moïse décrit la Terre d'Israël : un pays de blé, d'orge, de vignes, de figuiers, de grenadiers, d'huile d'olive et de miel (Dt 8:8).</p>
+            <p class="content-text">Il promet aussi la victoire :</p>
+            
+            <div class="verse-container">
+                <p class="verse-french">"Personne ne pourra tenir devant vous ; l'Éternel, votre Dieu, répandra la crainte et l'effroi de vous sur tout le pays où vous marcherez…"</p>
+                <p class="verse-reference">(Dt 11:25)</p>
+            </div>
+        </div>
+
+        <div class="conclusion-box">
+            <h2 class="section-title">Enseignements essentiels</h2>
+            <p class="content-text">La Paracha Ekev nous rappelle que <span class="emphasis">l'obéissance aux commandements</span> n'est pas un poids mais <span class="emphasis">la condition de la vie, de la bénédiction et de la sécurité</span>.</p>
+            <br>
+            <p class="content-text">Elle enseigne :</p>
+            <br>
+            <div class="list-item"><span class="emphasis">La mémoire</span> : ne jamais oublier l'action de D.ieu dans le passé.</div>
+            <div class="list-item"><span class="emphasis">L'humilité</span> : reconnaître que tout succès est un don divin.</div>
+            <div class="list-item"><span class="emphasis">La fidélité</span> : vivre chaque jour selon la Torah.</div>
+            <br>
+            <p class="content-text">Dans un monde où l'orgueil et l'oubli peuvent facilement s'installer, Ekev nous appelle à <span class="emphasis">ancrer nos pas dans l'alliance</span>, pour marcher en confiance vers notre vocation collective et spirituelle.</p>
+        </div>
+
+        <div class="video-section">
+            <h2 class="video-title">
+                🎥 Étude vidéo de la Paracha Ekev
+            </h2>
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/vmxN4kbM8Rc" 
+                    title="Paracha Ekev - La bénédiction dans l'obéissance et la fidélité à l'alliance"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="video-description">
+                Découvrez cette étude en format vidéo pour approfondir votre compréhension 
+                de la Paracha Ekev et de ses enseignements intemporels.
+            </p>
+        </div>
+
+        <div class="footer">
+            <div class="footer-author">
+                Étude de la Paracha Ekev par <span class="footer-hebrew">אריאל מרמן</span> (Ariel Mormin)
+            </div>
+            <div class="footer-subtitle">
+                • L'écho éternel de l'Alliance dans l'obéissance et la fidélité •
+            </div>
+        </div>
+    </div>
+</body>
+</html>

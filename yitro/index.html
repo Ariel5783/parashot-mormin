@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Paracha Yitro - La révélation et la responsabilité. Le Don de la Torah au Sinaï. Étude biblique selon la tradition séfarade par Ariel Mormin">
+    <meta name="keywords" content="Paracha Yitro, Torah, Bible, Exode, tradition séfarade, Sinaï, Dix Commandements, révélation, Aseret HaDibrot, étude biblique">
+    <title>Paracha Yitro - יתרו - La révélation et la responsabilité</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            background: linear-gradient(135deg, #52525b 0%, #71717a 25%, #a78bfa 50%, #c084fc 75%, #fbbf24 100%);
+            min-height: 100vh;
+            color: #333;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 70% 30%, rgba(167, 139, 250, 0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 30% 70%, rgba(251, 191, 36, 0.25) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #52525b, #a78bfa);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(167, 139, 250, 0.4);
+            margin-bottom: 20px;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(192, 132, 252, 0.5);
+            background: linear-gradient(135deg, #a78bfa, #52525b);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #52525b, #71717a, #a78bfa, #fbbf24);
+            margin: -40px -20px 50px -20px;
+            border-radius: 20px 20px 0 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="35" fill="white" opacity="0.1">⚡</text></svg>') repeat;
+            background-size: 70px 70px;
+            opacity: 0.15;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, transparent 30%, rgba(82, 82, 91, 0.4));
+        }
+
+        .title {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hebrew-title {
+            font-size: 3.2em;
+            color: #fbbf24;
+            margin-bottom: 15px;
+            font-family: 'Times New Roman', serif;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-size: 1.4em;
+            font-style: italic;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        .reference {
+            font-size: 1.1em;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #52525b, #a78bfa, #fbbf24);
+            transform-origin: left;
+            transform: scaleX(0);
+            z-index: 1000;
+            transition: transform 0.1s ease;
+        }
+
+        .intro-box {
+            background: linear-gradient(135deg, #f3e8ff, #e9d5ff);
+            padding: 35px;
+            border-radius: 15px;
+            border-left: 6px solid #a78bfa;
+            margin-bottom: 45px;
+            box-shadow: 0 8px 20px rgba(167, 139, 250, 0.2);
+            position: relative;
+        }
+
+        .intro-box::before {
+            content: "⚡";
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 2em;
+            opacity: 0.3;
+        }
+
+        .section {
+            margin-bottom: 45px;
+            padding: 20px 0;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #52525b;
+            margin-bottom: 25px;
+            font-weight: bold;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #f3e8ff, #e9d5ff);
+            border-radius: 10px;
+            border-left: 5px solid #a78bfa;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-icon {
+            font-size: 1.8em;
+            flex-shrink: 0;
+        }
+
+        .content-text {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            text-align: justify;
+            color: #1f2937;
+        }
+
+        .verse-container {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+            border-left: 5px solid #f59e0b;
+            box-shadow: 0 6px 15px rgba(245, 158, 11, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .verse-container:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
+        }
+
+        .verse-hebrew {
+            font-size: 1.6em;
+            direction: rtl;
+            text-align: right;
+            margin-bottom: 15px;
+            font-family: 'Times New Roman', serif;
+            color: #92400e;
+            font-weight: bold;
+            line-height: 1.8;
+        }
+
+        .verse-transliteration {
+            font-size: 1.15em;
+            font-style: italic;
+            color: #78350f;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .verse-french {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #92400e;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .verse-reference {
+            font-size: 0.95em;
+            color: #78350f;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        /* Variantes de couleur pour les versets */
+        .recognition-verse {
+            background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+            border-left-color: #3b82f6;
+        }
+
+        .recognition-verse .verse-hebrew,
+        .recognition-verse .verse-french {
+            color: #1e40af;
+        }
+
+        .recognition-verse .verse-transliteration,
+        .recognition-verse .verse-reference {
+            color: #1e3a8a;
+        }
+
+        .unity-verse {
+            background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+            border-left-color: #10b981;
+        }
+
+        .unity-verse .verse-hebrew,
+        .unity-verse .verse-french {
+            color: #065f46;
+        }
+
+        .unity-verse .verse-transliteration,
+        .unity-verse .verse-reference {
+            color: #064e3b;
+        }
+
+        .covenant-verse {
+            background: linear-gradient(135deg, #fce7f3, #fbcfe8);
+            border-left-color: #ec4899;
+        }
+
+        .covenant-verse .verse-hebrew,
+        .covenant-verse .verse-french {
+            color: #9f1239;
+        }
+
+        .covenant-verse .verse-transliteration,
+        .covenant-verse .verse-reference {
+            color: #831843;
+        }
+
+        .elevation-verse {
+            background: linear-gradient(135deg, #e0e7ff, #c7d2fe);
+            border-left-color: #6366f1;
+        }
+
+        .elevation-verse .verse-hebrew,
+        .elevation-verse .verse-french {
+            color: #3730a3;
+        }
+
+        .elevation-verse .verse-transliteration,
+        .elevation-verse .verse-reference {
+            color: #312e81;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #fbbf24 0%, #f59e0b 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #78350f;
+        }
+
+        .conclusion-box {
+            background: linear-gradient(135deg, #f3e8ff, #e9d5ff);
+            padding: 40px;
+            border-radius: 15px;
+            border-left: 6px solid #a78bfa;
+            margin-bottom: 45px;
+            box-shadow: 0 8px 20px rgba(167, 139, 250, 0.3);
+        }
+
+        .themes-list {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 25px;
+        }
+
+        .themes-list ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .themes-list li {
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            background: rgba(167, 139, 250, 0.1);
+            border-left: 4px solid #a78bfa;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .themes-list li:hover {
+            transform: translateX(5px);
+            background: rgba(167, 139, 250, 0.2);
+            box-shadow: 0 4px 10px rgba(167, 139, 250, 0.2);
+        }
+
+        .video-section {
+            margin: 50px 0;
+            padding: 40px;
+            background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-title {
+            font-size: 1.8em;
+            color: #52525b;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            margin-bottom: 20px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-description {
+            font-size: 1.05em;
+            color: #4b5563;
+            text-align: center;
+            line-height: 1.6;
+            margin-top: 20px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+            border-top: 2px solid #e5e7eb;
+            color: #6b7280;
+        }
+
+        .footer-author {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .footer-hebrew {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.2em;
+            color: #a78bfa;
+            font-weight: bold;
+        }
+
+        .footer-subtitle {
+            font-size: 0.95em;
+            font-style: italic;
+            color: #9ca3af;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 25px 15px;
+            }
+
+            .title {
+                font-size: 2em;
+            }
+
+            .hebrew-title {
+                font-size: 2.5em;
+            }
+
+            .subtitle {
+                font-size: 1.2em;
+            }
+
+            .section-title {
+                font-size: 1.3em;
+            }
+
+            .verse-hebrew {
+                font-size: 1.4em;
+            }
+
+            .video-section {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-indicator"></div>
+    
+    <div class="container">
+        <a href="https://parashot-mormin.netlify.app" class="back-button">
+            ← Retour à l'index
+        </a>
+
+        <div class="header">
+            <div class="hebrew-title">יתרו</div>
+            <div class="title">Paracha Yitro</div>
+            <div class="subtitle">La révélation et la responsabilité</div>
+            <div class="reference">Chemot (Exode) 18:1 – 20:23</div>
+        </div>
+
+        <div class="intro-box">
+            <h2 style="color: #52525b; font-size: 1.6em; margin-bottom: 20px; font-weight: bold;">
+                ✨ Introduction — Le contexte de la Paracha
+            </h2>
+            
+            <p class="content-text">
+                La Paracha <strong>Yitro</strong> se situe à un moment charnière de la sortie d'Égypte. Après la délivrance miraculeuse, le peuple d'Israël arrive dans le désert du Sinaï. C'est là que se produit l'événement fondateur de toute la Torah : <span class="highlight">le Don de la Torah</span>.
+            </p>
+            
+            <p class="content-text">
+                Fait remarquable, cette paracha porte le nom d'un homme <strong>non israélite</strong>, Yitro, prêtre de Midiane et beau-père de Moché. La tradition séfarade souligne ici un enseignement fondamental : <span class="highlight">la sagesse peut venir de l'extérieur</span>, et la reconnaissance d'Ashem précède parfois l'Alliance elle-même.
+            </p>
+            
+            <p class="content-text">
+                Yitro reconnaît la grandeur d'Ashem, conseille Moché dans l'organisation du peuple, puis assiste spirituellement au moment où Israël reçoit les <strong>Dix Paroles</strong> (<em>Aseret HaDibrot</em>).
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🙏</span>
+                1. Yitro : reconnaissance d'Ashem et sagesse pratique
+            </h2>
+
+            <p class="content-text">
+                Yitro entend parler de tout ce qu'Ashem a accompli pour Israël. Sa réaction est immédiate : reconnaissance, joie et louange.
+            </p>
+
+            <div class="verse-container recognition-verse">
+                <p class="verse-french">« Maintenant je sais qu'Adonaï est plus grand que toutes les puissances. »</p>
+                
+                <p class="verse-hebrew">הָעַתָּה יָדַעְתִּי כִּי־גָדוֹל יְיָ מִכָּל־הָאֱלֹהִים</p>
+                
+                <p class="verse-transliteration"><em>Ha'ata yadati ki gadol Adonaï mikol ha'elohim</em></p>
+                
+                <p class="verse-reference">(Chemot 18:11 / Exode 18:11)</p>
+            </div>
+
+            <p class="content-text">
+                La tradition séfarade insiste sur le verbe <em>yadati</em> — <em>j'ai su</em>. Il ne s'agit pas d'un savoir intellectuel, mais d'une <span class="highlight">connaissance intérieure</span>, née de l'expérience et de l'humilité.
+            </p>
+
+            <p class="content-text">
+                Yitro observe ensuite Moché épuisé par la charge de juger seul le peuple. Il lui propose une organisation structurée, déléguée, humaine.
+            </p>
+
+            <p class="content-text" style="padding: 15px; background: rgba(167, 139, 250, 0.1); border-radius: 8px; border-left: 4px solid #a78bfa; margin-top: 20px;">
+                <strong>➡️ Enseignement :</strong> La Torah n'est pas seulement révélation céleste, elle est aussi <span class="highlight">sagesse d'organisation du monde réel</span>.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">⛰️</span>
+                2. Le Sinaï : une révélation pour tout un peuple
+            </h2>
+
+            <p class="content-text">
+                Contrairement à d'autres révélations adressées à un individu, le Sinaï concerne <strong>tout Israël</strong>, hommes, femmes et enfants.
+            </p>
+
+            <div class="verse-container unity-verse">
+                <p class="verse-french">« Israël campa là, face à la montagne. »</p>
+                
+                <p class="verse-hebrew">וַיִּחַן שָׁם יִשְׂרָאֵל נֶגֶד הָהָר</p>
+                
+                <p class="verse-transliteration"><em>Vayichan sham Israël neged hahar</em></p>
+                
+                <p class="verse-reference">(Chemot 19:2 / Exode 19:2)</p>
+            </div>
+
+            <p class="content-text">
+                Les Sages remarquent l'usage du singulier <em>vayichan</em> : <span class="highlight">Israël campa comme un seul homme, avec un seul cœur</span>.
+            </p>
+
+            <p class="content-text">
+                La tradition séfarade voit dans cette unité la condition indispensable pour recevoir la Torah.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">📜</span>
+                3. Les Dix Paroles : alliance et responsabilité
+            </h2>
+
+            <p class="content-text">
+                Les Dix Commandements ne sont pas seulement des lois, mais des <span class="highlight">paroles vivantes</span>, adressées directement au peuple.
+            </p>
+
+            <div class="verse-container covenant-verse">
+                <p class="verse-french">« Je suis Adonaï ton Ashem, qui t'ai fait sortir du pays d'Égypte. »</p>
+                
+                <p class="verse-hebrew">אָנֹכִי יְיָ אֱלֹהֶיךָ אֲשֶׁר הוֹצֵאתִיךָ מֵאֶרֶץ מִצְרָיִם</p>
+                
+                <p class="verse-transliteration"><em>Anochi Adonaï Elohekha asher hotsetikha me'erets Mitsrayim</em></p>
+                
+                <p class="verse-reference">(Chemot 20:2 / Exode 20:2)</p>
+            </div>
+
+            <p class="content-text">
+                La Torah commence par une relation, non par une obligation. Avant de commander, <strong>Adonaï libère</strong>.
+            </p>
+
+            <p class="content-text">
+                Les commandements se divisent traditionnellement en deux axes : relation à Adonaï, et relation à l'autre.
+            </p>
+
+            <p class="content-text" style="padding: 15px; background: rgba(236, 72, 153, 0.1); border-radius: 8px; border-left: 4px solid #ec4899; margin-top: 20px;">
+                <strong>➡️</strong> La tradition séfarade rappelle que <span class="highlight">servir Adonaï passe nécessairement par le respect de l'humain</span>.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">⚡</span>
+                4. La crainte et la proximité
+            </h2>
+
+            <p class="content-text">
+                Face à la révélation, le peuple éprouve la crainte. Moché rassure Israël :
+            </p>
+
+            <div class="verse-container elevation-verse">
+                <p class="verse-french">« N'ayez pas peur, car c'est pour vous élever qu'Adonaï est venu. »</p>
+                
+                <p class="verse-hebrew">אַל־תִּירָאוּ כִּי לְבַעֲבוּר נַסּוֹת אֶתְכֶם בָּא הָאֱלֹהִים</p>
+                
+                <p class="verse-transliteration"><em>Al tirau, ki leva'avur nasot et'khem ba ha'Elohim</em></p>
+                
+                <p class="verse-reference">(Chemot 20:17 / Exode 20:17)</p>
+            </div>
+
+            <p class="content-text">
+                La crainte n'est pas paralysante : elle est <span class="highlight">élévation morale</span>.
+            </p>
+        </div>
+
+        <div class="conclusion-box">
+            <h2 class="section-title" style="background: transparent; border: none; padding: 0; margin-bottom: 20px;">
+                <span class="section-icon">🕊️</span>
+                Conclusion — Une Torah donnée pour être vécue
+            </h2>
+            
+            <p class="content-text">
+                La Paracha <strong>Yitro</strong> nous enseigne que la Torah naît d'une <span class="highlight">libération</span>, d'une <span class="highlight">écoute humble</span>, parfois venue de l'extérieur, et d'une <span class="highlight">responsabilité collective</span>.
+            </p>
+            
+            <p class="content-text">
+                Recevoir la Torah, ce n'est pas seulement entendre des paroles célestes, c'est accepter d'organiser le monde avec justice, unité et respect.
+            </p>
+
+            <p class="content-text">
+                Dans la tradition séfarade, Yitro incarne cette vérité essentielle : <span class="highlight">La grandeur d'Adonaï se révèle lorsque l'homme sait écouter, transmettre et agir avec sagesse.</span>
+            </p>
+
+            <div class="themes-list">
+                <p class="content-text" style="margin-bottom: 20px; font-weight: bold; text-align: center;">
+                    <strong>Yitro — "יתרו" — Les enseignements fondamentaux</strong>
+                </p>
+                <ul>
+                    <li><strong>La sagesse vient de l'extérieur.</strong> Yitro, non-israélite, reconnaît Ashem et apporte un conseil salvateur à Moché — l'humilité consiste à recevoir la vérité, quelle que soit sa source.</li>
+                    <li><strong>L'organisation comme expression de la Torah.</strong> La délégation et la structure ne sont pas secondaires — elles incarnent la sagesse divine dans le réel, au service du peuple.</li>
+                    <li><strong>L'unité comme condition de la révélation.</strong> Le singulier <em>vayichan</em> enseigne qu'Israël devait être uni, comme un seul cœur, pour recevoir la Torah au Sinaï.</li>
+                    <li><strong>Les Dix Paroles : libération avant obligation.</strong> Avant de commander, Adonaï se présente comme Celui qui libère — la relation précède la Loi, l'amour fonde le commandement.</li>
+                    <li><strong>La crainte comme élévation morale.</strong> La crainte du Sinaï n'est pas terreur, mais conscience de la grandeur — elle élève l'homme plutôt que de le paralyser.</li>
+                </ul>
+            </div>
+
+            <p class="content-text">
+                Que cette paracha nous aide à recevoir la Torah chaque jour — non comme un héritage figé, mais comme une parole vivante, adressée à chacun de nous.
+            </p>
+
+            <p class="content-text" style="text-align: center; font-size: 1.3em; font-weight: bold; color: #52525b; margin-top: 30px;">
+                Shabbat Shalom.
+            </p>
+        </div>
+
+        <div class="video-section">
+            <h2 class="video-title">
+                🎥 Étude vidéo de la Paracha Yitro
+            </h2>
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/h5OofAddrPQ" 
+                    title="Paracha Yitro | Le Don de la Torah au Sinaï | Étude biblique – Tradition séfarade"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="video-description">
+                Découvrez cette étude en format vidéo pour approfondir votre compréhension 
+                de la Paracha Yitro et du Don de la Torah au mont Sinaï. Une exploration 
+                de la reconnaissance d'Ashem par Yitro, de l'organisation du peuple, 
+                de l'unité nécessaire à la révélation, et des Dix Paroles comme fondement 
+                de l'Alliance. Une réflexion sur la Torah comme parole vivante 
+                dans la tradition séfarade.
+            </p>
+        </div>
+
+        <div class="footer">
+            <div class="footer-author">
+                Étude de la Paracha Yitro par <span class="footer-hebrew">אריאל מרמן</span> (Ariel Mormin)
+            </div>
+            <div class="footer-subtitle">
+                • La révélation au Sinaï et la responsabilité de recevoir la Torah •
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Indicateur de progression de scroll
+        window.addEventListener('scroll', () => {
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            scrollIndicator.style.transform = `scaleX(${scrolled / 100})`;
+        });
+        
+        // Animation d'apparition au scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        // Application de l'animation à tous les éléments
+        document.querySelectorAll('.section, .verse-container, .conclusion-box, .video-section, .intro-box').forEach((element) => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(element);
+        });
+
+        // Effet hover sur les conteneurs de versets
+        document.querySelectorAll('.verse-container').forEach(container => {
+            container.addEventListener('mouseenter', () => {
+                container.style.transform = 'translateY(-2px)';
+                container.style.transition = 'transform 0.3s ease';
+            });
+            
+            container.addEventListener('mouseleave', () => {
+                container.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Effet hover sur les éléments de la liste thématique
+        document.querySelectorAll('.themes-list li').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.style.transform = 'translateX(5px)';
+                item.style.transition = 'transform 0.3s ease';
+            });
+            
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = 'translateX(0)';
+            });
+        });
+    </script>
+</body>
+</html>

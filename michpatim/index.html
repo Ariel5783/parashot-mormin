@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Paracha Michpatim - La justice comme prolongement de la Révélation. Les lois et jugements après le Sinaï. Étude biblique selon la tradition séfarade par Ariel Mormin">
+    <meta name="keywords" content="Paracha Michpatim, Torah, Bible, Exode, tradition séfarade, justice, lois, michpatim, droits, responsabilité, étude biblique">
+    <title>Paracha Michpatim - משפטים - La justice comme prolongement de la Révélation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            background: linear-gradient(135deg, #78350f 0%, #92400e 25%, #b45309 50%, #d97706 75%, #f59e0b 100%);
+            min-height: 100vh;
+            color: #333;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 70% 30%, rgba(217, 119, 6, 0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 30% 70%, rgba(180, 83, 9, 0.25) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #78350f, #d97706);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(217, 119, 6, 0.4);
+            margin-bottom: 20px;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.5);
+            background: linear-gradient(135deg, #d97706, #78350f);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #78350f, #92400e, #b45309, #d97706, #f59e0b);
+            margin: -40px -20px 50px -20px;
+            border-radius: 20px 20px 0 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="35" fill="white" opacity="0.1">⚖️</text></svg>') repeat;
+            background-size: 70px 70px;
+            opacity: 0.15;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, transparent 30%, rgba(120, 53, 15, 0.4));
+        }
+
+        .title {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hebrew-title {
+            font-size: 3.2em;
+            color: #fbbf24;
+            margin-bottom: 15px;
+            font-family: 'Times New Roman', serif;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-size: 1.4em;
+            font-style: italic;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        .reference {
+            font-size: 1.1em;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #78350f, #d97706, #f59e0b);
+            transform-origin: left;
+            transform: scaleX(0);
+            z-index: 1000;
+            transition: transform 0.1s ease;
+        }
+
+        .intro-box {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            padding: 35px;
+            border-radius: 15px;
+            border-left: 6px solid #d97706;
+            margin-bottom: 45px;
+            box-shadow: 0 8px 20px rgba(217, 119, 6, 0.2);
+            position: relative;
+        }
+
+        .intro-box::before {
+            content: "⚖️";
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 2em;
+            opacity: 0.3;
+        }
+
+        .section {
+            margin-bottom: 45px;
+            padding: 20px 0;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #78350f;
+            margin-bottom: 25px;
+            font-weight: bold;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border-radius: 10px;
+            border-left: 5px solid #d97706;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-icon {
+            font-size: 1.8em;
+            flex-shrink: 0;
+        }
+
+        .content-text {
+            font-size: 1.15em;
+            line-height: 1.8;
+            color: #1f2937;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: #78350f;
+        }
+
+        .verse-container {
+            background: linear-gradient(135deg, #fffbeb, #fef3c7);
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+            border-left: 5px solid #d97706;
+            box-shadow: 0 6px 15px rgba(217, 119, 6, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .verse-container:hover {
+            box-shadow: 0 10px 25px rgba(217, 119, 6, 0.25);
+        }
+
+        .verse-french {
+            font-size: 1.3em;
+            color: #78350f;
+            font-weight: bold;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .verse-hebrew {
+            font-size: 1.5em;
+            color: #92400e;
+            margin-bottom: 12px;
+            font-family: 'Times New Roman', serif;
+            direction: rtl;
+            text-align: right;
+            line-height: 1.8;
+        }
+
+        .verse-transliteration {
+            font-size: 1.1em;
+            color: #b45309;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .verse-reference {
+            font-size: 0.95em;
+            color: #78350f;
+            text-align: right;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .justice-verse {
+            border-left-color: #b45309;
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+        }
+
+        .covenant-verse {
+            border-left-color: #d97706;
+            background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+        }
+
+        .protection-verse {
+            border-left-color: #f59e0b;
+            background: linear-gradient(135deg, #fef9c3 0%, #fef3c7 100%);
+        }
+
+        .conclusion-box {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            padding: 40px;
+            border-radius: 15px;
+            border-left: 6px solid #d97706;
+            margin: 50px 0;
+            box-shadow: 0 10px 30px rgba(217, 119, 6, 0.2);
+        }
+
+        .themes-list {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+        }
+
+        .themes-list ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .themes-list li {
+            padding: 15px;
+            margin: 12px 0;
+            background: linear-gradient(135deg, #fffbeb, #fef3c7);
+            border-left: 4px solid #d97706;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .themes-list li:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(217, 119, 6, 0.2);
+        }
+
+        .video-section {
+            margin: 50px 0;
+            padding: 40px;
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(217, 119, 6, 0.2);
+        }
+
+        .video-title {
+            font-size: 1.8em;
+            color: #78350f;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            margin-bottom: 20px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-description {
+            font-size: 1.1em;
+            line-height: 1.7;
+            color: #78350f;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .footer {
+            margin-top: 60px;
+            padding: 30px;
+            background: linear-gradient(135deg, #78350f, #d97706);
+            border-radius: 12px;
+            text-align: center;
+            color: white;
+        }
+
+        .footer-author {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .footer-hebrew {
+            font-size: 1.3em;
+            font-family: 'Times New Roman', serif;
+            color: #fbbf24;
+        }
+
+        .footer-subtitle {
+            font-size: 1em;
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            
+            .video-section,
+            .scroll-indicator,
+            .back-button {
+                display: none;
+            }
+            
+            .container {
+                box-shadow: none;
+                margin: 0;
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+                margin: 15px;
+            }
+            
+            .header {
+                margin: -20px -15px 30px -15px;
+                padding: 30px 15px;
+            }
+            
+            .title {
+                font-size: 2em;
+            }
+            
+            .hebrew-title {
+                font-size: 2.5em;
+            }
+            
+            .subtitle {
+                font-size: 1.2em;
+            }
+            
+            .section-title {
+                font-size: 1.3em;
+            }
+            
+            .content-text {
+                font-size: 1.05em;
+            }
+            
+            .verse-french {
+                font-size: 1.15em;
+            }
+            
+            .verse-hebrew {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-indicator"></div>
+    
+    <div class="container">
+        <a href="https://parashot-mormin.netlify.app/" class="back-button">
+            ← Retour aux Parashot
+        </a>
+
+        <header class="header">
+            <div class="hebrew-title">מִשְׁפָּטִים</div>
+            <h1 class="title">Paracha Michpatim</h1>
+            <p class="subtitle">La justice comme prolongement de la Révélation</p>
+            <p class="reference">Chemot / Exode 21,1 – 24,18</p>
+        </header>
+
+        <div class="intro-box">
+            <h2 style="font-size: 1.4em; color: #78350f; margin-bottom: 20px; font-weight: bold;">
+                Introduction — Le contexte de la Paracha
+            </h2>
+            
+            <p class="content-text">
+                La <strong>Paracha Michpatim</strong> (מִשְׁפָּטִים), située en <strong>Chemot / Exode 21,1 – 24,18</strong>, 
+                s'inscrit immédiatement après le don des <strong>Dix Paroles</strong> au mont Sinaï.
+            </p>
+            
+            <p class="content-text">
+                Après la théophanie, le tonnerre et le feu, la Torah descend volontairement dans le quotidien 
+                concret de la vie humaine.
+            </p>
+
+            <p class="content-text">
+                Le mot <em>Michpatim</em> signifie <span class="highlight">lois</span>, 
+                <span class="highlight">jugements</span>, mais plus profondément 
+                <span class="highlight">cadres de justice organisant la société</span>.
+            </p>
+
+            <p class="content-text">
+                La tradition séfarade souligne que ces lois ne sont pas secondaires ou purement sociales : 
+                elles sont <span class="highlight">le prolongement direct de la Révélation</span>. 
+                Servir <strong>Hachem</strong> ne se limite pas au rituel ; cela se manifeste dans la manière 
+                de traiter autrui, le faible, l'étranger, le travailleur.
+            </p>
+
+            <p class="content-text">
+                La Torah enseigne ainsi que la sainteté se vit <span class="highlight">dans la rue, le tribunal, 
+                la maison et le marché</span>.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">⚖️</span>
+                1. La loi au service de la dignité humaine
+            </h2>
+
+            <p class="content-text">
+                La paracha s'ouvre sur une formulation frappante :
+            </p>
+
+            <div class="verse-container justice-verse">
+                <p class="verse-french">« Voici les lois que tu placeras devant eux. »</p>
+                
+                <p class="verse-hebrew">וְאֵלֶּה הַמִּשְׁפָּטִים אֲשֶׁר תָּשִׂים לִפְנֵיהֶם</p>
+                
+                <p class="verse-transliteration"><em>Ve-élé ha-michpatim asher tassim lifnéhem</em></p>
+                
+                <p class="verse-reference">(Chemot 21:1 / Exode 21:1)</p>
+            </div>
+
+            <p class="content-text">
+                Rachi, suivi par la tradition séfarade, explique : <em>"Lifnéhem"</em> – 
+                <span class="highlight">comme une table dressée</span>, claire et accessible.
+            </p>
+
+            <p class="content-text">
+                La justice d'Adonaï ne doit jamais être obscure ni réservée à une élite.
+            </p>
+
+            <p class="content-text">
+                Les lois concernant l'ouvrier, l'esclave hébreu, les dommages corporels ou matériels 
+                montrent une exigence centrale : <span class="highlight">aucune personne n'est réductible 
+                à un objet</span>.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🔄</span>
+                2. Responsabilité et réparation
+            </h2>
+
+            <p class="content-text">
+                Michpatim insiste moins sur la punition que sur la <span class="highlight">responsabilité</span> 
+                et la <span class="highlight">réparation</span>.
+            </p>
+
+            <div class="verse-container covenant-verse">
+                <p class="verse-french">« Œil pour œil »</p>
+                
+                <p class="verse-hebrew">עַיִן תַּחַת עַיִן</p>
+                
+                <p class="verse-transliteration"><em>Ayin taḥat ayin</em></p>
+                
+                <p class="verse-reference">(Chemot 21:24 / Exode 21:24)</p>
+            </div>
+
+            <p class="content-text">
+                La tradition rabbinique séfarade enseigne unanimement qu'il ne s'agit pas de vengeance physique, 
+                mais d'une <span class="highlight">évaluation équitable du préjudice</span>.
+            </p>
+
+            <p class="content-text">
+                La Torah impose une justice mesurée, humaine, proportionnée.
+            </p>
+
+            <p class="content-text" style="padding: 15px; background: rgba(217, 119, 6, 0.1); border-radius: 8px; border-left: 4px solid #d97706; margin-top: 20px;">
+                <strong>➡️</strong> La réparation devient un acte spirituel : réparer le tort, 
+                c'est <span class="highlight">restaurer l'ordre voulu par Hachem</span>.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🤲</span>
+                3. La protection du faible : cœur de la Torah
+            </h2>
+
+            <p class="content-text">
+                La Paracha consacre un espace majeur à la veuve, à l'orphelin, à l'étranger et au pauvre :
+            </p>
+
+            <div class="verse-container protection-verse">
+                <p class="verse-french">« Tu n'opprimeras ni la veuve ni l'orphelin. »</p>
+                
+                <p class="verse-hebrew">כָּל־אַלְמָנָה וְיָתוֹם לֹא תְעַנּוּן</p>
+                
+                <p class="verse-transliteration"><em>Kol almana vé-yatôm lo te'anoun</em></p>
+                
+                <p class="verse-reference">(Chemot 22:21 / Exode 22:21)</p>
+            </div>
+
+            <p class="content-text">
+                Et plus loin :
+            </p>
+
+            <div class="verse-container protection-verse">
+                <p class="verse-french">« Tu n'opprimeras pas l'étranger. »</p>
+                
+                <p class="verse-hebrew">וְגֵר לֹא תִלְחָץ</p>
+                
+                <p class="verse-transliteration"><em>Vé-guer lo tilḥats</em></p>
+                
+                <p class="verse-reference">(Chemot 22:20 / Exode 22:20)</p>
+            </div>
+
+            <p class="content-text">
+                La tradition séfarade rappelle que l'étranger est celui 
+                <span class="highlight">dont la voix est fragile</span>.
+            </p>
+
+            <p class="content-text">
+                Adonaï se présente ici comme <span class="highlight">le garant direct de sa protection</span>.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">💡</span>
+                4. Justice sociale et conscience spirituelle
+            </h2>
+
+            <p class="content-text">
+                Michpatim lie justice sociale et conscience religieuse :
+            </p>
+
+            <div class="verse-container justice-verse">
+                <p class="verse-french">« Éloigne-toi de la parole mensongère. »</p>
+                
+                <p class="verse-hebrew">מִדְּבַר־שֶׁקֶר תִּרְחָק</p>
+                
+                <p class="verse-transliteration"><em>Midvar sheker tirḥaq</em></p>
+                
+                <p class="verse-reference">(Chemot 23:7 / Exode 23:7)</p>
+            </div>
+
+            <p class="content-text">
+                La Torah n'ordonne pas seulement de ne pas mentir, mais de 
+                <span class="highlight">s'éloigner activement</span> du mensonge.
+            </p>
+
+            <p class="content-text">
+                Dans la pensée séfarade, cela signifie : ne pas manipuler la loi, ne pas détourner 
+                la vérité même subtilement.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🤝</span>
+                5. L'alliance scellée dans l'engagement
+            </h2>
+
+            <p class="content-text">
+                La paracha s'achève par un moment fondateur :
+            </p>
+
+            <div class="verse-container covenant-verse">
+                <p class="verse-french">« Nous ferons et nous écouterons. »</p>
+                
+                <p class="verse-hebrew">נַעֲשֶׂה וְנִשְׁמָע</p>
+                
+                <p class="verse-transliteration"><em>Na'assé vé-nishma</em></p>
+                
+                <p class="verse-reference">(Chemot 24:7 / Exode 24:7)</p>
+            </div>
+
+            <p class="content-text">
+                Israël accepte la Torah <span class="highlight">avant même d'en maîtriser toute la compréhension</span>.
+            </p>
+
+            <p class="content-text">
+                La tradition séfarade y voit la maturité spirituelle : agir avec confiance, puis approfondir.
+            </p>
+        </div>
+
+        <div class="conclusion-box">
+            <h2 class="section-title" style="background: transparent; border: none; padding: 0; margin-bottom: 20px;">
+                <span class="section-icon">🕊️</span>
+                Conclusion — Une Torah qui se vit
+            </h2>
+            
+            <p class="content-text">
+                La Paracha Michpatim enseigne que la proximité avec <strong>Hachem</strong> ne se mesure pas 
+                uniquement dans la prière ou l'étude, mais dans <span class="highlight">la justice quotidienne</span>.
+            </p>
+
+            <div class="themes-list">
+                <p class="content-text" style="margin-bottom: 20px; font-weight: bold; text-align: center;">
+                    <strong>Observer la Torah, c'est :</strong>
+                </p>
+                <ul>
+                    <li><strong>Payer justement</strong> – Respecter le travail d'autrui et rémunérer équitablement</li>
+                    <li><strong>Parler vrai</strong> – S'éloigner activement du mensonge et de la manipulation</li>
+                    <li><strong>Protéger le faible</strong> – Défendre la veuve, l'orphelin et l'étranger</li>
+                    <li><strong>Réparer les fautes</strong> – Restaurer l'ordre par la responsabilité et la réparation</li>
+                    <li><strong>Instaurer une société où la loi élève l'homme</strong> – Faire de la justice le prolongement de la Révélation</li>
+                </ul>
+            </div>
+            
+            <p class="content-text">
+                Michpatim nous rappelle que la sainteté commence 
+                <span class="highlight">là où l'humain est respecté</span>.
+            </p>
+            
+            <p class="content-text">
+                La Révélation du Sinaï ne s'est pas arrêtée au sommet de la montagne : 
+                elle descend dans chaque acte de justice accompli au nom d'Adonaï.
+            </p>
+
+            <p class="content-text" style="text-align: center; font-size: 1.3em; font-weight: bold; color: #78350f; margin-top: 30px;">
+                Shabbat Shalom.
+            </p>
+        </div>
+
+        <div class="video-section">
+            <h2 class="video-title">
+                🎥 Étude vidéo de la Paracha Michpatim
+            </h2>
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/9VfnkeNRO_A" 
+                    title="Paracha Michpatim | La justice selon la Torah | Étude biblique – Tradition séfarade"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="video-description">
+                Découvrez cette étude en format vidéo pour approfondir votre compréhension 
+                de la Paracha Michpatim et des lois qui suivent la Révélation du Sinaï. 
+                Une exploration de la justice comme prolongement de la Torah, de la protection 
+                des plus vulnérables, de la responsabilité et de la réparation. 
+                Une réflexion sur la Torah comme parole vivante dans la tradition séfarade.
+            </p>
+        </div>
+
+        <div class="footer">
+            <div class="footer-author">
+                Étude de la Paracha Michpatim par <span class="footer-hebrew">אריאל מרמן</span> (Ariel Mormin)
+            </div>
+            <div class="footer-subtitle">
+                • La justice comme prolongement de la Révélation •
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Indicateur de progression de scroll
+        window.addEventListener('scroll', () => {
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            scrollIndicator.style.transform = `scaleX(${scrolled / 100})`;
+        });
+        
+        // Animation d'apparition au scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        // Application de l'animation à tous les éléments
+        document.querySelectorAll('.section, .verse-container, .conclusion-box, .video-section, .intro-box').forEach((element) => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(element);
+        });
+
+        // Effet hover sur les conteneurs de versets
+        document.querySelectorAll('.verse-container').forEach(container => {
+            container.addEventListener('mouseenter', () => {
+                container.style.transform = 'translateY(-2px)';
+                container.style.transition = 'transform 0.3s ease';
+            });
+            
+            container.addEventListener('mouseleave', () => {
+                container.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Effet hover sur les éléments de la liste thématique
+        document.querySelectorAll('.themes-list li').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.style.transform = 'translateX(5px)';
+                item.style.transition = 'transform 0.3s ease';
+            });
+            
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = 'translateX(0)';
+            });
+        });
+    </script>
+</body>
+</html>

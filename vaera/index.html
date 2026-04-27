@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paracha Vaéra - וָאֵרָא - La fidélité d'Adonaï face à l'épreuve de la délivrance</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            background: linear-gradient(135deg, #450a0a 0%, #7f1d1d 30%, #991b1b 60%, #b91c1c 100%);
+            min-height: 100vh;
+            color: #333;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(185, 28, 28, 0.3) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+            border-radius: 20px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #7f1d1d, #991b1b);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(127, 29, 29, 0.4);
+            margin-bottom: 20px;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(127, 29, 29, 0.5);
+            background: linear-gradient(135deg, #991b1b, #7f1d1d);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #7f1d1d, #991b1b, #b91c1c);
+            margin: -40px -20px 50px -20px;
+            border-radius: 20px 20px 0 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="35" fill="white" opacity="0.1">💧</text></svg>') repeat;
+            background-size: 70px 70px;
+            opacity: 0.12;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, transparent 30%, rgba(127, 29, 29, 0.3));
+        }
+
+        .title {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        .hebrew-title {
+            font-size: 3.2em;
+            color: #fbbf24;
+            margin-bottom: 15px;
+            font-family: 'Times New Roman', serif;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-size: 1.4em;
+            font-style: italic;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        .reference {
+            font-size: 1.1em;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #991b1b, #dc2626);
+            transform-origin: left;
+            transform: scaleX(0);
+            z-index: 1000;
+            transition: transform 0.1s ease;
+        }
+
+        .intro-box {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            padding: 35px;
+            border-radius: 15px;
+            border-left: 6px solid #991b1b;
+            margin-bottom: 45px;
+            box-shadow: 0 8px 20px rgba(153, 27, 27, 0.2);
+            position: relative;
+        }
+
+        .intro-box::before {
+            content: "📖";
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 2em;
+            opacity: 0.3;
+        }
+
+        .section {
+            margin-bottom: 45px;
+            padding: 20px 0;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #7f1d1d;
+            margin-bottom: 25px;
+            font-weight: bold;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border-radius: 10px;
+            border-left: 5px solid #991b1b;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-icon {
+            font-size: 1.3em;
+        }
+
+        .content-text {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            text-align: justify;
+            color: #2d3748;
+            line-height: 1.8;
+        }
+
+        .verse-container {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            padding: 30px;
+            margin: 25px 0;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+            box-shadow: 0 5px 15px rgba(153, 27, 27, 0.15);
+            position: relative;
+        }
+
+        .verse-container::before {
+            content: '✨';
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 1.5em;
+            opacity: 0.4;
+        }
+
+        .revelation-verse {
+            background: linear-gradient(135deg, #fef3c7, #fcd34d);
+            border-left: 5px solid #d97706;
+        }
+
+        .revelation-verse::before {
+            content: '👑';
+        }
+
+        .deliverance-verse {
+            background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+            border-left: 5px solid #3b82f6;
+        }
+
+        .deliverance-verse::before {
+            content: '🕊️';
+        }
+
+        .plagues-verse {
+            background: linear-gradient(135deg, #fee2e2, #fecaca);
+            border-left: 5px solid #dc2626;
+        }
+
+        .plagues-verse::before {
+            content: '⚡';
+        }
+
+        .mission-verse {
+            background: linear-gradient(135deg, #f3e8ff, #e9d5ff);
+            border-left: 5px solid #9333ea;
+        }
+
+        .mission-verse::before {
+            content: '📜';
+        }
+
+        .verse-french {
+            font-size: 1.25em;
+            font-weight: bold;
+            color: #1e293b;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .verse-hebrew {
+            font-size: 1.8em;
+            direction: rtl;
+            color: #7f1d1d;
+            margin: 20px 0;
+            font-family: 'Times New Roman', serif;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .verse-transliteration {
+            font-size: 1.1em;
+            color: #475569;
+            margin: 15px 0;
+            font-style: italic;
+            text-align: center;
+        }
+
+        .verse-reference {
+            font-size: 0.95em;
+            color: #64748b;
+            text-align: right;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #fde68a 0%, #fcd34d 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: #7f1d1d;
+        }
+
+        .conclusion-box {
+            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+            padding: 35px;
+            border-radius: 15px;
+            border-left: 6px solid #16a34a;
+            margin-bottom: 45px;
+            box-shadow: 0 8px 20px rgba(22, 163, 74, 0.2);
+            position: relative;
+        }
+
+        .conclusion-box::before {
+            content: "🌟";
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 2em;
+            opacity: 0.3;
+        }
+
+        .themes-list {
+            margin: 25px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 10px;
+        }
+
+        .themes-list ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .themes-list li {
+            padding: 15px;
+            margin: 10px 0;
+            background: white;
+            border-left: 4px solid #16a34a;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .themes-list li:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 10px rgba(22, 163, 74, 0.2);
+        }
+
+        .video-section {
+            margin: 50px 0;
+            padding: 30px;
+            background: linear-gradient(135deg, #f9fafb, #f3f4f6);
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-title {
+            font-size: 1.8em;
+            color: #7f1d1d;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-description {
+            margin-top: 20px;
+            font-size: 1.05em;
+            color: #475569;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .footer {
+            margin-top: 50px;
+            padding: 30px;
+            background: linear-gradient(135deg, #1e293b, #334155);
+            border-radius: 15px;
+            text-align: center;
+            color: white;
+        }
+
+        .footer-author {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .footer-hebrew {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.3em;
+            color: #fbbf24;
+            font-weight: bold;
+        }
+
+        .footer-subtitle {
+            font-size: 1em;
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+
+            .title {
+                font-size: 2em;
+            }
+
+            .hebrew-title {
+                font-size: 2.5em;
+            }
+
+            .subtitle {
+                font-size: 1.1em;
+            }
+
+            .section-title {
+                font-size: 1.3em;
+            }
+
+            .content-text {
+                font-size: 1em;
+            }
+
+            .verse-hebrew {
+                font-size: 1.5em;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+
+            .back-button,
+            .video-section,
+            .scroll-indicator {
+                display: none;
+            }
+
+            .verse-container,
+            .intro-box,
+            .conclusion-box {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-indicator"></div>
+    
+    <div class="container">
+        <a href="https://parashot-mormin.netlify.app/" class="back-button">
+            ← Retour aux Parachot
+        </a>
+
+        <div class="header">
+            <h1 class="hebrew-title">וָאֵרָא</h1>
+            <h1 class="title">Paracha Vaéra</h1>
+            <p class="subtitle">La fidélité d'Adonaï face à l'épreuve de la délivrance</p>
+            <p class="reference">Chémot (Exode) 6,2 – 9,35</p>
+        </div>
+
+        <div class="intro-box">
+            <h2 class="section-title" style="background: transparent; border: none; padding: 0; margin-bottom: 20px;">
+                <span class="section-icon">🌅</span>
+                Introduction – Le contexte de la Paracha
+            </h2>
+            
+            <p class="content-text">
+                La Paracha <strong>Vaéra</strong> (Exode / Chemot 6,2 – 9,35) s'inscrit dans un moment de tension extrême pour les Bné Israël. Après un premier échec apparent de Moché face à Pharaon, la servitude s'est aggravée et le peuple est découragé. Moché lui-même traverse une crise intérieure : comment comprendre la mission confiée par Adonaï alors que la souffrance augmente ?
+            </p>
+            <br>
+            <p class="content-text">
+                C'est précisément dans ce contexte que la Paracha s'ouvre sur une révélation fondamentale : <span class="highlight">Adonaï se manifeste comme Celui qui accomplit Ses promesses</span>, même lorsque l'histoire semble les contredire. Selon la tradition séfarade, Vaéra n'est pas seulement le récit des plaies ; c'est une leçon de confiance, de fidélité à la parole divine et de dévoilement progressif du Nom d'Adonaï dans l'histoire humaine.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">👑</span>
+                1️⃣ "Je suis Adonaï" – La révélation du Nom
+            </h2>
+
+            <p class="content-text">
+                La Paracha s'ouvre par une parole solennelle :
+            </p>
+
+            <div class="verse-container revelation-verse">
+                <p class="verse-french">« Adonaï parla à Moché et lui dit : Je suis Adonaï. »</p>
+                
+                <p class="verse-hebrew">וַיְדַבֵּר אֲדֹנָי אֶל־מֹשֶׁה וַיֹּאמֶר אֵלָיו אֲנִי אֲדֹנָי</p>
+                
+                <p class="verse-transliteration"><em>Vayedaber Adonaï el-Moché vayomer elav : Ani Adonaï</em></p>
+                
+                <p class="verse-reference">(Chemot 6,2)</p>
+            </div>
+
+            <p class="content-text">
+                Adonaï rappelle à Moché que les patriarches ont connu la promesse, mais que lui va assister à son accomplissement. La tradition séfarade souligne que le Nom <strong>Adonaï</strong> renvoie ici à la fidélité et à la miséricorde : <span class="highlight">même lorsque le peuple n'a plus la force d'espérer, Adonaï demeure fidèle à Son alliance</span>.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🕊️</span>
+                2️⃣ Les quatre expressions de délivrance
+            </h2>
+
+            <p class="content-text">
+                Adonaï annonce la sortie d'Égypte par quatre verbes, qui fondent dans la tradition juive les quatre coupes du soir de Pessa'h :
+            </p>
+
+            <div class="verse-container deliverance-verse">
+                <p class="verse-french">« Je vous ferai sortir… Je vous délivrerai… Je vous rachèterai… Je vous prendrai pour Moi comme peuple. »</p>
+                
+                <p class="verse-hebrew">וְהוֹצֵאתִי… וְהִצַּלְתִּי… וְגָאַלְתִּי… וְלָקַחְתִּי</p>
+                
+                <p class="verse-transliteration"><em>Ve-hotseti… ve-hitsalti… ve-ga'alti… ve-lakaḥti</em></p>
+                
+                <p class="verse-reference">(Chemot 6,6–7)</p>
+            </div>
+
+            <p class="content-text">
+                Selon les maîtres séfarades, ces étapes montrent que <span class="highlight">la délivrance n'est pas instantanée : elle est un processus</span>, à la fois matériel, spirituel et identitaire. Être libéré ne suffit pas ; il faut devenir un peuple lié à Adonaï.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">⚡</span>
+                3️⃣ L'endurcissement de Pharaon et la pédagogie des plaies
+            </h2>
+
+            <p class="content-text">
+                Les plaies d'Égypte ne sont pas de simples châtiments. Elles constituent une révélation progressive de la souveraineté d'Adonaï sur la création et sur l'histoire.
+            </p>
+
+            <div class="verse-container plagues-verse">
+                <p class="verse-french">« Afin que tu saches que Je suis Adonaï. »</p>
+                
+                <p class="verse-hebrew">לְמַעַן תֵּדַע כִּי אֲנִי אֲדֹנָי</p>
+                
+                <p class="verse-transliteration"><em>Lema'an teda ki Ani Adonaï</em></p>
+                
+                <p class="verse-reference">(Chemot 7,5)</p>
+            </div>
+
+            <p class="content-text">
+                Chaque plaie démonte une illusion de pouvoir : le Nil, la magie, la force politique, l'ordre naturel. La tradition séfarade insiste sur un point : <span class="highlight">Pharaon s'endurcit parce qu'il refuse d'apprendre</span>. L'homme qui nie Adonaï finit par s'enfermer lui-même dans son refus.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">📜</span>
+                4️⃣ Moché, Aharon et la parole libératrice
+            </h2>
+
+            <p class="content-text">
+                Moché doute de sa capacité à parler ; Aharon devient sa voix. Cette complémentarité enseigne que la délivrance passe par la parole juste : une parole portée par la vérité, mais transmise avec sagesse.
+            </p>
+            <br>
+            <div class="verse-container mission-verse">
+                <p class="content-text">
+                    La tradition séfarade voit ici un enseignement majeur : <span class="highlight">Adonaï n'attend pas la perfection humaine, mais la fidélité et l'engagement</span>. Même une parole fragile peut devenir instrument de délivrance lorsqu'elle est portée par la mission divine.
+                </p>
+            </div>
+        </div>
+
+        <div class="conclusion-box">
+            <h2 class="section-title" style="background: transparent; border: none; padding: 0; margin-bottom: 20px;">
+                <span class="section-icon">🌟</span>
+                Conclusion – De la servitude à la confiance
+            </h2>
+            
+            <p class="content-text">
+                La Paracha Vaéra nous enseigne que <span class="highlight">la délivrance commence souvent dans l'obscurité</span>. Lorsque le peuple n'écoute plus « par découragement et par dure servitude », Adonaï agit néanmoins. La sortie d'Égypte n'est pas seulement un événement historique ; elle est un modèle spirituel intemporel.
+            </p>
+            <br>
+            <p class="content-text">
+                Vaéra nous invite à reconnaître Adonaï même lorsque les signes tardent à apparaître, à comprendre que la promesse précède toujours l'accomplissement, et que la fidélité d'Adonaï ne dépend jamais des fluctuations humaines.
+            </p>
+
+            <div class="themes-list">
+                <p class="content-text" style="margin-bottom: 20px; font-weight: bold; text-align: center;">
+                    <strong>Vaéra — "Je me suis fait connaître"</strong>
+                </p>
+                <ul>
+                    <li><strong>La révélation du Nom.</strong> Adonaï se révèle dans Sa fidélité et Sa miséricorde, accomplissant Ses promesses même quand tout semble perdu.</li>
+                    <li><strong>Le processus de la délivrance.</strong> La libération n'est pas instantanée mais progressive : matérielle, spirituelle, identitaire.</li>
+                    <li><strong>La pédagogie des plaies.</strong> Chaque plaie démonte une illusion de pouvoir et révèle la souveraineté divine sur toute la création.</li>
+                    <li><strong>La parole fragile mais fidèle.</strong> Adonaï n'attend pas la perfection humaine, mais l'engagement et la fidélité à Sa mission.</li>
+                    <li><strong>La confiance dans l'épreuve.</strong> La délivrance commence dans l'obscurité, lorsque la promesse divine précède encore son accomplissement visible.</li>
+                </ul>
+            </div>
+
+            <p class="content-text">
+                Dans la tradition séfarade, cette Paracha est un appel à la patience, à la confiance et à la transmission : <strong>raconter la délivrance, c'est déjà y participer</strong>.
+            </p>
+
+            <p class="content-text" style="text-align: center; font-size: 1.3em; font-weight: bold; color: #7f1d1d; margin-top: 30px;">
+                Shabbat Chalom.
+            </p>
+        </div>
+
+        <div class="video-section">
+            <h2 class="video-title">
+                🎥 Étude vidéo de la Paracha Vaéra
+            </h2>
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/Tv7nx-4mAx4" 
+                    title="Paracha Vaéra – La fidélité d'Adonaï au cœur de l'épreuve"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="video-description">
+                Découvrez cette étude en format vidéo pour approfondir votre compréhension 
+                de la Paracha Vaéra et de ses enseignements sur la révélation divine, les quatre 
+                expressions de délivrance, la pédagogie des plaies d'Égypte et la fidélité d'Adonaï 
+                face à l'épreuve.
+            </p>
+        </div>
+
+        <div class="footer">
+            <div class="footer-author">
+                Étude de la Paracha Vaéra par <span class="footer-hebrew">אריאל מרמן</span> (Ariel Mormin)
+            </div>
+            <div class="footer-subtitle">
+                • La fidélité d'Adonaï face à l'épreuve de la délivrance •
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            scrollIndicator.style.transform = `scaleX(${scrolled / 100})`;
+        });
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        document.querySelectorAll('.section, .verse-container, .conclusion-box, .video-section, .intro-box').forEach((element) => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(element);
+        });
+
+        document.querySelectorAll('.verse-container').forEach(container => {
+            container.addEventListener('mouseenter', () => {
+                container.style.transform = 'translateY(-2px)';
+                container.style.transition = 'transform 0.3s ease';
+            });
+            
+            container.addEventListener('mouseleave', () => {
+                container.style.transform = 'translateY(0)';
+            });
+        });
+
+        document.querySelectorAll('.themes-list li').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.style.transform = 'translateX(5px)';
+                item.style.transition = 'transform 0.3s ease';
+            });
+            
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = 'translateX(0)';
+            });
+        });
+    </script>
+</body>
+</html>

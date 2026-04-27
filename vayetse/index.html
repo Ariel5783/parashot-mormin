@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paracha Vayetsé - וַיֵּצֵא - L'échelle du monde : lorsqu'Achem ouvre une porte dans la nuit</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            background: linear-gradient(135deg, #1e1b4b 0%, #4c1d95 50%, #064e3b 100%);
+            min-height: 100vh;
+            color: #333;
+            position: relative;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #1e1b4b, #4c1d95);
+            margin: -40px -20px 50px -20px;
+            border-radius: 20px 20px 0 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="40" fill="white" opacity="0.1">🪜</text></svg>') repeat;
+            background-size: 80px 80px;
+            opacity: 0.15;
+        }
+
+        .title {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hebrew-title {
+            font-size: 3.2em;
+            color: #10b981;
+            margin-bottom: 15px;
+            font-family: 'Times New Roman', serif;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-size: 1.4em;
+            font-style: italic;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        .reference {
+            font-size: 1.1em;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .intro-box {
+            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+            padding: 35px;
+            border-radius: 15px;
+            border-left: 6px solid #10b981;
+            margin-bottom: 45px;
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.2);
+            position: relative;
+        }
+
+        .intro-box::before {
+            content: "🕯️";
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 2em;
+            opacity: 0.3;
+        }
+
+        .section {
+            margin-bottom: 45px;
+            padding: 20px 0;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #1e1b4b;
+            margin-bottom: 25px;
+            font-weight: bold;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #f7fafc, #edf2f7);
+            border-radius: 10px;
+            border-left: 5px solid #4c1d95;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-icon {
+            font-size: 1.3em;
+        }
+
+        .verse-container {
+            background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+            padding: 30px;
+            margin: 25px 0;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+            box-shadow: 0 5px 15px rgba(76, 29, 149, 0.1);
+            position: relative;
+        }
+
+        .key-verse {
+            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+            border: 3px solid #10b981;
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.2);
+        }
+
+        .promise-verse {
+            background: linear-gradient(135deg, #eff6ff, #dbeafe);
+            border: 2px solid #3b82f6;
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.1);
+        }
+
+        .night-verse {
+            background: linear-gradient(135deg, #1e1b4b, #4c1d95);
+            border: 2px solid #6366f1;
+            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.2);
+            color: white;
+        }
+
+        .night-verse .verse-french,
+        .night-verse .verse-hebrew,
+        .night-verse .verse-transliteration {
+            color: white;
+        }
+
+        .night-verse .verse-hebrew {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .ladder-verse {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border: 2px solid #f59e0b;
+            box-shadow: 0 5px 15px rgba(245, 158, 11, 0.1);
+        }
+
+        .verse-french {
+            font-size: 1.15em;
+            margin-bottom: 18px;
+            font-weight: 600;
+            color: #2d3748;
+            line-height: 1.7;
+        }
+
+        .verse-hebrew {
+            font-size: 1.4em;
+            font-family: 'Times New Roman', serif;
+            direction: rtl;
+            text-align: right;
+            margin-bottom: 18px;
+            color: #1e1b4b;
+            font-weight: bold;
+            line-height: 2;
+            background: rgba(30, 27, 75, 0.05);
+            padding: 12px;
+            border-radius: 8px;
+        }
+
+        .verse-transliteration {
+            font-size: 1.05em;
+            font-style: italic;
+            color: #4c1d95;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .verse-reference {
+            font-size: 0.95em;
+            color: #718096;
+            text-align: right;
+            font-weight: bold;
+        }
+
+        .content-text {
+            font-size: 1.1em;
+            line-height: 1.8;
+            text-align: justify;
+            color: #2d3748;
+            margin-bottom: 20px;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            color: #1e1b4b;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #4c1d95 0%, transparent 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: white;
+        }
+
+        .themes-list {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 25px 0;
+        }
+
+        .themes-list ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .themes-list li {
+            padding: 15px;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+            border-radius: 8px;
+            border-left: 4px solid #4c1d95;
+        }
+
+        .themes-list li:hover {
+            transform: translateX(5px);
+            transition: transform 0.3s ease;
+        }
+
+        .conclusion-box {
+            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+            padding: 35px;
+            border-radius: 15px;
+            border: 3px solid #10b981;
+            margin-top: 45px;
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.2);
+            position: relative;
+        }
+
+        .conclusion-box::before {
+            content: "⭐";
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2em;
+            opacity: 0.4;
+        }
+
+        .video-section {
+            background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+            padding: 35px;
+            border-radius: 20px;
+            border: 3px solid #1e1b4b;
+            margin: 45px 0;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(30, 27, 75, 0.15);
+        }
+
+        .video-title {
+            font-size: 1.7em;
+            color: #1e1b4b;
+            margin-bottom: 25px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 850px;
+            margin: 0 auto;
+            padding-bottom: 56.25%;
+            height: 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            border: 4px solid #4c1d95;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-description {
+            margin-top: 25px;
+            font-size: 1.1em;
+            color: #4a5568;
+            font-style: italic;
+            line-height: 1.7;
+        }
+
+        .footer {
+            margin-top: 50px;
+            padding: 35px;
+            border-top: 3px solid #10b981;
+            text-align: center;
+            background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+            border-radius: 15px;
+        }
+
+        .footer-author {
+            font-size: 1.2em;
+            color: #1e1b4b;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .footer-hebrew {
+            font-size: 1.4em;
+            color: #10b981;
+            font-family: 'Times New Roman', serif;
+            margin: 0 8px;
+            font-weight: bold;
+        }
+
+        .footer-subtitle {
+            font-size: 1.05em;
+            color: #718096;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 20px;
+            }
+            
+            .header {
+                margin: -20px -20px 30px -20px;
+            }
+            
+            .title {
+                font-size: 2.2em;
+            }
+            
+            .hebrew-title {
+                font-size: 2.8em;
+            }
+            
+            .verse-hebrew {
+                font-size: 1.2em;
+            }
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #1e1b4b, #4c1d95, #10b981);
+            transform-origin: left;
+            transform: scaleX(0);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-indicator"></div>
+    
+    <div class="container">
+        <div class="header">
+            <div class="hebrew-title">וַיֵּצֵא</div>
+            <h1 class="title">Paracha Vayetsé</h1>
+            <p class="subtitle">"L'échelle du monde : lorsqu'Achem ouvre une porte dans la nuit"</p>
+            <p class="reference">Genèse / Beréchit 28:10 – 32:3</p>
+        </div>
+
+        <div class="intro-box">
+            <h2 class="section-title">
+                <span class="section-icon">🕯️</span>
+                Introduction : Contexte général
+            </h2>
+            
+            <p class="content-text">
+                La paracha <span class="emphasis">Vayetsé</span> s'ouvre sur un départ : <span class="highlight">Ya'aqov quitte Beer-Shéva et marche vers 'Haran</span>, fuyant la colère d'Ésav et obéissant aux injonctions parentales de ne pas épouser une femme cananéenne.
+            </p>
+            <br>
+            <p class="content-text">
+                Il quitte un foyer d'étude, un environnement spirituel protégé, et entre dans l'inconnu : la solitude, la nuit, l'exil, l'insécurité.
+            </p>
+            <br>
+            <p class="content-text">
+                Dans la tradition séfarade, Vayetsé est souvent lue comme la <span class="emphasis">paracha de la construction intérieure</span> : c'est là que Ya'aqov forge son identité, passe de disciple à patriarche, et expérimente l'alliance directe avec Achem.
+            </p>
+            <br>
+            <p class="content-text">
+                La vision de l'échelle — un moment fondateur — n'est pas seulement une révélation mystique : c'est le signe que <span class="highlight">même dans l'exil, Achem accompagne l'homme, marche avec lui, et transforme la fuite en destin.</span>
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🪜</span>
+                La vision de l'échelle : rencontre entre Ciel et Terre
+            </h2>
+
+            <p class="content-text">
+                La scène centrale de la paracha est le rêve de Ya'aqov :
+            </p>
+
+            <div class="verse-container key-verse">
+                <p class="verse-french">"Il rêva : voici une échelle posée sur la terre, dont le sommet atteignait les cieux, et des anges d'Achem montaient et descendaient dessus."</p>
+                
+                <p class="verse-hebrew">וַיַּחֲלֹם וְהִנֵּה סֻלָּם מֻצָּב אַרְצָה וְרֹאשׁוֹ מַגִּיעַ הַשָּׁמָיְמָה וְהִנֵּה מַלְאֲכֵי אֱלֹהִים עֹלִים וְיֹרְדִים בּוֹ׃</p>
+                
+                <p class="verse-transliteration"><em>Vayakhalom, vehinè soulam moutsav artsa, verochô magui'a ha-chamayma ; vehinè malakhé Élohim 'olim veyordim bo.</em></p>
+                
+                <p class="verse-reference">(Beréchit 28:12)</p>
+            </div>
+
+            <p class="content-text">
+                Dans l'interprétation séfarade traditionnelle :
+            </p>
+
+            <div class="themes-list">
+                <ul>
+                    <li>• Les anges qui <strong>montent</strong> sont ceux qui accompagnaient Ya'aqov en Terre Sainte.</li>
+                    <li>• Les anges qui <strong>descendent</strong> sont ceux assignés à l'exil.</li>
+                    <li>• C'est le signe que <strong>même dans l'exil, Achem ne l'abandonne pas.</strong></li>
+                </ul>
+            </div>
+
+            <p class="content-text">
+                Ya'aqov reçoit alors une promesse décisive :
+            </p>
+
+            <div class="verse-container promise-verse">
+                <p class="verse-french">"Et voici, Moi-même Je suis avec toi, et Je te garderai partout où tu iras…"</p>
+                
+                <p class="verse-hebrew">וְהִנֵּה אָנֹכִי עִמָּךְ וּשְׁמַרְתִּיךָ בְּכֹל אֲשֶׁר תֵּלֵךְ...</p>
+                
+                <p class="verse-transliteration"><em>Vehinè Anokhi 'immakh, ouchmartikha bekhol acher télékh…</em></p>
+                
+                <p class="verse-reference">(Beréchit 28:15)</p>
+            </div>
+
+            <p class="content-text">
+                Ici, Achem annonce à Ya'aqov — et à chaque Juif en exil — une vérité majeure : <span class="highlight">Tu n'es jamais seul dans ta marche.</span>
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">⚖️</span>
+                L'épreuve chez Lavan : construire malgré l'injustice
+            </h2>
+
+            <p class="content-text">
+                Ya'aqov arrive chez Lavan, où commencent <span class="emphasis">20 ans d'épreuves</span> :
+            </p>
+
+            <div class="themes-list">
+                <ul>
+                    <li>• Tromperie lors du mariage (Léa à la place de Rahel)</li>
+                    <li>• Exploitation dans le travail</li>
+                    <li>• Décisions changeantes</li>
+                    <li>• Salaires modifiés dix fois (parfois cent fois selon la tradition)</li>
+                </ul>
+            </div>
+
+            <p class="content-text">
+                Pourtant, Ya'aqov <span class="highlight">construit sa famille, accumule une bénédiction, et ne fléchit pas.</span>
+            </p>
+
+            <div class="verse-container ladder-verse">
+                <p class="verse-french">"Votre père s'est joué de moi et a changé mon salaire dix fois…"</p>
+                
+                <p class="verse-hebrew">וַאֲבִיכֶן הֵתֵל בִּי וְהֶחֱלִף אֶת־מַשְׂכֻּרְתִּי עֲשֶׂרֶת מֹנִים...</p>
+                
+                <p class="verse-transliteration"><em>Va-avikhèm hétil bi, vehekhlif et maskourtî 'aseret monim…</em></p>
+                
+                <p class="verse-reference">(Beréchit 31:7)</p>
+            </div>
+
+            <p class="content-text">
+                Le mérite de Ya'aqov n'est pas seulement d'avoir résisté, mais d'avoir <span class="emphasis">construit dans l'injustice</span>. Chez Lavan, Ya'aqov devient le modèle du Juif qui <span class="highlight">préserve son intégrité dans un environnement hostile.</span>
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">👶</span>
+                Naissance des tribus : le fondement du futur peuple
+            </h2>
+
+            <p class="content-text">
+                Dans ces années difficiles naissent :
+            </p>
+
+            <div class="themes-list">
+                <ul>
+                    <li>• <strong>Les douze tribus d'Israël</strong></li>
+                    <li>• Les fondements de la nation</li>
+                    <li>• Les futures familles qui donneront le Kohen, le Lévi, la royauté, les prophètes</li>
+                </ul>
+            </div>
+
+            <p class="content-text">
+                Vayetsé nous enseigne : <span class="highlight">Même lorsqu'on croit être dans une période de perte, Achem peut être en train de préparer une fondation.</span>
+            </p>
+            <br>
+            <p class="content-text">
+                La tradition séfarade insiste sur le fait que les tribus naissent non pas dans la tranquillité, mais dans la complexité familiale. C'est une leçon de vie : <span class="emphasis">Achem bâtit souvent sur des chemins humains imparfaits.</span>
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🚶</span>
+                La fuite finale : Ya'aqov s'arrache pour retrouver sa mission
+            </h2>
+
+            <p class="content-text">
+                Après avoir servi fidèlement, Ya'aqov comprend que le temps est venu de partir.
+            </p>
+
+            <div class="verse-container promise-verse">
+                <p class="verse-french">"Retourne vers la terre de tes pères et vers ta patrie, et Je serai avec toi."</p>
+                
+                <p class="verse-hebrew">שׁוּב אֶל־אֶרֶץ אֲבֹתֶיךָ וּלְמוֹלַדְתֶּךָ וְאֶהְיֶה עִמָּךְ׃</p>
+                
+                <p class="verse-transliteration"><em>Shouv el-erets avotékha oul-moladétkha, ve-eheyé 'immakh.</em></p>
+                
+                <p class="verse-reference">(Beréchit 31:3)</p>
+            </div>
+
+            <p class="content-text">
+                La paracha commence par <span class="emphasis">« Va-yetsé » – Il sort</span>, et se termine par <span class="emphasis">« Va-yachov » – Il retourne</span>. Toute une vie se déploie entre ces deux verbes.
+            </p>
+        </div>
+
+        <div class="conclusion-box">
+            <h2 class="section-title">
+                <span class="section-icon">✨</span>
+                Conclusion : Vayetsé, la paracha de ceux qui marchent dans la nuit
+            </h2>
+            
+            <p class="content-text">
+                Vayetsé nous apprend :
+            </p>
+
+            <div class="themes-list">
+                <ul>
+                    <li>• que <strong>l'exil n'est jamais une absence d'Achem</strong> ;</li>
+                    <li>• que la nuit peut devenir un lieu de révélation ;</li>
+                    <li>• que les injustices n'empêchent pas la construction ;</li>
+                    <li>• que les fondations les plus profondes naissent souvent dans des périodes difficiles ;</li>
+                    <li>• qu'Achem marche avec nous, même lorsque nous croyons être seuls.</li>
+                </ul>
+            </div>
+
+            <p class="content-text">
+                Cette paracha est un message d'encouragement pour chaque personne qui :
+            </p>
+
+            <div class="themes-list">
+                <ul>
+                    <li>• change de vie</li>
+                    <li>• quitte un lieu familier</li>
+                    <li>• traverse une période difficile</li>
+                    <li>• doit se reconstruire</li>
+                    <li>• fait face à des relations complexes</li>
+                    <li>• porte un avenir qu'elle ne voit pas encore</li>
+                </ul>
+            </div>
+
+            <p class="content-text">
+                C'est le message personnel d'Achem à Ya'aqov — et à nous :
+            </p>
+
+            <div class="verse-container key-verse">
+                <p class="verse-french">"Et voici, Je suis avec toi."</p>
+                
+                <p class="verse-hebrew">וְהִנֵּה אָנֹכִי עִמָּךְ</p>
+                
+                <p class="verse-transliteration"><em>Ve-hinè Anokhi 'immakh</em></p>
+                
+                <p class="verse-reference">(Beréchit 28:15)</p>
+            </div>
+
+            <p class="content-text">
+                Une promesse qui accompagne le peuple jusqu'à aujourd'hui.
+            </p>
+        </div>
+
+        <div class="video-section">
+            <h2 class="video-title">
+                🎥 Étude vidéo de la Paracha Vayetsé
+            </h2>
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/h1sdCzgJDBs" 
+                    title="Paracha Vayetsé - L'échelle du monde : lorsqu'Achem ouvre une porte dans la nuit"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="video-description">
+                Découvrez cette étude en format vidéo pour approfondir votre compréhension 
+                de la Paracha Vayetsé et de ses enseignements sur l'échelle entre le Ciel et la Terre, 
+                la construction dans l'épreuve, et la présence constante d'Achem dans notre marche.
+            </p>
+        </div>
+
+        <div class="footer">
+            <div class="footer-author">
+                Étude de la Paracha Vayetsé par <span class="footer-hebrew">אריאל מרמן</span> (Ariel Mormin)
+            </div>
+            <div class="footer-subtitle">
+                • L'échelle qui relie le Ciel à la Terre •
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            scrollIndicator.style.transform = `scaleX(${scrolled / 100})`;
+        });
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        document.querySelectorAll('.section, .verse-container, .conclusion-box, .video-section, .intro-box').forEach((element) => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(element);
+        });
+
+        document.querySelectorAll('.verse-container').forEach(container => {
+            container.addEventListener('mouseenter', () => {
+                container.style.transform = 'translateY(-2px)';
+                container.style.transition = 'transform 0.3s ease';
+            });
+            
+            container.addEventListener('mouseleave', () => {
+                container.style.transform = 'translateY(0)';
+            });
+        });
+
+        document.querySelectorAll('.themes-list li').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.style.transform = 'translateX(5px)';
+                item.style.transition = 'transform 0.3s ease';
+            });
+            
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = 'translateX(0)';
+            });
+        });
+    </script>
+</body>
+</html>

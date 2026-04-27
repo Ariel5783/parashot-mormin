@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Paracha Tsav : le feu perpétuel, le service sacré et la fidélité dans l'action. Esh tamid, consécration d'Aharon, offrandes. Étude complète selon la tradition séfarade par Ariel Mormin.">
+    <meta name="keywords" content="Paracha Tsav, צו, Torah, Lévitique, esh tamid, feu perpétuel, Aharon, Cohen, offrandes, tradition séfarade, olah, mincha, hatat, consécration, étude biblique, paracha semaine">
+    <title>Paracha Tsav – צו – Le feu perpétuel et le service sacré</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            background: linear-gradient(135deg, #1c0a00 0%, #3b1500 15%, #5c2200 30%, #7c3500 50%, #5c2800 70%, #3b1a00 85%, #1c0a00 100%);
+            min-height: 100vh;
+            color: #333;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 65% 20%, rgba(251, 191, 36, 0.28) 0%, transparent 55%),
+                        radial-gradient(circle at 20% 80%, rgba(234, 88, 12, 0.30) 0%, transparent 55%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.55);
+            border-radius: 20px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #92400e, #b45309);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(180, 83, 9, 0.4);
+            margin-bottom: 20px;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(180, 83, 9, 0.6);
+            background: linear-gradient(135deg, #b45309, #92400e);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 45px 20px;
+            background: linear-gradient(135deg, #1c0a00, #3b1500, #5c2200, #7c3500, #5c2800, #3b1a00, #1c0a00);
+            margin: -40px -20px 50px -20px;
+            border-radius: 20px 20px 0 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="55" font-size="35" fill="white" opacity="0.08">🕍</text></svg>') repeat;
+            background-size: 70px 70px;
+            opacity: 0.2;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(251, 191, 36, 0.20) 0%, rgba(28, 10, 0, 0.55) 70%);
+        }
+
+        .header-icon {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+            display: block;
+        }
+
+        .title {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hebrew-title {
+            font-size: 3.2em;
+            color: #fde68a;
+            margin-bottom: 15px;
+            font-family: 'Times New Roman', serif;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-size: 1.4em;
+            font-style: italic;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+            color: #fed7aa;
+        }
+
+        .reference {
+            font-size: 1.1em;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #92400e, #d97706, #fbbf24);
+            transform-origin: left;
+            transform: scaleX(0);
+            z-index: 1000;
+            transition: transform 0.1s ease;
+        }
+
+        .intro-box {
+            background: linear-gradient(135deg, #fffbeb, #fef3c7);
+            padding: 35px;
+            border-radius: 15px;
+            border-left: 6px solid #d97706;
+            margin-bottom: 45px;
+            box-shadow: 0 8px 20px rgba(217, 119, 6, 0.15);
+            position: relative;
+        }
+
+        .intro-box::before {
+            content: "🔥";
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 2em;
+            opacity: 0.3;
+        }
+
+        .section {
+            margin-bottom: 45px;
+            padding: 20px 0;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #92400e;
+            margin-bottom: 25px;
+            font-weight: bold;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #fffbeb, #fef3c7);
+            border-radius: 10px;
+            border-left: 5px solid #d97706;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-icon {
+            font-size: 1.8em;
+            flex-shrink: 0;
+        }
+
+        .content-text {
+            font-size: 1.15em;
+            line-height: 1.8;
+            color: #1f2937;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: #92400e;
+        }
+
+        /* ── Verse containers ── */
+        .verse-container {
+            background: linear-gradient(135deg, #fffbeb, #fef3c7);
+            border: 2px solid #d97706;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+            box-shadow: 0 6px 20px rgba(217, 119, 6, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .verse-container:hover {
+            box-shadow: 0 8px 25px rgba(217, 119, 6, 0.30);
+            transform: translateY(-2px);
+        }
+
+        .verse-french {
+            font-size: 1.25em;
+            font-weight: bold;
+            color: #92400e;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .verse-hebrew {
+            font-size: 1.8em;
+            font-family: 'Times New Roman', serif;
+            direction: rtl;
+            text-align: right;
+            color: #451a03;
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(253, 230, 138, 0.35);
+            border-radius: 8px;
+            line-height: 1.8;
+        }
+
+        .verse-transliteration {
+            font-size: 1.1em;
+            font-style: italic;
+            color: #b45309;
+            margin: 12px 0;
+        }
+
+        .verse-reference {
+            font-size: 0.95em;
+            color: #92400e;
+            font-weight: bold;
+            margin-top: 12px;
+        }
+
+        /* ── Named verse styles per section ── */
+
+        /* Section 1 : Tsav – l'ordre (ambre profond) */
+        .tsav-verse {
+            border-color: #d97706;
+            background: linear-gradient(135deg, #fffbeb, #fef3c7);
+        }
+        .tsav-verse .verse-hebrew {
+            background: rgba(253, 230, 138, 0.40);
+            color: #451a03;
+        }
+        .tsav-verse .verse-french  { color: #92400e; }
+        .tsav-verse .verse-transliteration { color: #b45309; }
+        .tsav-verse .verse-reference { color: #78350f; }
+
+        /* Section 2 : Feu perpétuel (orange feu intense) */
+        .fire-verse {
+            border-color: #ea580c;
+            background: linear-gradient(135deg, #fff7ed, #ffedd5);
+        }
+        .fire-verse .verse-hebrew {
+            background: rgba(253, 186, 116, 0.40);
+            color: #431407;
+        }
+        .fire-verse .verse-french  { color: #9a3412; }
+        .fire-verse .verse-transliteration { color: #c2410c; }
+        .fire-verse .verse-reference { color: #431407; }
+
+        /* Section 3a : Olah (rouge-orange) */
+        .olah-verse {
+            border-color: #dc2626;
+            background: linear-gradient(135deg, #fff5f5, #fee2e2);
+        }
+        .olah-verse .verse-hebrew {
+            background: rgba(254, 202, 202, 0.35);
+            color: #450a0a;
+        }
+        .olah-verse .verse-french  { color: #7c2020; }
+        .olah-verse .verse-transliteration { color: #991b1b; }
+        .olah-verse .verse-reference { color: #450a0a; }
+
+        /* Section 3b : Mincha (miel/ambre clair) */
+        .mincha-verse {
+            border-color: #f59e0b;
+            background: linear-gradient(135deg, #fffbeb, #fef9c3);
+        }
+        .mincha-verse .verse-hebrew {
+            background: rgba(253, 224, 71, 0.35);
+            color: #713f12;
+        }
+        .mincha-verse .verse-french  { color: #854d0e; }
+        .mincha-verse .verse-transliteration { color: #a16207; }
+        .mincha-verse .verse-reference { color: #713f12; }
+
+        /* Section 4 : Cendres (gris chaud/terre) */
+        .cendre-verse {
+            border-color: #78716c;
+            background: linear-gradient(135deg, #fafaf9, #f5f5f4);
+        }
+        .cendre-verse .verse-hebrew {
+            background: rgba(214, 211, 209, 0.40);
+            color: #1c1917;
+        }
+        .cendre-verse .verse-french  { color: #44403c; }
+        .cendre-verse .verse-transliteration { color: #57534e; }
+        .cendre-verse .verse-reference { color: #292524; }
+
+        /* Section 5 : Pain sans levain (crème/écru) */
+        .hamets-verse {
+            border-color: #ca8a04;
+            background: linear-gradient(135deg, #fefce8, #fef9c3);
+        }
+        .hamets-verse .verse-hebrew {
+            background: rgba(254, 249, 195, 0.60);
+            color: #713f12;
+        }
+        .hamets-verse .verse-french  { color: #854d0e; }
+        .hamets-verse .verse-transliteration { color: #a16207; }
+        .hamets-verse .verse-reference { color: #713f12; }
+
+        /* Section 6 : Consécration (indigo/royal) */
+        .consecration-verse {
+            border-color: #6d28d9;
+            background: linear-gradient(135deg, #fdf4ff, #ede9fe);
+        }
+        .consecration-verse .verse-hebrew {
+            background: rgba(221, 214, 254, 0.40);
+            color: #4c1d95;
+        }
+        .consecration-verse .verse-french  { color: #5b21b6; }
+        .consecration-verse .verse-transliteration { color: #7c3aed; }
+        .consecration-verse .verse-reference { color: #4c1d95; }
+
+        /* Conclusion verse (or/doré) */
+        .conclusion-verse {
+            border-color: #d4a728;
+            background: linear-gradient(135deg, #fffbeb, #fef9c3);
+        }
+        .conclusion-verse .verse-hebrew {
+            background: rgba(253, 224, 71, 0.35);
+            color: #713f12;
+            font-size: 2em;
+        }
+        .conclusion-verse .verse-french  { color: #854d0e; }
+        .conclusion-verse .verse-transliteration { color: #a16207; }
+        .conclusion-verse .verse-reference { color: #713f12; }
+
+        /* ── Boîtes spéciales ── */
+        .fire-special {
+            background: linear-gradient(135deg, #fff7ed, #ffedd5);
+            border: 3px solid #ea580c;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(234, 88, 12, 0.25);
+            text-align: center;
+        }
+
+        .fire-special .fire-icon {
+            font-size: 2.5em;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .fire-special p {
+            font-size: 1.15em;
+            color: #431407;
+            font-weight: bold;
+        }
+
+        .fire-special .fire-sub {
+            font-size: 1em;
+            font-style: italic;
+            color: #9a3412;
+            font-weight: normal;
+            margin-top: 8px;
+        }
+
+        .teaching-box {
+            background: linear-gradient(135deg, #fffbeb, #fef3c7);
+            border: 2px solid #d97706;
+            border-radius: 12px;
+            padding: 25px 35px;
+            margin: 25px 0;
+        }
+
+        .teaching-box p {
+            font-size: 1.1em;
+            color: #1f2937;
+            margin-bottom: 12px;
+            border-left: 3px solid #d97706;
+            padding: 8px 0 8px 15px;
+        }
+
+        .teaching-box p:last-child { margin-bottom: 0; }
+
+        .sacrifices-box {
+            background: linear-gradient(135deg, #fff5f5, #fff7ed);
+            border: 2px solid #ea580c;
+            border-radius: 12px;
+            padding: 25px 35px;
+            margin: 25px 0;
+        }
+
+        .sacrifices-box p {
+            font-size: 1.1em;
+            color: #1f2937;
+            margin-bottom: 12px;
+            border-left: 3px solid #ea580c;
+            padding: 8px 0 8px 15px;
+        }
+
+        .sacrifices-box p:last-child { margin-bottom: 0; }
+
+        .ash-banner {
+            background: linear-gradient(135deg, #fafaf9, #f5f5f4);
+            border: 2px solid #78716c;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.2em;
+            color: #1c1917;
+            box-shadow: 0 4px 15px rgba(120, 113, 108, 0.20);
+        }
+
+        .matza-banner {
+            background: linear-gradient(135deg, #fefce8, #fef9c3);
+            border: 2px solid #ca8a04;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.2em;
+            color: #713f12;
+            box-shadow: 0 4px 15px rgba(202, 138, 4, 0.20);
+        }
+
+        .conclusion-box {
+            background: linear-gradient(135deg, #fffbeb, #fef3c7);
+            padding: 40px;
+            border-radius: 15px;
+            border: 3px solid #d97706;
+            margin-top: 50px;
+            box-shadow: 0 10px 30px rgba(217, 119, 6, 0.18);
+        }
+
+        .conclusion-banner {
+            background: linear-gradient(135deg, #fff7ed, #ffedd5);
+            border: 2px solid #ea580c;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.2em;
+            color: #431407;
+            box-shadow: 0 4px 15px rgba(234, 88, 12, 0.20);
+        }
+
+        /* ── Citations clés ── */
+        .key-quotes {
+            margin-top: 45px;
+            padding: 35px;
+            background: linear-gradient(135deg, #1c0a00, #3b1500);
+            border-radius: 15px;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .key-quotes h2 {
+            font-size: 1.5em;
+            color: #fde68a;
+            margin-bottom: 25px;
+            text-align: center;
+            border-bottom: 2px solid rgba(253, 230, 138, 0.3);
+            padding-bottom: 15px;
+        }
+
+        .quote-item {
+            background: rgba(255, 255, 255, 0.07);
+            border-left: 4px solid #d97706;
+            border-radius: 8px;
+            padding: 20px 25px;
+            margin-bottom: 20px;
+        }
+
+        .quote-item:last-child { margin-bottom: 0; }
+
+        .quote-hebrew {
+            font-size: 1.6em;
+            font-family: 'Times New Roman', serif;
+            direction: rtl;
+            text-align: right;
+            color: #fde68a;
+            display: block;
+            margin-bottom: 8px;
+            line-height: 1.8;
+        }
+
+        .quote-transliteration {
+            font-style: italic;
+            color: #fed7aa;
+            margin-bottom: 6px;
+        }
+
+        .quote-french {
+            color: #fef3c7;
+            font-weight: bold;
+        }
+
+        /* ── Vidéo ── */
+        .video-section {
+            margin-top: 50px;
+            padding: 35px;
+            background: linear-gradient(135deg, #1c0a00, #3b1500);
+            border-radius: 15px;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .video-title {
+            font-size: 1.5em;
+            color: #fde68a;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 10px;
+        }
+
+        .video-description {
+            font-size: 1em;
+            line-height: 1.7;
+            color: #fed7aa;
+            text-align: justify;
+        }
+
+        /* ── Footer ── */
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, #fffbeb, #fef3c7);
+            border-radius: 12px;
+            border-top: 3px solid #d97706;
+        }
+
+        .footer-author {
+            font-size: 1.2em;
+            color: #92400e;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .footer-hebrew {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.3em;
+            direction: rtl;
+        }
+
+        .footer-subtitle {
+            font-size: 0.95em;
+            color: #b45309;
+            font-style: italic;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 600px) {
+            .title          { font-size: 1.9em; }
+            .hebrew-title   { font-size: 2.3em; }
+            .subtitle       { font-size: 1.1em; }
+            .section-title  { font-size: 1.25em; }
+            .verse-hebrew   { font-size: 1.4em; }
+            .conclusion-box { padding: 25px; }
+            .key-quotes     { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="scroll-indicator"></div>
+
+    <div class="container">
+
+        <a href="/" class="back-button">← Retour aux parashot</a>
+
+        <!-- EN-TÊTE -->
+        <div class="header">
+            <span class="header-icon">🔥</span>
+            <h1 class="title">Paracha Tsav</h1>
+            <div class="hebrew-title">צַו</div>
+            <p class="subtitle">Le feu perpétuel, le service sacré et la fidélité dans l'action</p>
+            <p class="reference">Vayiqra / Lévitique 6,1 – 8,36 · Tradition séfarade · Ariel Mormin</p>
+        </div>
+
+        <!-- INTRODUCTION -->
+        <div class="intro-box">
+            <p class="content-text">
+                La Paracha <strong>Tsav</strong> se situe au début du livre de
+                <strong>Vayiqra / Lévitique</strong>, juste après la Paracha Vayikra.
+                Là où Vayikra présente en grande partie les différentes catégories de sacrifices,
+                <strong>Tsav</strong> approfondit leur mise en œuvre concrète et s'adresse en particulier
+                à <strong>Aharon et à ses fils</strong>, c'est-à-dire aux cohanim.
+                Le mot <strong>"Tsav"</strong> signifie <strong>"ordonne"</strong>, avec une nuance
+                d'insistance, de zèle et de continuité.
+            </p>
+            <p class="content-text" style="margin-bottom:0;">
+                Cette paracha traite du <strong>feu de l'autel</strong>, des lois relatives aux offrandes,
+                de la consécration d'Aharon et de ses fils, et du passage d'un enseignement théorique
+                à un service vivant, incarné, quotidien. Dans la tradition séfarade, cette paracha porte
+                une force particulière : elle rappelle que la sainteté ne réside pas seulement dans
+                l'inspiration, mais dans la <strong>constance</strong>, dans la
+                <strong>discipline intérieure</strong>, et dans la fidélité humble au service d'Adonaï.
+            </p>
+        </div>
+
+        <!-- SECTION 1 : TSAV – L'ORDRE QUI ENGAGE -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">📜</span>
+                1. "Tsav" : l'ordre qui engage dans la durée
+            </h2>
+
+            <p class="content-text">
+                La paracha s'ouvre avec un impératif direct adressé aux cohanim :
+            </p>
+
+            <div class="verse-container tsav-verse">
+                <p class="verse-hebrew">
+                    צַו אֶת־אַהֲרֹן וְאֶת־בָּנָיו לֵאמֹר
+                </p>
+                <p class="verse-transliteration">
+                    <em>Tsav et Aharon ve-et banav lemor.</em>
+                </p>
+                <p class="verse-french">
+                    « Ordonne à Aharon et à ses fils, en disant… »
+                </p>
+                <p class="verse-reference">(Vayiqra / Lévitique 6,2)</p>
+            </div>
+
+            <p class="content-text">
+                Le terme <strong>צַו / Tsav</strong> n'est pas un simple verbe administratif.
+                Nos maîtres expliquent qu'il exprime une exigence de <strong>rapidité</strong>,
+                de <strong>dévouement</strong>, et surtout de <strong>persévérance</strong>.
+                Il ne s'agit pas seulement d'accomplir un geste ponctuel, mais d'entrer dans un service
+                régulier, fidèle, parfois silencieux, sans recherche de gloire.
+            </p>
+
+            <p class="content-text">
+                Dans la vie spirituelle, beaucoup de personnes aiment les commencements, les moments forts,
+                l'émotion des élans initiaux. Mais Tsav nous enseigne que la véritable élévation se mesure
+                dans la <span class="highlight">répétition fidèle d'un acte juste</span>. La grandeur d'Israël
+                ne réside pas uniquement dans les révélations éclatantes, mais aussi dans la continuité
+                du service.
+            </p>
+        </div>
+
+        <!-- SECTION 2 : LE FEU PERPÉTUEL -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🔥</span>
+                2. Le feu perpétuel : image de la ferveur intérieure
+            </h2>
+
+            <p class="content-text">
+                L'un des versets les plus marquants de la paracha porte sur le feu de l'autel
+                qui ne doit jamais s'éteindre :
+            </p>
+
+            <div class="verse-container fire-verse">
+                <p class="verse-hebrew">
+                    אֵשׁ תָּמִיד תּוּקַד עַל־הַמִּזְבֵּחַ לֹא תִכְבֶּה
+                </p>
+                <p class="verse-transliteration">
+                    <em>Esh tamid touqad al ha-mizbéaḥ, lo tikhbeh.</em>
+                </p>
+                <p class="verse-french">
+                    « Un feu perpétuel brûlera sur l'autel, il ne s'éteindra pas. »
+                </p>
+                <p class="verse-reference">(Vayiqra / Lévitique 6,6)</p>
+            </div>
+
+            <div class="fire-special">
+                <span class="fire-icon">🕯️</span>
+                <p>
+                    Ce feu visible sur l'autel renvoie à un feu invisible : celui du cœur.
+                </p>
+                <p class="fire-sub">
+                    Dans la lecture spirituelle traditionnelle, l'être humain doit préserver en lui
+                    une flamme pour le service d'Adonaï. Cette flamme peut être vive ou discrète,
+                    mais elle ne doit jamais s'éteindre.
+                </p>
+            </div>
+
+            <p class="content-text">
+                Dans la tradition séfarade, cette idée rejoint une vision très concrète du service divin :
+                même lorsque l'émotion baisse, même lorsque la fatigue se fait sentir, le lien à Adonaï
+                doit être entretenu. La fidélité n'est pas moins précieuse que l'enthousiasme.
+                Souvent même, elle lui est <strong>supérieure</strong>.
+            </p>
+
+            <div class="teaching-box">
+                <p>d'abord, la sainteté demande un <strong>entretien quotidien</strong> ;</p>
+                <p>ensuite, la vie spirituelle exige de <strong>protéger ce qui est fragile</strong> ;</p>
+                <p>enfin, il faut parfois <strong>raviver la flamme avec patience</strong>
+                    plutôt que chercher sans cesse une émotion nouvelle.</p>
+            </div>
+        </div>
+
+        <!-- SECTION 3 : LES SACRIFICES -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">✨</span>
+                3. Le service des sacrifices : transformer la matière en élévation
+            </h2>
+
+            <p class="content-text">
+                Tsav revient sur plusieurs offrandes : l'olah, la minḥa, le ḥatat, l'asham, ainsi que
+                le sacrifice de paix. Derrière ces prescriptions détaillées, la Torah montre que le
+                rapprochement d'Ashem ne se fait pas dans l'abstraction pure, mais à travers des actes,
+                des matières, des temps, des lieux, des limites précises.
+            </p>
+
+            <div class="verse-container olah-verse">
+                <p class="verse-hebrew">
+                    זֹאת תּוֹרַת הָעֹלָה
+                </p>
+                <p class="verse-transliteration">
+                    <em>Zot torat ha-olah.</em>
+                </p>
+                <p class="verse-french">
+                    « Voici la loi de l'holocauste. »
+                </p>
+                <p class="verse-reference">(Vayiqra / Lévitique 6,2)</p>
+            </div>
+
+            <div class="verse-container mincha-verse">
+                <p class="verse-hebrew">
+                    וְזֹאת תּוֹרַת הַמִּנְחָה
+                </p>
+                <p class="verse-transliteration">
+                    <em>Ve-zot torat ha-minḥa.</em>
+                </p>
+                <p class="verse-french">
+                    « Et voici la loi de l'offrande végétale. »
+                </p>
+                <p class="verse-reference">(Vayiqra / Lévitique 6,7)</p>
+            </div>
+
+            <p class="content-text">
+                L'expression répétée <strong>"Zot torat…"</strong> montre que chaque offrande possède
+                sa logique propre. La Torah ne mélange pas tout. Elle distingue, elle ordonne, elle
+                structure. Cette précision enseigne que servir Adonaï ne consiste pas seulement à
+                "ressentir", mais aussi à apprendre, à respecter un cadre, à reconnaître qu'il y a
+                une <span class="highlight">sagesse dans les formes</span>.
+            </p>
+
+            <p class="content-text">
+                Sur le plan intérieur, les sacrifices peuvent être lus comme des figures de l'âme humaine :
+            </p>
+
+            <div class="sacrifices-box">
+                <p>l'<strong>olah</strong> — évoque l'élan total vers Adonaï, l'offrande qui monte entièrement ;</p>
+                <p>la <strong>minḥa</strong> — souvent plus modeste, rappelle que même l'offrande simple a une grande valeur ;</p>
+                <p>le <strong>ḥatat</strong> — montre la nécessité de réparer une faute involontaire ;</p>
+                <p>l'<strong>asham</strong> — insiste sur la responsabilité personnelle ;</p>
+                <p>le <strong>sacrifice de paix</strong> — évoque la communion, la gratitude et la relation restaurée.</p>
+            </div>
+
+            <p class="content-text">
+                Ainsi, Tsav nous apprend que toute la vie humaine peut devenir offrande : nos fautes
+                peuvent devenir retour, nos biens peuvent devenir partage, notre énergie peut devenir
+                service, et notre quotidien peut devenir sanctifié.
+            </p>
+        </div>
+
+        <!-- SECTION 4 : LES CENDRES -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🌿</span>
+                4. La cendre de l'autel : la sainteté du résidu
+            </h2>
+
+            <p class="content-text">
+                Un détail remarquable de la paracha concerne les cendres de l'holocauste.
+                Le Cohen doit les enlever avec soin. Cela peut sembler secondaire, presque ingrat.
+                Pourtant la Torah y accorde une grande attention :
+            </p>
+
+            <div class="verse-container cendre-verse">
+                <p class="verse-hebrew">
+                    וְלָבַשׁ הַכֹּהֵן מִדּוֹ בַד... וְהֵרִים אֶת־הַדֶּשֶׁן
+                </p>
+                <p class="verse-transliteration">
+                    <em>Ve-lavash ha-kohen mido vad… ve-herim et ha-deshen.</em>
+                </p>
+                <p class="verse-french">
+                    « Le Cohen revêtira son habit de lin… et il enlèvera la cendre. »
+                </p>
+                <p class="verse-reference">(Vayiqra / Lévitique 6,3)</p>
+            </div>
+
+            <p class="content-text">
+                Le service sacré ne se limite donc pas aux moments impressionnants. Même retirer les
+                cendres fait partie de la <em>avoda</em>. C'est une leçon très profonde : dans le
+                sanctuaire, <span class="highlight">rien n'est méprisable lorsqu'il s'agit de servir Adonaï</span>.
+            </p>
+
+            <div class="ash-banner">
+                Spirituellement, cela signifie que l'homme doit aussi savoir prendre en charge
+                ses restes, ses traces, ses conséquences, ses lendemains.<br><br>
+                Le sacré n'est pas seulement dans <em>l'intensité du feu</em>,
+                mais aussi dans la manière de traiter ce qu'il a laissé derrière lui.<br>
+                <strong>Il y a une dignité des tâches humbles.</strong>
+            </div>
+        </div>
+
+        <!-- SECTION 5 : PAIN SANS LEVAIN -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🫓</span>
+                5. Le pain sans levain : la maîtrise intérieure
+            </h2>
+
+            <p class="content-text">
+                La paracha rappelle que certaines offrandes doivent être présentées
+                <strong>sans levain</strong> :
+            </p>
+
+            <div class="verse-container hamets-verse">
+                <p class="verse-hebrew">
+                    לֹא תֵאָפֶה חָמֵץ
+                </p>
+                <p class="verse-transliteration">
+                    <em>Lo te'afeh ḥamets.</em>
+                </p>
+                <p class="verse-french">
+                    « Elle ne sera pas cuite avec du levain. »
+                </p>
+                <p class="verse-reference">(Vayiqra / Lévitique 6,10)</p>
+            </div>
+
+            <p class="content-text">
+                Le <strong>ḥamets</strong>, dans la tradition d'Israël, renvoie souvent à ce qui gonfle,
+                à l'orgueil, à l'enflure du moi. À l'inverse, la <em>matsa</em> symbolise la
+                simplicité, la sobriété, la disponibilité.
+            </p>
+
+            <div class="matza-banner">
+                Dans Tsav, l'absence de levain nous enseigne que l'approche d'Adonaï demande
+                une forme d'<strong>humilité intérieure</strong>.<br><br>
+                On ne sert pas Ashem dans l'exagération de soi.
+                On ne s'approche pas du sacré pour se mettre en scène,
+                mais pour s'effacer devant une présence qui nous dépasse.
+            </div>
+
+            <p class="content-text">
+                La tradition séfarade insiste souvent sur cette noblesse de la pudeur spirituelle :
+                profondeur sans ostentation, fidélité sans bruit, beauté sans démonstration excessive.
+            </p>
+        </div>
+
+        <!-- SECTION 6 : CONSÉCRATION D'AHARON -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">👑</span>
+                6. La consécration d'Aharon et de ses fils : transmettre le service
+            </h2>
+
+            <p class="content-text">
+                La seconde grande partie de la paracha raconte la consécration d'Aharon et de ses fils.
+                Moshé accomplit tout ce qu'Adonaï a ordonné. Ce moment marque l'inauguration officielle
+                du service sacerdotal en Israël.
+            </p>
+
+            <div class="verse-container consecration-verse">
+                <p class="verse-hebrew">
+                    כַּאֲשֶׁר צִוָּה יְיָ אֶת־מֹשֶׁה
+                </p>
+                <p class="verse-transliteration">
+                    <em>Ka-asher tsivah Adonaï et Moshé.</em>
+                </p>
+                <p class="verse-french">
+                    « Comme Adonaï l'avait ordonné à Moshé. »
+                </p>
+                <p class="verse-reference">(Vayiqra / Lévitique 8)</p>
+            </div>
+
+            <p class="content-text">
+                Cette formule revient de manière insistante. Elle souligne que la sainteté du Michkan
+                ne naît pas de l'improvisation humaine, mais de l'<strong>obéissance à une parole reçue</strong>.
+                La transmission n'est pas une invention libre ; elle est une fidélité vivante.
+            </p>
+
+            <p class="content-text">
+                Dans cette consécration, il y a aussi une dimension collective : le service ne concerne
+                pas un individu isolé, mais une <span class="highlight">chaîne de transmission</span>.
+                Aharon et ses fils reçoivent une mission qui les dépasse. Cela rappelle que la tradition
+                juive se construit de génération en génération, par l'enseignement, la mémoire,
+                l'exemple et la responsabilité.
+            </p>
+        </div>
+
+        <!-- SECTION 7 : LE RÔLE DU COHEN -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🕍</span>
+                7. Le rôle du Cohen : rapprocher, enseigner, porter
+            </h2>
+
+            <p class="content-text">
+                Dans Tsav, le Cohen apparaît comme un <strong>serviteur</strong>, non comme un homme
+                de pouvoir au sens ordinaire. Il agit au nom du peuple, il accomplit des gestes précis,
+                il assume une charge lourde, et il sert dans un cadre très exigeant.
+            </p>
+
+            <p class="content-text">
+                Cela donne une image forte de toute responsabilité spirituelle : celui qui sert doit être
+                à la fois rigoureux, humble, constant et disponible.
+                Il ne s'appartient pas totalement à lui-même.
+            </p>
+
+            <p class="content-text">
+                Cette dimension peut être élargie : chacun, à sa mesure, est appelé à devenir un
+                <em>serviteur du bien</em>, un <em>gardien du feu</em>, un <em>artisan de fidélité</em>.
+                Même sans être Cohen, chacun peut entendre l'appel de Tsav :
+                faire de sa vie un lieu de <span class="highlight">service juste, stable et purifié</span>.
+            </p>
+        </div>
+
+        <!-- CONCLUSION -->
+        <div class="conclusion-box">
+            <h2 class="section-title" style="background:transparent; border:none; padding:0; margin-bottom:25px; color:#92400e;">
+                <span class="section-icon">🌟</span>
+                Conclusion – La flamme qui ne s'éteint pas
+            </h2>
+
+            <p class="content-text">
+                La Paracha <strong>Tsav</strong> nous enseigne que la sainteté ne vit pas seulement
+                dans les grands élans, mais dans la <strong>durée</strong>, la <strong>discipline</strong>,
+                l'<strong>humilité</strong> et la <strong>fidélité au service d'Adonaï</strong>.
+                Le feu de l'autel doit brûler sans s'éteindre ; de même, la flamme intérieure
+                de l'homme doit être entretenue avec patience.
+            </p>
+
+            <p class="content-text">
+                À travers les sacrifices, les cendres, les pains sans levain et la consécration d'Aharon,
+                la Torah nous montre que rien n'est insignifiant lorsqu'un acte est accompli pour Ashem
+                avec vérité. Le service sacré passe autant par l'intensité du feu que par la précision
+                du geste, autant par l'élévation que par la régularité.
+            </p>
+
+            <div class="verse-container conclusion-verse">
+                <p class="verse-hebrew">
+                    אֵשׁ תָּמִיד תּוּקַד עַל־הַמִּזְבֵּחַ לֹא תִכְבֶּה
+                </p>
+                <p class="verse-transliteration">
+                    <em>Esh tamid touqad al ha-mizbéaḥ, lo tikhbeh.</em>
+                </p>
+                <p class="verse-french">
+                    « Un feu perpétuel brûlera sur l'autel, il ne s'éteindra pas. »
+                </p>
+                <p class="verse-reference">(Vayiqra / Lévitique 6,6)</p>
+            </div>
+
+            <div class="conclusion-banner">
+                « Tsav nous rappelle finalement ceci :<br><br>
+                la vraie grandeur spirituelle n'est pas seulement de <em>commencer</em>,
+                mais de <strong>continuer</strong> ;<br>
+                non seulement d'aimer le feu,<br>
+                mais de veiller à ce qu'il ne s'éteigne jamais. »
+            </div>
+
+            <p class="content-text" style="text-align:center; font-size:1.3em; font-weight:bold; color:#92400e; margin-top:30px;">
+                Shabbat Shalom. 🔥
+            </p>
+        </div>
+
+        <!-- CITATIONS CLÉS -->
+        <div class="key-quotes">
+            <h2>✨ Quelques citations clés de la Paracha Tsav</h2>
+
+            <div class="quote-item">
+                <span class="quote-hebrew">צַו אֶת־אַהֲרֹן וְאֶת־בָּנָיו לֵאמֹר</span>
+                <p class="quote-transliteration">Tsav et Aharon ve-et banav lemor.</p>
+                <p class="quote-french">« Ordonne à Aharon et à ses fils, en disant. »</p>
+            </div>
+
+            <div class="quote-item">
+                <span class="quote-hebrew">אֵשׁ תָּמִיד תּוּקַד עַל־הַמִּזְבֵּחַ לֹא תִכְבֶּה</span>
+                <p class="quote-transliteration">Esh tamid touqad al ha-mizbéaḥ, lo tikhbeh.</p>
+                <p class="quote-french">« Un feu perpétuel brûlera sur l'autel, il ne s'éteindra pas. »</p>
+            </div>
+
+            <div class="quote-item">
+                <span class="quote-hebrew">וְזֹאת תּוֹרַת הַמִּנְחָה</span>
+                <p class="quote-transliteration">Ve-zot torat ha-minḥa.</p>
+                <p class="quote-french">« Et voici la loi de l'offrande végétale. »</p>
+            </div>
+
+            <div class="quote-item">
+                <span class="quote-hebrew">כַּאֲשֶׁר צִוָּה יְיָ אֶת־מֹשֶׁה</span>
+                <p class="quote-transliteration">Ka-asher tsivah Adonaï et Moshé.</p>
+                <p class="quote-french">« Comme Adonaï l'avait ordonné à Moshé. »</p>
+            </div>
+        </div>
+
+        <!-- VIDÉO -->
+        <div class="video-section">
+            <h2 class="video-title">
+                🎥 Étude vidéo de la Paracha Tsav
+            </h2>
+            <div class="video-container">
+                <iframe
+                    src="https://www.youtube.com/embed/hM0tMjWWXW4"
+                    title="Paracha Tsav – צו | Le feu perpétuel et le service sacré | Étude biblique – Tradition séfarade"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="video-description">
+                Découvrez cette étude en format vidéo pour approfondir votre compréhension
+                de la Paracha Tsav. Une exploration du sens profond de l'impératif <em>Tsav</em>
+                — l'ordre qui engage dans la durée et la constance du service ; du feu perpétuel
+                sur l'autel comme image de la ferveur intérieure inextinguible ;
+                des différentes offrandes — l'olah, la minḥa, le ḥatat, l'asham et le sacrifice de paix ;
+                de la sainteté cachée dans les cendres et les tâches humbles ;
+                du symbolisme du pain sans levain comme appel à l'humilité ;
+                et de la consécration d'Aharon comme modèle de transmission fidèle.
+                Une réflexion sur la continuité du service divin et la flamme intérieure
+                de l'homme, dans la tradition séfarade.
+            </p>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <div class="footer-author">
+                Étude de la Paracha Tsav par <span class="footer-hebrew">אריאל מרמן</span> (Ariel Mormin)
+            </div>
+            <div class="footer-subtitle">
+                • Le feu perpétuel et le service sacré — צַו •
+            </div>
+        </div>
+
+    </div><!-- /.container -->
+
+    <script>
+        // Indicateur de progression du scroll
+        window.addEventListener('scroll', () => {
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            scrollIndicator.style.transform = `scaleX(${scrolled / 100})`;
+        });
+
+        // Animation d'apparition au scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll(
+            '.section, .verse-container, .conclusion-box, .video-section, ' +
+            '.intro-box, .fire-special, .ash-banner, .matza-banner, ' +
+            '.conclusion-banner, .teaching-box, .sacrifices-box, ' +
+            '.key-quotes, .quote-item'
+        ).forEach((el) => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(el);
+        });
+
+        // Effet hover sur les conteneurs de versets
+        document.querySelectorAll('.verse-container').forEach(container => {
+            container.addEventListener('mouseenter', () => {
+                container.style.transform = 'translateY(-2px)';
+                container.style.transition = 'transform 0.3s ease';
+            });
+            container.addEventListener('mouseleave', () => {
+                container.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>

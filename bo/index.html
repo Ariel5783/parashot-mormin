@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Paracha Bo - De l'obscurité à la liberté : naissance d'un peuple. Étude biblique selon la tradition séfarade par Ariel Mormin">
+    <meta name="keywords" content="Paracha Bo, Torah, Bible, Exode, tradition séfarade, liberté, Pessa'h, étude biblique">
+    <title>Paracha Bo - בֹּא - De l'obscurité à la liberté : naissance d'un peuple</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 25%, #4c1d95 50%, #6d28d9 75%, #7c3aed 100%);
+            min-height: 100vh;
+            color: #333;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 70% 30%, rgba(217, 119, 6, 0.2) 0%, transparent 50%),
+                        radial-gradient(circle at 30% 70%, rgba(109, 40, 217, 0.3) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #4c1d95, #6d28d9);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(76, 29, 149, 0.4);
+            margin-bottom: 20px;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(109, 40, 217, 0.5);
+            background: linear-gradient(135deg, #6d28d9, #4c1d95);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #1e1b4b, #312e81, #4c1d95, #6d28d9);
+            margin: -40px -20px 50px -20px;
+            border-radius: 20px 20px 0 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="35" fill="white" opacity="0.1">🕯️</text></svg>') repeat;
+            background-size: 70px 70px;
+            opacity: 0.12;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, transparent 30%, rgba(30, 27, 75, 0.4));
+        }
+
+        .title {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hebrew-title {
+            font-size: 3.2em;
+            color: #fbbf24;
+            margin-bottom: 15px;
+            font-family: 'Times New Roman', serif;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-size: 1.4em;
+            font-style: italic;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        .reference {
+            font-size: 1.1em;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #4c1d95, #7c3aed, #fbbf24);
+            transform-origin: left;
+            transform: scaleX(0);
+            z-index: 1000;
+            transition: transform 0.1s ease;
+        }
+
+        .intro-box {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            padding: 35px;
+            border-radius: 15px;
+            border-left: 6px solid #6d28d9;
+            margin-bottom: 45px;
+            box-shadow: 0 8px 20px rgba(109, 40, 217, 0.2);
+            position: relative;
+        }
+
+        .intro-box::before {
+            content: "📖";
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 2em;
+            opacity: 0.3;
+        }
+
+        .section {
+            margin-bottom: 45px;
+            padding: 20px 0;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #4c1d95;
+            margin-bottom: 25px;
+            font-weight: bold;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border-radius: 10px;
+            border-left: 5px solid #6d28d9;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-icon {
+            font-size: 1.3em;
+        }
+
+        .content-text {
+            font-size: 1.1em;
+            color: #374151;
+            margin-bottom: 20px;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .verse-container {
+            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+            border-left: 5px solid #6d28d9;
+            box-shadow: 0 6px 15px rgba(109, 40, 217, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .verse-container:hover {
+            box-shadow: 0 8px 20px rgba(109, 40, 217, 0.25);
+            transform: translateY(-2px);
+        }
+
+        .verse-french {
+            font-size: 1.25em;
+            font-weight: bold;
+            color: #1e293b;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .verse-hebrew {
+            font-size: 1.6em;
+            color: #4c1d95;
+            margin-bottom: 15px;
+            text-align: right;
+            direction: rtl;
+            font-family: 'Times New Roman', serif;
+            font-weight: bold;
+        }
+
+        .verse-transliteration {
+            font-size: 1.1em;
+            color: #64748b;
+            margin-bottom: 12px;
+            font-style: italic;
+        }
+
+        .verse-reference {
+            font-size: 0.95em;
+            color: #94a3b8;
+            font-weight: 600;
+            text-align: right;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #fef3c7 0%, #fde68a 100%);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #4c1d95;
+        }
+
+        .darkness-verse {
+            background: linear-gradient(135deg, #1e1b4b15, #312e8115);
+            border-left-color: #1e1b4b;
+        }
+
+        .light-verse {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border-left-color: #d97706;
+        }
+
+        .command-verse {
+            background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+            border-left-color: #3b82f6;
+        }
+
+        .blood-verse {
+            background: linear-gradient(135deg, #fecaca, #fca5a5);
+            border-left-color: #dc2626;
+        }
+
+        .transmission-verse {
+            background: linear-gradient(135deg, #e0e7ff, #c7d2fe);
+            border-left-color: #6366f1;
+        }
+
+        .conclusion-box {
+            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            padding: 40px;
+            border-radius: 15px;
+            margin-top: 50px;
+            margin-bottom: 40px;
+            border: 3px solid #6d28d9;
+            box-shadow: 0 10px 30px rgba(109, 40, 217, 0.15);
+        }
+
+        .themes-list {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 25px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .themes-list ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .themes-list li {
+            padding: 15px 20px;
+            margin: 12px 0;
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border-radius: 8px;
+            border-left: 4px solid #6d28d9;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .themes-list li:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(109, 40, 217, 0.2);
+        }
+
+        .video-section {
+            background: linear-gradient(135deg, #1e1b4b, #312e81);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-title {
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            text-align: center;
+            color: #fbbf24;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            margin-bottom: 20px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-description {
+            text-align: center;
+            font-size: 1.05em;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border-radius: 12px;
+            border-top: 3px solid #6d28d9;
+        }
+
+        .footer-author {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #4c1d95;
+            margin-bottom: 10px;
+        }
+
+        .footer-hebrew {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.3em;
+            color: #1e1b4b;
+        }
+
+        .footer-subtitle {
+            font-size: 1em;
+            color: #64748b;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+                margin-top: 15px;
+                margin-bottom: 15px;
+            }
+
+            .header {
+                margin: -20px -15px 30px -15px;
+                padding: 30px 15px;
+            }
+
+            .title {
+                font-size: 2em;
+            }
+
+            .hebrew-title {
+                font-size: 2.5em;
+            }
+
+            .subtitle {
+                font-size: 1.2em;
+            }
+
+            .section-title {
+                font-size: 1.3em;
+                padding: 12px 15px;
+            }
+
+            .content-text {
+                font-size: 1.05em;
+                text-align: left;
+            }
+
+            .verse-french {
+                font-size: 1.15em;
+            }
+
+            .verse-hebrew {
+                font-size: 1.4em;
+            }
+
+            .video-section {
+                padding: 25px 20px;
+            }
+
+            .video-title {
+                font-size: 1.5em;
+            }
+
+            .themes-list li {
+                padding: 12px 15px;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-indicator"></div>
+    
+    <div class="container">
+        <a href="https://parashot-mormin.netlify.app" class="back-button">
+            ← Retour aux Parachot
+        </a>
+
+        <div class="header">
+            <div class="hebrew-title">בֹּא</div>
+            <h1 class="title">Paracha Bo</h1>
+            <p class="subtitle">De l'obscurité à la liberté : naissance d'un peuple</p>
+            <p class="reference">Chémot / Exode 10,1 – 13,16</p>
+        </div>
+
+        <div class="intro-box">
+            <h2 class="section-title" style="background: transparent; border: none; padding: 0; margin-bottom: 20px;">
+                <span class="section-icon">🌅</span>
+                Introduction – Contexte de la Paracha
+            </h2>
+            
+            <p class="content-text">
+                La Paracha <strong>Bo</strong> (Exode 10,1 – 13,16) se situe au point culminant de l'asservissement d'Israël en Égypte. Après des mois de plaies, Ashem ordonne à Moché d'entrer à nouveau chez Pharaon. Les trois dernières plaies vont frapper l'Égypte : <strong>les ténèbres</strong>, <strong>la mort des premiers-nés</strong>, puis <strong>la sortie d'Égypte</strong>.
+            </p>
+            
+            <p class="content-text">
+                Dans la tradition séfarade, Bo n'est pas seulement un récit historique : c'est <span class="highlight">l'acte fondateur de la liberté d'Israël</span>, la première mitsva collective donnée au peuple (le calendrier), et l'institution de <strong>Pessa'h</strong>, mémoire vivante de la délivrance.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🚪</span>
+                1. "Bo el Par'o" – Entrer dans l'obscurité pour la transformer
+            </h2>
+
+            <div class="verse-container">
+                <p class="verse-french">« Ashem dit à Moché : Entre chez Pharaon »</p>
+                
+                <p class="verse-hebrew">וַיֹּאמֶר יְהוָה אֶל־מֹשֶׁה בֹּא אֶל־פַּרְעֹה</p>
+                
+                <p class="verse-transliteration"><em>Vayomer Adonaï el Moché, bo el Par'o</em></p>
+                
+                <p class="verse-reference">(Chémot / Exode 10,1)</p>
+            </div>
+
+            <p class="content-text">
+                Le verbe <em>bo</em> (« viens ») est frappant. Ashem ne dit pas « va », mais <strong>« viens avec Moi »</strong>. Les maîtres séfarades expliquent qu'Ashem accompagne Moché au cœur même de l'obscurité spirituelle de l'Égypte.
+            </p>
+            
+            <p class="content-text">
+                La délivrance commence <strong>avant</strong> la sortie physique : elle débute par une transformation intérieure, une prise de conscience.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🌑</span>
+                2. Les ténèbres – Quand l'absence de sens devient une prison
+            </h2>
+
+            <div class="verse-container darkness-verse">
+                <p class="verse-french">« Il y eut une obscurité profonde dans tout le pays d'Égypte »</p>
+                
+                <p class="verse-hebrew">וַיְהִי חֹשֶׁךְ אֲפֵלָה בְּכָל־אֶרֶץ מִצְרַיִם</p>
+                
+                <p class="verse-transliteration"><em>Vayehi 'hochekh aféla békhol erets Mitsrayim</em></p>
+                
+                <p class="verse-reference">(Exode 10,22)</p>
+            </div>
+
+            <p class="content-text">
+                La tradition enseigne que ces ténèbres n'étaient pas seulement physiques. Elles symbolisent une <span class="highlight">obscurité morale et spirituelle</span>, une incapacité à se lever, à avancer, à voir l'autre.
+            </p>
+            
+            <p class="content-text">
+                À l'inverse :
+            </p>
+
+            <div class="verse-container light-verse">
+                <p class="verse-french">« Pour tous les enfants d'Israël, il y avait de la lumière dans leurs demeures »</p>
+                
+                <p class="verse-hebrew">וּלְכָל־בְּנֵי יִשְׂרָאֵל הָיָה אוֹר בְּמוֹשְׁבֹתָם</p>
+                
+                <p class="verse-transliteration"><em>Oulékhol bné Israël haya or bemoshvotam</em></p>
+                
+                <p class="verse-reference">(Exode 10,23)</p>
+            </div>
+
+            <p class="content-text">
+                La lumière n'est pas extérieure : elle naît <strong>dans les foyers</strong>, là où se transmettent la foi, la parole et l'espérance.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">📅</span>
+                3. La première mitsva : sanctifier le temps
+            </h2>
+
+            <div class="verse-container command-verse">
+                <p class="verse-french">« Ce mois-ci sera pour vous le premier des mois »</p>
+                
+                <p class="verse-hebrew">הַחֹדֶשׁ הַזֶּה לָכֶם רֹאשׁ חֳדָשִׁים</p>
+                
+                <p class="verse-transliteration"><em>Ha'hodech hazé lakhem roch 'hodashim</em></p>
+                
+                <p class="verse-reference">(Exode 12,2)</p>
+            </div>
+
+            <p class="content-text">
+                Avant même la sortie d'Égypte, Ashem donne une mitsva essentielle : <span class="highlight">maîtriser le temps</span>.
+            </p>
+            
+            <p class="content-text">
+                Dans la tradition séfarade, être libre, ce n'est pas seulement quitter une terre d'esclavage, c'est <strong>organiser sa vie autour du sens</strong>, des rendez-vous sacrés, du souvenir et de la transmission.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🩸</span>
+                4. Le sang sur les linteaux – Un acte de foi visible
+            </h2>
+
+            <div class="verse-container blood-verse">
+                <p class="verse-french">« Je verrai le sang et Je passerai au-dessus de vous »</p>
+                
+                <p class="verse-hebrew">וְרָאִיתִי אֶת־הַדָּם וּפָסַחְתִּי עֲלֵכֶם</p>
+                
+                <p class="verse-transliteration"><em>Veraïti et-hadam oufasakhti 'alékhem</em></p>
+                
+                <p class="verse-reference">(Exode 12,13)</p>
+            </div>
+
+            <p class="content-text">
+                Le sang de l'agneau sur les portes n'est pas un signe magique. C'est un <span class="highlight">acte de courage</span>, une rupture publique avec l'idolâtrie égyptienne.
+            </p>
+            
+            <p class="content-text">
+                La délivrance exige parfois un geste clair, visible, assumé.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">📚</span>
+                5. Transmettre pour ne jamais redevenir esclave
+            </h2>
+
+            <div class="verse-container transmission-verse">
+                <p class="verse-french">« Tu raconteras à ton fils en ce jour-là »</p>
+                
+                <p class="verse-hebrew">וְהִגַּדְתָּ לְבִנְךָ בַּיּוֹם הַהוּא</p>
+                
+                <p class="verse-transliteration"><em>Vehigadta lévin'kha bayom hahou</em></p>
+                
+                <p class="verse-reference">(Exode 13,8)</p>
+            </div>
+
+            <p class="content-text">
+                La sortie d'Égypte n'a de sens que si elle est racontée.
+            </p>
+            
+            <p class="content-text">
+                Dans la tradition séfarade, la <span class="highlight">parole transmise</span> est un pilier : raconter, expliquer, questionner. Un peuple qui n'enseigne plus son histoire retourne, tôt ou tard, à l'esclavage.
+            </p>
+        </div>
+
+        <div class="conclusion-box">
+            <h2 class="section-title" style="background: transparent; border: none; padding: 0; margin-bottom: 20px;">
+                <span class="section-icon">🌟</span>
+                Conclusion – Bo aujourd'hui
+            </h2>
+            
+            <p class="content-text">
+                La Paracha Bo nous enseigne que la liberté ne commence pas par un changement de lieu, mais par un <span class="highlight">changement de regard</span>.
+            </p>
+            
+            <p class="content-text">
+                Ashem accompagne l'homme dans l'obscurité, lui donne la capacité de sanctifier le temps, d'oser des choix clairs et de transmettre.
+            </p>
+            
+            <p class="content-text">
+                Chaque génération est appelée à <strong>sortir de sa propre Égypte</strong>, à rallumer la lumière dans ses demeures, et à raconter, encore et encore, que la liberté est possible.
+            </p>
+
+            <div class="themes-list">
+                <p class="content-text" style="margin-bottom: 20px; font-weight: bold; text-align: center;">
+                    <strong>Bo — "Viens" / "Entre"</strong>
+                </p>
+                <ul>
+                    <li><strong>L'accompagnement divin dans l'obscurité.</strong> Ashem ne dit pas « va » mais « viens avec Moi » — la transformation commence par Sa présence dans les ténèbres.</li>
+                    <li><strong>Les ténèbres comme prison spirituelle.</strong> L'obscurité d'Égypte symbolise une incapacité morale à se lever, à avancer, à voir l'autre — tandis que la lumière naît dans les foyers d'Israël.</li>
+                    <li><strong>Sanctifier le temps pour être libre.</strong> La première mitsva donnée au peuple n'est pas une loi rituelle, mais la maîtrise du calendrier — organiser sa vie autour du sens.</li>
+                    <li><strong>L'acte de foi visible et assumé.</strong> Le sang sur les linteaux est un geste de rupture publique avec l'idolâtrie — la délivrance exige parfois un choix clair et courageux.</li>
+                    <li><strong>Transmettre pour ne jamais redevenir esclave.</strong> Un peuple qui cesse de raconter son histoire perd sa liberté — la parole transmise est le pilier de la mémoire vivante.</li>
+                </ul>
+            </div>
+
+            <p class="content-text" style="text-align: center; font-size: 1.3em; font-weight: bold; color: #4c1d95; margin-top: 30px;">
+                Shabbat Chalom.
+            </p>
+        </div>
+
+        <div class="video-section">
+            <h2 class="video-title">
+                🎥 Étude vidéo de la Paracha Bo
+            </h2>
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/Tc2wH7bKyw0" 
+                    title="Paracha Bo – De l'obscurité à la liberté | Étude biblique – Tradition séfarade"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="video-description">
+                Découvrez cette étude en format vidéo pour approfondir votre compréhension 
+                de la Paracha Bo et de ses enseignements sur le passage de l'obscurité à la liberté, 
+                la sanctification du temps, l'acte de foi assumé lors de Pessa'h, et la transmission 
+                comme pilier de la mémoire vivante.
+            </p>
+        </div>
+
+        <div class="footer">
+            <div class="footer-author">
+                Étude de la Paracha Bo par <span class="footer-hebrew">אריאל מרמן</span> (Ariel Mormin)
+            </div>
+            <div class="footer-subtitle">
+                • De l'obscurité à la liberté : naissance d'un peuple •
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Indicateur de progression de scroll
+        window.addEventListener('scroll', () => {
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            scrollIndicator.style.transform = `scaleX(${scrolled / 100})`;
+        });
+        
+        // Animation d'apparition au scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        // Application de l'animation à tous les éléments
+        document.querySelectorAll('.section, .verse-container, .conclusion-box, .video-section, .intro-box').forEach((element) => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(element);
+        });
+
+        // Effet hover sur les conteneurs de versets
+        document.querySelectorAll('.verse-container').forEach(container => {
+            container.addEventListener('mouseenter', () => {
+                container.style.transform = 'translateY(-2px)';
+                container.style.transition = 'transform 0.3s ease';
+            });
+            
+            container.addEventListener('mouseleave', () => {
+                container.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Effet hover sur les éléments de la liste thématique
+        document.querySelectorAll('.themes-list li').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.style.transform = 'translateX(5px)';
+                item.style.transition = 'transform 0.3s ease';
+            });
+            
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = 'translateX(0)';
+            });
+        });
+    </script>
+</body>
+</html>

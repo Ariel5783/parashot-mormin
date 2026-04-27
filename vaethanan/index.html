@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paracha Vaet'hanan - L'écho éternel de l'Alliance - אריאל מרמן</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', 'Palatino', 'Times New Roman', serif;
+            line-height: 1.7;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="50" fill="white" opacity="0.1">📖</text></svg>');
+            background-size: 100px 100px;
+            opacity: 0.1;
+        }
+        
+        .main-title {
+            font-size: 2.8rem;
+            font-weight: 300;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            font-weight: 300;
+            opacity: 0.9;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .content {
+            padding: 3rem 2.5rem;
+        }
+        
+        .section {
+            margin-bottom: 3rem;
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid #e8f4f8;
+        }
+        
+        .section-icon {
+            font-size: 1.5rem;
+            margin-right: 0.8rem;
+            color: #667eea;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .subsection {
+            margin: 2rem 0;
+        }
+        
+        .subsection-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #34495e;
+            margin-bottom: 1rem;
+            border-left: 4px solid #667eea;
+            padding-left: 1rem;
+        }
+        
+        .verse-container {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .verse-french {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+        }
+        
+        .verse-transliteration {
+            font-style: italic;
+            color: #6c5ce7;
+            font-size: 1rem;
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .verse-hebrew {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.4rem;
+            direction: rtl;
+            text-align: right;
+            color: #d63031;
+            font-weight: bold;
+            line-height: 1.8;
+            background: rgba(214, 48, 49, 0.05);
+            padding: 0.8rem;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .verse-reference {
+            font-size: 0.9rem;
+            color: #74b9ff;
+            font-style: italic;
+            text-align: right;
+        }
+        
+        .shema-highlight {
+            background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%);
+            color: white;
+            border: none;
+            box-shadow: 0 4px 15px rgba(253, 203, 110, 0.4);
+        }
+        
+        .shema-highlight .verse-hebrew {
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+        }
+        
+        .shema-highlight .verse-french,
+        .shema-highlight .verse-transliteration,
+        .shema-highlight .verse-reference {
+            color: white;
+        }
+        
+        .meditation-box {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-left: 5px solid #00b894;
+        }
+        
+        .meditation-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #2d3436;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .meditation-title::before {
+            content: "✨";
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .meditation-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .meditation-list li {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #2d3436;
+            font-weight: 500;
+        }
+        
+        .meditation-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #00b894;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .intro-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+        
+        .conclusion-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            font-style: italic;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #a8edea 0%, transparent 100%);
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+        
+        .footer {
+            background: #2d3436;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 1rem;
+                border-radius: 8px;
+            }
+            
+            .content {
+                padding: 2rem 1.5rem;
+            }
+            
+            .main-title {
+                font-size: 2.2rem;
+            }
+            
+            .verse-hebrew {
+                font-size: 1.2rem;
+            }
+        }
+        
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transform-origin: left;
+            transform: scaleX(0);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-indicator"></div>
+    
+    <div class="container">
+        <header class="header">
+            <h1 class="main-title">📖 Paracha Vaet'hanan</h1>
+            <p class="subtitle">L'écho éternel de l'Alliance</p>
+        </header>
+        
+        <main class="content">
+            <!-- Introduction -->
+            <section class="section">
+                <div class="section-header">
+                    <span class="section-icon">🔹</span>
+                    <h2 class="section-title">Moïse plaide, le peuple écoute</h2>
+                </div>
+                
+                <!-- Vidéo YouTube -->
+                <div class="video-container">
+                    <h3 class="video-title">📖 Vaet'hanan – L'écho éternel de l'Alliance</h3>
+                    <div class="video-wrapper">
+                        <iframe 
+                            src="https://www.youtube.com/embed/Y8IKxpNGjxc" 
+                            title="📖 Vaet'hanan – L'écho éternel de l'Alliance"
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+                
+                <p class="intro-text">
+                    La Paracha <span class="highlight">Vaet'hanan</span> (וָאֶתְחַנַּן), qui signifie <em>"et j'implorai"</em>, est la <strong>deuxième paracha du livre de Devarim (Deutéronome)</strong>. Moïse, conscient qu'il ne franchira pas le Jourdain, adresse au peuple un plaidoyer vibrant. Il revient sur l'interdiction divine de pénétrer en Terre promise, transmet les <strong>Dix Commandements</strong> une seconde fois, et enseigne le <strong>Shema Israël</strong>, fondement de la foi juive.
+                </p>
+                
+                <p class="intro-text">
+                    Cette paracha se situe dans la continuité du <strong>discours d'adieu</strong> de Moïse. C'est une transmission intense, marquée par l'amour, la mémoire, l'angoisse et l'espoir.
+                </p>
+            </section>
+            
+            <!-- Développement -->
+            <section class="section">
+                <div class="section-header">
+                    <span class="section-icon">🔸</span>
+                    <h2 class="section-title">Les piliers de l'Alliance renouvelée</h2>
+                </div>
+                
+                <!-- Sous-section 1 -->
+                <div class="subsection">
+                    <h3 class="subsection-title">1. La prière de Moïse et le refus divin</h3>
+                    
+                    <div class="verse-container">
+                        <div class="verse-french">"Je priai l'Éternel à ce moment-là, en disant…"</div>
+                        <div class="verse-transliteration">"Vaet'hanan el-Adonaï ba'et ha-hi lemor…"</div>
+                        <div class="verse-hebrew">וָאֶתְחַנַּן אֶל־יְהוָה בָּעֵת הַהִוא לֵאמֹר׃</div>
+                        <div class="verse-reference">(Deutéronome 3:23)</div>
+                    </div>
+                    
+                    <p>Moïse implore Dieu de lui permettre d'entrer en Terre promise, mais <strong>Dieu refuse catégoriquement</strong>, tout en l'autorisant à contempler le pays depuis le sommet du mont Pisga. Cette scène souligne que <span class="highlight">même les plus grands justes</span> ne peuvent contourner la justice divine.</p>
+                </div>
+                
+                <!-- Sous-section 2 -->
+                <div class="subsection">
+                    <h3 class="subsection-title">2. L'appel à la fidélité et à l'enseignement</h3>
+                    
+                    <p>Moïse exhorte le peuple à <strong>ne rien ajouter ni retrancher à la Torah</strong> :</p>
+                    
+                    <div class="verse-container">
+                        <div class="verse-french">"Vous n'ajouterez rien à ce que je vous ordonne, et vous n'en retrancherez rien"</div>
+                        <div class="verse-transliteration">"Lo tosifu al ha-davar asher anokhi metzaveh etkhem velo tigre'u mimenu"</div>
+                        <div class="verse-hebrew">לֹא תֹסִפוּ עַל־הַדָּבָר אֲשֶׁר אָנֹכִי מְצַוֶּה אֶתְכֶם וְלֹא תִגְרְעוּ מִמֶּנּוּ</div>
+                        <div class="verse-reference">(Deutéronome 4:2)</div>
+                    </div>
+                    
+                    <p>Il rappelle la nécessité de <strong>transmettre aux enfants</strong>, d'enseigner l'expérience du Sinaï, et d'<strong>éviter l'idolâtrie</strong>, qui mènerait à l'exil.</p>
+                </div>
+                
+                <!-- Sous-section 3 -->
+                <div class="subsection">
+                    <h3 class="subsection-title">3. La centralité du monothéisme – le Shema Israël</h3>
+                    
+                    <p>C'est dans cette paracha que résonne la plus célèbre des affirmations de foi :</p>
+                    
+                    <div class="verse-container shema-highlight">
+                        <div class="verse-french">"Écoute Israël, l'Éternel est notre Dieu, l'Éternel est Un."</div>
+                        <div class="verse-transliteration">"Shema Yisrael Adonaï Eloheinu Adonaï Echad"</div>
+                        <div class="verse-hebrew">שְׁמַע יִשְׂרָאֵל יְהוָה אֱלֹהֵינוּ יְהוָה אֶחָד׃</div>
+                        <div class="verse-reference">(Deutéronome 6:4)</div>
+                    </div>
+                    
+                    <p>C'est une <span class="highlight">profession de foi radicale</span>, qui implique l'amour de Dieu <strong>"de tout ton cœur, de toute ton âme et de tous tes moyens"</strong> (Dt 6:5). Elle est immédiatement suivie du commandement de <strong>graver ces paroles dans le cœur, de les enseigner aux enfants, de les inscrire sur les portes (mézouzah)</strong>.</p>
+                </div>
+                
+                <!-- Sous-section 4 -->
+                <div class="subsection">
+                    <h3 class="subsection-title">4. Les Dix Paroles – Une répétition pour une nouvelle génération</h3>
+                    
+                    <p>La Paracha répète les <strong>Dix Commandements (Aseret HaDibrot)</strong> déjà énoncés dans <em>Exode 20</em>, mais avec quelques différences subtiles (par exemple, « <strong>Garde</strong> » le Shabbat au lieu de « <strong>Souviens-toi</strong> »).</p>
+                    
+                    <div class="verse-container">
+                        <div class="verse-french">"Garde le jour du Shabbat pour le sanctifier, comme te l'a ordonné l'Éternel ton Dieu"</div>
+                        <div class="verse-transliteration">"Shamor et-yom haShabbat le-kaddesho ka'asher tzivkha Adonaï Elohekha"</div>
+                        <div class="verse-hebrew">שָׁמוֹר אֶת־יוֹם הַשַּׁבָּת לְקַדְּשׁוֹ כַּאֲשֶׁר צִוְּךָ יְהוָה אֱלֹהֶיךָ׃</div>
+                        <div class="verse-reference">(Deutéronome 5:12)</div>
+                    </div>
+                    
+                    <p>Cette répétition confirme que <span class="highlight">la Torah n'est pas un livre du passé</span>, mais un <strong>engagement vivant</strong> à renouveler sans cesse.</p>
+                </div>
+            </section>
+            
+            <!-- Conclusion -->
+            <section class="section">
+                <div class="section-header">
+                    <span class="section-icon">🔹</span>
+                    <h2 class="section-title">Un héritage vivant et exigeant</h2>
+                </div>
+                
+                <p class="conclusion-text">
+                    La Paracha Vaet'hanan nous offre <strong>une synthèse magistrale</strong> : mémoire, foi, transmission, vigilance. Moïse, bien qu'exclu de la terre promise, s'assure que la génération future <strong>porte l'héritage de la Torah avec responsabilité</strong>.
+                </p>
+                
+                <p class="conclusion-text">
+                    Le <span class="highlight">Shema Israël</span> devient le <strong>mantra d'une nation</strong>, une invitation à la conscience, à l'unité et à la fidélité.
+                </p>
+            </section>
+            
+            <!-- Méditations -->
+            <section class="section">
+                <div class="meditation-box">
+                    <h3 class="meditation-title">Pour aller plus loin : trois méditations possibles</h3>
+                    <ul class="meditation-list">
+                        <li><strong>Quelles sont mes "prières non exaucées" ?</strong> Comme Moïse, puis-je y voir un message, une autre mission ?</li>
+                        <li><strong>Suis-je un relais fidèle de la mémoire et de la Torah ?</strong> Transmis-je ce que j'ai reçu ?</li>
+                        <li><strong>Le Shema résonne-t-il en moi comme un appel quotidien à l'unité ?</strong></li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+        
+        <footer class="footer">
+            <p>Étude de la Paracha Vaet'hanan par אריאל מרמן (Ariel Mormin) • L'écho éternel de l'Alliance</p>
+        </footer>
+    </div>
+    
+    <script>
+        // Animation de la barre de progression
+        window.addEventListener('scroll', () => {
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            scrollIndicator.style.transform = `scaleX(${scrolled / 100})`;
+        });
+        
+        // Animation d'apparition des sections
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
+        
+        document.querySelectorAll('.section').forEach((section) => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
