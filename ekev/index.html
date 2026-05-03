@@ -260,10 +260,33 @@
                 font-size: 1.1em;
             }
         }
+    
+        /* Bouton retour - fix-back-buttons.ps1 */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #1e3c72 0%, #18305B 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(30, 60, 114, 0.40);
+            margin-bottom: 20px;
+        }
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(30, 60, 114, 0.60);
+        }
     </style>
 </head>
 <body>
     <div class="container">
+        <a href="https://parashot-mormin.netlify.app/" class="back-button">&larr; Retour aux Parachiot</a>
+
         <div class="header">
             <div class="hebrew-title">עֵקֶב</div>
             <h1 class="title">Paracha Ekev</h1>

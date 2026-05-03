@@ -398,12 +398,35 @@
             z-index: 1000;
             transition: transform 0.3s ease;
         }
+    
+        /* Bouton retour - fix-back-buttons.ps1 */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #1e3a8a 0%, #182E6E 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(30, 58, 138, 0.40);
+            margin-bottom: 20px;
+        }
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(30, 58, 138, 0.60);
+        }
     </style>
 </head>
 <body>
     <div class="scroll-indicator"></div>
     
     <div class="container">
+        <a href="https://parashot-mormin.netlify.app/" class="back-button">&larr; Retour aux Parachiot</a>
+
         <div class="header">
             <div class="hebrew-title">וַיֵּרָא</div>
             <h1 class="title">Paracha Vayéra</h1>
