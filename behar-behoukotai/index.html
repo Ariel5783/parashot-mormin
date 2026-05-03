@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Paracha Béhar – Bé'houkotaï : Liberté, Terre et Alliance. La terre appartient à Adonaï, la Shemita, le Jubilé et l'alliance vivante. Étude Torah complète selon la tradition séfarade par Ariel Mormin.">
+    <meta name="keywords" content="Paracha Béhar, Paracha Béhoukotaï, בהר, בחוקותי, Torah, Lévitique, Shemita, Jubilé, Yovel, Alliance, tradition séfarade, étude biblique, paracha semaine, Ariel Mormin, Parashot Mormin">
+    <title>Paracha Béhar – Bé'houkotaï – La terre, l'homme et l'alliance</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            background: linear-gradient(135deg,
+                #052e16 0%, #14532d 15%, #166534 30%,
+                #15803d 50%, #052e16 70%, #14532d 85%, #052e16 100%);
+            min-height: 100vh;
+            color: #333;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background:
+                radial-gradient(circle at 70% 15%, rgba(202, 138, 4, 0.22) 0%, transparent 50%),
+                radial-gradient(circle at 15% 75%, rgba(22, 101, 52, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 85% 80%, rgba(180, 83, 9, 0.15) 0%, transparent 45%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 30px auto;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.60);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ── Bouton retour ── */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #14532d, #15803d);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(20, 83, 45, 0.40);
+            margin-bottom: 20px;
+        }
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(20, 83, 45, 0.60);
+            background: linear-gradient(135deg, #15803d, #14532d);
+        }
+
+        /* ── En-tête ── */
+        .header {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(135deg,
+                #052e16, #14532d, #166534, #15803d,
+                #b45309, #166534, #14532d, #052e16);
+            margin: -40px -20px 50px -20px;
+            border-radius: 20px 20px 0 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background:
+                radial-gradient(circle at 30% 50%, rgba(202, 138, 4, 0.22) 0%, transparent 55%),
+                radial-gradient(circle at 70% 50%, rgba(22, 101, 52, 0.25) 0%, transparent 55%),
+                radial-gradient(circle at center, rgba(5, 46, 22, 0.45) 0%, rgba(5, 46, 22, 0.60) 70%);
+        }
+
+        .header-icon {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+            display: block;
+        }
+
+        .title {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            color: #f0fdf4;
+        }
+
+        .hebrew-title {
+            font-size: 3.2em;
+            color: #fde68a;
+            margin-bottom: 15px;
+            font-family: 'Times New Roman', serif;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-size: 1.4em;
+            font-style: italic;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+            color: #dcfce7;
+        }
+
+        .reference {
+            font-size: 1.1em;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+            color: #fde68a;
+        }
+
+        /* ── Barre de progression ── */
+        .scroll-indicator {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #14532d, #ca8a04, #fbbf24);
+            transform-origin: left;
+            transform: scaleX(0);
+            z-index: 1000;
+            transition: transform 0.1s ease;
+        }
+
+        /* ── Boîte intro ── */
+        .intro-box {
+            background: linear-gradient(135deg, #f0fdf4, #fef9c3);
+            padding: 35px;
+            border-radius: 15px;
+            border-left: 6px solid #15803d;
+            margin-bottom: 45px;
+            box-shadow: 0 8px 20px rgba(21, 128, 61, 0.12);
+            position: relative;
+        }
+
+        .intro-box::before {
+            content: "✡";
+            position: absolute;
+            top: 15px; right: 20px;
+            font-size: 2.2em;
+            opacity: 0.18;
+            color: #15803d;
+        }
+
+        /* ── Sections ── */
+        .section {
+            margin-bottom: 45px;
+            padding: 20px 0;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #14532d;
+            margin-bottom: 25px;
+            font-weight: bold;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #f0fdf4, #fef9c3);
+            border-radius: 10px;
+            border-left: 5px solid #15803d;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-icon { font-size: 1.8em; flex-shrink: 0; }
+
+        .content-text {
+            font-size: 1.15em;
+            line-height: 1.8;
+            color: #1f2937;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #bbf7d0, #fde68a);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: #052e16;
+        }
+
+        /* ════════════════════════════════
+           VERSE CONTAINERS
+        ════════════════════════════════ */
+        .verse-container {
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        .verse-container:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .verse-french {
+            font-size: 1.25em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        .verse-hebrew {
+            font-size: 1.8em;
+            font-family: 'Times New Roman', serif;
+            direction: rtl;
+            text-align: right;
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 8px;
+            line-height: 1.8;
+        }
+        .verse-transliteration {
+            font-size: 1.1em;
+            font-style: italic;
+            margin: 12px 0;
+        }
+        .verse-reference {
+            font-size: 0.95em;
+            font-weight: bold;
+            margin-top: 12px;
+        }
+
+        /* Section 1 : Terre — vert forêt profond */
+        .terre-verse {
+            border: 2px solid #15803d;
+            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+        }
+        .terre-verse .verse-hebrew {
+            background: rgba(187, 247, 208, 0.45);
+            color: #052e16;
+        }
+        .terre-verse .verse-french          { color: #14532d; }
+        .terre-verse .verse-transliteration { color: #15803d; }
+        .terre-verse .verse-reference       { color: #166534; }
+
+        /* Section 2 : Shemita — olive / terre */
+        .shemita-verse {
+            border: 2px solid #65a30d;
+            background: linear-gradient(135deg, #f7fee7, #ecfccb);
+        }
+        .shemita-verse .verse-hebrew {
+            background: rgba(217, 249, 157, 0.45);
+            color: #1a2e05;
+        }
+        .shemita-verse .verse-french        { color: #365314; }
+        .shemita-verse .verse-transliteration { color: #65a30d; }
+        .shemita-verse .verse-reference     { color: #4d7c0f; }
+
+        /* Section 3 : Jubilé — or / liberté */
+        .yovel-verse {
+            border: 2px solid #ca8a04;
+            background: linear-gradient(135deg, #fffbeb, #fef3c7);
+        }
+        .yovel-verse .verse-hebrew {
+            background: rgba(253, 230, 138, 0.40);
+            color: #451a03;
+        }
+        .yovel-verse .verse-french         { color: #92400e; }
+        .yovel-verse .verse-transliteration { color: #b45309; }
+        .yovel-verse .verse-reference      { color: #78350f; }
+
+        /* Section 4 : Béhoukotaï / Alliance — vert foncé / or */
+        .alliance-verse {
+            border: 2px solid #166534;
+            background: linear-gradient(135deg, #f0fdf4, #fef9c3);
+        }
+        .alliance-verse .verse-hebrew {
+            background: rgba(187, 247, 208, 0.30);
+            color: #052e16;
+        }
+        .alliance-verse .verse-french       { color: #14532d; }
+        .alliance-verse .verse-transliteration { color: #15803d; }
+        .alliance-verse .verse-reference    { color: #166534; }
+
+        /* Section bénédictions — or vert */
+        .benedicton-verse {
+            border: 2px solid #ca8a04;
+            background: linear-gradient(135deg, #fefce8, #fef3c7);
+        }
+        .benedicton-verse .verse-hebrew {
+            background: rgba(253, 230, 138, 0.35);
+            color: #451a03;
+        }
+        .benedicton-verse .verse-french     { color: #78350f; }
+        .benedicton-verse .verse-transliteration { color: #b45309; }
+        .benedicton-verse .verse-reference  { color: #92400e; }
+
+        /* Section conclusion — vert forêt & or */
+        .conclusion-verse {
+            border: 2px solid #14532d;
+            background: linear-gradient(135deg, #f0fdf4, #fef9c3);
+        }
+        .conclusion-verse .verse-hebrew {
+            background: rgba(187, 247, 208, 0.25);
+            color: #052e16;
+            font-size: 2em;
+        }
+        .conclusion-verse .verse-french     { color: #14532d; }
+        .conclusion-verse .verse-transliteration { color: #15803d; }
+        .conclusion-verse .verse-reference  { color: #166534; }
+
+        /* ════════════════════════════════
+           BOÎTES SPÉCIALES
+        ════════════════════════════════ */
+        .teaching-box {
+            background: linear-gradient(135deg, #f0fdf4, #fef9c3);
+            border: 2px solid #15803d;
+            border-radius: 12px;
+            padding: 25px 35px;
+            margin: 25px 0;
+        }
+        .teaching-box p {
+            font-size: 1.1em;
+            color: #1f2937;
+            margin-bottom: 12px;
+            border-left: 3px solid #15803d;
+            padding: 8px 0 8px 15px;
+        }
+        .teaching-box p:last-child { margin-bottom: 0; }
+
+        .terre-special {
+            background: linear-gradient(135deg, #14532d, #166534);
+            border: 2px solid #bbf7d0;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(20, 83, 45, 0.35);
+            text-align: center;
+            color: white;
+        }
+        .terre-special .icon {
+            font-size: 2.5em;
+            display: block;
+            margin-bottom: 15px;
+        }
+        .terre-special p {
+            font-size: 1.15em;
+            font-weight: bold;
+            color: #dcfce7;
+        }
+        .terre-special .sub {
+            font-size: 1em;
+            font-style: italic;
+            color: #86efac;
+            font-weight: normal;
+            margin-top: 8px;
+        }
+
+        .shemita-banner {
+            background: linear-gradient(135deg, #1a2e05, #365314);
+            border: 2px solid #bef264;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.22em;
+            color: #ecfccb;
+            box-shadow: 0 8px 25px rgba(22, 101, 52, 0.30);
+            line-height: 1.9;
+        }
+        .shemita-banner strong { color: #bef264; }
+
+        .yovel-banner {
+            background: linear-gradient(135deg, #451a03, #78350f);
+            border: 2px solid #fbbf24;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.22em;
+            color: #fde68a;
+            box-shadow: 0 8px 25px rgba(180, 83, 9, 0.30);
+            line-height: 1.9;
+        }
+        .yovel-banner strong { color: #fbbf24; }
+        .yovel-banner em    { color: #bbf7d0; font-style: italic; }
+
+        .alliance-banner {
+            background: linear-gradient(135deg, #052e16, #14532d);
+            border: 2px solid #86efac;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.22em;
+            color: #dcfce7;
+            box-shadow: 0 8px 25px rgba(20, 83, 45, 0.30);
+            line-height: 1.9;
+        }
+        .alliance-banner strong { color: #86efac; }
+        .alliance-banner em    { color: #fde68a; font-style: italic; }
+
+        .sepharde-banner {
+            background: linear-gradient(135deg, #14532d, #ca8a04);
+            border: 2px solid #fbbf24;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.22em;
+            color: #fef9c3;
+            box-shadow: 0 8px 25px rgba(202, 138, 4, 0.25);
+            line-height: 1.9;
+        }
+        .sepharde-banner strong { color: #fde68a; }
+
+        .conclusion-banner {
+            background: linear-gradient(135deg, #052e16, #14532d, #ca8a04);
+            border: 2px solid #fde68a;
+            border-radius: 15px;
+            padding: 35px;
+            margin: 30px 0;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.28em;
+            color: #f0fdf4;
+            box-shadow: 0 8px 30px rgba(5, 46, 22, 0.45);
+            line-height: 2;
+        }
+        .conclusion-banner strong { color: #fde68a; }
+        .conclusion-banner em    { color: #bbf7d0; }
+
+        /* ── Bloc idée forte ── */
+        .idea-box {
+            background: linear-gradient(135deg, #f0fdf4, #fefce8);
+            border: 2px solid #15803d;
+            border-radius: 12px;
+            padding: 25px 35px;
+            margin: 30px 0;
+            text-align: center;
+            box-shadow: 0 6px 18px rgba(21, 128, 61, 0.12);
+        }
+        .idea-box p {
+            font-size: 1.18em;
+            font-style: italic;
+            color: #14532d;
+            line-height: 1.8;
+        }
+        .idea-box strong { color: #052e16; }
+
+        /* ── Bloc Rachi ── */
+        .rachi-banner {
+            background: linear-gradient(135deg, #1a2e05, #365314);
+            border: 2px solid #fbbf24;
+            border-radius: 15px;
+            padding: 28px 32px;
+            margin: 28px 0;
+            box-shadow: 0 8px 22px rgba(54, 83, 20, 0.28);
+        }
+        .rachi-banner .rachi-label {
+            font-size: 0.85em;
+            font-weight: bold;
+            color: #bef264;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            display: block;
+        }
+        .rachi-banner p {
+            font-size: 1.12em;
+            font-style: italic;
+            color: #ecfccb;
+            line-height: 1.75;
+        }
+        .rachi-banner strong { color: #fde68a; }
+
+        /* ── Citations clés ── */
+        .quotes-section {
+            background: linear-gradient(135deg, #f0fdf4, #fefce8);
+            border-radius: 15px;
+            padding: 35px;
+            margin: 40px 0;
+            border: 2px solid #15803d;
+        }
+        .quotes-section h2 {
+            font-size: 1.6em;
+            color: #14532d;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .quote-item {
+            margin-bottom: 30px;
+            padding: 20px 25px;
+            background: white;
+            border-radius: 12px;
+            border-left: 4px solid #15803d;
+            box-shadow: 0 4px 12px rgba(21, 128, 61, 0.08);
+        }
+        .quote-item:last-child { margin-bottom: 0; }
+        .quote-hebrew {
+            font-size: 1.6em;
+            font-family: 'Times New Roman', serif;
+            direction: rtl;
+            text-align: right;
+            color: #14532d;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .quote-transliteration {
+            font-style: italic;
+            color: #15803d;
+            font-size: 1.0em;
+            display: block;
+            margin-bottom: 6px;
+        }
+        .quote-french {
+            color: #1f2937;
+            font-size: 1.0em;
+        }
+
+        /* ── Vidéo ── */
+        .video-section {
+            margin: 40px 0;
+        }
+        .video-section h2 {
+            font-size: 1.6em;
+            color: #14532d;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(5, 46, 22, 0.35);
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            border: none;
+            border-radius: 15px;
+        }
+
+        /* ── Conclusion clôture ── */
+        .closing-section {
+            text-align: center;
+            padding: 35px;
+            background: linear-gradient(135deg, #f0fdf4, #fefce8);
+            border-radius: 15px;
+            border: 2px solid #15803d;
+            margin: 40px 0;
+        }
+        .closing-section p {
+            font-size: 1.2em;
+            color: #14532d;
+            line-height: 1.9;
+            font-style: italic;
+        }
+
+        /* ── Pied de page ── */
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, #052e16, #14532d);
+            margin: 40px -20px -40px -20px;
+            border-radius: 0 0 20px 20px;
+            color: #dcfce7;
+        }
+        .footer-main {
+            font-size: 1.15em;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #f0fdf4;
+        }
+        .footer-hebrew {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.1em;
+            color: #fde68a;
+        }
+        .footer-subtitle {
+            font-size: 0.95em;
+            opacity: 0.75;
+            margin-top: 6px;
+            font-style: italic;
+        }
+
+        /* ── Animation d'entrée ── */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 700px) {
+            .title { font-size: 2em; }
+            .hebrew-title { font-size: 2.4em; }
+            .container { padding: 25px 15px; }
+            .header { padding: 35px 15px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="scroll-indicator" id="scrollBar"></div>
+
+<div class="container">
+
+    <!-- Bouton retour -->
+    <a href="https://parashot-mormin.netlify.app/" class="back-button">← Retour aux Parachiot</a>
+
+    <!-- En-tête -->
+    <div class="header">
+        <span class="header-icon">🌿</span>
+        <h1 class="title">Paracha Béhar – Bé'houkotaï</h1>
+        <div class="hebrew-title">בהר – בחוקותי</div>
+        <p class="subtitle">La terre, l'homme et l'alliance : entre liberté et responsabilité</p>
+        <p class="reference">Lévitique 25:1 – 27:34 • Vayikra</p>
+    </div>
+
+    <!-- Introduction -->
+    <div class="intro-box fade-in">
+        <p class="content-text" style="margin-bottom:15px;">
+            Les parachiot <strong>Béhar</strong> (Lévitique 25) et <strong>Bé'houkotaï</strong> (Lévitique 26–27) concluent le livre du
+            <span class="highlight">Lévitique</span> (<em>Vayikra</em>). Elles forment une unité profonde : Béhar pose les règles
+            économiques et sociales du peuple d'Israël, Bé'houkotaï en révèle les conséquences spirituelles — bénédictions et réprimandes.
+        </p>
+        <p class="content-text">
+            Nous passons ici du <strong>fonctionnement du monde</strong> à <strong>la relation avec Adonaï</strong>.
+            C'est un moment charnière : la Torah ne parle plus seulement de sainteté dans le sacré —
+            elle parle de <span class="highlight">justice concrète dans la vie quotidienne</span>.
+        </p>
+    </div>
+
+    <!-- Section 1 — La terre appartient à Adonaï -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">⚖️</span>
+            1. La terre appartient à Adonaï
+        </div>
+
+        <p class="content-text">
+            Le premier axe de Béhar est une déclaration révolutionnaire qui renverse toute conception ordinaire de la propriété.
+            La Torah pose ici un principe fondateur sur lequel tout le reste de la paracha s'appuie : l'homme n'est pas propriétaire
+            absolu. Il est <strong>gestionnaire temporaire</strong>. Il vit <em>avec</em> Adonaï, non indépendamment de Lui.
+        </p>
+
+        <div class="verse-container terre-verse">
+            <div class="verse-french">« La terre ne sera pas vendue définitivement, car la terre est à Moi, car vous êtes des étrangers et des résidents avec Moi. »</div>
+            <div class="verse-hebrew">וְהָאָרֶץ לֹא תִמָּכֵר לִצְמִתֻת כִּי לִי הָאָרֶץ כִּי־גֵרִים וְתוֹשָׁבִים אַתֶּם עִמָּדִי</div>
+            <div class="verse-transliteration"><em>Vehaaretz lo timakher litsmitout, ki li haaretz, ki gerim vetoshavim atem imadi.</em></div>
+            <div class="verse-reference">Lévitique / Vayikra 25:23</div>
+        </div>
+
+        <div class="rachi-banner">
+            <span class="rachi-label">🔍 Selon Rachi</span>
+            <p>Rachi souligne que la formule <strong>« gérim vetoshavim »</strong> — étrangers et résidents — exprime une humilité fondamentale devant Adonaï :
+            « Ne te considère pas comme le maître de cette terre. Tout est à Adonaï. » Cette formulation inverse radicalement la logique de possession.</p>
+        </div>
+
+        <div class="terre-special">
+            <span class="icon">🌍</span>
+            <p>Posséder devient une responsabilité morale</p>
+            <p class="sub">La richesse, le pouvoir, la propriété — tout est remis entre les mains d'Adonaï</p>
+        </div>
+
+        <p class="content-text">
+            Ce verset est peut-être l'un des plus subversifs de toute la Torah économique. Il dit que toute transaction,
+            tout contrat, toute accumulation de biens est soumise à une limite supérieure — la souveraineté absolue d'Adonaï.
+            Ce n'est pas une abstraction théologique : c'est une règle pratique avec des conséquences directes sur les lois
+            de vente, d'héritage et de restitution des terres en Israël.
+        </p>
+    </div>
+
+    <!-- Section 2 — La Shemita -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">🌱</span>
+            2. La Shemita : apprendre à lâcher
+        </div>
+
+        <p class="content-text">
+            Tous les sept ans, la Torah ordonne à la terre elle-même de se reposer. La <strong>Shemita</strong> — l'année sabbatique —
+            est une révolution économique et spirituelle. L'homme cesse de produire, les récoltes deviennent accessibles à tous,
+            et chacun est invité à accepter de dépendre d'Adonaï comme source.
+        </p>
+
+        <div class="verse-container shemita-verse">
+            <div class="verse-french">« La terre observera un repos, un Shabbat pour Adonaï. »</div>
+            <div class="verse-hebrew">וְשָׁבְתָה הָאָרֶץ שַׁבָּת לַה׳</div>
+            <div class="verse-transliteration"><em>Veshavta haaretz Shabbat laAdonaï</em></div>
+            <div class="verse-reference">Lévitique / Vayikra 25:2</div>
+        </div>
+
+        <div class="shemita-banner">
+            La Shemita enseigne que <strong>tu ne contrôles pas tout</strong>.<br>
+            Tu dois savoir t'arrêter — reconnaître Adonaï comme source.
+        </div>
+
+        <p class="content-text">
+            Le Lévitique Rabba commente ce verset en soulignant que le Shabbat de la terre reflète le Shabbat de la Création.
+            Comme Adonaï s'est reposé au septième jour, la terre se repose la septième année. Ce n'est pas un abandon —
+            c'est une <strong>reconnaissance</strong> : le monde n'appartient pas à ceux qui le cultivent.
+        </p>
+
+        <div class="teaching-box">
+            <p>🌿 Arrêter de contrôler — c'est un acte de foi, pas de faiblesse</p>
+            <p>⚖️ La Shemita égalise : les fruits reviennent à tous, pas seulement à celui qui possède</p>
+            <p>🔥 Accepter de dépendre d'Adonaï, c'est reconnaître qui est vraiment au centre</p>
+        </div>
+    </div>
+
+    <!-- Section 3 — Le Jubilé -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">🎺</span>
+            3. Le Yovel (Jubilé) : restaurer la liberté
+        </div>
+
+        <p class="content-text">
+            Tous les cinquante ans, la Torah institue une remise à zéro générale. Le <strong>Yovel</strong> — le Jubilé —
+            est un système unique dans l'histoire de l'humanité : les terres retournent à leurs propriétaires d'origine,
+            les esclaves sont libérés, les dettes sont annulées.
+        </p>
+
+        <div class="verse-container yovel-verse">
+            <div class="verse-french">« Vous proclamerez la liberté dans le pays pour tous ses habitants. »</div>
+            <div class="verse-hebrew">וּקְרָאתֶם דְּרוֹר בָּאָרֶץ לְכָל־יֹשְׁבֶיהָ</div>
+            <div class="verse-transliteration"><em>Ukraetem dror baaretz lekhol yoshveha</em></div>
+            <div class="verse-reference">Lévitique / Vayikra 25:10</div>
+        </div>
+
+        <div class="yovel-banner">
+            Même si un homme a <strong>chuté</strong>… il peut recommencer.<br>
+            Il n'est jamais condamné <em>définitivement</em>.<br>
+            La Torah refuse une société figée.
+        </div>
+
+        <p class="content-text">
+            Le mot hébreu <strong>dror</strong> — liberté — est un mot rare dans la Torah. Il ne désigne pas seulement l'absence
+            de contrainte. Il exprime un mouvement : la capacité de circuler librement, de revenir à sa place d'origine,
+            de recommencer. Le Jubilé est une architecture sociale fondée sur l'espoir.
+        </p>
+
+        <div class="idea-box">
+            <p><strong>Idée forte :</strong> La liberté n'est pas donnée une fois pour toutes. Elle se restaure, se proclame, se réinstitue.
+            C'est une <em>responsabilité collective</em> — pas seulement une condition individuelle.</p>
+        </div>
+    </div>
+
+    <!-- Section 4 — Bé'houkotaï -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">🔥</span>
+            4. Bé'houkotaï : les conséquences de l'alliance
+        </div>
+
+        <p class="content-text">
+            Avec Bé'houkotaï, nous entrons dans la relation directe avec Adonaï. La Torah ne parle plus de lois économiques —
+            elle parle de la vie même du peuple en fonction de sa fidélité. Le mot clé est <strong>« telekhou »</strong> — marcher.
+            Non pas croire. Non pas savoir. Mais <span class="highlight">vivre la Torah</span>.
+        </p>
+
+        <div class="verse-container alliance-verse">
+            <div class="verse-french">« Si vous marchez dans Mes lois… »</div>
+            <div class="verse-hebrew">אִם־בְּחֻקֹּתַי תֵּלֵכוּ</div>
+            <div class="verse-transliteration"><em>Im beḥouqotai telekhou</em></div>
+            <div class="verse-reference">Lévitique / Vayikra 26:3</div>
+        </div>
+
+        <p class="content-text">
+            Le verbe <em>halakh</em> — marcher, avancer, progresser — est central dans la pensée de la Torah. Il exprime
+            un mouvement continu, une direction maintenue. Ce n'est pas un état statique. C'est un engagement dans la durée,
+            une fidélité active qui s'exprime dans chaque acte ordinaire.
+        </p>
+
+        <div class="verse-container benedicton-verse">
+            <div class="verse-french">« Je donnerai vos pluies en leur temps… »</div>
+            <div class="verse-hebrew">וְנָתַתִּי גִשְׁמֵיכֶם בְּעִתָּם</div>
+            <div class="verse-transliteration"><em>Venatati gishmekhem be'itam</em></div>
+            <div class="verse-reference">Lévitique / Vayikra 26:4</div>
+        </div>
+
+        <div class="alliance-banner">
+            La Torah ne promet pas la perfection.<br>
+            Elle promet l'<strong>harmonie</strong> — entre nature, société et spiritualité.<br>
+            Quand l'homme marche avec Adonaï, <em>le monde lui répond</em>.
+        </div>
+
+        <div class="verse-container alliance-verse">
+            <div class="verse-french">« Mais si vous ne M'écoutez pas… »</div>
+            <div class="verse-hebrew">וְאִם־לֹא תִשְׁמְעוּ לִי</div>
+            <div class="verse-transliteration"><em>Ve'im lo tishmeou li</em></div>
+            <div class="verse-reference">Lévitique / Vayikra 26:14</div>
+        </div>
+
+        <p class="content-text">
+            Le texte des réprimandes — la <em>Tokhekha</em> — est souvent lu à voix basse dans les synagogues séfarades,
+            non par honte, mais par gravité. Ce n'est pas une menace arbitraire. C'est une <strong>conséquence structurelle</strong> :
+            une société qui oublie Adonaï crée son propre déséquilibre. La sécheresse, la peur, l'instabilité —
+            ce sont les signes d'une rupture d'alliance, pas d'une punition extérieure.
+        </p>
+    </div>
+
+    <!-- Section 5 — Tradition séfarade -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">📖</span>
+            5. La lecture selon la tradition séfarade
+        </div>
+
+        <p class="content-text">
+            Dans la tradition séfarade, la Torah est une <strong>structure du réel</strong> — pas seulement un texte spirituel.
+            Elle organise la société, règle l'économie, définit la liberté. Béhar – Bé'houkotaï en est l'expression la plus
+            complète dans le Lévitique : la sainteté passe par l'économie, la foi passe par la justice,
+            la relation à Adonaï passe par le quotidien.
+        </p>
+
+        <div class="rachi-banner">
+            <span class="rachi-label">🔍 Lecture de profondeur — le détail révélateur</span>
+            <p>Un détail économique peut sembler secondaire — une balance faussée, une dette injuste, une terre accaparée.
+            Mais pour la Torah, ce n'est jamais un simple détail technique.
+            C'est une <strong>rupture spirituelle</strong>. La Torah exige une justice concrète… jusque dans l'invisible.</p>
+        </div>
+
+        <div class="sepharde-banner">
+            La sainteté ne se limite pas au sacré…<br>
+            <strong>elle se vit dans la précision de chaque acte juste.</strong>
+        </div>
+
+        <p class="content-text">
+            Cette double paracha enseigne que la cohérence entre foi et vie quotidienne n'est pas un idéal lointain.
+            C'est la structure même de l'alliance. Adonaï n'exige pas la perfection — Il exige la <strong>fidélité dans la direction</strong> :
+            marcher, avancer, progresser dans Sa voie.
+        </p>
+    </div>
+
+    <!-- Conclusion -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">✨</span>
+            Conclusion — La relation à Adonaï se mesure dans le quotidien
+        </div>
+
+        <p class="content-text">
+            Béhar – Bé'houkotaï nous conduit, pas à pas, du statut juridique de la terre jusqu'aux fondements spirituels
+            de l'alliance. Elle part d'une règle économique et arrive à une vision du monde. Elle part du Shabbat de la terre
+            et arrive au Shabbat de toute une vie orientée vers Adonaï.
+        </p>
+
+        <p class="content-text">
+            La double paracha enseigne une vérité fondamentale :
+            l'homme n'est pas propriétaire du monde. Il en est <strong>responsable</strong> — devant Adonaï,
+            devant les autres, devant les générations à venir. Cette responsabilité s'exprime
+            dans la justice économique, dans la libération du Jubilé, dans la fidélité de chaque jour.
+        </p>
+
+        <div class="verse-container conclusion-verse">
+            <div class="verse-french">« La relation à Adonaï ne se mesure pas dans le sacré… elle se révèle dans la manière dont l'homme gère le monde. »</div>
+            <div class="verse-hebrew">וְהָאָרֶץ לֹא תִמָּכֵר לִצְמִתֻת כִּי לִי הָאָרֶץ</div>
+            <div class="verse-transliteration"><em>Vehaaretz lo timakher litsmitout, ki li haaretz</em></div>
+            <div class="verse-reference">Lévitique / Vayikra 25:23</div>
+        </div>
+
+        <div class="conclusion-banner">
+            La terre appartient à Adonaï…<br>
+            L'économie doit être <strong>juste</strong>…<br>
+            La liberté doit être <em>restaurée</em>…<br>
+            Et la Torah doit être <strong>vécue</strong> — pas seulement connue.<br><br>
+            Chabbat Shalom. 🕯️
+        </div>
+    </div>
+
+    <!-- Citations clés -->
+    <div class="quotes-section fade-in">
+        <h2>🌿 Quelques citations clés de Béhar – Bé'houkotaï</h2>
+
+        <div class="quote-item">
+            <span class="quote-hebrew">וְהָאָרֶץ לֹא תִמָּכֵר לִצְמִתֻת כִּי לִי הָאָרֶץ</span>
+            <span class="quote-transliteration">Vehaaretz lo timakher litsmitout, ki li haaretz.</span>
+            <p class="quote-french">« La terre ne sera pas vendue définitivement, car la terre est à Moi. » (Lévitique 25:23)</p>
+        </div>
+
+        <div class="quote-item">
+            <span class="quote-hebrew">וְשָׁבְתָה הָאָרֶץ שַׁבָּת לַה׳</span>
+            <span class="quote-transliteration">Veshavta haaretz Shabbat laAdonaï.</span>
+            <p class="quote-french">« La terre observera un repos, un Shabbat pour Adonaï. » (Lévitique 25:2)</p>
+        </div>
+
+        <div class="quote-item">
+            <span class="quote-hebrew">וּקְרָאתֶם דְּרוֹר בָּאָרֶץ לְכָל־יֹשְׁבֶיהָ</span>
+            <span class="quote-transliteration">Ukraetem dror baaretz lekhol yoshveha.</span>
+            <p class="quote-french">« Vous proclamerez la liberté dans le pays pour tous ses habitants. » (Lévitique 25:10)</p>
+        </div>
+
+        <div class="quote-item">
+            <span class="quote-hebrew">אִם־בְּחֻקֹּתַי תֵּלֵכוּ</span>
+            <span class="quote-transliteration">Im beḥouqotai telekhou.</span>
+            <p class="quote-french">« Si vous marchez dans Mes lois… » (Lévitique 26:3)</p>
+        </div>
+    </div>
+
+    <!-- Vidéo -->
+    <div class="video-section fade-in">
+        <h2>🎥 Étude vidéo de Béhar – Bé'houkotaï</h2>
+        <div class="video-container">
+            <iframe
+                src="https://www.youtube.com/embed/RT_JvPzLWdA"
+                title="Paracha Béhar – Bé'houkotaï : Liberté, Terre et Alliance | Étude complète (Vayikra 25–27)"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+
+    <!-- Clôture -->
+    <div class="closing-section fade-in">
+        <p>
+            Une étude structurée et profonde de la double Paracha Béhar – Bé'houkotaï selon la tradition séfarade.
+            La souveraineté d'Adonaï sur la terre et l'économie ; la Shemita comme acte de foi et de lâcher-prise ;
+            le Jubilé comme architecture de la liberté —
+            et l'alliance vivante de Bé'houkotaï comme chemin concret vers Adonaï dans le quotidien.
+        </p>
+    </div>
+
+    <!-- Pied de page -->
+    <div class="footer">
+        <div class="footer-main">
+            Étude de Béhar – Bé'houkotaï par <span class="footer-hebrew">אריאל מרמן</span> (Ariel Mormin)
+        </div>
+        <div class="footer-subtitle">
+            • La terre, l'homme et l'alliance — בהר – בחוקותי • Lévitique 25–27 • Tradition séfarade •
+        </div>
+    </div>
+
+</div><!-- /container -->
+
+<script>
+    // Barre de progression
+    window.addEventListener('scroll', () => {
+        const doc = document.documentElement;
+        const progress = doc.scrollTop / (doc.scrollHeight - doc.clientHeight);
+        document.getElementById('scrollBar').style.transform = `scaleX(${progress})`;
+    });
+
+    // Animation d'entrée au scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
