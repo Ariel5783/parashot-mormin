@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Paracha Bamidbar : Le désert comme lieu de transformation, d'organisation et de révélation. Le recensement des tribus, le Michkan au centre du camp et la mission des Léviim. Étude Torah complète selon la tradition séfarade par Ariel Mormin.">
+    <meta name="keywords" content="Paracha Bamidbar, במדבר, Torah, Nombres, Sinaï, recensement, Michkan, Léviim, désert, tradition séfarade, étude biblique, paracha semaine, Ariel Mormin, Parashot Mormin, Chavouot">
+    <title>Paracha Bamidbar – Le désert comme lieu de construction du peuple</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            background: linear-gradient(150deg,
+                #05070f 0%, #0c1022 20%, #111830 40%,
+                #0e1428 60%, #070910 80%, #0c1022 100%);
+            min-height: 100vh;
+            color: #333;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background:
+                radial-gradient(ellipse 60% 40% at 20% 20%, rgba(180, 140, 60, 0.18) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 35% at 80% 70%, rgba(100, 130, 200, 0.15) 0%, transparent 55%),
+                radial-gradient(ellipse 40% 30% at 60% 10%, rgba(200, 160, 80, 0.12) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Starfield subtle */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image:
+                radial-gradient(1px 1px at 15% 20%, rgba(255,255,220,0.6) 0%, transparent 100%),
+                radial-gradient(1px 1px at 45% 8%, rgba(255,255,220,0.5) 0%, transparent 100%),
+                radial-gradient(1px 1px at 72% 15%, rgba(255,255,220,0.7) 0%, transparent 100%),
+                radial-gradient(1.5px 1.5px at 88% 5%, rgba(255,255,220,0.4) 0%, transparent 100%),
+                radial-gradient(1px 1px at 30% 88%, rgba(255,255,220,0.5) 0%, transparent 100%),
+                radial-gradient(1px 1px at 60% 92%, rgba(255,255,220,0.4) 0%, transparent 100%),
+                radial-gradient(1px 1px at 5% 55%, rgba(255,255,220,0.3) 0%, transparent 100%),
+                radial-gradient(1px 1px at 95% 45%, rgba(255,255,220,0.4) 0%, transparent 100%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 30px auto;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.70), 0 0 0 1px rgba(180,140,60,0.15);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ── Bouton retour ── */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #1e2d5a, #2d4080);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(30, 45, 90, 0.40);
+            margin-bottom: 20px;
+        }
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(30, 45, 90, 0.60);
+            background: linear-gradient(135deg, #2d4080, #1e2d5a);
+        }
+
+        /* ── En-tête ── */
+        .header {
+            text-align: center;
+            padding: 50px 20px 55px;
+            background: linear-gradient(150deg,
+                #05070f, #0c1022, #111830,
+                #1a2545, #c9891a, #0e1428,
+                #0c1022, #05070f);
+            margin: -40px -20px 50px -20px;
+            border-radius: 20px 20px 0 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background:
+                radial-gradient(ellipse 70% 60% at 50% 50%, rgba(201, 137, 26, 0.20) 0%, transparent 70%),
+                radial-gradient(ellipse 50% 40% at 20% 30%, rgba(100, 130, 200, 0.18) 0%, transparent 60%),
+                radial-gradient(ellipse 40% 50% at 80% 70%, rgba(30, 45, 90, 0.5) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        /* Sand dune silhouette */
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 35px;
+            background:
+                radial-gradient(ellipse 60% 100% at 30% 100%, rgba(201, 137, 26, 0.18) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 100% at 70% 100%, rgba(180, 110, 20, 0.12) 0%, transparent 60%);
+        }
+
+        .header-label-small {
+            font-size: 0.8em;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: rgba(201, 160, 80, 0.75);
+            font-family: 'Georgia', serif;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 14px;
+            display: block;
+        }
+
+        .header-icon {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+            display: block;
+        }
+
+        .title {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+            color: #f5f0e8;
+        }
+
+        .hebrew-title {
+            font-size: 3.4em;
+            color: #f0c84a;
+            margin-bottom: 15px;
+            font-family: 'Times New Roman', serif;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6), 0 0 30px rgba(240,200,74,0.25);
+            position: relative;
+            z-index: 1;
+            letter-spacing: 0.05em;
+        }
+
+        .subtitle {
+            font-size: 1.35em;
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            color: #dde4f5;
+            opacity: 0.9;
+        }
+
+        .reference {
+            font-size: 1.05em;
+            position: relative;
+            z-index: 1;
+            color: #f0c84a;
+            opacity: 0.9;
+        }
+
+        /* ── Barre de progression ── */
+        .scroll-indicator {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #1e2d5a, #c9891a, #f0c84a);
+            transform-origin: left;
+            transform: scaleX(0);
+            z-index: 1000;
+            transition: transform 0.1s ease;
+        }
+
+        /* ── Boîte intro ── */
+        .intro-box {
+            background: linear-gradient(135deg, #f0f4ff, #fef9ec);
+            padding: 35px;
+            border-radius: 15px;
+            border-left: 6px solid #2d4080;
+            margin-bottom: 45px;
+            box-shadow: 0 8px 20px rgba(30, 45, 90, 0.10);
+            position: relative;
+        }
+
+        .intro-box::before {
+            content: "✡";
+            position: absolute;
+            top: 15px; right: 20px;
+            font-size: 2.2em;
+            opacity: 0.12;
+            color: #2d4080;
+        }
+
+        /* ── Sections ── */
+        .section {
+            margin-bottom: 45px;
+            padding: 20px 0;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #1e2d5a;
+            margin-bottom: 25px;
+            font-weight: bold;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #f0f4ff, #fef9ec);
+            border-radius: 10px;
+            border-left: 5px solid #2d4080;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-icon { font-size: 1.8em; flex-shrink: 0; }
+
+        .content-text {
+            font-size: 1.15em;
+            line-height: 1.8;
+            color: #2c2c2c;
+            margin-bottom: 20px;
+        }
+
+        /* ── Versets ── */
+        .verse-block {
+            background: linear-gradient(135deg, #f0f4ff 0%, #fef9ec 100%);
+            border: 2px solid rgba(45, 64, 128, 0.20);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(30, 45, 90, 0.08);
+        }
+
+        .verse-block::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #1e2d5a, #c9891a, #f0c84a, #c9891a, #1e2d5a);
+        }
+
+        .verse-label {
+            font-size: 0.75em;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: rgba(45, 64, 128, 0.6);
+            margin-bottom: 12px;
+            display: block;
+            font-style: normal;
+        }
+
+        .verse-hebrew {
+            font-size: 2.1em;
+            color: #1a2545;
+            direction: rtl;
+            margin-bottom: 12px;
+            font-family: 'Times New Roman', serif;
+            font-weight: bold;
+            line-height: 1.5;
+            text-shadow: 0 1px 2px rgba(30,45,90,0.1);
+        }
+
+        .verse-transliteration {
+            font-size: 1.05em;
+            font-style: italic;
+            color: #4a5f9a;
+            margin-bottom: 10px;
+        }
+
+        .verse-french {
+            font-size: 1.05em;
+            color: #2c3e70;
+            font-style: italic;
+            border-top: 1px solid rgba(45, 64, 128, 0.15);
+            padding-top: 10px;
+            margin-top: 5px;
+        }
+
+        .verse-reference {
+            font-size: 0.85em;
+            color: rgba(45, 64, 128, 0.55);
+            margin-top: 8px;
+            letter-spacing: 0.1em;
+        }
+
+        /* ── Rachi ── */
+        .rachi-block {
+            background: linear-gradient(135deg, #fef9ec, #fff8e8);
+            border: 1px solid rgba(201, 137, 26, 0.28);
+            border-left: 5px solid #c9891a;
+            border-radius: 0 10px 10px 0;
+            padding: 22px 25px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .rachi-block::before {
+            content: 'רש"י';
+            position: absolute;
+            top: 12px; right: 18px;
+            font-size: 1.6em;
+            color: rgba(201, 137, 26, 0.18);
+            font-family: 'Times New Roman', serif;
+            font-weight: bold;
+            direction: rtl;
+        }
+
+        .rachi-label {
+            font-size: 0.78em;
+            font-weight: bold;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #c9891a;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .rachi-block p {
+            font-size: 1.05em;
+            line-height: 1.7;
+            color: #4a3010;
+            font-style: italic;
+        }
+
+        /* ── Midrash ── */
+        .midrash-block {
+            background: linear-gradient(135deg, #eef2ff, #f5f0ff);
+            border: 1px solid rgba(100, 80, 180, 0.22);
+            border-left: 5px solid #6450b4;
+            border-radius: 0 10px 10px 0;
+            padding: 22px 25px;
+            margin: 20px 0;
+        }
+
+        .midrash-label {
+            font-size: 0.78em;
+            font-weight: bold;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #6450b4;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .midrash-block p {
+            font-size: 1.05em;
+            line-height: 1.7;
+            color: #2d2050;
+            font-style: italic;
+        }
+
+        /* ── Idée forte ── */
+        .idea-box {
+            background: linear-gradient(135deg, #1e2d5a, #2d4080);
+            color: white;
+            padding: 30px 35px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(30, 45, 90, 0.30);
+        }
+
+        .idea-box::before {
+            content: '✦';
+            position: absolute;
+            top: -10px; right: 20px;
+            font-size: 5em;
+            color: rgba(240, 200, 74, 0.10);
+        }
+
+        .idea-label {
+            font-size: 0.72em;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: rgba(240, 200, 74, 0.7);
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .idea-box p {
+            font-size: 1.3em;
+            font-style: italic;
+            line-height: 1.6;
+            color: #f5f0e8;
+            position: relative;
+            z-index: 1;
+        }
+
+        .idea-box strong {
+            color: #f0c84a;
+            font-style: normal;
+        }
+
+        /* ── Paradoxe ── */
+        .paradox-box {
+            background: linear-gradient(135deg, #fff5e8, #ffefd0);
+            border: 2px solid rgba(201, 137, 26, 0.30);
+            border-radius: 12px;
+            padding: 25px 30px;
+            margin: 25px 0;
+            position: relative;
+        }
+
+        .paradox-label {
+            font-size: 0.75em;
+            font-weight: bold;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: #c9891a;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .paradox-box p {
+            font-size: 1.1em;
+            line-height: 1.75;
+            color: #3a2800;
+        }
+
+        /* ── Liste structurée ── */
+        .structured-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .structured-list li {
+            padding: 10px 0 10px 35px;
+            font-size: 1.1em;
+            color: #2c2c2c;
+            line-height: 1.6;
+            border-bottom: 1px solid rgba(45, 64, 128, 0.08);
+            position: relative;
+        }
+
+        .structured-list li:last-child { border-bottom: none; }
+
+        .structured-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 10px;
+            color: #c9891a;
+            font-size: 1em;
+        }
+
+        /* ── Bannière conclusion ── */
+        .conclusion-banner {
+            background: linear-gradient(135deg, #0c1022, #1e2d5a, #0c1022);
+            color: white;
+            padding: 40px 35px;
+            border-radius: 15px;
+            margin: 35px 0;
+            text-align: center;
+            font-size: 1.25em;
+            line-height: 1.9;
+            box-shadow: 0 10px 30px rgba(12, 16, 34, 0.40);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .conclusion-banner::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #c9891a, #f0c84a, #c9891a, transparent);
+        }
+
+        .conclusion-banner::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #c9891a, #f0c84a, #c9891a, transparent);
+        }
+
+        .conclusion-banner strong { color: #f0c84a; }
+        .conclusion-banner em { color: #b8d0ff; font-style: italic; }
+
+        /* ── Citations clés ── */
+        .quotes-section {
+            background: linear-gradient(135deg, #f0f4ff, #fef9ec);
+            padding: 40px 35px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+        }
+
+        .quotes-section h2 {
+            font-size: 1.6em;
+            color: #1e2d5a;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(30, 45, 90, 0.15);
+        }
+
+        .quote-item {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border-left: 4px solid #c9891a;
+            box-shadow: 0 3px 12px rgba(30, 45, 90, 0.08);
+        }
+
+        .quote-hebrew {
+            display: block;
+            font-size: 1.9em;
+            color: #1a2545;
+            direction: rtl;
+            margin-bottom: 8px;
+            font-family: 'Times New Roman', serif;
+            font-weight: bold;
+        }
+
+        .quote-transliteration {
+            display: block;
+            font-size: 0.95em;
+            font-style: italic;
+            color: #4a5f9a;
+            margin-bottom: 10px;
+        }
+
+        .quote-french {
+            font-size: 1.0em;
+            color: #333;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        /* ── Vidéo ── */
+        .video-section {
+            background: linear-gradient(135deg, #0c1022, #111830);
+            padding: 40px 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .video-section h2 {
+            font-size: 1.5em;
+            color: #f0c84a;
+            margin-bottom: 25px;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.40);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            border: none;
+        }
+
+        /* ── Clôture ── */
+        .closing-section {
+            background: linear-gradient(135deg, #f0f4ff, #fef9ec);
+            padding: 30px 35px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(45, 64, 128, 0.12);
+        }
+
+        .closing-section p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #2c3e70;
+            font-style: italic;
+            text-align: center;
+        }
+
+        /* ── Pied de page ── */
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 2px solid rgba(45, 64, 128, 0.12);
+            margin-top: 20px;
+        }
+
+        .footer-main {
+            font-size: 1.05em;
+            color: #1e2d5a;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .footer-subtitle {
+            font-size: 0.88em;
+            color: #6a7aaa;
+            letter-spacing: 0.05em;
+        }
+
+        .footer-hebrew {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.1em;
+            color: #c9891a;
+        }
+
+        /* ── Animations ── */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── Séparateur ── */
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(45, 64, 128, 0.25), rgba(201, 137, 26, 0.25), transparent);
+            margin: 40px 0;
+        }
+
+        /* ── Bloc d'application ── */
+        .application-box {
+            background: linear-gradient(135deg, #f8f9ff, #fff8f0);
+            border: 1px solid rgba(45, 64, 128, 0.18);
+            border-radius: 12px;
+            padding: 25px 30px;
+            margin: 25px 0;
+        }
+
+        .application-label {
+            font-size: 0.75em;
+            font-weight: bold;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: #2d4080;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .application-box p {
+            font-size: 1.05em;
+            line-height: 1.75;
+            color: #2c2c2c;
+        }
+
+        /* ── Highlight désert ── */
+        .desert-highlight {
+            display: inline-block;
+            background: linear-gradient(120deg, rgba(201,137,26,0.15), rgba(240,200,74,0.12));
+            border-radius: 4px;
+            padding: 0 4px;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .title { font-size: 1.9em; }
+            .hebrew-title { font-size: 2.4em; }
+            .container { margin: 10px; padding: 20px 14px; }
+            .header { padding: 35px 14px 40px; margin: -20px -14px 30px; }
+            .verse-hebrew { font-size: 1.6em; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="scroll-indicator" id="scrollBar"></div>
+
+<div class="container">
+
+    <!-- Bouton retour -->
+    <a href="../" class="back-button">← Retour aux Parashot</a>
+
+    <!-- En-tête -->
+    <div class="header">
+        <span class="header-label-small">Parashot Mormin · Tradition séfarade · Livre des Nombres</span>
+        <span class="header-icon">🏜️</span>
+        <h1 class="title">Paracha Bamidbar</h1>
+        <div class="hebrew-title">בְּמִדְבַּר</div>
+        <div class="subtitle">Le désert comme lieu de construction du peuple</div>
+        <div class="reference">Bamidbar / Nombres 1 — 4 · Shabbat Paracha · Étude complète</div>
+    </div>
+
+    <!-- Introduction -->
+    <div class="intro-box fade-in">
+        <p class="content-text">
+            La paracha <strong>Bamidbar</strong> ouvre le quatrième livre de la Torah : le <em>livre des Nombres</em>.
+            Son nom vient des premiers mots du texte : <strong>בְּמִדְבַּר סִינַי</strong> — <em>Bemidbar Sinaï</em> — « Dans le désert du Sinaï ».
+        </p>
+        <p class="content-text">
+            Le peuple d'Israël se trouve encore dans le désert, entre la sortie d'Égypte et l'entrée en Terre promise.
+            Mais cette paracha ne parle pas seulement d'un déplacement géographique. Elle traite d'une transformation profonde :
+            comment une multitude d'anciens esclaves devient-elle un peuple organisé, responsable et porteur d'une mission spirituelle ?
+        </p>
+        <ul class="structured-list" style="margin-top: 15px;">
+            <li>Le désert — lieu de vide, d'épreuve, mais aussi de révélation</li>
+            <li>Le recensement des tribus — une dignité reconnue, une place accordée à chacun</li>
+            <li>Le Michkan au centre du camp — la présence d'Adonaï comme fondement de la société</li>
+            <li>Les Léviim — une mission particulière au service du sacré</li>
+        </ul>
+    </div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Section 1 : Le désert -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">🏜️</span>
+            Le désert : un lieu vide… préparé pour la parole
+        </div>
+
+        <p class="content-text">
+            Le livre de Bamidbar s'ouvre sur une indication de lieu : le désert du Sinaï.
+            Ce n'est pas un hasard. La Torah choisit le désert — non une ville, non un palais, non un centre du pouvoir — comme espace de révélation et d'organisation.
+            Pourquoi ce choix ?
+        </p>
+
+        <div class="verse-block">
+            <span class="verse-label">Verset d'ouverture · Bamidbar 1:1</span>
+            <div class="verse-hebrew">וַיְדַבֵּר יְהוָה אֶל־מֹשֶׁה בְּמִדְבַּר סִינַי</div>
+            <div class="verse-transliteration"><em>Vayedaber Adonaï el Moché bemidbar Sinaï</em></div>
+            <div class="verse-french">« Adonaï parla à Moché dans le désert du Sinaï »</div>
+            <div class="verse-reference">Bamidbar / Nombres 1:1</div>
+        </div>
+
+        <div class="rachi-block">
+            <span class="rachi-label">Rachi — commentaire</span>
+            <p>
+                Rachi explique ici que le désert est un lieu sans propriétaire.
+                Autrement dit, la Torah ne peut être reçue que par celui qui accepte une forme d'humilité intérieure —
+                celui qui ne cherche pas à posséder, à dominer, à s'imposer.
+            </p>
+        </div>
+
+        <div class="midrash-block">
+            <span class="midrash-label">Midrash — Bemidbar Raba</span>
+            <p>
+                De même que le désert est ouvert à tous, la Torah est offerte à tous ceux qui souhaitent la recevoir.
+                Elle ne se transmet pas dans la richesse, le pouvoir ou la sécurité — mais dans le dépouillement.
+            </p>
+        </div>
+
+        <div class="idea-box">
+            <span class="idea-label">Axe central</span>
+            <p>
+                Le désert représente un espace de <strong>dépouillement nécessaire</strong>.<br>
+                Avant de construire une société, il faut apprendre à écouter,<br>
+                à se situer, à accepter une parole plus grande que soi.
+            </p>
+        </div>
+
+        <p class="content-text">
+            Le désert n'est donc pas un passage à traverser rapidement pour atteindre quelque chose de mieux.
+            Il est lui-même le lieu pédagogique où le peuple apprend à devenir peuple.
+            Dans ce vide apparent se cache la condition même de la réception de la Torah.
+        </p>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Section 2 : Le recensement -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">📊</span>
+            Le recensement : compter sans réduire
+        </div>
+
+        <p class="content-text">
+            Dès le deuxième verset, la Torah demande un recensement du peuple.
+            À première vue, cette démarche semble purement administrative — un comptage militaire ou organisationnel.
+            Mais le texte dit quelque chose de bien plus profond.
+        </p>
+
+        <div class="verse-block">
+            <span class="verse-label">Bamidbar 1:2</span>
+            <div class="verse-hebrew">שְׂאוּ אֶת־רֹאשׁ כָּל־עֲדַת בְּנֵי יִשְׂרָאֵל</div>
+            <div class="verse-transliteration"><em>Séou et roch kol adat benei Israël</em></div>
+            <div class="verse-french">« Faites le relevé de toute l'assemblée des enfants d'Israël »</div>
+            <div class="verse-reference">Bamidbar / Nombres 1:2</div>
+        </div>
+
+        <div class="rachi-block">
+            <span class="rachi-label">Rachi — commentaire</span>
+            <p>
+                Rachi met ici en lumière une nuance fondamentale : le texte ne dit pas simplement « comptez le peuple ».
+                Il dit littéralement <em>« élevez la tête »</em>.
+                Le recensement n'est pas un simple calcul administratif — chaque personne possède une dignité propre,
+                une identité qui ne se résume pas à un chiffre.
+            </p>
+        </div>
+
+        <div class="paradox-box">
+            <span class="paradox-label">Paradoxe structurant</span>
+            <p>
+                Habituellement, un recensement sert au contrôle politique ou militaire.
+                Mais ici, le comptage devient une <strong>reconnaissance spirituelle</strong>.
+                Le peuple est organisé par tribus, par familles, par responsabilités —
+                cette organisation ne détruit jamais l'identité personnelle.
+                Compter dans la Torah ne signifie pas transformer les individus en masse anonyme.
+            </p>
+        </div>
+
+        <div class="idea-box">
+            <span class="idea-label">Idée forte</span>
+            <p>
+                Dans la Torah, <strong>chaque personne compte</strong> —<br>
+                non parce qu'elle est utile à un système,<br>
+                mais parce qu'elle est irremplaçable dans l'alliance.
+            </p>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Section 3 : Le Michkan au centre -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">🕍</span>
+            Le Michkan au centre : une géographie spirituelle
+        </div>
+
+        <p class="content-text">
+            La paracha décrit avec précision l'organisation du camp d'Israël dans le désert.
+            Chaque tribu possède une place, une bannière, une fonction.
+            Mais au cœur de cette organisation, un élément se distingue : le <strong>Michkan</strong>, le Sanctuaire, est placé au centre du camp.
+        </p>
+
+        <div class="verse-block">
+            <span class="verse-label">Bamidbar 2:2</span>
+            <div class="verse-hebrew">אִישׁ עַל־דִּגְלוֹ בְאֹתֹת לְבֵית אֲבֹתָם</div>
+            <div class="verse-transliteration"><em>Ich al diglo beotot leveit avotam</em></div>
+            <div class="verse-french">« Chacun sous sa bannière, selon les signes de la maison de ses pères »</div>
+            <div class="verse-reference">Bamidbar / Nombres 2:2</div>
+        </div>
+
+        <p class="content-text">
+            La structure du camp d'Israël n'est pas seulement logistique. Elle enseigne quelque chose de profond :
+            une société se désorganise lorsque plus rien n'est placé au centre.
+        </p>
+
+        <div class="paradox-box">
+            <span class="paradox-label">Renversement — le détail révèle tout</span>
+            <p>
+                Ce qui semblait être un simple détail d'organisation militaire devient <strong>central</strong>.
+                Dans Bamidbar, le centre du camp n'est ni le pouvoir, ni la richesse, ni la force militaire.
+                Le centre est la <em>présence d'Adonaï</em>.
+                L'espace, l'organisation, la proximité, les responsabilités — tout participe à la vie spirituelle.
+                La sainteté n'est pas séparée de la structure collective.
+            </p>
+        </div>
+
+        <div class="application-box">
+            <span class="application-label">Application concrète</span>
+            <p>
+                Une famille, une communauté, une société sans centre finit souvent par se disperser.
+                La Torah pose ici une question essentielle : qu'est-ce qui organise notre existence ?
+                Le pouvoir ? L'image ? L'argent ? Ou une parole plus élevée ?
+            </p>
+        </div>
+
+        <div class="idea-box">
+            <span class="idea-label">Idée forte</span>
+            <p>
+                Tout dépend de ce que l'on place <strong>au centre</strong>.<br>
+                La sainteté ne se limite pas au sacré —<br>
+                elle se vit dans <em>l'organisation même de l'espace commun</em>.
+            </p>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Section 4 : Les Léviim -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">🕯️</span>
+            La place particulière des Léviim
+        </div>
+
+        <p class="content-text">
+            Parmi toutes les tribus, les Léviim occupent une place à part.
+            Ils ne sont pas recensés avec les autres tribus.
+            Ils ne participent pas à l'organisation militaire du camp.
+            Leur mission est différente — et cette différence est portée par le texte lui-même.
+        </p>
+
+        <div class="verse-block">
+            <span class="verse-label">Bamidbar 1:47</span>
+            <div class="verse-hebrew">וְהַלְוִיִּם לֹא הָתְפָּקְדוּ בְּתוֹךְ בְּנֵי יִשְׂרָאֵל</div>
+            <div class="verse-transliteration"><em>Vehalviyim lo hotpakdou betokh benei Israël</em></div>
+            <div class="verse-french">« Les Léviim ne furent pas recensés parmi les enfants d'Israël »</div>
+            <div class="verse-reference">Bamidbar / Nombres 1:47</div>
+        </div>
+
+        <div class="rachi-block">
+            <span class="rachi-label">Rachi — commentaire</span>
+            <p>
+                Rachi explique que leur fonction exige une disponibilité particulière pour le service d'Adonaï.
+                Mais cette séparation ne signifie pas supériorité.
+                Elle signifie <em>responsabilité</em>.
+                Être mis à part, dans la Torah, n'est pas une distinction honorifique —
+                c'est l'acceptation d'une exigence plus grande.
+            </p>
+        </div>
+
+        <p class="content-text">
+            Les Léviim ont pour mission de protéger le Michkan, de transporter les éléments sacrés
+            et de servir dans le culte. Leur vie s'organise entièrement autour de la présence d'Adonaï.
+        </p>
+
+        <div class="idea-box">
+            <span class="idea-label">Idée forte</span>
+            <p>
+                Dans la Torah, la <strong>proximité du sacré augmente l'exigence</strong>.<br>
+                Plus une mission est élevée, plus elle demande<br>
+                discipline, précision et fidélité.
+            </p>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Section 5 : Application — le désert aujourd'hui -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">🌅</span>
+            Bamidbar et notre époque
+        </div>
+
+        <p class="content-text">
+            Le désert n'est pas seulement un lieu ancien. Il existe encore aujourd'hui sous différentes formes :
+        </p>
+
+        <ul class="structured-list">
+            <li>Des périodes d'incertitude personnelle ou collective</li>
+            <li>Des transitions — changements de vie, de cap, d'identité</li>
+            <li>Des moments de solitude ou de perte de repères</li>
+            <li>Des transformations profondes qui demandent d'abord le dépouillement</li>
+        </ul>
+
+        <div class="application-box">
+            <span class="application-label">Ouverture spirituelle</span>
+            <p>
+                La paracha Bamidbar enseigne qu'un désert peut devenir un lieu de désordre ou un lieu de construction.
+                Tout dépend de ce que l'on place au centre, de la manière dont on organise l'espace commun,
+                et de la capacité à reconnaître la dignité de chaque personne dans la communauté.
+                La structure sans âme disperse. La présence sans structure s'évapore.
+                La Torah propose les deux — ensemble, dans un équilibre exigeant.
+            </p>
+        </div>
+    </div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Conclusion -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">✨</span>
+            Conclusion
+        </div>
+
+        <p class="content-text">
+            La paracha Bamidbar semble d'abord composée de listes, de chiffres et d'organisations tribales.
+            Mais derrière cette apparente rigueur administrative se cache une vision profonde du peuple d'Israël.
+        </p>
+
+        <div class="conclusion-banner">
+            Le désert devient le lieu de l'<em>écoute</em>…<br>
+            le lieu de l'<em>humilité</em>…<br>
+            le lieu où chaque personne reçoit <strong>une place</strong>…<br>
+            et où la présence d'Adonaï devient <strong>le centre de la communauté</strong>.<br><br>
+            Bamidbar enseigne qu'une société ne tient pas seulement par la force ou l'organisation.<br>
+            Elle tient lorsque chaque personne compte,<br>
+            chaque responsabilité est assumée,<br>
+            et que le centre demeure relié au sacré.<br><br>
+            <strong>אִישׁ עַל־דִּגְלוֹ</strong><br>
+            <em>Ich al diglo</em><br>
+            « Chacun sous sa bannière » —<br>
+            chaque personne a sa place…<br>
+            mais aucune bannière ne peut remplacer le centre spirituel du camp.
+        </div>
+    </div>
+
+    <!-- Citations clés -->
+    <div class="quotes-section fade-in">
+        <h2>📜 Quelques versets clés de Bamidbar</h2>
+
+        <div class="quote-item">
+            <span class="quote-hebrew">וַיְדַבֵּר יְהוָה אֶל־מֹשֶׁה בְּמִדְבַּר סִינַי</span>
+            <span class="quote-transliteration">Vayedaber Adonaï el Moché bemidbar Sinaï.</span>
+            <p class="quote-french">« Adonaï parla à Moché dans le désert du Sinaï. » (Bamidbar 1:1)</p>
+        </div>
+
+        <div class="quote-item">
+            <span class="quote-hebrew">שְׂאוּ אֶת־רֹאשׁ כָּל־עֲדַת בְּנֵי יִשְׂרָאֵל</span>
+            <span class="quote-transliteration">Séou et roch kol adat benei Israël.</span>
+            <p class="quote-french">« Élevez la tête de toute l'assemblée des enfants d'Israël. » (Bamidbar 1:2)</p>
+        </div>
+
+        <div class="quote-item">
+            <span class="quote-hebrew">אִישׁ עַל־דִּגְלוֹ בְאֹתֹת לְבֵית אֲבֹתָם</span>
+            <span class="quote-transliteration">Ich al diglo beotot leveit avotam.</span>
+            <p class="quote-french">« Chacun sous sa bannière, selon les signes de la maison de ses pères. » (Bamidbar 2:2)</p>
+        </div>
+
+        <div class="quote-item">
+            <span class="quote-hebrew">וְהַלְוִיִּם לֹא הָתְפָּקְדוּ בְּתוֹךְ בְּנֵי יִשְׂרָאֵל</span>
+            <span class="quote-transliteration">Vehalviyim lo hotpakdou betokh benei Israël.</span>
+            <p class="quote-french">« Les Léviim ne furent pas recensés parmi les enfants d'Israël. » (Bamidbar 1:47)</p>
+        </div>
+    </div>
+
+    <!-- Vidéo -->
+    <div class="video-section fade-in">
+        <h2>🎥 Étude vidéo de Bamidbar</h2>
+        <div class="video-container">
+            <iframe
+                src="https://www.youtube.com/embed/pecPflTkEMc"
+                title="Paracha Bamidbar : Le désert comme lieu de construction du peuple | Étude complète | Ariel Mormin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+
+    <!-- Clôture -->
+    <div class="closing-section fade-in">
+        <p>
+            Une étude structurée et progressive de la Paracha Bamidbar selon la tradition séfarade.
+            Le désert comme espace de dépouillement et de révélation ; le recensement comme acte de dignité ;
+            le Michkan au centre du camp comme fondement spirituel de toute organisation collective —
+            et la mission particulière des Léviim comme appel à une responsabilité plus haute.
+        </p>
+    </div>
+
+    <!-- Pied de page -->
+    <div class="footer">
+        <div class="footer-main">
+            Étude de Bamidbar par <span class="footer-hebrew">אריאל מרמן</span> (Ariel Mormin)
+        </div>
+        <div class="footer-subtitle">
+            • Le désert comme lieu de construction du peuple — בְּמִדְבַּר • Bamidbar / Nombres 1–4 • Tradition séfarade •
+        </div>
+    </div>
+
+</div><!-- /container -->
+
+<script>
+    // Barre de progression
+    window.addEventListener('scroll', () => {
+        const doc = document.documentElement;
+        const progress = doc.scrollTop / (doc.scrollHeight - doc.clientHeight);
+        document.getElementById('scrollBar').style.transform = `scaleX(${progress})`;
+    });
+
+    // Animation d'entrée au scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
