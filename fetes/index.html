@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fêtes &amp; Calendrier hébraïque — Études complètes selon la tradition séfarade par Ariel Mormin. Pessah, Shavouot, Soukot et autres fêtes du calendrier juif.">
+    <meta name="keywords" content="fêtes juives, Pessah, Shavouot, Soukot, calendrier hébraïque, tradition séfarade, Ariel Mormin, Parashot Mormin">
+    <title>Fêtes &amp; Calendrier hébraïque – Parashot Mormin | Ariel Mormin</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --crimson: #a82030;
+            --crimson-deep: #6b1020;
+            --amber: #c9891a;
+            --gold: #f0c84a;
+            --bg-dark: #0f0604;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: linear-gradient(150deg,
+                #0f0604 0%, #1e0a08 25%,
+                #1a0c0a 50%, #120705 75%, #1e0a08 100%);
+            min-height: 100vh;
+            color: #f5e8e0;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 65% 45% at 30% 10%, rgba(200,100,30,0.16) 0%, transparent 60%),
+                radial-gradient(ellipse 55% 40% at 75% 80%, rgba(168,32,48,0.12) 0%, transparent 55%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Grain subtil */
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* ── WRAPPER ── */
+        .wrapper {
+            position: relative;
+            z-index: 1;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 24px 80px;
+        }
+
+        /* ── BOUTON RETOUR ── */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 22px;
+            background: rgba(168,32,48,0.15);
+            border: 1px solid rgba(168,32,48,0.35);
+            color: rgba(240,180,160,0.85);
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.9em;
+            letter-spacing: 0.04em;
+            transition: all 0.25s;
+            margin-bottom: 50px;
+        }
+
+        .back-button:hover {
+            background: rgba(168,32,48,0.28);
+            color: #f0e0d0;
+            transform: translateX(-3px);
+        }
+
+        /* ── HERO ── */
+        .hero {
+            text-align: center;
+            padding: 60px 20px 70px;
+            position: relative;
+            margin-bottom: 60px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg,
+                rgba(168,32,48,0.06) 0%,
+                rgba(201,137,26,0.08) 50%,
+                rgba(168,32,48,0.04) 100%);
+            border: 1px solid rgba(168,32,48,0.14);
+            border-radius: 20px;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--amber), var(--gold), var(--amber), transparent);
+            border-radius: 20px 20px 0 0;
+        }
+
+        .hero-label {
+            display: block;
+            font-size: 0.7em;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: rgba(201,137,26,0.65);
+            margin-bottom: 16px;
+            position: relative;
+        }
+
+        .hero-title {
+            font-size: 3em;
+            font-weight: bold;
+            color: #f5e8d8;
+            line-height: 1.15;
+            margin-bottom: 14px;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+            position: relative;
+        }
+
+        .hero-hebrew {
+            font-size: 2em;
+            color: var(--gold);
+            direction: rtl;
+            margin-bottom: 18px;
+            font-family: 'Times New Roman', serif;
+            letter-spacing: 0.05em;
+            text-shadow: 0 0 25px rgba(240,200,74,0.2);
+            position: relative;
+        }
+
+        .hero-desc {
+            font-size: 1.1em;
+            font-style: italic;
+            color: rgba(240,210,180,0.7);
+            max-width: 560px;
+            margin: 0 auto;
+            line-height: 1.7;
+            position: relative;
+        }
+
+        /* ── SECTION LABEL ── */
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 32px;
+        }
+
+        .section-header-line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, rgba(168,32,48,0.35), transparent);
+        }
+
+        .section-header-title {
+            font-size: 0.7em;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: rgba(201,137,26,0.65);
+            white-space: nowrap;
+        }
+
+        /* ── GRILLE DES FÊTES ── */
+        .fetes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        /* ── CARTE FÊTE ── */
+        .fete-card {
+            background: linear-gradient(160deg, #1e0a08, #2a1210, #1a0806);
+            border: 1px solid rgba(168,32,48,0.22);
+            border-radius: 14px;
+            overflow: hidden;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.35s cubic-bezier(0.16,1,0.3,1);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.45);
+            position: relative;
+        }
+
+        .fete-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(168,32,48,0.50);
+            box-shadow: 0 16px 50px rgba(0,0,0,0.60), 0 0 30px rgba(168,32,48,0.12);
+        }
+
+        .fete-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--amber), var(--gold), var(--amber), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .fete-card:hover::before { opacity: 1; }
+
+        /* Badge NOUVEAU */
+        .badge-nouveau {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            background: linear-gradient(135deg, #c9891a, #f0c84a);
+            color: #1e0a08;
+            font-size: 0.6em;
+            font-weight: bold;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 20px;
+            z-index: 2;
+        }
+
+        /* Visuel header de carte */
+        .card-visual {
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-visual-pessah {
+            background: linear-gradient(135deg, #3a0e10, #7a1a22, #c9891a);
+        }
+
+        .card-visual-coming {
+            background: linear-gradient(135deg, #1a1a2a, #2a2a3a, #3a3a4a);
+        }
+
+        .card-visual-icon {
+            font-size: 2.8em;
+            position: relative;
+            z-index: 1;
+            filter: drop-shadow(0 2px 6px rgba(0,0,0,0.5));
+        }
+
+        .card-visual::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.4) 100%);
+        }
+
+        /* Corps de la carte */
+        .card-body {
+            padding: 22px 22px 24px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .card-category {
+            font-size: 0.62em;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: rgba(201,137,26,0.6);
+            margin-bottom: 8px;
+        }
+
+        .card-title {
+            font-size: 1.45em;
+            font-weight: bold;
+            color: #f5e8d8;
+            margin-bottom: 4px;
+            line-height: 1.2;
+        }
+
+        .card-hebrew {
+            font-size: 1.1em;
+            color: var(--gold);
+            direction: rtl;
+            margin-bottom: 12px;
+            font-family: 'Times New Roman', serif;
+            letter-spacing: 0.04em;
+        }
+
+        .card-desc {
+            font-size: 0.9em;
+            font-style: italic;
+            color: rgba(220,180,150,0.6);
+            line-height: 1.55;
+            flex: 1;
+        }
+
+        .card-footer-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 18px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(168,32,48,0.14);
+        }
+
+        .card-date {
+            font-size: 0.72em;
+            letter-spacing: 0.12em;
+            color: rgba(201,137,26,0.5);
+            text-transform: uppercase;
+        }
+
+        .card-arrow {
+            font-size: 0.95em;
+            color: rgba(168,32,48,0.5);
+            transition: transform 0.25s, color 0.25s;
+        }
+
+        .fete-card:hover .card-arrow {
+            transform: translateX(4px);
+            color: var(--amber);
+        }
+
+        /* Carte à venir */
+        .fete-card-coming {
+            opacity: 0.55;
+            cursor: default;
+            pointer-events: none;
+        }
+
+        .fete-card-coming:hover {
+            transform: none;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.45);
+        }
+
+        .coming-label {
+            display: inline-block;
+            font-size: 0.62em;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(180,160,140,0.5);
+            border: 1px solid rgba(180,160,140,0.2);
+            padding: 2px 8px;
+            border-radius: 10px;
+            margin-top: 6px;
+        }
+
+        /* ── NOTE ÉDITORIALE ── */
+        .editorial-note {
+            background: rgba(168,32,48,0.07);
+            border: 1px solid rgba(168,32,48,0.18);
+            border-radius: 12px;
+            padding: 28px 32px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .editorial-note p {
+            font-size: 1em;
+            font-style: italic;
+            color: rgba(220,180,150,0.6);
+            line-height: 1.7;
+        }
+
+        .editorial-note strong {
+            color: rgba(201,137,26,0.75);
+            font-style: normal;
+        }
+
+        /* ── FOOTER ── */
+        .page-footer {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(168,32,48,0.14);
+        }
+
+        .footer-main {
+            font-size: 0.9em;
+            color: rgba(220,180,150,0.55);
+            letter-spacing: 0.08em;
+        }
+
+        .footer-hebrew {
+            color: var(--amber);
+            font-family: 'Times New Roman', serif;
+            font-size: 1.05em;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .hero-title { font-size: 2em; }
+            .hero-hebrew { font-size: 1.5em; }
+            .fetes-grid { grid-template-columns: 1fr; }
+        }
+
+        /* Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+
+    <!-- Retour -->
+    <a href="../" class="back-button">← Retour aux Parachiot</a>
+
+    <!-- Hero -->
+    <div class="hero fade-in">
+        <span class="hero-label">Parashot Mormin · Tradition séfarade</span>
+        <h1 class="hero-title">Fêtes &amp; Calendrier hébraïque</h1>
+        <div class="hero-hebrew">מועדים וחגים</div>
+        <p class="hero-desc">
+            Études complètes des fêtes du calendrier hébraïque —
+            fidèles au texte, structurées et orientées vers la transmission.
+        </p>
+    </div>
+
+    <!-- Section fêtes disponibles -->
+    <div class="section-header fade-in">
+        <div class="section-header-line"></div>
+        <span class="section-header-title">Études disponibles</span>
+        <div class="section-header-line" style="background: linear-gradient(to left, rgba(168,32,48,0.35), transparent);"></div>
+    </div>
+
+    <div class="fetes-grid">
+
+        <!-- Pessah -->
+        <a href="./pessah/" class="fete-card fade-in">
+            <span class="badge-nouveau">NOUVEAU</span>
+            <div class="card-visual card-visual-pessah">
+                <span class="card-visual-icon">🍷</span>
+            </div>
+            <div class="card-body">
+                <span class="card-category">Nissan · Printemps</span>
+                <div class="card-title">Pessaḥ</div>
+                <div class="card-hebrew">פֶּסַח</div>
+                <p class="card-desc">De l'esclavage à la liberté intérieure — la matsa, la transmission et la responsabilité éthique face à l'étranger.</p>
+                <div class="card-footer-bar">
+                    <span class="card-date">Étude complète · Tradition séfarade</span>
+                    <span class="card-arrow">→</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- Shavouot — à venir -->
+        <div class="fete-card fete-card-coming fade-in">
+            <div class="card-visual card-visual-coming">
+                <span class="card-visual-icon">📜</span>
+            </div>
+            <div class="card-body">
+                <span class="card-category">Sivan · Été</span>
+                <div class="card-title">Shavouot</div>
+                <div class="card-hebrew">שָׁבוּעוֹת</div>
+                <p class="card-desc">Le don de la Torah au Sinaï — la révélation, l'alliance et la réception de la parole.</p>
+                <div class="card-footer-bar">
+                    <span class="coming-label">Prochainement</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Roch Hachana — à venir -->
+        <div class="fete-card fete-card-coming fade-in">
+            <div class="card-visual card-visual-coming">
+                <span class="card-visual-icon">🍎</span>
+            </div>
+            <div class="card-body">
+                <span class="card-category">Tichri · Automne</span>
+                <div class="card-title">Roch Hachana</div>
+                <div class="card-hebrew">רֹאשׁ הַשָּׁנָה</div>
+                <p class="card-desc">Le Jugement, la royauté d'Adonaï et le retour vers soi.</p>
+                <div class="card-footer-bar">
+                    <span class="coming-label">Prochainement</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Yom Kippour — à venir -->
+        <div class="fete-card fete-card-coming fade-in">
+            <div class="card-visual card-visual-coming">
+                <span class="card-visual-icon">🕯️</span>
+            </div>
+            <div class="card-body">
+                <span class="card-category">Tichri · Automne</span>
+                <div class="card-title">Yom Kippour</div>
+                <div class="card-hebrew">יוֹם כִּפּוּר</div>
+                <p class="card-desc">Le Grand Pardon — le retour, la réparation et la relation à Adonaï.</p>
+                <div class="card-footer-bar">
+                    <span class="coming-label">Prochainement</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Soukot — à venir -->
+        <div class="fete-card fete-card-coming fade-in">
+            <div class="card-visual card-visual-coming">
+                <span class="card-visual-icon">🌿</span>
+            </div>
+            <div class="card-body">
+                <span class="card-category">Tichri · Automne</span>
+                <div class="card-title">Soukot</div>
+                <div class="card-hebrew">סֻכּוֹת</div>
+                <p class="card-desc">La fête des cabanes — la fragilité comme force, la joie dans le dépouillement.</p>
+                <div class="card-footer-bar">
+                    <span class="coming-label">Prochainement</span>
+                </div>
+            </div>
+        </div>
+
+    </div><!-- /fetes-grid -->
+
+    <!-- Note éditoriale -->
+    <div class="editorial-note fade-in">
+        <p>
+            Ces études s'inscrivent dans la même démarche que les parachiot hebdomadaires —
+            <strong>fidélité au texte hébreu, structure claire, tradition séfarade</strong>.
+            Chaque fête est abordée dans sa profondeur spirituelle et sa portée éthique,
+            sans dérive psychologique ni interprétation extérieure au texte.
+        </p>
+    </div>
+
+    <!-- Footer -->
+    <div class="page-footer fade-in">
+        <div class="footer-main">
+            <span class="footer-hebrew">אריאל מרמן</span> (Ariel Mormin) · Parashot Mormin ·
+            <a href="../" style="color: rgba(201,137,26,0.55); text-decoration: none;">parashot-mormin.netlify.app</a>
+        </div>
+    </div>
+
+</div><!-- /wrapper -->
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => entry.target.classList.add('visible'), i * 80);
+            }
+        });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

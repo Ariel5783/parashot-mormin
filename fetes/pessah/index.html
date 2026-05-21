@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pessaḥ — De l'esclavage à la liberté intérieure. Étude complète sur la fête de Pessah : la sortie d'Égypte, la matsa, la transmission et la liberté orientée. Tradition séfarade par Ariel Mormin.">
+    <meta name="keywords" content="Pessah, Pessaḥ, פֶּסַח, Torah, fête, Pâque, Séder, matsa, sortie Égypte, liberté, Haggada, tradition séfarade, Ariel Mormin, Parashot Mormin">
+    <title>Pessaḥ — De l'esclavage à la liberté intérieure | Ariel Mormin</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            background: linear-gradient(150deg,
+                #0f0604 0%, #1e0a08 20%, #28100c 40%,
+                #1e0a08 60%, #120705 80%, #1e0a08 100%);
+            min-height: 100vh;
+            color: #333;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background:
+                radial-gradient(ellipse 60% 40% at 20% 20%, rgba(200, 100, 30, 0.18) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 35% at 80% 70%, rgba(168, 32, 48, 0.14) 0%, transparent 55%),
+                radial-gradient(ellipse 40% 30% at 60% 10%, rgba(212, 146, 42, 0.12) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image:
+                radial-gradient(1px 1px at 15% 20%, rgba(255,240,180,0.55) 0%, transparent 100%),
+                radial-gradient(1px 1px at 45% 8%, rgba(255,240,180,0.45) 0%, transparent 100%),
+                radial-gradient(1px 1px at 72% 15%, rgba(255,240,180,0.65) 0%, transparent 100%),
+                radial-gradient(1.5px 1.5px at 88% 5%, rgba(255,240,180,0.38) 0%, transparent 100%),
+                radial-gradient(1px 1px at 30% 88%, rgba(255,240,180,0.45) 0%, transparent 100%),
+                radial-gradient(1px 1px at 60% 92%, rgba(255,240,180,0.38) 0%, transparent 100%),
+                radial-gradient(1px 1px at 5% 55%, rgba(255,240,180,0.28) 0%, transparent 100%),
+                radial-gradient(1px 1px at 95% 45%, rgba(255,240,180,0.38) 0%, transparent 100%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 30px auto;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.70), 0 0 0 1px rgba(168,80,40,0.15);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ── Barre de progression ── */
+        .scroll-indicator {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #8b1a2a, #c9891a, #f0c84a);
+            transform-origin: left;
+            transform: scaleX(0);
+            z-index: 1000;
+            transition: transform 0.1s ease;
+        }
+
+        /* ── Badge fête ── */
+        .fete-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 18px;
+            background: linear-gradient(135deg, rgba(168,32,48,0.1), rgba(212,146,42,0.12));
+            border: 1px solid rgba(168,32,48,0.3);
+            border-radius: 20px;
+            font-size: 0.75em;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: #8b1a2a;
+            font-family: 'Georgia', serif;
+            margin-bottom: 20px;
+        }
+
+        /* ── Bouton retour ── */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #6b1020, #a82030);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(107, 16, 32, 0.40);
+            margin-bottom: 20px;
+        }
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(107, 16, 32, 0.60);
+            background: linear-gradient(135deg, #a82030, #6b1020);
+        }
+
+        /* ── En-tête ── */
+        .header {
+            text-align: center;
+            padding: 50px 20px 55px;
+            background: linear-gradient(150deg,
+                #0f0604, #1e0a08, #3a0e10,
+                #7a1a22, #c9891a, #1e0a08,
+                #0f0604, #0f0604);
+            margin: -40px -20px 50px -20px;
+            border-radius: 20px 20px 0 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background:
+                radial-gradient(ellipse 70% 60% at 50% 50%, rgba(201, 137, 26, 0.22) 0%, transparent 70%),
+                radial-gradient(ellipse 50% 40% at 20% 30%, rgba(168, 32, 48, 0.20) 0%, transparent 60%),
+                radial-gradient(ellipse 40% 50% at 80% 70%, rgba(80, 15, 20, 0.5) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 35px;
+            background:
+                radial-gradient(ellipse 60% 100% at 30% 100%, rgba(201, 137, 26, 0.15) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 100% at 70% 100%, rgba(168, 32, 48, 0.10) 0%, transparent 60%);
+        }
+
+        .header-label-small {
+            font-size: 0.8em;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: rgba(240, 190, 100, 0.75);
+            font-family: 'Georgia', serif;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 14px;
+            display: block;
+        }
+
+        .header-icon {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+            display: block;
+        }
+
+        .title {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+            color: #f5f0e8;
+        }
+
+        .hebrew-title {
+            font-size: 3.4em;
+            color: #f0c84a;
+            margin-bottom: 15px;
+            font-family: 'Times New Roman', serif;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6), 0 0 30px rgba(240,200,74,0.25);
+            position: relative;
+            z-index: 1;
+            letter-spacing: 0.05em;
+        }
+
+        .subtitle {
+            font-size: 1.35em;
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            color: #f0ddc8;
+            opacity: 0.9;
+        }
+
+        .reference {
+            font-size: 1.05em;
+            position: relative;
+            z-index: 1;
+            color: #f0c84a;
+            opacity: 0.9;
+        }
+
+        /* ── Boîte intro ── */
+        .intro-box {
+            background: linear-gradient(135deg, #fff8f0, #fef9ec);
+            padding: 35px;
+            border-radius: 15px;
+            border-left: 6px solid #a82030;
+            margin-bottom: 45px;
+            box-shadow: 0 8px 20px rgba(107, 16, 32, 0.10);
+            position: relative;
+        }
+
+        .intro-box::before {
+            content: "✡";
+            position: absolute;
+            top: 15px; right: 20px;
+            font-size: 2.2em;
+            opacity: 0.10;
+            color: #a82030;
+        }
+
+        /* ── Sections ── */
+        .section {
+            margin-bottom: 45px;
+            padding: 20px 0;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #6b1020;
+            margin-bottom: 25px;
+            font-weight: bold;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #fff8f0, #fef9ec);
+            border-radius: 10px;
+            border-left: 5px solid #a82030;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-icon { font-size: 1.8em; flex-shrink: 0; }
+
+        .content-text {
+            font-size: 1.15em;
+            line-height: 1.8;
+            color: #2c2c2c;
+            margin-bottom: 20px;
+        }
+
+        /* ── Versets ── */
+        .verse-block {
+            background: linear-gradient(135deg, #fff8f0 0%, #fef5e0 100%);
+            border: 2px solid rgba(168, 32, 48, 0.20);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(107, 16, 32, 0.08);
+        }
+
+        .verse-block::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #6b1020, #c9891a, #f0c84a, #c9891a, #6b1020);
+        }
+
+        .verse-label {
+            font-size: 0.75em;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: rgba(168, 32, 48, 0.6);
+            margin-bottom: 12px;
+            display: block;
+            font-style: normal;
+        }
+
+        .verse-hebrew {
+            font-size: 2.1em;
+            color: #3a0810;
+            direction: rtl;
+            margin-bottom: 12px;
+            font-family: 'Times New Roman', serif;
+            font-weight: bold;
+            line-height: 1.5;
+            text-shadow: 0 1px 2px rgba(80,20,10,0.1);
+        }
+
+        .verse-transliteration {
+            font-size: 1.05em;
+            font-style: italic;
+            color: #8b3a20;
+            margin-bottom: 10px;
+        }
+
+        .verse-french {
+            font-size: 1.05em;
+            color: #4a2010;
+            font-style: italic;
+            border-top: 1px solid rgba(168, 32, 48, 0.15);
+            padding-top: 10px;
+            margin-top: 5px;
+        }
+
+        .verse-reference {
+            font-size: 0.85em;
+            color: rgba(168, 32, 48, 0.55);
+            margin-top: 8px;
+            letter-spacing: 0.1em;
+        }
+
+        /* ── Rachi ── */
+        .rachi-block {
+            background: linear-gradient(135deg, #fef9ec, #fff8e8);
+            border: 1px solid rgba(201, 137, 26, 0.28);
+            border-left: 5px solid #c9891a;
+            border-radius: 0 10px 10px 0;
+            padding: 22px 25px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .rachi-block::before {
+            content: 'רש"י';
+            position: absolute;
+            top: 12px; right: 18px;
+            font-size: 1.6em;
+            color: rgba(201, 137, 26, 0.18);
+            font-family: 'Times New Roman', serif;
+            font-weight: bold;
+            direction: rtl;
+        }
+
+        .rachi-label {
+            font-size: 0.78em;
+            font-weight: bold;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #c9891a;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .rachi-block p {
+            font-size: 1.05em;
+            line-height: 1.7;
+            color: #4a3010;
+            font-style: italic;
+        }
+
+        /* ── Midrash ── */
+        .midrash-block {
+            background: linear-gradient(135deg, #fff0f0, #fff5f0);
+            border: 1px solid rgba(168, 32, 48, 0.20);
+            border-left: 5px solid #a82030;
+            border-radius: 0 10px 10px 0;
+            padding: 22px 25px;
+            margin: 20px 0;
+        }
+
+        .midrash-label {
+            font-size: 0.78em;
+            font-weight: bold;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #a82030;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .midrash-block p {
+            font-size: 1.05em;
+            line-height: 1.7;
+            color: #3a0810;
+            font-style: italic;
+        }
+
+        /* ── Idée forte ── */
+        .idea-box {
+            background: linear-gradient(135deg, #6b1020, #a82030);
+            color: white;
+            padding: 30px 35px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(107, 16, 32, 0.35);
+        }
+
+        .idea-box::before {
+            content: '✦';
+            position: absolute;
+            top: -10px; right: 20px;
+            font-size: 5em;
+            color: rgba(240, 200, 74, 0.10);
+        }
+
+        .idea-label {
+            font-size: 0.72em;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: rgba(240, 200, 74, 0.75);
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .idea-box p {
+            font-size: 1.3em;
+            font-style: italic;
+            line-height: 1.6;
+            color: #f5f0e8;
+            position: relative;
+            z-index: 1;
+        }
+
+        .idea-box strong { color: #f0c84a; font-style: normal; }
+
+        /* ── Paradoxe ── */
+        .paradox-box {
+            background: linear-gradient(135deg, #fff5e8, #ffefd0);
+            border: 2px solid rgba(201, 137, 26, 0.30);
+            border-radius: 12px;
+            padding: 25px 30px;
+            margin: 25px 0;
+            position: relative;
+        }
+
+        .paradox-label {
+            font-size: 0.75em;
+            font-weight: bold;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: #c9891a;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .paradox-box p {
+            font-size: 1.1em;
+            line-height: 1.75;
+            color: #3a2800;
+        }
+
+        /* ── Liste structurée ── */
+        .structured-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .structured-list li {
+            padding: 10px 0 10px 35px;
+            font-size: 1.1em;
+            color: #2c2c2c;
+            line-height: 1.6;
+            border-bottom: 1px solid rgba(168, 32, 48, 0.08);
+            position: relative;
+        }
+
+        .structured-list li:last-child { border-bottom: none; }
+
+        .structured-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 10px;
+            color: #c9891a;
+            font-size: 1em;
+        }
+
+        /* ── Bannière conclusion ── */
+        .conclusion-banner {
+            background: linear-gradient(135deg, #1e0a08, #3a0e10, #1e0a08);
+            color: white;
+            padding: 40px 35px;
+            border-radius: 15px;
+            margin: 35px 0;
+            text-align: center;
+            font-size: 1.25em;
+            line-height: 1.9;
+            box-shadow: 0 10px 30px rgba(30, 10, 8, 0.50);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .conclusion-banner::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #c9891a, #f0c84a, #c9891a, transparent);
+        }
+
+        .conclusion-banner::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #c9891a, #f0c84a, #c9891a, transparent);
+        }
+
+        .conclusion-banner strong { color: #f0c84a; }
+        .conclusion-banner em { color: #f0c0b0; font-style: italic; }
+
+        /* ── Citations clés ── */
+        .quotes-section {
+            background: linear-gradient(135deg, #fff8f0, #fef9ec);
+            padding: 40px 35px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+        }
+
+        .quotes-section h2 {
+            font-size: 1.6em;
+            color: #6b1020;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(168, 32, 48, 0.15);
+        }
+
+        .quote-item {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border-left: 4px solid #c9891a;
+            box-shadow: 0 3px 12px rgba(107, 16, 32, 0.08);
+        }
+
+        .quote-hebrew {
+            display: block;
+            font-size: 1.9em;
+            color: #3a0810;
+            direction: rtl;
+            margin-bottom: 8px;
+            font-family: 'Times New Roman', serif;
+            font-weight: bold;
+        }
+
+        .quote-transliteration {
+            display: block;
+            font-size: 0.95em;
+            font-style: italic;
+            color: #8b3a20;
+            margin-bottom: 10px;
+        }
+
+        .quote-french {
+            font-size: 1.0em;
+            color: #333;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        /* ── Vidéo ── */
+        .video-section {
+            background: linear-gradient(135deg, #1e0a08, #28100c);
+            padding: 40px 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .video-section h2 {
+            font-size: 1.5em;
+            color: #f0c84a;
+            margin-bottom: 25px;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.40);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            border: none;
+        }
+
+        /* ── Haggada / bloc spécial ── */
+        .haggada-block {
+            background: linear-gradient(135deg, #f8f0ff, #fff0f0);
+            border: 1px solid rgba(168, 32, 48, 0.18);
+            border-left: 5px solid #6b1020;
+            border-radius: 0 10px 10px 0;
+            padding: 22px 25px;
+            margin: 20px 0;
+        }
+
+        .haggada-label {
+            font-size: 0.78em;
+            font-weight: bold;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #6b1020;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .haggada-block p {
+            font-size: 1.05em;
+            line-height: 1.7;
+            color: #3a0820;
+            font-style: italic;
+        }
+
+        /* ── Application ── */
+        .application-box {
+            background: linear-gradient(135deg, #fff8f5, #fef8f0);
+            border: 1px solid rgba(168, 32, 48, 0.18);
+            border-radius: 12px;
+            padding: 25px 30px;
+            margin: 25px 0;
+        }
+
+        .application-label {
+            font-size: 0.75em;
+            font-weight: bold;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: #a82030;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .application-box p {
+            font-size: 1.05em;
+            line-height: 1.75;
+            color: #2c2c2c;
+        }
+
+        /* ── Clôture ── */
+        .closing-section {
+            background: linear-gradient(135deg, #fff8f0, #fef9ec);
+            padding: 30px 35px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(168, 32, 48, 0.12);
+        }
+
+        .closing-section p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #4a2010;
+            font-style: italic;
+            text-align: center;
+        }
+
+        /* ── Pied de page ── */
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 2px solid rgba(168, 32, 48, 0.12);
+            margin-top: 20px;
+        }
+
+        .footer-main {
+            font-size: 1.05em;
+            color: #6b1020;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .footer-subtitle {
+            font-size: 0.88em;
+            color: #9a5a4a;
+            letter-spacing: 0.05em;
+        }
+
+        .footer-hebrew {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.1em;
+            color: #c9891a;
+        }
+
+        /* ── Animations ── */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── Séparateur ── */
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(168, 32, 48, 0.22), rgba(201, 137, 26, 0.22), transparent);
+            margin: 40px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .title { font-size: 1.9em; }
+            .hebrew-title { font-size: 2.4em; }
+            .container { margin: 10px; padding: 20px 14px; }
+            .header { padding: 35px 14px 40px; margin: -20px -14px 30px; }
+            .verse-hebrew { font-size: 1.6em; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="scroll-indicator" id="scrollBar"></div>
+
+<div class="container">
+
+    <!-- Bouton retour -->
+    <a href="../" class="back-button">← Retour aux Fêtes &amp; Calendrier</a>
+
+    <!-- En-tête -->
+    <div class="header">
+        <span class="header-label-small">Parashot Mormin · Tradition séfarade · Fêtes du calendrier hébraïque</span>
+        <span class="header-icon">🍷</span>
+        <h1 class="title">Pessaḥ</h1>
+        <div class="hebrew-title">פֶּסַח</div>
+        <div class="subtitle">De l'esclavage à la liberté intérieure</div>
+        <div class="reference">Étude complète · Tradition séfarade · Shemot, Vayiqra, Devarim</div>
+    </div>
+
+    <!-- Introduction -->
+    <div class="intro-box fade-in">
+        <p class="content-text">
+            Pessaḥ est l'une des fêtes centrales du calendrier d'Israël.
+            Elle commémore la sortie des Bné Israël d'Égypte après des siècles d'esclavage.
+        </p>
+        <p class="content-text">
+            Mais la Torah ne présente pas seulement Pessaḥ comme un événement historique.
+            La fête devient une expérience spirituelle, une mémoire vivante, une transmission entre générations
+            et une réflexion profonde sur la liberté humaine.
+        </p>
+        <p class="content-text">
+            Le mot <strong>מִצְרַיִם</strong> — <em>Mitsraïm</em> (Égypte) — est souvent compris dans la tradition
+            comme un lieu d'étroitesse, de limitation, d'enfermement.
+            Ainsi, la sortie d'Égypte ne concerne pas uniquement un peuple ancien.
+            Elle devient une question permanente : <em>Comment sortir de ce qui enferme l'homme ?</em>
+        </p>
+        <ul class="structured-list" style="margin-top: 15px;">
+            <li>Mémoire — l'événement fondateur du peuple d'Israël</li>
+            <li>Transmission — l'obligation de raconter à chaque génération</li>
+            <li>Responsabilité — la mémoire de la souffrance comme garde-fou éthique</li>
+            <li>Relation à Adonaï — une liberté orientée, pas une fuite sans direction</li>
+        </ul>
+    </div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Section 1 : Le premier appel -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">🔥</span>
+            Le premier appel : sortir d'Égypte
+        </div>
+
+        <p class="content-text">
+            La Torah ne dit pas simplement : « Va chez Pharaon. »
+            Elle choisit un mot précis, porteur d'une nuance décisive.
+        </p>
+
+        <div class="verse-block">
+            <span class="verse-label">Shemot · Exode 10:1</span>
+            <div class="verse-hebrew">וַיֹּאמֶר יְהוָה אֶל־מֹשֶׁה בֹּא אֶל־פַּרְעֹה</div>
+            <div class="verse-transliteration"><em>Vayomer Adonaï el Moché : Bo el Par'o</em></div>
+            <div class="verse-french">« Adonaï dit à Moché : Viens vers Pharaon. »</div>
+            <div class="verse-reference">Shemot / Exode 10:1</div>
+        </div>
+
+        <div class="rachi-block">
+            <span class="rachi-label">Rachi — commentaire</span>
+            <p>
+                Rachi met ici en lumière une nuance fondamentale : le texte dit <em>bo</em> — « viens » —
+                et non <em>lekh</em> — « va ». Autrement dit, Adonaï accompagne Moché dans cette confrontation.
+                Moché n'entre pas seul dans le lieu du pouvoir et de l'oppression.
+            </p>
+        </div>
+
+        <div class="idea-box">
+            <span class="idea-label">Axe central</span>
+            <p>
+                Le combat contre l'esclavage ne peut pas être uniquement politique.<br>
+                Il implique une <strong>relation avec Adonaï</strong>.<br>
+                La liberté humaine ne se conquiert pas seul — elle s'accompagne.
+            </p>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Section 2 : Le paradoxe de Pessah -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">⚖️</span>
+            Le paradoxe de Pessaḥ : liberté et contraintes
+        </div>
+
+        <p class="content-text">
+            Pessaḥ célèbre la liberté. Pourtant, la fête est remplie de contraintes.
+        </p>
+
+        <ul class="structured-list">
+            <li>Interdiction du <em>'hamets</em> — le pain levé</li>
+            <li>Consommation de <em>matsa</em> — le pain sans levain</li>
+            <li>Récit obligatoire de la sortie d'Égypte</li>
+            <li>Ordre précis du Séder</li>
+            <li>Nombreuses mitsvot liées à la fête</li>
+        </ul>
+
+        <div class="paradox-box">
+            <span class="paradox-label">Paradoxe structurant</span>
+            <p>
+                Pourquoi une fête de liberté contient-elle autant de règles ?<br><br>
+                La Torah enseigne qu'il existe deux formes de liberté :
+                la liberté sans direction — et la liberté orientée vers le sens.
+                La sortie d'Égypte n'est pas seulement une fuite.
+                <strong>C'est une transformation.</strong>
+            </p>
+        </div>
+
+        <div class="midrash-block">
+            <span class="midrash-label">Tradition des Sages</span>
+            <p>
+                « Les vrais affranchis sont ceux qui étudient la Torah. »
+                Pas une liberté de faire n'importe quoi — mais une liberté de répondre à une parole plus haute.
+            </p>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Section 3 : La matsa -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">🫓</span>
+            La matsa : le pain de la liberté ou de la pauvreté ?
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-label">Haggada de Pessaḥ</span>
+            <div class="verse-hebrew">הָא לַחְמָא עַנְיָא</div>
+            <div class="verse-transliteration"><em>Ha laḥma 'anya</em></div>
+            <div class="verse-french">« Voici le pain de pauvreté. »</div>
+        </div>
+
+        <p class="content-text">
+            La matsa semble paradoxale. Elle est appelée à la fois pain de pauvreté et pain de liberté.
+            Comment un même aliment peut-il porter deux significations opposées ?
+        </p>
+
+        <p class="content-text">
+            Les Sages expliquent que la matsa représente une sortie immédiate.
+            Le peuple quitte l'Égypte sans attendre que la pâte lève.
+            Mais la matsa représente aussi la simplicité.
+        </p>
+
+        <div class="paradox-box">
+            <span class="paradox-label">Le détail révélateur — 'hamets et matsa</span>
+            <p>
+                Le <em>'hamets</em> gonfle. La <em>matsa</em> reste sobre.<br><br>
+                Dans la tradition séfarade, cette opposition devient une réflexion sur l'orgueil.
+                Le <em>'hamets</em> symbolise parfois <strong>l'enflure intérieure</strong> :
+                l'ego, la domination, la prétention.
+                La <em>matsa</em> rappelle une autre possibilité : simplicité, disponibilité, écoute.
+            </p>
+        </div>
+
+        <div class="idea-box">
+            <span class="idea-label">Idée forte</span>
+            <p>
+                La sainteté ne gonfle pas — <strong>elle se tient</strong>.<br>
+                Avant d'entrer dans la liberté, il faut d'abord<br>
+                retirer ce qui prend trop de place en soi.
+            </p>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Section 4 : Le récit comme devoir -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">📖</span>
+            Le récit comme devoir spirituel
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-label">Shemot · Exode 13:8</span>
+            <div class="verse-hebrew">וְהִגַּדְתָּ לְבִנְךָ בַּיּוֹם הַהוּא</div>
+            <div class="verse-transliteration"><em>Vehigadta levinḵa bayom hahu</em></div>
+            <div class="verse-french">« Tu raconteras à ton fils ce jour-là. »</div>
+            <div class="verse-reference">Shemot / Exode 13:8</div>
+        </div>
+
+        <p class="content-text">
+            Pessaḥ n'est pas seulement une fête de mémoire — c'est une fête de <strong>transmission</strong>.
+            La Torah ne demande pas uniquement de se souvenir. Elle demande de <em>raconter</em>.
+            Le récit devient une responsabilité.
+        </p>
+
+        <div class="rachi-block">
+            <span class="rachi-label">Zoom sur un détail — לְבִנְךָ</span>
+            <p>
+                Le verset insiste sur <em>levinḵa</em> — « à ton fils ».
+                Rachi explique que la Torah refuse une mémoire abstraite ou impersonnelle.
+                La sortie d'Égypte doit passer par la parole, par la famille,
+                par une transmission vivante de personne à personne.
+            </p>
+        </div>
+
+        <div class="haggada-block">
+            <span class="haggada-label">Haggada de Pessaḥ</span>
+            <p>
+                « En chaque génération, l'homme doit se considérer comme étant lui-même sorti d'Égypte. »
+            </p>
+        </div>
+
+        <div class="application-box">
+            <span class="application-label">Renversement</span>
+            <p>
+                Une mémoire qui n'est plus transmise finit par disparaître.
+                Ainsi, Pessaḥ transforme chaque maison en lieu d'étude.
+                Le Séder n'est pas un rituel figé — c'est une <strong>pédagogie vivante</strong>.
+            </p>
+        </div>
+
+        <div class="idea-box">
+            <span class="idea-label">Idée forte</span>
+            <p>
+                La mémoire sans transmission est une mémoire <strong>qui meurt</strong>.<br>
+                La Torah confie cette responsabilité non aux institutions — <br>
+                mais à chaque famille, à chaque table, à chaque parole.
+            </p>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Section 5 : Les quatre fils -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">👨‍👩‍👧‍👦</span>
+            Les quatre fils : quatre manières d'entrer dans la Torah
+        </div>
+
+        <p class="content-text">
+            La Haggada présente quatre fils : le sage, le méchant, le simple, et celui qui ne sait pas questionner.
+        </p>
+
+        <ul class="structured-list">
+            <li><strong>Le sage</strong> — il questionne avec profondeur et cherche à comprendre</li>
+            <li><strong>Le méchant</strong> — il s'exclut, dit « vous » et non « nous »</li>
+            <li><strong>Le simple</strong> — il questionne simplement, sans arrière-pensée</li>
+            <li><strong>Celui qui ne sait pas questionner</strong> — on lui ouvre la parole</li>
+        </ul>
+
+        <div class="midrash-block">
+            <span class="midrash-label">Enseignement fondamental</span>
+            <p>
+                Le texte ne supprime aucun d'eux. Même celui qui semble éloigné reste assis à la table.
+                C'est une idée fondamentale dans la tradition séfarade :
+                la transmission ne commence pas par l'exclusion — elle commence par la parole.
+            </p>
+        </div>
+
+        <div class="idea-box">
+            <span class="idea-label">Axe central</span>
+            <p>
+                Le Séder répond à tous — même à celui qui ne sait pas encore <strong>comment questionner</strong>.<br>
+                La Torah ne ferme pas la porte aux ignorants.<br>
+                Elle attend que la parole <em>les rejoigne là où ils sont</em>.
+            </p>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Section 6 : Liberté orientée -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">🌅</span>
+            La sortie d'Égypte comme sortie intérieure
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-label">Vayiqra · Lévitique 25:55</span>
+            <div class="verse-hebrew">כִּי־לִי בְּנֵי־יִשְׂרָאֵל עֲבָדִים</div>
+            <div class="verse-transliteration"><em>Ki li Bné Israël 'avadim</em></div>
+            <div class="verse-french">« Car les enfants d'Israël sont Mes serviteurs. »</div>
+            <div class="verse-reference">Vayiqra / Lévitique 25:55</div>
+        </div>
+
+        <p class="content-text">
+            Le peuple sort de la servitude de Pharaon. Mais la Torah affirme immédiatement :
+            l'homme ne devient pas sans maître. La question devient alors :
+            qui dirige l'existence humaine ?
+        </p>
+
+        <div class="paradox-box">
+            <span class="paradox-label">Renversement — la vraie liberté biblique</span>
+            <p>
+                La Torah oppose la domination humaine au service d'Adonaï.<br><br>
+                La véritable liberté biblique n'est pas l'absence totale de limites.
+                Elle consiste à ne plus être soumis à <strong>l'arbitraire humain</strong> —
+                à être relié à une parole plus haute que le pouvoir de Pharaon.
+            </p>
+        </div>
+
+        <div class="idea-box">
+            <span class="idea-label">Idée forte</span>
+            <p>
+                La Torah n'offre pas une liberté sans direction.<br>
+                Elle propose une <strong>liberté orientée</strong> —<br>
+                libéré du caprice humain, engagé envers <em>une parole juste</em>.
+            </p>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Section 7 : Le 'hamets invisible -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">🔍</span>
+            Le détail révélateur : le 'hamets invisible
+        </div>
+
+        <p class="content-text">
+            Avant Pessaḥ, la Torah demande de rechercher le <em>'hamets</em> jusque dans les moindres endroits.
+            Pourquoi cette précision extrême ?
+        </p>
+
+        <p class="content-text">
+            Parce que la Torah enseigne que même l'invisible compte.
+            Dans la tradition des Sages, la recherche du <em>'hamets</em> devient aussi une recherche intérieure.
+        </p>
+
+        <div class="midrash-block">
+            <span class="midrash-label">Exigence éthique — ce qui reste caché</span>
+            <p>
+                Qu'est-ce qui reste caché dans l'homme ? L'orgueil, la domination, la violence,
+                l'hypocrisie, l'indifférence — tout ce qui gonfle en secret comme le <em>'hamets</em>
+                dans un coin oublié de la maison.
+            </p>
+        </div>
+
+        <div class="application-box">
+            <span class="application-label">Application concrète</span>
+            <p>
+                La <em>bedikat ḥamets</em> — la recherche du levain — rappelle que la préparation à la liberté
+                passe d'abord par un travail intérieur.
+                On ne peut pas célébrer la libération extérieure sans s'interroger
+                sur ce qui nous enferme encore en nous-mêmes.
+            </p>
+        </div>
+
+        <div class="idea-box">
+            <span class="idea-label">Idée forte</span>
+            <p>
+                La sainteté se vérifie dans la <strong>précision invisible</strong>.<br>
+                Même ce que personne ne voit — même ce que l'on cache —<br>
+                la Torah demande de l'examiner.
+            </p>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Section 8 : Responsabilité et étranger -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">🤝</span>
+            Pessaḥ et la responsabilité humaine
+        </div>
+
+        <p class="content-text">
+            Pessaḥ ne célèbre pas seulement un miracle. La fête rappelle également la responsabilité humaine :
+            protéger l'étranger, refuser l'oppression, transmettre, se souvenir, agir avec justice.
+        </p>
+
+        <div class="verse-block">
+            <span class="verse-label">Devarim · Deutéronome 10:19</span>
+            <div class="verse-hebrew">וַאֲהַבְתֶּם אֶת־הַגֵּר כִּי־גֵרִים הֱיִיתֶם בְּאֶרֶץ מִצְרָיִם</div>
+            <div class="verse-transliteration"><em>Vaahavtem et hager, ki gerim heyitem be'erets Mitsraïm</em></div>
+            <div class="verse-french">« Vous aimerez l'étranger, car vous avez été étrangers en terre d'Égypte. »</div>
+            <div class="verse-reference">Devarim / Deutéronome 10:19</div>
+        </div>
+
+        <div class="rachi-block">
+            <span class="rachi-label">Exigence éthique radicale</span>
+            <p>
+                La mémoire d'une souffrance doit empêcher de reproduire cette souffrance sur autrui.
+                Ce n'est pas seulement un conseil moral — c'est une obligation inscrite dans la Torah.
+                Autrement dit, la sortie d'Égypte engage éthiquement pour toutes les générations.
+            </p>
+        </div>
+
+        <div class="idea-box">
+            <span class="idea-label">Idée forte</span>
+            <p>
+                <strong>« Tu as souffert — donc tu sais. »</strong><br>
+                Pessaḥ transforme la mémoire de l'esclavage<br>
+                en <em>responsabilité permanente</em> envers l'étranger et l'opprimé.
+            </p>
+        </div>
+    </div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Conclusion -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">✨</span>
+            Conclusion
+        </div>
+
+        <p class="content-text">
+            Pessaḥ n'est pas uniquement le souvenir d'une ancienne délivrance.
+            La fête devient un chemin permanent.
+        </p>
+
+        <div class="conclusion-banner">
+            Sortir de l'oppression…<br>
+            Apprendre la <em>responsabilité</em>…<br>
+            Transmettre la mémoire de génération en génération…<br>
+            Purifier la parole, retirer ce qui gonfle en soi…<br>
+            Retrouver une relation avec <strong>Adonaï</strong>.<br><br>
+            La Torah ne présente pas la liberté comme une rupture avec toute limite.<br>
+            Elle propose une liberté orientée vers <strong>la justice, la mémoire et la transmission</strong>.<br><br>
+            Chaque année, le Séder pose à nouveau la même question :<br><br>
+            <em>De quoi devons-nous sortir aujourd'hui ?</em>
+        </div>
+    </div>
+
+    <!-- Citations clés -->
+    <div class="quotes-section fade-in">
+        <h2>📜 Quelques textes clés de Pessaḥ</h2>
+
+        <div class="quote-item">
+            <span class="quote-hebrew">בֹּא אֶל־פַּרְעֹה</span>
+            <span class="quote-transliteration">Bo el Par'o.</span>
+            <p class="quote-french">« Viens vers Pharaon. » — Adonaï accompagne Moché dans la confrontation. (Shemot 10:1)</p>
+        </div>
+
+        <div class="quote-item">
+            <span class="quote-hebrew">הָא לַחְמָא עַנְיָא</span>
+            <span class="quote-transliteration">Ha laḥma 'anya.</span>
+            <p class="quote-french">« Voici le pain de pauvreté. » — La matsa, pain de la hâte et de la simplicité. (Haggada)</p>
+        </div>
+
+        <div class="quote-item">
+            <span class="quote-hebrew">וְהִגַּדְתָּ לְבִנְךָ בַּיּוֹם הַהוּא</span>
+            <span class="quote-transliteration">Vehigadta levinḵa bayom hahu.</span>
+            <p class="quote-french">« Tu raconteras à ton fils ce jour-là. » — La transmission comme obligation. (Shemot 13:8)</p>
+        </div>
+
+        <div class="quote-item">
+            <span class="quote-hebrew">וַאֲהַבְתֶּם אֶת־הַגֵּר</span>
+            <span class="quote-transliteration">Vaahavtem et hager.</span>
+            <p class="quote-french">« Vous aimerez l'étranger. » — La mémoire de l'esclavage comme responsabilité éthique. (Devarim 10:19)</p>
+        </div>
+
+        <div class="quote-item">
+            <span class="quote-hebrew">כִּי־לִי בְּנֵי־יִשְׂרָאֵל עֲבָדִים</span>
+            <span class="quote-transliteration">Ki li Bné Israël 'avadim.</span>
+            <p class="quote-french">« Car les enfants d'Israël sont Mes serviteurs. » — La liberté orientée vers Adonaï. (Vayiqra 25:55)</p>
+        </div>
+    </div>
+
+    <!-- Vidéo -->
+    <div class="video-section fade-in">
+        <h2>🎥 Étude vidéo de Pessaḥ</h2>
+        <div class="video-container">
+            <iframe
+                src="https://www.youtube.com/embed/s3SDw1Nng7k"
+                title="Pessaḥ — De l'esclavage à la liberté intérieure | Étude complète | Ariel Mormin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+
+    <!-- Clôture -->
+    <div class="closing-section fade-in">
+        <p>
+            Une étude structurée de Pessaḥ selon la tradition séfarade —
+            la sortie d'Égypte comme libération intérieure et extérieure ;
+            la matsa comme signe de sobriété et d'humilité ;
+            le récit du Séder comme obligation de transmission vivante ;
+            et la mémoire de l'esclavage comme responsabilité éthique permanente envers l'autre.
+        </p>
+    </div>
+
+    <!-- Pied de page -->
+    <div class="footer">
+        <div class="footer-main">
+            Étude de Pessaḥ par <span class="footer-hebrew">אריאל מרמן</span> (Ariel Mormin)
+        </div>
+        <div class="footer-subtitle">
+            • De l'esclavage à la liberté intérieure — פֶּסַח • Tradition séfarade • Parashot Mormin •
+        </div>
+    </div>
+
+</div><!-- /container -->
+
+<script>
+    // Barre de progression
+    window.addEventListener('scroll', () => {
+        const doc = document.documentElement;
+        const progress = doc.scrollTop / (doc.scrollHeight - doc.clientHeight);
+        document.getElementById('scrollBar').style.transform = `scaleX(${progress})`;
+    });
+
+    // Animation d'entrée au scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
