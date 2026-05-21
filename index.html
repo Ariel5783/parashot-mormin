@@ -937,6 +937,110 @@
             }
             .db-cta { align-self: flex-start; }
         }
+
+        /* ── Section Fêtes & Calendrier ── */
+        .fetes-section {
+            margin-top: 3rem;
+            margin-bottom: 2rem;
+        }
+        .fetes-section-title {
+            text-align: center;
+            color: white;
+            font-size: 0.8rem;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            opacity: 0.65;
+            margin-bottom: 1.2rem;
+        }
+        .fetes-banner {
+            background: linear-gradient(135deg, #6b1020 0%, #a82030 45%, #c9891a 100%);
+            border-radius: 15px;
+            padding: 2rem 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            text-decoration: none;
+            box-shadow: 0 10px 35px rgba(107,16,32,0.45);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .fetes-banner::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, rgba(240,200,74,0.7), transparent);
+        }
+        .fetes-banner:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 45px rgba(107,16,32,0.60);
+        }
+        .fetes-banner-left {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        .fetes-banner-icon { font-size: 2.8rem; flex-shrink: 0; }
+        .fetes-banner-label {
+            font-size: 0.65rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: rgba(240,200,100,0.75);
+            margin-bottom: 5px;
+        }
+        .fetes-banner-title {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: #fff5ee;
+            margin-bottom: 4px;
+        }
+        .fetes-banner-hebrew {
+            font-size: 1.1rem;
+            color: #f0c84a;
+            font-family: 'Times New Roman', serif;
+            direction: rtl;
+            margin-bottom: 8px;
+        }
+        .fetes-banner-desc {
+            font-size: 0.92rem;
+            font-style: italic;
+            color: rgba(240,210,185,0.75);
+            line-height: 1.5;
+        }
+        .fetes-banner-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+        .fetes-available-badge {
+            background: rgba(240,200,74,0.2);
+            border: 1px solid rgba(240,200,74,0.4);
+            color: #f0c84a;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+        .fetes-cta {
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 10px 22px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+        .fetes-banner:hover .fetes-cta { background: rgba(255,255,255,0.25); }
+        @media (max-width: 640px) {
+            .fetes-banner { flex-direction: column; align-items: flex-start; }
+            .fetes-banner-right { align-items: flex-start; }
+        }
     </style>
 </head>
 <body>
@@ -1581,6 +1685,29 @@
                 <a href="./vezot-haberakha/" class="study-link">Lire l'étude</a>
             </article>
         </main>
+        <!-- ── Fêtes & Calendrier hébraïque ── -->
+        <div class="fetes-section">
+            <p class="fetes-section-title">Études du calendrier hébraïque</p>
+            <a href="./fetes/" class="fetes-banner">
+                <div class="fetes-banner-left">
+                    <span class="fetes-banner-icon">🍷</span>
+                    <div>
+                        <div class="fetes-banner-label">Nouvelle section</div>
+                        <div class="fetes-banner-title">Fêtes &amp; Calendrier hébraïque</div>
+                        <div class="fetes-banner-hebrew">מועדים וחגים</div>
+                        <div class="fetes-banner-desc">
+                            Pessaḥ, Shavouot, Roch Hachana, Yom Kippour…<br>
+                            Études complètes · Tradition séfarade
+                        </div>
+                    </div>
+                </div>
+                <div class="fetes-banner-right">
+                    <span class="fetes-available-badge">✦ Pessaḥ disponible</span>
+                    <span class="fetes-cta">Accéder aux études →</span>
+                </div>
+            </a>
+        </div>
+
         
         <footer class="footer">
             <p>© 2025 אריאל מרמן (Ariel Mormin) - Études bibliques et spirituelles</p>
