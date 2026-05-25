@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Paracha Nasso : Élever l'homme — responsabilité, parole et présence d'Adonaï. Le Nazir, la réparation entre personnes et la Birkat Cohanim, la bénédiction sacerdotale. Étude Torah complète selon la tradition séfarade par Ariel Mormin.">
+    <meta name="keywords" content="Paracha Nasso, נשא, Torah, Bamidbar, Nombres, Birkat Cohanim, Nazir, bénédiction sacerdotale, élévation, responsabilité, tradition séfarade, étude biblique, paracha semaine, Ariel Mormin, Parashot Mormin">
+    <title>Paracha Nasso – Élever l'homme : responsabilité, parole et présence d'Adonaï</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            background: linear-gradient(150deg,
+                #03060d 0%, #07101e 20%, #0a1828 40%,
+                #081422 60%, #050b14 80%, #07101e 100%);
+            min-height: 100vh;
+            color: #333;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background:
+                radial-gradient(ellipse 60% 40% at 25% 15%, rgba(30, 100, 160, 0.20) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 35% at 75% 75%, rgba(201, 137, 26, 0.14) 0%, transparent 55%),
+                radial-gradient(ellipse 40% 30% at 55% 5%, rgba(240, 200, 74, 0.10) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image:
+                radial-gradient(1px 1px at 10% 18%, rgba(255,255,220,0.55) 0%, transparent 100%),
+                radial-gradient(1px 1px at 40% 6%, rgba(255,255,220,0.45) 0%, transparent 100%),
+                radial-gradient(1px 1px at 68% 12%, rgba(255,255,220,0.60) 0%, transparent 100%),
+                radial-gradient(1.5px 1.5px at 85% 4%, rgba(255,255,220,0.35) 0%, transparent 100%),
+                radial-gradient(1px 1px at 25% 90%, rgba(255,255,220,0.45) 0%, transparent 100%),
+                radial-gradient(1px 1px at 58% 94%, rgba(255,255,220,0.40) 0%, transparent 100%),
+                radial-gradient(1px 1px at 3% 50%, rgba(255,255,220,0.30) 0%, transparent 100%),
+                radial-gradient(1px 1px at 92% 42%, rgba(255,255,220,0.35) 0%, transparent 100%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 30px auto;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.70), 0 0 0 1px rgba(26,100,160,0.12);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ── Barre de progression ── */
+        .scroll-indicator {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #1a4f82, #1e86b0, #c9891a, #f0c84a);
+            transform-origin: left;
+            transform: scaleX(0);
+            z-index: 1000;
+            transition: transform 0.1s ease;
+        }
+
+        /* ── Bouton retour ── */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #1a4f82, #1e6fa0);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(26, 79, 130, 0.35);
+            margin-bottom: 20px;
+        }
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(26, 79, 130, 0.55);
+            background: linear-gradient(135deg, #1e6fa0, #1a4f82);
+        }
+
+        /* ── En-tête ── */
+        .header {
+            text-align: center;
+            padding: 55px 20px 60px;
+            background: linear-gradient(150deg,
+                #040810, #081428, #0f2240,
+                #1a3a60, #c9891a, #0e1c36,
+                #081428, #040810);
+            margin: -40px -20px 50px -20px;
+            border-radius: 20px 20px 0 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background:
+                radial-gradient(ellipse 70% 60% at 50% 50%, rgba(30, 110, 175, 0.22) 0%, transparent 70%),
+                radial-gradient(ellipse 50% 40% at 15% 25%, rgba(26, 79, 130, 0.20) 0%, transparent 60%),
+                radial-gradient(ellipse 40% 50% at 85% 75%, rgba(201, 137, 26, 0.35) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 35px;
+            background:
+                radial-gradient(ellipse 60% 100% at 30% 100%, rgba(30, 110, 175, 0.15) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 100% at 70% 100%, rgba(201, 137, 26, 0.12) 0%, transparent 60%);
+        }
+
+        .header-label-small {
+            font-size: 0.8em;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: rgba(180, 210, 240, 0.72);
+            font-family: 'Georgia', serif;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 14px;
+            display: block;
+        }
+
+        .header-icon {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+            display: block;
+        }
+
+        .title {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+            color: #f0f5ff;
+        }
+
+        .hebrew-title {
+            font-size: 3.6em;
+            color: #f0c84a;
+            margin-bottom: 15px;
+            font-family: 'Times New Roman', serif;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6), 0 0 35px rgba(240,200,74,0.30);
+            position: relative;
+            z-index: 1;
+            letter-spacing: 0.05em;
+        }
+
+        .subtitle {
+            font-size: 1.35em;
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            color: #c8ddf5;
+            opacity: 0.92;
+        }
+
+        .reference {
+            font-size: 1.05em;
+            position: relative;
+            z-index: 1;
+            color: #f0c84a;
+            opacity: 0.92;
+        }
+
+        /* ── Boîte intro ── */
+        .intro-box {
+            background: linear-gradient(135deg, #eef4ff, #fef9ec);
+            padding: 35px;
+            border-radius: 15px;
+            border-left: 6px solid #1a4f82;
+            margin-bottom: 45px;
+            box-shadow: 0 8px 20px rgba(26, 79, 130, 0.10);
+            position: relative;
+        }
+
+        .intro-box::before {
+            content: "✡";
+            position: absolute;
+            top: 15px; right: 20px;
+            font-size: 2.2em;
+            opacity: 0.10;
+            color: #1a4f82;
+        }
+
+        /* ── Sections ── */
+        .section {
+            margin-bottom: 45px;
+            padding: 20px 0;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #1a3a60;
+            margin-bottom: 25px;
+            font-weight: bold;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #eef4ff, #fef9ec);
+            border-radius: 10px;
+            border-left: 5px solid #1a4f82;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-icon { font-size: 1.8em; flex-shrink: 0; }
+
+        .content-text {
+            font-size: 1.15em;
+            line-height: 1.8;
+            color: #2c2c2c;
+            margin-bottom: 20px;
+        }
+
+        /* ── Versets ── */
+        .verse-block {
+            background: linear-gradient(135deg, #eef4ff 0%, #fef9ec 100%);
+            border: 2px solid rgba(26, 79, 130, 0.18);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(26, 79, 130, 0.08);
+        }
+
+        .verse-block::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #1a4f82, #1e86b0, #c9891a, #f0c84a, #c9891a, #1e86b0, #1a4f82);
+        }
+
+        .verse-label {
+            font-size: 0.75em;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: rgba(26, 79, 130, 0.58);
+            margin-bottom: 12px;
+            display: block;
+            font-style: normal;
+        }
+
+        .verse-hebrew {
+            font-size: 2.1em;
+            color: #0e2545;
+            direction: rtl;
+            margin-bottom: 12px;
+            font-family: 'Times New Roman', serif;
+            font-weight: bold;
+            line-height: 1.5;
+            text-shadow: 0 1px 2px rgba(26,79,130,0.10);
+        }
+
+        .verse-transliteration {
+            font-size: 1.05em;
+            font-style: italic;
+            color: #2a5a8a;
+            margin-bottom: 10px;
+        }
+
+        .verse-french {
+            font-size: 1.05em;
+            color: #1a3a60;
+            font-style: italic;
+            border-top: 1px solid rgba(26, 79, 130, 0.15);
+            padding-top: 10px;
+            margin-top: 5px;
+        }
+
+        .verse-reference {
+            font-size: 0.85em;
+            color: rgba(26, 79, 130, 0.52);
+            margin-top: 8px;
+            letter-spacing: 0.1em;
+        }
+
+        /* ── Rachi ── */
+        .rachi-block {
+            background: linear-gradient(135deg, #fef9ec, #fff8e8);
+            border: 1px solid rgba(201, 137, 26, 0.28);
+            border-left: 5px solid #c9891a;
+            border-radius: 0 10px 10px 0;
+            padding: 22px 25px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .rachi-block::before {
+            content: 'רש"י';
+            position: absolute;
+            top: 12px; right: 18px;
+            font-size: 1.6em;
+            color: rgba(201, 137, 26, 0.18);
+            font-family: 'Times New Roman', serif;
+            font-weight: bold;
+            direction: rtl;
+        }
+
+        .rachi-label {
+            font-size: 0.78em;
+            font-weight: bold;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #c9891a;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .rachi-block p {
+            font-size: 1.05em;
+            line-height: 1.7;
+            color: #4a3010;
+            font-style: italic;
+        }
+
+        /* ── Midrash / Sages ── */
+        .midrash-block {
+            background: linear-gradient(135deg, #eef4ff, #e8f0ff);
+            border: 1px solid rgba(26, 79, 130, 0.22);
+            border-left: 5px solid #1a4f82;
+            border-radius: 0 10px 10px 0;
+            padding: 22px 25px;
+            margin: 20px 0;
+        }
+
+        .midrash-label {
+            font-size: 0.78em;
+            font-weight: bold;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #1a4f82;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .midrash-block p {
+            font-size: 1.05em;
+            line-height: 1.7;
+            color: #0e2545;
+            font-style: italic;
+        }
+
+        /* ── Idée forte ── */
+        .idea-box {
+            background: linear-gradient(135deg, #1a3a60, #1e5a8a);
+            color: white;
+            padding: 30px 35px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(26, 79, 130, 0.30);
+        }
+
+        .idea-box::before {
+            content: '✦';
+            position: absolute;
+            top: -10px; right: 20px;
+            font-size: 5em;
+            color: rgba(240, 200, 74, 0.10);
+        }
+
+        .idea-label {
+            font-size: 0.72em;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: rgba(240, 200, 74, 0.75);
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .idea-box p {
+            font-size: 1.3em;
+            font-style: italic;
+            line-height: 1.6;
+            color: #f0f5ff;
+            position: relative;
+            z-index: 1;
+        }
+
+        .idea-box strong {
+            color: #f0c84a;
+            font-style: normal;
+        }
+
+        /* ── Paradoxe ── */
+        .paradox-box {
+            background: linear-gradient(135deg, #f0f6ff, #e8f2ff);
+            border: 2px solid rgba(26, 79, 130, 0.25);
+            border-radius: 12px;
+            padding: 25px 30px;
+            margin: 25px 0;
+            position: relative;
+        }
+
+        .paradox-label {
+            font-size: 0.75em;
+            font-weight: bold;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: #1a4f82;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .paradox-box p {
+            font-size: 1.1em;
+            line-height: 1.75;
+            color: #0e2040;
+        }
+
+        /* ── Bannière thématique ── */
+        .theme-banner {
+            background: linear-gradient(135deg, #0a1e38, #1a3a60, #0a1e38);
+            color: white;
+            padding: 28px 35px;
+            border-radius: 12px;
+            margin: 30px 0;
+            text-align: center;
+            font-size: 1.15em;
+            line-height: 1.8;
+            box-shadow: 0 8px 22px rgba(10, 30, 56, 0.35);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(30, 110, 175, 0.20);
+        }
+
+        .theme-banner::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #1e86b0, #f0c84a, #1e86b0, transparent);
+        }
+
+        .theme-banner strong { color: #f0c84a; }
+        .theme-banner em { color: #a8d0f0; font-style: italic; }
+
+        /* ── Birkat Cohanim (bloc spécial) ── */
+        .birkat-block {
+            background: linear-gradient(150deg, #f5faff 0%, #fefaf0 50%, #f0f6ff 100%);
+            border: 2px solid rgba(26, 79, 130, 0.22);
+            border-radius: 16px;
+            padding: 38px 35px;
+            margin: 30px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(26, 79, 130, 0.10);
+        }
+
+        .birkat-block::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #1a4f82, #1e86b0, #f0c84a, #c9891a, #f0c84a, #1e86b0, #1a4f82);
+        }
+
+        .birkat-block::after {
+            content: '✡';
+            position: absolute;
+            top: 50%; right: 25px;
+            transform: translateY(-50%);
+            font-size: 6em;
+            color: rgba(26, 79, 130, 0.05);
+            pointer-events: none;
+        }
+
+        .birkat-label {
+            font-size: 0.72em;
+            letter-spacing: 0.32em;
+            text-transform: uppercase;
+            color: rgba(26, 79, 130, 0.55);
+            margin-bottom: 22px;
+            display: block;
+        }
+
+        .birkat-verse {
+            margin-bottom: 22px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid rgba(26, 79, 130, 0.10);
+        }
+
+        .birkat-verse:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .birkat-hebrew {
+            font-size: 1.95em;
+            color: #0e2545;
+            direction: rtl;
+            margin-bottom: 8px;
+            font-family: 'Times New Roman', serif;
+            font-weight: bold;
+            line-height: 1.55;
+            text-shadow: 0 1px 2px rgba(26,79,130,0.08);
+        }
+
+        .birkat-trans {
+            font-size: 0.95em;
+            font-style: italic;
+            color: #2a5a8a;
+            margin-bottom: 6px;
+        }
+
+        .birkat-french {
+            font-size: 1.05em;
+            color: #1a3a60;
+            font-style: italic;
+        }
+
+        /* ── Liste structurée ── */
+        .structured-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .structured-list li {
+            padding: 10px 0 10px 35px;
+            font-size: 1.1em;
+            color: #2c2c2c;
+            line-height: 1.6;
+            border-bottom: 1px solid rgba(26, 79, 130, 0.08);
+            position: relative;
+        }
+
+        .structured-list li:last-child { border-bottom: none; }
+
+        .structured-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 10px;
+            color: #c9891a;
+            font-size: 1em;
+        }
+
+        /* ── Bannière conclusion ── */
+        .conclusion-banner {
+            background: linear-gradient(135deg, #07101e, #1a3a60, #07101e);
+            color: white;
+            padding: 40px 35px;
+            border-radius: 15px;
+            margin: 35px 0;
+            text-align: center;
+            font-size: 1.25em;
+            line-height: 1.9;
+            box-shadow: 0 10px 30px rgba(7, 16, 30, 0.40);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .conclusion-banner::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #1e86b0, #f0c84a, #1e86b0, transparent);
+        }
+
+        .conclusion-banner::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #1e86b0, #f0c84a, #1e86b0, transparent);
+        }
+
+        .conclusion-banner strong { color: #f0c84a; }
+        .conclusion-banner em { color: #a8d0f0; font-style: italic; }
+
+        /* ── Application ── */
+        .application-box {
+            background: linear-gradient(135deg, #eef4ff, #fef9ec);
+            border: 1px solid rgba(26, 79, 130, 0.15);
+            border-radius: 12px;
+            padding: 28px 30px;
+            margin: 25px 0;
+            position: relative;
+        }
+
+        .application-label {
+            font-size: 0.75em;
+            font-weight: bold;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: #1a4f82;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .application-box p {
+            font-size: 1.1em;
+            line-height: 1.75;
+            color: #1a2c48;
+        }
+
+        /* ── Citations clés ── */
+        .quotes-section {
+            background: linear-gradient(135deg, #eef4ff, #fef9ec);
+            padding: 40px 35px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+        }
+
+        .quotes-section h2 {
+            font-size: 1.6em;
+            color: #1a3a60;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(26, 79, 130, 0.15);
+        }
+
+        .quote-item {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border-left: 4px solid #c9891a;
+            box-shadow: 0 3px 12px rgba(26, 79, 130, 0.08);
+        }
+
+        .quote-hebrew {
+            display: block;
+            font-size: 1.9em;
+            color: #0e2545;
+            direction: rtl;
+            margin-bottom: 8px;
+            font-family: 'Times New Roman', serif;
+            font-weight: bold;
+        }
+
+        .quote-transliteration {
+            display: block;
+            font-size: 0.95em;
+            font-style: italic;
+            color: #2a5a8a;
+            margin-bottom: 10px;
+        }
+
+        .quote-french {
+            font-size: 1.0em;
+            color: #333;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        /* ── Vidéo ── */
+        .video-section {
+            background: linear-gradient(135deg, #07101e, #0f1e36);
+            padding: 40px 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .video-section h2 {
+            font-size: 1.5em;
+            color: #f0c84a;
+            margin-bottom: 25px;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.40);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            border: none;
+        }
+
+        /* ── Clôture ── */
+        .closing-section {
+            background: linear-gradient(135deg, #eef4ff, #fef9ec);
+            padding: 30px 35px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(26, 79, 130, 0.12);
+        }
+
+        .closing-section p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #2c2c2c;
+            font-style: italic;
+        }
+
+        /* ── Pied de page ── */
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 2px solid rgba(26, 79, 130, 0.12);
+            margin-top: 20px;
+        }
+
+        .footer-main {
+            font-size: 1.1em;
+            color: #1a3a60;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .footer-hebrew {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.2em;
+            color: #c9891a;
+        }
+
+        .footer-subtitle {
+            font-size: 0.9em;
+            color: #666;
+            letter-spacing: 0.05em;
+        }
+
+        /* ── Divider ── */
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(26, 79, 130, 0.20), transparent);
+            margin: 45px 0;
+        }
+
+        /* ── Fade-in animation ── */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.65s ease, transform 0.65s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 640px) {
+            .title { font-size: 1.9em; }
+            .hebrew-title { font-size: 2.6em; }
+            .container { margin: 10px auto; border-radius: 12px; }
+            .header { padding: 40px 16px 45px; margin: -40px -20px 40px -20px; }
+            .birkat-block { padding: 28px 18px; }
+            .birkat-hebrew { font-size: 1.55em; }
+            .intro-box { padding: 22px; }
+        }
+    </style>
+</head>
+<body>
+
+<div id="scrollBar" class="scroll-indicator"></div>
+
+<div class="container">
+
+    <!-- Bouton retour -->
+    <a href="../" class="back-button">← Retour aux Parachiot</a>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- En-tête -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="header">
+        <span class="header-label-small">Bamidbar · Nombres 4:21 – 7:89</span>
+        <span class="header-icon">✨</span>
+        <h1 class="title">Paracha Nasso</h1>
+        <div class="hebrew-title">נָשֹׂא</div>
+        <div class="subtitle">Élever l'homme : responsabilité, parole et présence d'Adonaï</div>
+        <div class="reference">Bamidbar 4:21 – 7:89 · La plus longue paracha de la Torah</div>
+    </div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Introduction -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="intro-box fade-in">
+        <p style="font-size:1.15em; line-height:1.8; color:#1a2c48; margin-bottom:18px;">
+            La Parachat Nasso est la plus longue paracha de toute la Torah. Elle se trouve dans le livre de Bamidbar,
+            au lendemain de l'installation du Michkan et de l'organisation des tribus autour de lui.
+        </p>
+        <p style="font-size:1.1em; line-height:1.8; color:#2c2c2c; margin-bottom:18px;">
+            En apparence, elle rassemble des sujets très différents : les familles lévitiques, la pureté du camp,
+            les réparations entre personnes, la femme sota, le nazir, la bénédiction des Cohanim, les offrandes des chefs de tribus.
+        </p>
+        <p style="font-size:1.1em; line-height:1.8; color:#1a2c48; font-style:italic;">
+            Pourquoi la Torah réunit-elle des sujets aussi variés dans une même paracha ?
+            La tradition séfarade voit dans cette diversité une idée centrale : lorsqu'Adonaï habite au milieu du peuple,
+            <strong>toute la vie humaine doit être élevée</strong>.
+            La sainteté ne s'enferme pas dans le sanctuaire — elle descend dans le quotidien.
+        </p>
+    </div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Section 1 : Texte source — le mot Nasso -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">📖</span>
+            Le mot Nasso — נָשֹׂא
+        </div>
+
+        <p class="content-text">
+            La paracha s'ouvre sur un verset en apparence simple : un recensement des fils de Guershon.
+            Mais le mot choisi par la Torah est extraordinaire.
+        </p>
+
+        <div class="verse-block">
+            <span class="verse-label">Bamidbar 4:22</span>
+            <div class="verse-hebrew">נָשֹׂא אֶת־רֹאשׁ בְּנֵי גֵרְשׁוֹן גַּם־הֵם</div>
+            <div class="verse-transliteration"><em>Nasso et rosh bene Guerchon gam hem</em></div>
+            <div class="verse-french">« Fais également le recensement des fils de Guershon. »</div>
+            <div class="verse-reference">Bamidbar / Nombres 4:22</div>
+        </div>
+
+        <p class="content-text">
+            Le mot <strong>נָשֹׂא (Nasso)</strong> porte quatre sens superposés :
+            <em>porter</em>, <em>élever</em>, <em>soulever</em>, <em>relever</em>.
+            Pourquoi employer un terme qui signifie « élever » pour désigner un simple recensement ?
+        </p>
+
+        <div class="rachi-block">
+            <span class="rachi-label">Rachi — commentaire</span>
+            <p>
+                Rachi relève cette difficulté du texte : la Torah ne parle pas d'un comptage numérique ordinaire.
+                Elle parle d'une élévation de la personne.
+                Autrement dit, un homme n'est pas seulement un nombre dans une foule —
+                il possède une mission propre, une valeur intrinsèque, une dignité qu'Adonaï reconnaît.
+            </p>
+        </div>
+
+        <div class="idea-box">
+            <span class="idea-label">Idée clé</span>
+            <p>
+                Compter, dans la Torah, c'est <strong>reconnaître</strong>.<br>
+                Chaque personne compte parce que chaque personne <strong>porte</strong> quelque chose.
+            </p>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Section 2 : Axe central -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">🔥</span>
+            Axe central de la paracha
+        </div>
+
+        <div class="theme-banner">
+            <strong>La proximité d'Adonaï exige une responsabilité plus grande.</strong><br>
+            Plus l'homme s'approche du sacré, plus ses actes, ses paroles et ses relations deviennent importants.<br>
+            <em>La sainteté ne se limite pas au sanctuaire — elle descend dans la vie ordinaire.</em>
+        </div>
+
+        <p class="content-text">
+            C'est l'enseignement que développe Nasso à travers chacun de ses sujets :
+            la réparation entre personnes, la maîtrise de soi du nazir, et la bénédiction sacerdotale
+            qui couronne la paracha. Ces trois fils tissent la même vérité.
+        </p>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Section 3 : La sainteté commence entre les personnes -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">🤝</span>
+            La sainteté commence entre les personnes
+        </div>
+
+        <p class="content-text">
+            Avant d'aborder les grands enseignements spirituels, la Torah place une exigence inattendue :
+            la réparation des fautes commises envers autrui.
+        </p>
+
+        <div class="verse-block">
+            <span class="verse-label">Bamidbar 5:7</span>
+            <div class="verse-hebrew">וְהִתְוַדּוּ אֶת־חַטָּאתָם אֲשֶׁר עָשׂוּ</div>
+            <div class="verse-transliteration"><em>Vehitvadou et ḥatatam asher assou</em></div>
+            <div class="verse-french">« Ils reconnaîtront la faute qu'ils ont commise. »</div>
+            <div class="verse-reference">Bamidbar / Nombres 5:7</div>
+        </div>
+
+        <div class="paradox-box">
+            <span class="paradox-label">Paradoxe structurant</span>
+            <p>
+                Pourquoi commencer par des questions de réparation matérielle
+                alors que le Michkan vient d'être consacré ?
+                Adonaï habite désormais au cœur du camp — et la première exigence qui en découle
+                porte sur les relations humaines, pas sur les pratiques rituelles.
+            </p>
+        </div>
+
+        <p class="content-text">
+            La réponse est profonde. Dans la tradition des Sages, les fautes envers autrui
+            ne se réparent pas par la seule prière. Elles exigent :
+        </p>
+
+        <ul class="structured-list">
+            <li>Reconnaître la faute ouvertement</li>
+            <li>Réparer le tort causé</li>
+            <li>Restituer ce qui a été pris</li>
+            <li>Demander pardon à la personne concernée</li>
+        </ul>
+
+        <div class="midrash-block">
+            <span class="midrash-label">Enseignment des Sages</span>
+            <p>
+                On ne construit pas une relation authentique avec Adonaï
+                tout en laissant une relation humaine détruite.
+                La présence du Michkan au milieu du camp élève l'exigence envers
+                chaque relation, chaque parole, chaque acte entre personnes.
+            </p>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Section 4 : Le Nazir -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">🌿</span>
+            Le Nazir — monter ou fuir ?
+        </div>
+
+        <p class="content-text">
+            La Torah évoque ensuite le nazir, celui qui prononce un vœu de séparation volontaire :
+            ne pas boire de vin, ne pas couper ses cheveux, s'éloigner temporairement du monde.
+        </p>
+
+        <div class="verse-block">
+            <span class="verse-label">Bamidbar 6:2</span>
+            <div class="verse-hebrew">אִישׁ אוֹ־אִשָּׁה כִּי יַפְלִא לִנְדֹּר נֶדֶר נָזִיר</div>
+            <div class="verse-transliteration"><em>Ish o ishah ki yafli lindor neder nazir</em></div>
+            <div class="verse-french">« Lorsqu'un homme ou une femme fera le vœu de nazir. »</div>
+            <div class="verse-reference">Bamidbar / Nombres 6:2</div>
+        </div>
+
+        <div class="paradox-box">
+            <span class="paradox-label">La tension du texte</span>
+            <p>
+                Pourquoi celui qui cherche une sainteté plus grande doit-il, en fin de nazirout,
+                apporter une offrande associée à une faute ? Ce détail est déconcertant.
+                Quelqu'un qui s'est élevé — doit-il s'en repentir ?
+            </p>
+        </div>
+
+        <div class="rachi-block">
+            <span class="rachi-label">Rachi — commentaire</span>
+            <p>
+                Rachi explique que l'excès de séparation peut lui-même devenir un déséquilibre.
+                Autrement dit : le nazir s'est privé des plaisirs que la Torah autorise.
+                Cette privation, bien qu'animée d'une intention noble, porte une dimension d'erreur —
+                car la Torah ne demande pas de fuir le monde. Elle demande de le sanctifier.
+            </p>
+        </div>
+
+        <div class="idea-box">
+            <span class="idea-label">Idée forte</span>
+            <p>
+                Le chemin de la Torah n'est ni l'excès ni l'abandon.<br>
+                C'est <strong>l'équilibre</strong> — vivre dans le monde<br>
+                tout en l'élevant par ses choix, ses paroles et ses actes.
+            </p>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Section 5 : La Birkat Cohanim — sommet de la paracha -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">✨</span>
+            La Birkat Cohanim — le sommet de la paracha
+        </div>
+
+        <p class="content-text">
+            Après la réparation et l'équilibre, la Torah pose le couronnement de Nasso :
+            la bénédiction sacerdotale. C'est l'un des textes les plus anciens et les plus connus de toute la Torah,
+            récité encore aujourd'hui dans la prière quotidienne.
+        </p>
+
+        <div class="birkat-block">
+            <span class="birkat-label">Birkat Cohanim · Bamidbar 6:24–26</span>
+
+            <div class="birkat-verse">
+                <div class="birkat-hebrew">יְבָרֶכְךָ יְהוָה וְיִשְׁמְרֶךָ</div>
+                <div class="birkat-trans"><em>Yevarekhekha Adonaï veyishmerekha</em></div>
+                <div class="birkat-french">« Qu'Adonaï te bénisse et te protège. »</div>
+            </div>
+
+            <div class="birkat-verse">
+                <div class="birkat-hebrew">יָאֵר יְהוָה פָּנָיו אֵלֶיךָ וִיחֻנֶּךָּ</div>
+                <div class="birkat-trans"><em>Yaer Adonaï panav elekha viḥouneka</em></div>
+                <div class="birkat-french">« Qu'Adonaï fasse rayonner Sa face sur toi et t'accorde Sa grâce. »</div>
+            </div>
+
+            <div class="birkat-verse">
+                <div class="birkat-hebrew">יִשָּׂא יְהוָה פָּנָיו אֵלֶיךָ וְיָשֵׂם לְךָ שָׁלוֹם</div>
+                <div class="birkat-trans"><em>Yissa Adonaï panav elekha veyasem lekha shalom</em></div>
+                <div class="birkat-french">« Qu'Adonaï tourne Sa face vers toi et t'accorde la paix. »</div>
+            </div>
+        </div>
+
+        <p class="content-text">
+            Remarquons où se termine cette bénédiction. Ni par la richesse. Ni par la puissance. Ni par la réussite visible.
+            Elle se clôt sur un seul mot :
+        </p>
+
+        <div class="idea-box">
+            <span class="idea-label">Le sommet de la bénédiction</span>
+            <p>
+                <strong>שָׁלוֹם — Shalom</strong><br>
+                Parce que sans paix, les biens se dispersent,<br>
+                les relations se détruisent, les bénédictions se fragmentent.<br>
+                Le <em>Shalom</em> est la condition de toutes les bénédictions.
+            </p>
+        </div>
+
+        <div class="midrash-block">
+            <span class="midrash-label">Tradition séfarade</span>
+            <p>
+                Dans la tradition séfarade, la Birkat Cohanim occupe une place centrale dans la tefila quotidienne.
+                Elle exprime l'aspiration fondamentale : que la présence d'Adonaï ne reste pas enfermée dans le sanctuaire,
+                mais rayonne sur chaque personne, dans sa vie ordinaire.
+            </p>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Idée forte -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">💡</span>
+            L'idée forte de Nasso
+        </div>
+
+        <div class="conclusion-banner">
+            <strong>La sainteté ne consiste pas à quitter la vie ordinaire.</strong><br>
+            Elle consiste à <em>élever la vie ordinaire</em>.<br><br>
+            Réparer une faute, maintenir l'équilibre, prononcer une bénédiction —<br>
+            <strong>c'est déjà un acte de sainteté.</strong>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Application concrète -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">🌅</span>
+            Nasso et notre quotidien
+        </div>
+
+        <p class="content-text">
+            Nasso nous pose des questions concrètes — non pas abstraites, mais ancrées dans la vie de chaque jour :
+        </p>
+
+        <ul class="structured-list">
+            <li>Comment parlons-nous aux personnes qui nous entourent ?</li>
+            <li>Réparons-nous nos erreurs — ou laissons-nous les torts s'accumuler en silence ?</li>
+            <li>Utilisons-nous nos paroles pour construire ou pour blesser ?</li>
+            <li>Cherchons-nous l'équilibre, ou cédons-nous à l'excès — dans un sens comme dans l'autre ?</li>
+            <li>Apportons-nous le shalom autour de nous ?</li>
+        </ul>
+
+        <div class="application-box">
+            <span class="application-label">Ouverture spirituelle</span>
+            <p>
+                La Torah ne mesure pas seulement les grands actes visibles.
+                Elle regarde aussi une parole prononcée avec attention,
+                une faute réparée discrètement, une présence offerte à quelqu'un qui en avait besoin.
+                Lorsque la présence d'Adonaï entre dans une vie,
+                même les détails du quotidien peuvent devenir un lieu de sainteté.
+            </p>
+        </div>
+    </div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Conclusion -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">✨</span>
+            Conclusion
+        </div>
+
+        <p class="content-text">
+            La Parachat Nasso s'ouvre sur un mot étonnant pour désigner un recensement :
+        </p>
+
+        <div class="conclusion-banner">
+            <strong>נָשֹׂא — Nasso</strong><br>
+            <em>Élever.</em><br><br>
+            Toute la paracha développe ce mouvement.<br><br>
+            Élever les personnes — en les reconnaissant chacune dans leur mission.<br>
+            Élever les relations — en réparant les fautes entre personnes.<br>
+            Élever la parole — en choisissant la bénédiction plutôt que la dispersion.<br>
+            Élever la vie — en trouvant l'équilibre qui sanctifie sans fuir le monde.<br><br>
+            Et couronner tout cela d'un seul mot :<br>
+            <strong>שָׁלוֹם — Shalom.</strong><br><br>
+            <em>"Lorsque la présence d'Adonaï entre dans une vie,
+            même les détails du quotidien peuvent devenir un lieu de sainteté."</em>
+        </div>
+    </div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Citations clés -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="quotes-section fade-in">
+        <h2>📜 Quelques versets clés de Nasso</h2>
+
+        <div class="quote-item">
+            <span class="quote-hebrew">נָשֹׂא אֶת־רֹאשׁ בְּנֵי גֵרְשׁוֹן גַּם־הֵם</span>
+            <span class="quote-transliteration">Nasso et rosh bene Guerchon gam hem.</span>
+            <p class="quote-french">« Fais également le recensement des fils de Guershon. » (Bamidbar 4:22)</p>
+        </div>
+
+        <div class="quote-item">
+            <span class="quote-hebrew">וְהִתְוַדּוּ אֶת־חַטָּאתָם אֲשֶׁר עָשׂוּ</span>
+            <span class="quote-transliteration">Vehitvadou et ḥatatam asher assou.</span>
+            <p class="quote-french">« Ils reconnaîtront la faute qu'ils ont commise. » (Bamidbar 5:7)</p>
+        </div>
+
+        <div class="quote-item">
+            <span class="quote-hebrew">יְבָרֶכְךָ יְהוָה וְיִשְׁמְרֶךָ</span>
+            <span class="quote-transliteration">Yevarekhekha Adonaï veyishmerekha.</span>
+            <p class="quote-french">« Qu'Adonaï te bénisse et te protège. » (Bamidbar 6:24)</p>
+        </div>
+
+        <div class="quote-item">
+            <span class="quote-hebrew">יִשָּׂא יְהוָה פָּנָיו אֵלֶיךָ וְיָשֵׂם לְךָ שָׁלוֹם</span>
+            <span class="quote-transliteration">Yissa Adonaï panav elekha veyasem lekha shalom.</span>
+            <p class="quote-french">« Qu'Adonaï tourne Sa face vers toi et t'accorde la paix. » (Bamidbar 6:26)</p>
+        </div>
+    </div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Vidéo -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="video-section fade-in">
+        <h2>🎥 Étude vidéo de Nasso</h2>
+        <div class="video-container">
+            <iframe
+                src="https://www.youtube.com/embed/pbgZgikkm6Q"
+                title="Paracha Nasso : Élever l'homme — responsabilité, parole et présence d'Adonaï | Étude complète | Ariel Mormin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Clôture -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="closing-section fade-in">
+        <p>
+            Une étude structurée et progressive de la Paracha Nasso selon la tradition séfarade.
+            Le mot נָשֹׂא comme clé de lecture : élever la personne par le recensement, élever les relations
+            par la réparation, élever l'âme par l'équilibre du nazir, et couronner tout cela
+            par la Birkat Cohanim — la bénédiction sacerdotale qui appelle la paix sur chaque vie.
+        </p>
+    </div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Pied de page -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="footer">
+        <div class="footer-main">
+            Étude de Nasso par <span class="footer-hebrew">אריאל מרמן</span> (Ariel Mormin)
+        </div>
+        <div class="footer-subtitle">
+            • Élever l'homme — נָשֹׂא • Bamidbar / Nombres 4:21–7:89 • Tradition séfarade •
+        </div>
+    </div>
+
+</div><!-- /container -->
+
+<script>
+    // Barre de progression
+    window.addEventListener('scroll', () => {
+        const doc = document.documentElement;
+        const progress = doc.scrollTop / (doc.scrollHeight - doc.clientHeight);
+        document.getElementById('scrollBar').style.transform = `scaleX(${progress})`;
+    });
+
+    // Animation d'entrée au scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
