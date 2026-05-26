@@ -9,16 +9,16 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --fire:       #d4662a;
-    --fire-light: #f0a060;
-    --ember:      #c9a84c;
-    --ash:        #8a7060;
-    --deep:       #100806;
-    --text-main:  #f5ede0;
-    --text-sub:   rgba(240,200,160,0.6);
+    --fire:       #c85a1e;
+    --fire-light: #e07830;
+    --ember:      #b8922a;
+    --bg:         #fdf6ed;
+    --bg-card:    #faf0e2;
+    --text-main:  #2a1a08;
+    --text-sub:   #6b4a28;
+    --border:     rgba(180,120,50,0.18);
   }
 
-  /* ── SCROLL PROGRESS ── */
   #progress-bar {
     position: fixed;
     top: 0; left: 0;
@@ -32,50 +32,28 @@
   html { scroll-behavior: smooth; }
 
   body {
-    background: var(--deep);
-    background-image:
-      radial-gradient(ellipse 80% 50% at 50% 0%, rgba(100,30,10,0.4) 0%, transparent 65%),
-      radial-gradient(ellipse 50% 40% at 20% 100%, rgba(30,10,5,0.5) 0%, transparent 60%);
+    background: var(--bg);
     min-height: 100vh;
     font-family: 'EB Garamond', serif;
     color: var(--text-main);
     line-height: 1.7;
   }
 
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  /* ── FADE-IN ── */
   .fade-in {
     opacity: 0;
-    transform: translateY(22px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
+    transform: translateY(18px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
   }
   .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
   }
 
-  /* ── LAYOUT ── */
-  .container {
-    position: relative;
-    z-index: 1;
-    max-width: 780px;
-    margin: 0 auto;
-    padding: 0 28px 80px;
-  }
-
-  /* ── HEADER HERO ── */
+  /* ── HERO ── */
   .hero {
     position: relative;
     width: 100%;
-    min-height: 420px;
+    min-height: 460px;
     overflow: hidden;
     display: flex;
     align-items: flex-end;
@@ -87,8 +65,8 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 30%;
-    filter: brightness(0.55) saturate(1.1);
+    object-position: center 28%;
+    filter: brightness(0.82) saturate(1.05);
   }
 
   .hero-overlay {
@@ -96,25 +74,27 @@
     inset: 0;
     background: linear-gradient(
       to bottom,
-      rgba(16,8,6,0) 0%,
-      rgba(16,8,6,0.3) 40%,
-      rgba(16,8,6,0.85) 80%,
-      rgba(16,8,6,1) 100%
+      rgba(253,246,237,0) 0%,
+      rgba(30,15,5,0.15) 35%,
+      rgba(30,15,5,0.65) 70%,
+      rgba(20,10,3,0.88) 100%
     );
   }
 
   .hero-content {
     position: relative;
     z-index: 2;
-    padding: 48px 40px 40px;
+    padding: 48px 48px 44px;
     width: 100%;
+    max-width: 860px;
+    margin: 0 auto;
   }
 
   .hero-category {
     font-family: 'Cinzel', serif;
     font-size: 0.6rem;
     letter-spacing: 0.35em;
-    color: rgba(212,102,42,0.75);
+    color: rgba(240,180,100,0.85);
     text-transform: uppercase;
     margin-bottom: 10px;
     display: block;
@@ -122,24 +102,25 @@
 
   .hero-title {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(1.9rem, 4vw, 2.8rem);
+    font-size: clamp(2rem, 4.5vw, 3rem);
     font-weight: 900;
     color: #fff8f0;
-    line-height: 1.12;
+    line-height: 1.1;
     margin-bottom: 6px;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.4);
   }
 
   .hero-subtitle {
     font-family: 'EB Garamond', serif;
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     font-style: italic;
-    color: rgba(240,200,160,0.72);
-    margin-bottom: 18px;
+    color: rgba(255,235,200,0.8);
+    margin-bottom: 20px;
   }
 
   .hero-meta {
     display: flex;
-    gap: 12px;
+    gap: 10px;
     flex-wrap: wrap;
   }
 
@@ -147,28 +128,50 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    background: rgba(212,102,42,0.15);
-    border: 1px solid rgba(212,102,42,0.35);
-    padding: 5px 13px;
+    background: rgba(200,90,30,0.2);
+    border: 1px solid rgba(240,160,80,0.4);
+    padding: 5px 14px;
     border-radius: 20px;
     font-family: 'Cinzel', serif;
     font-size: 0.58rem;
     letter-spacing: 0.15em;
-    color: rgba(240,160,96,0.85);
+    color: rgba(255,210,150,0.9);
     text-transform: uppercase;
+    backdrop-filter: blur(4px);
   }
 
-  /* ── MAIN CONTENT ── */
-  .content {
-    padding-top: 48px;
+  /* ── CONTAINER ── */
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 32px 80px;
   }
 
-  /* ── SECTION HEADER ── */
+  /* ── BACK BUTTON ── */
+  .back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--fire);
+    font-family: 'Cinzel', serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 16px 0 28px;
+    display: block;
+    transition: color 0.2s;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 44px;
+  }
+  .back-btn:hover { color: var(--fire-light); }
+
+  /* ── SECTION LABEL ── */
   .section-title {
     font-family: 'Cinzel', serif;
     font-size: 0.6rem;
     letter-spacing: 0.32em;
-    color: rgba(212,102,42,0.55);
+    color: rgba(180,100,30,0.5);
     text-transform: uppercase;
     margin-bottom: 20px;
     display: flex;
@@ -179,64 +182,61 @@
     content: '';
     flex: 1;
     height: 1px;
-    background: linear-gradient(90deg, rgba(212,102,42,0.25), transparent);
+    background: linear-gradient(90deg, rgba(180,100,30,0.2), transparent);
   }
 
-  /* ── INTRO BLOCK ── */
+  /* ── INTRO ── */
   .intro-block {
-    margin-bottom: 44px;
+    margin-bottom: 48px;
   }
 
   .intro-block p {
-    font-size: 1.08rem;
-    color: rgba(240,220,200,0.82);
-    margin-bottom: 14px;
-    line-height: 1.75;
+    font-size: 1.1rem;
+    color: #3a2010;
+    margin-bottom: 16px;
+    line-height: 1.8;
   }
 
   .intro-block p strong {
-    color: var(--fire-light);
-    font-weight: 500;
-    font-style: normal;
+    color: var(--fire);
+    font-weight: 600;
   }
 
   .axis-box {
-    background: rgba(212,102,42,0.08);
-    border-left: 3px solid rgba(212,102,42,0.5);
+    background: #fef3e4;
+    border-left: 3px solid rgba(200,90,30,0.5);
     padding: 16px 22px;
-    border-radius: 0 3px 3px 0;
+    border-radius: 0 4px 4px 0;
     margin-top: 20px;
-    margin-bottom: 4px;
   }
 
   .axis-box p {
     font-family: 'Playfair Display', serif;
     font-size: 1.05rem;
-    color: #f0c090;
+    color: #5a2e08;
     line-height: 1.55;
     margin: 0;
   }
 
   /* ── VERSE BLOCK ── */
   .verse-block {
-    background: linear-gradient(135deg, rgba(30,15,8,0.95) 0%, rgba(20,10,5,0.9) 100%);
-    border: 1px solid rgba(212,102,42,0.22);
-    border-top: 3px solid rgba(212,102,42,0.55);
-    border-radius: 0 0 3px 3px;
-    padding: 28px 32px;
-    margin-bottom: 44px;
+    background: linear-gradient(135deg, #2a1205, #1a0a03);
+    border-radius: 4px;
+    padding: 30px 36px;
+    margin-bottom: 48px;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 8px 30px rgba(30,10,3,0.12);
   }
 
   .verse-block::before {
     content: '״';
     position: absolute;
-    right: 20px;
+    right: 18px;
     top: -10px;
     font-size: 7rem;
     font-family: 'Playfair Display', serif;
-    color: rgba(212,102,42,0.06);
+    color: rgba(200,150,50,0.08);
     line-height: 1;
     pointer-events: none;
   }
@@ -245,18 +245,18 @@
     font-family: 'Cinzel', serif;
     font-size: 0.62rem;
     letter-spacing: 0.25em;
-    color: rgba(212,102,42,0.55);
+    color: rgba(220,160,70,0.65);
     text-transform: uppercase;
     display: block;
-    margin-bottom: 16px;
+    margin-bottom: 18px;
   }
 
   .verse-hebrew {
     font-family: 'Playfair Display', serif;
-    font-size: 1.55rem;
-    color: #f5e8d0;
+    font-size: 1.6rem;
+    color: #f5e8cc;
     direction: rtl;
-    line-height: 1.6;
+    line-height: 1.65;
     margin-bottom: 14px;
     text-align: right;
   }
@@ -265,133 +265,130 @@
     font-family: 'EB Garamond', serif;
     font-size: 1.0rem;
     font-style: italic;
-    color: rgba(240,200,160,0.55);
-    margin-bottom: 10px;
-    padding-left: 2px;
+    color: rgba(220,190,130,0.55);
+    margin-bottom: 12px;
   }
 
   .verse-translation {
     font-family: 'EB Garamond', serif;
-    font-size: 1.08rem;
-    color: rgba(240,220,200,0.85);
-    border-top: 1px solid rgba(212,102,42,0.15);
-    padding-top: 12px;
+    font-size: 1.1rem;
+    color: rgba(240,220,190,0.88);
+    border-top: 1px solid rgba(200,150,50,0.18);
+    padding-top: 14px;
     margin-top: 4px;
   }
 
-  /* ── ANALYSIS SECTIONS ── */
+  /* ── ANALYSIS ── */
   .analysis-section {
-    margin-bottom: 44px;
+    margin-bottom: 48px;
   }
 
   .analysis-section h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
+    font-size: 1.35rem;
     font-weight: 700;
-    color: #f0d0b0;
-    margin-bottom: 16px;
+    color: #2a1205;
+    margin-bottom: 18px;
     line-height: 1.3;
   }
 
   .analysis-section p {
-    font-size: 1.07rem;
-    color: rgba(240,220,200,0.8);
-    margin-bottom: 14px;
-    line-height: 1.75;
+    font-size: 1.08rem;
+    color: #3a2010;
+    margin-bottom: 16px;
+    line-height: 1.8;
   }
 
   .analysis-section p strong {
-    color: var(--fire-light);
-    font-weight: 500;
+    color: var(--fire);
+    font-weight: 600;
   }
 
   /* ── WORD ZOOM ── */
   .word-zoom {
-    background: rgba(16,8,4,0.8);
-    border: 1px solid rgba(201,168,76,0.18);
-    border-radius: 3px;
-    padding: 22px 26px;
+    background: #fff8ee;
+    border: 1px solid rgba(180,120,40,0.22);
+    border-left: 4px solid var(--ember);
+    border-radius: 0 4px 4px 0;
+    padding: 22px 28px;
     margin: 22px 0;
     display: grid;
     grid-template-columns: auto 1fr;
-    gap: 20px;
+    gap: 24px;
     align-items: center;
+    box-shadow: 0 2px 12px rgba(180,120,40,0.06);
   }
 
   .word-hebrew {
     font-family: 'Playfair Display', serif;
-    font-size: 2.4rem;
-    color: var(--ember);
+    font-size: 2.8rem;
+    color: var(--fire);
     direction: rtl;
     line-height: 1;
-    text-align: center;
   }
-
-  .word-info {}
 
   .word-translit {
     font-family: 'EB Garamond', serif;
     font-size: 0.95rem;
     font-style: italic;
-    color: rgba(201,168,76,0.6);
+    color: var(--ember);
     margin-bottom: 6px;
     display: block;
   }
 
   .word-meaning {
-    font-family: 'EB Garamond', serif;
     font-size: 1.02rem;
-    color: rgba(240,220,200,0.8);
-    line-height: 1.5;
+    color: #4a2e10;
+    line-height: 1.55;
   }
 
-  /* ── SECOND VERSE BLOCK (smaller) ── */
+  /* ── SECONDARY VERSE ── */
   .secondary-verse {
-    background: rgba(20,10,5,0.7);
-    border-left: 3px solid rgba(201,168,76,0.35);
-    padding: 16px 22px;
-    margin: 20px 0;
-    border-radius: 0 3px 3px 0;
+    background: #fef8f0;
+    border-left: 3px solid rgba(184,146,42,0.4);
+    padding: 18px 24px;
+    margin: 22px 0;
+    border-radius: 0 4px 4px 0;
   }
 
   .secondary-verse .sv-ref {
     font-family: 'Cinzel', serif;
     font-size: 0.58rem;
     letter-spacing: 0.2em;
-    color: rgba(201,168,76,0.5);
+    color: rgba(184,146,42,0.6);
     text-transform: uppercase;
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
   }
 
   .secondary-verse .sv-hebrew {
     font-family: 'Playfair Display', serif;
-    font-size: 1.25rem;
-    color: rgba(240,220,190,0.8);
+    font-size: 1.3rem;
+    color: #3a2010;
     direction: rtl;
     text-align: right;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
   }
 
   .secondary-verse .sv-translit {
     font-size: 0.9rem;
     font-style: italic;
-    color: rgba(201,168,76,0.5);
-    margin-bottom: 6px;
+    color: rgba(184,146,42,0.65);
+    margin-bottom: 8px;
   }
 
   .secondary-verse .sv-trad {
-    font-size: 1.0rem;
-    color: rgba(240,220,200,0.72);
-    border-top: 1px solid rgba(201,168,76,0.12);
-    padding-top: 8px;
+    font-size: 1.02rem;
+    color: #5a3a18;
+    border-top: 1px solid rgba(184,146,42,0.15);
+    padding-top: 10px;
     margin-top: 4px;
   }
 
   /* ── LIST ── */
   .fire-list {
     list-style: none;
-    margin: 14px 0 14px 0;
+    margin: 14px 0;
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -401,33 +398,33 @@
     display: flex;
     align-items: baseline;
     gap: 12px;
-    font-size: 1.05rem;
-    color: rgba(240,220,200,0.78);
+    font-size: 1.06rem;
+    color: #4a2e10;
     line-height: 1.55;
   }
 
   .fire-list li::before {
     content: '–';
-    color: rgba(212,102,42,0.5);
+    color: rgba(200,90,30,0.45);
     flex-shrink: 0;
-    font-size: 0.9rem;
   }
 
   /* ── KEY PHRASE ── */
   .key-phrase {
-    background: rgba(212,102,42,0.07);
-    border: 1px solid rgba(212,102,42,0.2);
-    padding: 24px 30px;
-    border-radius: 3px;
+    background: linear-gradient(135deg, #fef0d8, #fde8c0);
+    border: 1px solid rgba(200,140,40,0.25);
+    padding: 26px 32px;
+    border-radius: 4px;
     text-align: center;
     margin: 32px 0;
+    box-shadow: 0 4px 20px rgba(200,140,40,0.08);
   }
 
   .key-phrase .kp-label {
     font-family: 'Cinzel', serif;
     font-size: 0.58rem;
     letter-spacing: 0.3em;
-    color: rgba(212,102,42,0.5);
+    color: rgba(180,100,30,0.55);
     text-transform: uppercase;
     display: block;
     margin-bottom: 12px;
@@ -435,43 +432,41 @@
 
   .key-phrase p {
     font-family: 'Playfair Display', serif;
-    font-size: 1.15rem;
+    font-size: 1.18rem;
     line-height: 1.65;
-    color: #f0c090;
+    color: #3a1e08;
     margin: 0;
   }
 
   .key-phrase em {
     font-style: italic;
-    color: #f5d5a0;
+    color: var(--fire);
   }
 
   /* ── DIVIDER ── */
   .divider {
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(212,102,42,0.2), transparent);
-    margin: 40px 0;
+    background: linear-gradient(90deg, transparent, rgba(180,120,40,0.2), transparent);
+    margin: 44px 0;
   }
 
-  /* ── QUESTIONS BEIT MIDRASH ── */
+  /* ── QUESTIONS ── */
   .questions-block {
-    background: linear-gradient(135deg, rgba(20,10,5,0.9), rgba(12,6,3,0.95));
-    border: 1px solid rgba(212,102,42,0.18);
-    border-radius: 3px;
-    padding: 28px 32px;
-    margin-bottom: 44px;
+    background: #fff8ee;
+    border: 1px solid rgba(180,120,40,0.18);
+    border-radius: 4px;
+    padding: 30px 34px;
+    margin-bottom: 48px;
+    box-shadow: 0 4px 20px rgba(180,120,40,0.06);
   }
 
   .questions-block h3 {
     font-family: 'Cinzel', serif;
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     letter-spacing: 0.25em;
-    color: rgba(212,102,42,0.65);
+    color: rgba(180,100,30,0.65);
     text-transform: uppercase;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    margin-bottom: 22px;
   }
 
   .question-item {
@@ -479,55 +474,31 @@
     grid-template-columns: 28px 1fr;
     gap: 12px;
     align-items: start;
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(212,102,42,0.08);
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(180,120,40,0.1);
   }
 
-  .question-item:last-child {
-    border-bottom: none;
-  }
+  .question-item:last-child { border-bottom: none; }
 
   .q-num {
     font-family: 'Cinzel', serif;
     font-size: 0.68rem;
     font-weight: 700;
-    color: rgba(212,102,42,0.45);
+    color: rgba(200,90,30,0.45);
     padding-top: 3px;
   }
 
   .q-text {
     font-family: 'EB Garamond', serif;
-    font-size: 1.03rem;
+    font-size: 1.05rem;
     font-style: italic;
-    color: rgba(240,210,180,0.7);
-    line-height: 1.5;
-  }
-
-  /* ── BACK BUTTON ── */
-  .back-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: rgba(212,102,42,0.55);
-    font-family: 'Cinzel', serif;
-    font-size: 0.62rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 10px 0;
-    transition: color 0.25s;
-    margin-top: 12px;
-    margin-bottom: 32px;
-    display: block;
-  }
-
-  .back-btn:hover {
-    color: var(--fire);
+    color: #5a3a18;
+    line-height: 1.55;
   }
 
   /* ── FOOTER ── */
   .page-footer {
-    border-top: 1px solid rgba(212,102,42,0.12);
+    border-top: 1px solid rgba(180,120,40,0.15);
     padding-top: 24px;
     display: flex;
     align-items: center;
@@ -540,15 +511,15 @@
     font-family: 'Cinzel', serif;
     font-size: 0.62rem;
     letter-spacing: 0.2em;
-    color: rgba(212,102,42,0.35);
+    color: rgba(180,100,30,0.4);
     text-transform: uppercase;
   }
 
   .footer-verse {
     font-family: 'EB Garamond', serif;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-style: italic;
-    color: rgba(212,102,42,0.28);
+    color: rgba(180,100,30,0.35);
     direction: rtl;
   }
 </style>
@@ -576,165 +547,145 @@
 
   <a class="back-btn" href="../../index.html">← Retour aux études</a>
 
-  <div class="content">
-
-    <!-- INTRODUCTION -->
-    <div class="intro-block fade-in">
-      <div class="section-title">Introduction</div>
-      <p>Le chapitre 18 du Premier Livre des Rois nous conduit à un moment particulièrement intense de l'histoire d'Israël. Le royaume traverse une crise spirituelle profonde. Sous le règne d'Aḥav et l'influence de Jézabel, le culte de Baal s'est largement répandu.</p>
-      <p>Le prophète Élie apparaît alors comme une voix solitaire face à une majorité qui semble avoir perdu sa direction. Pourtant, avant même le miracle du Mont Carmel, il pose une question essentielle au peuple.</p>
-      <p>Cette question ne concerne pas d'abord Baal. Elle concerne <strong>le cœur humain</strong>.</p>
-      <div class="axis-box">
-        <p>Axe de réflexion : <em>Comment le prophète Élie fait-il le procès de l'idolâtrie ?</em></p>
-      </div>
+  <!-- INTRODUCTION -->
+  <div class="intro-block fade-in">
+    <div class="section-title">Introduction</div>
+    <p>Le chapitre 18 du Premier Livre des Rois nous conduit à un moment particulièrement intense de l'histoire d'Israël. Le royaume traverse une crise spirituelle profonde. Sous le règne d'Aḥav et l'influence de Jézabel, le culte de Baal s'est largement répandu.</p>
+    <p>Le prophète Élie apparaît alors comme une voix solitaire face à une majorité qui semble avoir perdu sa direction. Pourtant, avant même le miracle du Mont Carmel, il pose une question essentielle au peuple.</p>
+    <p>Cette question ne concerne pas d'abord Baal. Elle concerne <strong>le cœur humain</strong>.</p>
+    <div class="axis-box">
+      <p>Axe de réflexion : <em>Comment le prophète Élie fait-il le procès de l'idolâtrie ?</em></p>
     </div>
-
-    <!-- TEXTE SOURCE -->
-    <div class="verse-block fade-in">
-      <span class="verse-ref">Premier Livre des Rois · 18:21</span>
-      <div class="verse-hebrew">וַיִּגַּשׁ אֵלִיָּהוּ אֶל־כָּל־הָעָם וַיֹּאמֶר עַד־מָתַי אַתֶּם פֹּסְחִים עַל־שְׁתֵּי הַסְּעִפִּים</div>
-      <div class="verse-translit">Vayigash Eliyahou el kol ha'am vayomer : ad mataï atem posḥim al shtei hase'ifim ?</div>
-      <div class="verse-translation">« Élie s'approcha de tout le peuple et dit : Jusqu'à quand clocherez-vous entre deux opinions ? »</div>
-    </div>
-
-    <!-- UNE QUESTION SURPRENANTE -->
-    <div class="analysis-section fade-in">
-      <div class="section-title">Une question surprenante</div>
-      <h3>L'attaque visait l'hésitation, pas l'idole</h3>
-      <p>On pourrait s'attendre à entendre Élie dénoncer immédiatement Baal : <em>« Baal est une illusion. »</em> Mais ce n'est pas ce qu'il dit. Sa première attaque vise autre chose : <strong>l'hésitation du peuple</strong>.</p>
-      <p>Le texte ne décrit pas Israël comme un peuple athée. Il décrit un peuple partagé — qui veut conserver plusieurs appartenances à la fois :</p>
-      <ul class="fire-list">
-        <li>Hachem d'un côté ; Baal de l'autre</li>
-        <li>la fidélité spirituelle ici ; la sécurité matérielle là-bas</li>
-      </ul>
-      <p>Le problème n'est donc pas seulement une erreur religieuse. <strong>Le problème est l'absence de centre.</strong></p>
-    </div>
-
-    <!-- LE DETAIL -->
-    <div class="analysis-section fade-in">
-      <div class="section-title">Le détail qui éclaire</div>
-      <h3>פֹּסְחִים — La racine révélatrice</h3>
-
-      <div class="word-zoom">
-        <div class="word-hebrew">פֹּסְחִים</div>
-        <div class="word-info">
-          <span class="word-translit">Posḥim · racine פ-ס-ח (P-S-Ḥ)</span>
-          <div class="word-meaning">Sautiller, boiter, passer d'un côté à l'autre — l'image d'une personne qui déplace son poids alternativement sans véritable direction.</div>
-        </div>
-      </div>
-
-      <p>L'image est très forte. Une personne qui boite ne marche pas avec stabilité. Elle déplace son poids alternativement d'un côté puis de l'autre. Le peuple est décrit exactement de cette manière — <strong>il avance sans véritable direction</strong>.</p>
-    </div>
-
-    <!-- LE VRAI PROCÈS -->
-    <div class="analysis-section fade-in">
-      <div class="section-title">Le procès de l'idolâtrie</div>
-      <h3>L'idolâtrie commence bien avant la statue</h3>
-      <p>À ce stade apparaît quelque chose de plus profond. L'idolâtrie ne commence pas nécessairement devant une statue. Elle peut commencer beaucoup plus discrètement.</p>
-      <p>Elle apparaît lorsqu'une personne ne sait plus clairement ce qui organise sa vie. Le problème n'est pas uniquement : <em>« Qui adores-tu ? »</em> La question devient :</p>
-
-      <div class="key-phrase">
-        <span class="kp-label">Axe central</span>
-        <p><em>« Qu'est-ce qui est réellement au centre de ton existence ? »</em></p>
-      </div>
-
-      <p>Une personne peut ne jamais se prosterner devant une idole et pourtant construire sa vie autour de :</p>
-      <ul class="fire-list">
-        <li>le pouvoir · l'argent · l'image</li>
-        <li>le regard des autres · le besoin de reconnaissance</li>
-      </ul>
-      <p>L'idole devient alors ce qui <strong>dirige silencieusement les décisions</strong>.</p>
-    </div>
-
-    <!-- LE SILENCE DU PEUPLE -->
-    <div class="analysis-section fade-in">
-      <div class="section-title">Une remarque frappante</div>
-      <h3>Le silence comme réponse</h3>
-
-      <div class="secondary-verse">
-        <span class="sv-ref">1 Rois 18:21 — suite</span>
-        <div class="sv-hebrew">וְלֹא־עָנוּ הָעָם אֹתוֹ דָּבָר</div>
-        <div class="sv-translit">Velo anu ha'am oto davar</div>
-        <div class="sv-trad">« Et le peuple ne lui répondit pas un mot. »</div>
-      </div>
-
-      <p>Le silence est peut-être déjà une réponse. Parce qu'au fond, lorsqu'une question touche un point essentiel, il devient difficile de parler immédiatement. Ce silence collectif dit quelque chose sur la profondeur de la question posée.</p>
-    </div>
-
-    <!-- CONCLUSION -->
-    <div class="analysis-section fade-in">
-      <div class="section-title">Conclusion</div>
-      <h3>La question qui résonne encore</h3>
-      <p>Le procès qu'Élie engage contre l'idolâtrie dépasse largement le Mont Carmel. Il ne condamne pas seulement une pratique extérieure. Il met le peuple devant une question intérieure :</p>
-
-      <div class="key-phrase">
-        <span class="kp-label">Idée centrale</span>
-        <p><strong>Qui est au centre ?</strong><br>
-        Un cœur partagé finit par perdre sa direction.<br>
-        L'idolâtrie commence parfois bien avant les gestes visibles.</p>
-      </div>
-
-      <p>Elle commence lorsque l'homme ne sait plus vers quoi il marche. Et la question d'Élie continue encore aujourd'hui à résonner :</p>
-      <div class="axis-box">
-        <p>« <em>Jusqu'à quand clocherez-vous entre deux voies ?</em> »</p>
-      </div>
-    </div>
-
-    <div class="divider"></div>
-
-    <!-- QUESTIONS BEIT MIDRASH -->
-    <div class="questions-block fade-in">
-      <h3>Questions pour le Beit Midrash</h3>
-      <div class="question-item">
-        <span class="q-num">01</span>
-        <span class="q-text">Pourquoi Élie critique-t-il l'hésitation avant de dénoncer Baal ?</span>
-      </div>
-      <div class="question-item">
-        <span class="q-num">02</span>
-        <span class="q-text">Que signifie précisément l'image de l'homme qui boite ?</span>
-      </div>
-      <div class="question-item">
-        <span class="q-num">03</span>
-        <span class="q-text">Pourquoi le peuple reste-t-il silencieux ?</span>
-      </div>
-      <div class="question-item">
-        <span class="q-num">04</span>
-        <span class="q-text">Existe-t-il aujourd'hui des formes modernes d'idolâtrie ?</span>
-      </div>
-      <div class="question-item">
-        <span class="q-num">05</span>
-        <span class="q-text">Comment reconnaître ce qui occupe réellement le centre de notre vie ?</span>
-      </div>
-    </div>
-
-    <!-- FOOTER -->
-    <div class="page-footer fade-in">
-      <span class="footer-sig">Ariel Mormin · אריאל מרמן · Parashot Mormin</span>
-      <span class="footer-verse">נר לרגלי דברך ואור לנתיבתי</span>
-    </div>
-
   </div>
+
+  <!-- TEXTE SOURCE -->
+  <div class="verse-block fade-in">
+    <span class="verse-ref">Premier Livre des Rois · 18:21</span>
+    <div class="verse-hebrew">וַיִּגַּשׁ אֵלִיָּהוּ אֶל־כָּל־הָעָם וַיֹּאמֶר עַד־מָתַי אַתֶּם פֹּסְחִים עַל־שְׁתֵּי הַסְּעִפִּים</div>
+    <div class="verse-translit">Vayigash Eliyahou el kol ha'am vayomer : ad mataï atem posḥim al shtei hase'ifim ?</div>
+    <div class="verse-translation">« Élie s'approcha de tout le peuple et dit : Jusqu'à quand clocherez-vous entre deux opinions ? »</div>
+  </div>
+
+  <!-- UNE QUESTION SURPRENANTE -->
+  <div class="analysis-section fade-in">
+    <div class="section-title">Une question surprenante</div>
+    <h3>L'attaque visait l'hésitation, pas l'idole</h3>
+    <p>On pourrait s'attendre à entendre Élie dénoncer immédiatement Baal : <em>« Baal est une illusion. »</em> Mais ce n'est pas ce qu'il dit. Sa première attaque vise autre chose : <strong>l'hésitation du peuple</strong>.</p>
+    <p>Le texte ne décrit pas Israël comme un peuple athée. Il décrit un peuple partagé — qui veut conserver plusieurs appartenances à la fois :</p>
+    <ul class="fire-list">
+      <li>Hachem d'un côté ; Baal de l'autre</li>
+      <li>la fidélité spirituelle ici ; la sécurité matérielle là-bas</li>
+    </ul>
+    <p>Le problème n'est donc pas seulement une erreur religieuse. <strong>Le problème est l'absence de centre.</strong></p>
+  </div>
+
+  <!-- LE DETAIL -->
+  <div class="analysis-section fade-in">
+    <div class="section-title">Le détail qui éclaire</div>
+    <h3>פֹּסְחִים — La racine révélatrice</h3>
+    <div class="word-zoom">
+      <div class="word-hebrew">פֹּסְחִים</div>
+      <div>
+        <span class="word-translit">Posḥim · racine פ-ס-ח (P-S-Ḥ)</span>
+        <div class="word-meaning">Sautiller, boiter, passer d'un côté à l'autre — l'image d'une personne qui déplace son poids alternativement sans véritable direction.</div>
+      </div>
+    </div>
+    <p>L'image est très forte. Une personne qui boite ne marche pas avec stabilité. Elle déplace son poids alternativement d'un côté puis de l'autre. Le peuple est décrit exactement de cette manière — <strong>il avance sans véritable direction</strong>.</p>
+  </div>
+
+  <!-- LE VRAI PROCÈS -->
+  <div class="analysis-section fade-in">
+    <div class="section-title">Le procès de l'idolâtrie</div>
+    <h3>L'idolâtrie commence bien avant la statue</h3>
+    <p>À ce stade apparaît quelque chose de plus profond. L'idolâtrie ne commence pas nécessairement devant une statue. Elle peut commencer beaucoup plus discrètement.</p>
+    <p>Elle apparaît lorsqu'une personne ne sait plus clairement ce qui organise sa vie. Le problème n'est pas uniquement : <em>« Qui adores-tu ? »</em> La question devient :</p>
+    <div class="key-phrase">
+      <span class="kp-label">Axe central</span>
+      <p><em>« Qu'est-ce qui est réellement au centre de ton existence ? »</em></p>
+    </div>
+    <p>Une personne peut ne jamais se prosterner devant une idole et pourtant construire sa vie autour de :</p>
+    <ul class="fire-list">
+      <li>le pouvoir · l'argent · l'image</li>
+      <li>le regard des autres · le besoin de reconnaissance</li>
+    </ul>
+    <p>L'idole devient alors ce qui <strong>dirige silencieusement les décisions</strong>.</p>
+  </div>
+
+  <!-- LE SILENCE DU PEUPLE -->
+  <div class="analysis-section fade-in">
+    <div class="section-title">Une remarque frappante</div>
+    <h3>Le silence comme réponse</h3>
+    <div class="secondary-verse">
+      <span class="sv-ref">1 Rois 18:21 — suite</span>
+      <div class="sv-hebrew">וְלֹא־עָנוּ הָעָם אֹתוֹ דָּבָר</div>
+      <div class="sv-translit">Velo anu ha'am oto davar</div>
+      <div class="sv-trad">« Et le peuple ne lui répondit pas un mot. »</div>
+    </div>
+    <p>Le silence est peut-être déjà une réponse. Parce qu'au fond, lorsqu'une question touche un point essentiel, il devient difficile de parler immédiatement. Ce silence collectif dit quelque chose sur la profondeur de la question posée.</p>
+  </div>
+
+  <!-- CONCLUSION -->
+  <div class="analysis-section fade-in">
+    <div class="section-title">Conclusion</div>
+    <h3>La question qui résonne encore</h3>
+    <p>Le procès qu'Élie engage contre l'idolâtrie dépasse largement le Mont Carmel. Il ne condamne pas seulement une pratique extérieure. Il met le peuple devant une question intérieure :</p>
+    <div class="key-phrase">
+      <span class="kp-label">Idée centrale</span>
+      <p><strong>Qui est au centre ?</strong><br>
+      Un cœur partagé finit par perdre sa direction.<br>
+      L'idolâtrie commence parfois bien avant les gestes visibles.</p>
+    </div>
+    <p>Elle commence lorsque l'homme ne sait plus vers quoi il marche. Et la question d'Élie continue encore aujourd'hui à résonner :</p>
+    <div class="axis-box">
+      <p>« <em>Jusqu'à quand clocherez-vous entre deux voies ?</em> »</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- QUESTIONS BEIT MIDRASH -->
+  <div class="questions-block fade-in">
+    <h3>Questions pour le Beit Midrash</h3>
+    <div class="question-item">
+      <span class="q-num">01</span>
+      <span class="q-text">Pourquoi Élie critique-t-il l'hésitation avant de dénoncer Baal ?</span>
+    </div>
+    <div class="question-item">
+      <span class="q-num">02</span>
+      <span class="q-text">Que signifie précisément l'image de l'homme qui boite ?</span>
+    </div>
+    <div class="question-item">
+      <span class="q-num">03</span>
+      <span class="q-text">Pourquoi le peuple reste-t-il silencieux ?</span>
+    </div>
+    <div class="question-item">
+      <span class="q-num">04</span>
+      <span class="q-text">Existe-t-il aujourd'hui des formes modernes d'idolâtrie ?</span>
+    </div>
+    <div class="question-item">
+      <span class="q-num">05</span>
+      <span class="q-text">Comment reconnaître ce qui occupe réellement le centre de notre vie ?</span>
+    </div>
+  </div>
+
+  <div class="page-footer fade-in">
+    <span class="footer-sig">Ariel Mormin · אריאל מרמן · Parashot Mormin</span>
+    <span class="footer-verse">נר לרגלי דברך ואור לנתיבתי</span>
+  </div>
+
 </div>
 
 <script>
-  // Scroll progress
   const bar = document.getElementById('progress-bar');
   window.addEventListener('scroll', () => {
     const h = document.documentElement;
-    const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
-    bar.style.width = pct + '%';
+    bar.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
   });
-
-  // Fade-in on scroll
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
     });
-  }, { threshold: 0.12 });
-
+  }, { threshold: 0.1 });
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
 </body>
