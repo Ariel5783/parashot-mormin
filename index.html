@@ -1057,6 +1057,102 @@
             .fetes-banner { flex-direction: column; align-items: flex-start; }
             .fetes-banner-right { align-items: flex-start; }
         }
+
+        /* ── Études spécifiques ── */
+        .etudes-section {
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+        .etudes-banner {
+            background: linear-gradient(135deg, #100806 0%, #2a1205 45%, #3a1a08 100%);
+            border: 1px solid rgba(212,102,42,0.3);
+            border-radius: 15px;
+            padding: 2rem 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            text-decoration: none;
+            box-shadow: 0 10px 35px rgba(16,8,6,0.6);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .etudes-banner::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, rgba(212,102,42,0.6), transparent);
+        }
+        .etudes-banner:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 45px rgba(212,102,42,0.2);
+        }
+        .etudes-banner-left {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        .etudes-banner-icon { font-size: 2.8rem; flex-shrink: 0; }
+        .etudes-banner-label {
+            font-size: 0.65rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: rgba(212,102,42,0.7);
+            margin-bottom: 5px;
+        }
+        .etudes-banner-title {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: #fff5ee;
+            margin-bottom: 4px;
+        }
+        .etudes-banner-hebrew {
+            font-size: 1.1rem;
+            color: rgba(212,102,42,0.75);
+            font-family: 'Times New Roman', serif;
+            direction: rtl;
+            margin-bottom: 8px;
+        }
+        .etudes-banner-desc {
+            font-size: 0.92rem;
+            font-style: italic;
+            color: rgba(240,210,185,0.65);
+            line-height: 1.5;
+        }
+        .etudes-banner-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+        .etudes-available-badge {
+            background: rgba(212,102,42,0.15);
+            border: 1px solid rgba(212,102,42,0.35);
+            color: rgba(240,160,80,0.9);
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+        .etudes-cta {
+            background: rgba(212,102,42,0.15);
+            border: 1px solid rgba(212,102,42,0.35);
+            color: rgba(240,180,120,0.9);
+            padding: 10px 22px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+        .etudes-banner:hover .etudes-cta { background: rgba(212,102,42,0.28); }
+        @media (max-width: 640px) {
+            .etudes-banner { flex-direction: column; align-items: flex-start; }
+            .etudes-banner-right { align-items: flex-start; }
+        }
     </style>
 </head>
 <body>
@@ -1741,6 +1837,29 @@
         </div>
 
         
+        <!-- ── Études spécifiques ── -->
+        <div class="etudes-section">
+            <p class="fetes-section-title">Études spécifiques · Prophètes &amp; Nevi'im</p>
+            <a href="./etudes-specifiques/elie-mont-carmel/" class="etudes-banner">
+                <div class="etudes-banner-left">
+                    <span class="etudes-banner-icon">🔥</span>
+                    <div>
+                        <div class="etudes-banner-label">Nouvelle section</div>
+                        <div class="etudes-banner-title">Études spécifiques</div>
+                        <div class="etudes-banner-hebrew">נְבִיאִים</div>
+                        <div class="etudes-banner-desc">
+                            Élie au Mont Carmel · Le procès de l'idolâtrie<br>
+                            Prophètes · Tradition séfarade
+                        </div>
+                    </div>
+                </div>
+                <div class="etudes-banner-right">
+                    <span class="etudes-available-badge">✦ Élie au Mont Carmel disponible</span>
+                    <span class="etudes-cta">Accéder aux études →</span>
+                </div>
+            </a>
+        </div>
+
         <footer class="footer">
             <p>© 2025 אריאל מרמן (Ariel Mormin) - Études bibliques et spirituelles</p>
             <p>Hébergé sur Netlify • Mis à jour régulièrement</p>
