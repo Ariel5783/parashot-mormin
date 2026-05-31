@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Paracha Béhaalotékha : Élever la lumière et traverser le désert. La Ménorah, les Léviim, le départ du Sinaï, les plaintes du peuple, la fatigue de Moché, Eldad et Médad, Myriam. Étude Torah complète selon la tradition séfarade par Ariel Mormin.">
+    <meta name="keywords" content="Paracha Béhaalotékha, בְּהַעֲלֹתְךָ, Torah, Bamidbar, Nombres, Ménorah, Léviim, Moché, Myriam, Eldad, Médad, lumière, désert, tradition séfarade, étude biblique, paracha semaine, Ariel Mormin, Parashot Mormin">
+    <meta property="og:title" content="Paracha Béhaalotékha – Élever la lumière et traverser le désert | Ariel Mormin">
+    <meta property="og:description" content="Étude complète de la Paracha Béhaalotékha selon la tradition séfarade. La Ménorah, les plaintes du peuple, Myriam et la puissance de la parole.">
+    <meta property="og:url" content="https://parashot-mormin.netlify.app/behaalotekha/index.html">
+    <title>Paracha Béhaalotékha – Élever la lumière et traverser le désert | Tradition séfarade</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            background: linear-gradient(150deg,
+                #0d0800 0%, #1c1000 20%, #2a1800 40%,
+                #1e1200 60%, #0f0900 80%, #1a1000 100%);
+            min-height: 100vh;
+            color: #333;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background:
+                radial-gradient(ellipse 60% 40% at 25% 15%, rgba(200, 120, 20, 0.22) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 35% at 75% 75%, rgba(180, 80, 10, 0.16) 0%, transparent 55%),
+                radial-gradient(ellipse 40% 30% at 55% 5%, rgba(240, 180, 40, 0.12) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image:
+                radial-gradient(1px 1px at 10% 18%, rgba(255,230,150,0.55) 0%, transparent 100%),
+                radial-gradient(1px 1px at 40% 6%, rgba(255,230,150,0.45) 0%, transparent 100%),
+                radial-gradient(1px 1px at 68% 12%, rgba(255,230,150,0.60) 0%, transparent 100%),
+                radial-gradient(1.5px 1.5px at 85% 4%, rgba(255,230,150,0.35) 0%, transparent 100%),
+                radial-gradient(1px 1px at 25% 90%, rgba(255,230,150,0.45) 0%, transparent 100%),
+                radial-gradient(1px 1px at 58% 94%, rgba(255,230,150,0.40) 0%, transparent 100%),
+                radial-gradient(1px 1px at 3% 50%, rgba(255,230,150,0.30) 0%, transparent 100%),
+                radial-gradient(1px 1px at 92% 42%, rgba(255,230,150,0.35) 0%, transparent 100%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 30px auto;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.70), 0 0 0 1px rgba(180,100,20,0.12);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ── Barre de progression ── */
+        .scroll-indicator {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #8b3a10, #c9891a, #f0c84a, #e07820, #f0c84a);
+            transform-origin: left;
+            transform: scaleX(0);
+            z-index: 1000;
+            transition: transform 0.1s ease;
+        }
+
+        /* ── Bouton retour ── */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #8b4010, #b06020);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 64, 16, 0.35);
+            margin-bottom: 20px;
+        }
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 64, 16, 0.55);
+            background: linear-gradient(135deg, #b06020, #8b4010);
+        }
+
+        /* ── En-tête ── */
+        .header {
+            text-align: center;
+            padding: 55px 20px 60px;
+            background: linear-gradient(150deg,
+                #0d0500, #1e0d00, #3a1a00,
+                #7a3a00, #c9891a, #8b4010,
+                #3a1a00, #1e0d00, #0d0500);
+            margin: -40px -20px 50px -20px;
+            border-radius: 20px 20px 0 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background:
+                radial-gradient(ellipse 70% 60% at 50% 50%, rgba(200, 120, 20, 0.25) 0%, transparent 70%),
+                radial-gradient(ellipse 50% 40% at 15% 25%, rgba(180, 80, 10, 0.20) 0%, transparent 60%),
+                radial-gradient(ellipse 40% 50% at 85% 75%, rgba(240, 180, 40, 0.30) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 35px;
+            background:
+                radial-gradient(ellipse 60% 100% at 30% 100%, rgba(200, 120, 20, 0.15) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 100% at 70% 100%, rgba(240, 180, 40, 0.12) 0%, transparent 60%);
+        }
+
+        .header-label-small {
+            font-size: 0.8em;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: rgba(255, 220, 160, 0.72);
+            font-family: 'Georgia', serif;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 14px;
+            display: block;
+        }
+
+        .header-icon {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+            display: block;
+        }
+
+        .title {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+            color: #fff8f0;
+        }
+
+        .hebrew-title {
+            font-size: 3.6em;
+            color: #f0c84a;
+            margin-bottom: 15px;
+            font-family: 'Times New Roman', serif;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6), 0 0 35px rgba(240,200,74,0.35);
+            position: relative;
+            z-index: 1;
+            letter-spacing: 0.05em;
+        }
+
+        .subtitle {
+            font-size: 1.35em;
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            color: #ffd8a0;
+            opacity: 0.92;
+        }
+
+        .reference {
+            font-size: 1.05em;
+            position: relative;
+            z-index: 1;
+            color: #f0c84a;
+            opacity: 0.92;
+        }
+
+        /* ── Boîte intro ── */
+        .intro-box {
+            background: linear-gradient(135deg, #fff8ee, #fef3e2);
+            padding: 35px;
+            border-radius: 15px;
+            border-left: 6px solid #c9891a;
+            margin-bottom: 45px;
+            box-shadow: 0 8px 20px rgba(180, 100, 20, 0.10);
+            position: relative;
+        }
+
+        .intro-box::before {
+            content: "🕎";
+            position: absolute;
+            top: 15px; right: 20px;
+            font-size: 2.2em;
+            opacity: 0.12;
+        }
+
+        /* ── Sections ── */
+        .section {
+            margin-bottom: 45px;
+            padding: 20px 0;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #5a2800;
+            margin-bottom: 25px;
+            font-weight: bold;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #fff8ee, #fef3e2);
+            border-radius: 10px;
+            border-left: 5px solid #c9891a;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-icon { font-size: 1.8em; flex-shrink: 0; }
+
+        .content-text {
+            font-size: 1.15em;
+            line-height: 1.8;
+            color: #2c2c2c;
+            margin-bottom: 20px;
+        }
+
+        /* ── Versets ── */
+        .verse-block {
+            background: linear-gradient(135deg, #fff8ee 0%, #fef3e2 100%);
+            border: 2px solid rgba(180, 100, 20, 0.20);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(180, 100, 20, 0.08);
+        }
+
+        .verse-block::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #8b4010, #c9891a, #f0c84a, #e07820, #f0c84a, #c9891a, #8b4010);
+        }
+
+        .verse-label {
+            font-size: 0.75em;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: rgba(139, 64, 16, 0.58);
+            margin-bottom: 12px;
+            display: block;
+            font-style: normal;
+        }
+
+        .verse-hebrew {
+            font-size: 2.1em;
+            color: #3a1500;
+            direction: rtl;
+            margin-bottom: 12px;
+            font-family: 'Times New Roman', serif;
+            font-weight: bold;
+            line-height: 1.5;
+            text-shadow: 0 1px 2px rgba(139,64,16,0.10);
+        }
+
+        .verse-transliteration {
+            font-size: 1.05em;
+            font-style: italic;
+            color: #7a4010;
+            margin-bottom: 10px;
+        }
+
+        .verse-french {
+            font-size: 1.05em;
+            color: #4a2000;
+            font-style: italic;
+            border-top: 1px solid rgba(139, 64, 16, 0.15);
+            padding-top: 10px;
+            margin-top: 5px;
+        }
+
+        .verse-reference {
+            font-size: 0.85em;
+            color: rgba(139, 64, 16, 0.52);
+            margin-top: 8px;
+            letter-spacing: 0.1em;
+        }
+
+        /* ── Rachi ── */
+        .rachi-block {
+            background: linear-gradient(135deg, #fef9ec, #fff8e0);
+            border: 1px solid rgba(201, 137, 26, 0.28);
+            border-left: 5px solid #c9891a;
+            border-radius: 0 10px 10px 0;
+            padding: 22px 25px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .rachi-block::before {
+            content: 'רש"י';
+            position: absolute;
+            top: 12px; right: 18px;
+            font-size: 1.6em;
+            color: rgba(201, 137, 26, 0.18);
+            font-family: 'Times New Roman', serif;
+            font-weight: bold;
+            direction: rtl;
+        }
+
+        .rachi-label {
+            font-size: 0.78em;
+            font-weight: bold;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #c9891a;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .rachi-block p {
+            font-size: 1.05em;
+            line-height: 1.7;
+            color: #4a3010;
+            font-style: italic;
+        }
+
+        /* ── Midrash / Sages ── */
+        .midrash-block {
+            background: linear-gradient(135deg, #fff3e8, #ffecd8);
+            border: 1px solid rgba(180, 100, 20, 0.22);
+            border-left: 5px solid #b06020;
+            border-radius: 0 10px 10px 0;
+            padding: 22px 25px;
+            margin: 20px 0;
+        }
+
+        .midrash-label {
+            font-size: 0.78em;
+            font-weight: bold;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #8b4010;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .midrash-block p {
+            font-size: 1.05em;
+            line-height: 1.7;
+            color: #3a1a00;
+            font-style: italic;
+        }
+
+        /* ── Idée forte ── */
+        .idea-box {
+            background: linear-gradient(135deg, #5a2800, #8b4010);
+            color: white;
+            padding: 30px 35px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(90, 40, 0, 0.35);
+        }
+
+        .idea-box::before {
+            content: '🕯';
+            position: absolute;
+            top: -10px; right: 20px;
+            font-size: 5em;
+            color: rgba(240, 200, 74, 0.12);
+        }
+
+        .idea-label {
+            font-size: 0.72em;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: rgba(240, 200, 74, 0.80);
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .idea-box p {
+            font-size: 1.3em;
+            font-style: italic;
+            line-height: 1.6;
+            color: #fff8f0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .idea-box strong { color: #f0c84a; font-style: normal; }
+
+        /* ── Paradoxe ── */
+        .paradox-box {
+            background: linear-gradient(135deg, #fff5e8, #ffeedd);
+            border: 2px solid rgba(180, 100, 20, 0.25);
+            border-radius: 12px;
+            padding: 25px 30px;
+            margin: 25px 0;
+            position: relative;
+        }
+
+        .paradox-label {
+            font-size: 0.75em;
+            font-weight: bold;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: #8b4010;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .paradox-box p {
+            font-size: 1.1em;
+            line-height: 1.75;
+            color: #3a1500;
+        }
+
+        /* ── Bannière thématique ── */
+        .theme-banner {
+            background: linear-gradient(135deg, #1e0d00, #3a1a00, #1e0d00);
+            color: white;
+            padding: 28px 35px;
+            border-radius: 12px;
+            margin: 30px 0;
+            text-align: center;
+            font-size: 1.15em;
+            line-height: 1.8;
+            box-shadow: 0 8px 22px rgba(30, 13, 0, 0.45);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(200, 120, 20, 0.22);
+        }
+
+        .theme-banner::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #c9891a, #f0c84a, #c9891a, transparent);
+        }
+
+        .theme-banner strong { color: #f0c84a; }
+        .theme-banner em { color: #ffd8a0; font-style: italic; }
+
+        /* ── Ménorah (bloc spécial lumière) ── */
+        .menorah-block {
+            background: linear-gradient(150deg, #fff8ee 0%, #fef2d0 50%, #fff8ee 100%);
+            border: 2px solid rgba(180, 100, 20, 0.22);
+            border-radius: 16px;
+            padding: 38px 35px;
+            margin: 30px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(180, 100, 20, 0.12);
+        }
+
+        .menorah-block::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #8b4010, #c9891a, #f0c84a, #e07820, #f0c84a, #c9891a, #8b4010);
+        }
+
+        .menorah-block::after {
+            content: '🕎';
+            position: absolute;
+            top: 50%; right: 25px;
+            transform: translateY(-50%);
+            font-size: 5em;
+            opacity: 0.07;
+            pointer-events: none;
+        }
+
+        .menorah-label {
+            font-size: 0.72em;
+            letter-spacing: 0.32em;
+            text-transform: uppercase;
+            color: rgba(139, 64, 16, 0.55);
+            margin-bottom: 22px;
+            display: block;
+        }
+
+        .menorah-hebrew {
+            font-size: 2.2em;
+            color: #3a1500;
+            direction: rtl;
+            margin-bottom: 10px;
+            font-family: 'Times New Roman', serif;
+            font-weight: bold;
+            line-height: 1.55;
+        }
+
+        .menorah-trans {
+            font-size: 1em;
+            font-style: italic;
+            color: #7a4010;
+            margin-bottom: 6px;
+        }
+
+        .menorah-french {
+            font-size: 1.1em;
+            color: #4a2000;
+            font-style: italic;
+        }
+
+        /* ── Liste structurée ── */
+        .structured-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .structured-list li {
+            padding: 10px 0 10px 35px;
+            font-size: 1.1em;
+            color: #2c2c2c;
+            line-height: 1.6;
+            border-bottom: 1px solid rgba(180, 100, 20, 0.08);
+            position: relative;
+        }
+
+        .structured-list li:last-child { border-bottom: none; }
+
+        .structured-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 10px;
+            color: #c9891a;
+            font-size: 1em;
+        }
+
+        /* ── Bannière conclusion ── */
+        .conclusion-banner {
+            background: linear-gradient(135deg, #1e0d00, #3a1a00, #1e0d00);
+            color: white;
+            padding: 40px 35px;
+            border-radius: 15px;
+            margin: 35px 0;
+            text-align: center;
+            font-size: 1.25em;
+            line-height: 1.9;
+            box-shadow: 0 10px 30px rgba(30, 13, 0, 0.45);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .conclusion-banner::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #c9891a, #f0c84a, #c9891a, transparent);
+        }
+
+        .conclusion-banner::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #c9891a, #f0c84a, #c9891a, transparent);
+        }
+
+        .conclusion-banner strong { color: #f0c84a; }
+        .conclusion-banner em { color: #ffd8a0; font-style: italic; }
+
+        /* ── Application ── */
+        .application-box {
+            background: linear-gradient(135deg, #fff8ee, #fef3e2);
+            border: 1px solid rgba(180, 100, 20, 0.15);
+            border-radius: 12px;
+            padding: 28px 30px;
+            margin: 25px 0;
+            position: relative;
+        }
+
+        .application-label {
+            font-size: 0.75em;
+            font-weight: bold;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: #8b4010;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .application-box p {
+            font-size: 1.1em;
+            line-height: 1.75;
+            color: #3a2000;
+        }
+
+        /* ── Citations clés ── */
+        .quotes-section {
+            background: linear-gradient(135deg, #fff8ee, #fef3e2);
+            padding: 40px 35px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+        }
+
+        .quotes-section h2 {
+            font-size: 1.6em;
+            color: #5a2800;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(180, 100, 20, 0.15);
+        }
+
+        .quote-item {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border-left: 4px solid #c9891a;
+            box-shadow: 0 3px 12px rgba(180, 100, 20, 0.08);
+        }
+
+        .quote-hebrew {
+            display: block;
+            font-size: 1.9em;
+            color: #3a1500;
+            direction: rtl;
+            margin-bottom: 8px;
+            font-family: 'Times New Roman', serif;
+            font-weight: bold;
+        }
+
+        .quote-transliteration {
+            display: block;
+            font-size: 0.95em;
+            font-style: italic;
+            color: #7a4010;
+            margin-bottom: 10px;
+        }
+
+        .quote-french {
+            font-size: 1.0em;
+            color: #333;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        /* ── Vidéo ── */
+        .video-section {
+            background: linear-gradient(135deg, #1e0d00, #2a1200);
+            padding: 40px 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .video-section h2 {
+            font-size: 1.5em;
+            color: #f0c84a;
+            margin-bottom: 25px;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            border: none;
+        }
+
+        /* ── Clôture ── */
+        .closing-section {
+            background: linear-gradient(135deg, #fff8ee, #fef3e2);
+            padding: 30px 35px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(180, 100, 20, 0.12);
+        }
+
+        .closing-section p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #2c2c2c;
+            font-style: italic;
+        }
+
+        /* ── Pied de page ── */
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 2px solid rgba(180, 100, 20, 0.12);
+            margin-top: 20px;
+        }
+
+        .footer-main {
+            font-size: 1.1em;
+            color: #5a2800;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .footer-hebrew {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.2em;
+            color: #c9891a;
+        }
+
+        .footer-subtitle {
+            font-size: 0.9em;
+            color: #666;
+            letter-spacing: 0.05em;
+        }
+
+        /* ── Divider ── */
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(180, 100, 20, 0.22), transparent);
+            margin: 45px 0;
+        }
+
+        /* ── Fade-in animation ── */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.65s ease, transform 0.65s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 640px) {
+            .title { font-size: 1.9em; }
+            .hebrew-title { font-size: 2.6em; }
+            .container { margin: 10px auto; border-radius: 12px; }
+            .header { padding: 40px 16px 45px; margin: -40px -20px 40px -20px; }
+            .menorah-block { padding: 28px 18px; }
+            .menorah-hebrew { font-size: 1.6em; }
+            .intro-box { padding: 22px; }
+        }
+    </style>
+</head>
+<body>
+
+<div id="scrollBar" class="scroll-indicator"></div>
+
+<div class="container">
+
+    <!-- Bouton retour -->
+    <a href="../" class="back-button">← Retour aux Parachiot</a>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- En-tête -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="header">
+        <span class="header-label-small">Bamidbar · Nombres 8:1 – 12:16</span>
+        <span class="header-icon">🕯</span>
+        <h1 class="title">Paracha Béhaalotékha</h1>
+        <div class="hebrew-title">בְּהַעֲלֹתְךָ</div>
+        <div class="subtitle">Élever la lumière pour traverser le désert</div>
+        <div class="reference">Bamidbar 8:1 – 12:16 · Tradition séfarade</div>
+    </div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Introduction -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="intro-box fade-in">
+        <p style="font-size:1.15em; line-height:1.8; color:#3a2000; margin-bottom:18px;">
+            La Parachat Béhaalotékha (Bamidbar / Nombres 8:1–12:16) marque une étape importante dans l'histoire d'Israël.
+            Le peuple a reçu la Torah au Sinaï. Le Michkan a été construit. Les tribus ont été recensées et organisées.
+            Tout semble désormais prêt pour le voyage vers la Terre promise.
+        </p>
+        <p style="font-size:1.1em; line-height:1.8; color:#2c2c2c; margin-bottom:18px;">
+            Pourtant, cette paracha révèle une réalité profonde : recevoir la Torah est une chose,
+            apprendre à vivre avec elle en est une autre. La paracha commence par la lumière de la Ménorah
+            et se termine par l'épisode de Myriam.
+        </p>
+        <p style="font-size:1.1em; line-height:1.8; color:#3a2000; font-style:italic;">
+            Le fil conducteur de cette paracha pourrait être formulé ainsi :
+            <strong>Comment préserver la lumière intérieure lorsque l'on traverse le désert de l'existence ?</strong>
+        </p>
+    </div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Section 1 : La lumière de la Ménorah -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">🕎</span>
+            I. La lumière de la Ménorah
+        </div>
+
+        <p class="content-text">
+            La paracha s'ouvre par l'ordre donné à Aharon d'allumer la Ménorah.
+            Mais le texte ne dit pas simplement « allumer » — le choix du mot est remarquable.
+        </p>
+
+        <div class="verse-block">
+            <span class="verse-label">Bamidbar 8:2</span>
+            <div class="verse-hebrew">דַּבֵּר אֶל־אַהֲרֹן וְאָמַרְתָּ אֵלָיו בְּהַעֲלֹתְךָ אֶת־הַנֵּרֹת</div>
+            <div class="verse-transliteration"><em>Daber el Aharon veamarta elav, beha'alotekha et hanerot.</em></div>
+            <div class="verse-french">« Parle à Aharon et dis-lui : lorsque tu élèveras les lampes... »</div>
+            <div class="verse-reference">Bamidbar / Nombres 8:2</div>
+        </div>
+
+        <p class="content-text">
+            Le texte ne dit pas <em>« lorsque tu allumeras les lampes »</em> mais <strong>« lorsque tu les élèveras »</strong>.
+            Le verbe <strong>לְהַעֲלוֹת — leha'alot</strong> signifie faire monter.
+        </p>
+
+        <div class="rachi-block">
+            <span class="rachi-label">Rachi — commentaire</span>
+            <p>
+                Selon Rachi, le Cohen devait maintenir la flamme jusqu'à ce qu'elle monte d'elle-même.
+                Autrement dit, la lumière doit devenir <em>autonome</em> — elle ne dépend plus du geste qui l'a allumée.
+                C'est l'image même de la transmission : initier un mouvement qui se perpétue par lui-même.
+            </p>
+        </div>
+
+        <div class="paradox-box">
+            <span class="paradox-label">Axe de réflexion</span>
+            <p>
+                Pourquoi commencer cette paracha par la lumière ?
+                Parce que le voyage dans le désert n'est pas seulement géographique.
+                Le véritable désert est intérieur.
+                La lumière de la Ménorah symbolise la Torah, la sagesse, la présence d'Adonaï,
+                la capacité de discerner le bien.
+                Avant de parler des épreuves du peuple, la Torah rappelle la source qui permet de les traverser.
+            </p>
+        </div>
+
+        <div class="idea-box">
+            <span class="idea-label">Idée clé</span>
+            <p>
+                La lumière n'est pas l'absence d'épreuve.<br>
+                La lumière est ce qui permet de <strong>traverser l'épreuve</strong>.
+            </p>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Section 2 : Les Léviim -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">📜</span>
+            II. Les Léviim — servir plutôt que posséder
+        </div>
+
+        <p class="content-text">
+            La Torah décrit ensuite la consécration des Léviim, mis à part pour le service du Michkan.
+        </p>
+
+        <div class="verse-block">
+            <span class="verse-label">Bamidbar 8:14</span>
+            <div class="verse-hebrew">וְהִבְדַּלְתָּ אֶת־הַלְוִיִּם מִתּוֹךְ בְּנֵי יִשְׂרָאֵל</div>
+            <div class="verse-transliteration"><em>Vehivdalta et haleviyim mitokh bene Israël.</em></div>
+            <div class="verse-french">« Tu sépareras les Léviim du milieu des enfants d'Israël. »</div>
+            <div class="verse-reference">Bamidbar / Nombres 8:14</div>
+        </div>
+
+        <p class="content-text">
+            Être séparé pourrait sembler être un privilège. Pourtant, dans la Torah, être choisi signifie surtout
+            recevoir davantage de responsabilités.
+        </p>
+
+        <div class="midrash-block">
+            <span class="midrash-label">Enseignement fondamental</span>
+            <p>
+                La grandeur n'est pas un honneur. La grandeur est un service.
+                Cette idée reviendra constamment dans la paracha — et elle constitue
+                l'un des enseignements les plus profonds de la tradition séfarade.
+            </p>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Section 3 : Le départ du Sinaï -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">🏔</span>
+            III. Le départ du Sinaï
+        </div>
+
+        <p class="content-text">
+            Après presque une année passée au pied du Sinaï, Israël se met enfin en route.
+        </p>
+
+        <div class="verse-block">
+            <span class="verse-label">Bamidbar 10:33</span>
+            <div class="verse-hebrew">וַיִּסְעוּ מֵהַר יְהוָה</div>
+            <div class="verse-transliteration"><em>Vayissou meHar Adonaï.</em></div>
+            <div class="verse-french">« Ils partirent de la montagne d'Adonaï. »</div>
+            <div class="verse-reference">Bamidbar / Nombres 10:33</div>
+        </div>
+
+        <p class="content-text">
+            On pourrait croire qu'après avoir reçu la Torah, tout devrait devenir simple.
+            Pourtant, les difficultés commencent précisément après la révélation.
+        </p>
+
+        <div class="theme-banner">
+            <strong>La spiritualité ne consiste pas à rester au Sinaï.</strong><br>
+            Elle consiste à <em>emporter le Sinaï avec soi dans le désert</em>.
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Section 4 : Les plaintes du peuple -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">🌵</span>
+            IV. Les plaintes du peuple
+        </div>
+
+        <p class="content-text">
+            Très rapidement après le départ, le peuple commence à murmurer.
+        </p>
+
+        <div class="verse-block">
+            <span class="verse-label">Bamidbar 11:1</span>
+            <div class="verse-hebrew">וַיְהִי הָעָם כְּמִתְאֹנְנִים</div>
+            <div class="verse-transliteration"><em>Vayehi ha'am kemitonenim.</em></div>
+            <div class="verse-french">« Le peuple se mit à se plaindre. »</div>
+            <div class="verse-reference">Bamidbar / Nombres 11:1</div>
+        </div>
+
+        <p class="content-text">Puis viennent les récriminations concernant la nourriture :</p>
+
+        <div class="verse-block">
+            <span class="verse-label">Bamidbar 11:5</span>
+            <div class="verse-hebrew">זָכַרְנוּ אֶת־הַדָּגָה אֲשֶׁר־נֹאכַל בְּמִצְרַיִם</div>
+            <div class="verse-transliteration"><em>Zakharenou et hadaga asher nokhal bemitsrayim.</em></div>
+            <div class="verse-french">« Nous nous souvenons du poisson que nous mangions en Égypte. »</div>
+            <div class="verse-reference">Bamidbar / Nombres 11:5</div>
+        </div>
+
+        <div class="paradox-box">
+            <span class="paradox-label">Le détail révélateur</span>
+            <p>
+                Le peuple regrette l'Égypte — qui était pourtant une terre d'esclavage.
+                Comment peut-on regretter l'esclavage ?
+                Parce que la mémoire humaine sélectionne parfois le confort
+                et oublie le prix payé pour l'obtenir.
+                Lorsque l'on traverse une difficulté, on idéalise parfois le passé.
+                Le désert devient alors moins un lieu physique qu'un <em>état intérieur</em>.
+            </p>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Section 5 : La fatigue de Moché -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">⚖️</span>
+            V. La fatigue de Moché — la responsabilité partagée
+        </div>
+
+        <p class="content-text">
+            Face aux plaintes incessantes, Moché atteint ses limites.
+        </p>
+
+        <div class="verse-block">
+            <span class="verse-label">Bamidbar 11:14</span>
+            <div class="verse-hebrew">לֹא־אוּכַל אָנֹכִי לְבַדִּי לָשֵׂאת אֶת־כָּל־הָעָם הַזֶּה</div>
+            <div class="verse-transliteration"><em>Lo oukhal anokhi levadi lasset et kol ha'am hazeh.</em></div>
+            <div class="verse-french">« Je ne peux pas porter seul tout ce peuple. »</div>
+            <div class="verse-reference">Bamidbar / Nombres 11:14</div>
+        </div>
+
+        <p class="content-text">
+            Adonaï demande alors la nomination des soixante-dix anciens pour partager la charge.
+        </p>
+
+        <div class="idea-box">
+            <span class="idea-label">Idée forte</span>
+            <p>
+                Même Moché ne peut tout faire seul.<br>
+                Une communauté ne peut reposer sur une seule personne.<br>
+                <strong>La responsabilité doit être partagée. La transmission doit être collective.</strong>
+            </p>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Section 6 : Eldad et Médad -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">🔥</span>
+            VI. Eldad et Médad — la prophétie pour tous
+        </div>
+
+        <p class="content-text">
+            Deux hommes, Eldad et Médad, prophétisent dans le camp.
+            Yehoshoua souhaite les faire taire. Moché répond avec une parole extraordinaire.
+        </p>
+
+        <div class="verse-block">
+            <span class="verse-label">Bamidbar 11:29</span>
+            <div class="verse-hebrew">וּמִי יִתֵּן כָּל־עַם יְהוָה נְבִיאִים</div>
+            <div class="verse-transliteration"><em>Oumi yiten kol am Adonaï neviim.</em></div>
+            <div class="verse-french">« Puisse tout le peuple d'Adonaï être composé de prophètes ! »</div>
+            <div class="verse-reference">Bamidbar / Nombres 11:29</div>
+        </div>
+
+        <div class="midrash-block">
+            <span class="midrash-label">Le renversement</span>
+            <p>
+                On pourrait croire que la prophétie doit rester réservée à quelques-uns.
+                Moché affirme exactement le contraire.
+                La proximité avec Adonaï n'est pas destinée à une élite —
+                elle constitue l'horizon de tout Israël.
+            </p>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Section 7 : Myriam et la parole -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">🗣</span>
+            VII. Myriam et la puissance de la parole
+        </div>
+
+        <p class="content-text">
+            La paracha s'achève avec l'épisode de Myriam. Elle parle de Moché.
+            Même si son intention n'est pas malveillante, la Torah montre les conséquences de la parole.
+        </p>
+
+        <div class="verse-block">
+            <span class="verse-label">Bamidbar 12:1</span>
+            <div class="verse-hebrew">וַתְּדַבֵּר מִרְיָם וְאַהֲרֹן בְּמֹשֶׁה</div>
+            <div class="verse-transliteration"><em>Vatdaber Myriam veAharon beMoché.</em></div>
+            <div class="verse-french">« Myriam et Aharon parlèrent au sujet de Moché. »</div>
+            <div class="verse-reference">Bamidbar / Nombres 12:1</div>
+        </div>
+
+        <div class="paradox-box">
+            <span class="paradox-label">Pourquoi conclure ainsi ?</span>
+            <p>
+                La paracha a commencé par la lumière. Elle se termine par la parole.
+                Ce n'est pas un hasard. La parole est elle-même une lumière — elle peut éclairer,
+                elle peut aussi obscurcir.
+            </p>
+        </div>
+
+        <div class="midrash-block">
+            <span class="midrash-label">Tradition séfarade — Lachon hara</span>
+            <p>
+                Dans la tradition séfarade, le lachon hara n'est pas seulement une faute morale.
+                Il constitue une atteinte à l'harmonie du peuple d'Israël et à la relation avec Adonaï.
+                Myriam, grande prophétesse et figure de la libération, en fait l'expérience.
+                Aucune grandeur ne met à l'abri des conséquences de la parole.
+            </p>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Idée forte centrale -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">💡</span>
+            L'idée forte de Béhaalotékha
+        </div>
+
+        <div class="conclusion-banner">
+            <strong>La grandeur spirituelle ne se manifeste pas seulement</strong><br>
+            dans les grands moments de révélation,<br>
+            mais dans la manière dont nous <em>entretenons chaque jour</em><br>
+            la lumière qu'Adonaï a déposée en nous.<br><br>
+            Comme les flammes de la Ménorah —<br>
+            notre mission est de continuer à nous élever<br>
+            jusqu'à ce que la lumière puisse <strong>briller d'elle-même</strong>.
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Application concrète -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">🌅</span>
+            Béhaalotékha et notre quotidien
+        </div>
+
+        <p class="content-text">
+            Cette paracha nous pose des questions concrètes, ancrées dans la vie de chaque jour :
+        </p>
+
+        <ul class="structured-list">
+            <li>Comment entretenons-nous la lumière intérieure dans les moments difficiles ?</li>
+            <li>Avons-nous la capacité de porter la Torah hors des moments de révélation — dans le désert de l'ordinaire ?</li>
+            <li>Comment utilisons-nous notre parole — pour éclairer ou pour obscurcir ?</li>
+            <li>Sommes-nous prêts à partager notre charge et à permettre aux autres de grandir ?</li>
+            <li>Idéalisons-nous le passé quand le présent devient difficile — ou restons-nous ancrés dans la direction ?</li>
+        </ul>
+
+        <div class="application-box">
+            <span class="application-label">Ouverture spirituelle</span>
+            <p>
+                La Torah ne nous demande pas de rester au Sinaï.
+                Elle nous demande d'emporter le Sinaï avec nous — dans nos relations, nos paroles,
+                nos responsabilités de chaque jour.
+                Élever la lumière, c'est maintenir vivante la flamme de la transmission
+                jusqu'à ce qu'elle devienne autonome.
+            </p>
+        </div>
+    </div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Conclusion -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">✨</span>
+            Conclusion
+        </div>
+
+        <p class="content-text">
+            La Parachat Béhaalotékha s'ouvre sur un mot qui donne le ton de toute la paracha :
+        </p>
+
+        <div class="conclusion-banner">
+            <strong>בְּהַעֲלֹתְךָ — Béhaalotékha</strong><br>
+            <em>Lorsque tu élèveras.</em><br><br>
+            La lumière de la Ménorah — à élever jusqu'à l'autonomie.<br>
+            La responsabilité des Léviim — servir plutôt que posséder.<br>
+            Le départ du Sinaï — emporter la Torah dans le désert.<br>
+            La plainte du peuple — ne pas idéaliser le passé.<br>
+            La fatigue de Moché — partager la charge, construire collectivement.<br>
+            La prophétie d'Eldad et Médad — l'horizon de tout Israël.<br>
+            La parole de Myriam — élever la parole comme la flamme.<br><br>
+            <em>« Comment préserver la lumière intérieure<br>
+            lorsque l'on traverse le désert de l'existence ? »</em><br><br>
+            <strong>שבת שלום — Shabbat Shalom</strong>
+        </div>
+    </div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Citations clés -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="quotes-section fade-in">
+        <h2>📜 Versets clés de Béhaalotékha</h2>
+
+        <div class="quote-item">
+            <span class="quote-hebrew">דַּבֵּר אֶל־אַהֲרֹן וְאָמַרְתָּ אֵלָיו בְּהַעֲלֹתְךָ אֶת־הַנֵּרֹת</span>
+            <span class="quote-transliteration">Daber el Aharon veamarta elav, beha'alotekha et hanerot.</span>
+            <p class="quote-french">« Parle à Aharon et dis-lui : lorsque tu élèveras les lampes... » (Bamidbar 8:2)</p>
+        </div>
+
+        <div class="quote-item">
+            <span class="quote-hebrew">וַיִּסְעוּ מֵהַר יְהוָה</span>
+            <span class="quote-transliteration">Vayissou meHar Adonaï.</span>
+            <p class="quote-french">« Ils partirent de la montagne d'Adonaï. » (Bamidbar 10:33)</p>
+        </div>
+
+        <div class="quote-item">
+            <span class="quote-hebrew">לֹא־אוּכַל אָנֹכִי לְבַדִּי לָשֵׂאת אֶת־כָּל־הָעָם הַזֶּה</span>
+            <span class="quote-transliteration">Lo oukhal anokhi levadi lasset et kol ha'am hazeh.</span>
+            <p class="quote-french">« Je ne peux pas porter seul tout ce peuple. » (Bamidbar 11:14)</p>
+        </div>
+
+        <div class="quote-item">
+            <span class="quote-hebrew">וּמִי יִתֵּן כָּל־עַם יְהוָה נְבִיאִים</span>
+            <span class="quote-transliteration">Oumi yiten kol am Adonaï neviim.</span>
+            <p class="quote-french">« Puisse tout le peuple d'Adonaï être composé de prophètes ! » (Bamidbar 11:29)</p>
+        </div>
+    </div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Vidéo -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="video-section fade-in">
+        <h2>🎥 Étude vidéo de Béhaalotékha</h2>
+        <div class="video-container">
+            <iframe
+                src="https://www.youtube.com/embed/-PZgC06W53M"
+                title="Paracha Béhaalotékha – Élever la lumière et traverser le désert | Étude biblique – Tradition séfarade | Ariel Mormin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Clôture -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="closing-section fade-in">
+        <p>
+            Une étude structurée et progressive de la Paracha Béhaalotékha selon la tradition séfarade.
+            Le mot בְּהַעֲלֹתְךָ comme clé de lecture : élever la lumière de la Ménorah jusqu'à l'autonomie,
+            emporter le Sinaï dans le désert de l'existence, partager la responsabilité,
+            et veiller à la puissance de la parole — de la flamme à la voix, tout doit s'élever.
+        </p>
+    </div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Pied de page -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="footer">
+        <div class="footer-main">
+            Étude de Béhaalotékha par <span class="footer-hebrew">אריאל מרמן</span> (Ariel Mormin)
+        </div>
+        <div class="footer-subtitle">
+            • Élever la lumière — בְּהַעֲלֹתְךָ • Bamidbar / Nombres 8:1–12:16 • Tradition séfarade •
+        </div>
+    </div>
+
+</div><!-- /container -->
+
+<script>
+    // Barre de progression
+    window.addEventListener('scroll', () => {
+        const doc = document.documentElement;
+        const progress = doc.scrollTop / (doc.scrollHeight - doc.clientHeight);
+        document.getElementById('scrollBar').style.transform = `scaleX(${progress})`;
+    });
+
+    // Animation d'entrée au scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
