@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Paracha Chéla'h Lekha : Voir avec les yeux de la foi ou avec les yeux de la peur ? Les explorateurs, Kalev et Yehoshoua, la confiance en Adonaï, les tsitsit. Étude Torah complète selon la tradition séfarade par Ariel Mormin.">
+    <meta name="keywords" content="Paracha Chéla'h Lekha, שְׁלַח־לְךָ, Torah, Bamidbar, Nombres, explorateurs, Kalev, Yehoshoua, confiance, bitahon, tsitsit, désert, tradition séfarade, étude biblique, paracha semaine, Ariel Mormin, Parashot Mormin">
+    <meta property="og:title" content="Paracha Chéla'h Lekha – Voir avec les yeux de la foi ou avec les yeux de la peur ? | Ariel Mormin">
+    <meta property="og:description" content="Étude complète de la Paracha Chéla'h Lekha selon la tradition séfarade. Les explorateurs, Kalev et Yehoshoua, et l'art de regarder la réalité avec confiance en Adonaï.">
+    <meta property="og:url" content="https://parashot-mormin.netlify.app/shelah-lekha/index.html">
+    <title>Paracha Chéla'h Lekha – Voir avec les yeux de la foi ou avec les yeux de la peur ? | Tradition séfarade</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            background: linear-gradient(150deg,
+                #020810 0%, #061428 20%, #0a2040 40%,
+                #062030 60%, #030c18 80%, #080f20 100%);
+            min-height: 100vh;
+            color: #333;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background:
+                radial-gradient(ellipse 60% 40% at 25% 15%, rgba(20, 80, 160, 0.22) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 35% at 75% 75%, rgba(10, 60, 120, 0.16) 0%, transparent 55%),
+                radial-gradient(ellipse 40% 30% at 55% 5%, rgba(201, 168, 76, 0.12) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image:
+                radial-gradient(1px 1px at 10% 18%, rgba(200,230,255,0.50) 0%, transparent 100%),
+                radial-gradient(1px 1px at 40% 6%, rgba(200,230,255,0.40) 0%, transparent 100%),
+                radial-gradient(1px 1px at 68% 12%, rgba(200,230,255,0.55) 0%, transparent 100%),
+                radial-gradient(1.5px 1.5px at 85% 4%, rgba(255,230,150,0.35) 0%, transparent 100%),
+                radial-gradient(1px 1px at 25% 90%, rgba(200,230,255,0.40) 0%, transparent 100%),
+                radial-gradient(1px 1px at 58% 94%, rgba(200,230,255,0.35) 0%, transparent 100%),
+                radial-gradient(1px 1px at 3% 50%, rgba(255,230,150,0.28) 0%, transparent 100%),
+                radial-gradient(1px 1px at 92% 42%, rgba(200,230,255,0.30) 0%, transparent 100%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 30px auto;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.70), 0 0 0 1px rgba(20,80,160,0.12);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ── Barre de progression ── */
+        .scroll-indicator {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #1a4a8a, #3a7fc8, #c9a84c, #3a7fc8, #c9a84c);
+            transform-origin: left;
+            transform: scaleX(0);
+            z-index: 1000;
+            transition: transform 0.1s ease;
+        }
+
+        /* ── Bouton retour ── */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #1a3a6a, #2a5a9a);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(26, 58, 106, 0.35);
+            margin-bottom: 20px;
+        }
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(26, 58, 106, 0.55);
+            background: linear-gradient(135deg, #2a5a9a, #1a3a6a);
+        }
+
+        /* ── En-tête ── */
+        .header {
+            text-align: center;
+            padding: 55px 20px 60px;
+            background: linear-gradient(150deg,
+                #030818, #08183a, #102860,
+                #1a3a70, #3a6aaa, #2a5080,
+                #0a1830, #060f28, #030818);
+            margin: -40px -20px 50px -20px;
+            border-radius: 20px 20px 0 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background:
+                radial-gradient(ellipse 70% 60% at 50% 50%, rgba(30, 90, 180, 0.25) 0%, transparent 70%),
+                radial-gradient(ellipse 50% 40% at 15% 25%, rgba(20, 60, 140, 0.20) 0%, transparent 60%),
+                radial-gradient(ellipse 40% 50% at 85% 75%, rgba(201, 168, 76, 0.25) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 35px;
+            background:
+                radial-gradient(ellipse 60% 100% at 30% 100%, rgba(30, 90, 180, 0.15) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 100% at 70% 100%, rgba(201, 168, 76, 0.12) 0%, transparent 60%);
+        }
+
+        .header-label-small {
+            font-size: 0.8em;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: rgba(180, 210, 255, 0.72);
+            font-family: 'Georgia', serif;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 14px;
+            display: block;
+        }
+
+        .header-icon {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+            display: block;
+        }
+
+        .title {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+            color: #f0f6ff;
+        }
+
+        .hebrew-title {
+            font-size: 3.6em;
+            color: #c9a84c;
+            margin-bottom: 15px;
+            font-family: 'Times New Roman', serif;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6), 0 0 35px rgba(201,168,76,0.35);
+            position: relative;
+            z-index: 1;
+            letter-spacing: 0.05em;
+        }
+
+        .subtitle {
+            font-size: 1.35em;
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            color: #c8dcff;
+            opacity: 0.92;
+        }
+
+        .reference {
+            font-size: 1.05em;
+            position: relative;
+            z-index: 1;
+            color: #c9a84c;
+            opacity: 0.92;
+        }
+
+        /* ── Boîte intro ── */
+        .intro-box {
+            background: linear-gradient(135deg, #eef4ff, #e4eeff);
+            padding: 35px;
+            border-radius: 15px;
+            border-left: 6px solid #2a5a9a;
+            margin-bottom: 45px;
+            box-shadow: 0 8px 20px rgba(20, 60, 160, 0.10);
+            position: relative;
+        }
+
+        .intro-box::before {
+            content: "👁";
+            position: absolute;
+            top: 15px; right: 20px;
+            font-size: 2.2em;
+            opacity: 0.12;
+        }
+
+        /* ── Sections ── */
+        .section {
+            margin-bottom: 45px;
+            padding: 20px 0;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #1a2a50;
+            margin-bottom: 25px;
+            font-weight: bold;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #eef4ff, #e4eeff);
+            border-radius: 10px;
+            border-left: 5px solid #2a5a9a;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-icon { font-size: 1.8em; flex-shrink: 0; }
+
+        .content-text {
+            font-size: 1.15em;
+            line-height: 1.8;
+            color: #2c2c2c;
+            margin-bottom: 20px;
+        }
+
+        /* ── Versets ── */
+        .verse-block {
+            background: linear-gradient(135deg, #eef4ff 0%, #e0eeff 100%);
+            border: 2px solid rgba(20, 80, 160, 0.20);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(20, 80, 160, 0.08);
+        }
+
+        .verse-block::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #1a3a6a, #2a5a9a, #c9a84c, #3a7fc8, #c9a84c, #2a5a9a, #1a3a6a);
+        }
+
+        .verse-label {
+            font-size: 0.75em;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: rgba(26, 58, 106, 0.58);
+            margin-bottom: 12px;
+            display: block;
+            font-style: normal;
+        }
+
+        .verse-hebrew {
+            font-size: 2.1em;
+            color: #0a1a40;
+            direction: rtl;
+            margin-bottom: 12px;
+            font-family: 'Times New Roman', serif;
+            font-weight: bold;
+            line-height: 1.5;
+            text-shadow: 0 1px 2px rgba(26,58,106,0.10);
+        }
+
+        .verse-transliteration {
+            font-size: 1.05em;
+            font-style: italic;
+            color: #2a4a7a;
+            margin-bottom: 10px;
+        }
+
+        .verse-french {
+            font-size: 1.05em;
+            color: #1a3050;
+            font-style: italic;
+            border-top: 1px solid rgba(26, 58, 106, 0.15);
+            padding-top: 10px;
+            margin-top: 5px;
+        }
+
+        .verse-reference {
+            font-size: 0.85em;
+            color: rgba(26, 58, 106, 0.52);
+            margin-top: 8px;
+            letter-spacing: 0.1em;
+        }
+
+        /* ── Rachi ── */
+        .rachi-block {
+            background: linear-gradient(135deg, #fef9ec, #fff8e0);
+            border: 1px solid rgba(201, 168, 76, 0.28);
+            border-left: 5px solid #c9a84c;
+            border-radius: 0 10px 10px 0;
+            padding: 22px 25px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .rachi-block::before {
+            content: 'רש"י';
+            position: absolute;
+            top: 12px; right: 18px;
+            font-size: 1.6em;
+            color: rgba(201, 168, 76, 0.18);
+            font-family: 'Times New Roman', serif;
+            font-weight: bold;
+            direction: rtl;
+        }
+
+        .rachi-label {
+            font-size: 0.78em;
+            font-weight: bold;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #b08a20;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .rachi-block p {
+            font-size: 1.05em;
+            line-height: 1.7;
+            color: #4a3010;
+            font-style: italic;
+        }
+
+        /* ── Midrash ── */
+        .midrash-block {
+            background: linear-gradient(135deg, #eef3ff, #e4edff);
+            border: 1px solid rgba(42, 90, 154, 0.22);
+            border-left: 5px solid #2a5a9a;
+            border-radius: 0 10px 10px 0;
+            padding: 22px 25px;
+            margin: 20px 0;
+        }
+
+        .midrash-label {
+            font-size: 0.78em;
+            font-weight: bold;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #1a3a6a;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .midrash-block p {
+            font-size: 1.05em;
+            line-height: 1.7;
+            color: #0a1a40;
+            font-style: italic;
+        }
+
+        /* ── Idée forte ── */
+        .idea-box {
+            background: linear-gradient(135deg, #0a1830, #1a3a6a);
+            color: white;
+            padding: 30px 35px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(10, 24, 48, 0.45);
+        }
+
+        .idea-box::before {
+            content: '👁';
+            position: absolute;
+            top: -10px; right: 20px;
+            font-size: 5em;
+            color: rgba(201, 168, 76, 0.10);
+        }
+
+        .idea-label {
+            font-size: 0.72em;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: rgba(201, 168, 76, 0.80);
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .idea-box p {
+            font-size: 1.3em;
+            font-style: italic;
+            line-height: 1.6;
+            color: #f0f6ff;
+            position: relative;
+            z-index: 1;
+        }
+
+        .idea-box strong { color: #c9a84c; font-style: normal; }
+
+        /* ── Paradoxe ── */
+        .paradox-box {
+            background: linear-gradient(135deg, #eef4ff, #e0eeff);
+            border: 2px solid rgba(42, 90, 154, 0.25);
+            border-radius: 12px;
+            padding: 25px 30px;
+            margin: 25px 0;
+            position: relative;
+        }
+
+        .paradox-label {
+            font-size: 0.75em;
+            font-weight: bold;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: #1a3a6a;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .paradox-box p {
+            font-size: 1.1em;
+            line-height: 1.75;
+            color: #0a1a40;
+        }
+
+        /* ── Bannière thématique ── */
+        .theme-banner {
+            background: linear-gradient(135deg, #050f28, #0a1e48, #050f28);
+            color: white;
+            padding: 28px 35px;
+            border-radius: 12px;
+            margin: 30px 0;
+            text-align: center;
+            font-size: 1.15em;
+            line-height: 1.8;
+            box-shadow: 0 8px 22px rgba(5, 15, 40, 0.55);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(42, 90, 154, 0.30);
+        }
+
+        .theme-banner::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #2a5a9a, #c9a84c, #2a5a9a, transparent);
+        }
+
+        .theme-banner strong { color: #c9a84c; }
+        .theme-banner em { color: #b0ccff; font-style: italic; }
+
+        /* ── Explorateurs bloc (équivalent ménorah) ── */
+        .explorateurs-block {
+            background: linear-gradient(150deg, #eef4ff 0%, #ddeaff 50%, #eef4ff 100%);
+            border: 2px solid rgba(42, 90, 154, 0.22);
+            border-radius: 16px;
+            padding: 38px 35px;
+            margin: 30px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(20, 60, 160, 0.12);
+        }
+
+        .explorateurs-block::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #1a3a6a, #2a5a9a, #c9a84c, #3a7fc8, #c9a84c, #2a5a9a, #1a3a6a);
+        }
+
+        .explorateurs-block::after {
+            content: '🔭';
+            position: absolute;
+            top: 50%; right: 25px;
+            transform: translateY(-50%);
+            font-size: 5em;
+            opacity: 0.07;
+            pointer-events: none;
+        }
+
+        .explorateurs-label {
+            font-size: 0.72em;
+            letter-spacing: 0.32em;
+            text-transform: uppercase;
+            color: rgba(26, 58, 106, 0.55);
+            margin-bottom: 22px;
+            display: block;
+        }
+
+        .explorateurs-hebrew {
+            font-size: 2.2em;
+            color: #0a1a40;
+            direction: rtl;
+            margin-bottom: 10px;
+            font-family: 'Times New Roman', serif;
+            font-weight: bold;
+            line-height: 1.55;
+        }
+
+        .explorateurs-trans {
+            font-size: 1em;
+            font-style: italic;
+            color: #2a4a7a;
+            margin-bottom: 6px;
+        }
+
+        .explorateurs-french {
+            font-size: 1.1em;
+            color: #1a2a50;
+            font-style: italic;
+        }
+
+        /* ── Liste structurée ── */
+        .structured-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .structured-list li {
+            padding: 10px 0 10px 35px;
+            font-size: 1.1em;
+            color: #2c2c2c;
+            line-height: 1.6;
+            border-bottom: 1px solid rgba(42, 90, 154, 0.08);
+            position: relative;
+        }
+
+        .structured-list li:last-child { border-bottom: none; }
+
+        .structured-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 10px;
+            color: #2a5a9a;
+            font-size: 1em;
+        }
+
+        /* ── Bannière conclusion ── */
+        .conclusion-banner {
+            background: linear-gradient(135deg, #050f28, #0a1e48, #050f28);
+            color: white;
+            padding: 40px 35px;
+            border-radius: 15px;
+            margin: 35px 0;
+            text-align: center;
+            font-size: 1.25em;
+            line-height: 1.9;
+            box-shadow: 0 10px 30px rgba(5, 15, 40, 0.55);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .conclusion-banner::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #2a5a9a, #c9a84c, #2a5a9a, transparent);
+        }
+
+        .conclusion-banner::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #2a5a9a, #c9a84c, #2a5a9a, transparent);
+        }
+
+        .conclusion-banner strong { color: #c9a84c; }
+        .conclusion-banner em { color: #b0ccff; font-style: italic; }
+
+        /* ── Application ── */
+        .application-box {
+            background: linear-gradient(135deg, #eef4ff, #e4eeff);
+            border: 1px solid rgba(42, 90, 154, 0.15);
+            border-radius: 12px;
+            padding: 28px 30px;
+            margin: 25px 0;
+            position: relative;
+        }
+
+        .application-label {
+            font-size: 0.75em;
+            font-weight: bold;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: #1a3a6a;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .application-box p {
+            font-size: 1.1em;
+            line-height: 1.75;
+            color: #0a1a40;
+        }
+
+        /* ── Comparaison explorateurs ── */
+        .compare-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .compare-card {
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .compare-card.peur {
+            background: linear-gradient(135deg, #fff0ee, #ffe8e4);
+            border: 2px solid rgba(180, 60, 40, 0.22);
+        }
+
+        .compare-card.foi {
+            background: linear-gradient(135deg, #eef4ff, #e0eeff);
+            border: 2px solid rgba(42, 90, 154, 0.28);
+        }
+
+        .compare-label {
+            font-size: 0.72em;
+            font-weight: bold;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .compare-card.peur .compare-label { color: #8a2010; }
+        .compare-card.foi .compare-label { color: #1a3a6a; }
+
+        .compare-name {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .compare-card.peur .compare-name { color: #6a1808; }
+        .compare-card.foi .compare-name { color: #0a2050; }
+
+        .compare-card p {
+            font-size: 1em;
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        .compare-card.peur p { color: #6a1808; }
+        .compare-card.foi p { color: #1a2a50; }
+
+        @media (max-width: 600px) {
+            .compare-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ── Citations clés ── */
+        .quotes-section {
+            background: linear-gradient(135deg, #eef4ff, #e4eeff);
+            padding: 40px 35px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+        }
+
+        .quotes-section h2 {
+            font-size: 1.6em;
+            color: #1a2a50;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(42, 90, 154, 0.15);
+        }
+
+        .quote-item {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border-left: 4px solid #2a5a9a;
+            box-shadow: 0 3px 12px rgba(20, 60, 160, 0.08);
+        }
+
+        .quote-hebrew {
+            display: block;
+            font-size: 1.9em;
+            color: #0a1a40;
+            direction: rtl;
+            margin-bottom: 8px;
+            font-family: 'Times New Roman', serif;
+            font-weight: bold;
+        }
+
+        .quote-transliteration {
+            display: block;
+            font-size: 0.95em;
+            font-style: italic;
+            color: #2a4a7a;
+            margin-bottom: 10px;
+        }
+
+        .quote-french {
+            font-size: 1.0em;
+            color: #333;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        /* ── Vidéo ── */
+        .video-section {
+            background: linear-gradient(135deg, #050f28, #0a1a38);
+            padding: 40px 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .video-section h2 {
+            font-size: 1.5em;
+            color: #c9a84c;
+            margin-bottom: 25px;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            border: none;
+        }
+
+        /* ── Clôture ── */
+        .closing-section {
+            background: linear-gradient(135deg, #eef4ff, #e4eeff);
+            padding: 30px 35px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(42, 90, 154, 0.12);
+        }
+
+        .closing-section p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #2c2c2c;
+            font-style: italic;
+        }
+
+        /* ── Pied de page ── */
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 2px solid rgba(42, 90, 154, 0.12);
+            margin-top: 20px;
+        }
+
+        .footer-main {
+            font-size: 1.1em;
+            color: #1a2a50;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .footer-hebrew {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.2em;
+            color: #2a5a9a;
+        }
+
+        .footer-subtitle {
+            font-size: 0.9em;
+            color: #666;
+            letter-spacing: 0.05em;
+        }
+
+        /* ── Divider ── */
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(42, 90, 154, 0.22), transparent);
+            margin: 45px 0;
+        }
+
+        /* ── Fade-in animation ── */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.65s ease, transform 0.65s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 640px) {
+            .title { font-size: 1.9em; }
+            .hebrew-title { font-size: 2.6em; }
+            .container { margin: 10px auto; border-radius: 12px; }
+            .header { padding: 40px 16px 45px; margin: -40px -20px 40px -20px; }
+            .explorateurs-block { padding: 28px 18px; }
+            .explorateurs-hebrew { font-size: 1.6em; }
+            .intro-box { padding: 22px; }
+        }
+    </style>
+</head>
+<body>
+
+<div id="scrollBar" class="scroll-indicator"></div>
+
+<div class="container">
+
+    <!-- Bouton retour -->
+    <a href="../" class="back-button">← Retour aux Parachiot</a>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- En-tête -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="header">
+        <span class="header-label-small">Bamidbar · Nombres 13:1 – 15:41</span>
+        <span class="header-icon">👁</span>
+        <h1 class="title">Paracha Chéla'h Lekha</h1>
+        <div class="hebrew-title">שְׁלַח־לְךָ</div>
+        <div class="subtitle">Voir avec les yeux de la foi ou avec les yeux de la peur ?</div>
+        <div class="reference">Bamidbar 13:1 – 15:41 · Tradition séfarade</div>
+    </div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Introduction -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="intro-box fade-in">
+        <p style="font-size:1.15em; color:#1a2a50; line-height:1.8; margin-bottom:18px;">
+            La paracha Chéla'h Lekha (Nombres 13–15) constitue l'un des tournants les plus dramatiques de la Torah.
+            Après la sortie d'Égypte, le don de la Torah au Sinaï et l'organisation du camp d'Israël dans le désert,
+            le peuple se trouve enfin aux portes de la Terre promise.
+        </p>
+        <p style="font-size:1.15em; color:#1a2a50; line-height:1.8; margin-bottom:18px;">
+            Adonaï ordonne à Moché d'envoyer douze explorateurs — un représentant de chaque tribu — afin d'observer
+            le pays de Canaan. Ce qui devait être une simple mission de reconnaissance devient une catastrophe nationale.
+            Dix explorateurs reviennent avec un rapport décourageant. Le peuple prend peur, se révolte
+            et refuse d'entrer dans la terre que lui destine Adonaï.
+        </p>
+        <p style="font-size:1.15em; color:#2a3a60; line-height:1.8; font-weight:bold;">
+            À travers cet épisode, la Torah aborde une question fondamentale : Comment regardons-nous la réalité ?
+            La même terre est observée par douze hommes. Pourtant certains y voient une promesse tandis que d'autres
+            n'y voient qu'un danger.
+        </p>
+    </div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Texte source -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">📜</span>
+            Texte source — Bamidbar 13:2
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-label">Bamidbar · Nombres 13:2</span>
+            <div class="verse-hebrew">שְׁלַח־לְךָ אֲנָשִׁים וְיָתֻרוּ אֶת־אֶרֶץ כְּנַעַן</div>
+            <div class="verse-transliteration">Shelaḥ lekha anashim veyatourou et erets Kena'an.</div>
+            <div class="verse-french">« Envoie pour toi des hommes afin qu'ils explorent le pays de Canaan. »</div>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Axe central -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">🔑</span>
+            Axe central
+        </div>
+
+        <p class="content-text">
+            La question centrale de cette paracha n'est pas géographique. Elle est spirituelle.
+        </p>
+
+        <div class="theme-banner">
+            La terre est <strong>bonne</strong>.<br>
+            Les explorateurs ne mentent pas lorsqu'ils décrivent les villes fortifiées ou la puissance des habitants.<br>
+            Le problème réside dans leur <em>interprétation des faits</em>.<br>
+            Ils regardent la réalité <strong>sans tenir compte de la promesse d'Adonaï</strong>.<br>
+            La peur finit alors par remplacer la confiance.
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Ancrage midrashique – Chéla'h Lekha -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">🔍</span>
+            Une expression étonnante : « Chéla'h Lekha »
+        </div>
+
+        <p class="content-text">
+            Les commentateurs s'interrogent. Pourquoi la Torah dit-elle : <strong>« Envoie pour toi »</strong> ?
+            Pourquoi ne pas dire simplement : « Envoie des hommes » ?
+        </p>
+
+        <div class="rachi-block">
+            <span class="rachi-label">Rachi — sur Bamidbar 13:2</span>
+            <p>Selon Rachi, Adonaï ne donne pas ici un ordre absolu. Il laisse à Moché une marge d'appréciation.
+            Autrement dit : « Si tu souhaites les envoyer, envoie-les. »</p>
+        </div>
+
+        <p class="content-text">
+            La mission des explorateurs répond davantage à une demande du peuple qu'à une nécessité divine.
+            Cela soulève un paradoxe fondamental.
+        </p>
+
+        <div class="paradox-box">
+            <span class="paradox-label">Paradoxe structurant</span>
+            <p>
+                Si Adonaï promet déjà que la terre est bonne, pourquoi vouloir la vérifier ?<br><br>
+                La réponse semble évidente : le peuple cherche une <strong>sécurité humaine</strong>
+                avant d'accorder sa confiance à la parole divine.
+                C'est ici que commence la faute — non dans les yeux, mais dans le cœur.
+            </p>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Le paradoxe de la vision -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">⚖️</span>
+            Le paradoxe de la vision
+        </div>
+
+        <p class="content-text">
+            Les douze explorateurs voient exactement les mêmes choses. Pourtant leurs conclusions sont opposées.
+        </p>
+
+        <div class="compare-grid">
+            <div class="compare-card peur">
+                <span class="compare-label">Les dix explorateurs</span>
+                <div class="compare-name">Le rapport de la peur</div>
+                <p>« Nous ne pouvons pas monter contre ce peuple, car il est plus fort que nous. »</p>
+            </div>
+            <div class="compare-card foi">
+                <span class="compare-label">Kalev et Yehoshoua</span>
+                <div class="compare-name">La réponse de la confiance</div>
+                <p>« Montons et prenons possession du pays, car nous pouvons certainement le conquérir. »</p>
+            </div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-label">Bamidbar · Nombres 13:31 — Les dix explorateurs</span>
+            <div class="verse-hebrew">לֹא נוּכַל לַעֲלוֹת אֶל־הָעָם כִּי־חָזָק הוּא מִמֶּנּוּ</div>
+            <div class="verse-transliteration">Lo noukhal la'alot el ha'am ki ḥazak hou mimenou.</div>
+            <div class="verse-french">« Nous ne pouvons pas monter contre ce peuple, car il est plus fort que nous. »</div>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-label">Bamidbar · Nombres 13:30 — Kalev</span>
+            <div class="verse-hebrew">עָלֹה נַעֲלֶה וְיָרַשְׁנוּ אֹתָהּ כִּי־יָכוֹל נוּכַל לָהּ</div>
+            <div class="verse-transliteration">Aloh na'aleh veyarashnou otah ki yakhol noukhal lah.</div>
+            <div class="verse-french">« Montons et prenons possession du pays, car nous pouvons certainement le conquérir. »</div>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Le détail révélateur -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">🔬</span>
+            Le détail révélateur — « Nous étions à nos yeux comme des sauterelles »
+        </div>
+
+        <div class="explorateurs-block">
+            <span class="explorateurs-label">Bamidbar 13:33 — Le regard intérieur</span>
+            <div class="explorateurs-hebrew">וַנְּהִי בְעֵינֵינוּ כַּחֲגָבִים</div>
+            <div class="explorateurs-trans">Vanehi be'einénou kaḥagavim.</div>
+            <div class="explorateurs-french">« Nous étions à nos yeux comme des sauterelles. »</div>
+        </div>
+
+        <p class="content-text">
+            Le texte ne dit pas d'abord ce que les habitants pensent d'eux.
+            Il dit ce qu'<strong>eux pensent d'eux-mêmes</strong>.
+        </p>
+
+        <div class="idea-box">
+            <span class="idea-label">Renversement — Le détail devient central</span>
+            <p>Le problème n'est pas <strong>militaire</strong>.<br>
+            Il est <strong>intérieur</strong>.<br><br>
+            Ils se voient comme petits avant même d'affronter leurs adversaires.<br>
+            <strong>La défaite commence dans le regard qu'ils portent sur eux-mêmes.</strong></p>
+        </div>
+
+        <div class="midrash-block">
+            <span class="midrash-label">Profondeur des Sages</span>
+            <p>Les Sages enseignent que la faute véritable des explorateurs n'est pas d'avoir vu des géants.
+            C'est d'avoir transformé une difficulté réelle en impossibilité absolue. Ils ont laissé
+            la peur effacer l'espérance. En apparence, leur péché consiste à avoir parlé négativement
+            de la terre. En profondeur, ils ont refusé de voir la réalité à travers la promesse d'Adonaï.</p>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Conséquence — Quarante années -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">🏜</span>
+            Conséquence — Quarante années dans le désert
+        </div>
+
+        <p class="content-text">
+            Ainsi, le peuple ne rejette pas seulement une terre. Il rejette un avenir.
+            Adonaï déclare :
+        </p>
+
+        <div class="verse-block">
+            <span class="verse-label">Bamidbar · Nombres 14:29</span>
+            <div class="verse-hebrew">בַּמִּדְבָּר הַזֶּה יִפְּלוּ פִגְרֵיכֶם</div>
+            <div class="verse-transliteration">Bamidbar hazé yipelou pigrekhem.</div>
+            <div class="verse-french">« Dans ce désert tomberont vos corps. »</div>
+        </div>
+
+        <p class="content-text">
+            La génération sortie d'Égypte ne verra pas la Terre promise. Une nouvelle génération devra naître.
+            Le désert devient alors une <strong>école de confiance</strong> — un espace où apprendre à regarder
+            autrement, à intégrer Adonaï dans chaque analyse de la réalité.
+        </p>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Le rappel des Tsitsit -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">🕍</span>
+            Le rappel des Tsitsit — Le lien profond
+        </div>
+
+        <p class="content-text">
+            La paracha se termine par le commandement des franges rituelles. Ce passage semble d'abord
+            sans rapport avec les explorateurs. Pourtant le lien est profond.
+        </p>
+
+        <div class="verse-block">
+            <span class="verse-label">Bamidbar · Nombres 15:39</span>
+            <div class="verse-hebrew">וְלֹא־תָתוּרוּ אַחֲרֵי לְבַבְכֶם וְאַחֲרֵי עֵינֵיכֶם</div>
+            <div class="verse-transliteration">Velo tatourou aḥarei levavkhem ve'aḥarei eineikhem.</div>
+            <div class="verse-french">« Vous ne suivrez pas votre cœur et vos yeux. »</div>
+        </div>
+
+        <div class="application-box">
+            <span class="application-label">Lien intentionnel dans le texte</span>
+            <p>
+                Le verbe utilisé ici, <strong>latour</strong> (« explorer »), est le même que celui employé pour les explorateurs.
+                La Torah établit volontairement le lien : les explorateurs ont <em>mal exploré</em> la terre.
+                Le Juif doit apprendre à regarder le monde autrement — non pas en suivant ses impressions,
+                mais en maintenant vivante la mémoire de la promesse divine.
+            </p>
+        </div>
+
+        <p class="content-text">
+            Les explorateurs ont suivi ce que leurs yeux voyaient sans le filtre de la foi.
+            Les tsitsit rappellent à Israël, à chaque instant du jour, qu'il existe un autre regard —
+            celui de la <em>bitaḥon</em>, la confiance en Adonaï.
+        </p>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Application — Tradition séfarade -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">🌅</span>
+            Chéla'h Lekha dans la tradition séfarade
+        </div>
+
+        <p class="content-text">
+            Les maîtres séfarades soulignent souvent que la confiance (<em>bitaḥon</em>) n'est pas l'ignorance des difficultés.
+        </p>
+
+        <div class="theme-banner">
+            Kalev et Yehoshoua voient les <strong>mêmes obstacles</strong> que les autres.<br>
+            Ils ne sont ni naïfs ni inconscients.<br>
+            La différence est qu'ils <em>intègrent Adonaï dans leur analyse</em>.<br><br>
+            <strong>La foi n'efface pas les problèmes.</strong><br>
+            Elle empêche les problèmes de devenir le dernier mot de l'histoire.
+        </div>
+
+        <p class="content-text">
+            Cette paracha nous pose des questions concrètes, ancrées dans la vie de chaque jour :
+        </p>
+
+        <ul class="structured-list">
+            <li>Regardons-nous les obstacles de notre vie avec les yeux de la peur ou avec ceux de la confiance ?</li>
+            <li>Avons-nous la capacité d'intégrer Adonaï dans notre analyse des situations difficiles ?</li>
+            <li>Comment notre parole construit-elle ou détruit-elle l'espérance de ceux qui nous entourent ?</li>
+            <li>Cherchons-nous une sécurité humaine avant de faire confiance à la parole divine ?</li>
+            <li>Le regard que nous portons sur nous-mêmes nous élève-t-il ou nous diminue-t-il ?</li>
+        </ul>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Idée forte centrale -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">💡</span>
+            L'idée forte de Chéla'h Lekha
+        </div>
+
+        <div class="conclusion-banner">
+            <strong>Le péché des explorateurs n'est pas d'avoir vu des géants.</strong><br>
+            C'est d'avoir oublié la grandeur d'Adonaï.<br><br>
+            Quand l'homme ne regarde que les obstacles,<br>
+            il devient une sauterelle à ses propres yeux.<br><br>
+            Quand il se souvient de la promesse divine,<br>
+            il retrouve la force d'avancer.<br><br>
+            <em>« La sainteté du regard se vérifie dans la confiance qu'il porte. »</em>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Conclusion -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">✨</span>
+            Conclusion
+        </div>
+
+        <p class="content-text">
+            La paracha Chéla'h Lekha nous enseigne que deux personnes peuvent regarder la même réalité
+            et en tirer des conclusions opposées.
+        </p>
+
+        <div class="conclusion-banner">
+            <strong>שְׁלַח־לְךָ — Chéla'h Lekha</strong><br>
+            <em>« Envoie pour toi. »</em><br><br>
+            Les dix explorateurs regardent avec la <strong>peur</strong>.<br>
+            Kalev et Yehoshoua regardent avec la <strong>confiance</strong>.<br><br>
+            La Torah ne nous demande pas d'ignorer les difficultés du monde.<br>
+            Elle nous demande de ne jamais oublier qu'Adonaï est plus grand<br>
+            que les obstacles que nous rencontrons.<br><br>
+            <em>« La réalité n'est pas seulement ce que voient nos yeux ;<br>
+            elle est aussi ce que notre confiance en Adonaï nous permet d'espérer. »</em><br><br>
+            <strong>שבת שלום — Shabbat Shalom</strong>
+        </div>
+    </div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Citations clés -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="quotes-section fade-in">
+        <h2>📜 Versets clés de Chéla'h Lekha</h2>
+
+        <div class="quote-item">
+            <span class="quote-hebrew">שְׁלַח־לְךָ אֲנָשִׁים וְיָתֻרוּ אֶת־אֶרֶץ כְּנַעַן</span>
+            <span class="quote-transliteration">Shelaḥ lekha anashim veyatourou et erets Kena'an.</span>
+            <p class="quote-french">« Envoie pour toi des hommes afin qu'ils explorent le pays de Canaan. » (Bamidbar 13:2)</p>
+        </div>
+
+        <div class="quote-item">
+            <span class="quote-hebrew">עָלֹה נַעֲלֶה וְיָרַשְׁנוּ אֹתָהּ כִּי־יָכוֹל נוּכַל לָהּ</span>
+            <span class="quote-transliteration">Aloh na'aleh veyarashnou otah ki yakhol noukhal lah.</span>
+            <p class="quote-french">« Montons et prenons possession du pays, car nous pouvons certainement le conquérir. » (Bamidbar 13:30)</p>
+        </div>
+
+        <div class="quote-item">
+            <span class="quote-hebrew">וַנְּהִי בְעֵינֵינוּ כַּחֲגָבִים</span>
+            <span class="quote-transliteration">Vanehi be'einénou kaḥagavim.</span>
+            <p class="quote-french">« Nous étions à nos yeux comme des sauterelles. » (Bamidbar 13:33)</p>
+        </div>
+
+        <div class="quote-item">
+            <span class="quote-hebrew">וְלֹא־תָתוּרוּ אַחֲרֵי לְבַבְכֶם וְאַחֲרֵי עֵינֵיכֶם</span>
+            <span class="quote-transliteration">Velo tatourou aḥarei levavkhem ve'aḥarei eineikhem.</span>
+            <p class="quote-french">« Vous ne suivrez pas votre cœur et vos yeux. » (Bamidbar 15:39)</p>
+        </div>
+    </div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Vidéo -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="video-section fade-in">
+        <h2>🎥 Étude vidéo de Chéla'h Lekha</h2>
+        <div class="video-container">
+            <iframe
+                src="https://www.youtube.com/embed/S4xp66ycoEg"
+                title="Paracha Chéla'h Lekha – Voir avec les yeux de la foi ou avec les yeux de la peur ? | Étude biblique – Tradition séfarade | Ariel Mormin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Clôture -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="closing-section fade-in">
+        <p>
+            Une étude structurée et progressive de la Paracha Chéla'h Lekha selon la tradition séfarade.
+            L'expression שְׁלַח־לְךָ comme clé de lecture : envoyer pour soi, choisir librement son regard,
+            et assumer la responsabilité de ce qu'on voit. Douze hommes, une même terre, deux visions opposées —
+            et la Torah qui nous demande, à travers les tsitsit, de ne jamais cesser d'explorer avec les yeux de la foi.
+        </p>
+    </div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Pied de page -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="footer">
+        <div class="footer-main">
+            Étude de Chéla'h Lekha par <span class="footer-hebrew">אריאל מרמן</span> (Ariel Mormin)
+        </div>
+        <div class="footer-subtitle">
+            • Voir avec les yeux de la foi — שְׁלַח־לְךָ • Bamidbar / Nombres 13:1–15:41 • Tradition séfarade •
+        </div>
+    </div>
+
+</div><!-- /container -->
+
+<script>
+    // Barre de progression
+    window.addEventListener('scroll', () => {
+        const doc = document.documentElement;
+        const progress = doc.scrollTop / (doc.scrollHeight - doc.clientHeight);
+        document.getElementById('scrollBar').style.transform = `scaleX(${progress})`;
+    });
+
+    // Animation d'entrée au scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
