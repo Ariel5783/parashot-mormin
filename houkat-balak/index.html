@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Paracha Houkat - Balak : Du mystère des cendres à la puissance de la parole. La Vache Rousse, les eaux de Mériva, le serpent d'airain, Balak et Bil'am. Étude Torah complète selon la tradition séfarade par Ariel Mormin.">
+    <meta name="keywords" content="Paracha Houkat, Paracha Balak, חֻקַּת, בָּלָק, Torah, Bamidbar, Nombres, Vache Rousse, Parah Adoumah, Mériva, serpent d'airain, Bil'am, Balak, bénédiction, tradition séfarade, étude biblique, paracha semaine, Ariel Mormin, Parashot Mormin">
+    <meta property="og:title" content="Paracha Houkat - Balak – Du mystère des cendres à la puissance de la parole | Ariel Mormin">
+    <meta property="og:description" content="Étude complète des Paracha Houkat et Balak selon la tradition séfarade. La Vache Rousse, les eaux de Mériva, le serpent d'airain, et les bénédictions de Bil'am.">
+    <meta property="og:url" content="https://parashot-mormin.netlify.app/houkat-balak/index.html">
+    <title>Paracha Houkat - Balak – Du mystère des cendres à la puissance de la parole | Tradition séfarade</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            background: linear-gradient(150deg,
+                #0a0905 0%, #1c1608 20%, #2e2410 40%,
+                #1c1608 60%, #0a0905 80%, #14110a 100%);
+            min-height: 100vh;
+            color: #333;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background:
+                radial-gradient(ellipse 60% 40% at 25% 15%, rgba(150, 110, 30, 0.22) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 35% at 75% 75%, rgba(60, 95, 60, 0.18) 0%, transparent 55%),
+                radial-gradient(ellipse 40% 30% at 55% 5%, rgba(180, 150, 70, 0.14) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image:
+                radial-gradient(1px 1px at 10% 18%, rgba(230,200,150,0.40) 0%, transparent 100%),
+                radial-gradient(1px 1px at 40% 6%, rgba(230,200,150,0.30) 0%, transparent 100%),
+                radial-gradient(1px 1px at 68% 12%, rgba(150,200,150,0.35) 0%, transparent 100%),
+                radial-gradient(1.5px 1.5px at 85% 4%, rgba(220,190,110,0.35) 0%, transparent 100%),
+                radial-gradient(1px 1px at 25% 90%, rgba(230,200,150,0.30) 0%, transparent 100%),
+                radial-gradient(1px 1px at 58% 94%, rgba(150,200,150,0.25) 0%, transparent 100%),
+                radial-gradient(1px 1px at 3% 50%, rgba(220,190,110,0.25) 0%, transparent 100%),
+                radial-gradient(1px 1px at 92% 42%, rgba(230,200,150,0.22) 0%, transparent 100%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 30px auto;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.70), 0 0 0 1px rgba(150,110,30,0.12);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ── Barre de progression ── */
+        .scroll-indicator {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #6e5318, #a87f28, #4a6b46, #a87f28, #6e5318);
+            transform-origin: left;
+            transform: scaleX(0);
+            z-index: 1000;
+            transition: transform 0.1s ease;
+        }
+
+        /* ── Bouton retour ── */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #5c4316, #8a6a22);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(92, 67, 22, 0.35);
+            margin-bottom: 20px;
+        }
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(92, 67, 22, 0.55);
+            background: linear-gradient(135deg, #8a6a22, #5c4316);
+        }
+
+        /* ── En-tête ── */
+        .header {
+            text-align: center;
+            padding: 55px 20px 60px;
+            background: linear-gradient(150deg,
+                #0c0a05, #221b0a, #3a2e10,
+                #5a4818, #8a6a22, #5a4818,
+                #221b0a, #0c0a05, #1a1408);
+            margin: -40px -20px 50px -20px;
+            border-radius: 20px 20px 0 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background:
+                radial-gradient(ellipse 70% 60% at 50% 50%, rgba(150, 110, 30, 0.28) 0%, transparent 70%),
+                radial-gradient(ellipse 50% 40% at 15% 25%, rgba(120, 90, 25, 0.22) 0%, transparent 60%),
+                radial-gradient(ellipse 40% 50% at 85% 75%, rgba(74, 107, 70, 0.25) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 35px;
+            background:
+                radial-gradient(ellipse 60% 100% at 30% 100%, rgba(150, 110, 30, 0.15) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 100% at 70% 100%, rgba(74, 107, 70, 0.14) 0%, transparent 60%);
+        }
+
+        .header-label-small {
+            font-size: 0.8em;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: rgba(230, 210, 170, 0.72);
+            font-family: 'Georgia', serif;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 14px;
+            display: block;
+        }
+
+        .header-icon {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+            display: block;
+        }
+
+        .title {
+            font-size: 2.6em;
+            margin-bottom: 15px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+            color: #fdf6e8;
+        }
+
+        .hebrew-title {
+            font-size: 2.9em;
+            color: #c9a84c;
+            margin-bottom: 15px;
+            font-family: 'Times New Roman', serif;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6), 0 0 35px rgba(201,168,76,0.35);
+            position: relative;
+            z-index: 1;
+            letter-spacing: 0.03em;
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            color: #e8dab0;
+            opacity: 0.92;
+        }
+
+        .reference {
+            font-size: 1.05em;
+            position: relative;
+            z-index: 1;
+            color: #c9a84c;
+            opacity: 0.92;
+        }
+
+        /* ── Boîte intro ── */
+        .intro-box {
+            background: linear-gradient(135deg, #fbf6e8, #f5ecd2);
+            padding: 35px;
+            border-radius: 15px;
+            border-left: 6px solid #8a6a22;
+            margin-bottom: 45px;
+            box-shadow: 0 8px 20px rgba(120, 90, 25, 0.10);
+            position: relative;
+        }
+
+        .intro-box::before {
+            content: "🕊";
+            position: absolute;
+            top: 15px; right: 20px;
+            font-size: 2.2em;
+            opacity: 0.14;
+        }
+
+        /* ── Sections ── */
+        .section {
+            margin-bottom: 45px;
+            padding: 20px 0;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #2e2410;
+            margin-bottom: 25px;
+            font-weight: bold;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #fbf6e8, #f5ecd2);
+            border-radius: 10px;
+            border-left: 5px solid #8a6a22;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-icon { font-size: 1.8em; flex-shrink: 0; }
+
+        .content-text {
+            font-size: 1.15em;
+            line-height: 1.8;
+            color: #2c2c2c;
+            margin-bottom: 20px;
+        }
+
+        /* ── Versets ── */
+        .verse-block {
+            background: linear-gradient(135deg, #fbf6e8 0%, #f2e6c4 100%);
+            border: 2px solid rgba(120, 90, 25, 0.22);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(120, 90, 25, 0.08);
+        }
+
+        .verse-block::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #5c4316, #8a6a22, #4a6b46, #8a6a22, #4a6b46, #8a6a22, #5c4316);
+        }
+
+        .verse-label {
+            font-size: 0.75em;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: rgba(92, 67, 22, 0.62);
+            margin-bottom: 12px;
+            display: block;
+            font-style: normal;
+        }
+
+        .verse-hebrew {
+            font-size: 2.1em;
+            color: #2e2410;
+            direction: rtl;
+            margin-bottom: 12px;
+            font-family: 'Times New Roman', serif;
+            font-weight: bold;
+            line-height: 1.5;
+            text-shadow: 0 1px 2px rgba(92,67,22,0.10);
+        }
+
+        .verse-transliteration {
+            font-size: 1.05em;
+            font-style: italic;
+            color: #6b5018;
+            margin-bottom: 10px;
+        }
+
+        .verse-french {
+            font-size: 1.05em;
+            color: #2e2410;
+            font-style: italic;
+            border-top: 1px solid rgba(92, 67, 22, 0.18);
+            padding-top: 10px;
+            margin-top: 5px;
+        }
+
+        .verse-reference {
+            font-size: 0.85em;
+            color: rgba(92, 67, 22, 0.55);
+            margin-top: 8px;
+            letter-spacing: 0.1em;
+        }
+
+        /* ── Rachi ── */
+        .rachi-block {
+            background: linear-gradient(135deg, #fef9ec, #fff8e0);
+            border: 1px solid rgba(201, 168, 76, 0.28);
+            border-left: 5px solid #c9a84c;
+            border-radius: 0 10px 10px 0;
+            padding: 22px 25px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .rachi-block::before {
+            content: 'רש"י';
+            position: absolute;
+            top: 12px; right: 18px;
+            font-size: 1.6em;
+            color: rgba(201, 168, 76, 0.18);
+            font-family: 'Times New Roman', serif;
+            font-weight: bold;
+            direction: rtl;
+        }
+
+        .rachi-label {
+            font-size: 0.78em;
+            font-weight: bold;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #b08a20;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .rachi-block p {
+            font-size: 1.05em;
+            line-height: 1.7;
+            color: #4a3010;
+            font-style: italic;
+        }
+
+        /* ── Midrash ── */
+        .midrash-block {
+            background: linear-gradient(135deg, #f0f4ec, #e6ecdd);
+            border: 1px solid rgba(74, 107, 70, 0.28);
+            border-left: 5px solid #4a6b46;
+            border-radius: 0 10px 10px 0;
+            padding: 22px 25px;
+            margin: 20px 0;
+        }
+
+        .midrash-label {
+            font-size: 0.78em;
+            font-weight: bold;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #3a5638;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .midrash-block p {
+            font-size: 1.05em;
+            line-height: 1.7;
+            color: #243420;
+            font-style: italic;
+        }
+
+        /* ── Idée forte ── */
+        .idea-box {
+            background: linear-gradient(135deg, #1c1608, #3a2e10);
+            color: white;
+            padding: 30px 35px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(20, 16, 8, 0.50);
+        }
+
+        .idea-box::before {
+            content: '✦';
+            position: absolute;
+            top: -10px; right: 20px;
+            font-size: 5em;
+            color: rgba(201, 168, 76, 0.10);
+        }
+
+        .idea-label {
+            font-size: 0.72em;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: rgba(201, 168, 76, 0.80);
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .idea-box p {
+            font-size: 1.3em;
+            font-style: italic;
+            line-height: 1.6;
+            color: #fdf6e8;
+            position: relative;
+            z-index: 1;
+        }
+
+        .idea-box strong { color: #c9a84c; font-style: normal; }
+
+        /* ── Paradoxe ── */
+        .paradox-box {
+            background: linear-gradient(135deg, #fbf6e8, #f2e6c4);
+            border: 2px solid rgba(120, 90, 25, 0.25);
+            border-radius: 12px;
+            padding: 25px 30px;
+            margin: 25px 0;
+            position: relative;
+        }
+
+        .paradox-label {
+            font-size: 0.75em;
+            font-weight: bold;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: #5c4316;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .paradox-box p {
+            font-size: 1.1em;
+            line-height: 1.75;
+            color: #2e2410;
+        }
+
+        /* ── Bannière thématique ── */
+        .theme-banner {
+            background: linear-gradient(135deg, #0e0c05, #221b0a, #0e0c05);
+            color: white;
+            padding: 28px 35px;
+            border-radius: 12px;
+            margin: 30px 0;
+            text-align: center;
+            font-size: 1.15em;
+            line-height: 1.8;
+            box-shadow: 0 8px 22px rgba(15, 12, 5, 0.55);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(120, 90, 25, 0.30);
+        }
+
+        .theme-banner::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #8a6a22, #4a6b46, #8a6a22, transparent);
+        }
+
+        .theme-banner strong { color: #c9a84c; }
+        .theme-banner em { color: #b8d0b0; font-style: italic; }
+
+        /* ── Bloc cendres (Vache Rousse) ── */
+        .ash-block {
+            background: linear-gradient(150deg, #fbf6e8 0%, #ece0bc 50%, #fbf6e8 100%);
+            border: 2px solid rgba(120, 90, 25, 0.22);
+            border-radius: 16px;
+            padding: 38px 35px;
+            margin: 30px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(120, 90, 25, 0.12);
+        }
+
+        .ash-block::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #5c4316, #8a6a22, #c9a84c, #8a6a22, #c9a84c, #8a6a22, #5c4316);
+        }
+
+        .ash-block::after {
+            content: '🔥';
+            position: absolute;
+            top: 50%; right: 25px;
+            transform: translateY(-50%);
+            font-size: 5em;
+            opacity: 0.07;
+            pointer-events: none;
+        }
+
+        .ash-label {
+            font-size: 0.72em;
+            letter-spacing: 0.32em;
+            text-transform: uppercase;
+            color: rgba(92, 67, 22, 0.58);
+            margin-bottom: 22px;
+            display: block;
+        }
+
+        .ash-hebrew {
+            font-size: 2.2em;
+            color: #2e2410;
+            direction: rtl;
+            margin-bottom: 10px;
+            font-family: 'Times New Roman', serif;
+            font-weight: bold;
+            line-height: 1.55;
+        }
+
+        .ash-trans {
+            font-size: 1em;
+            font-style: italic;
+            color: #6b5018;
+            margin-bottom: 6px;
+        }
+
+        .ash-french {
+            font-size: 1.1em;
+            color: #2e2410;
+            font-style: italic;
+        }
+
+        /* ── Comparaison Houkat / Balak ── */
+        .compare-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .compare-card {
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .compare-card.houkat {
+            background: linear-gradient(135deg, #fbf6e8, #f2e6c4);
+            border: 2px solid rgba(120, 90, 25, 0.28);
+        }
+
+        .compare-card.balak {
+            background: linear-gradient(135deg, #f0f4ec, #e6ecdd);
+            border: 2px solid rgba(74, 107, 70, 0.32);
+        }
+
+        .compare-label {
+            font-size: 0.72em;
+            font-weight: bold;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .compare-card.houkat .compare-label { color: #5c4316; }
+        .compare-card.balak .compare-label { color: #3a5638; }
+
+        .compare-name {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .compare-card.houkat .compare-name { color: #2e2410; }
+        .compare-card.balak .compare-name { color: #1f2e1c; }
+
+        .compare-card p {
+            font-size: 1em;
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        .compare-card.houkat p { color: #4a3614; }
+        .compare-card.balak p { color: #2e4029; }
+
+        @media (max-width: 600px) {
+            .compare-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ── Liste structurée ── */
+        .structured-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .structured-list li {
+            padding: 10px 0 10px 35px;
+            font-size: 1.1em;
+            color: #2c2c2c;
+            line-height: 1.6;
+            border-bottom: 1px solid rgba(120, 90, 25, 0.10);
+            position: relative;
+        }
+
+        .structured-list li:last-child { border-bottom: none; }
+
+        .structured-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 10px;
+            color: #8a6a22;
+            font-size: 1em;
+        }
+
+        /* ── Bannière conclusion ── */
+        .conclusion-banner {
+            background: linear-gradient(135deg, #0e0c05, #221b0a, #0e0c05);
+            color: white;
+            padding: 40px 35px;
+            border-radius: 15px;
+            margin: 35px 0;
+            text-align: center;
+            font-size: 1.25em;
+            line-height: 1.9;
+            box-shadow: 0 10px 30px rgba(15, 12, 5, 0.55);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .conclusion-banner::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #8a6a22, #c9a84c, #8a6a22, transparent);
+        }
+
+        .conclusion-banner::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #8a6a22, #c9a84c, #8a6a22, transparent);
+        }
+
+        .conclusion-banner strong { color: #c9a84c; }
+        .conclusion-banner em { color: #b8d0b0; font-style: italic; }
+
+        /* ── Application ── */
+        .application-box {
+            background: linear-gradient(135deg, #fbf6e8, #f5ecd2);
+            border: 1px solid rgba(120, 90, 25, 0.18);
+            border-radius: 12px;
+            padding: 28px 30px;
+            margin: 25px 0;
+            position: relative;
+        }
+
+        .application-label {
+            font-size: 0.75em;
+            font-weight: bold;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: #5c4316;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .application-box p {
+            font-size: 1.1em;
+            line-height: 1.75;
+            color: #2e2410;
+        }
+
+        /* ── Citations clés ── */
+        .quotes-section {
+            background: linear-gradient(135deg, #fbf6e8, #f5ecd2);
+            padding: 40px 35px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+        }
+
+        .quotes-section h2 {
+            font-size: 1.6em;
+            color: #2e2410;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(120, 90, 25, 0.18);
+        }
+
+        .quote-item {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border-left: 4px solid #8a6a22;
+            box-shadow: 0 3px 12px rgba(120, 90, 25, 0.08);
+        }
+
+        .quote-hebrew {
+            display: block;
+            font-size: 1.9em;
+            color: #2e2410;
+            direction: rtl;
+            margin-bottom: 8px;
+            font-family: 'Times New Roman', serif;
+            font-weight: bold;
+        }
+
+        .quote-transliteration {
+            display: block;
+            font-size: 0.95em;
+            font-style: italic;
+            color: #6b5018;
+            margin-bottom: 10px;
+        }
+
+        .quote-french {
+            font-size: 1.0em;
+            color: #333;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        /* ── Vidéo ── */
+        .video-section {
+            background: linear-gradient(135deg, #0e0c05, #1c1608);
+            padding: 40px 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .video-section h2 {
+            font-size: 1.5em;
+            color: #c9a84c;
+            margin-bottom: 25px;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            border: none;
+        }
+
+        /* ── Clôture ── */
+        .closing-section {
+            background: linear-gradient(135deg, #fbf6e8, #f5ecd2);
+            padding: 30px 35px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(120, 90, 25, 0.15);
+        }
+
+        .closing-section p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #2c2c2c;
+            font-style: italic;
+        }
+
+        /* ── Pied de page ── */
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 2px solid rgba(120, 90, 25, 0.15);
+            margin-top: 20px;
+        }
+
+        .footer-main {
+            font-size: 1.1em;
+            color: #2e2410;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .footer-hebrew {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.2em;
+            color: #8a6a22;
+        }
+
+        .footer-subtitle {
+            font-size: 0.9em;
+            color: #666;
+            letter-spacing: 0.05em;
+        }
+
+        /* ── Divider ── */
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(120, 90, 25, 0.25), transparent);
+            margin: 45px 0;
+        }
+
+        /* ── Fade-in animation ── */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.65s ease, transform 0.65s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 640px) {
+            .title { font-size: 1.8em; }
+            .hebrew-title { font-size: 2.2em; }
+            .container { margin: 10px auto; border-radius: 12px; }
+            .header { padding: 40px 16px 45px; margin: -40px -20px 40px -20px; }
+            .ash-block { padding: 28px 18px; }
+            .ash-hebrew { font-size: 1.6em; }
+            .intro-box { padding: 22px; }
+        }
+    </style>
+</head>
+<body>
+
+<div id="scrollBar" class="scroll-indicator"></div>
+
+<div class="container">
+
+    <!-- Bouton retour -->
+    <a href="../" class="back-button">← Retour aux Parachiot</a>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- En-tête -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="header">
+        <span class="header-label-small">Bamidbar · Nombres 19:1 – 25:9</span>
+        <span class="header-icon">🕊</span>
+        <h1 class="title">Paracha Houkat – Balak</h1>
+        <div class="hebrew-title">חֻקַּת · בָּלָק</div>
+        <div class="subtitle">Du mystère des cendres à la puissance de la parole</div>
+        <div class="reference">Bamidbar 19:1 – 25:9 · Tradition séfarade</div>
+    </div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Introduction -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="intro-box fade-in">
+        <p style="font-size:1.15em; color:#2e2410; line-height:1.8; margin-bottom:18px;">
+            Les parachiot Houkat et Balak occupent une place singulière dans le livre de Bamidbar.
+            Elles abordent des thèmes très différents en apparence : la Vache Rousse, la mort de
+            Myriam et d'Aharon, la faute des eaux de Mériva, le serpent d'airain, puis l'histoire
+            de Balak et de Bil'am.
+        </p>
+        <p style="font-size:1.15em; color:#2e2410; line-height:1.8; margin-bottom:18px;">
+            Pourtant, un fil conducteur relie l'ensemble de ces récits. La Torah nous confronte à
+            deux réalités fondamentales : certaines vérités dépassent la compréhension humaine,
+            et certaines paroles possèdent une puissance qui dépasse celui qui les prononce.
+        </p>
+        <p style="font-size:1.15em; color:#2e2410; line-height:1.8; font-weight:bold;">
+            Houkat nous enseigne l'humilité devant le mystère. Balak nous enseigne la responsabilité
+            devant la parole.
+        </p>
+    </div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Texte source — Le décret qui dépasse la raison -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">📜</span>
+            Le décret qui dépasse la raison
+        </div>
+
+        <p class="content-text">
+            La paracha s'ouvre par l'une des mitsvot les plus mystérieuses de toute la Torah.
+        </p>
+
+        <div class="verse-block">
+            <span class="verse-label">Bamidbar · Nombres 19:2</span>
+            <div class="verse-hebrew">זֹאת חֻקַּת הַתּוֹרָה</div>
+            <div class="verse-transliteration">Zot ḥouqat haTorah</div>
+            <div class="verse-french">« Voici le décret de la Torah. »</div>
+        </div>
+
+        <p class="content-text">
+            Le terme <strong>ḥoq</strong> désigne une prescription dont la logique profonde échappe
+            à l'intelligence humaine. La Vache Rousse est entièrement brûlée. Ses cendres sont
+            mélangées à de l'eau vive. Cette préparation permet de purifier celui qui a été en
+            contact avec un mort.
+        </p>
+
+        <div class="paradox-box">
+            <span class="paradox-label">Le paradoxe</span>
+            <p>
+                L'impur devient pur — et celui qui prépare la purification devient impur.
+                Une même réalité produit simultanément deux effets opposés.
+            </p>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Le paradoxe des cendres -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">🔥</span>
+            Le paradoxe des cendres
+        </div>
+
+        <p class="content-text">
+            Les Sages ont vu dans cette mitsva le modèle même du décret divin.
+        </p>
+
+        <div class="rachi-block">
+            <span class="rachi-label">Rachi</span>
+            <p>
+                Rachi rapporte que les nations du monde et les sceptiques demandent : « Quel sens
+                possède cette mitsva ? » La Torah répond : « C'est un décret d'Adonaï. »
+            </p>
+        </div>
+
+        <p class="content-text">
+            Mais le texte ne s'arrête pas là. Le paradoxe devient lui-même un enseignement. Comment
+            une même réalité peut-elle produire simultanément deux effets opposés ? Les mêmes cendres
+            purifient l'un et rendent impur l'autre.
+        </p>
+
+        <p class="content-text">
+            Nous découvrons ici que la Torah refuse parfois les raisonnements simplistes. Une même
+            réalité peut produire des effets différents selon la situation, la fonction ou la
+            responsabilité de chacun.
+        </p>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- La réparation du Veau d'Or -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">🐂</span>
+            La réparation du Veau d'Or
+        </div>
+
+        <div class="midrash-block">
+            <span class="midrash-label">Midrash</span>
+            <p>
+                Un Midrash célèbre cité par Rabbi Moché HaDarshan établit un lien entre la Vache
+                Rousse et le Veau d'Or. La mère vient réparer la faute de son enfant — la vache
+                vient expier le veau.
+            </p>
+        </div>
+
+        <p class="content-text">
+            Ainsi, la purification n'est pas seulement rituelle. Elle devient un processus de
+            restauration spirituelle. Le texte suggère que même après une faute collective majeure,
+            un chemin de retour demeure possible. La Torah n'est jamais enfermée dans la logique
+            du désespoir.
+        </p>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Les eaux de Mériva -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">💧</span>
+            Les eaux de Mériva : lorsque la parole remplace la force
+        </div>
+
+        <p class="content-text">
+            Après la mort de Myriam, le peuple manque d'eau. Adonaï ordonne à Moché de parler au
+            rocher. Mais Moché le frappe.
+        </p>
+
+        <div class="verse-block">
+            <span class="verse-label">Bamidbar · Nombres 20:10</span>
+            <div class="verse-hebrew">שִׁמְעוּ־נָא הַמֹּרִים</div>
+            <div class="verse-transliteration">Shim'ou na haMorim</div>
+            <div class="verse-french">« Écoutez donc, rebelles. »</div>
+        </div>
+
+        <p class="content-text">
+            L'eau jaillit. Pourtant Moché et Aharon reçoivent une sanction. Pourquoi ? Parce que la
+            mission n'était pas simplement de produire de l'eau. Elle consistait à révéler la
+            puissance de la parole.
+        </p>
+
+        <div class="application-box">
+            <span class="application-label">Portée du récit</span>
+            <p>
+                Le miracle devait montrer qu'une parole conforme à la volonté d'Adonaï peut
+                transformer la réalité.
+            </p>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Le serpent d'airain -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">🐍</span>
+            Le serpent d'airain
+        </div>
+
+        <p class="content-text">
+            Après de nouvelles plaintes, des serpents attaquent le peuple. Adonaï ordonne à Moché
+            de fabriquer un serpent d'airain.
+        </p>
+
+        <div class="verse-block">
+            <span class="verse-label">Bamidbar · Nombres 21:8</span>
+            <div class="verse-hebrew">וְהָיָה כָּל־הַנָּשׁוּךְ וְרָאָה אֹתוֹ וָחָי</div>
+            <div class="verse-transliteration">Vehaya kol haNashoukh vera oto vaḥaï</div>
+            <div class="verse-french">« Quiconque aura été mordu et le regardera vivra. »</div>
+        </div>
+
+        <div class="midrash-block">
+            <span class="midrash-label">Enseignement des Sages</span>
+            <p>
+                Les Sages enseignent que le serpent ne guérissait pas. Lorsqu'Israël levait les
+                yeux vers le Ciel et orientait son cœur vers Adonaï, il guérissait. Le remède
+                n'était pas l'objet — le remède était la transformation intérieure.
+            </p>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Bil'am : la parole qui échappe à son propriétaire -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">🗣</span>
+            Bil'am : la parole qui échappe à son propriétaire
+        </div>
+
+        <p class="content-text">
+            La seconde paracha s'ouvre avec la peur de Balak, roi de Moav. Voyant les victoires
+            d'Israël, il décide de faire appel à Bil'am. Son objectif est simple : maudire Israël.
+            Mais tout bascule — chaque tentative de malédiction devient une bénédiction.
+        </p>
+
+        <div class="verse-block">
+            <span class="verse-label">Bamidbar · Nombres 24:5</span>
+            <div class="verse-hebrew">מַה־טֹּבוּ אֹהָלֶיךָ יַעֲקֹב</div>
+            <div class="verse-transliteration">Ma tovu ohalekha Ya'aqov</div>
+            <div class="verse-french">« Qu'elles sont belles, tes tentes, ô Jacob. »</div>
+        </div>
+
+        <p class="content-text">
+            Cette phrase est devenue l'une des plus connues de la liturgie juive.
+        </p>
+
+        <div class="compare-grid">
+            <div class="compare-card houkat">
+                <span class="compare-label">Houkat</span>
+                <div class="compare-name">Les cendres</div>
+                <p>Semblent apporter l'impureté — elles apportent la purification.</p>
+            </div>
+            <div class="compare-card balak">
+                <span class="compare-label">Balak</span>
+                <div class="compare-name">Bil'am</div>
+                <p>Veut maudire — il bénit.</p>
+            </div>
+        </div>
+
+        <p class="content-text">
+            Dans les deux cas, la Torah montre qu'Adonaï demeure le véritable maître des conséquences.
+        </p>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Le détail révélateur -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">⛺</span>
+            Le détail révélateur
+        </div>
+
+        <p class="content-text">
+            Pourquoi la bénédiction de Bil'am commence-t-elle par les tentes d'Israël ?
+        </p>
+
+        <div class="rachi-block">
+            <span class="rachi-label">Commentateurs</span>
+            <p>
+                Les commentateurs expliquent que les ouvertures des tentes n'étaient pas placées
+                face à face. Chaque famille respectait l'intimité de l'autre.
+            </p>
+        </div>
+
+        <p class="content-text">
+            Bil'am découvre alors que la sainteté ne réside pas seulement dans les miracles. Elle
+            réside dans les comportements quotidiens — dans la discrétion, dans le respect, dans
+            la pudeur. Le détail devient central.
+        </p>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Une exigence éthique -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">⚖️</span>
+            Une exigence éthique
+        </div>
+
+        <p class="content-text">
+            Les deux parachiot nous enseignent que la sainteté se mesure souvent dans ce qui paraît
+            insignifiant.
+        </p>
+
+        <ul class="structured-list">
+            <li>Une parole</li>
+            <li>Un regard</li>
+            <li>Une intention</li>
+            <li>Une ouverture de tente</li>
+            <li>Un geste</li>
+        </ul>
+
+        <div class="theme-banner">
+            Même lorsqu'il semble invisible, chaque détail possède une <strong>portée spirituelle</strong>.<br><br>
+            La Torah nous invite à comprendre que la fidélité à Adonaï<br>
+            se vérifie précisément dans ces <em>zones discrètes de l'existence</em>.
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Une leçon pour notre temps -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">🌅</span>
+            Une leçon pour notre temps
+        </div>
+
+        <p class="content-text">
+            Nous vivons dans une époque qui valorise l'explication immédiate. Pourtant Houkat
+            nous rappelle que tout ne se réduit pas à ce que nous comprenons.
+        </p>
+
+        <p class="content-text">
+            Nous vivons également dans une époque saturée de paroles. Balak nous rappelle que
+            chaque parole produit des conséquences.
+        </p>
+
+        <div class="application-box">
+            <span class="application-label">La sagesse à tenir ensemble</span>
+            <p>
+                Demeurer humble devant ce qui nous dépasse — et demeurer responsable de ce qui
+                dépend de nous.
+            </p>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Idée forte centrale -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">💡</span>
+            L'idée forte de Houkat – Balak
+        </div>
+
+        <div class="idea-box">
+            <span class="idea-label">Idée forte</span>
+            <p>
+                La Torah ne nous demande pas de tout comprendre.<br>
+                Elle nous demande de <strong>marcher avec fidélité</strong>.<br><br>
+                La sainteté ne se manifeste pas seulement dans les grandes révélations —<br>
+                elle se révèle aussi dans la <em>précision invisible</em>,<br>
+                dans la parole maîtrisée et dans la confiance accordée à Adonaï,<br>
+                même lorsque le chemin demeure partiellement caché.
+            </p>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Conclusion -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">✨</span>
+            Conclusion
+        </div>
+
+        <p class="content-text">
+            Houkat et Balak forment un remarquable parcours spirituel.
+        </p>
+
+        <div class="conclusion-banner">
+            <strong>חֻקַּת · בָּלָק — Houkat · Balak</strong><br><br>
+            La Vache Rousse nous enseigne que certaines réalités appartiennent au domaine du <em>mystère</em>.<br>
+            Moché nous rappelle la puissance de la <strong>parole juste</strong>.<br><br>
+            Le serpent d'airain nous apprend à orienter notre regard vers Adonaï.<br>
+            Bil'am nous montre qu'aucune parole humaine ne peut s'opposer durablement<br>
+            à la bénédiction voulue par Adonaï.<br><br>
+            <strong>שבת שלום — Shabbat Shalom</strong>
+        </div>
+    </div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Citations clés -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="quotes-section fade-in">
+        <h2>📜 Versets clés de Houkat – Balak</h2>
+
+        <div class="quote-item">
+            <span class="quote-hebrew">זֹאת חֻקַּת הַתּוֹרָה</span>
+            <span class="quote-transliteration">Zot ḥouqat haTorah.</span>
+            <p class="quote-french">« Voici le décret de la Torah. » (Bamidbar 19:2)</p>
+        </div>
+
+        <div class="quote-item">
+            <span class="quote-hebrew">שִׁמְעוּ־נָא הַמֹּרִים</span>
+            <span class="quote-transliteration">Shim'ou na haMorim.</span>
+            <p class="quote-french">« Écoutez donc, rebelles. » (Bamidbar 20:10)</p>
+        </div>
+
+        <div class="quote-item">
+            <span class="quote-hebrew">וְהָיָה כָּל־הַנָּשׁוּךְ וְרָאָה אֹתוֹ וָחָי</span>
+            <span class="quote-transliteration">Vehaya kol haNashoukh vera oto vaḥaï.</span>
+            <p class="quote-french">« Quiconque aura été mordu et le regardera vivra. » (Bamidbar 21:8)</p>
+        </div>
+
+        <div class="quote-item">
+            <span class="quote-hebrew">מַה־טֹּבוּ אֹהָלֶיךָ יַעֲקֹב</span>
+            <span class="quote-transliteration">Ma tovu ohalekha Ya'aqov.</span>
+            <p class="quote-french">« Qu'elles sont belles, tes tentes, ô Jacob. » (Bamidbar 24:5)</p>
+        </div>
+    </div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Vidéo -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="video-section fade-in">
+        <h2>🎥 Étude vidéo de Houkat – Balak</h2>
+        <div class="video-container">
+            <iframe
+                src="https://www.youtube.com/embed/HHji0e96OUI"
+                title="Paracha Houkat - Balak | Du mystère des cendres à la puissance de la parole | Tradition séfarade | Ariel Mormin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Clôture -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="closing-section fade-in">
+        <p>
+            Une étude structurée et progressive des Paracha Houkat et Balak selon la tradition
+            séfarade. Le mystère de la Vache Rousse, la puissance de la parole révélée aux eaux
+            de Mériva, le regard tourné vers Adonaï devant le serpent d'airain, et les bénédictions
+            de Bil'am — quatre réponses de la Torah à une même exigence : marcher avec humilité
+            devant le mystère, et avec responsabilité devant la parole.
+        </p>
+    </div>
+
+    <!-- ─────────────────────────────────────────────── -->
+    <!-- Pied de page -->
+    <!-- ─────────────────────────────────────────────── -->
+    <div class="footer">
+        <div class="footer-main">
+            Étude de Houkat – Balak par <span class="footer-hebrew">אריאל מרמן</span> (Ariel Mormin)
+        </div>
+        <div class="footer-subtitle">
+            • Du mystère des cendres à la puissance de la parole — חֻקַּת · בָּלָק • Bamidbar / Nombres 19:1–25:9 • Tradition séfarade •
+        </div>
+    </div>
+
+</div><!-- /container -->
+
+<script>
+    // Barre de progression
+    window.addEventListener('scroll', () => {
+        const doc = document.documentElement;
+        const progress = doc.scrollTop / (doc.scrollHeight - doc.clientHeight);
+        document.getElementById('scrollBar').style.transform = `scaleX(${progress})`;
+    });
+
+    // Animation d'entrée au scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
