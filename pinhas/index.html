@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Paracha Pinḥas : L'Alliance de paix et la transmission de la fidélité. Étude Torah complète selon la tradition séfarade par Ariel Mormin.">
+    <meta name="keywords" content="Paracha Pinhas, פִּינְחָס, Torah, Bamidbar, Nombres, Alliance de paix, filles de Tseloфhad, Yehoshoua, korbanot, tradition séfarade, étude biblique, Ariel Mormin, Parashot Mormin">
+    <meta property="og:title" content="Paracha Pinḥas – L'Alliance de paix et la transmission de la fidélité | Ariel Mormin">
+    <meta property="og:description" content="Étude complète de la Paracha Pinḥas selon la tradition séfarade. Le zèle de Pinḥas, l'Alliance de paix, les filles de Tselofḥad, la transmission à Yehoshoua et les korbanot.">
+    <meta property="og:url" content="https://parashot-mormin.netlify.app/pinhas/index.html">
+    <title>Paracha Pinḥas – L'Alliance de paix et la transmission de la fidélité | Tradition séfarade</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            background: linear-gradient(150deg,
+                #04050d 0%, #090d1e 20%, #0f1530 40%,
+                #090d1e 60%, #04050d 80%, #080b18 100%);
+            min-height: 100vh;
+            color: #333;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background:
+                radial-gradient(ellipse 60% 40% at 25% 15%, rgba(60, 90, 180, 0.22) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 35% at 75% 75%, rgba(100, 60, 160, 0.16) 0%, transparent 55%),
+                radial-gradient(ellipse 40% 30% at 55% 5%, rgba(80, 120, 210, 0.14) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image:
+                radial-gradient(1px 1px at 10% 18%, rgba(160,190,255,0.40) 0%, transparent 100%),
+                radial-gradient(1px 1px at 40% 6%, rgba(160,190,255,0.30) 0%, transparent 100%),
+                radial-gradient(1px 1px at 68% 12%, rgba(180,150,255,0.30) 0%, transparent 100%),
+                radial-gradient(1.5px 1.5px at 85% 4%, rgba(150,180,255,0.30) 0%, transparent 100%),
+                radial-gradient(1px 1px at 25% 90%, rgba(160,190,255,0.25) 0%, transparent 100%),
+                radial-gradient(1px 1px at 58% 94%, rgba(180,150,255,0.22) 0%, transparent 100%),
+                radial-gradient(1px 1px at 3% 50%, rgba(150,180,255,0.22) 0%, transparent 100%),
+                radial-gradient(1px 1px at 92% 42%, rgba(160,190,255,0.20) 0%, transparent 100%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 30px auto;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(80,110,200,0.12);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ── Barre de progression ── */
+        .scroll-indicator {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #2a4a9e, #6080d8, #8b60c0, #6080d8, #2a4a9e);
+            transform-origin: left;
+            transform: scaleX(0);
+            z-index: 1000;
+            transition: transform 0.1s ease;
+        }
+
+        /* ── Bouton retour ── */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #1e3580, #3a5bbb);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(30, 53, 128, 0.35);
+            margin-bottom: 20px;
+        }
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(30, 53, 128, 0.55);
+            background: linear-gradient(135deg, #3a5bbb, #1e3580);
+        }
+
+        /* ── En-tête ── */
+        .header {
+            text-align: center;
+            padding: 55px 20px 60px;
+            background: linear-gradient(150deg,
+                #04050d, #0a0e22, #151d3e,
+                #1e2d60, #2a4a9e, #1e2d60,
+                #0a0e22, #04050d, #0c1025);
+            margin: -40px -20px 50px -20px;
+            border-radius: 20px 20px 0 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background:
+                radial-gradient(ellipse 70% 60% at 50% 50%, rgba(80, 110, 200, 0.28) 0%, transparent 70%),
+                radial-gradient(ellipse 50% 40% at 15% 25%, rgba(60, 90, 180, 0.22) 0%, transparent 60%),
+                radial-gradient(ellipse 40% 50% at 85% 75%, rgba(110, 60, 180, 0.22) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 35px;
+            background:
+                radial-gradient(ellipse 60% 100% at 30% 100%, rgba(80, 110, 200, 0.15) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 100% at 70% 100%, rgba(110, 60, 180, 0.14) 0%, transparent 60%);
+        }
+
+        .header-label-small {
+            font-size: 0.8em;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: rgba(180, 200, 255, 0.72);
+            font-family: 'Georgia', serif;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 14px;
+            display: block;
+        }
+
+        .header-icon {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+            display: block;
+        }
+
+        .title {
+            font-size: 2.6em;
+            margin-bottom: 15px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+            color: #eef2ff;
+        }
+
+        .hebrew-title {
+            font-size: 2.9em;
+            color: #8aabf0;
+            margin-bottom: 15px;
+            font-family: 'Times New Roman', serif;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6), 0 0 35px rgba(100,140,240,0.35);
+            position: relative;
+            z-index: 1;
+            letter-spacing: 0.03em;
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            color: #d0d8f8;
+            opacity: 0.92;
+        }
+
+        .reference {
+            font-size: 1.05em;
+            position: relative;
+            z-index: 1;
+            color: #8aabf0;
+            opacity: 0.92;
+        }
+
+        /* ── Badges ── */
+        .header-badges {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 18px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .badge {
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            border: 1px solid rgba(180, 200, 255, 0.3);
+            background: rgba(255, 255, 255, 0.08);
+            color: rgba(200, 215, 255, 0.85);
+        }
+
+        /* ── Boîte intro ── */
+        .intro-box {
+            background: linear-gradient(135deg, #eef2ff, #e4eafc);
+            padding: 35px;
+            border-radius: 15px;
+            border-left: 6px solid #3a5bbb;
+            margin-bottom: 45px;
+            box-shadow: 0 8px 20px rgba(30, 53, 128, 0.10);
+            position: relative;
+        }
+
+        .intro-box::before {
+            content: "🕊";
+            position: absolute;
+            top: 15px; right: 20px;
+            font-size: 2.2em;
+            opacity: 0.14;
+        }
+
+        /* ── Sections ── */
+        .section { margin-bottom: 45px; padding: 20px 0; }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #111c40;
+            margin-bottom: 25px;
+            font-weight: bold;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #eef2ff, #e4eafc);
+            border-radius: 10px;
+            border-left: 5px solid #3a5bbb;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-icon { font-size: 1.8em; flex-shrink: 0; }
+
+        .content-text {
+            font-size: 1.15em;
+            line-height: 1.8;
+            color: #2c2c2c;
+            margin-bottom: 20px;
+        }
+
+        /* ── Versets ── */
+        .verse-block {
+            background: linear-gradient(135deg, #eef2ff 0%, #dce6fa 100%);
+            border: 2px solid rgba(60, 90, 180, 0.22);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(30, 53, 128, 0.08);
+        }
+
+        .verse-block::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #1e3580, #3a5bbb, #7050b0, #3a5bbb, #7050b0, #3a5bbb, #1e3580);
+        }
+
+        .verse-label {
+            font-size: 0.75em;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: rgba(30, 53, 128, 0.62);
+            margin-bottom: 12px;
+            display: block;
+            font-style: normal;
+        }
+
+        .verse-hebrew {
+            font-size: 2.1em;
+            color: #111c40;
+            direction: rtl;
+            margin-bottom: 12px;
+            font-family: 'Times New Roman', serif;
+            font-weight: bold;
+            line-height: 1.5;
+            text-shadow: 0 1px 2px rgba(30,53,128,0.10);
+        }
+
+        .verse-transliteration {
+            font-size: 1.05em;
+            font-style: italic;
+            color: #2a4a9e;
+        }
+
+        .verse-french {
+            font-size: 1.05em;
+            color: #111c40;
+            font-style: italic;
+            border-top: 1px solid rgba(30, 53, 128, 0.18);
+            padding-top: 10px;
+            margin-top: 10px;
+        }
+
+        .verse-reference {
+            font-size: 0.85em;
+            color: rgba(30, 53, 128, 0.55);
+            margin-top: 8px;
+            letter-spacing: 0.1em;
+        }
+
+        /* ── Rachi ── */
+        .rachi-block {
+            background: linear-gradient(135deg, #fdf9ec, #fff8e0);
+            border: 1px solid rgba(201, 168, 76, 0.28);
+            border-left: 5px solid #c9a84c;
+            border-radius: 0 10px 10px 0;
+            padding: 22px 25px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .rachi-block::before {
+            content: 'רש"י';
+            position: absolute;
+            top: 12px; right: 18px;
+            font-size: 1.6em;
+            color: rgba(201, 168, 76, 0.18);
+            font-family: 'Times New Roman', serif;
+            font-weight: bold;
+            direction: rtl;
+        }
+
+        .rachi-label {
+            font-size: 0.78em;
+            font-weight: bold;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #b08a20;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .rachi-block p {
+            font-size: 1.05em;
+            line-height: 1.7;
+            color: #4a3010;
+            font-style: italic;
+        }
+
+        /* ── Tradition séfarade ── */
+        .sephardic-block {
+            background: linear-gradient(135deg, #eef2ff, #e0e8ff);
+            border: 1px solid rgba(60, 90, 180, 0.28);
+            border-left: 5px solid #3a5bbb;
+            border-radius: 0 10px 10px 0;
+            padding: 22px 25px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .sephardic-block::before {
+            content: '✡';
+            position: absolute;
+            top: 14px; right: 18px;
+            font-size: 1.6em;
+            color: rgba(60, 90, 180, 0.14);
+        }
+
+        .sephardic-label {
+            font-size: 0.78em;
+            font-weight: bold;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #1e3580;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .sephardic-block p {
+            font-size: 1.05em;
+            line-height: 1.7;
+            color: #1a2650;
+            font-style: italic;
+        }
+
+        /* ── Idée forte ── */
+        .idea-box {
+            background: linear-gradient(135deg, #0c1025, #1e2d60);
+            color: white;
+            padding: 30px 35px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(10, 15, 40, 0.55);
+        }
+
+        .idea-box::before {
+            content: '✦';
+            position: absolute;
+            top: -10px; right: 20px;
+            font-size: 5em;
+            color: rgba(138, 171, 240, 0.10);
+        }
+
+        .idea-label {
+            font-size: 0.72em;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: rgba(138, 171, 240, 0.80);
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .idea-box p {
+            font-size: 1.3em;
+            font-style: italic;
+            line-height: 1.6;
+            color: #eef2ff;
+            position: relative;
+            z-index: 1;
+        }
+
+        .idea-box strong { color: #8aabf0; font-style: normal; }
+
+        /* ── Paradoxe ── */
+        .paradox-box {
+            background: linear-gradient(135deg, #eef2ff, #dce6fa);
+            border: 2px solid rgba(60, 90, 180, 0.25);
+            border-radius: 12px;
+            padding: 25px 30px;
+            margin: 25px 0;
+            position: relative;
+        }
+
+        .paradox-label {
+            font-size: 0.75em;
+            font-weight: bold;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: #1e3580;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .paradox-box p { font-size: 1.1em; line-height: 1.75; color: #111c40; }
+
+        /* ── Bannière thématique ── */
+        .theme-banner {
+            background: linear-gradient(135deg, #090d1e, #151d3e, #090d1e);
+            color: white;
+            padding: 28px 35px;
+            border-radius: 12px;
+            margin: 30px 0;
+            text-align: center;
+            font-size: 1.15em;
+            line-height: 1.8;
+            box-shadow: 0 8px 22px rgba(5, 8, 20, 0.60);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(60, 90, 180, 0.30);
+        }
+
+        .theme-banner::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #3a5bbb, #7050b0, #3a5bbb, transparent);
+        }
+
+        .theme-banner strong { color: #8aabf0; }
+        .theme-banner em { color: #c0a8e8; font-style: italic; }
+
+        /* ── Bloc paix (spécifique vav brisé) ── */
+        .shalom-block {
+            background: linear-gradient(150deg, #eef2ff 0%, #dce6fa 50%, #eef2ff 100%);
+            border: 2px solid rgba(60, 90, 180, 0.22);
+            border-radius: 16px;
+            padding: 38px 35px;
+            margin: 30px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(30, 53, 128, 0.12);
+        }
+
+        .shalom-block::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #1e3580, #3a5bbb, #8aabf0, #3a5bbb, #8aabf0, #3a5bbb, #1e3580);
+        }
+
+        .shalom-hebrew {
+            font-size: 3.5em;
+            color: #1e3580;
+            font-family: 'Times New Roman', serif;
+            direction: rtl;
+            display: block;
+            margin-bottom: 12px;
+            text-shadow: 0 2px 8px rgba(30,53,128,0.15);
+        }
+
+        .shalom-note {
+            font-size: 1.0em;
+            font-style: italic;
+            color: #3a5bbb;
+            line-height: 1.6;
+        }
+
+        /* ── Grille de comparaison ── */
+        .compare-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        @media (max-width: 650px) { .compare-grid { grid-template-columns: 1fr; } }
+
+        .compare-cell {
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(60, 90, 180, 0.20);
+        }
+
+        .compare-cell-left { background: linear-gradient(135deg, #eef2ff, #e0e8ff); }
+        .compare-cell-right { background: linear-gradient(135deg, #f0ecff, #e8e0ff); }
+
+        .compare-cell-label {
+            font-size: 0.75em;
+            font-weight: bold;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .compare-cell-left .compare-cell-label { color: #1e3580; }
+        .compare-cell-right .compare-cell-label { color: #5030a0; }
+
+        .compare-cell p { font-size: 1.0em; line-height: 1.65; color: #1a1a40; }
+
+        /* ── Conclusion ── */
+        .conclusion-banner {
+            background: linear-gradient(135deg, #090d1e, #1a2460, #090d1e);
+            color: white;
+            padding: 45px 40px;
+            border-radius: 18px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 12px 35px rgba(5, 8, 25, 0.65);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(138, 171, 240, 0.20);
+        }
+
+        .conclusion-banner::before {
+            content: 'שלום';
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 10rem;
+            color: rgba(138, 171, 240, 0.045);
+            font-family: 'Times New Roman', serif;
+            direction: rtl;
+            white-space: nowrap;
+            pointer-events: none;
+        }
+
+        .conclusion-banner::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #8aabf0, #c0a8e8, #8aabf0, transparent);
+        }
+
+        .conclusion-banner h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #eef2ff;
+            position: relative;
+            z-index: 1;
+        }
+
+        .conclusion-banner p {
+            font-size: 1.15em;
+            line-height: 1.8;
+            color: #c8d4f8;
+            margin-bottom: 14px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .conclusion-banner strong { color: #8aabf0; }
+
+        .conclusion-shabbat {
+            font-size: 1.6em;
+            color: #8aabf0;
+            margin-top: 20px;
+            position: relative;
+            z-index: 1;
+            font-style: italic;
+        }
+
+        /* ── Application ── */
+        .application-box {
+            background: linear-gradient(135deg, #f0ecff, #e8e0ff);
+            border: 1px solid rgba(110, 60, 180, 0.22);
+            border-left: 5px solid #7050b0;
+            border-radius: 0 10px 10px 0;
+            padding: 22px 25px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .application-box::before {
+            content: '🌿';
+            position: absolute;
+            top: 14px; right: 18px;
+            font-size: 1.5em;
+            opacity: 0.30;
+        }
+
+        .application-label {
+            font-size: 0.78em;
+            font-weight: bold;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #5030a0;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .application-box p {
+            font-size: 1.05em;
+            line-height: 1.7;
+            color: #2a1860;
+        }
+
+        /* ── Versets clés ── */
+        .quotes-section {
+            background: linear-gradient(135deg, #eef2ff, #e4eafc);
+            border: 1px solid rgba(60, 90, 180, 0.18);
+            border-radius: 15px;
+            padding: 35px;
+            margin: 35px 0;
+        }
+
+        .quotes-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #1e3580;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .quote-item {
+            padding: 18px 0;
+            border-bottom: 1px solid rgba(60, 90, 180, 0.12);
+        }
+
+        .quote-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+        .quote-hebrew {
+            font-size: 1.5em;
+            color: #111c40;
+            direction: rtl;
+            font-family: 'Times New Roman', serif;
+            font-weight: bold;
+            line-height: 1.5;
+            margin-bottom: 5px;
+        }
+
+        .quote-translit {
+            font-style: italic;
+            color: #2a4a9e;
+            font-size: 0.98em;
+        }
+
+        .quote-french {
+            font-style: italic;
+            color: #333;
+            font-size: 0.98em;
+            margin-top: 3px;
+        }
+
+        .quote-ref {
+            font-size: 0.82em;
+            color: rgba(30, 53, 128, 0.55);
+            margin-top: 4px;
+            letter-spacing: 0.08em;
+        }
+
+        /* ── Vidéo ── */
+        .video-section {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .video-label {
+            font-size: 0.78em;
+            font-weight: bold;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: #2a4a9e;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(10, 15, 50, 0.35);
+            border: 2px solid rgba(60, 90, 180, 0.22);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            border: none;
+        }
+
+        /* ── Section fermeture ── */
+        .closing-section {
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 2px solid rgba(60, 90, 180, 0.14);
+            margin-top: 45px;
+        }
+
+        .closing-section p {
+            font-size: 1.0em;
+            color: #555;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        .closing-section a {
+            color: #2a4a9e;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .closing-section a:hover { text-decoration: underline; }
+
+        /* ── Pied de page ── */
+        .footer {
+            text-align: center;
+            padding: 22px;
+            font-size: 0.88em;
+            color: rgba(255,255,255,0.5);
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer a { color: rgba(138,171,240,0.75); text-decoration: none; }
+        .footer a:hover { color: rgba(138,171,240,1); }
+
+        /* ── Animations ── */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* ── Responsive ── */
+        @media (max-width: 700px) {
+            .title { font-size: 1.8em; }
+            .hebrew-title { font-size: 2.1em; }
+            .container { margin: 10px; padding: 25px 15px; border-radius: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="scroll-indicator" id="scrollBar"></div>
+
+<div class="container">
+
+    <a href="https://parashot-mormin.netlify.app/" class="back-button">← Retour</a>
+
+    <!-- ── EN-TÊTE ── -->
+    <div class="header">
+        <span class="header-label-small">Bamidbar · Nombres 25:10 – 30:1</span>
+        <span class="header-icon">🕊</span>
+        <h1 class="title">Paracha Pinḥas</h1>
+        <div class="hebrew-title">פִּינְחָס</div>
+        <p class="subtitle">L'Alliance de paix et la transmission de la fidélité</p>
+        <p class="reference">Tradition séfarade · Ariel Mormin</p>
+        <div class="header-badges">
+            <span class="badge">📖 Texte hébreu</span>
+            <span class="badge">📜 Translittération</span>
+            <span class="badge">🌿 Tradition séfarade</span>
+        </div>
+    </div>
+
+    <!-- ── INTRODUCTION ── -->
+    <div class="intro-box fade-in">
+        <p class="content-text">
+            La Paracha <strong>Pinḥas</strong> s'ouvre au lendemain d'un des épisodes les plus dramatiques du livre de Bamidbar. À la fin de la paracha Balak, Israël ne succombe pas à une attaque militaire, mais à une crise intérieure. Sous l'influence des femmes de Moav et de Midiane, une partie du peuple se laisse entraîner vers le culte de Baal Peor. Ce qui n'avait pu être obtenu par les malédictions de Bil'am est atteint par la séduction et l'idolâtrie.
+        </p>
+        <p class="content-text">
+            C'est dans ce contexte qu'intervient Pinḥas, fils d'El'azar et petit-fils d'Aharon le Grand Prêtre. Son acte met fin à la plaie. Pourtant, ce qui pourrait apparaître comme un simple récit de justice devient immédiatement une réflexion sur la paix, la transmission et l'avenir d'Israël.
+        </p>
+        <p class="content-text">
+            Après une crise profonde, la Torah enseigne comment reconstruire un peuple fidèle à Adonaï. Cette reconstruction ne repose ni sur la force ni sur le pouvoir. Elle s'appuie sur la responsabilité, la transmission et la fidélité à l'Alliance.
+        </p>
+    </div>
+
+    <!-- ── SECTION 1 : LE ZÈLE DE PINḤAS ── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">⚔️</span>
+            Le zèle de Pinḥas
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-label">Bamidbar 25:11</span>
+            <div class="verse-hebrew">פִּינְחָס בֶּן־אֶלְעָזָר בֶּן־אַהֲרֹן הַכֹּהֵן הֵשִׁיב אֶת־חֲמָתִי מֵעַל בְּנֵי יִשְׂרָאֵל</div>
+            <p class="verse-transliteration">Pinḥas ben El'azar ben Aharon haKohen héshiv et ḥamati mé'al Béné Israël.</p>
+            <p class="verse-french">« Pinḥas, fils d'El'azar, fils d'Aharon le Cohen, a détourné Ma colère de dessus les enfants d'Israël. »</p>
+        </div>
+
+        <p class="content-text">La Torah insiste immédiatement sur la filiation de Pinḥas. Pourquoi rappeler qu'il est le petit-fils d'Aharon ? Cette précision n'est pas anodine.</p>
+
+        <div class="rachi-block">
+            <span class="rachi-label">Rachi</span>
+            <p>Rachi rapporte que certaines tribus critiquaient Pinḥas après son intervention. Elles rappelaient que son grand-père maternel était Yitro, ancien prêtre de Midiane, et contestaient ainsi sa légitimité. La Torah répond à cette accusation en rappelant une autre filiation : Pinḥas est aussi le petit-fils d'Aharon — celui que les Sages décrivent comme <em>ohev shalom verodef shalom</em>, « il aimait la paix et poursuivait la paix ».</p>
+        </div>
+
+        <div class="paradox-box">
+            <span class="paradox-label">Le premier paradoxe</span>
+            <p>Comment un homme capable d'un geste aussi radical peut-il recevoir l'héritage spirituel d'Aharon ? La Torah répond implicitement que le véritable zèle n'est jamais motivé par la colère personnelle. Pinḥas n'agit ni pour sa gloire, ni par vengeance, ni pour imposer sa volonté. Il agit parce que l'Alliance entre Israël et Adonaï est en train d'être publiquement profanée. Le fanatisme place l'homme au centre. Le zèle authentique place Adonaï au centre.</p>
+        </div>
+
+        <div class="sephardic-block">
+            <span class="sephardic-label">Tradition séfarade</span>
+            <p>Les maîtres séfarades soulignent que la Torah ne présente jamais l'acte de Pinḥas comme un modèle à reproduire. Il s'agit d'une intervention exceptionnelle dans des circonstances exceptionnelles. Le Sforno explique que Pinḥas agit afin d'empêcher la destruction du peuple tout entier. Son geste ne trouve sa justification que parce qu'il met immédiatement fin à la plaie qui frappait Israël.</p>
+        </div>
+
+        <div class="idea-box">
+            <span class="idea-label">Idée forte</span>
+            <p>Le zèle peut devenir destructeur lorsqu'il naît de l'orgueil. Il devient une qualité lorsqu'il est entièrement au service d'Adonaï et qu'il cherche à <strong>restaurer la vie plutôt qu'à imposer une domination</strong>.</p>
+        </div>
+    </div>
+
+    <!-- ── SECTION 2 : L'ALLIANCE DE PAIX ── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">🕊️</span>
+            L'Alliance de paix — בְּרִית שָׁלוֹם
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-label">Bamidbar 25:12</span>
+            <div class="verse-hebrew">לָכֵן אֱמֹר הִנְנִי נֹתֵן לוֹ אֶת־בְּרִיתִי שָׁלוֹם</div>
+            <p class="verse-transliteration">Lakhèn emor, hinéni noten lo et beriti shalom.</p>
+            <p class="verse-french">« C'est pourquoi tu diras : Voici que Je lui accorde Mon Alliance de paix. »</p>
+        </div>
+
+        <p class="content-text">À première vue, cette récompense semble paradoxale. Pourquoi une Alliance de paix après un acte de rigueur ? Toute la profondeur de la paracha se trouve dans cette question.</p>
+
+        <div class="compare-grid">
+            <div class="compare-cell compare-cell-left">
+                <span class="compare-cell-label">La paix du monde</span>
+                <p>L'absence de conflit, le silence imposé, la neutralité des indifférents.</p>
+            </div>
+            <div class="compare-cell compare-cell-right">
+                <span class="compare-cell-label">Le שָׁלוֹם de la Torah</span>
+                <p>La plénitude, l'intégrité retrouvée, l'harmonie avec la volonté d'Adonaï.</p>
+            </div>
+        </div>
+
+        <p class="content-text">Pinḥas ne reçoit donc pas une récompense malgré son acte. Il reçoit cette Alliance parce que son intervention a permis de restaurer l'Alliance rompue entre Israël et Adonaï.</p>
+
+        <div class="shalom-block">
+            <span class="shalom-hebrew">שָׁלֽוֹם</span>
+            <p class="shalom-note">Dans un Sefer Torah, la lettre <strong>ו</strong> (<em>vav</em>) du mot <strong>שלום</strong> est traditionnellement écrite de manière brisée. Les commentateurs y voient un enseignement profond : même lorsqu'une intervention devient nécessaire, elle laisse une blessure. La paix demeure toujours un idéal fragile qu'il faut reconstruire avec humilité.</p>
+        </div>
+
+        <div class="idea-box">
+            <span class="idea-label">Idée forte</span>
+            <p>La Torah ne célèbre jamais la violence. Elle célèbre la <strong>restauration de l'Alliance</strong>. La paix n'est pas l'oubli du mal — elle est le retour de l'homme vers Adonaï.</p>
+        </div>
+
+        <div class="application-box">
+            <span class="application-label">Application</span>
+            <p>Dans notre vie quotidienne, nous sommes rarement confrontés à des situations comparables à celle de Pinḥas. En revanche, nous sommes souvent appelés à défendre la vérité, à résister à la facilité ou à rappeler avec douceur les exigences de la fidélité. La Paracha nous enseigne que la fermeté n'a de valeur que lorsqu'elle conduit à davantage de paix, de justice et de fidélité.</p>
+        </div>
+    </div>
+
+    <!-- ── SECTION 3 : LE NOUVEAU RECENSEMENT ── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">👥</span>
+            Le nouveau recensement — reconstruire une génération
+        </div>
+
+        <p class="content-text">La plaie est arrêtée. Adonaï ordonne un nouveau recensement. Pourquoi compter une nouvelle fois le peuple alors qu'un recensement avait déjà été effectué au début du livre de Bamidbar ? La réponse apparaît progressivement : il ne s'agit plus du même peuple.</p>
+
+        <div class="verse-block">
+            <span class="verse-label">Bamidbar 26:2</span>
+            <div class="verse-hebrew">שְׂאוּ אֶת־רֹאשׁ כָּל־עֲדַת בְּנֵי־יִשְׂרָאֵל</div>
+            <p class="verse-transliteration">Seou et rosh kol adat Béné Israël.</p>
+            <p class="verse-french">« Faites le dénombrement de toute l'assemblée des enfants d'Israël. »</p>
+        </div>
+
+        <div class="theme-banner">
+            La Torah ne dit pas simplement : <em>« Comptez le peuple. »</em><br>
+            Elle dit littéralement : <strong>« Élevez la tête de toute l'assemblée d'Israël. »</strong><br>
+            Compter une personne, dans la Torah, revient à reconnaître sa dignité.
+        </div>
+
+        <div class="rachi-block">
+            <span class="rachi-label">Rachi</span>
+            <p>Rachi compare Adonaï à un berger dont le troupeau a été attaqué. Après le danger, le berger recompte chacune de ses brebis pour constater que le troupeau est à nouveau réuni. Cette image révèle toute la tendresse du texte : le recensement n'est pas un acte administratif. Il exprime l'attention d'Adonaï pour chacun des enfants d'Israël. Chaque vie compte. Chaque personne est connue. Chaque existence possède une valeur infinie.</p>
+        </div>
+
+        <div class="sephardic-block">
+            <span class="sephardic-label">Tradition séfarade</span>
+            <p>Les maîtres séfarades soulignent que ce recensement prépare l'entrée en Terre promise. Posséder une terre ne suffit pas. Encore faut-il constituer un peuple capable d'en porter la responsabilité. La liberté n'est jamais seulement un droit — elle est une mission. L'individu ne s'accomplit pleinement qu'au sein de la communauté.</p>
+        </div>
+
+        <div class="idea-box">
+            <span class="idea-label">Idée forte</span>
+            <p>On ne construit jamais l'avenir uniquement en regardant les fautes du passé. La Torah enseigne qu'après chaque crise vient le temps de la reconstruction. <strong>Adonaï ne réduit jamais un homme à son passé.</strong></p>
+        </div>
+    </div>
+
+    <!-- ── SECTION 4 : LES FILLES DE TSELOFḤAD ── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">👩</span>
+            Les filles de Tselofḥad — lorsque la justice fait avancer la Torah
+        </div>
+
+        <p class="content-text">Au cœur de cette nouvelle génération apparaît un épisode d'une remarquable modernité. Cinq femmes s'avancent devant Moché, El'azar, les chefs du peuple et toute l'assemblée. Leur père, Tselofḥad, est mort dans le désert sans laisser de fils. Ces femmes ne contestent pas la Torah. Elles demandent simplement que justice soit rendue.</p>
+
+        <div class="verse-block">
+            <span class="verse-label">Bamidbar 27:4</span>
+            <div class="verse-hebrew">לָמָּה יִגָּרַע שֵׁם־אָבִינוּ</div>
+            <p class="verse-transliteration">Lamah yigara shem avinou ?</p>
+            <p class="verse-french">« Pourquoi le nom de notre père disparaîtrait-il ? »</p>
+        </div>
+
+        <p class="content-text">Leur démarche est remarquable. Elles ne revendiquent ni privilège ni pouvoir. Elles demandent que le souvenir de leur père demeure vivant au sein d'Israël. La question touche donc à la mémoire, à la transmission et à la justice.</p>
+
+        <div class="verse-block">
+            <span class="verse-label">Bamidbar 27:7 · La réponse d'Adonaï</span>
+            <div class="verse-hebrew">כֵּן בְּנוֹת צְלָפְחָד דֹּבְרֹת</div>
+            <p class="verse-transliteration">Ken benot Tselofḥad dovrot.</p>
+            <p class="verse-french">« Les filles de Tselofḥad parlent avec justesse. »</p>
+        </div>
+
+        <div class="rachi-block">
+            <span class="rachi-label">Rachi</span>
+            <p>Rachi souligne la sagesse de ces cinq femmes. Selon lui, elles ont attendu le moment opportun pour présenter leur requête. Elles parlent avec respect, argumentent sans agressivité, et cherchent la justice plutôt que la victoire. Leur attitude devient un modèle de dialogue.</p>
+        </div>
+
+        <div class="sephardic-block">
+            <span class="sephardic-label">Tradition séfarade</span>
+            <p>Les commentateurs séfarades voient dans cet épisode une illustration de la confiance que la Torah accorde à une parole sincère. La justice biblique n'est pas figée : elle écoute, elle examine, elle répond. L'autorité véritable n'a pas peur d'écouter une parole juste. Moché, pourtant le plus grand des prophètes, accepte de présenter cette question devant Adonaï. Cette humilité fait partie intégrante de son autorité.</p>
+        </div>
+
+        <div class="idea-box">
+            <span class="idea-label">Idée forte</span>
+            <p>La justice selon la Torah ne consiste pas à appliquer mécaniquement une règle. Elle consiste à <strong>rechercher fidèlement la volonté d'Adonaï dans chaque situation concrète</strong>.</p>
+        </div>
+
+        <div class="application-box">
+            <span class="application-label">Application</span>
+            <p>Les filles de Tselofḥad nous enseignent le courage d'une parole respectueuse. Lorsqu'une injustice apparaît, il est possible de la dénoncer sans violence, sans arrogance et sans esprit de révolte. La vérité gagne en force lorsqu'elle s'exprime avec humilité.</p>
+        </div>
+    </div>
+
+    <!-- ── SECTION 5 : MOCHÉ ET YEHOSHOUA ── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">👣</span>
+            Moché transmet à Yehoshoua — le véritable leadership
+        </div>
+
+        <p class="content-text">Moché sait désormais qu'il n'entrera pas en Terre promise. Sa première préoccupation est pourtant l'avenir du peuple. Cette attitude révèle la véritable grandeur d'un dirigeant : il ne cherche pas à conserver son pouvoir jusqu'au dernier instant. Il prépare celui qui poursuivra la mission.</p>
+
+        <div class="verse-block">
+            <span class="verse-label">Bamidbar 27:16</span>
+            <div class="verse-hebrew">יִפְקֹד יְהוָה אֱלֹהֵי הָרוּחֹת לְכָל־בָּשָׂר אִישׁ עַל־הָעֵדָה</div>
+            <p class="verse-transliteration">Yifkod Adonaï Elohé haruḥot lekhol bassar, ish al ha'edah.</p>
+            <p class="verse-french">« Qu'Adonaï, Ashem des esprits de toute chair, désigne un homme sur l'assemblée. »</p>
+        </div>
+
+        <div class="paradox-box">
+            <span class="paradox-label">Pourquoi « Ashem des esprits de toute chair » ?</span>
+            <p>Les Sages expliquent que chaque être humain possède un tempérament différent. Un véritable dirigeant ne gouverne pas une foule anonyme — il accompagne des personnes uniques. Moché demande donc à Adonaï de choisir un homme capable de comprendre la diversité des cœurs humains.</p>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-label">Bamidbar 27:18</span>
+            <div class="verse-hebrew">קַח־לְךָ אֶת־יְהוֹשֻׁעַ בִּן־נוּן אִישׁ אֲשֶׁר־רוּחַ בּוֹ</div>
+            <p class="verse-transliteration">Qaḥ lekha et Yehoshoua bin Noun, ish asher ruaḥ bo.</p>
+            <p class="verse-french">« Prends Yehoshoua, fils de Noun, un homme animé par l'Esprit. »</p>
+        </div>
+
+        <p class="content-text">La Torah ne met pas en avant les qualités militaires de Yehoshoua. Elle affirme simplement : <strong>« un homme animé par l'Esprit »</strong>. Le futur dirigeant devra être guidé par l'Esprit d'Adonaï avant d'être guidé par son ambition personnelle.</p>
+
+        <div class="rachi-block">
+            <span class="rachi-label">Rachi</span>
+            <p>De même qu'Adonaï connaît les pensées de chacun, le futur dirigeant devra savoir s'adapter à chaque personne. Le leadership biblique n'est jamais uniforme. Il ne consiste pas à imposer une méthode identique à tous. Il consiste à conduire chaque personne selon ses capacités.</p>
+        </div>
+
+        <div class="verse-block">
+            <span class="verse-label">Bamidbar 27:18 · La semikha</span>
+            <div class="verse-hebrew">וְסָמַכְתָּ אֶת־יָדְךָ עָלָיו</div>
+            <p class="verse-transliteration">Vesamakhta et yadekha alav.</p>
+            <p class="verse-french">« Tu poseras ta main sur lui. »</p>
+        </div>
+
+        <div class="theme-banner">
+            La <em>semikha</em>, l'imposition des mains, ne constitue pas seulement une cérémonie.<br>
+            Elle symbolise la <strong>transmission</strong>.<br>
+            La mission ne s'interrompt pas avec la disparition d'un homme.<br>
+            Elle continue de <strong>génération en génération</strong>.
+        </div>
+
+        <div class="sephardic-block">
+            <span class="sephardic-label">Tradition séfarade</span>
+            <p>Un dirigeant n'est pas choisi uniquement pour ses compétences. Il est choisi pour sa capacité à transmettre fidèlement ce qu'il a lui-même reçu. Yehoshoua n'invente pas une nouvelle Torah — il poursuit l'œuvre de Moché. Cette fidélité garantit l'unité d'Israël au moment où le peuple s'apprête à entrer dans une nouvelle étape de son histoire.</p>
+        </div>
+
+        <div class="idea-box">
+            <span class="idea-label">Idée forte</span>
+            <p>Le véritable leadership ne cherche pas à durer indéfiniment. Il prépare avec humilité ceux qui <strong>poursuivront fidèlement la mission confiée par Adonaï</strong>.</p>
+        </div>
+
+        <div class="application-box">
+            <span class="application-label">Application</span>
+            <p>Chacun reçoit un jour la responsabilité de transmettre quelque chose : une foi, un métier, une expérience, une valeur ou une mémoire familiale. La Paracha Pinḥas nous rappelle qu'une transmission réussie ne consiste pas à former des imitateurs — elle consiste à former des personnes capables, à leur tour, de servir Adonaï avec fidélité.</p>
+        </div>
+    </div>
+
+    <!-- ── SECTION 6 : LES KORBANOT ── -->
+    <div class="section fade-in">
+        <div class="section-title">
+            <span class="section-icon">🔥</span>
+            Les Korbanot — sanctifier le temps
+        </div>
+
+        <p class="content-text">Après avoir présenté Pinḥas, le nouveau recensement, les filles de Tselofḥad et la transmission de Moché à Yehoshoua, la Torah consacre toute la fin de la paracha aux <strong>korbanot</strong>, les offrandes apportées à Adonaï. Pourquoi ce changement de sujet ? La réponse est profonde : une Alliance ne peut durer que si elle s'inscrit dans le temps.</p>
+
+        <div class="verse-block">
+            <span class="verse-label">Bamidbar 28:4 · Le Korban Tamid</span>
+            <div class="verse-hebrew">אֶת־הַכֶּבֶשׂ אֶחָד תַּעֲשֶׂה בַבֹּקֶר וְאֵת הַכֶּבֶשׂ הַשֵּׁנִי תַּעֲשֶׂה בֵּין הָעַרְבָּיִם</div>
+            <p class="verse-transliteration">Et hakeves ha'eḥad ta'assé baboker, ve'et hakeves hasheni ta'assé ben ha'arbayim.</p>
+            <p class="verse-french">« Tu offriras un agneau le matin, et le second entre les deux soirs. »</p>
+        </div>
+
+        <p class="content-text">Ce sacrifice est appelé <strong>Tamid</strong>, c'est-à-dire « permanent ». Chaque matin. Chaque soir. Sans interruption. La Torah enseigne ainsi que la fidélité à Adonaï ne dépend pas de nos émotions — elle se nourrit de la constance.</p>
+
+        <div class="theme-banner">
+            La tradition juive a conservé cet esprit à travers les <strong>trois prières quotidiennes</strong><br>
+            qui ont progressivement remplacé les sacrifices après la destruction du Temple.<br>
+            Le rythme demeure. <em>La relation avec Adonaï continue.</em>
+        </div>
+
+        <div class="sephardic-block">
+            <span class="sephardic-label">Tradition séfarade · Le calendrier sanctifié</span>
+            <p>Les maîtres séfarades soulignent que les rendez-vous sacrés — Chabbat, Roch 'Hodech, Pessaḥ, Chavou'ot, Roch Hachana, Yom Kippour, Souccot, Chemini Atseret — empêchent l'homme de vivre uniquement selon son propre rythme. Le calendrier biblique l'invite régulièrement à interrompre ses activités pour se recentrer sur Adonaï. Le temps devient alors un sanctuaire. Même lorsque le Temple n'existe plus, le Chabbat et les fêtes continuent de sanctifier l'existence.</p>
+        </div>
+
+        <div class="idea-box">
+            <span class="idea-label">Idée forte</span>
+            <p>Une Alliance ne se conserve pas uniquement grâce aux grandes décisions. Elle se construit dans la <strong>fidélité quotidienne</strong>. Le temps consacré à Adonaï devient le fondement de toute la vie spirituelle.</p>
+        </div>
+
+        <div class="application-box">
+            <span class="application-label">Application</span>
+            <p>Notre époque valorise la nouveauté permanente. La Torah rappelle au contraire l'importance des habitudes qui élèvent : la prière régulière, le Chabbat, les fêtes, les moments de lecture de la Torah. Ces rendez-vous façonnent progressivement le cœur du croyant. La fidélité n'est pas un sentiment — elle est une pratique.</p>
+        </div>
+    </div>
+
+    <!-- ── VERSETS CLÉS ── -->
+    <div class="quotes-section fade-in">
+        <div class="quotes-title">📜 Versets clés de la Paracha</div>
+
+        <div class="quote-item">
+            <div class="quote-hebrew">פִּינְחָס בֶּן־אֶלְעָזָר... הֵשִׁיב אֶת־חֲמָתִי</div>
+            <p class="quote-translit">Pinḥas ben El'azar... héshiv et ḥamati.</p>
+            <p class="quote-french">« Pinḥas… a détourné Ma colère. »</p>
+            <p class="quote-ref">Bamidbar 25:11</p>
+        </div>
+
+        <div class="quote-item">
+            <div class="quote-hebrew">הִנְנִי נֹתֵן לוֹ אֶת־בְּרִיתִי שָׁלוֹם</div>
+            <p class="quote-translit">Hinéni noten lo et beriti shalom.</p>
+            <p class="quote-french">« Voici que Je lui accorde Mon Alliance de paix. »</p>
+            <p class="quote-ref">Bamidbar 25:12</p>
+        </div>
+
+        <div class="quote-item">
+            <div class="quote-hebrew">כֵּן בְּנוֹת צְלָפְחָד דֹּבְרֹת</div>
+            <p class="quote-translit">Ken benot Tselofḥad dovrot.</p>
+            <p class="quote-french">« Les filles de Tselofḥad parlent avec justesse. »</p>
+            <p class="quote-ref">Bamidbar 27:7</p>
+        </div>
+
+        <div class="quote-item">
+            <div class="quote-hebrew">קַח־לְךָ אֶת־יְהוֹשֻׁעַ בִּן־נוּן אִישׁ אֲשֶׁר־רוּחַ בּוֹ</div>
+            <p class="quote-translit">Qaḥ lekha et Yehoshoua bin Noun, ish asher ruaḥ bo.</p>
+            <p class="quote-french">« Prends Yehoshoua, fils de Noun, un homme animé par l'Esprit. »</p>
+            <p class="quote-ref">Bamidbar 27:18</p>
+        </div>
+
+        <div class="quote-item">
+            <div class="quote-hebrew">אֶת־הַכֶּבֶשׂ אֶחָד תַּעֲשֶׂה בַבֹּקֶר</div>
+            <p class="quote-translit">Et hakeves ha'eḥad ta'assé baboker.</p>
+            <p class="quote-french">« Tu offriras un agneau le matin. »</p>
+            <p class="quote-ref">Bamidbar 28:4</p>
+        </div>
+    </div>
+
+    <!-- ── VIDÉO ── -->
+    <div class="video-section fade-in">
+        <span class="video-label">▶ Regarder l'étude en vidéo · Ariel Mormin</span>
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/bPaKagwJWVo"
+                    title="Paracha Pinḥas – L'Alliance de paix et la transmission de la fidélité | Ariel Mormin"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+
+    <!-- ── CONCLUSION ── -->
+    <div class="conclusion-banner fade-in">
+        <h2>✨ Grande synthèse</h2>
+        <p>La Paracha <strong>Pinḥas</strong> est une véritable œuvre de reconstruction. Après la crise de Baal Peor, la Torah ne se contente pas de condamner la faute — elle montre comment rebâtir un peuple.</p>
+        <p>Tout commence par la restauration de l'Alliance. Le recensement redonne à chaque membre du peuple sa place et sa dignité. Les filles de Tselofḥad rappellent que la justice biblique sait écouter une parole sincère. Moché transmet son autorité à Yehoshoua, révélant que le véritable leadership est un service fondé sur l'humilité. Enfin, les korbanot et le calendrier des fêtes ancrent la fidélité dans le quotidien.</p>
+        <p>Toute la paracha conduit vers une même conviction : une Alliance ne se préserve pas uniquement par des actes héroïques. Elle se construit <strong>jour après jour</strong>, par la fidélité, la justice, la transmission et la sanctification du temps.</p>
+        <p>Les crises font partie de l'histoire humaine. Mais elles n'ont jamais le dernier mot. Lorsque l'homme choisit de revenir vers Adonaï, de transmettre fidèlement Son enseignement et de sanctifier son temps, l'Alliance peut être renouvelée.</p>
+        <p><strong>La paix véritable n'est pas l'absence d'épreuves — elle est la fidélité retrouvée dans la présence d'Adonaï.</strong></p>
+        <div class="conclusion-shabbat">שבת שלום — Shabbat Shalom</div>
+    </div>
+
+    <!-- ── SECTION FERMETURE ── -->
+    <div class="closing-section">
+        <p>Étude de la Torah selon la tradition séfarade · Ariel Mormin</p>
+        <p><a href="https://parashot-mormin.netlify.app/">parashot-mormin.netlify.app</a></p>
+        <p style="margin-top:10px; font-size:0.9em; color:#888;">נר לרגלי דברך ואור לנתיבתי — תהילים 119:105</p>
+    </div>
+
+</div><!-- /container -->
+
+<!-- ── FOOTER ── -->
+<div class="footer">
+    <p>© Ariel Mormin · <a href="https://parashot-mormin.netlify.app/">Parashot Mormin</a> · Tradition séfarade</p>
+</div>
+
+<script>
+    // Barre de progression
+    const scrollBar = document.getElementById('scrollBar');
+    window.addEventListener('scroll', () => {
+        const scrolled = window.scrollY;
+        const maxScroll = document.body.scrollHeight - window.innerHeight;
+        const progress = maxScroll > 0 ? scrolled / maxScroll : 0;
+        scrollBar.style.transform = `scaleX(${progress})`;
+    });
+
+    // Animations fade-in
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
